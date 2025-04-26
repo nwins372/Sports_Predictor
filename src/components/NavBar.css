@@ -1,0 +1,66 @@
+.navbar {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    background-color:whitesmoke;
+    height: 3rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 0;
+  }
+  
+  .navbar-left {
+    background-color: red;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .site-title {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  
+  .navbar-center {
+    display: flex;
+    gap: 3rem;
+    align-items:center;
+    justify-content: space-between;
+    padding: 0px 2px 2px 2px;
+  }
+
+  .navbar-center:hover {
+    color:black;
+  }
+
+  #following:hover {
+    background-color: lightgray;
+  }
+
+  #sports:hover {
+    background-color: lightgray;
+  }
+
+  #login:hover {
+    background-color: lightgray;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  
+  .navbar-right {
+    display: flex;
+    gap: 15px;
+    padding-right: 1rem;
+  }
+  
+  .icon-placeholder {
+    font-size: 18px;
+    color: gray;
+  }
+  

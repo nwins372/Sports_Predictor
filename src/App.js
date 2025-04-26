@@ -1,20 +1,15 @@
 import React from 'react';
-import './index.css';
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {BrowserRouter} from 'react-router-dom';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
+    <div id="app-container">
+       <NavBar />
       <header>
-        <div className="logo">ESPN</div>
-        <nav>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Scores</a></li>
-            <li><a href="#">Draft Predictor</a></li>
-            <li><a href="#">Game Simulator</a></li>
-            <li><a href="#">About</a></li>
-          </ul>
-        </nav>
       </header>
 
       <div className="container">
@@ -37,6 +32,7 @@ function App() {
         <p>&copy; Sports Predictor. All rights reserved.</p>
       </footer>
     </div>
+    </BrowserRouter>
   );
 }
 
