@@ -3,6 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter} from 'react-router-dom';
 import NavBar from './components/NavBar';
+import pic from './assets/maxresdefault.jpg';
 
 function App() {
   return (

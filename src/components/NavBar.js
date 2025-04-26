@@ -1,5 +1,6 @@
 import { Link, Routes, Route } from 'react-router-dom';
 import './NavBar.css'; 
+import mg from '../assets/mag_glass.png';
 
 function NavBar() {
   return (
@@ -17,9 +18,11 @@ function NavBar() {
       </div>
 
       <div className="navbar-right">
-        <span className="icon-placeholder" id="more-features">Icon1</span>
-        <span className="icon-placeholder" id="search">Icon2</span>
-        <span className="icon-placeholder" id="profile">Icon3</span>
+        <span className="icon-placeholder" id="more-features">More</span>
+        <Link to="/search" className="icon-placeholder" id="search">
+          <img src ={mg} alt="Search Icon" width="30" height="30" />
+        </Link>
+        <span className="icon-placeholder" id="profile">Profile</span>
       </div>
     </nav>
   );
