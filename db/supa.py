@@ -1,7 +1,17 @@
 from dotenv import load_dotenv
 import psycopg2
+import random
 import os
 from supabase import create_client, Client
+
+def unique_id():
+    """
+    Generate a unique ID.
+    """
+    seed = random.getrandbits(32)
+    while True:
+        yield seed
+        seed += 1
 
 def main():
 
@@ -24,15 +34,21 @@ def main():
         print("Connection successful!")
         
         cursor = conn.cursor()
-        player_name1 = input("Enter player name to insert: ")
-        player_sport1 = input("Enter that player's sport: ")
+        users_user_id = next(unique_id())
+        users_name = input("Enter your name: ")
+        users_email = input("Enter your email: ")
+        users_username = input("Enter your username: ")
+        users_password = input("Enter your password: ")
+        users_notifications = input("Do you want notifications? (yes/no): ")
+        users_notifications = True if users_notifications.lower() == 'yes' else False
+        users_notifications_interval = input("Enter notification interval (in minutes): ")
         sample_data = [
-            (player_name1, player_sport1),
+            (users_user_id, users_name, users_email, users_password, users_username, users_notifications, users_notifications_interval),
         ]
 
         insert_query = """
-        INSERT INTO sample_data (player_name, player_sport)
-        VALUES (%s, %s)
+        INSERT INTO users (userid, name, email, password, username, notificationtoggle, notificationinterval)
+        VALUES (%s, %s, %s, %s, %s, %s, %s)
         """
 
         cursor.executemany(insert_query, sample_data)
@@ -57,11 +73,10 @@ def read_sample_table():
 
     supabase: Client = create_client(url, key)
     print("READING FROM SAMPLE DATA TABLE:")
-    response = supabase.table("sample_data").select("*").execute()
+    response = supabase.table("users").select("*").execute()
 
     print(response)
     
 if __name__ == "__main__":
     print("Setup and Demo of Environment:\n")
     main()
-    
