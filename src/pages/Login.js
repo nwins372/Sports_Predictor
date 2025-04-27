@@ -11,8 +11,8 @@ function Login() {
         <form className="login-form">
           <input type="text" placeholder="Username" />
           <input type="password" placeholder="Password" />
-          <button type="submit" className="login-button">Log In</button>
-          <button type="button" className="create-account-button">Create Account</button>
+          <button type="submit" id="login-button">Log In</button>
+          <button type="button" id="create-account-button">Create Account</button>
         </form>
       </div>
     </div>
