@@ -1,7 +1,7 @@
 import NavBar from '../components/NavBar';
-import './Login.css';
+import './Profile.css';
 
-function Profile_Page() {
+function Profile() {
     return (
         <>
         <NavBar />    
@@ -14,4 +14,4 @@ function Profile_Page() {
     );
 }
 
-export default Profile_Page;
+export default Profile;

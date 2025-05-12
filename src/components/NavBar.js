@@ -23,7 +23,7 @@ function NavBar() {
         <Link to="/search" className="icon-placeholder" id="search">
           <img src ={mg} alt="Search Icon" width="30" height="30" />
         </Link>
-        <span className="icon-placeholder" id="profile">Profile</span>
+        <Link to="/profile" className="icon-placeholder" id="profile">Profile</Link>
       </div>
     </nav>
   );

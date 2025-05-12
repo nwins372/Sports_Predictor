@@ -25,7 +25,7 @@ function Home() {
        </div>
  
        <footer>
-         <p>&copy; Sports Predictor. All rights reserved.</p>
+         <p></p>
        </footer>
      </div>
      </>
