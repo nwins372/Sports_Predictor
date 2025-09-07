@@ -1,104 +1,78 @@
 import { useState } from "react";
-import { supabase } from "../supabaseClient";
+import NavBar from "../components/NavBar";
+import "./Login.css";
 
-export default function Login() {
+export default function App() {
   const [page, setPage] = useState("login");
-  const [form, setForm] = useState({ email: "", password: "" });
-  const [message, setMessage] = useState("");
-  const [user, setUser] = useState(null);
+  const [form, setForm] = useState({
+    username: "",
+    email: "",
+    password: "",
+    identifier: "",
+  });
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleRegister = async () => {
-    const { error } = await supabase.auth.signUp({
-      email: form.email,
-      password: form.password,
-    });
-    if (error) setMessage(error.message);
-    else setMessage("Check your email to confirm registration.");
-  };
-
-  const handleLogin = async () => {
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email: form.email,
-      password: form.password,
-    });
-    if (error) setMessage(error.message);
-    else {
-      setUser(data.user);
-      setMessage("Login successful");
-    }
-  };
-
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
-    setUser(null);
-    setMessage("Logged out");
+  const handleSubmit = () => {
+    console.log("Form submitted:", form);
+    alert(`Submitted: ${JSON.stringify(form, null, 2)}`);
   };
 
   return (
-    <div className="p-6 max-w-sm mx-auto">
-      <h1 className="text-xl mb-4">
-        {page === "login" ? "Login" : "Register"}
-      </h1>
+    <div>
+      <NavBar />
 
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        value={form.email}
-        onChange={handleChange}
-        className="border p-2 mb-2 w-full"
-      />
-      <input
-        type="password"
-        name="password"
-        placeholder="Password"
-        value={form.password}
-        onChange={handleChange}
-        className="border p-2 mb-2 w-full"
-      />
+      {/* Apply your CSS styles here */}
+      <div className="login-container">
+        <h1>{page === "login" ? "Login" : "Register"}</h1>
 
-      {page === "login" ? (
-        <button
-          onClick={handleLogin}
-          className="bg-blue-500 text-white p-2 w-full rounded"
-        >
-          Login
+        {page === "register" ? (
+          <>
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              value={form.username}
+              onChange={handleChange}
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={form.email}
+              onChange={handleChange}
+            />
+          </>
+        ) : (
+          <input
+            type="text"
+            name="identifier"
+            placeholder="Username or Email"
+            value={form.identifier}
+            onChange={handleChange}
+          />
+        )}
+
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={form.password}
+          onChange={handleChange}
+        />
+
+        <button onClick={handleSubmit}>
+          {page === "login" ? "Login" : "Register"}
         </button>
-      ) : (
-        <button
-          onClick={handleRegister}
-          className="bg-green-500 text-white p-2 w-full rounded"
-        >
-          Register
-        </button>
-      )}
 
-      <p
-        className="mt-2 text-sm cursor-pointer text-blue-700"
-        onClick={() => setPage(page === "login" ? "register" : "login")}
-      >
-        {page === "login"
-          ? "Need an account? Register"
-          : "Already have an account? Login"}
-      </p>
-
-      {message && <p className="mt-3 text-gray-700">{message}</p>}
-
-      {user && (
-        <div className="mt-4">
-          <p>Welcome, {user.email}</p>
-          <button
-            onClick={handleLogout}
-            className="bg-red-500 text-white p-2 w-full rounded"
-          >
-            Logout
-          </button>
-        </div>
-      )}
+        <p onClick={() => setPage(page === "login" ? "register" : "login")}>
+          {page === "login"
+            ? "Need an account? Register"
+            : "Already have an account? Login"}
+        </p>
+      </div>
     </div>
   );
 }
