@@ -8,5 +8,7 @@ To download the repo, you can cd into a desired directory and then type the foll
 git clone https://github.com/nwins372/Sports_Predictor.git
 ```
 
-To push to repository connect it with your local instance using:
+For Devs: To push to repository connect it with your local instance using:
+```
 git remote set-url origin git@github.com:nwins372/Sports_Predictor.git
+```
