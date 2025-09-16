@@ -1,5 +1,6 @@
 import { useState } from "react";
 import NavBar from "../components/NavBar";
+import { supabase } from "../supabaseClient";
 import "./Login.css";
 
 export default function App() {
@@ -8,23 +9,86 @@ export default function App() {
     username: "",
     email: "",
     password: "",
-    identifier: "",
+    identifier: "", // username or email
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
-    console.log("Form submitted:", form);
-    alert(`Submitted: ${JSON.stringify(form, null, 2)}`);
+  const handleSubmit = async () => {
+    try {
+      setLoading(true);
+
+      if (page === "register") {
+        // 1) Sign up with Auth (stores password securely)
+        const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+          email: form.email.trim(),
+          password: form.password,
+          options: {
+            data: { username: form.username.trim() }, // optional: saved in user_metadata
+            emailRedirectTo: window.location.origin, // optional
+          },
+        });
+        if (signUpError) throw signUpError;
+
+        const user = signUpData.user;
+        if (!user) {
+          // If email confirmation is required, user can be null until they confirm
+          alert("Check your email to confirm your account.");
+          return;
+        }
+
+        // 2) Insert profile row in public.users
+        const { error: insertError } = await supabase.from("users").insert({
+          id: user.id,
+          username: form.username.trim(),
+          email: form.email.trim(),
+        });
+        if (insertError) throw insertError;
+
+        alert("Registration successful!");
+      } else {
+        // LOGIN
+        const identifier = form.identifier.trim();
+
+        let emailForLogin = identifier;
+        if (!identifier.includes("@")) {
+          // Treat as username -> fetch email
+          const { data: rows, error: lookupError } = await supabase
+            .from("users")
+            .select("email")
+            .eq("username", identifier)
+            .limit(1)
+            .maybeSingle();
+          if (lookupError) throw lookupError;
+          if (!rows?.email) {
+            alert("Username not found.");
+            return;
+          }
+          emailForLogin = rows.email;
+        }
+
+        const { error: signInError } = await supabase.auth.signInWithPassword({
+          email: emailForLogin,
+          password: form.password,
+        });
+        if (signInError) throw signInError;
+
+        alert("Login successful!");
+      }
+    } catch (err) {
+      console.error(err);
+      alert(`Error: ${err.message ?? String(err)}`);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div>
       <NavBar />
-
-      {/* Apply your CSS styles here */}
       <div className="login-container">
         <h1>{page === "login" ? "Login" : "Register"}</h1>
 
@@ -63,8 +127,8 @@ export default function App() {
           onChange={handleChange}
         />
 
-        <button onClick={handleSubmit}>
-          {page === "login" ? "Login" : "Register"}
+        <button onClick={handleSubmit} disabled={loading}>
+          {loading ? "Please wait..." : page === "login" ? "Login" : "Register"}
         </button>
 
         <p onClick={() => setPage(page === "login" ? "register" : "login")}>
