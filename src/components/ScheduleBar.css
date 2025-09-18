@@ -1,0 +1,115 @@
+/* src/components/ScheduleBar.css */
+
+:root{
+  --sb-bg: #0b1220;        /* bar background */
+  --sb-card: #111827;      /* game rows */
+  --sb-border: #374151;    /* borders */
+  --sb-text: #e5e7eb;      /* text */
+  --sb-muted: #9ca3af;     /* muted text */
+  --sb-accent: #1f2937;    /* active pill bg */
+  --sb-blue: royalblue;      /* accent for focus */
+}
+
+/* The bar sits under your NavBar without changing NavBar positioning */
+.schedule-wrap{
+  width: 100%;
+  background: var(--sb-bg);
+  color: var(--sb-text);
+  padding: 10px 12px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+/* Top row: day controls */
+.schedule-days{
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.nav-btn{
+  background: transparent;
+  color: var(--sb-text);
+  border: 1px solid var(--sb-border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+.nav-btn:focus{ outline: 3px solid rgba(0,123,255,.35); outline-offset: 2px; }
+
+/* Horizontal scroll of day pills */
+.days-scroll{
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 6px 2px;
+  scrollbar-width: thin;
+}
+.day-pill{
+  background: transparent;
+  color: var(--sb-text);
+  border: 1px solid var(--sb-border);
+  border-radius: 999px;
+  padding: 6px 12px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.day-pill.active{
+  background: var(--sb-accent);
+  border-color: var(--sb-accent);
+}
+.day-pill:focus{ outline: 3px solid rgba(0,123,255,.35); outline-offset: 2px; }
+
+.days-actions{ display: flex; gap: 8px; }
+.pill{
+  background: transparent;
+  color: var(--sb-text);
+  border: 1px solid var(--sb-border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+.pill:focus{ outline: 3px solid rgba(0,123,255,.35); outline-offset: 2px; }
+
+/* List of games */
+.schedule-list{
+  display: grid;
+  gap: 6px;
+}
+
+/* A single clickable row */
+.game-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: var(--sb-text);
+  background: var(--sb-card);
+  border: 1px solid var(--sb-border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  transition: transform .05s ease, background .15s ease;
+}
+.game-row:hover{ transform: translateY(-1px); background: #0f172a; }
+
+.teams{ font-weight: 500; }
+.kick{ color: var(--sb-muted); }
+
+/* States */
+.skeleton, .empty{
+  background: var(--sb-card);
+  border: 1px solid var(--sb-border);
+  border-radius: 10px;
+  padding: 12px;
+  color: var(--sb-muted);
+}
+
+/* Responsive tweaks */
+@media (min-width: 900px){
+  .schedule-list{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1200px){
+  .schedule-list{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
