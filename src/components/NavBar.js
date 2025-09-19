@@ -14,8 +14,9 @@ function NavBar() {
 
       <div className="navbar-center">
         <Link to="/following" className="nav-link" id="following">Following</Link>
-        <Link to="/sports" className="nav-link" id="sports">Sports</Link>
+        <Link to="/sports">Sports</Link>
         <Link to="/login">Login</Link>
+        <Link to="/sports-news">Sports News</Link>
       </div>
 
       <div className="navbar-right">

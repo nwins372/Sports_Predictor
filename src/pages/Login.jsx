@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ import navigate hook
 import NavBar from "../components/NavBar";
 import { supabase } from "../supabaseClient";
 import "./Login.css";
@@ -12,6 +13,8 @@ export default function App() {
     identifier: "", // username or email
   });
   const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate(); // ✅ init navigation
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -27,15 +30,14 @@ export default function App() {
           email: form.email.trim(),
           password: form.password,
           options: {
-            data: { username: form.username.trim() }, // optional: saved in user_metadata
-            emailRedirectTo: window.location.origin, // optional
+            data: { username: form.username.trim() }, // saved in user_metadata
+            emailRedirectTo: window.location.origin,
           },
         });
         if (signUpError) throw signUpError;
 
         const user = signUpData.user;
         if (!user) {
-          // If email confirmation is required, user can be null until they confirm
           alert("Check your email to confirm your account.");
           return;
         }
@@ -49,11 +51,12 @@ export default function App() {
         if (insertError) throw insertError;
 
         alert("Registration successful!");
+        navigate("/sports-news"); // ✅ redirect after register
       } else {
         // LOGIN
         const identifier = form.identifier.trim();
-
         let emailForLogin = identifier;
+
         if (!identifier.includes("@")) {
           // Treat as username -> fetch email
           const { data: rows, error: lookupError } = await supabase
@@ -77,6 +80,7 @@ export default function App() {
         if (signInError) throw signInError;
 
         alert("Login successful!");
+        navigate("/sports-news"); // ✅ redirect after login
       }
     } catch (err) {
       console.error(err);
