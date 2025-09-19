@@ -1,6 +1,11 @@
 import NavBar from "../components/NavBar";
 
 function Home() {
+    const navigate = useNavigate();
+
+    const goToSportsNews = () => {
+      navigate("/sports-news");
+  };
     return (
         <>
         <div id="app-container">
@@ -12,7 +17,15 @@ function Home() {
          <main>
            <h1>Top Story: Your Team Wins Big!</h1>
            <p>Angels geting swept in the series. Is this really a suprise?</p>
-         </main>
+          {/* Sports button */}
+            <button
+              className="btn btn-primary mt-3"
+              onClick={goToSportsNews}
+            >
+              Go to Sports News
+            </button>
+          </main>
+
  
          <aside>
            <h2>Latest Scores</h2>
