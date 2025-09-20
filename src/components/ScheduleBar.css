@@ -1,0 +1,46 @@
+:root{
+  --sb-bg:#0b1220; --sb-card:#111827; --sb-border:#2f3747;
+  --sb-text:#e5e7eb; --sb-muted:#9aa3af; --sb-active:#1f2937;
+}
+
+/* smaller vertical footprint */
+.sb-wrap{
+  background:var(--sb-bg);
+  color:var(--sb-text);
+  padding:8px 10px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.sb-compact .sb-wrap{ padding:6px 8px; }
+
+/* week pills, no arrows */
+.sb-days{
+  display:flex; gap:6px; overflow-x:auto; padding-bottom:6px;
+}
+.sb-pill{
+  display:flex; flex-direction:column; align-items:center; gap:2px;
+  min-width:48px; padding:6px 8px; border-radius:10px;
+  background:transparent; color:var(--sb-text);
+  border:1px solid var(--sb-border); cursor:pointer;
+}
+.sb-pill.active{ background:var(--sb-active); border-color:var(--sb-active); }
+.sb-wd{ font-size:12px; color:var(--sb-muted); line-height:1; }
+.sb-dn{ font-size:14px; font-weight:600; line-height:1; }
+
+/* compact list with max-height so the bar stays small */
+.sb-list{
+  display:grid; gap:4px; max-height:132px; overflow:auto;
+}
+.sb-row{
+  display:flex; justify-content:space-between; align-items:center;
+  text-decoration:none; color:var(--sb-text);
+  background:var(--sb-card); border:1px solid var(--sb-border);
+  border-radius:8px; padding:6px 8px;
+}
+.sb-row:hover{ background:#0f172a; }
+.sb-teams{ font-size:13px; font-weight:500; }
+.sb-time{ font-size:12px; color:var(--sb-muted); }
+
+.sb-empty{
+  background:var(--sb-card); border:1px solid var(--sb-border);
+  border-radius:8px; padding:8px; color:var(--sb-muted); font-size:13px;
+}
