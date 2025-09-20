@@ -1,5 +1,6 @@
 import NavBar from "../components/NavBar";
 import ScheduleBar from "../components/ScheduleBar";
+import './Home.css';
 function Home() {
     return (
         <>
