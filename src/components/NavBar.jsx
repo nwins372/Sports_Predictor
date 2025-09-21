@@ -16,7 +16,6 @@ useEffect(() => {
     const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
     });
-
     return () => {
       listener.subscription.unsubscribe();
     };
@@ -34,14 +33,16 @@ useEffect(() => {
         {!session && <Link to="/login">Login</Link>}
       </div>
 
+    {/* Signout Button if logged in */}
       <div className="navbar-right">
-        <span className="icon-placeholder" id="more-features">More</span>
+          {session && ( <button onClick={async () => {
+        await supabase.auth.signOut();
+        }}> Logout </button>
+  )}
         <Link to="/search" className="icon-placeholder" id="search">
           <img src={mg} alt="Search Icon" width="30" height="30" />
         </Link>
-        {session ? (
-          <Link to="/profile" className="icon-placeholder" id="profile">Profile</Link>
-        ) : null}
+        {session ? (<Link to="/profile" className="icon-placeholder" id="profile">Profile</Link>) : null}
       </div>
     </nav>
   );

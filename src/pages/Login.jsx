@@ -1,6 +1,7 @@
 import { useState } from "react";
 import NavBar from "../components/NavBar";
 import { supabase } from "../supabaseClient";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 export default function App() {
@@ -9,9 +10,10 @@ export default function App() {
     username: "",
     email: "",
     password: "",
-    identifier: "", // username or email
+    identifier: "",
   });
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -22,25 +24,20 @@ export default function App() {
       setLoading(true);
 
       if (page === "register") {
-        // 1) Sign up with Auth (stores password securely)
+        // Sign up with Auth 
         const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
           email: form.email.trim(),
           password: form.password,
           options: {
-            data: { username: form.username.trim() }, // optional: saved in user_metadata
-            emailRedirectTo: window.location.origin, // optional
+            data: { username: form.username.trim() },
+            emailRedirectTo: window.location.origin, 
           },
         });
         if (signUpError) throw signUpError;
 
         const user = signUpData.user;
-        if (!user) {
-          // If email confirmation is required, user can be null until they confirm
-          alert("Check your email to confirm your account.");
-          return;
-        }
 
-        // 2) Insert profile row in public.users
+        // Insert profile row in public.users
         const { error: insertError } = await supabase.from("users").insert({
           id: user.id,
           username: form.username.trim(),
@@ -55,7 +52,7 @@ export default function App() {
 
         let emailForLogin = identifier;
         if (!identifier.includes("@")) {
-          // Treat as username -> fetch email
+          // fetch user by email
           const { data: rows, error: lookupError } = await supabase
             .from("users")
             .select("email")
@@ -73,16 +70,35 @@ export default function App() {
         const { error: signInError } = await supabase.auth.signInWithPassword({
           email: emailForLogin,
           password: form.password,
+          
         });
-        if (signInError) throw signInError;
-
+        if (signInError) {
+          throw signInError;
+        }
+        // Alerts user of successful login, clears form, and redirects to home page
+        // - Winston
         alert("Login successful!");
+        setForm({
+          username: "",
+          email: "",
+          password: "",
+          identifier: "",
+        });
+        navigate("/");
       }
     } catch (err) {
+
+      // Clear form if login fails
       console.error(err);
       alert(`Error: ${err.message ?? String(err)}`);
     } finally {
       setLoading(false);
+          setForm({
+          username: "",
+          email: "",
+          password: "",
+          identifier: "",
+        });
     }
   };
 
@@ -92,6 +108,7 @@ export default function App() {
       <div className="login-container">
         <h1>{page === "login" ? "Login" : "Register"}</h1>
 
+        {/* If user is on register page, also show the username field */}
         {page === "register" ? (
           <>
             <input
