@@ -5,6 +5,7 @@ function Home() {
     return (
         <>
         <div id="app-container">
+        {/* NavBar and ScheduleBar always at the top*/}
         <NavBar />
         <ScheduleBar />
        <header>

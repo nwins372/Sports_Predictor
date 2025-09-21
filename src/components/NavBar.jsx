@@ -4,23 +4,19 @@ import './NavBar.css';
 import mg from '../assets/mag_glass.png';
 import { supabase } from "../supabaseClient";
 
-function NavBar() {
+export default function NavBar() {
 const [session, setSession] = useState(null);
 useEffect(() => {
-    // Check session on mount
+    // Check sessions
     supabase.auth.getSession().then(({ data }) => {
       setSession(data.session);
     });
 
-    // Listen for changes (login, logout)
+    // Listener checks for whether user logs in or out
     const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
     });
-    return () => {
-      listener.subscription.unsubscribe();
-    };
   }, []);
-
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -35,9 +31,7 @@ useEffect(() => {
 
     {/* Signout Button if logged in */}
       <div className="navbar-right">
-          {session && ( <button onClick={async () => {
-        await supabase.auth.signOut();
-        }}> Logout </button>
+          {session && ( <button onClick={async () => { await supabase.auth.signOut();}}> Logout </button>
   )}
         <Link to="/search" className="icon-placeholder" id="search">
           <img src={mg} alt="Search Icon" width="30" height="30" />
@@ -47,5 +41,3 @@ useEffect(() => {
     </nav>
   );
 }
-
-export default NavBar;

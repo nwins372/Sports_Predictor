@@ -1,5 +1,3 @@
-
-
 /* Container Styling */
 .sb-wrap{
   background: rgb(33, 36, 49);
@@ -17,35 +15,28 @@
   margin-bottom:10px;
 }
 
-.sb-btn{
-  border:1px solid #2f3747;
-  background:transparent;
-  color:var(--sb-text);
-  padding:6px 10px;
-  border-radius:8px;
-  cursor:pointer;
-}
 .sb-date-input{
   color: white;
   background:#111827;
-  border:1px solid #2f3747; border-radius:6px; padding:6px 8px;
+  border:1px solid #2f3747; 
+  padding:8px 8px;
 }
 
 /* Cards styling */
 .sb-cards{
+  overflow-x:auto;
   display:flex;
   gap:8px;
-  overflow-x:auto;
   padding-bottom:4px;
 }
 .sb-card{
-  flex:0 0 auto;
-  min-width:260px;
-  background:var(--sb-card);
+  flex: 0 0 auto;
+  min-width:200px;
+  background: rgb(90, 89, 89);
   border:1px solid white;
   border-radius:10px;
   padding:10px 12px;
-  color:inherit;
+  color:white;
   text-decoration:none;
 }
 
@@ -56,6 +47,8 @@
   align-items:center;
   margin-bottom:4px;
 }
+
+/* Card text style */
 .sb-teams{ 
     display:flex; align-items:center; gap:8px; 
 }
@@ -73,12 +66,4 @@
 }
 .sb-venue{ 
     font-size:12px; 
-}
-
-.sb-state{
-  background:var(--sb-card);
-  border:1px solid var(--sb-border);
-  border-radius:10px;
-  padding:10px;
-  color:var(--sb-muted);
 }

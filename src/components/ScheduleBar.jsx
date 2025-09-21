@@ -7,8 +7,12 @@ const ymd = (d) => d.toISOString().slice(0, 10); // converts date into form YYYY
 const parseUtc = (s) => new Date(s.replace(" ", "T"));
 
 // Formats ISO date string into local time
-const fmtLocalTime = (isoUtc) =>
-  new Intl.DateTimeFormat(undefined, { hour: "numeric", minute: "2-digit" })
+const fmtLocalTime = (isoUtc) => 
+    new Intl.DateTimeFormat(
+        undefined, 
+        { 
+            hour: "numeric", minute: "2-digit" 
+        })
     .format(new Date(isoUtc));
 
 export default function ScheduleBar() {
@@ -54,7 +58,6 @@ export default function ScheduleBar() {
         </h2>
 
         <div className="sb-actions">
-          <button className="sb-btn" onClick={() => setShowPicker(v => !v)}>Pick date</button>
           {showPicker && (
             <input
               type="date"
@@ -62,9 +65,9 @@ export default function ScheduleBar() {
               value={key}
               onChange={(e) => {
                 const [yy, mm, dd] = e.target.value.split("-").map(Number);
-                const next = new Date(yy, mm - 1, dd);
-                next.setHours(0,0,0,0);
-                setSelected(next);
+                const chosenDate = new Date(yy, mm - 1, dd);
+                // change calendar date to selected date
+                setSelected(chosenDate);
                 setShowPicker(true);
               }}
             />
