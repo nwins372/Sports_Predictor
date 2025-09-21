@@ -2,18 +2,14 @@ import { useMemo, useState } from "react";
 import sportSchedule from "../assets/nfl25.json";
 import "./ScheduleBar.css";
 
+ // converts date into form YYYY-MM-DD
+const ymd = (d) => d.toISOString().slice(0, 10);
 
-const ymd = (d) => d.toISOString().slice(0, 10); // converts date into form YYYY-MM-DD
+// Adds T so date follows the YYYY-MMDDTHH:MM:SSZ format
 const parseUtc = (s) => new Date(s.replace(" ", "T"));
 
 // Formats ISO date string into local time
-const fmtLocalTime = (isoUtc) => 
-    new Intl.DateTimeFormat(
-        undefined, 
-        { 
-            hour: "numeric", minute: "2-digit" 
-        })
-    .format(new Date(isoUtc));
+const fmtLocalTime = (isoUtc) => new Date(isoUtc).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
 
 export default function ScheduleBar() {
 
@@ -23,9 +19,8 @@ export default function ScheduleBar() {
     x.setHours(0,0,0,0);
     return x;
   });
-  const [showPicker, setShowPicker] = useState(true);
 
-  const byDate = useMemo(() => {
+  const processGames = useMemo(() => {
     const gameCards = {};
     sportSchedule.forEach((game, i) => {
       const d = parseUtc(game.DateUtc); 
@@ -47,18 +42,17 @@ export default function ScheduleBar() {
   }, []);
 
   const key = ymd(selected);
-  const games = byDate[key] || [];
+  const games = processGames[key] || [];
 
   return (
-    <section className="sb-wrap">
+    <div className="sb-wrap">
       <div className="sb-top">
-        <h2 >
+        <h3 >
         {/*Schedule Day, Month, Day of Month (Number) */}
         Schedule — {selected.toLocaleDateString(undefined, { weekday: "long", month: "short", day: "numeric" })}
-        </h2>
+        </h3>
 
         <div className="sb-actions">
-          {showPicker && (
             <input
               type="date"
               className="sb-date-input"
@@ -68,10 +62,8 @@ export default function ScheduleBar() {
                 const chosenDate = new Date(yy, mm - 1, dd);
                 // change calendar date to selected date
                 setSelected(chosenDate);
-                setShowPicker(true);
               }}
             />
-          )}
         </div>
       </div>
         {/*Prints out each game on the selected date*/}
@@ -84,7 +76,7 @@ export default function ScheduleBar() {
               <div className="sb-card-top">
                 <div className="sb-teams">
                   <div className="sb-team">{g.awayTeam}</div>
-                  <div className="sb-at">@</div>
+                  <div>@</div>
                   <div className="sb-team">{g.homeTeam}</div>
                 </div>
                 <div className="sb-right">
@@ -101,6 +93,6 @@ export default function ScheduleBar() {
           ))
         )}
       </div>
-    </section>
+    </div>
   );
 }

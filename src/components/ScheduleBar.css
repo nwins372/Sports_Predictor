@@ -53,13 +53,13 @@
     display:flex; align-items:center; gap:8px; 
 }
 .sb-team{ 
-    font-size:18px; font-weight:900; 
+    font-size:20px; font-weight:900; 
 }
 .sb-right{ 
     text-align:right; 
 }
 .sb-time{ 
-    font-size:13px; 
+    font-size:15px; 
 }
 .sb-score{ 
     font-size:14px; 
