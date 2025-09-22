@@ -1,4 +1,4 @@
-import { Link, Routes, Route, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import './NavBar.css'; 
 import mg from '../assets/mag_glass.png';
@@ -13,9 +13,13 @@ useEffect(() => {
     });
 
     // Listener checks for whether user logs in or out
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+    const subscription = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
     });
+    // cleanup
+    return () => {
+      try { subscription?.data?.unsubscribe(); } catch (e) {}
+    };
   }, []);
   return (
     <nav className="navbar">
@@ -36,7 +40,10 @@ useEffect(() => {
         <Link to="/search" className="icon-placeholder" id="search">
           <img src={mg} alt="Search Icon" width="30" height="30" />
         </Link>
-        {session ? (<Link to="/profile" className="icon-placeholder" id="profile">Profile</Link>) : null}
+  {/* Profile link shown always */}
+  <Link to="/profile" className="icon-placeholder" id="profile">Profile</Link>
+        {/* Settings link always available */}
+        <Link to="/settings" className="nav-link" id="settings">Settings</Link>
       </div>
     </nav>
   );

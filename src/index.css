@@ -11,3 +11,49 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* ensure the app uses the theme variables; defaults are defined in Settings.css */
+:root {
+  --bg: #ffffff;
+  --text: #111827;
+}
+
+html, body, #root { height: 100%; }
+
+/* full theme variables (moved here so they apply globally) */
+:root {
+  --bg: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --toggle-bg: #e5e7eb;
+  /* neutral surface used for cards and panels (light mode slightly off-white) */
+  --surface: #ffffff;
+  /* card shadow and border for light theme */
+  --card-shadow: 0 6px 18px rgba(2,6,23,0.06);
+  --surface-border: rgba(0,0,0,0.04);
+  /* brand */
+  --brand-bg: #c62828; /* red */
+  --brand-text: #ffffff;
+}
+
+:root[data-theme='dark'] {
+  --bg: #0b1220;
+  --text: #e6eef8;
+  --muted: #9aa8bf;
+  --accent: #60a5fa;
+  --toggle-bg: #273144;
+  /* neutral surface for dark mode cards */
+  --surface: #0f1724;
+  --card-shadow: 0 6px 18px rgba(2,6,23,0.14);
+  --surface-border: rgba(255,255,255,0.04);
+  /* brand for dark theme - slightly darker red */
+  --brand-bg: #8b1f1f;
+  --brand-text: #ffffff;
+}
+
+/* Smooth transitions for theme changes */
+html, body, #app-container, .profile-box, .navbar, .site-title {
+  transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
