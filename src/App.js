@@ -5,11 +5,8 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
-import SportsNewsPage from "./pages/SportsNewsPage";
-import Sports from "./pages/Sports";
-import ProfileSettings from "./pages/ProfileSettings"; 
-import { supabase } from "./supabaseClient";
-import { useState, useEffect } from 'react';
+import Settings from './pages/Settings';
+import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
 const [session, setSession] = useState(null);  
@@ -29,16 +26,16 @@ useEffect(() => {
   }, []);
 
   return (
+    <ThemeProvider>
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
-      <Route path="/sports-news" element={<SportsNewsPage />} />
-      {!session && <Route path="/profile-settings" element={<ProfileSettings />} ></Route> }
-        
+      <Route path="/settings" element={<Settings />} />
     </Routes>
     </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
