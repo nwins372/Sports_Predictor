@@ -13,6 +13,9 @@ import { useState, useEffect } from 'react';
 
 function App() {
 const [session, setSession] = useState(null);  
+
+document.title = "Sports Predictor";
+
 useEffect(() => {
     // Check sessions
     supabase.auth.getSession().then(({ data }) => {
