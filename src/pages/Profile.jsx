@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import NavBar from '../components/NavBar';
-import './Profile.css';
+import './profile.css';
 import { supabase } from '../supabaseClient';
 import SportsSelection from './SportSelectionPage';
 import { Link } from 'react-router-dom';

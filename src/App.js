@@ -7,6 +7,18 @@ import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import { ThemeProvider } from './context/ThemeContext';
+import { supabase } from './supabaseClient';
+import { useEffect, useState } from 'react';
+import SportsNewsPage from './pages/SportsNewsPage';
+import ProfileSettings from './pages/ProfileSettings';
+
+const isLoggedIn = supabase.auth.getSession().then(({ data: { session } }) => !!session);
+const user = supabase.auth.getUser().then(({ data: { user } }) => user);
+
+const handleUpdate = (updatedInfo) => {
+  // Handle the updated user information here
+  console.log('User info updated:', updatedInfo);
+};
 
 function App() {
 const [session, setSession] = useState(null);  
@@ -33,6 +45,17 @@ useEffect(() => {
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/settings" element={<Settings />} />
+      <Route path="/sports-news" element={<SportsNewsPage />} />
+        <Route
+          path="/profile-settings"
+          element={
+            <ProfileSettings
+              isLoggedIn={isLoggedIn}
+              user={user}
+              onUpdate={handleUpdate}
+            />
+          }
+        />
     </Routes>
     </BrowserRouter>
     </ThemeProvider>
