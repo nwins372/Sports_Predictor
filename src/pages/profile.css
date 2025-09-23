@@ -4,6 +4,7 @@
   align-items: center;
   padding: 2rem;
   font-family: Arial, sans-serif;
+  color: black;
 }
 
 .profile-box {
@@ -58,4 +59,8 @@
 
 .profile-form button:hover {
   background-color: #0056b3;
+}
+
+h1 {
+    color: white;
 }

@@ -370,8 +370,8 @@
     "HomeTeam": "Carolina Panthers",
     "AwayTeam": "Atlanta Falcons",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 30,
+    "AwayTeamScore": 0
   },
   {
     "MatchNumber": 35,
@@ -381,8 +381,8 @@
     "HomeTeam": "Cleveland Browns",
     "AwayTeam": "Green Bay Packers",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 13,
+    "AwayTeamScore": 10
   },
   {
     "MatchNumber": 36,
@@ -392,8 +392,8 @@
     "HomeTeam": "Jacksonville Jaguars",
     "AwayTeam": "Houston Texans",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 17,
+    "AwayTeamScore": 10
   },
   {
     "MatchNumber": 37,
@@ -403,8 +403,8 @@
     "HomeTeam": "Minnesota Vikings",
     "AwayTeam": "Cincinnati Bengals",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 48,
+    "AwayTeamScore": 10
   },
   {
     "MatchNumber": 38,
@@ -414,8 +414,8 @@
     "HomeTeam": "New England Patriots",
     "AwayTeam": "Pittsburgh Steelers",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 14,
+    "AwayTeamScore": 21
   },
   {
     "MatchNumber": 39,
@@ -425,8 +425,8 @@
     "HomeTeam": "Philadelphia Eagles",
     "AwayTeam": "Los Angeles Rams",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 33,
+    "AwayTeamScore": 26
   },
   {
     "MatchNumber": 40,
@@ -436,8 +436,8 @@
     "HomeTeam": "Tampa Bay Buccaneers",
     "AwayTeam": "New York Jets",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 29,
+    "AwayTeamScore": 27
   },
   {
     "MatchNumber": 41,
@@ -447,8 +447,8 @@
     "HomeTeam": "Tennessee Titans",
     "AwayTeam": "Indianapolis Colts",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 20,
+    "AwayTeamScore": 41
   },
   {
     "MatchNumber": 42,
@@ -458,8 +458,8 @@
     "HomeTeam": "Washington Commanders",
     "AwayTeam": "Las Vegas Raiders",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 41,
+    "AwayTeamScore": 24
   },
   {
     "MatchNumber": 43,
@@ -469,8 +469,8 @@
     "HomeTeam": "Los Angeles Chargers",
     "AwayTeam": "Denver Broncos",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 23,
+    "AwayTeamScore": 20
   },
   {
     "MatchNumber": 44,
@@ -480,8 +480,8 @@
     "HomeTeam": "Seattle Seahawks",
     "AwayTeam": "New Orleans Saints",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 44,
+    "AwayTeamScore": 13
   },
   {
     "MatchNumber": 45,
@@ -491,8 +491,8 @@
     "HomeTeam": "Chicago Bears",
     "AwayTeam": "Dallas Cowboys",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 31,
+    "AwayTeamScore": 14
   },
   {
     "MatchNumber": 46,
@@ -502,8 +502,8 @@
     "HomeTeam": "San Francisco 49ers",
     "AwayTeam": "Arizona Cardinals",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 16,
+    "AwayTeamScore": 15
   },
   {
     "MatchNumber": 47,
@@ -513,8 +513,8 @@
     "HomeTeam": "New York Giants",
     "AwayTeam": "Kansas City Chiefs",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 9,
+    "AwayTeamScore": 22
   },
   {
     "MatchNumber": 48,

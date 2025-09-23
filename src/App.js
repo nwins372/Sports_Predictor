@@ -8,8 +8,23 @@ import Profile from './pages/Profile';
 import SportsNewsPage from "./pages/SportsNewsPage";
 import Sports from "./pages/Sports";
 import ProfileSettings from "./pages/ProfileSettings"; 
+import { supabase } from "./supabaseClient";
+import { useState, useEffect } from 'react';
 
 function App() {
+const [session, setSession] = useState(null);  
+useEffect(() => {
+    // Check sessions
+    supabase.auth.getSession().then(({ data }) => {
+      setSession(data.session);
+    });
+
+    // Listener checks for whether user logs in or out
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+  }, []);
+
   return (
     <BrowserRouter>
     <Routes>
@@ -17,16 +32,8 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/sports-news" element={<SportsNewsPage />} />
-        <Route
-          path="/profile-settings"
-          element={
-            <ProfileSettings
-              isLoggedIn={isLoggedIn}
-              user={user}
-              onUpdate={handleUpdate}
-            />
-          }
-        />
+      {!session && <Route path="/profile-settings" element={<ProfileSettings />} ></Route> }
+        
     </Routes>
     </BrowserRouter>
   );
