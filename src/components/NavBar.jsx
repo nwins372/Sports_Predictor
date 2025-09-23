@@ -32,17 +32,18 @@ useEffect(() => {
         <Link to="/sports" className="nav-link" id="sports">Sports</Link>
         <Link to="/sports-news">Sports News</Link>
         {!session && <Link to="/login">Login</Link>}
+        <Link to="/search" className="icon-placeholder" id="search">
+          <img src={mg} alt="Search Icon" width="30" height="30" />
+        </Link>
       </div>
 
     {/* Signout Button if logged in */}
       <div className="navbar-right">
           {session && ( <button onClick={async () => { await supabase.auth.signOut();}}> Logout </button>
   )}
-        <Link to="/search" className="icon-placeholder" id="search">
-          <img src={mg} alt="Search Icon" width="30" height="30" />
-        </Link>
+
   {/* Profile link shown always */}
-  <Link to="/profile" className="icon-placeholder" id="profile">Profile</Link>
+  { session && <Link to="/profile" className="icon-placeholder" id="profile">Profile</Link> }
         {/* Settings link always available */}
         <Link to="/settings" className="nav-link" id="settings">Settings</Link>
       </div>
