@@ -26,6 +26,7 @@ useEffect(() => {
       <div className="navbar-center">
         <Link to="/following" className="nav-link" id="following">Following</Link>
         <Link to="/sports" className="nav-link" id="sports">Sports</Link>
+        <Link to="/sports-news">Sports News</Link>
         {!session && <Link to="/login">Login</Link>}
       </div>
 
