@@ -21,6 +21,11 @@
   padding:8px 8px;
 }
 
+select.sb-date-input {
+  border-radius: 6px;
+  padding-right: 24px; 
+}
+
 /* Cards styling */
 .sb-cards{
   overflow-x:auto;

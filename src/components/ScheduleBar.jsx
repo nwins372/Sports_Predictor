@@ -1,45 +1,60 @@
 import { useMemo, useState } from "react";
-import sportSchedule from "../assets/nfl25.json";
+import nflSchedule from "../assets/nfl25.json";
+import nbaSchedule from "../assets/nba25.json";
+import mlbSchedule from "../assets/mlb25.json";
 import "./ScheduleBar.css";
 
- // converts date into form YYYY-MM-DD
+// helpers
 const ymd = (d) => d.toISOString().slice(0, 10);
-
-// Adds T so date follows the YYYY-MMDDTHH:MM:SSZ format
 const parseUtc = (s) => new Date(s.replace(" ", "T"));
-
-// Formats ISO date string into local time
-const fmtLocalTime = (isoUtc) => new Date(isoUtc).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+const fmtLocalTime = (isoUtc) =>
+  new Date(isoUtc).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
 
 export default function ScheduleBar() {
 
-  // Intializes date picker to beginning of current day
+  const [sport, setSport] = useState("nfl"); 
+
   const [selected, setSelected] = useState(() => {
-    const x = new Date();
-    x.setHours(0,0,0,0);
-    return x;
+    const x = new Date(); x.setHours(0,0,0,0); return x;
   });
 
+  // Choose dataset based on sport
+  if (sport === "nba") {
+    var scheduleData = nbaSchedule;
+  } else if (sport === "mlb") {
+    var scheduleData = mlbSchedule;
+  } else {
+    var scheduleData = nflSchedule;
+  }
+
+  // Build { "YYYY-MM-DD": [games...] } for the chosen sport
   const processGames = useMemo(() => {
     const gameCards = {};
-    sportSchedule.forEach((game, i) => {
-      const d = parseUtc(game.DateUtc); 
-      if (isNaN(d)) return; // skip bad rows
-      // Converts date to usable YYYY-MM-DD format
+    scheduleData.forEach((game, i) => {
+      
+      const dateStr = game.DateUtc || game.DateUTC || game.dateUtc || game.date; 
+      const d = parseUtc(dateStr);
+      if (isNaN(d)) return;
+
       const key = ymd(new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate())));
-      // add each game to the gameCards object as a key-value pair
       (gameCards[key] ||= []).push({
-        id: game.MatchNumber ?? `${key}-${game.AwayTeam}-${game.HomeTeam}-${i}`,
-        homeTeam: game.HomeTeam,
-        awayTeam: game.AwayTeam,
-        homeScore: game.HomeTeamScore ?? null,
-        awayScore: game.AwayTeamScore ?? null,
-        venue: game.Location ?? null,
+        id: game.MatchNumber ?? game.GameId ?? `${key}-${game.AwayTeam}-${game.HomeTeam}-${i}`,
+        homeTeam: game.HomeTeam ?? game.homeTeam,
+        awayTeam: game.AwayTeam ?? game.awayTeam,
+        homeScore: game.HomeTeamScore ?? game.homeScore ?? null,
+        awayScore: game.AwayTeamScore ?? game.awayScore ?? null,
+        venue: game.Location ?? game.venue ?? null,
         dateUtcISO: d.toISOString(),
       });
     });
+
+    // Sort by kickoff
+    Object.values(gameCards).forEach(list =>
+      list.sort((a,b)=> a.dateUtcISO.localeCompare(b.dateUtcISO))
+    );
+
     return gameCards;
-  }, []);
+  }, [scheduleData]);
 
   const key = ymd(selected);
   const games = processGames[key] || [];
@@ -47,32 +62,46 @@ export default function ScheduleBar() {
   return (
     <div className="sb-wrap">
       <div className="sb-top">
-        <h3 >
-        {/*Schedule Day, Month, Day of Month (Number) */}
-        Schedule — {selected.toLocaleDateString(undefined, { weekday: "long", month: "short", day: "numeric" })}
+        <h3>
+          {sport.toUpperCase()} Schedule —{" "}
+          {selected.toLocaleDateString(undefined, { weekday: "long", month: "short", day: "numeric" })}
         </h3>
 
-        <div className="sb-actions">
-            <input
-              type="date"
+        <div className="sb-actions" style={{ display: "flex", gap: 8, alignItems: "center" }}>
+          <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
+            <span style={{ fontSize: 12, opacity: .8 }}>Sport</span>
+            <select
+              value={sport}
+              onChange={(e) => setSport(e.target.value)}
               className="sb-date-input"
-              value={key}
-              onChange={(e) => {
-                const [yy, mm, dd] = e.target.value.split("-").map(Number);
-                const chosenDate = new Date(yy, mm - 1, dd);
-                // change calendar date to selected date
-                setSelected(chosenDate);
-              }}
-            />
+            >
+              <option value="nfl">NFL</option>
+              <option value="nba">NBA</option>
+              <option value="mlb">MLB</option>
+            </select>
+          </label>
+
+          {/* Date picker */}
+          <input
+            type="date"
+            className="sb-date-input"
+            value={key}
+            onChange={(e) => {
+              const [yy, mm, dd] = e.target.value.split("-").map(Number);
+              const chosenDate = new Date(yy, mm - 1, dd);
+              chosenDate.setHours(0,0,0,0);     
+              setSelected(chosenDate);
+            }}
+          />
         </div>
       </div>
-        {/*Prints out each game on the selected date*/}
+
       <div className="sb-cards">
         {games.length === 0 ? (
-          <div>No games on this date.</div>
+          <div className="sb-state">No games on this date.</div>
         ) : (
-          games.map(g => (
-            <a key={g.id} href={`/game/${g.id}`} className="sb-card">
+          games.map((g) => (
+            <a key={g.id} href={`/game/${sport}/${g.id}`} className="sb-card">
               <div className="sb-card-top">
                 <div className="sb-teams">
                   <div className="sb-team">{g.awayTeam}</div>
@@ -80,7 +109,6 @@ export default function ScheduleBar() {
                   <div className="sb-team">{g.homeTeam}</div>
                 </div>
                 <div className="sb-right">
-                 {/* If scores are available, show them; otherwise, show the game time */}
                   {g.homeScore != null && g.awayScore != null ? (
                     <div className="sb-score">({g.awayScore}–{g.homeScore})</div>
                   ) : (
