@@ -77,7 +77,6 @@ export default function App() {
         }
         // Alerts user of successful login, clears form, and redirects to home page
         // - Winston
-        alert("Login successful!");
         setForm({
           username: "",
           email: "",
