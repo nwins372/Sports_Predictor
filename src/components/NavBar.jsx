@@ -30,20 +30,20 @@ useEffect(() => {
       <div className="navbar-center">
         <Link to="/following" className="nav-link" id="following">Following</Link>
         <Link to="/sports" className="nav-link" id="sports">Sports</Link>
-        <Link to="/sports-news">Sports News</Link>
-        {!session && <Link to="/login">Login</Link>}
-        <Link to="/search" className="icon-placeholder" id="search">
+        <Link to="/sports-news" className="nav-link">Sports News</Link>
+        {!session && <Link to="/login" id="login-button">Login</Link>}
+        <Link to="/search" className="nav-link" id="search">
           <img src={mg} alt="Search Icon" width="30" height="30" />
         </Link>
       </div>
 
     {/* Signout Button if logged in */}
       <div className="navbar-right">
-          {session && ( <button onClick={async () => { await supabase.auth.signOut();}}> Logout </button>
+          {session && ( <button onClick={async () => { await supabase.auth.signOut();}} className="nav-link"> Logout </button>
   )}
 
   {/* Profile link shown always */}
-  { session && <Link to="/profile" className="icon-placeholder" id="profile">Profile</Link> }
+  { session && <Link to="/profile" className="nav-link" id="profile">Profile</Link> }
         {/* Settings link always available */}
         <Link to="/settings" className="nav-link" id="settings">Settings</Link>
       </div>

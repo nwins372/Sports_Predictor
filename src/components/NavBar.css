@@ -1,74 +1,102 @@
-.navbar {
-    display: flex;
-    align-items: stretch;
-    justify-content: space-between;
-  background-color: var(--bg);
-    height: 3rem;
-    /* box-shadow: 0 2px 4px black; */
-    padding: 0;
-  }
-  
-  .navbar-left {
-    padding: 0px 20px;
-    display: flex;
-    align-items: center;
-    /* brand box behind title */
-    background: var(--brand-bg);
-    border-radius: 6px;
-    margin: 0.35rem 0.5rem;
-    height: 2rem;
-    align-items: center;
-    display: flex;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
 
-  .site-title {
-    color: var(--brand-text);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 24px;
-  }
-  
-  .navbar-center {
-    display: flex;
-    gap: 3rem;
-    align-items:center;
-    justify-content: space-between;
-    padding: 0px 6rem 1rem 3rem;
-  }
+.navbar{
+  background: rgb(51, 47, 47);
+  color: var(--nav-text);
+  border-bottom: 1px solid var(--nav-border);
+  padding: 10px 14px;
+}
 
-  .navbar-center:hover {
-    color:black;
-  }
+.navbar,
+.navbar > *{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-  #following:hover {
-    background-color: lightgray;
-  }
+.navbar-left,
+.navbar-center,
+.navbar-right{
+  flex: 1 1 auto;
+}
+.navbar-left{ 
+  justify-content: flex-start; 
+}
+.navbar-center{ 
+  justify-content: center; 
+  flex-wrap: wrap; 
+}
+.navbar-right{ 
+  justify-content: flex-end; 
+  gap: 8px; 
+}
 
-  #sports:hover {
-    background-color: lightgray;
-  }
+.site-title{
+  display: inline-block;         
+  color: white;
+  background: linear-gradient(135deg, #dc2626, #b91c1c); 
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+  padding: 6px 12px;
+  border-radius: 8px;                    
+  text-decoration: none;
+  box-shadow: 0 1px 1px black;
+}
 
-  #login:hover {
-    background-color: lightgray;
-  }
-  
-  .nav-link {
-    text-decoration: none;
-    color: var(--text);
-    font-weight: 500;
-    font-size: 18px;
-  }
-  
-  .navbar-right {
-    display: flex;
-    gap: 15px;
-    padding-right: 1rem;
-  }
-  
-  .icon-placeholder {
-    font-size: 18px;
-    color: var(--muted);
-  }
-  
+.site-title:hover {
+  background: linear-gradient(135deg, #ef4444, #dc2626); 
+  transform: translateY(-2px);                          
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);                
+}
+
+.nav-link{
+  color: whitesmoke;
+  text-decoration: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+  position: relative;
+  transition: background .15s ease, color .15s ease;
+}
+
+.nav-link:hover{
+  transform: translateY(-2px);                          
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);    
+}
+
+#login-button{
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+.nav-link:hover,
+.icon-placeholder:hover{
+  background: rgba(255,255,255,.04);
+}
+
+.icon-placeholder{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 36px;
+  min-height: 36px;
+}
+.navbar-right button{
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+.navbar-right button:active{
+  transform: translateY(1px);
+}
+
