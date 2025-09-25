@@ -4,7 +4,6 @@ import nbaSchedule from "../assets/nba25.json";
 import mlbSchedule from "../assets/mlb25.json";
 import "./ScheduleBar.css";
 
-// helpers
 const ymd = (d) => d.toISOString().slice(0, 10);
 const parseUtc = (s) => new Date(s.replace(" ", "T"));
 const fmtLocalTime = (isoUtc) =>
@@ -19,12 +18,11 @@ export default function ScheduleBar() {
   });
 
   // Choose dataset based on sport
-  if (sport === "nba") {
-    var scheduleData = nbaSchedule;
-  } else if (sport === "mlb") {
-    var scheduleData = mlbSchedule;
-  } else {
-    var scheduleData = nflSchedule;
+  switch (sport) {
+    case "nfl": var scheduleData = nflSchedule; break;
+    case "nba": var scheduleData = nbaSchedule; break;
+    case "mlb": var scheduleData = mlbSchedule; break;
+    default: var scheduleData = []; break;
   }
 
   // Build { "YYYY-MM-DD": [games...] } for the chosen sport
@@ -47,11 +45,6 @@ export default function ScheduleBar() {
         dateUtcISO: d.toISOString(),
       });
     });
-
-    // Sort by kickoff
-    Object.values(gameCards).forEach(list =>
-      list.sort((a,b)=> a.dateUtcISO.localeCompare(b.dateUtcISO))
-    );
 
     return gameCards;
   }, [scheduleData]);
