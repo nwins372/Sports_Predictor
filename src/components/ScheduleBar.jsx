@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import nflSchedule from "../assets/nfl25.json";
 import nbaSchedule from "../assets/nba25.json";
 import mlbSchedule from "../assets/mlb25.json";
@@ -14,11 +14,20 @@ export default function ScheduleBar() {
     return localStorage.getItem("selectedSport") || "nfl";
   });
 
-  const handleSportChange = (e) => {
-    const newSport = e.target.value;
-    setSport(newSport);
-    localStorage.setItem("selectedSport", newSport);
-  };
+  // instantly react to changes from SportsSelection
+  useEffect(() => {
+    const updateSport = (e) => {
+      if (e.detail) {
+        setSport(e.detail); // ✅ use event detail directly
+      } else {
+        const saved = localStorage.getItem("selectedSport") || "nfl";
+        setSport(saved);
+      }
+    };
+
+    window.addEventListener("sportChanged", updateSport);
+    return () => window.removeEventListener("sportChanged", updateSport);
+  }, []);
 
   const [selected, setSelected] = useState(() => {
     const x = new Date();
@@ -26,6 +35,7 @@ export default function ScheduleBar() {
     return x;
   });
 
+  // pick correct schedule JSON
   let scheduleData;
   switch (sport) {
     case "nfl":
@@ -51,16 +61,18 @@ export default function ScheduleBar() {
 
       const key = ymd(new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate())));
       (gameCards[key] ||= []).push({
-        id: game.MatchNumber ?? game.GameId ?? `${key}-${game.AwayTeam}-${game.HomeTeam}-${i}`,
-        homeTeam: game.HomeTeam ?? game.homeTeam,
-        awayTeam: game.AwayTeam ?? game.awayTeam,
-        homeScore: game.HomeTeamScore ?? game.homeScore ?? null,
-        awayScore: game.AwayTeamScore ?? game.awayScore ?? null,
-        venue: game.Location ?? game.venue ?? null,
+        id:
+          game.MatchNumber ??
+          game.GameId ??
+          `${key}-${game.AwayTeam ?? game.awayPlayer}-${game.HomeTeam ?? game.homePlayer}-${i}`,
+        homeTeam: game.HomeTeam ?? game.homeTeam ?? game.homePlayer ?? "Home",
+        awayTeam: game.AwayTeam ?? game.awayTeam ?? game.awayPlayer ?? "Away",
+        homeScore: game.HomeTeamScore ?? game.homeScore ?? game.homeSets ?? null,
+        awayScore: game.AwayTeamScore ?? game.awayScore ?? game.awaySets ?? null,
+        venue: game.Location ?? game.venue ?? game.tournament ?? null,
         dateUtcISO: d.toISOString(),
       });
     });
-
     return gameCards;
   }, [scheduleData]);
 
@@ -82,7 +94,17 @@ export default function ScheduleBar() {
         <div className="sb-actions" style={{ display: "flex", gap: 8, alignItems: "center" }}>
           <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
             <span style={{ fontSize: 12, opacity: 0.8 }}>Sport</span>
-            <select value={sport} onChange={handleSportChange} className="sb-date-input">
+            <select
+              value={sport}
+              onChange={(e) => {
+                const newSport = e.target.value;
+                setSport(newSport);
+                localStorage.setItem("selectedSport", newSport);
+                // ✅ fire event with detail
+                window.dispatchEvent(new CustomEvent("sportChanged", { detail: newSport }));
+              }}
+              className="sb-date-input"
+            >
               <option value="nfl">NFL</option>
               <option value="nba">NBA</option>
               <option value="mlb">MLB</option>
