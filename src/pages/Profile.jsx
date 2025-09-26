@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import NavBar from '../components/NavBar';
-import './profile.css';
+import './Profile.css';
 import { supabase } from '../supabaseClient';
 import SportsSelection from './SportSelectionPage';
 import { Link } from 'react-router-dom';
@@ -9,7 +9,7 @@ function Profile() {
     const [session, setSession] = useState(null);
   const [pref, setPref] = useState(null);
   const [toast, setToast] = useState(null); // {type: 'success'|'error'|'info', message: ''}
-  const [saving, setSaving] = useState(false);
+  const [, setSaving] = useState(false);
 
     useEffect(() => {
         supabase.auth.getSession().then(({ data }) => setSession(data.session));
@@ -108,17 +108,12 @@ function Profile() {
     );
 }
 
-// small inline helper to compute MD5 for gravatar (lightweight JS implementation)
-function md5cycle(x, k) {
-  // ...minimal md5 implementation omitted for brevity - use built-in minimal function below
-}
-
 function md5(s) {
   // small, well-known compact md5 implementation
   // source: https://stackoverflow.com/a/16599668 (compact)
   function L(k, d) { return (k << d) | (k >>> (32 - d)); }
   function K(G, k) {
-    var I, d, F, H, x;
+    var F, H, x;
     F = (G & 65535) + (k & 65535);
     H = (G >> 16) + (k >> 16) + (F >> 16);
     x = (H << 16) | (F & 65535);
@@ -141,7 +136,7 @@ function md5(s) {
     return K(L(G, H), k);
   }
 
-  var i, j, X, W, V, U1, T1, S1, R1, Q, P;
+  var i, j, X, W, V;
   var b = unescape(encodeURIComponent(s));
   var a = b.length;
   var y = []; for (i = 0; i < a; i++) y[i >> 2] |= (b.charCodeAt(i) & 255) << ((i % 4) * 8);

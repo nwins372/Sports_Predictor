@@ -1,0 +1,22 @@
+.team-page {
+  padding: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+  color: var(--text);
+  background: var(--bg);
+}
+.team-hero {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid var(--surface-border);
+  padding-bottom: 18px;
+}
+.team-logo { height: 96px; width: 96px; object-fit: contain; }
+.team-title { font-size: 28px; font-weight: 700; }
+.team-meta { color: var(--muted); font-size: 14px; }
+.roster { margin-top: 18px; }
+.roster-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 8px; }
+.roster-item { background: var(--surface); border: 1px solid var(--surface-border); padding: 8px; border-radius: 6px; display:flex; gap:10px; align-items:center }
+.player-thumb { width:40px; height:40px; border-radius:6px; object-fit:cover }
+.team-debug { margin-top:16px; font-size:12px; color:var(--muted) }

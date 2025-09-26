@@ -19,12 +19,13 @@ export default function ScheduleBar() {
   });
 
   // Choose dataset based on sport
+  let scheduleData;
   if (sport === "nba") {
-    var scheduleData = nbaSchedule;
+    scheduleData = nbaSchedule;
   } else if (sport === "mlb") {
-    var scheduleData = mlbSchedule;
+    scheduleData = mlbSchedule;
   } else {
-    var scheduleData = nflSchedule;
+    scheduleData = nflSchedule;
   }
 
   // Build { "YYYY-MM-DD": [games...] } for the chosen sport
