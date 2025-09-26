@@ -48,7 +48,11 @@ useEffect(() => {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
+  <Route path="/team/:league/:abbr" element={<Team />} />
+  {/* backward-compatible route (no league) */}
   <Route path="/team/:abbr" element={<Team />} />
+  <Route path="/player/:league/:id" element={<Player />} />
+  {/* backward-compatible route (no league) */}
   <Route path="/player/:id" element={<Player />} />
       <Route path="/settings" element={<Settings />} />
       <Route path="/sports-news" element={<SportsNewsPage />} />
