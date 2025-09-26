@@ -4,6 +4,7 @@ import './profile.css';
 import { supabase } from '../supabaseClient';
 import SportsSelection from './SportSelectionPage';
 import { Link } from 'react-router-dom';
+import ScheduleBar from '../components/ScheduleBar';
 
 function Profile() {
     const [session, setSession] = useState(null);
@@ -101,6 +102,12 @@ function Profile() {
             <p>Welcome! Select your preferred sports below.</p>
             <SportsSelection initialSelected={pref} onSelect={handleSelect} />
             <p className="mt-4">Preferred sport(s): <strong>{(pref && Array.isArray(pref) ? pref.join(', ') : pref) || 'None'}</strong></p>
+            {pref && (
+            <div className="profile-box mt-4">
+              <h2>Your Schedule</h2>
+              <ScheduleBar defaultSport={Array.isArray(pref) ? pref[0] : pref} />
+            </div>
+            )}
           </div>
           {toast && <div className={`toast ${toast.type}`} role="status">{toast.message}</div>}
         </div>

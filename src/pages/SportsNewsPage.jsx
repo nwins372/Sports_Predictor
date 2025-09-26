@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";  
 import "./SportsNewsPage.css";
+import ScheduleBar from "../components/ScheduleBar";
 
 const API_KEY = "f9f8b0829ca84fe1a1d450e0fe7dbbd1";
 const API_URL = `https://newsapi.org/v2/top-headlines?category=sports&language=en&pageSize=10&apiKey=${API_KEY}`;
@@ -43,7 +44,7 @@ function SportsNewsPage() {
   return (
     <>
       <NavBar />   
-
+      <ScheduleBar />
       <div className="container mt-5">
         <h2
           className="mb-4 text-center"

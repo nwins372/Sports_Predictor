@@ -10,27 +10,42 @@ const fmtLocalTime = (isoUtc) =>
   new Date(isoUtc).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
 
 export default function ScheduleBar() {
-
-  const [sport, setSport] = useState("nfl"); 
-
-  const [selected, setSelected] = useState(() => {
-    const x = new Date(); x.setHours(0,0,0,0); return x;
+  const [sport, setSport] = useState(() => {
+    return localStorage.getItem("selectedSport") || "nfl";
   });
 
-  // Choose dataset based on sport
+  const handleSportChange = (e) => {
+    const newSport = e.target.value;
+    setSport(newSport);
+    localStorage.setItem("selectedSport", newSport);
+  };
+
+  const [selected, setSelected] = useState(() => {
+    const x = new Date();
+    x.setHours(0, 0, 0, 0);
+    return x;
+  });
+
+  let scheduleData;
   switch (sport) {
-    case "nfl": var scheduleData = nflSchedule; break;
-    case "nba": var scheduleData = nbaSchedule; break;
-    case "mlb": var scheduleData = mlbSchedule; break;
-    default: var scheduleData = []; break;
+    case "nfl":
+      scheduleData = nflSchedule;
+      break;
+    case "nba":
+      scheduleData = nbaSchedule;
+      break;
+    case "mlb":
+      scheduleData = mlbSchedule;
+      break;
+    default:
+      scheduleData = [];
+      break;
   }
 
-  // Build { "YYYY-MM-DD": [games...] } for the chosen sport
   const processGames = useMemo(() => {
     const gameCards = {};
     scheduleData.forEach((game, i) => {
-      
-      const dateStr = game.DateUtc || game.DateUTC || game.dateUtc || game.date; 
+      const dateStr = game.DateUtc || game.DateUTC || game.dateUtc || game.date;
       const d = parseUtc(dateStr);
       if (isNaN(d)) return;
 
@@ -57,24 +72,23 @@ export default function ScheduleBar() {
       <div className="sb-top">
         <h3>
           {sport.toUpperCase()} Schedule —{" "}
-          {selected.toLocaleDateString(undefined, { weekday: "long", month: "short", day: "numeric" })}
+          {selected.toLocaleDateString(undefined, {
+            weekday: "long",
+            month: "short",
+            day: "numeric",
+          })}
         </h3>
 
         <div className="sb-actions" style={{ display: "flex", gap: 8, alignItems: "center" }}>
           <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
-            <span style={{ fontSize: 12, opacity: .8 }}>Sport</span>
-            <select
-              value={sport}
-              onChange={(e) => setSport(e.target.value)}
-              className="sb-date-input"
-            >
+            <span style={{ fontSize: 12, opacity: 0.8 }}>Sport</span>
+            <select value={sport} onChange={handleSportChange} className="sb-date-input">
               <option value="nfl">NFL</option>
               <option value="nba">NBA</option>
               <option value="mlb">MLB</option>
             </select>
           </label>
 
-          {/* Date picker */}
           <input
             type="date"
             className="sb-date-input"
@@ -82,7 +96,7 @@ export default function ScheduleBar() {
             onChange={(e) => {
               const [yy, mm, dd] = e.target.value.split("-").map(Number);
               const chosenDate = new Date(yy, mm - 1, dd);
-              chosenDate.setHours(0,0,0,0);     
+              chosenDate.setHours(0, 0, 0, 0);
               setSelected(chosenDate);
             }}
           />
