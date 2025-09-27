@@ -82,18 +82,6 @@
   font-size: 14px;
 }
 
-.pw-message::before {
-  content: "ℹ️ ";
-}
-
-.pw-message:contains("✅") {
-  color: #10b981; /* green for success */
-}
-
-.pw-message:contains("❌") {
-  color: #ef4444; /* red for error */
-}
-
 /* Error for not logged in / generic errors */
 .error {
   color: #f87171;
