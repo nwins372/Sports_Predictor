@@ -14,11 +14,10 @@ export default function ScheduleBar() {
     return localStorage.getItem("selectedSport") || "nfl";
   });
 
-  // instantly react to changes from SportsSelection
   useEffect(() => {
     const updateSport = (e) => {
       if (e.detail) {
-        setSport(e.detail); // ✅ use event detail directly
+        setSport(e.detail); 
       } else {
         const saved = localStorage.getItem("selectedSport") || "nfl";
         setSport(saved);
@@ -35,7 +34,6 @@ export default function ScheduleBar() {
     return x;
   });
 
-  // pick correct schedule JSON
   let scheduleData;
   switch (sport) {
     case "nfl":
@@ -100,7 +98,6 @@ export default function ScheduleBar() {
                 const newSport = e.target.value;
                 setSport(newSport);
                 localStorage.setItem("selectedSport", newSport);
-                // ✅ fire event with detail
                 window.dispatchEvent(new CustomEvent("sportChanged", { detail: newSport }));
               }}
               className="sb-date-input"
@@ -146,6 +143,7 @@ export default function ScheduleBar() {
                 </div>
               </div>
               {g.venue && <div className="sb-venue">Location: {g.venue}</div>}
+              <div className="sb-venue">Where to Watch:</div>
             </a>
           ))
         )}
