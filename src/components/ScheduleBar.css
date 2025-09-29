@@ -43,6 +43,14 @@ select.sb-date-input {
   text-decoration:none;
 }
 
+.sb-cards::-webkit-scrollbar{
+  height: 8px;
+}
+.sb-cards::-webkit-scrollbar-thumb{
+  background: #263143;
+  border-radius: 8px;
+}
+
 .sb-card-top{
   display:flex;
   justify-content:space-between;

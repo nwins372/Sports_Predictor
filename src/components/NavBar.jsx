@@ -39,7 +39,7 @@ useEffect(() => {
 
     {/* Signout Button if logged in */}
       <div className="navbar-right">
-          {session && ( <button onClick={async () => { await supabase.auth.signOut();}} className="nav-link"> Logout </button>
+          {session && ( <Link to="/" onClick={async () => { await supabase.auth.signOut();}} className="nav-link"> Logout </Link>
   )}
 
   {/* Profile link shown always */}
