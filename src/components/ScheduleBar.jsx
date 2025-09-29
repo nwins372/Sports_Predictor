@@ -81,15 +81,10 @@ export default function ScheduleBar() {
     <div className="sb-wrap">
       <div className="sb-top">
         <h3>
-          {sport.toUpperCase()} Schedule —{" "}
-          {selected.toLocaleDateString(undefined, {
-            weekday: "long",
-            month: "short",
-            day: "numeric",
-          })}
+          {sport.toUpperCase()} Schedule
         </h3>
 
-        <div className="sb-actions" style={{ display: "flex", gap: 8, alignItems: "center" }}>
+        <div className="sb-actions" style={{ display: "flex", gap: 12, alignItems: "center" }}>
           <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
             <span style={{ fontSize: 12, opacity: 0.8 }}>Sport</span>
             <select
@@ -108,17 +103,31 @@ export default function ScheduleBar() {
             </select>
           </label>
 
-          <input
-            type="date"
-            className="sb-date-input"
-            value={key}
-            onChange={(e) => {
-              const [yy, mm, dd] = e.target.value.split("-").map(Number);
-              const chosenDate = new Date(yy, mm - 1, dd);
-              chosenDate.setHours(0, 0, 0, 0);
-              setSelected(chosenDate);
-            }}
-          />
+          <div className="sb-date-picker-container">
+            <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
+              <span style={{ fontSize: 12, opacity: 0.8 }}>Date</span>
+              <div className="sb-date-display" onClick={() => document.getElementById('date-picker').showPicker()}>
+                {selected.toLocaleDateString(undefined, {
+                  weekday: "short",
+                  month: "short",
+                  day: "numeric",
+                })}
+                <span className="sb-calendar-icon">📅</span>
+              </div>
+              <input
+                id="date-picker"
+                type="date"
+                className="sb-date-input sb-date-hidden"
+                value={key}
+                onChange={(e) => {
+                  const [yy, mm, dd] = e.target.value.split("-").map(Number);
+                  const chosenDate = new Date(yy, mm - 1, dd);
+                  chosenDate.setHours(0, 0, 0, 0);
+                  setSelected(chosenDate);
+                }}
+              />
+            </label>
+          </div>
         </div>
       </div>
 

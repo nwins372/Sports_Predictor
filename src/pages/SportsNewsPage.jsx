@@ -1,36 +1,132 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import NavBar from "../components/NavBar";  
 import "./SportsNewsPage.css";
 import ScheduleBar from "../components/ScheduleBar";
+import { supabase } from "../supabaseClient";
 
 const API_KEY = "f9f8b0829ca84fe1a1d450e0fe7dbbd1";
-const API_URL = `https://newsapi.org/v2/top-headlines?category=sports&language=en&pageSize=10&apiKey=${API_KEY}`;
+const API_URL = `https://newsapi.org/v2/top-headlines?category=sports&language=en&pageSize=20&apiKey=${API_KEY}`;
+const TOP_HEADLINES_BASE = "https://newsapi.org/v2/top-headlines";
 
 function SportsNewsPage() {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [prefs, setPrefs] = useState([]); // ["NFL","NBA",...] from Supabase
+
+  // Lowercase keyword map for basic matching
+  const keywordMap = useMemo(() => ({
+    NFL: [
+      "nfl", "american football", "super bowl", "quarterback", "qb", "touchdown",
+      "nfc", "afc", "patriots", "cowboys", "eagles", "chiefs", "ravens", "broncos"
+    ],
+    NBA: [
+      "nba", "basketball", "playoffs", "finals", "lebron", "curry", "lakers", "celtics",
+      "warriors", "bucks", "nuggets"
+    ],
+    MLB: [
+      "mlb", "baseball", "home run", "pitcher", "yankees", "dodgers", "red sox",
+      "mets", "braves", "world series"
+    ],
+    "College Sports": [
+      "college football", "ncaa football", "cfp", "college football playoff", "heisman",
+      "alabama", "georgia", "ohio state", "michigan", "clemson", "notre dame",
+      "sec", "big ten", "acc", "pac-12", "big 12", "college basketball", "ncaa basketball", 
+      "march madness", "final four", "duke", "kentucky", "north carolina", "kansas", "villanova",
+      "acc basketball", "big east", "big ten basketball", "college baseball", "ncaa baseball", 
+      "college world series", "omaha", "vanderbilt", "florida", "arkansas", "mississippi state", 
+      "lsu", "sec baseball", "acc baseball", "big 12 baseball"
+    ],
+  }), []);
+
+  // Build sport-specific NewsAPI query strings to increase volume per league
+  const sportQueryMap = useMemo(() => ({
+    NFL: "(NFL OR \"National Football League\" OR quarterback OR touchdown)",
+    NBA: "(NBA OR \"National Basketball Association\" OR basketball)",
+    MLB: "(MLB OR \"Major League Baseball\" OR baseball)",
+    "College Sports": "(\"college football\" OR \"NCAA football\" OR \"College Football Playoff\" OR Heisman OR \"college basketball\" OR \"NCAA basketball\" OR \"March Madness\" OR \"Final Four\" OR \"college baseball\" OR \"NCAA baseball\" OR \"College World Series\")",
+  }), []);
+
+  const prefsKey = useMemo(() => (prefs && prefs.length ? prefs.slice().sort().join("-") : "all"), [prefs]);
 
   useEffect(() => {
-    const fetchNews = async () => {
-      const cached = localStorage.getItem("sportsNews");
-      const lastUpdate = localStorage.getItem("sportsNewsTimestamp");
-      const now = new Date().getTime();
+    const run = async () => {
+      setLoading(true);
 
-      // Use cached news if less than 24 hours old
-      if (cached && lastUpdate && now - lastUpdate < 24 * 60 * 60 * 1000) {
-        setNews(JSON.parse(cached));
-        setLoading(false);
-        return;
+      // 1) Get session and user preferences
+      let selectedPrefs = [];
+      try {
+        const { data: sessionData } = await supabase.auth.getSession();
+        const session = sessionData?.session;
+        if (session?.user?.id) {
+          const { data, error } = await supabase
+            .from("user_preferences")
+            .select("sports_prefs")
+            .eq("user_id", session.user.id)
+            .maybeSingle();
+          if (!error && Array.isArray(data?.sports_prefs)) {
+            selectedPrefs = data.sports_prefs;
+          }
+        }
+      } catch (e) {
+        // Non-fatal: fall back to showing all
+      }
+      setPrefs(selectedPrefs);
+
+      // 2) Try to use preference-aware cache
+      const cacheKey = `sportsNews:${selectedPrefs && selectedPrefs.length ? selectedPrefs.slice().sort().join("-") : "all"}`;
+      const tsKey = `${cacheKey}:ts`;
+      const cached = localStorage.getItem(cacheKey);
+      const lastUpdate = localStorage.getItem(tsKey);
+      const now = new Date().getTime();
+      if (cached && lastUpdate && now - Number(lastUpdate) < 24 * 60 * 60 * 1000) {
+        try {
+          const parsed = JSON.parse(cached);
+          setNews(parsed);
+          setLoading(false);
+          return;
+        } catch (_) {
+          // continue to fetch
+        }
       }
 
+      // 3) Fetch and filter (fetch more by querying per-sport when known)
       try {
-        const response = await fetch(API_URL);
-        const data = await response.json();
-        if (data.articles) {
-          setNews(data.articles);
-          localStorage.setItem("sportsNews", JSON.stringify(data.articles));
-          localStorage.setItem("sportsNewsTimestamp", now.toString());
+        let articles = [];
+
+        const targetSports = (selectedPrefs && selectedPrefs.length ? selectedPrefs : ["NFL", "NBA", "MLB", "College Sports"]) // default to the big three plus college
+          .filter((s) => sportQueryMap[s]);
+
+        if (targetSports.length > 0) {
+          // Query per-sport with larger pageSize and merge
+          const requests = targetSports.map((sport) => {
+            const q = encodeURIComponent(sportQueryMap[sport]);
+            const url = `${TOP_HEADLINES_BASE}?language=en&pageSize=50&q=${q}&apiKey=${API_KEY}`;
+            return fetch(url).then((r) => r.json()).catch(() => ({ articles: [] }));
+          });
+          const results = await Promise.all(requests);
+          articles = results.flatMap((res) => Array.isArray(res?.articles) ? res.articles : []);
         }
+
+        // Fallback to generic call if nothing returned
+        if (!articles || articles.length === 0) {
+          const response = await fetch(API_URL);
+          const data = await response.json();
+          articles = Array.isArray(data?.articles) ? data.articles : [];
+        }
+
+        // Dedupe by URL
+        const seen = new Set();
+        const deduped = [];
+        for (const a of articles) {
+          const key = a?.url || `${a?.title}-${a?.publishedAt}`;
+          if (key && !seen.has(key)) { seen.add(key); deduped.push(a); }
+        }
+
+        const filtered = filterArticlesByPreferences(deduped, selectedPrefs, keywordMap);
+        setNews(filtered);
+
+        localStorage.setItem(cacheKey, JSON.stringify(filtered));
+        localStorage.setItem(tsKey, now.toString());
       } catch (error) {
         console.error("Error fetching sports news:", error);
       } finally {
@@ -38,8 +134,71 @@ function SportsNewsPage() {
       }
     };
 
-    fetchNews();
+    run();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  function filterArticlesByPreferences(articles, selectedPrefs, map) {
+    if (!Array.isArray(articles) || articles.length === 0) return [];
+    if (!selectedPrefs || selectedPrefs.length === 0) return articles; // No preferences -> show all
+
+    const selected = selectedPrefs.filter((s) => map[s]);
+    if (selected.length === 0) return articles;
+
+    return articles.filter((a) => {
+      const hay = `${a?.title || ""} ${a?.description || ""} ${a?.content || ""}`.toLowerCase();
+      return selected.some((sport) => map[sport].some((kw) => hay.includes(kw)));
+    });
+  }
+
+  async function handleRefresh() {
+    setLoading(true);
+    try {
+      const selectedPrefs = Array.isArray(prefs) ? prefs : [];
+      const cacheKey = `sportsNews:${selectedPrefs && selectedPrefs.length ? selectedPrefs.slice().sort().join("-") : "all"}`;
+      const tsKey = `${cacheKey}:ts`;
+      localStorage.removeItem(cacheKey);
+      localStorage.removeItem(tsKey);
+
+      // On refresh, use the same expanded per-sport querying as initial load
+      let articles = [];
+      const targetSports = (selectedPrefs && selectedPrefs.length ? selectedPrefs : ["NFL", "NBA", "MLB", "College Sports"]) // default to the big three plus college
+        .filter((s) => sportQueryMap[s]);
+
+      if (targetSports.length > 0) {
+        const requests = targetSports.map((sport) => {
+          const q = encodeURIComponent(sportQueryMap[sport]);
+          const url = `${TOP_HEADLINES_BASE}?language=en&pageSize=50&q=${q}&apiKey=${API_KEY}`;
+          return fetch(url).then((r) => r.json()).catch(() => ({ articles: [] }));
+        });
+        const results = await Promise.all(requests);
+        articles = results.flatMap((res) => Array.isArray(res?.articles) ? res.articles : []);
+      }
+
+      if (!articles || articles.length === 0) {
+        const response = await fetch(API_URL);
+        const data = await response.json();
+        articles = Array.isArray(data?.articles) ? data.articles : [];
+      }
+
+      const seen = new Set();
+      const deduped = [];
+      for (const a of articles) {
+        const key = a?.url || `${a?.title}-${a?.publishedAt}`;
+        if (key && !seen.has(key)) { seen.add(key); deduped.push(a); }
+      }
+
+      const filtered = filterArticlesByPreferences(deduped, selectedPrefs, keywordMap);
+      setNews(filtered);
+      const now = Date.now();
+      localStorage.setItem(cacheKey, JSON.stringify(filtered));
+      localStorage.setItem(tsKey, now.toString());
+    } catch (e) {
+      console.error("Error refreshing sports news:", e);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <>
@@ -47,7 +206,7 @@ function SportsNewsPage() {
       <ScheduleBar />
       <div className="container mt-5">
         <h2
-          className="mb-4 text-center"
+          className="mb-3 text-center"
           style={{
             fontFamily: "Arial Black, sans-serif",
             color: "#e63946",
@@ -55,6 +214,16 @@ function SportsNewsPage() {
         >
           Sports News
         </h2>
+        <div className="text-center mb-4">
+          <button
+            type="button"
+            className="btn btn-outline-secondary btn-sm"
+            onClick={handleRefresh}
+            disabled={loading}
+          >
+            {loading ? "Refreshing…" : "Refresh"}
+          </button>
+        </div>
 
         {loading ? (
           <p className="text-center">Loading latest sports news...</p>
