@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
 import "./SportsPreference.css";
 
-const all_sports = ["NFL", "NBA", "MLB"];
+const all_sports = ["NFL", "NBA", "MLB", "College Sports"];
 
 export default function SportPrefsForm({ session }) {
   const [checked, setChecked] = useState([]);   
@@ -67,6 +67,8 @@ export default function SportPrefsForm({ session }) {
   if (!session) return <p className="prefs-note">Log in to manage preferences.</p>;
   if (loading)    return <p className="prefs-note">Loading preferences…</p>;
 
+  console.log("Rendering sports:", all_sports);
+  
   return (
     <div className="prefs-card">
       <h2 className="prefs-title">Your Sports</h2>

@@ -31,6 +31,7 @@ useEffect(() => {
         <Link to="/following" className="nav-link" id="following">Following</Link>
         <Link to="/sports" className="nav-link" id="sports">Sports</Link>
         <Link to="/sports-news" className="nav-link">Sports News</Link>
+        <Link to="/schedules" className="nav-link">Schedules</Link>
         {!session && <Link to="/login" id="login-button">Login</Link>}
         <Link to="/search" className="nav-link" id="search">
           <img src={mg} alt="Search Icon" width="30" height="30" />

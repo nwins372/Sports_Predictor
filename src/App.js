@@ -11,6 +11,7 @@ import { supabase } from './supabaseClient';
 import { useEffect, useState } from 'react';
 import SportsNewsPage from './pages/SportsNewsPage';
 import ProfileSettings from './pages/ProfileSettings';
+import Schedules from './pages/Schedules';
 
 const isLoggedIn = supabase.auth.getSession().then(({ data: { session } }) => !!session);
 const user = supabase.auth.getUser().then(({ data: { user } }) => user);
@@ -46,6 +47,7 @@ useEffect(() => {
       <Route path="/profile" element={<Profile />} />
       <Route path="/settings" element={<Settings />} />
       <Route path="/sports-news" element={<SportsNewsPage />} />
+      <Route path="/schedules" element={<Schedules />} />
         <Route
           path="/profile-settings"
           element={

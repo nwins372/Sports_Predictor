@@ -26,6 +26,51 @@ select.sb-date-input {
   padding-right: 24px; 
 }
 
+/* Date picker styling */
+.sb-date-picker-container {
+  position: relative;
+}
+
+.sb-date-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #111827;
+  border: 1px solid #2f3747;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+  min-width: 120px;
+  justify-content: space-between;
+}
+
+.sb-date-display:hover {
+  background: #1a202c;
+  border-color: #3b82f6;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.sb-date-display:active {
+  transform: translateY(0);
+}
+
+.sb-calendar-icon {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.sb-date-hidden {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
 /* Cards styling */
 .sb-cards{
   overflow-x:auto;
