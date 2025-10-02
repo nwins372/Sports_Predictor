@@ -33,7 +33,7 @@
 .site-title{
   display: inline-block;         
   color: white;
-  background: linear-gradient(135deg, #dc2626, #b91c1c); 
+  background: var(--accent); 
   font-weight: 800;
   font-size: 24px;
   letter-spacing: 0.5px;
@@ -42,10 +42,12 @@
   text-decoration: none;
   box-shadow: 0 1px 1px black;
   font-family: 'Oswald', sans-serif;
+  transition: all 0.2s ease;
 }
 
 .site-title:hover {
-  background: linear-gradient(135deg, #ef4444, #dc2626); 
+  background: var(--accent); 
+  opacity: 0.9;
   transform: translateY(-2px);                          
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);                
 }
@@ -65,12 +67,17 @@
 }
 
 #login-button{
-  background: transparent;
+  background: var(--accent);
   color: white;
-  border: 1px solid white;
+  border: 1px solid var(--accent);
   padding: 6px 10px;
   border-radius: 8px;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#login-button:hover {
+  opacity: 0.9;
 }
 
 
@@ -88,12 +95,17 @@
   min-height: 36px;
 }
 .navbar-right button{
-  background: transparent;
+  background: var(--accent);
   color: white;
-  border: 1px solid white;
+  border: 1px solid var(--accent);
   padding: 6px 10px;
   border-radius: 8px;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navbar-right button:hover{
+  opacity: 0.9;
 }
 
 

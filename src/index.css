@@ -52,6 +52,101 @@ html, body, #root { height: 100%; }
   --brand-text: #ffffff;
 }
 
+/* Color Theme Variations */
+/* Blue (default) */
+:root[data-color-theme='blue'] {
+  --accent: #2563eb;
+}
+:root[data-theme='dark'][data-color-theme='blue'] {
+  --accent: #60a5fa;
+}
+
+/* Green */
+:root[data-color-theme='green'] {
+  --accent: #059669;
+}
+:root[data-theme='dark'][data-color-theme='green'] {
+  --accent: #10b981;
+}
+
+/* Purple */
+:root[data-color-theme='purple'] {
+  --accent: #7c3aed;
+}
+:root[data-theme='dark'][data-color-theme='purple'] {
+  --accent: #a78bfa;
+}
+
+/* Orange */
+:root[data-color-theme='orange'] {
+  --accent: #ea580c;
+}
+:root[data-theme='dark'][data-color-theme='orange'] {
+  --accent: #fb923c;
+}
+
+/* Pink */
+:root[data-color-theme='pink'] {
+  --accent: #db2777;
+}
+:root[data-theme='dark'][data-color-theme='pink'] {
+  --accent: #f472b6;
+}
+
+/* Teal */
+:root[data-color-theme='teal'] {
+  --accent: #0891b2;
+}
+:root[data-theme='dark'][data-color-theme='teal'] {
+  --accent: #22d3ee;
+}
+
+/* Red */
+:root[data-color-theme='red'] {
+  --accent: #dc2626;
+}
+:root[data-theme='dark'][data-color-theme='red'] {
+  --accent: #f87171;
+}
+
+/* Indigo */
+:root[data-color-theme='indigo'] {
+  --accent: #4f46e5;
+}
+:root[data-theme='dark'][data-color-theme='indigo'] {
+  --accent: #818cf8;
+}
+
+/* Global accent color usage */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--accent);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+button:not(.color-theme-option) {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+button:not(.color-theme-option):hover {
+  background-color: var(--accent);
+  opacity: 0.9;
+}
+
+.btn-primary, .primary-button {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
 /* Smooth transitions for theme changes */
 html, body, #app-container, .profile-box, .navbar, .site-title {
   transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
