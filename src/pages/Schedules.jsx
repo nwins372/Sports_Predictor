@@ -643,6 +643,14 @@ function Schedules() {
   const [liveGamesCount, setLiveGamesCount] = useState(0);
   const [hasLiveGames, setHasLiveGames] = useState(false);
   const [todaysGames, setTodaysGames] = useState([]);
+  
+  // Past Games state management
+  const [showPastGames, setShowPastGames] = useState(false);
+  const [selectedTeam, setSelectedTeam] = useState('');
+  const [selectedTeamSport, setSelectedTeamSport] = useState('NFL');
+  const [pastGames, setPastGames] = useState([]);
+  const [isLoadingPastGames, setIsLoadingPastGames] = useState(false);
+  const [pastGamesLastUpdated, setPastGamesLastUpdated] = useState(null);
 
   useEffect(() => {
     // Initialize data loading
@@ -781,6 +789,63 @@ function Schedules() {
     } catch (error) {
       console.error('Error refreshing live data:', error);
     }
+  };
+
+  // Load past games for selected team
+  const loadPastGames = async (sport, teamName) => {
+    if (!teamName) return;
+    
+    setIsLoadingPastGames(true);
+    try {
+      console.log(`Loading past games for ${teamName} (${sport})`);
+      const games = await sportsAPI.fetchTeamPastGames(sport, teamName);
+      setPastGames(games);
+      setPastGamesLastUpdated(new Date());
+      console.log(`Loaded ${games.length} past games for ${teamName}`);
+    } catch (error) {
+      console.error('Error loading past games:', error);
+      setPastGames([]);
+    } finally {
+      setIsLoadingPastGames(false);
+    }
+  };
+
+  // Get available teams for selected sport
+  const getAvailableTeams = (sport) => {
+    const teams = {
+      NFL: [
+        "Kansas City Chiefs", "Buffalo Bills", "Philadelphia Eagles", "Dallas Cowboys",
+        "Baltimore Ravens", "Cincinnati Bengals", "San Francisco 49ers", "Detroit Lions",
+        "Miami Dolphins", "New England Patriots", "Green Bay Packers", "Minnesota Vikings",
+        "Chicago Bears", "Tampa Bay Buccaneers", "Atlanta Falcons", "Carolina Panthers",
+        "New Orleans Saints", "Seattle Seahawks", "Los Angeles Rams", "Arizona Cardinals",
+        "Las Vegas Raiders", "Los Angeles Chargers", "Denver Broncos", "Pittsburgh Steelers",
+        "Cleveland Browns", "Indianapolis Colts", "Tennessee Titans", "Jacksonville Jaguars",
+        "Houston Texans", "New York Giants", "Washington Commanders", "New York Jets"
+      ],
+      NBA: [
+        "Boston Celtics", "Los Angeles Lakers", "Golden State Warriors", "Miami Heat",
+        "Denver Nuggets", "Milwaukee Bucks", "Phoenix Suns", "Dallas Mavericks",
+        "Philadelphia 76ers", "Brooklyn Nets", "New York Knicks", "Chicago Bulls",
+        "Cleveland Cavaliers", "Detroit Pistons", "Indiana Pacers", "Atlanta Hawks",
+        "Charlotte Hornets", "Orlando Magic", "Washington Wizards", "Toronto Raptors",
+        "Portland Trail Blazers", "Utah Jazz", "Oklahoma City Thunder", "Minnesota Timberwolves",
+        "Sacramento Kings", "Los Angeles Clippers", "San Antonio Spurs", "Houston Rockets",
+        "Memphis Grizzlies", "New Orleans Pelicans"
+      ],
+      MLB: [
+        "New York Yankees", "Boston Red Sox", "Los Angeles Dodgers", "San Francisco Giants",
+        "Atlanta Braves", "Houston Astros", "Philadelphia Phillies", "Chicago Cubs",
+        "Milwaukee Brewers", "Toronto Blue Jays", "Baltimore Orioles", "Cleveland Guardians",
+        "Texas Rangers", "Arizona Diamondbacks", "Miami Marlins", "San Diego Padres",
+        "Minnesota Twins", "Seattle Mariners", "Tampa Bay Rays", "New York Mets",
+        "St. Louis Cardinals", "Cincinnati Reds", "Pittsburgh Pirates", "Washington Nationals",
+        "Colorado Rockies", "Oakland Athletics", "Los Angeles Angels", "Kansas City Royals",
+        "Chicago White Sox", "Detroit Tigers"
+      ]
+    };
+    
+    return teams[sport] || [];
   };
 
   useEffect(() => {
@@ -1335,6 +1400,18 @@ function Schedules() {
                   </div>
                 </div>
               </div>
+              
+              <div className="col-md-2">
+                <div className="filter-group">
+                  <label className="filter-label">Past Games:</label>
+                  <button 
+                    className={`past-games-btn ${showPastGames ? 'active' : ''}`}
+                    onClick={() => setShowPastGames(!showPastGames)}
+                  >
+                    📊 Past Games
+                  </button>
+                </div>
+              </div>
             </div>
             
             {/* Live Data Status Row */}
@@ -1527,6 +1604,230 @@ function Schedules() {
             </div>
           </div>
         </div>
+
+        {/* Past Games Section */}
+        {showPastGames && (
+          <div className="past-games-section mb-5">
+            <div className="past-games-header">
+              <h2 className="text-center mb-4" style={{ color: "#f77f00", fontWeight: "bold" }}>
+                📊 Team Past Games (Last 20 Games)
+              </h2>
+              
+              <div className="past-games-controls">
+                <div className="row">
+                  <div className="col-md-4">
+                    <div className="filter-group">
+                      <label className="filter-label">Sport:</label>
+                      <select 
+                        className="filter-select"
+                        value={selectedTeamSport}
+                        onChange={(e) => {
+                          setSelectedTeamSport(e.target.value);
+                          setSelectedTeam(''); // Reset team selection
+                          setPastGames([]); // Clear past games
+                        }}
+                      >
+                        <option value="NFL">🏈 NFL</option>
+                        <option value="NBA">🏀 NBA</option>
+                        <option value="MLB">⚾ MLB</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div className="col-md-4">
+                    <div className="filter-group">
+                      <label className="filter-label">Team:</label>
+                      <select 
+                        className="filter-select"
+                        value={selectedTeam}
+                        onChange={(e) => {
+                          setSelectedTeam(e.target.value);
+                          if (e.target.value) {
+                            loadPastGames(selectedTeamSport, e.target.value);
+                          } else {
+                            setPastGames([]);
+                          }
+                        }}
+                        disabled={!selectedTeamSport}
+                      >
+                        <option value="">Select a team...</option>
+                        {getAvailableTeams(selectedTeamSport).map(team => (
+                          <option key={team} value={team}>
+                            {team}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div className="col-md-4">
+                    <div className="filter-group">
+                      <label className="filter-label">Actions:</label>
+                      <div className="past-games-actions">
+                        <button 
+                          className="quick-filter-btn"
+                          onClick={() => {
+                            if (selectedTeam) {
+                              loadPastGames(selectedTeamSport, selectedTeam);
+                            }
+                          }}
+                          disabled={!selectedTeam || isLoadingPastGames}
+                        >
+                          {isLoadingPastGames ? '⟳ Loading...' : '🔄 Refresh'}
+                        </button>
+                        <button 
+                          className="quick-filter-btn clear-btn"
+                          onClick={() => {
+                            setSelectedTeam('');
+                            setPastGames([]);
+                            setPastGamesLastUpdated(null);
+                          }}
+                        >
+                          Clear
+                        </button>
+                        <button 
+                          className="quick-filter-btn debug-btn"
+                          onClick={async () => {
+                            if (selectedTeam) {
+                              console.log('Testing fallback data...');
+                              const fallbackGames = await sportsAPI.getPastGamesWithFallback(selectedTeamSport, selectedTeam);
+                              setPastGames(fallbackGames);
+                              setPastGamesLastUpdated(new Date());
+                            }
+                          }}
+                          disabled={!selectedTeam}
+                        >
+                          Test Data
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Past Games Status */}
+                {pastGamesLastUpdated && (
+                  <div className="past-games-status mt-3">
+                    <div className="status-info">
+                      <span className="status-indicator static">
+                        📊 {pastGames.length} Past Games Loaded
+                      </span>
+                      <span className="last-updated">
+                        Last updated: {pastGamesLastUpdated.toLocaleTimeString()} (Weekly auto-refresh)
+                      </span>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+            
+            {/* Past Games Display */}
+            {selectedTeam && (
+              <div className="past-games-display">
+                {isLoadingPastGames ? (
+                  <div className="loading-past-games">
+                    <div className="loading-spinner">⟳</div>
+                    <p>Loading past games for {selectedTeam}...</p>
+                  </div>
+                ) : pastGames.length > 0 ? (
+                  <div className="past-games-grid">
+                    <h3 className="team-past-games-title">
+                      {getSportIcon(selectedTeamSport)} {selectedTeam} - Last 20 Games
+                    </h3>
+                    <div className="past-games-stats mb-3">
+                      {(() => {
+                        const wins = pastGames.filter(game => {
+                          const isHome = game.homeTeam === selectedTeam;
+                          const homeScore = parseInt(game.homeScore) || 0;
+                          const awayScore = parseInt(game.awayScore) || 0;
+                          return isHome ? homeScore > awayScore : awayScore > homeScore;
+                        }).length;
+                        const losses = pastGames.length - wins;
+                        const winPercentage = pastGames.length > 0 ? Math.round((wins / pastGames.length) * 100) : 0;
+                        
+                        return (
+                          <div className="team-record">
+                            <span className="record-item">
+                              <strong>Record:</strong> {wins}-{losses}
+                            </span>
+                            <span className="record-item">
+                              <strong>Win %:</strong> {winPercentage}%
+                            </span>
+                            <span className="record-item">
+                              <strong>Games:</strong> {pastGames.length}
+                            </span>
+                          </div>
+                        );
+                      })()}
+                    </div>
+                    
+                    <div className="past-games-list">
+                      {pastGames.map((game, index) => {
+                        const gameDate = new Date(game.date);
+                        const isHome = game.homeTeam === selectedTeam;
+                        const teamScore = isHome ? game.homeScore : game.awayScore;
+                        const opponentScore = isHome ? game.awayScore : game.homeScore;
+                        const opponent = isHome ? game.awayTeam : game.homeTeam;
+                        const won = parseInt(teamScore) > parseInt(opponentScore);
+                        
+                        return (
+                          <div key={game.id} className={`past-game-card ${won ? 'win' : 'loss'}`}>
+                            <div className="past-game-header">
+                              <div className="game-result">
+                                <span className={`result-badge ${won ? 'win' : 'loss'}`}>
+                                  {won ? 'W' : 'L'}
+                                </span>
+                                <span className="game-number">#{index + 1}</span>
+                              </div>
+                              <div className="game-date">
+                                {gameDate.toLocaleDateString('en-US', {
+                                  month: 'short',
+                                  day: 'numeric',
+                                  year: 'numeric'
+                                })}
+                              </div>
+                            </div>
+                            
+                            <div className="past-game-content">
+                              <div className="game-matchup">
+                                <div className="team-score">
+                                  <span className="team-name">{selectedTeam}</span>
+                                  <span className="score">{teamScore}</span>
+                                </div>
+                                <div className="vs-divider">vs</div>
+                                <div className="team-score">
+                                  <span className="team-name">{opponent}</span>
+                                  <span className="score">{opponentScore}</span>
+                                </div>
+                              </div>
+                              
+                              <div className="game-details">
+                                <div className="game-location">
+                                  <span className="location-icon">📍</span>
+                                  {game.location}
+                                </div>
+                                {game.week && (
+                                  <div className="game-week">
+                                    <span className="week-icon">📅</span>
+                                    {selectedTeamSport === 'NFL' ? `Week ${game.week}` : `Game ${game.week}`}
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="no-past-games">
+                    <h3>No past games found for {selectedTeam}</h3>
+                    <p>Try selecting a different team or sport.</p>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        )}
 
         <div className="events-grid">
           {filteredEvents.length === 0 ? (

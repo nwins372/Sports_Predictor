@@ -1470,6 +1470,390 @@
   }
 }
 
+/* Past Games Section Styles */
+.past-games-section {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border: 2px solid #f77f00;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(247, 127, 0, 0.2);
+  animation: past-games-pulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes past-games-pulse {
+  0% {
+    border-color: #f77f00;
+    box-shadow: 0 8px 32px rgba(247, 127, 0, 0.2);
+  }
+  100% {
+    border-color: #ea580c;
+    box-shadow: 0 12px 40px rgba(247, 127, 0, 0.4);
+  }
+}
+
+.past-games-header h2 {
+  text-shadow: 0 0 10px rgba(247, 127, 0, 0.3);
+}
+
+.past-games-controls {
+  background: #111827;
+  border: 1px solid #1d3557;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.past-games-btn {
+  background: #1d3557;
+  border: 2px solid #f77f00;
+  color: #e5e7eb;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.past-games-btn:hover {
+  background: #f77f00;
+  color: #1f2937;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(247, 127, 0, 0.3);
+}
+
+.past-games-btn.active {
+  background: #f77f00;
+  color: #1f2937;
+  border-color: #ea580c;
+  box-shadow: 0 0 0 3px rgba(247, 127, 0, 0.2);
+}
+
+.past-games-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.past-games-status {
+  background: #0f172a;
+  border: 1px solid #1d3557;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.past-games-display {
+  background: #111827;
+  border: 1px solid #1d3557;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.loading-past-games {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #9ca3af;
+}
+
+.loading-spinner {
+  font-size: 2rem;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+  color: #f77f00;
+}
+
+.past-games-grid {
+  background: #0f172a;
+  border: 1px solid #1d3557;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.team-past-games-title {
+  color: #e5e7eb;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(247, 127, 0, 0.3);
+}
+
+.past-games-stats {
+  background: linear-gradient(135deg, #1e293b, #334155);
+  border: 1px solid #475569;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.team-record {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.record-item {
+  color: #e5e7eb;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  background: rgba(247, 127, 0, 0.1);
+  border: 1px solid rgba(247, 127, 0, 0.3);
+  border-radius: 6px;
+  text-align: center;
+  min-width: 120px;
+}
+
+.record-item strong {
+  color: #f77f00;
+  font-weight: 700;
+}
+
+.past-games-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.past-game-card {
+  background: linear-gradient(135deg, #1e293b, #334155);
+  border: 2px solid #475569;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.past-game-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.past-game-card.win {
+  border-color: #22c55e;
+  background: linear-gradient(135deg, #1e293b, #065f46);
+}
+
+.past-game-card.win::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+.past-game-card.loss {
+  border-color: #ef4444;
+  background: linear-gradient(135deg, #1e293b, #7f1d1d);
+}
+
+.past-game-card.loss::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+}
+
+.past-game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.game-result {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.result-badge {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: white;
+}
+
+.result-badge.win {
+  background: #22c55e;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.4);
+}
+
+.result-badge.loss {
+  background: #ef4444;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+}
+
+.game-number {
+  color: #9ca3af;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.game-date {
+  color: #60a5fa;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.past-game-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.game-matchup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.team-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.team-score .team-name {
+  color: #e5e7eb;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.team-score .score {
+  color: #f77f00;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-shadow: 0 0 6px rgba(247, 127, 0, 0.3);
+}
+
+.vs-divider {
+  color: #9ca3af;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.game-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #475569;
+}
+
+.game-location,
+.game-week {
+  color: #9ca3af;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.location-icon,
+.week-icon {
+  font-size: 0.9rem;
+}
+
+.no-past-games {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #9ca3af;
+}
+
+.no-past-games h3 {
+  color: #e5e7eb;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Past Games */
+@media (max-width: 768px) {
+  .past-games-section {
+    padding: 1.5rem;
+  }
+  
+  .past-games-controls {
+    padding: 1rem;
+  }
+  
+  .past-games-display {
+    padding: 1rem;
+  }
+  
+  .past-games-grid {
+    padding: 1rem;
+  }
+  
+  .team-record {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .record-item {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .past-games-list {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .past-game-card {
+    padding: 0.75rem;
+  }
+  
+  .game-matchup {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+  
+  .team-score .team-name {
+    font-size: 0.8rem;
+  }
+  
+  .team-score .score {
+    font-size: 1rem;
+  }
+  
+  .vs-divider {
+    font-size: 0.7rem;
+  }
+  
+  .past-games-actions {
+    flex-direction: column;
+  }
+  
+  .past-games-actions .quick-filter-btn {
+    width: 100%;
+  }
+}
+
 @media (max-width: 576px) {
   .schedules-header h1 {
     font-size: 1.8rem;
@@ -1481,5 +1865,23 @@
   
   .event-card {
     padding: 0.8rem;
+  }
+  
+  .past-games-section {
+    padding: 1rem;
+  }
+  
+  .team-past-games-title {
+    font-size: 1.2rem;
+  }
+  
+  .past-game-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .game-result {
+    align-self: flex-end;
   }
 }
