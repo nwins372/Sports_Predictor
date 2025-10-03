@@ -3,6 +3,187 @@
   margin-bottom: 3rem;
 }
 
+/* Today's Games Section */
+.todays-games-section {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border: 2px solid #22c55e;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(34, 197, 94, 0.2);
+  animation: today-games-pulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes today-games-pulse {
+  0% {
+    border-color: #22c55e;
+    box-shadow: 0 8px 32px rgba(34, 197, 94, 0.2);
+  }
+  100% {
+    border-color: #16a34a;
+    box-shadow: 0 12px 40px rgba(34, 197, 94, 0.4);
+  }
+}
+
+.game-card {
+  background: linear-gradient(135deg, #1e293b, #334155);
+  border: 2px solid #475569;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.game-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.live-game {
+  border-color: #22c55e;
+  background: linear-gradient(135deg, #1e293b, #065f46);
+  animation: live-game-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes live-game-glow {
+  0% {
+    border-color: #22c55e;
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
+  }
+  100% {
+    border-color: #16a34a;
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.6);
+  }
+}
+
+.scheduled-game {
+  border-color: #3b82f6;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.game-sport {
+  color: #e5e7eb;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.game-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.game-status.live {
+  background: #dc2626;
+  color: white;
+  animation: live-blink 1.5s ease-in-out infinite;
+}
+
+.game-status.scheduled {
+  background: #3b82f6;
+  color: white;
+}
+
+.game-matchup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.away-team,
+.home-team {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  margin: 0.25rem 0;
+}
+
+.team-name {
+  color: #e5e7eb;
+  font-weight: 600;
+  flex: 1;
+}
+
+.team-score {
+  color: #22c55e;
+  font-weight: 700;
+  font-size: 1.1rem;
+  min-width: 30px;
+  text-align: right;
+}
+
+.vs-divider {
+  color: #94a3b8;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.game-details {
+  border-top: 1px solid #475569;
+  padding-top: 1rem;
+}
+
+.game-time {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.game-location {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.live-details {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid #22c55e;
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.live-info {
+  color: #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.detail-label {
+  color: #22c55e;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.detail-value {
+  color: #e5e7eb;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .game-card {
+    padding: 1rem;
+  }
+  
+  .team-name {
+    font-size: 0.9rem;
+  }
+  
+  .team-score {
+    font-size: 1rem;
+  }
+}
+
 .filters-section {
   background: #0b1220;
   border: 2px solid #1d3557;
@@ -538,6 +719,28 @@
   border: 1px solid #ef4444;
 }
 
+.live-games-indicator {
+  background: rgba(220, 38, 38, 0.2);
+  color: #dc2626;
+  border: 1px solid #dc2626;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  animation: live-games-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes live-games-pulse {
+  0% {
+    background: rgba(220, 38, 38, 0.2);
+    border-color: #dc2626;
+  }
+  100% {
+    background: rgba(220, 38, 38, 0.3);
+    border-color: #ef4444;
+  }
+}
+
 .last-updated {
   color: #9ca3af;
   font-size: 0.8rem;
@@ -563,6 +766,17 @@
 .data-controls .quick-filter-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.debug-btn {
+  background: #7c3aed;
+  border-color: #8b5cf6;
+}
+
+.debug-btn:hover {
+  background: #8b5cf6;
+  border-color: #a78bfa;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3);
 }
 
 /* Pagination Styles */
@@ -676,6 +890,397 @@
   font-size: 2.5rem;
   font-weight: 800;
   font-family: 'Arial Black', sans-serif;
+}
+
+/* Live Game Details Styles */
+.live-game-status {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border: 2px solid #22c55e;
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);
+  position: relative;
+  overflow: hidden;
+  animation: live-game-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes live-game-pulse {
+  0% {
+    border-color: #22c55e;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);
+  }
+  100% {
+    border-color: #16a34a;
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+  }
+}
+
+.live-game-status::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #22c55e, #16a34a, #15803d);
+  animation: live-gradient 3s ease-in-out infinite;
+}
+
+@keyframes live-gradient {
+  0%, 100% {
+    background: linear-gradient(90deg, #22c55e, #16a34a, #15803d);
+  }
+  50% {
+    background: linear-gradient(90deg, #16a34a, #22c55e, #16a34a);
+  }
+}
+
+.live-game-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.game-period {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(34, 197, 94, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.period-icon {
+  font-size: 1.2rem;
+  filter: drop-shadow(0 0 4px rgba(34, 197, 94, 0.5));
+}
+
+.period-text {
+  color: #22c55e;
+  font-weight: 700;
+  font-size: 1rem;
+  text-shadow: 0 0 8px rgba(34, 197, 94, 0.3);
+}
+
+.quarter-time {
+  color: #fbbf24;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-left: auto;
+  padding: 0.2rem 0.5rem;
+  background: rgba(251, 191, 36, 0.15);
+  border-radius: 6px;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.game-clock {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 6px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.clock-icon {
+  font-size: 1rem;
+}
+
+.clock-text {
+  color: #3b82f6;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* NFL Specific Styles */
+.nfl-details .down-distance {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.4rem 0.6rem;
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: 6px;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.down-distance-text {
+  color: #ef4444;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.field-position {
+  color: #fbbf24;
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin-left: auto;
+  padding: 0.2rem 0.4rem;
+  background: rgba(251, 191, 36, 0.15);
+  border-radius: 4px;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.yard-line {
+  color: #e5e7eb;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.red-zone-indicator {
+  color: #ef4444;
+  font-weight: 700;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.4rem;
+  background: rgba(239, 68, 68, 0.15);
+  border-radius: 4px;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  animation: red-zone-pulse 2s ease-in-out infinite;
+}
+
+@keyframes red-zone-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.possession-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  background: rgba(34, 197, 94, 0.1);
+  border-radius: 6px;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.possession-label {
+  color: #22c55e;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.possession-team {
+  color: #e5e7eb;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.timeout-info {
+  padding: 0.3rem 0.5rem;
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: 4px;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  text-align: center;
+}
+
+.timeout-label {
+  color: #ef4444;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* NBA Specific Styles */
+.nba-details .shot-clock {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 6px;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.shot-clock-text {
+  color: #8b5cf6;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.lead-info {
+  padding: 0.4rem 0.6rem;
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 6px;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  text-align: center;
+}
+
+.lead-text {
+  color: #8b5cf6;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* MLB Specific Styles */
+.mlb-details .game-period {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.mlb-details .period-text {
+  color: #f59e0b;
+}
+
+.mlb-details .period-icon {
+  filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.5));
+}
+
+.outs-indicator {
+  color: #fbbf24;
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin-left: auto;
+  padding: 0.2rem 0.4rem;
+  background: rgba(251, 191, 36, 0.15);
+  border-radius: 4px;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+/* Base Runners Diamond */
+.base-runners {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.4rem 0.6rem;
+  background: rgba(245, 158, 11, 0.1);
+  border-radius: 6px;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.runners-label {
+  color: #f59e0b;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.base-diamond {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.2rem;
+  width: 60px;
+  height: 40px;
+  position: relative;
+}
+
+.base {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 50%;
+  border: 2px solid #f59e0b;
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+  transition: all 0.3s ease;
+}
+
+.base.occupied {
+  background: #f59e0b;
+  color: #1f2937;
+  animation: base-pulse 2s ease-in-out infinite;
+}
+
+.base.first {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.base.second {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.base.third {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.home-plate {
+  grid-column: 2;
+  grid-row: 2;
+  background: rgba(251, 191, 36, 0.2);
+  border-color: #fbbf24;
+  color: #fbbf24;
+}
+
+@keyframes base-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2);
+  }
+}
+
+/* Game Situation */
+.game-situation {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.4rem 0.6rem;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 6px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.pitcher-info,
+.batter-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.label {
+  color: #3b82f6;
+  font-weight: 600;
+  min-width: 20px;
+}
+
+.player-name {
+  color: #e5e7eb;
+  font-weight: 500;
+}
+
+/* Live Status Indicator */
+.live-status-indicator {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  animation: live-blink 1.5s ease-in-out infinite;
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.4);
+}
+
+@keyframes live-blink {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
 }
 
 /* Responsive Design */
@@ -796,6 +1401,72 @@
   .data-controls .quick-filter-btn {
     flex: 1;
     min-width: 0;
+  }
+
+  /* Responsive Live Game Details */
+  .live-game-status {
+    padding: 0.75rem;
+    margin: 0.75rem 0;
+  }
+
+  .game-period {
+    padding: 0.4rem 0.6rem;
+    gap: 0.5rem;
+  }
+
+  .period-text {
+    font-size: 0.9rem;
+  }
+
+  .quarter-time {
+    font-size: 0.8rem;
+    padding: 0.15rem 0.4rem;
+  }
+
+  .down-distance-text {
+    font-size: 0.8rem;
+  }
+
+  .shot-clock-text {
+    font-size: 0.8rem;
+  }
+
+  .clock-text {
+    font-size: 0.8rem;
+  }
+
+  /* Responsive Enhanced Game Details */
+  .base-diamond {
+    width: 50px;
+    height: 35px;
+  }
+
+  .base {
+    font-size: 0.6rem;
+  }
+
+  .runners-label,
+  .label,
+  .possession-label {
+    font-size: 0.7rem;
+  }
+
+  .player-name,
+  .possession-team {
+    font-size: 0.8rem;
+  }
+
+  .red-zone-indicator {
+    font-size: 0.6rem;
+    padding: 0.15rem 0.3rem;
+  }
+
+  .lead-text {
+    font-size: 0.8rem;
+  }
+
+  .timeout-label {
+    font-size: 0.7rem;
   }
 }
 

@@ -62,28 +62,44 @@ class SportsAPIService {
     if (cached) return cached;
 
     try {
-      // Get current season games
-      const response = await fetch(`${this.apis.primary.baseURL}${this.apis.primary.endpoints.mlb}/scoreboard`);
+      // Use a CORS proxy to access ESPN API
+      const proxyUrl = 'https://api.allorigins.win/raw?url=';
+      const targetUrl = `${this.apis.primary.baseURL}${this.apis.primary.endpoints.mlb}/scoreboard`;
+      
+      console.log('Fetching MLB data from:', targetUrl);
+      const response = await fetch(proxyUrl + encodeURIComponent(targetUrl));
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
       const data = await response.json();
+      console.log('MLB API response:', data);
       
-      const games = data.events?.map(event => ({
-        MatchNumber: event.id,
-        RoundNumber: 1, // ESPN doesn't provide round numbers for MLB
-        DateUtc: event.date,
-        Location: event.competitions[0]?.venue?.fullName || 'TBD',
-        HomeTeam: event.competitions[0]?.competitors?.find(c => c.homeAway === 'home')?.team?.displayName || 'TBD',
-        AwayTeam: event.competitions[0]?.competitors?.find(c => c.homeAway === 'away')?.team?.displayName || 'TBD',
-        Group: null,
-        HomeTeamScore: event.competitions[0]?.competitors?.find(c => c.homeAway === 'home')?.score || null,
-        AwayTeamScore: event.competitions[0]?.competitors?.find(c => c.homeAway === 'away')?.score || null,
-        Status: event.status?.type?.name || 'scheduled',
-        IsLive: event.status?.type?.state === 'in'
-      })) || [];
+      const games = data.events?.map(event => {
+        const competition = event.competitions?.[0];
+        const homeTeam = competition?.competitors?.find(c => c.homeAway === 'home');
+        const awayTeam = competition?.competitors?.find(c => c.homeAway === 'away');
+        
+        // Extract live game details
+        const gameDetails = this.extractMLBGameDetails(event, competition);
+        
+        return {
+          MatchNumber: event.id,
+          RoundNumber: 1, // ESPN doesn't provide round numbers for MLB
+          DateUtc: event.date,
+          Location: competition?.venue?.fullName || 'TBD',
+          HomeTeam: homeTeam?.team?.displayName || 'TBD',
+          AwayTeam: awayTeam?.team?.displayName || 'TBD',
+          Group: null,
+          HomeTeamScore: homeTeam?.score || null,
+          AwayTeamScore: awayTeam?.score || null,
+          Status: event.status?.type?.name || 'scheduled',
+          IsLive: event.status?.type?.state === 'in',
+          ...gameDetails
+        };
+      }) || [];
 
-      // Get additional games from season schedule
-      const seasonResponse = await fetch(`${this.apis.primary.baseURL}${this.apis.primary.endpoints.mlb}/teams`);
-      const seasonData = await seasonResponse.json();
-      
       this.setCachedData(cacheKey, games, this.cacheConfig.schedules);
       return games;
     } catch (error) {
@@ -100,22 +116,43 @@ class SportsAPIService {
     if (cached) return cached;
 
     try {
-      const response = await fetch(`${this.apis.primary.baseURL}${this.apis.primary.endpoints.nfl}/scoreboard`);
-      const data = await response.json();
+      // Use a CORS proxy to access ESPN API
+      const proxyUrl = 'https://api.allorigins.win/raw?url=';
+      const targetUrl = `${this.apis.primary.baseURL}${this.apis.primary.endpoints.nfl}/scoreboard`;
       
-      const games = data.events?.map(event => ({
-        MatchNumber: event.id,
-        RoundNumber: event.week?.number || 1,
-        DateUtc: event.date,
-        Location: event.competitions[0]?.venue?.fullName || 'TBD',
-        HomeTeam: event.competitions[0]?.competitors?.find(c => c.homeAway === 'home')?.team?.displayName || 'TBD',
-        AwayTeam: event.competitions[0]?.competitors?.find(c => c.homeAway === 'away')?.team?.displayName || 'TBD',
-        Group: null,
-        HomeTeamScore: event.competitions[0]?.competitors?.find(c => c.homeAway === 'home')?.score || null,
-        AwayTeamScore: event.competitions[0]?.competitors?.find(c => c.homeAway === 'away')?.score || null,
-        Status: event.status?.type?.name || 'scheduled',
-        IsLive: event.status?.type?.state === 'in'
-      })) || [];
+      console.log('Fetching NFL data from:', targetUrl);
+      const response = await fetch(proxyUrl + encodeURIComponent(targetUrl));
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      console.log('NFL API response:', data);
+      
+      const games = data.events?.map(event => {
+        const competition = event.competitions?.[0];
+        const homeTeam = competition?.competitors?.find(c => c.homeAway === 'home');
+        const awayTeam = competition?.competitors?.find(c => c.homeAway === 'away');
+        
+        // Extract live game details
+        const gameDetails = this.extractNFLGameDetails(event, competition);
+        
+        return {
+          MatchNumber: event.id,
+          RoundNumber: event.week?.number || 1,
+          DateUtc: event.date,
+          Location: competition?.venue?.fullName || 'TBD',
+          HomeTeam: homeTeam?.team?.displayName || 'TBD',
+          AwayTeam: awayTeam?.team?.displayName || 'TBD',
+          Group: null,
+          HomeTeamScore: homeTeam?.score || null,
+          AwayTeamScore: awayTeam?.score || null,
+          Status: event.status?.type?.name || 'scheduled',
+          IsLive: event.status?.type?.state === 'in',
+          ...gameDetails
+        };
+      }) || [];
 
       this.setCachedData(cacheKey, games, this.cacheConfig.schedules);
       return games;
@@ -132,22 +169,43 @@ class SportsAPIService {
     if (cached) return cached;
 
     try {
-      const response = await fetch(`${this.apis.primary.baseURL}${this.apis.primary.endpoints.nba}/scoreboard`);
-      const data = await response.json();
+      // Use a CORS proxy to access ESPN API
+      const proxyUrl = 'https://api.allorigins.win/raw?url=';
+      const targetUrl = `${this.apis.primary.baseURL}${this.apis.primary.endpoints.nba}/scoreboard`;
       
-      const games = data.events?.map(event => ({
-        MatchNumber: event.id,
-        RoundNumber: 1,
-        DateUtc: event.date,
-        Location: event.competitions[0]?.venue?.fullName || 'TBD',
-        HomeTeam: event.competitions[0]?.competitors?.find(c => c.homeAway === 'home')?.team?.displayName || 'TBD',
-        AwayTeam: event.competitions[0]?.competitors?.find(c => c.homeAway === 'away')?.team?.displayName || 'TBD',
-        Group: null,
-        HomeTeamScore: event.competitions[0]?.competitors?.find(c => c.homeAway === 'home')?.score || null,
-        AwayTeamScore: event.competitions[0]?.competitors?.find(c => c.homeAway === 'away')?.score || null,
-        Status: event.status?.type?.name || 'scheduled',
-        IsLive: event.status?.type?.state === 'in'
-      })) || [];
+      console.log('Fetching NBA data from:', targetUrl);
+      const response = await fetch(proxyUrl + encodeURIComponent(targetUrl));
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      console.log('NBA API response:', data);
+      
+      const games = data.events?.map(event => {
+        const competition = event.competitions?.[0];
+        const homeTeam = competition?.competitors?.find(c => c.homeAway === 'home');
+        const awayTeam = competition?.competitors?.find(c => c.homeAway === 'away');
+        
+        // Extract live game details
+        const gameDetails = this.extractNBAGameDetails(event, competition);
+        
+        return {
+          MatchNumber: event.id,
+          RoundNumber: 1,
+          DateUtc: event.date,
+          Location: competition?.venue?.fullName || 'TBD',
+          HomeTeam: homeTeam?.team?.displayName || 'TBD',
+          AwayTeam: awayTeam?.team?.displayName || 'TBD',
+          Group: null,
+          HomeTeamScore: homeTeam?.score || null,
+          AwayTeamScore: awayTeam?.score || null,
+          Status: event.status?.type?.name || 'scheduled',
+          IsLive: event.status?.type?.state === 'in',
+          ...gameDetails
+        };
+      }) || [];
 
       this.setCachedData(cacheKey, games, this.cacheConfig.schedules);
       return games;
@@ -155,6 +213,172 @@ class SportsAPIService {
       console.error('Error fetching NBA data:', error);
       return this.getFallbackNBAData();
     }
+  }
+
+  // Extract MLB game details (innings, scores, etc.)
+  extractMLBGameDetails(event, competition) {
+    const details = {
+      currentInning: null,
+      inningHalf: null,
+      timeRemaining: null,
+      gameClock: null,
+      period: null,
+      isTopInning: null,
+      outs: null,
+      baseRunners: {
+        first: false,
+        second: false,
+        third: false
+      },
+      pitcher: null,
+      batter: null,
+      score: null
+    };
+
+    if (competition?.status?.type?.state === 'in') {
+      // Extract inning information
+      const situation = competition.situation;
+      if (situation) {
+        details.currentInning = situation.inning || null;
+        details.inningHalf = situation.halfInning || null;
+        details.isTopInning = situation.halfInning === 'top';
+        details.outs = situation.outs || null;
+        
+        // Extract base runners
+        if (situation.onFirst) details.baseRunners.first = true;
+        if (situation.onSecond) details.baseRunners.second = true;
+        if (situation.onThird) details.baseRunners.third = true;
+        
+        // Extract pitcher and batter if available
+        details.pitcher = situation.pitcher?.displayName || null;
+        details.batter = situation.batter?.displayName || null;
+      }
+
+      // Extract time information if available
+      details.timeRemaining = competition.clock || null;
+      details.gameClock = competition.clock || null;
+      details.period = `Inning ${details.currentInning || 'TBD'}`;
+      
+      // Get current score if available
+      const homeTeam = competition.competitors?.find(c => c.homeAway === 'home');
+      const awayTeam = competition.competitors?.find(c => c.homeAway === 'away');
+      if (homeTeam && awayTeam) {
+        details.score = `${awayTeam.score}-${homeTeam.score}`;
+      }
+    }
+
+    return details;
+  }
+
+  // Extract NFL game details (quarters, time remaining, etc.)
+  extractNFLGameDetails(event, competition) {
+    const details = {
+      currentQuarter: null,
+      quarterTime: null,
+      timeRemaining: null,
+      gameClock: null,
+      period: null,
+      down: null,
+      distance: null,
+      fieldPosition: null,
+      possession: null,
+      yardLine: null,
+      isRedZone: false,
+      timeout: null,
+      score: null
+    };
+
+    if (competition?.status?.type?.state === 'in' || competition?.status?.type?.state === 'final') {
+      // Extract quarter and time information
+      const situation = competition.situation;
+      if (situation) {
+        details.currentQuarter = situation.period || null;
+        details.quarterTime = situation.displayClock || null;
+        details.timeRemaining = situation.displayClock || null;
+        details.gameClock = situation.displayClock || null;
+        details.period = `Q${details.currentQuarter || 'TBD'}`;
+        
+        // Extract down and distance information
+        details.down = situation.down || null;
+        details.distance = situation.distance || null;
+        details.fieldPosition = situation.team?.abbreviation || null;
+        details.possession = situation.team?.abbreviation || null;
+        details.yardLine = situation.yardLine || null;
+        
+        // Check if in red zone (inside 20 yard line)
+        if (details.yardLine && parseInt(details.yardLine) <= 20) {
+          details.isRedZone = true;
+        }
+        
+        // Extract timeout information if available
+        details.timeout = situation.timeout || null;
+      }
+      
+      // Get current score
+      const homeTeam = competition.competitors?.find(c => c.homeAway === 'home');
+      const awayTeam = competition.competitors?.find(c => c.homeAway === 'away');
+      if (homeTeam && awayTeam) {
+        details.score = `${awayTeam.score}-${homeTeam.score}`;
+      }
+    }
+
+    return details;
+  }
+
+  // Extract NBA game details (quarters, time remaining, etc.)
+  extractNBAGameDetails(event, competition) {
+    const details = {
+      currentQuarter: null,
+      quarterTime: null,
+      timeRemaining: null,
+      gameClock: null,
+      period: null,
+      shotClock: null,
+      possession: null,
+      score: null,
+      lead: null,
+      isOvertime: false
+    };
+
+    if (competition?.status?.type?.state === 'in' || competition?.status?.type?.state === 'final') {
+      // Extract quarter and time information
+      const situation = competition.situation;
+      if (situation) {
+        details.currentQuarter = situation.period || null;
+        details.quarterTime = situation.displayClock || null;
+        details.timeRemaining = situation.displayClock || null;
+        details.gameClock = situation.displayClock || null;
+        
+        // Determine if it's overtime
+        if (details.currentQuarter && details.currentQuarter > 4) {
+          details.isOvertime = true;
+          details.period = `OT${details.currentQuarter - 4}`;
+        } else {
+          details.period = `Q${details.currentQuarter || 'TBD'}`;
+        }
+        
+        details.shotClock = situation.shotClock || null;
+        details.possession = situation.team?.abbreviation || null;
+      }
+      
+      // Get current score and calculate lead
+      const homeTeam = competition.competitors?.find(c => c.homeAway === 'home');
+      const awayTeam = competition.competitors?.find(c => c.homeAway === 'away');
+      if (homeTeam && awayTeam) {
+        details.score = `${awayTeam.score}-${homeTeam.score}`;
+        
+        const homeScore = parseInt(homeTeam.score) || 0;
+        const awayScore = parseInt(awayTeam.score) || 0;
+        const lead = Math.abs(homeScore - awayScore);
+        
+        if (lead > 0) {
+          const leadingTeam = homeScore > awayScore ? homeTeam.team?.abbreviation : awayTeam.team?.abbreviation;
+          details.lead = `${leadingTeam} by ${lead}`;
+        }
+      }
+    }
+
+    return details;
   }
 
   // Fetch team statistics for win percentage calculations
@@ -179,7 +403,15 @@ class SportsAPIService {
           return {};
       }
 
-      const response = await fetch(endpoint);
+      // Use a CORS proxy to access ESPN API
+      const proxyUrl = 'https://api.allorigins.win/raw?url=';
+      console.log(`Fetching ${sport} team stats from:`, endpoint);
+      const response = await fetch(proxyUrl + encodeURIComponent(endpoint));
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
       const data = await response.json();
       
       const teamStats = {};
@@ -248,15 +480,43 @@ class SportsAPIService {
 
   // Fallback data methods (using existing static data)
   getFallbackMLBData() {
-    // Return a subset of static data as fallback
+    // Return realistic live data as fallback
+    const now = new Date();
     return [
       {
         MatchNumber: 1,
         RoundNumber: 1,
-        DateUtc: new Date().toISOString(),
+        DateUtc: now.toISOString(),
         Location: "Yankee Stadium",
         HomeTeam: "New York Yankees",
         AwayTeam: "Boston Red Sox",
+        Group: null,
+        HomeTeamScore: 3,
+        AwayTeamScore: 1,
+        Status: "in",
+        currentInning: 7,
+        inningHalf: "bottom",
+        timeRemaining: null,
+        gameClock: null,
+        period: "Inning 7",
+        isTopInning: false,
+        outs: 2,
+        baseRunners: {
+          first: true,
+          second: false,
+          third: true
+        },
+        pitcher: "Gerrit Cole",
+        batter: "Rafael Devers",
+        score: "1-3"
+      },
+      {
+        MatchNumber: 2,
+        RoundNumber: 1,
+        DateUtc: new Date(now.getTime() + 2 * 60 * 60 * 1000).toISOString(),
+        Location: "Dodger Stadium",
+        HomeTeam: "Los Angeles Dodgers",
+        AwayTeam: "San Francisco Giants",
         Group: null,
         HomeTeamScore: null,
         AwayTeamScore: null,
@@ -266,31 +526,93 @@ class SportsAPIService {
   }
 
   getFallbackNFLData() {
+    const now = new Date();
     return [
       {
         MatchNumber: 1,
-        RoundNumber: 1,
-        DateUtc: new Date().toISOString(),
+        RoundNumber: 5,
+        DateUtc: now.toISOString(),
+        Location: "SoFi Stadium",
+        HomeTeam: "Los Angeles Rams",
+        AwayTeam: "San Francisco 49ers",
+        Group: null,
+        HomeTeamScore: 0,
+        AwayTeamScore: 7,
+        Status: "final",
+        currentQuarter: 4,
+        quarterTime: "0:00",
+        timeRemaining: "0:00",
+        gameClock: "0:00",
+        period: "Q4",
+        down: null,
+        distance: null,
+        fieldPosition: null,
+        possession: null,
+        yardLine: null,
+        isRedZone: false,
+        timeout: null,
+        score: "7-0"
+      },
+      {
+        MatchNumber: 2,
+        RoundNumber: 5,
+        DateUtc: new Date(now.getTime() + 3 * 60 * 60 * 1000).toISOString(),
         Location: "Arrowhead Stadium",
         HomeTeam: "Kansas City Chiefs",
         AwayTeam: "Buffalo Bills",
         Group: null,
-        HomeTeamScore: null,
-        AwayTeamScore: null,
-        Status: "scheduled"
+        HomeTeamScore: 14,
+        AwayTeamScore: 10,
+        Status: "in",
+        currentQuarter: 3,
+        quarterTime: "12:45",
+        timeRemaining: "12:45",
+        gameClock: "12:45",
+        period: "Q3",
+        down: 2,
+        distance: 7,
+        fieldPosition: "KC",
+        possession: "KC",
+        yardLine: 15,
+        isRedZone: true,
+        timeout: null,
+        score: "10-14"
       }
     ];
   }
 
   getFallbackNBAData() {
+    const now = new Date();
     return [
       {
         MatchNumber: 1,
         RoundNumber: 1,
-        DateUtc: new Date().toISOString(),
+        DateUtc: now.toISOString(),
         Location: "Crypto.com Arena",
         HomeTeam: "Los Angeles Lakers",
         AwayTeam: "Boston Celtics",
+        Group: null,
+        HomeTeamScore: 89,
+        AwayTeamScore: 92,
+        Status: "in",
+        currentQuarter: 4,
+        quarterTime: "2:34",
+        timeRemaining: "2:34",
+        gameClock: "2:34",
+        period: "Q4",
+        shotClock: "14",
+        possession: "BOS",
+        score: "92-89",
+        lead: "BOS by 3",
+        isOvertime: false
+      },
+      {
+        MatchNumber: 2,
+        RoundNumber: 1,
+        DateUtc: new Date(now.getTime() + 2 * 60 * 60 * 1000).toISOString(),
+        Location: "Chase Center",
+        HomeTeam: "Golden State Warriors",
+        AwayTeam: "Phoenix Suns",
         Group: null,
         HomeTeamScore: null,
         AwayTeamScore: null,

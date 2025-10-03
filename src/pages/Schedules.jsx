@@ -146,10 +146,31 @@ const getGameStatus = (game) => {
   return "Scheduled";
 };
 
-// Function to process real schedule data
+// Function to process real schedule data with smart filtering
 const processScheduleData = (data, sport, liveStats = {}) => {
-  // For MLB, show all games; for other sports, limit to avoid performance issues
-  const gamesToProcess = sport === 'MLB' ? data : data.slice(0, 100);
+  const now = new Date();
+  const oneMonthAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+  
+  // Filter games to prioritize: live games, future games, and games within the last month
+  const filteredGames = data.filter(game => {
+    const gameDate = new Date(game.DateUtc);
+    const gameStatus = getGameStatus(game);
+    
+    // Always include live games
+    if (gameStatus === "Live") return true;
+    
+    // Include future games
+    if (gameDate > now) return true;
+    
+    // Include games from the last month
+    if (gameDate >= oneMonthAgo && gameDate <= now) return true;
+    
+    // Exclude older games
+    return false;
+  });
+  
+  // For MLB, show all filtered games; for other sports, limit to avoid performance issues
+  const gamesToProcess = sport === 'MLB' ? filteredGames : filteredGames.slice(0, 100);
   
   return gamesToProcess.map((game, index) => {
     const gameDate = new Date(game.DateUtc);
@@ -178,7 +199,33 @@ const processScheduleData = (data, sport, liveStats = {}) => {
       awayScore: game.AwayTeamScore,
       sport,
       status: game.Status,
-      isLive: gameStatus === "Live"
+      isLive: gameStatus === "Live",
+      // Enhanced live game details
+      currentInning: game.currentInning,
+      inningHalf: game.inningHalf,
+      currentQuarter: game.currentQuarter,
+      quarterTime: game.quarterTime,
+      timeRemaining: game.timeRemaining,
+      gameClock: game.gameClock,
+      period: game.period,
+      isTopInning: game.isTopInning,
+      // MLB specific
+      outs: game.outs,
+      baseRunners: game.baseRunners,
+      pitcher: game.pitcher,
+      batter: game.batter,
+      // NFL specific
+      down: game.down,
+      distance: game.distance,
+      fieldPosition: game.fieldPosition,
+      possession: game.possession,
+      yardLine: game.yardLine,
+      isRedZone: game.isRedZone,
+      timeout: game.timeout,
+      // NBA specific
+      shotClock: game.shotClock,
+      lead: game.lead,
+      isOvertime: game.isOvertime
     };
   });
 };
@@ -443,26 +490,25 @@ const GAME_SCHEDULES = {
     { name: "MLB All-Star Game", date: "2025-07-15", time: "8:00 PM", location: "Coors Field, Denver", type: "All-Star", week: "All-Star Weekend" },
     { name: "Home Run Derby", date: "2025-07-14", time: "8:00 PM", location: "Coors Field, Denver", type: "All-Star", week: "All-Star Weekend" },
     
-    // Wild Card Series (Best of 3)
-    { name: "Phillies @ Marlins - Game 1", date: "2025-10-01", time: "4:07 PM", location: "Citizens Bank Park, Philadelphia", type: "Playoffs", week: "Wild Card", homeTeam: "Philadelphia Phillies", awayTeam: "Miami Marlins", homeScore: null, awayScore: null },
-    { name: "Phillies @ Marlins - Game 2", date: "2025-10-02", time: "4:07 PM", location: "Citizens Bank Park, Philadelphia", type: "Playoffs", week: "Wild Card", homeTeam: "Philadelphia Phillies", awayTeam: "Miami Marlins", homeScore: null, awayScore: null },
-    { name: "Brewers @ Diamondbacks - Game 1", date: "2025-10-01", time: "8:07 PM", location: "American Family Field, Milwaukee", type: "Playoffs", week: "Wild Card", homeTeam: "Milwaukee Brewers", awayTeam: "Arizona Diamondbacks", homeScore: null, awayScore: null },
-    { name: "Brewers @ Diamondbacks - Game 2", date: "2025-10-02", time: "8:07 PM", location: "American Family Field, Milwaukee", type: "Playoffs", week: "Wild Card", homeTeam: "Milwaukee Brewers", awayTeam: "Arizona Diamondbacks", homeScore: null, awayScore: null },
-    { name: "Rays @ Rangers - Game 1", date: "2025-10-03", time: "4:07 PM", location: "Tropicana Field, St. Petersburg", type: "Playoffs", week: "Wild Card", homeTeam: "Tampa Bay Rays", awayTeam: "Texas Rangers", homeScore: null, awayScore: null },
-    { name: "Rays @ Rangers - Game 2", date: "2025-10-04", time: "4:07 PM", location: "Tropicana Field, St. Petersburg", type: "Playoffs", week: "Wild Card", homeTeam: "Tampa Bay Rays", awayTeam: "Texas Rangers", homeScore: null, awayScore: null },
-    { name: "Twins @ Astros - Game 1", date: "2025-10-03", time: "8:07 PM", location: "Target Field, Minneapolis", type: "Playoffs", week: "Wild Card", homeTeam: "Minnesota Twins", awayTeam: "Houston Astros", homeScore: null, awayScore: null },
-    { name: "Twins @ Astros - Game 2", date: "2025-10-04", time: "8:07 PM", location: "Target Field, Minneapolis", type: "Playoffs", week: "Wild Card", homeTeam: "Minnesota Twins", awayTeam: "Houston Astros", homeScore: null, awayScore: null },
+    // Wild Card Series (Best of 3) - 2025 Playoffs
+    { name: "AL Wild Card: #6 Detroit Tigers @ #3 Cleveland Guardians - Game 1", date: "2025-09-30", time: "3:08 PM", location: "Progressive Field, Cleveland", type: "Playoffs", week: "Wild Card Series", homeTeam: "Cleveland Guardians", awayTeam: "Detroit Tigers", homeScore: null, awayScore: null },
+    { name: "AL Wild Card: #6 Detroit Tigers @ #3 Cleveland Guardians - Game 2", date: "2025-10-01", time: "3:08 PM", location: "Progressive Field, Cleveland", type: "Playoffs", week: "Wild Card Series", homeTeam: "Cleveland Guardians", awayTeam: "Detroit Tigers", homeScore: null, awayScore: null },
+    { name: "AL Wild Card: #5 Boston Red Sox @ #4 New York Yankees - Game 1", date: "2025-09-30", time: "8:08 PM", location: "Yankee Stadium, New York", type: "Playoffs", week: "Wild Card Series", homeTeam: "New York Yankees", awayTeam: "Boston Red Sox", homeScore: null, awayScore: null },
+    { name: "AL Wild Card: #5 Boston Red Sox @ #4 New York Yankees - Game 2", date: "2025-10-01", time: "8:08 PM", location: "Yankee Stadium, New York", type: "Playoffs", week: "Wild Card Series", homeTeam: "New York Yankees", awayTeam: "Boston Red Sox", homeScore: null, awayScore: null },
+    { name: "NL Wild Card: #6 Cincinnati Reds @ #3 Los Angeles Dodgers - Game 1", date: "2025-09-30", time: "5:08 PM", location: "Dodger Stadium, Los Angeles", type: "Playoffs", week: "Wild Card Series", homeTeam: "Los Angeles Dodgers", awayTeam: "Cincinnati Reds", homeScore: null, awayScore: null },
+    { name: "NL Wild Card: #6 Cincinnati Reds @ #3 Los Angeles Dodgers - Game 2", date: "2025-10-01", time: "5:08 PM", location: "Dodger Stadium, Los Angeles", type: "Playoffs", week: "Wild Card Series", homeTeam: "Los Angeles Dodgers", awayTeam: "Cincinnati Reds", homeScore: null, awayScore: null },
+    { name: "NL Wild Card: #5 San Diego Padres @ #4 Chicago Cubs - Game 1", date: "2025-09-30", time: "5:08 PM", location: "Wrigley Field, Chicago", type: "Playoffs", week: "Wild Card Series", homeTeam: "Chicago Cubs", awayTeam: "San Diego Padres", homeScore: null, awayScore: null },
+    { name: "NL Wild Card: #5 San Diego Padres @ #4 Chicago Cubs - Game 2", date: "2025-10-01", time: "5:08 PM", location: "Wrigley Field, Chicago", type: "Playoffs", week: "Wild Card Series", homeTeam: "Chicago Cubs", awayTeam: "San Diego Padres", homeScore: null, awayScore: null },
     
-    // Division Series (Best of 5)
-    { name: "NLDS: Braves vs Phillies - Game 1", date: "2025-10-07", time: "4:07 PM", location: "Truist Park, Atlanta", type: "Playoffs", week: "Division Series", homeTeam: "Atlanta Braves", awayTeam: "Philadelphia Phillies", homeScore: null, awayScore: null },
-    { name: "NLDS: Braves vs Phillies - Game 2", date: "2025-10-08", time: "4:07 PM", location: "Truist Park, Atlanta", type: "Playoffs", week: "Division Series", homeTeam: "Atlanta Braves", awayTeam: "Philadelphia Phillies", homeScore: null, awayScore: null },
-    { name: "NLDS: Braves vs Phillies - Game 3", date: "2025-10-10", time: "8:07 PM", location: "Citizens Bank Park, Philadelphia", type: "Playoffs", week: "Division Series", homeTeam: "Philadelphia Phillies", awayTeam: "Atlanta Braves", homeScore: null, awayScore: null },
-    { name: "NLDS: Dodgers vs Diamondbacks - Game 1", date: "2025-10-07", time: "8:07 PM", location: "Dodger Stadium, Los Angeles", type: "Playoffs", week: "Division Series", homeTeam: "Los Angeles Dodgers", awayTeam: "Arizona Diamondbacks", homeScore: null, awayScore: null },
-    { name: "NLDS: Dodgers vs Diamondbacks - Game 2", date: "2025-10-08", time: "8:07 PM", location: "Dodger Stadium, Los Angeles", type: "Playoffs", week: "Division Series", homeTeam: "Los Angeles Dodgers", awayTeam: "Arizona Diamondbacks", homeScore: null, awayScore: null },
-    { name: "ALDS: Orioles vs Rangers - Game 1", date: "2025-10-07", time: "1:07 PM", location: "Oriole Park, Baltimore", type: "Playoffs", week: "Division Series", homeTeam: "Baltimore Orioles", awayTeam: "Texas Rangers", homeScore: null, awayScore: null },
-    { name: "ALDS: Orioles vs Rangers - Game 2", date: "2025-10-08", time: "1:07 PM", location: "Oriole Park, Baltimore", type: "Playoffs", week: "Division Series", homeTeam: "Baltimore Orioles", awayTeam: "Texas Rangers", homeScore: null, awayScore: null },
-    { name: "ALDS: Astros vs Twins - Game 1", date: "2025-10-07", time: "12:07 PM", location: "Minute Maid Park, Houston", type: "Playoffs", week: "Division Series", homeTeam: "Houston Astros", awayTeam: "Minnesota Twins", homeScore: null, awayScore: null },
-    { name: "ALDS: Astros vs Twins - Game 2", date: "2025-10-08", time: "12:07 PM", location: "Minute Maid Park, Houston", type: "Playoffs", week: "Division Series", homeTeam: "Houston Astros", awayTeam: "Minnesota Twins", homeScore: null, awayScore: null },
+    // Division Series (Best of 5) - 2025 Playoffs
+    { name: "ALDS: Toronto Blue Jays vs Wild Card Winner (Yankees/Red Sox) - Game 1", date: "2025-10-04", time: "1:08 PM", location: "Rogers Centre, Toronto", type: "Playoffs", week: "Division Series", homeTeam: "Toronto Blue Jays", awayTeam: "Wild Card Winner", homeScore: null, awayScore: null },
+    { name: "ALDS: Toronto Blue Jays vs Wild Card Winner (Yankees/Red Sox) - Game 2", date: "2025-10-05", time: "1:08 PM", location: "Rogers Centre, Toronto", type: "Playoffs", week: "Division Series", homeTeam: "Toronto Blue Jays", awayTeam: "Wild Card Winner", homeScore: null, awayScore: null },
+    { name: "ALDS: Seattle Mariners vs Wild Card Winner (Guardians/Tigers) - Game 1", date: "2025-10-04", time: "8:38 PM", location: "T-Mobile Park, Seattle", type: "Playoffs", week: "Division Series", homeTeam: "Seattle Mariners", awayTeam: "Wild Card Winner", homeScore: null, awayScore: null },
+    { name: "ALDS: Seattle Mariners vs Wild Card Winner (Guardians/Tigers) - Game 2", date: "2025-10-05", time: "5:03 PM", location: "T-Mobile Park, Seattle", type: "Playoffs", week: "Division Series", homeTeam: "Seattle Mariners", awayTeam: "Wild Card Winner", homeScore: null, awayScore: null },
+    { name: "NLDS: Milwaukee Brewers vs Wild Card Winner (Cubs/Padres) - Game 1", date: "2025-10-04", time: "9:08 PM", location: "American Family Field, Milwaukee", type: "Playoffs", week: "Division Series", homeTeam: "Milwaukee Brewers", awayTeam: "Wild Card Winner", homeScore: null, awayScore: null },
+    { name: "NLDS: Milwaukee Brewers vs Wild Card Winner (Cubs/Padres) - Game 2", date: "2025-10-06", time: "9:08 PM", location: "American Family Field, Milwaukee", type: "Playoffs", week: "Division Series", homeTeam: "Milwaukee Brewers", awayTeam: "Wild Card Winner", homeScore: null, awayScore: null },
+    { name: "NLDS: Philadelphia Phillies vs Los Angeles Dodgers - Game 1", date: "2025-10-04", time: "6:38 PM", location: "Citizens Bank Park, Philadelphia", type: "Playoffs", week: "Division Series", homeTeam: "Philadelphia Phillies", awayTeam: "Los Angeles Dodgers", homeScore: null, awayScore: null },
+    { name: "NLDS: Philadelphia Phillies vs Los Angeles Dodgers - Game 2", date: "2025-10-06", time: "6:38 PM", location: "Citizens Bank Park, Philadelphia", type: "Playoffs", week: "Division Series", homeTeam: "Philadelphia Phillies", awayTeam: "Los Angeles Dodgers", homeScore: null, awayScore: null },
     
     // Championship Series (Best of 7)
     { name: "NLCS: Game 1", date: "2025-10-15", time: "8:07 PM", location: "TBD", type: "Playoffs", week: "Championship Series" },
@@ -594,16 +640,19 @@ function Schedules() {
   const [liveTeamStats, setLiveTeamStats] = useState({});
   const [dataSource, setDataSource] = useState('static'); // 'static' or 'live'
   const [refreshInterval, setRefreshInterval] = useState(null);
+  const [liveGamesCount, setLiveGamesCount] = useState(0);
+  const [hasLiveGames, setHasLiveGames] = useState(false);
+  const [todaysGames, setTodaysGames] = useState([]);
 
   useEffect(() => {
     // Initialize data loading
     loadScheduleData();
     
-    // Set up auto-refresh for live data
+    // Set up auto-refresh for live data (weekly refresh)
     if (liveDataEnabled) {
       const interval = setInterval(() => {
         refreshLiveData();
-      }, 5 * 60 * 1000); // Refresh every 5 minutes
+      }, 7 * 24 * 60 * 60 * 1000); // Weekly refresh (7 days)
       
       setRefreshInterval(interval);
       
@@ -611,7 +660,7 @@ function Schedules() {
         if (interval) clearInterval(interval);
       };
     }
-  }, [liveDataEnabled]);
+  }, [liveDataEnabled, hasLiveGames]);
 
   // Load schedule data (live or static)
   const loadScheduleData = async () => {
@@ -622,29 +671,51 @@ function Schedules() {
       let teamStats = {};
       
       if (liveDataEnabled) {
-        // Try to load live data
-        const [nflLive, nbaLive, mlbLive] = await Promise.all([
+        console.log('Attempting to fetch live data...');
+        
+        // Try to load live data with better error handling
+        const [nflLive, nbaLive, mlbLive] = await Promise.allSettled([
           sportsAPI.fetchNFLData(),
           sportsAPI.fetchNBAData(), 
           sportsAPI.fetchMLBData()
         ]);
         
         // Load live team statistics
-        const [nflStats, nbaStats, mlbStats] = await Promise.all([
+        const [nflStats, nbaStats, mlbStats] = await Promise.allSettled([
           sportsAPI.fetchTeamStats('NFL'),
           sportsAPI.fetchTeamStats('NBA'),
           sportsAPI.fetchTeamStats('MLB')
         ]);
         
+        // Process successful results
+        const nflData = nflLive.status === 'fulfilled' ? nflLive.value : [];
+        const nbaData = nbaLive.status === 'fulfilled' ? nbaLive.value : [];
+        const mlbData = mlbLive.status === 'fulfilled' ? mlbLive.value : [];
+        
+        const nflStatsData = nflStats.status === 'fulfilled' ? nflStats.value : {};
+        const nbaStatsData = nbaStats.status === 'fulfilled' ? nbaStats.value : {};
+        const mlbStatsData = mlbStats.status === 'fulfilled' ? mlbStats.value : {};
+        
+        teamStats = { ...nflStatsData, ...nbaStatsData, ...mlbStatsData };
+        
         schedules = {
-          NFL: processScheduleData(nflLive, 'NFL', teamStats),
-          NBA: processScheduleData(nbaLive, 'NBA', teamStats),
-          MLB: processScheduleData(mlbLive, 'MLB', teamStats)
+          NFL: processScheduleData(nflData, 'NFL', teamStats),
+          NBA: processScheduleData(nbaData, 'NBA', teamStats),
+          MLB: processScheduleData(mlbData, 'MLB', teamStats)
         };
         
-        teamStats = { ...nflStats, ...nbaStats, ...mlbStats };
-        setDataSource('live');
+        // Check if we got any live data
+        const hasLiveData = nflData.length > 0 || nbaData.length > 0 || mlbData.length > 0;
+        setDataSource(hasLiveData ? 'live' : 'static');
         setLastUpdated(new Date());
+        
+        console.log('Live data loaded:', {
+          nfl: nflData.length,
+          nba: nbaData.length,
+          mlb: mlbData.length,
+          hasLiveData
+        });
+        
       } else {
         // Fallback to static data
         schedules = {
@@ -658,6 +729,22 @@ function Schedules() {
       setRealSchedules(schedules);
       setLiveTeamStats(teamStats);
       
+      // Count live games
+      const liveGames = Object.values(schedules).flat().filter(game => game.isLive);
+      setLiveGamesCount(liveGames.length);
+      setHasLiveGames(liveGames.length > 0);
+      
+      // Extract today's games
+      const today = new Date().toISOString().split('T')[0];
+      const todaysGamesList = Object.values(schedules).flat().filter(game => {
+        const gameDate = game.date;
+        return gameDate === today;
+      });
+      setTodaysGames(todaysGamesList);
+      
+      console.log('Live games found:', liveGames.length);
+      console.log('Today\'s games:', todaysGamesList.length);
+      
     } catch (error) {
       console.error('Error loading schedule data:', error);
       // Fallback to static data on error
@@ -668,6 +755,8 @@ function Schedules() {
       };
       setRealSchedules(fallbackSchedules);
       setDataSource('static');
+      setLiveGamesCount(0);
+      setHasLiveGames(false);
     } finally {
       setIsLoadingLiveData(false);
     }
@@ -707,8 +796,8 @@ function Schedules() {
     let events = [];
     
     if (selectedSport === "All") {
-      // Include real schedules
-      Object.values(realSchedules).forEach(sportEvents => {
+      // Include real schedules (live data)
+      Object.entries(realSchedules).forEach(([sport, sportEvents]) => {
         events = [...events, ...sportEvents];
       });
       // Include major sporting events
@@ -726,20 +815,26 @@ function Schedules() {
         });
         events = [...events, ...processedEvents];
       });
-    } else if (realSchedules[selectedSport]) {
-      events = realSchedules[selectedSport];
-    } else if (MAJOR_SPORTING_EVENTS[selectedSport]) {
-      events = MAJOR_SPORTING_EVENTS[selectedSport];
     } else {
-      // Process legacy schedule data with win probabilities
-      const sportEvents = GAME_SCHEDULES[selectedSport] || [];
-      events = sportEvents.map(event => {
-        if (event.homeTeam && event.awayTeam) {
-          const { homeWinProb, awayWinProb } = calculateWinProbability(event.homeTeam, event.awayTeam, liveTeamStats);
-          return { ...event, homeWinProb, awayWinProb, sport: selectedSport };
-        }
-        return { ...event, sport: selectedSport };
-      });
+      // Filter by specific sport
+      if (realSchedules[selectedSport]) {
+        events = realSchedules[selectedSport];
+      }
+      
+      if (MAJOR_SPORTING_EVENTS[selectedSport]) {
+        events = [...events, ...MAJOR_SPORTING_EVENTS[selectedSport]];
+      }
+      
+      if (GAME_SCHEDULES[selectedSport]) {
+        const sportEvents = GAME_SCHEDULES[selectedSport].map(event => {
+          if (event.homeTeam && event.awayTeam) {
+            const { homeWinProb, awayWinProb } = calculateWinProbability(event.homeTeam, event.awayTeam, liveTeamStats);
+            return { ...event, homeWinProb, awayWinProb, sport: selectedSport };
+          }
+          return { ...event, sport: selectedSport };
+        });
+        events = [...events, ...sportEvents];
+      }
     }
 
     // Apply date filtering based on selected mode
@@ -747,6 +842,9 @@ function Schedules() {
       events = events.filter(event => {
         const eventDate = new Date(event.date);
         const selectedDateObj = new Date(selectedDate);
+        // Normalize dates to compare only the date part (ignore time)
+        eventDate.setHours(0, 0, 0, 0);
+        selectedDateObj.setHours(0, 0, 0, 0);
         return eventDate >= selectedDateObj;
       });
     } else if (filterMode === 'month' && selectedMonth !== 'all') {
@@ -762,12 +860,58 @@ function Schedules() {
         const eventDate = new Date(event.date);
         const startDate = new Date(dateRangeStart);
         const endDate = new Date(dateRangeEnd);
+        // Normalize dates to compare only the date part (ignore time)
+        eventDate.setHours(0, 0, 0, 0);
+        startDate.setHours(0, 0, 0, 0);
+        endDate.setHours(23, 59, 59, 999);
         return eventDate >= startDate && eventDate <= endDate;
       });
     }
 
-    // Sort by date
-    events.sort((a, b) => new Date(a.date) - new Date(b.date));
+    // Sort events with smart prioritization: Live > Future > Recent
+    events.sort((a, b) => {
+      const now = new Date();
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+      
+      // Live games first (highest priority)
+      if (a.isLive && !b.isLive) return -1;
+      if (!a.isLive && b.isLive) return 1;
+      
+      // If both are live, sort by date (most recent first)
+      if (a.isLive && b.isLive) {
+        return dateB - dateA;
+      }
+      
+      // Future games second (scheduled games)
+      const aIsFuture = dateA > now;
+      const bIsFuture = dateB > now;
+      
+      if (aIsFuture && !bIsFuture) return -1;
+      if (!aIsFuture && bIsFuture) return 1;
+      
+      // If both are future games, sort by date (soonest first)
+      if (aIsFuture && bIsFuture) {
+        return dateA - dateB;
+      }
+      
+      // Recent games third (within last month)
+      const oneMonthAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+      const aIsRecent = dateA >= oneMonthAgo && dateA <= now;
+      const bIsRecent = dateB >= oneMonthAgo && dateB <= now;
+      
+      if (aIsRecent && !bIsRecent) return -1;
+      if (!aIsRecent && bIsRecent) return 1;
+      
+      // If both are recent, sort by date (most recent first)
+      if (aIsRecent && bIsRecent) {
+        return dateB - dateA;
+      }
+      
+      // Default: sort by date
+      return dateA - dateB;
+    });
+
     setFilteredEvents(events);
   };
 
@@ -815,6 +959,164 @@ function Schedules() {
       'Golf': '⛳'
     };
     return icons[sport] || '🏆';
+  };
+
+  // Component to display live game details
+  const LiveGameDetails = ({ event }) => {
+    if (!event.isLive || event.type !== "Live") return null;
+
+    const renderMLBDetails = () => {
+      if (event.sport !== 'MLB') return null;
+      
+      return (
+        <div className="live-game-details mlb-details">
+          <div className="game-period">
+            <span className="period-icon">⚾</span>
+            <span className="period-text">
+              {event.inningHalf === 'top' ? 'Top' : 'Bottom'} of the {event.currentInning || 'TBD'}
+            </span>
+            {event.outs !== null && (
+              <span className="outs-indicator">{event.outs} Outs</span>
+            )}
+          </div>
+          
+          {/* Base Runners */}
+          {event.baseRunners && (
+            <div className="base-runners">
+              <span className="runners-label">Runners:</span>
+              <div className="base-diamond">
+                <div className={`base third ${event.baseRunners.third ? 'occupied' : ''}`}>3</div>
+                <div className={`base second ${event.baseRunners.second ? 'occupied' : ''}`}>2</div>
+                <div className={`base first ${event.baseRunners.first ? 'occupied' : ''}`}>1</div>
+                <div className="home-plate">H</div>
+              </div>
+            </div>
+          )}
+          
+          {/* Pitcher and Batter */}
+          {(event.pitcher || event.batter) && (
+            <div className="game-situation">
+              {event.pitcher && (
+                <div className="pitcher-info">
+                  <span className="label">P:</span>
+                  <span className="player-name">{event.pitcher}</span>
+                </div>
+              )}
+              {event.batter && (
+                <div className="batter-info">
+                  <span className="label">B:</span>
+                  <span className="player-name">{event.batter}</span>
+                </div>
+              )}
+            </div>
+          )}
+          
+          {event.timeRemaining && (
+            <div className="game-clock">
+              <span className="clock-icon">⏱️</span>
+              <span className="clock-text">{event.timeRemaining}</span>
+            </div>
+          )}
+        </div>
+      );
+    };
+
+    const renderNFLDetails = () => {
+      if (event.sport !== 'NFL') return null;
+      
+      return (
+        <div className="live-game-details nfl-details">
+          <div className="game-period">
+            <span className="period-icon">🏈</span>
+            <span className="period-text">Quarter {event.currentQuarter || 'TBD'}</span>
+            {event.quarterTime && (
+              <span className="quarter-time">{event.quarterTime}</span>
+            )}
+          </div>
+          
+          {/* Down and Distance */}
+          {(event.down && event.distance) && (
+            <div className="down-distance">
+              <span className="down-distance-text">
+                {event.down} & {event.distance}
+              </span>
+              {event.fieldPosition && (
+                <span className="field-position">{event.fieldPosition}</span>
+              )}
+              {event.yardLine && (
+                <span className="yard-line">{event.yardLine} yard line</span>
+              )}
+              {event.isRedZone && (
+                <span className="red-zone-indicator">🔴 Red Zone</span>
+              )}
+            </div>
+          )}
+          
+          {/* Possession */}
+          {event.possession && (
+            <div className="possession-info">
+              <span className="possession-label">Possession:</span>
+              <span className="possession-team">{event.possession}</span>
+            </div>
+          )}
+          
+          {/* Timeout */}
+          {event.timeout && (
+            <div className="timeout-info">
+              <span className="timeout-label">Timeout</span>
+            </div>
+          )}
+        </div>
+      );
+    };
+
+    const renderNBADetails = () => {
+      if (event.sport !== 'NBA') return null;
+      
+      return (
+        <div className="live-game-details nba-details">
+          <div className="game-period">
+            <span className="period-icon">🏀</span>
+            <span className="period-text">
+              {event.isOvertime ? `Overtime ${event.currentQuarter - 4}` : `Quarter ${event.currentQuarter || 'TBD'}`}
+            </span>
+            {event.quarterTime && (
+              <span className="quarter-time">{event.quarterTime}</span>
+            )}
+          </div>
+          
+          {/* Shot Clock and Possession */}
+          <div className="game-situation">
+            {event.shotClock && (
+              <div className="shot-clock">
+                <span className="shot-clock-text">Shot Clock: {event.shotClock}</span>
+              </div>
+            )}
+            {event.possession && (
+              <div className="possession-info">
+                <span className="possession-label">Ball:</span>
+                <span className="possession-team">{event.possession}</span>
+              </div>
+            )}
+          </div>
+          
+          {/* Lead Information */}
+          {event.lead && (
+            <div className="lead-info">
+              <span className="lead-text">{event.lead}</span>
+            </div>
+          )}
+        </div>
+      );
+    };
+
+    return (
+      <div className="live-game-status">
+        {renderMLBDetails()}
+        {renderNFLDetails()}
+        {renderNBADetails()}
+      </div>
+    );
   };
   const renderLeagueSection = (league) => (
   <div className="league-section mb-5">
@@ -889,6 +1191,91 @@ function Schedules() {
             Detailed Game & Match Schedules
           </h1>
           
+          {/* Today's Games Section */}
+          {todaysGames.length > 0 && (
+            <div className="todays-games-section mb-4">
+              <h2 className="text-center mb-3" style={{ color: "#22c55e", fontWeight: "bold" }}>
+                🔴 Today's Games ({todaysGames.length})
+              </h2>
+              <div className="row">
+                {todaysGames.map((game, index) => (
+                  <div key={`today-${game.id}-${index}`} className="col-md-6 col-lg-4 mb-3">
+                    <div className={`game-card ${game.isLive ? 'live-game' : 'scheduled-game'}`}>
+                      <div className="game-header">
+                        <div className="game-sport">{getSportIcon(game.sport)} {game.sport}</div>
+                        <div className={`game-status ${game.isLive ? 'live' : 'scheduled'}`}>
+                          {game.isLive ? '🔴 LIVE' : game.type}
+                        </div>
+                      </div>
+                      
+                      <div className="game-matchup">
+                        <div className="away-team">
+                          <span className="team-name">{game.awayTeam}</span>
+                          <span className="team-score">{game.awayScore !== null ? game.awayScore : '-'}</span>
+                        </div>
+                        <div className="vs-divider">@</div>
+                        <div className="home-team">
+                          <span className="team-name">{game.homeTeam}</span>
+                          <span className="team-score">{game.homeScore !== null ? game.homeScore : '-'}</span>
+                        </div>
+                      </div>
+                      
+                      <div className="game-details">
+                        <div className="game-time">{game.time}</div>
+                        <div className="game-location">{game.location}</div>
+                        
+                        {/* Live Game Details */}
+                        {game.isLive && (
+                          <div className="live-details">
+                            {game.sport === 'MLB' && (
+                              <div className="live-info">
+                                <span className="detail-label">Inning:</span>
+                                <span className="detail-value">
+                                  {game.inningHalf === 'top' ? 'Top' : 'Bottom'} {game.currentInning || 'TBD'}
+                                </span>
+                                {game.outs !== null && (
+                                  <span className="detail-value"> • {game.outs} Outs</span>
+                                )}
+                              </div>
+                            )}
+                            
+                            {game.sport === 'NFL' && (
+                              <div className="live-info">
+                                <span className="detail-label">Quarter:</span>
+                                <span className="detail-value">Q{game.currentQuarter || 'TBD'}</span>
+                                {game.quarterTime && (
+                                  <span className="detail-value"> • {game.quarterTime}</span>
+                                )}
+                                {game.down && game.distance && (
+                                  <span className="detail-value"> • {game.down} & {game.distance}</span>
+                                )}
+                              </div>
+                            )}
+                            
+                            {game.sport === 'NBA' && (
+                              <div className="live-info">
+                                <span className="detail-label">Quarter:</span>
+                                <span className="detail-value">
+                                  {game.isOvertime ? `OT${game.currentQuarter - 4}` : `Q${game.currentQuarter || 'TBD'}`}
+                                </span>
+                                {game.quarterTime && (
+                                  <span className="detail-value"> • {game.quarterTime}</span>
+                                )}
+                                {game.shotClock && (
+                                  <span className="detail-value"> • Shot Clock: {game.shotClock}</span>
+                                )}
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+          
           <div className="filters-section">
             <div className="row">
               <div className="col-md-6">
@@ -953,20 +1340,36 @@ function Schedules() {
             {/* Live Data Status Row */}
             <div className="row mt-2">
               <div className="col-md-12">
-                <div className="live-data-status">
-                  <div className="status-info">
-                    <span className={`status-indicator ${dataSource === 'live' ? 'live' : 'static'}`}>
-                      {dataSource === 'live' ? '🟢 Live Data' : '🔴 Static Data'}
-                    </span>
-                    {lastUpdated && (
-                      <span className="last-updated">
-                        Last updated: {lastUpdated.toLocaleTimeString()}
+                  <div className="live-data-status">
+                    <div className="status-info">
+                      <span className={`status-indicator ${dataSource === 'live' ? 'live' : 'static'}`}>
+                        {dataSource === 'live' ? '🟢 Live Data' : '🔴 Static Data'}
                       </span>
-                    )}
-                    {isLoadingLiveData && (
-                      <span className="loading-indicator">⟳ Updating...</span>
-                    )}
-                  </div>
+                      {liveGamesCount > 0 && (
+                        <span className="live-games-indicator">
+                          🔴 {liveGamesCount} Live Game{liveGamesCount !== 1 ? 's' : ''}
+                        </span>
+                      )}
+                      {lastUpdated && (
+                        <span className="last-updated">
+                          Last updated: {lastUpdated.toLocaleTimeString()} (Weekly auto-refresh)
+                        </span>
+                      )}
+                      {isLoadingLiveData && (
+                        <span className="loading-indicator">⟳ Updating...</span>
+                      )}
+                      <button 
+                        className="quick-filter-btn debug-btn"
+                        onClick={() => {
+                          console.log('Current schedules:', realSchedules);
+                          console.log('Live games count:', liveGamesCount);
+                          console.log('Data source:', dataSource);
+                          console.log('Live data enabled:', liveDataEnabled);
+                        }}
+                      >
+                        Debug Info
+                      </button>
+                    </div>
                   <div className="data-controls">
                     <button 
                       className="quick-filter-btn"
@@ -979,7 +1382,7 @@ function Schedules() {
                       onClick={refreshLiveData}
                       disabled={!liveDataEnabled || isLoadingLiveData}
                     >
-                      Refresh Now
+                      Manual Refresh
                     </button>
                     <button 
                       className="quick-filter-btn"
@@ -1182,6 +1585,9 @@ function Schedules() {
                       </div>
                     </div>
                   )}
+                  
+                  {/* Live Game Details */}
+                  <LiveGameDetails event={event} />
                   
                   {/* Game Score (if completed or live) */}
                   {event.homeScore !== null && event.awayScore !== null && 
