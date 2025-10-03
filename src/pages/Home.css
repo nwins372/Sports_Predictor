@@ -42,7 +42,7 @@
 }
 
 .info-item strong {
-    color: #60a5fa;
+    color: var(--accent);
     display: block;
     margin-bottom: 0.5rem;
 }
@@ -72,15 +72,15 @@
 
 .sport-btn:hover {
     background: #1f2937;
-    border-color: #3b82f6;
+    border-color: var(--accent);
     transform: translateY(-2px);
 }
 
 .sport-btn.active {
-    background: #3b82f6;
-    border-color: #2563eb;
+    background: var(--accent);
+    border-color: var(--accent);
     color: white;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .form-group {
@@ -104,25 +104,27 @@
 }
 
 .form-select:focus {
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
     outline: none;
 }
 
 .simulate-btn {
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    background: var(--accent);
     border: none;
     padding: 15px 30px;
     font-size: 1.1rem;
     font-weight: 700;
     border-radius: 10px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    color: white;
 }
 
 .simulate-btn:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    opacity: 0.9;
 }
 
 .simulate-btn:disabled {
@@ -180,7 +182,7 @@
 
 .probability-fill {
     height: 100%;
-    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    background: var(--accent);
     border-radius: 10px;
     transition: width 1s ease-in-out;
     position: relative;
@@ -203,7 +205,7 @@
 }
 
 .probability-text {
-    color: #3b82f6;
+    color: var(--accent);
     font-weight: 700;
     font-size: 1.1rem;
 }
@@ -221,21 +223,22 @@
     padding: 1.5rem;
     background: linear-gradient(135deg, #1d3557, #0b1220);
     border-radius: 10px;
-    border: 2px solid #3b82f6;
+    border: 2px solid var(--accent);
 }
 
 .winner-text {
-    color: #3b82f6;
+    color: var(--accent);
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
     font-weight: 800;
 }
 
 .confidence-text {
-    color: #60a5fa;
+    color: var(--accent);
     font-size: 1.1rem;
     margin: 0;
     font-weight: 600;
+    opacity: 0.8;
 }
 
 /* Responsive Design */

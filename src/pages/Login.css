@@ -41,9 +41,9 @@ body {
 }
 
 .login-container input:focus {
-  border-color: #007bff;
+  border-color: var(--accent);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Buttons */
@@ -54,7 +54,7 @@ body {
   margin-top: 6px;
   border: none;
   border-radius: 6px;
-  background: #007bff;
+  background: var(--accent);
   color: white;
   font-size: 15px;
   font-weight: 500;
@@ -63,7 +63,8 @@ body {
 }
 
 .login-container button:hover {
-  background: #0056b3;
+  background: var(--accent);
+  opacity: 0.9;
 }
 
 .login-container button:active {
@@ -76,13 +77,14 @@ body {
   font-size: 14px;
   text-align: center;
   cursor: pointer;
-  color: #007bff;
+  color: var(--accent);
   transition: color 0.2s;
 }
 
 .login-container p:hover {
   text-decoration: underline;
-  color: #0056b3;
+  color: var(--accent);
+  opacity: 0.8;
 }
 
 /* Message */

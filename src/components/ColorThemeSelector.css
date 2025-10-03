@@ -1,0 +1,79 @@
+.color-theme-selector {
+  margin-top: 8px;
+}
+
+.color-theme-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: 200px;
+}
+
+.color-theme-option {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--surface-border);
+  border-radius: 50%;
+  background: var(--surface);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.color-theme-option:hover {
+  transform: scale(1.1);
+  border-color: var(--theme-color);
+}
+
+.color-theme-option.active {
+  border-color: var(--theme-color);
+  border-width: 3px;
+  transform: scale(1.05);
+}
+
+.color-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--theme-color);
+  transition: all 0.2s ease;
+}
+
+.checkmark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.color-theme-option:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .color-theme-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  
+  .color-theme-option {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .color-circle {
+    width: 24px;
+    height: 24px;
+  }
+}
