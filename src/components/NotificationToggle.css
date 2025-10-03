@@ -1,0 +1,26 @@
+.notification-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.notif-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.notif-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #3b82f6;
+  cursor: pointer;
+}
+
+.notif-label {
+  font-size: 14px;
+}
+
+.notif-message {
+  font-size: 13px;
+  opacity: .9;
+}

@@ -4,6 +4,7 @@ import { supabase } from "../supabaseClient";
 import NavBar from "../components/NavBar";
 import PasswordChange from "../components/PasswordChange"; 
 import SportPrefsForm from "../components/SportsPreference";
+import NotificationToggle from "../components/NotificationToggle";
 import "./profile.css";
 
 export default function Profile() {
@@ -42,10 +43,13 @@ export default function Profile() {
       <NavBar />
       <div className="profile-container">
         <h1>hello {username}</h1>
+        <NotificationToggle session={session} />
         <SportPrefsForm session={session} />
 
         {/* Change Password */}
         <PasswordChange session={session} />
+
+        
       </div>
     </>
   );
