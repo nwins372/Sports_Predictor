@@ -1885,3 +1885,119 @@
     align-self: flex-end;
   }
 }
+
+/* Score Update Status Styles */
+.score-update-status {
+  margin: 16px 0;
+  padding: 12px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Win Percentage Display Styles */
+.win-percentage-display {
+  margin-top: 12px;
+  padding: 12px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Live Game Indicators */
+.live-game {
+  border: 2px solid #dc3545 !important;
+  box-shadow: 0 0 10px rgba(220, 53, 69, 0.3) !important;
+  animation: pulse-live 2s infinite;
+}
+
+@keyframes pulse-live {
+  0% {
+    box-shadow: 0 0 10px rgba(220, 53, 69, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(220, 53, 69, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(220, 53, 69, 0.3);
+  }
+}
+
+/* Game Card Updates */
+.game-card {
+  transition: all 0.3s ease;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.game-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Score Display Improvements */
+.team-score {
+  font-weight: 600;
+  font-size: 1.1em;
+  color: #495057;
+}
+
+.live-details {
+  background: rgba(220, 53, 69, 0.1);
+  padding: 8px;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.live-info {
+  font-size: 0.9em;
+  color: #dc3545;
+}
+
+.detail-label {
+  font-weight: 600;
+}
+
+.detail-value {
+  margin-left: 4px;
+}
+
+/* Dark theme support */
+[data-theme="dark"] .score-update-status {
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  border-color: #4a5568;
+}
+
+[data-theme="dark"] .win-percentage-display {
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  border-color: #4a5568;
+}
+
+[data-theme="dark"] .game-card {
+  background: #2d3748;
+  border-color: #4a5568;
+}
+
+[data-theme="dark"] .live-details {
+  background: rgba(220, 53, 69, 0.2);
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .score-update-status {
+    margin: 12px 0;
+    padding: 10px;
+  }
+  
+  .win-percentage-display {
+    margin-top: 10px;
+    padding: 10px;
+  }
+  
+  .game-card {
+    margin-bottom: 16px;
+  }
+}
