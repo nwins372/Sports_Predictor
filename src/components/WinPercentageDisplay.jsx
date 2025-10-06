@@ -9,7 +9,10 @@ const WinPercentageDisplay = ({
   homeWinProb, 
   awayWinProb, 
   gameStatus,
-  showActualResult = true 
+  showActualResult = true,
+  confidence = null,
+  algorithm = null,
+  confidenceLevel = null
 }) => {
   // Determine if the prediction was correct
   const getPredictionAccuracy = () => {
@@ -25,18 +28,29 @@ const WinPercentageDisplay = ({
 
   const predictionCorrect = getPredictionAccuracy();
 
-  // Calculate prediction confidence
+  // Calculate prediction confidence (use provided or calculate)
   const getPredictionConfidence = () => {
+    if (confidenceLevel) {
+      return confidenceLevel;
+    }
+    
+    if (confidence !== null) {
+      if (confidence >= 0.3) return { level: 'High', color: '#22c55e', description: 'Very confident prediction' };
+      if (confidence >= 0.15) return { level: 'Medium', color: '#f59e0b', description: 'Moderately confident' };
+      return { level: 'Low', color: '#ef4444', description: 'Uncertain prediction' };
+    }
+    
+    // Fallback to old calculation method
     const maxProb = Math.max(homeWinProb, awayWinProb);
     const minProb = Math.min(homeWinProb, awayWinProb);
-    const confidence = maxProb - minProb;
+    const calculatedConfidence = maxProb - minProb;
     
-    if (confidence >= 30) return { level: 'High', color: '#22c55e' };
-    if (confidence >= 15) return { level: 'Medium', color: '#f59e0b' };
-    return { level: 'Low', color: '#ef4444' };
+    if (calculatedConfidence >= 30) return { level: 'High', color: '#22c55e', description: 'Very confident prediction' };
+    if (calculatedConfidence >= 15) return { level: 'Medium', color: '#f59e0b', description: 'Moderately confident' };
+    return { level: 'Low', color: '#ef4444', description: 'Uncertain prediction' };
   };
 
-  const confidence = getPredictionConfidence();
+  const predictionConfidence = getPredictionConfidence();
 
   // Get the winning team name
   const getWinningTeam = () => {
@@ -53,9 +67,14 @@ const WinPercentageDisplay = ({
       <div className="prediction-header">
         <h4>Win Probability Prediction</h4>
         <div className="prediction-meta">
-          <div className="confidence-indicator" style={{ color: confidence.color }}>
-            {confidence.level} Confidence
+          <div className="confidence-indicator" style={{ color: predictionConfidence.color }}>
+            {predictionConfidence.level} Confidence
           </div>
+          {algorithm && (
+            <div className="algorithm-indicator">
+              {algorithm.toUpperCase()} Algorithm
+            </div>
+          )}
           {gameStatus === 'Final' && showActualResult && (
             <div className={`prediction-accuracy ${predictionCorrect ? 'correct' : 'incorrect'}`}>
               {predictionCorrect ? '✓ Correct' : '✗ Incorrect'}

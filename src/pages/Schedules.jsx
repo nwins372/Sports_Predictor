@@ -4,6 +4,7 @@ import ScheduleBar from "../components/ScheduleBar";
 import WinPercentageDisplay from "../components/WinPercentageDisplay";
 import ScoreUpdateStatus from "../components/ScoreUpdateStatus";
 import { useTodaysGames } from "../hooks/useScoreUpdates";
+import { calculateWinPercentage, formatWinPercentage } from "../utils/winPercentageCalculator";
 import "./Schedules.css";
 
 // Import schedule data (fallback)
@@ -93,60 +94,52 @@ const TEAM_STATS = {
   "New York Jets": { wins: 7, losses: 10, winPercentage: 41.2 }
 };
 
-// Function to calculate win probability between two teams
+// Function to calculate win probability between two teams using the new advanced calculator
 const calculateWinProbability = (homeTeam, awayTeam, liveStats = {}) => {
-  // Use live stats if available, otherwise fall back to static stats
-  const statsSource = Object.keys(liveStats).length > 0 ? liveStats : TEAM_STATS;
-  
-  const homeStats = statsSource[homeTeam];
-  const awayStats = statsSource[awayTeam];
-  
-  if (!homeStats || !awayStats) {
-    // If no stats available, try to find partial matches or use default
-    const homePartialMatch = Object.keys(statsSource).find(team => 
-      team.toLowerCase().includes(homeTeam.toLowerCase()) || 
-      homeTeam.toLowerCase().includes(team.toLowerCase())
-    );
-    const awayPartialMatch = Object.keys(statsSource).find(team => 
-      team.toLowerCase().includes(awayTeam.toLowerCase()) || 
-      awayTeam.toLowerCase().includes(team.toLowerCase())
-    );
+  try {
+    // Use the new advanced win percentage calculator
+    const result = calculateWinPercentage(homeTeam, awayTeam, {
+      algorithm: 'composite',
+      isHomeTeam1: true,
+      includeRecentForm: true,
+      includeHeadToHead: false
+    });
+
+    const formattedResult = formatWinPercentage(result);
     
-    if (homePartialMatch && awayPartialMatch) {
-      const homePartialStats = statsSource[homePartialMatch];
-      const awayPartialStats = statsSource[awayPartialMatch];
-      
-      const homeAdvantage = 5;
-      const homeWinPercentage = homePartialStats.winPercentage + homeAdvantage;
-      const awayWinPercentage = awayPartialStats.winPercentage;
-      
-      const total = homeWinPercentage + awayWinPercentage;
-      const homeWinProb = Math.round((homeWinPercentage / total) * 100);
-      const awayWinProb = 100 - homeWinProb;
-      
-      return { homeWinProb, awayWinProb };
+    return {
+      homeWinProb: formattedResult.team1Percentage,
+      awayWinProb: formattedResult.team2Percentage,
+      confidence: result.confidence,
+      algorithm: formattedResult.algorithm,
+      confidenceLevel: formattedResult.confidence
+    };
+  } catch (error) {
+    console.error('Error calculating win probability:', error);
+    
+    // Fallback to simple calculation if the new calculator fails
+    const statsSource = Object.keys(liveStats).length > 0 ? liveStats : TEAM_STATS;
+    
+    const homeStats = statsSource[homeTeam];
+    const awayStats = statsSource[awayTeam];
+    
+    if (!homeStats || !awayStats) {
+      return { homeWinProb: 50, awayWinProb: 50, confidence: 0.1 };
     }
     
-    return { homeWinProb: 50, awayWinProb: 50 };
+    const homeAdvantage = 5;
+    const homeStrength = homeStats.wins / (homeStats.wins + homeStats.losses);
+    const awayStrength = awayStats.wins / (awayStats.wins + awayStats.losses);
+    
+    const homeWinPercentage = (homeStrength * 100) + homeAdvantage;
+    const awayWinPercentage = awayStrength * 100;
+    
+    const total = homeWinPercentage + awayWinPercentage;
+    const homeWinProb = Math.round((homeWinPercentage / total) * 100);
+    const awayWinProb = 100 - homeWinProb;
+    
+    return { homeWinProb, awayWinProb, confidence: 0.3 };
   }
-  
-  // Enhanced calculation with more factors
-  const homeAdvantage = 5; // 5% home field advantage
-  
-  // Consider strength of schedule (simplified)
-  const homeStrength = homeStats.wins / (homeStats.wins + homeStats.losses);
-  const awayStrength = awayStats.wins / (awayStats.wins + awayStats.losses);
-  
-  // Calculate base win percentage with home advantage
-  const homeWinPercentage = (homeStrength * 100) + homeAdvantage;
-  const awayWinPercentage = awayStrength * 100;
-  
-  // Normalize to ensure percentages add up to 100
-  const total = homeWinPercentage + awayWinPercentage;
-  const homeWinProb = Math.round((homeWinPercentage / total) * 100);
-  const awayWinProb = 100 - homeWinProb;
-  
-  return { homeWinProb, awayWinProb };
 };
 
 // Helper function to determine game status

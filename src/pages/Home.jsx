@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 import ScheduleBar from "../components/ScheduleBar";
+import { supabase } from "../supabaseClient";
+import { calculateWinPercentage, formatWinPercentage } from "../utils/winPercentageCalculator";
 import './Home.css';
 
 // Team data for each league - All 32 NFL teams, 30 NBA teams, 30 MLB teams
@@ -137,11 +139,88 @@ const TEAM_DATA = {
 };
 
 function Home() {
+  const [session, setSession] = useState(null);
   const [selectedSport, setSelectedSport] = useState("NFL");
   const [team1, setTeam1] = useState("");
   const [team2, setTeam2] = useState("");
   const [prediction, setPrediction] = useState(null);
   const [isSimulating, setIsSimulating] = useState(false);
+  const [userFavoriteTeams, setUserFavoriteTeams] = useState({});
+  const [loading, setLoading] = useState(false);
+
+  // Set up session management
+  useEffect(() => {
+    // Check sessions
+    supabase.auth.getSession().then(({ data }) => {
+      setSession(data.session);
+    });
+
+    // Listener checks for whether user logs in or out
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+
+    return () => {
+      subscription?.unsubscribe();
+    };
+  }, []);
+
+  // Load user's favorite teams from database
+  useEffect(() => {
+    if (!session?.user?.id) return;
+
+    const loadFavoriteTeams = async () => {
+      setLoading(true);
+      try {
+        const { data, error } = await supabase
+          .from("user_preferences")
+          .select("favorite_teams")
+          .eq("user_id", session.user.id)
+          .maybeSingle();
+
+        if (error) {
+          console.error("Error loading favorite teams:", error);
+        } else {
+          setUserFavoriteTeams(data?.favorite_teams || {});
+        }
+      } catch (err) {
+        console.error("Error loading favorite teams:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadFavoriteTeams();
+  }, [session]);
+
+  // Auto-select favorite teams when sport changes
+  useEffect(() => {
+    const favoriteTeams = userFavoriteTeams[selectedSport] || [];
+    if (favoriteTeams.length >= 2) {
+      setTeam1(favoriteTeams[0]);
+      setTeam2(favoriteTeams[1]);
+    } else if (favoriteTeams.length === 1) {
+      setTeam1(favoriteTeams[0]);
+      setTeam2("");
+    } else {
+      setTeam1("");
+      setTeam2("");
+    }
+  }, [selectedSport, userFavoriteTeams]);
+
+  // Get teams for the selected sport, with favorites first
+  const getAvailableTeams = () => {
+    const allTeams = TEAM_DATA[selectedSport] || [];
+    const favoriteTeams = userFavoriteTeams[selectedSport] || [];
+    
+    // Sort teams to show favorites first
+    const sortedTeams = [
+      ...favoriteTeams.filter(team => allTeams.some(t => t.name === team)),
+      ...allTeams.filter(team => !favoriteTeams.includes(team.name))
+    ];
+    
+    return sortedTeams;
+  };
 
   const handleSimulate = () => {
     if (!team1 || !team2 || team1 === team2) {
@@ -163,37 +242,42 @@ function Home() {
         return;
       }
 
-      // WIN PERCENTAGE CALCULATION METHOD:
-      // 1. Each team has a base win rate (0.0 to 1.0) based on historical performance
-      // 2. We normalize the probabilities so they add up to 100%
-      // 3. We add randomness (±10%) to simulate real-world unpredictability
-      // 4. Final probabilities are capped between 10% and 90% for realism
+      // ADVANCED WIN PERCENTAGE CALCULATION:
+      // Uses composite algorithm combining multiple statistical models
+      // Includes offense, defense, recent form, home advantage, and ELO ratings
       
-      const team1WinRate = team1Data.winRate;
-      const team2WinRate = team2Data.winRate;
-      
-      // Step 1: Normalize probabilities (so they add up to 100%)
-      const totalRate = team1WinRate + team2WinRate;
-      const team1Probability = team1WinRate / totalRate;
-      const team2Probability = team2WinRate / totalRate;
-      
-      // Step 2: Add randomness for realism (±10% variation)
-      const randomFactor = (Math.random() - 0.5) * 0.2; // ±10% randomness
-      const finalTeam1Prob = Math.max(0.1, Math.min(0.9, team1Probability + randomFactor));
-      const finalTeam2Prob = 1 - finalTeam1Prob;
-      
-      // Determine winner
-      const winner = finalTeam1Prob > finalTeam2Prob ? team1 : team2;
-      const winnerProb = Math.max(finalTeam1Prob, finalTeam2Prob);
-      
-      setPrediction({
-        team1: team1,
-        team2: team2,
-        team1Probability: finalTeam1Prob,
-        team2Probability: finalTeam2Prob,
-        winner: winner,
-        confidence: winnerProb
-      });
+      try {
+        // Use the new advanced win percentage calculator
+        const result = calculateWinPercentage(team1, team2, {
+          algorithm: 'composite',
+          isHomeTeam1: true,
+          includeRecentForm: true,
+          includeHeadToHead: false
+        });
+
+        const formattedResult = formatWinPercentage(result);
+        
+        // Determine winner
+        const winner = formattedResult.team1Percentage > formattedResult.team2Percentage ? team1 : team2;
+        
+        setPrediction({
+          team1: team1,
+          team2: team2,
+          team1Probability: formattedResult.team1Percentage / 100,
+          team2Probability: formattedResult.team2Percentage / 100,
+          winner: winner,
+          confidence: result.confidence,
+          algorithm: formattedResult.algorithm,
+          confidenceLevel: formattedResult.confidence,
+          details: result.details
+        });
+        
+      } catch (error) {
+        console.error('Error calculating win percentage:', error);
+        alert("Error calculating predictions. Please try again.");
+        setIsSimulating(false);
+        return;
+      }
       
       setIsSimulating(false);
     }, 1500);
@@ -258,6 +342,11 @@ function Home() {
                   </div>
 
                   {/* Team Selection */}
+                  {session && userFavoriteTeams[selectedSport]?.length > 0 && (
+                    <div className="alert alert-info mb-3">
+                      <small>⭐ Your favorite {selectedSport} teams are shown first and auto-selected</small>
+                    </div>
+                  )}
                   <div className="row">
                     <div className="col-md-6">
                       <div className="form-group">
@@ -266,13 +355,17 @@ function Home() {
                           className="form-select"
                           value={team1}
                           onChange={(e) => setTeam1(e.target.value)}
+                          disabled={loading}
                         >
                           <option value="">Select Team 1</option>
-                          {TEAM_DATA[selectedSport].map(team => (
-                            <option key={team.name} value={team.name}>
-                              {team.name}
-                            </option>
-                          ))}
+                          {getAvailableTeams().map(team => {
+                            const isFavorite = userFavoriteTeams[selectedSport]?.includes(team.name);
+                            return (
+                              <option key={team.name} value={team.name}>
+                                {isFavorite ? "⭐ " : ""}{team.name}
+                              </option>
+                            );
+                          })}
                         </select>
                       </div>
                     </div>
@@ -284,13 +377,17 @@ function Home() {
                           className="form-select"
                           value={team2}
                           onChange={(e) => setTeam2(e.target.value)}
+                          disabled={loading}
                         >
                           <option value="">Select Team 2</option>
-                          {TEAM_DATA[selectedSport].map(team => (
-                            <option key={team.name} value={team.name}>
-                              {team.name}
-                            </option>
-                          ))}
+                          {getAvailableTeams().map(team => {
+                            const isFavorite = userFavoriteTeams[selectedSport]?.includes(team.name);
+                            return (
+                              <option key={team.name} value={team.name}>
+                                {isFavorite ? "⭐ " : ""}{team.name}
+                              </option>
+                            );
+                          })}
                         </select>
                       </div>
                     </div>
@@ -346,9 +443,25 @@ function Home() {
                           <h3 className="winner-text">
                             🏆 {prediction.winner} Wins!
                           </h3>
-                          <p className="confidence-text">
-                            Confidence: {(prediction.confidence * 100).toFixed(1)}%
-                          </p>
+                          <div className="prediction-details">
+                            <p className="confidence-text">
+                              <span 
+                                className="confidence-badge" 
+                                style={{ backgroundColor: prediction.confidenceLevel?.color }}
+                              >
+                                {prediction.confidenceLevel?.level} Confidence
+                              </span>
+                              <span className="confidence-percentage">
+                                {(prediction.confidence * 100).toFixed(1)}%
+                              </span>
+                            </p>
+                            <p className="algorithm-info">
+                              Algorithm: <strong>{prediction.algorithm}</strong>
+                              <small className="algorithm-description">
+                                {prediction.confidenceLevel?.description}
+                              </small>
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>

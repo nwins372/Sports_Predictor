@@ -239,6 +239,43 @@
     margin: 0;
     font-weight: 600;
     opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.prediction-details {
+    margin-top: 1rem;
+}
+
+.confidence-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.confidence-percentage {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.algorithm-info {
+    margin-top: 0.5rem;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+}
+
+.algorithm-description {
+    display: block;
+    margin-top: 0.25rem;
+    font-style: italic;
+    opacity: 0.8;
 }
 
 /* Responsive Design */
