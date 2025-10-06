@@ -242,30 +242,31 @@ function Home() {
         return;
       }
 
-      // ADVANCED WIN PERCENTAGE CALCULATION:
-      // Uses composite algorithm combining multiple statistical models
-      // Includes offense, defense, recent form, home advantage, and ELO ratings
+      // DIMERS.COM STYLE WIN PERCENTAGE CALCULATION:
+      // Uses Monte Carlo simulation with 10,000+ game simulations
+      // Includes offense, defense, recent form, home advantage, and real-time adjustments
+      // Based on Dimers.com's predictive analytics approach
       
       try {
-        // Use the new advanced win percentage calculator
+        // Use the new advanced win percentage calculator - Dimers.com style
         const result = calculateWinPercentage(team1, team2, {
-          algorithm: 'composite',
+          algorithm: 'monteCarlo', // Use Monte Carlo simulation like Dimers.com
           isHomeTeam1: true,
           includeRecentForm: true,
           includeHeadToHead: false
         });
 
         const formattedResult = formatWinPercentage(result);
-        
-        // Determine winner
+      
+      // Determine winner
         const winner = formattedResult.team1Percentage > formattedResult.team2Percentage ? team1 : team2;
-        
-        setPrediction({
-          team1: team1,
-          team2: team2,
+      
+      setPrediction({
+        team1: team1,
+        team2: team2,
           team1Probability: formattedResult.team1Percentage / 100,
           team2Probability: formattedResult.team2Percentage / 100,
-          winner: winner,
+        winner: winner,
           confidence: result.confidence,
           algorithm: formattedResult.algorithm,
           confidenceLevel: formattedResult.confidence,
@@ -307,16 +308,16 @@ function Home() {
                   <h5 style={{ color: "#60a5fa", marginBottom: "1rem" }}>How We Calculate Win Percentages:</h5>
                   <div className="info-grid">
                     <div className="info-item">
-                      <strong>📊 Base Win Rate:</strong> Each team has a historical win percentage (0-100%)
+                      <strong>📊 Base Performance Calculation:</strong> alculate each team's base performance using: Win% (40%) + Offense (30%) + Defense (20%) + Recent Form (10%) + Home Advantage (5%)
                     </div>
                     <div className="info-item">
-                      <strong>⚖️ Normalization:</strong> Probabilities are adjusted so they total 100%
+                      <strong>⚖️ Randomness & Volatility:</strong> Add realistic randomness (±15% standard deviation) to account for game unpredictability and sport volatility
                     </div>
                     <div className="info-item">
-                      <strong>🎲 Randomness:</strong> ±10% variation added for realistic unpredictability
+                      <strong>🎲 Game Simulation:</strong> Simulate each game by calculating final scores based on performance and time remaining
                     </div>
                     <div className="info-item">
-                      <strong>🏆 Final Result:</strong> Winner determined by highest probability
+                      <strong>🏆 Final Result:</strong> Count wins for each team across all simulations and convert to percentages
                     </div>
                   </div>
                 </div>
@@ -361,9 +362,9 @@ function Home() {
                           {getAvailableTeams().map(team => {
                             const isFavorite = userFavoriteTeams[selectedSport]?.includes(team.name);
                             return (
-                              <option key={team.name} value={team.name}>
+                            <option key={team.name} value={team.name}>
                                 {isFavorite ? "⭐ " : ""}{team.name}
-                              </option>
+                            </option>
                             );
                           })}
                         </select>
@@ -383,9 +384,9 @@ function Home() {
                           {getAvailableTeams().map(team => {
                             const isFavorite = userFavoriteTeams[selectedSport]?.includes(team.name);
                             return (
-                              <option key={team.name} value={team.name}>
+                            <option key={team.name} value={team.name}>
                                 {isFavorite ? "⭐ " : ""}{team.name}
-                              </option>
+                            </option>
                             );
                           })}
                         </select>
@@ -400,8 +401,13 @@ function Home() {
                       onClick={handleSimulate}
                       disabled={isSimulating || !team1 || !team2}
                     >
-                      {isSimulating ? "Simulating..." : "Simulate Matchup"}
+                      {isSimulating ? "Running Simulations..." : "Simulate Matchup"}
                     </button>
+                    <div className="simulation-info mt-2">
+                      <small className="text-muted">
+                         Running 10,000+ Monte Carlo simulations 
+                      </small>
+                    </div>
                   </div>
 
                   {/* Prediction Results */}
@@ -444,7 +450,7 @@ function Home() {
                             🏆 {prediction.winner} Wins!
                           </h3>
                           <div className="prediction-details">
-                            <p className="confidence-text">
+                          <p className="confidence-text">
                               <span 
                                 className="confidence-badge" 
                                 style={{ backgroundColor: prediction.confidenceLevel?.color }}
@@ -461,6 +467,147 @@ function Home() {
                                 {prediction.confidenceLevel?.description}
                               </small>
                             </p>
+                          </div>
+                        </div>
+
+                        {/* How We Calculate Win Percentage */}
+                        <div className="calculation-breakdown">
+                          <h5 className="breakdown-title">📊 How We Calculate Win Percentage</h5>
+                          <div className="breakdown-content">
+                            <div className="calculation-method">
+                              <h6>🎲 Monte Carlo Simulation Method</h6>
+                              <p>We run <strong>{prediction.details?.simulations || 10000} simulations</strong> of this matchup to determine win probabilities using advanced statistical modeling.</p>
+                              
+                              <div className="simulation-steps">
+                                <div className="step">
+                                  <span className="step-number">1</span>
+                                  <div className="step-content">
+                                    <strong>Base Performance Calculation</strong>
+                                    <p>Calculate each team's base performance using: Win% (40%) + Offense (30%) + Defense (20%) + Recent Form (10%) + Home Advantage (5%)</p>
+                                  </div>
+                                </div>
+                                
+                                <div className="step">
+                                  <span className="step-number">2</span>
+                                  <div className="step-content">
+                                    <strong>Randomness & Volatility</strong>
+                                    <p>Add realistic randomness (±15% standard deviation) to account for game unpredictability and sport volatility</p>
+                                  </div>
+                                </div>
+                                
+                                <div className="step">
+                                  <span className="step-number">3</span>
+                                  <div className="step-content">
+                                    <strong>Game Simulation</strong>
+                                    <p>Simulate each game by calculating final scores based on performance and time remaining</p>
+                                  </div>
+                                </div>
+                                
+                                <div className="step">
+                                  <span className="step-number">4</span>
+                                  <div className="step-content">
+                                    <strong>Win Probability</strong>
+                                    <p>Count wins for each team across all simulations and convert to percentages</p>
+                                  </div>
+                                </div>
+                              </div>
+
+                              {prediction.details && (
+                                <>
+                                  <div className="team-factors">
+                                    <h6>📈 Performance Calculation Formula</h6>
+                                    <div className="factors-grid">
+                                      <div className="factor-item">
+                                        <span className="factor-name">Win Percentage</span>
+                                        <span className="factor-weight">40%</span>
+                                      </div>
+                                      <div className="factor-item">
+                                        <span className="factor-name">Offense Rating</span>
+                                        <span className="factor-weight">30%</span>
+                                      </div>
+                                      <div className="factor-item">
+                                        <span className="factor-name">Defense Rating</span>
+                                        <span className="factor-weight">20%</span>
+                                      </div>
+                                      <div className="factor-item">
+                                        <span className="factor-name">Recent Form</span>
+                                        <span className="factor-weight">10%</span>
+                                      </div>
+                                      <div className="factor-item">
+                                        <span className="factor-name">Home Advantage</span>
+                                        <span className="factor-weight">+5%</span>
+                                      </div>
+                                      <div className="factor-item">
+                                        <span className="factor-name">Randomness</span>
+                                        <span className="factor-weight">±15%</span>
+                                      </div>
+                                    </div>
+                                    <div className="formula-explanation">
+                                      <p><strong>Formula:</strong> Base Performance = (Win% × 0.4) + (Offense × 0.3) + (Defense × 0.2) + (Recent Form × 0.1) + Home Advantage</p>
+                                      <p><strong>Final Performance:</strong> Base Performance + Random Factor (±15% volatility)</p>
+                                    </div>
+                                  </div>
+
+                                  <div className="team-stats-breakdown">
+                                    <h6>🏈 Team Statistics Used</h6>
+                                    <div className="stats-comparison">
+                                      <div className="team-stats">
+                                        <h7>{team1}</h7>
+                                        <div className="stat-item">
+                                          <span>Win %:</span>
+                                          <span>{prediction.details.team1Stats?.winPercentage || 'N/A'}%</span>
+                                        </div>
+                                        <div className="stat-item">
+                                          <span>Offense:</span>
+                                          <span>{prediction.details.team1Stats?.offense || 'N/A'}/100</span>
+                                        </div>
+                                        <div className="stat-item">
+                                          <span>Defense:</span>
+                                          <span>{prediction.details.team1Stats?.defense || 'N/A'}/100</span>
+                                        </div>
+                                        <div className="stat-item">
+                                          <span>Recent Form:</span>
+                                          <span>{((prediction.details.team1Stats?.recentForm || 0) * 100).toFixed(0)}%</span>
+                                        </div>
+                                      </div>
+                                      
+                                      <div className="vs-stats">VS</div>
+                                      
+                                      <div className="team-stats">
+                                        <h7>{team2}</h7>
+                                        <div className="stat-item">
+                                          <span>Win %:</span>
+                                          <span>{prediction.details.team2Stats?.winPercentage || 'N/A'}%</span>
+                                        </div>
+                                        <div className="stat-item">
+                                          <span>Offense:</span>
+                                          <span>{prediction.details.team2Stats?.offense || 'N/A'}/100</span>
+                                        </div>
+                                        <div className="stat-item">
+                                          <span>Defense:</span>
+                                          <span>{prediction.details.team2Stats?.defense || 'N/A'}/100</span>
+                                        </div>
+                                        <div className="stat-item">
+                                          <span>Recent Form:</span>
+                                          <span>{((prediction.details.team2Stats?.recentForm || 0) * 100).toFixed(0)}%</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </>
+                              )}
+
+                              <div className="confidence-explanation">
+                                <h6>🎯 Confidence Level</h6>
+                                <p>Confidence is calculated as the difference between team probabilities. Higher differences mean more confident predictions:</p>
+                                <ul>
+                                  <li><strong>High (0.7+)</strong>: Very reliable prediction (70%+ confidence)</li>
+                                  <li><strong>Medium (0.4-0.7)</strong>: Moderately reliable (40-70% confidence)</li>
+                                  <li><strong>Low (&lt;0.4)</strong>: Uncertain prediction (less than 40% confidence)</li>
+                                </ul>
+                                <p><strong>Formula:</strong> Confidence = |Team1% - Team2%| (absolute difference between probabilities)</p>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>

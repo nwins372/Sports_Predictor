@@ -97,9 +97,9 @@ const TEAM_STATS = {
 // Function to calculate win probability between two teams using the new advanced calculator
 const calculateWinProbability = (homeTeam, awayTeam, liveStats = {}) => {
   try {
-    // Use the new advanced win percentage calculator
+    // Use the new advanced win percentage calculator - Dimers.com style
     const result = calculateWinPercentage(homeTeam, awayTeam, {
-      algorithm: 'composite',
+      algorithm: 'monteCarlo', // Use Monte Carlo simulation like Dimers.com
       isHomeTeam1: true,
       includeRecentForm: true,
       includeHeadToHead: false

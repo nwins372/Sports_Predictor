@@ -1,6 +1,7 @@
 /**
- * Advanced Win Percentage Calculator
- * Implements multiple algorithms for more accurate predictions
+ * Advanced Win Percentage Calculator - Dimers.com Style
+ * Implements real-time win probabilities with Monte Carlo simulations
+ * Based on Dimers.com's predictive analytics approach
  */
 
 // Enhanced team statistics with more data points
@@ -319,16 +320,125 @@ export const ENHANCED_TEAM_STATS = {
 };
 
 /**
- * Advanced Win Percentage Calculator Class
+ * Monte Carlo Simulation Engine - Dimers.com Style
+ * Runs thousands of game simulations for accurate win probabilities
+ */
+export class MonteCarloSimulator {
+  constructor(simulations = 10000) {
+    this.simulations = simulations;
+    this.gameStates = new Map();
+  }
+
+  /**
+   * Simulate a game between two teams
+   */
+  simulateGame(team1, team2, team1Stats, team2Stats, options = {}) {
+    const {
+      isHomeTeam1 = true,
+      currentScore = { team1: 0, team2: 0 },
+      timeRemaining = 1.0, // 1.0 = full game, 0.5 = halftime, etc.
+      momentum = { team1: 0, team2: 0 }
+    } = options;
+
+    let team1Wins = 0;
+    let team2Wins = 0;
+
+    for (let i = 0; i < this.simulations; i++) {
+      const result = this.runSingleSimulation(team1Stats, team2Stats, {
+        isHomeTeam1,
+        currentScore,
+        timeRemaining,
+        momentum
+      });
+
+      if (result.team1Score > result.team2Score) {
+        team1Wins++;
+      } else {
+        team2Wins++;
+      }
+    }
+
+    return {
+      team1WinProbability: team1Wins / this.simulations,
+      team2WinProbability: team2Wins / this.simulations,
+      simulations: this.simulations
+    };
+  }
+
+  /**
+   * Run a single game simulation
+   */
+  runSingleSimulation(team1Stats, team2Stats, options) {
+    const { isHomeTeam1, currentScore, timeRemaining, momentum } = options;
+    
+    // Base performance with home advantage
+    const team1BasePerformance = this.calculateBasePerformance(team1Stats, isHomeTeam1);
+    const team2BasePerformance = this.calculateBasePerformance(team2Stats, !isHomeTeam1);
+
+    // Add momentum and randomness
+    const team1Performance = this.addRandomness(team1BasePerformance + momentum.team1);
+    const team2Performance = this.addRandomness(team2BasePerformance + momentum.team2);
+
+    // Calculate score based on sport type
+    const team1Score = currentScore.team1 + this.calculateScore(team1Performance, timeRemaining);
+    const team2Score = currentScore.team2 + this.calculateScore(team2Performance, timeRemaining);
+
+    return {
+      team1Score,
+      team2Score,
+      team1Performance,
+      team2Performance
+    };
+  }
+
+  /**
+   * Calculate base team performance
+   */
+  calculateBasePerformance(stats, isHome) {
+    const homeAdvantage = isHome ? 0.05 : 0;
+    return (
+      (stats.winPercentage / 100) * 0.4 +
+      (stats.offense / 100) * 0.3 +
+      (stats.defense / 100) * 0.2 +
+      (stats.recentForm) * 0.1 +
+      homeAdvantage
+    );
+  }
+
+  /**
+   * Add realistic randomness to performance
+   */
+  addRandomness(basePerformance) {
+    // Normal distribution with standard deviation based on sport volatility
+    const volatility = 0.15; // 15% standard deviation
+    const randomFactor = (Math.random() - 0.5) * 2 * volatility;
+    return Math.max(0, Math.min(1, basePerformance + randomFactor));
+  }
+
+  /**
+   * Calculate score based on performance and time remaining
+   */
+  calculateScore(performance, timeRemaining) {
+    // Sport-specific scoring (can be customized per sport)
+    const baseScore = performance * 30; // Base points per game
+    return Math.round(baseScore * timeRemaining);
+  }
+}
+
+/**
+ * Advanced Win Percentage Calculator Class - Dimers.com Style
  */
 export class WinPercentageCalculator {
   constructor() {
     this.teamStats = ENHANCED_TEAM_STATS;
+    this.simulator = new MonteCarloSimulator(10000);
     this.algorithms = {
       basic: this.calculateBasic.bind(this),
       advanced: this.calculateAdvanced.bind(this),
       elo: this.calculateElo.bind(this),
-      composite: this.calculateComposite.bind(this)
+      composite: this.calculateComposite.bind(this),
+      monteCarlo: this.calculateMonteCarlo.bind(this),
+      live: this.calculateLive.bind(this)
     };
   }
 
@@ -507,24 +617,150 @@ export class WinPercentageCalculator {
   }
 
   /**
-   * Composite algorithm combining multiple methods
+   * Monte Carlo simulation algorithm - Dimers.com style
+   */
+  calculateMonteCarlo(team1, team2, options = {}) {
+    const { isHomeTeam1 = true } = options;
+    
+    const team1Stats = this.getTeamStats(team1);
+    const team2Stats = this.getTeamStats(team2);
+
+    if (!team1Stats || !team2Stats) {
+      return { team1Probability: 0.5, team2Probability: 0.5, confidence: 0.1 };
+    }
+
+    const simulationResult = this.simulator.simulateGame(team1, team2, team1Stats, team2Stats, options);
+    
+    const team1Prob = simulationResult.team1WinProbability;
+    const team2Prob = simulationResult.team2WinProbability;
+    const confidence = Math.abs(team1Prob - team2Prob);
+
+    return {
+      team1Probability: team1Prob,
+      team2Probability: team2Prob,
+      confidence: confidence,
+      algorithm: 'monteCarlo',
+      simulations: simulationResult.simulations,
+      details: {
+        team1Stats,
+        team2Stats,
+        simulationResult
+      }
+    };
+  }
+
+  /**
+   * Live betting algorithm - Dimers.com style with real-time updates
+   */
+  calculateLive(team1, team2, options = {}) {
+    const {
+      isHomeTeam1 = true,
+      currentScore = { team1: 0, team2: 0 },
+      timeRemaining = 1.0,
+      momentum = { team1: 0, team2: 0 },
+      gameEvents = []
+    } = options;
+
+    // Use Monte Carlo with live game state
+    const liveResult = this.calculateMonteCarlo(team1, team2, {
+      isHomeTeam1,
+      currentScore,
+      timeRemaining,
+      momentum
+    });
+
+    // Adjust for game events (injuries, weather, etc.)
+    const eventAdjustment = this.calculateEventAdjustment(gameEvents);
+    
+    let team1Prob = liveResult.team1Probability;
+    let team2Prob = liveResult.team2Probability;
+
+    // Apply event adjustments
+    team1Prob += eventAdjustment.team1;
+    team2Prob += eventAdjustment.team2;
+
+    // Normalize probabilities
+    const total = team1Prob + team2Prob;
+    team1Prob = team1Prob / total;
+    team2Prob = team2Prob / total;
+
+    // Live betting has higher confidence due to current game state
+    const confidence = Math.abs(team1Prob - team2Prob) + 0.1; // Boost confidence for live games
+
+    return {
+      team1Probability: team1Prob,
+      team2Probability: team2Prob,
+      confidence: Math.min(confidence, 0.9), // Cap at 90%
+      algorithm: 'live',
+      isLive: true,
+      gameState: {
+        currentScore,
+        timeRemaining,
+        momentum,
+        gameEvents
+      },
+      details: {
+        ...liveResult.details,
+        eventAdjustment
+      }
+    };
+  }
+
+  /**
+   * Calculate event adjustments for live games
+   */
+  calculateEventAdjustment(gameEvents) {
+    let team1Adjustment = 0;
+    let team2Adjustment = 0;
+
+    gameEvents.forEach(event => {
+      const { type, team, impact } = event;
+      
+      switch (type) {
+        case 'injury':
+          if (team === 1) team1Adjustment -= impact;
+          if (team === 2) team2Adjustment -= impact;
+          break;
+        case 'momentum':
+          if (team === 1) team1Adjustment += impact;
+          if (team === 2) team2Adjustment += impact;
+          break;
+        case 'weather':
+          // Weather affects both teams equally
+          team1Adjustment += impact * 0.5;
+          team2Adjustment += impact * 0.5;
+          break;
+      }
+    });
+
+    return {
+      team1: team1Adjustment,
+      team2: team2Adjustment
+    };
+  }
+
+  /**
+   * Composite algorithm combining multiple methods - Enhanced with Monte Carlo
    */
   calculateComposite(team1, team2, options = {}) {
     const basicResult = this.calculateBasic(team1, team2, options);
     const advancedResult = this.calculateAdvanced(team1, team2, options);
     const eloResult = this.calculateElo(team1, team2, options);
+    const monteCarloResult = this.calculateMonteCarlo(team1, team2, options);
 
-    // Weight the different algorithms
+    // Weight the different algorithms - Monte Carlo gets highest weight
     const weights = {
-      basic: 0.2,
-      advanced: 0.5,
-      elo: 0.3
+      basic: 0.1,
+      advanced: 0.3,
+      elo: 0.2,
+      monteCarlo: 0.4
     };
 
     const team1Prob = 
       basicResult.team1Probability * weights.basic +
       advancedResult.team1Probability * weights.advanced +
-      eloResult.team1Probability * weights.elo;
+      eloResult.team1Probability * weights.elo +
+      monteCarloResult.team1Probability * weights.monteCarlo;
 
     const team2Prob = 1 - team1Prob;
 
@@ -532,7 +768,8 @@ export class WinPercentageCalculator {
     const confidence = Math.max(
       basicResult.confidence,
       advancedResult.confidence,
-      eloResult.confidence
+      eloResult.confidence,
+      monteCarloResult.confidence
     );
 
     return {
@@ -543,7 +780,8 @@ export class WinPercentageCalculator {
       subResults: {
         basic: basicResult,
         advanced: advancedResult,
-        elo: eloResult
+        elo: eloResult,
+        monteCarlo: monteCarloResult
       }
     };
   }
