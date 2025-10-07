@@ -5,11 +5,16 @@ import "./NotificationToggle.css";
 
 export default function NotificationToggle({ session }) {
   const [notifEnabled, setNotifEnabled] = useState(false);
+  const [frequency, setFrequency] = useState("daily"); // 'daily' | 'weekly_mon'
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState("");
 
+  // Load current value from DB
   useEffect(() => {
+    setLoading(true);
+    setMessage("");
+
     if (!session) {
       setLoading(false);
       return;
@@ -19,32 +24,31 @@ export default function NotificationToggle({ session }) {
     let cancelled = false;
 
     (async () => {
-      setLoading(true);
-      setMessage("");
       const { data, error } = await supabase
         .from("users")
-        .select("notifications")
+        .select("notifications, notify_frequency")
         .eq("id", uid)
         .maybeSingle();
 
       if (!cancelled) {
         if (error) {
           console.error(error);
-          setMessage("Could not load notification setting.");
+          setMessage("Could not load notification settings.");
           setNotifEnabled(false);
+          setFrequency("daily");
         } else {
           setNotifEnabled(!!data?.notifications);
+          setFrequency(data?.notify_frequency || "daily");
         }
         setLoading(false);
       }
     })();
 
-    return () => {
-      cancelled = true;
-    };
+    return () => { cancelled = true; };
   }, [session]);
 
-  const save = async (next) => {
+  // Save to DB (checkbox and frequency)
+  const persist = async (nextEnabled, nextfrequency) => {
     if (!session) {
       setMessage("You must be logged in.");
       return;
@@ -55,23 +59,31 @@ export default function NotificationToggle({ session }) {
 
     const { error } = await supabase
       .from("users")
-      .upsert({ id: uid, notifications: next }, { onConflict: "id" });
+      .upsert(
+        { id: uid, notifications: nextEnabled, notify_frequency: nextfrequency },
+        { onConflict: "id" }
+      );
 
     if (error) {
       console.error(error);
-      setMessage(error.message || "Failed to save notifications.");
-      // rollback if needed
-      setNotifEnabled((prev) => !next ? prev && prev : prev || false);
+      setMessage(error.message || "Failed to save notification settings.");
+      // (optional) rollback UI if you want
     } else {
-      setMessage("Notification preference saved.");
+      setMessage("Notification settings saved.");
     }
     setSaving(false);
   };
 
   const onToggle = (e) => {
     const next = e.target.checked;
-    setNotifEnabled(next); // optimistic update
-    save(next);
+    setNotifEnabled(next);          // optimistic
+    persist(next, frequency);
+  };
+
+  const onfrequencyChange = (e) => {
+    const next = e.target.value;
+    setFrequency(next);               // optimistic
+    persist(notifEnabled, next);
   };
 
   if (!session) {
@@ -95,6 +107,21 @@ export default function NotificationToggle({ session }) {
             {loading ? "Loading…" : "Email me periodic updates"}
           </span>
         </label>
+
+        {/* frequency picker */}
+        <label className="notif-frequency">
+          <span>Frequency</span>
+          <select
+            className="notif-select"
+            value={frequency}
+            onChange={onfrequencyChange}
+            disabled={loading || saving}
+          >
+            <option value="daily">Daily</option>
+            <option value="weekly_mon">Every Monday</option>
+          </select>
+        </label>
+
         {message && <div className="notif-message">{message}</div>}
       </div>
     </>

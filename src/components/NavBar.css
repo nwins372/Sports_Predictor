@@ -33,7 +33,7 @@
 .site-title{
   display: inline-block;         
   color: white;
-  background: var(--accent); 
+  background: red;
   font-weight: 800;
   font-size: 24px;
   letter-spacing: 0.5px;
@@ -46,7 +46,7 @@
 }
 
 .site-title:hover {
-  background: var(--accent); 
+  background:firebrick; 
   opacity: 0.9;
   transform: translateY(-2px);                          
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);                
