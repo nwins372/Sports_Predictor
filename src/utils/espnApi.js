@@ -127,8 +127,8 @@ async function listTeams(league = 'nba') {
   if (!BASES[league]) throw new Error('Unsupported league');
   const local = await _tryLocal(`/db/espn/${league}/teams.json`);
   if (local) {
-    if (Array.isArray(local)) return local.map(t => (t.team || t));
-    if (local.teams) return local.teams.map(t => (t.team || t));
+    if (Array.isArray(local)) return local.map(t => (t.team || t.raw || t));
+    if (local.teams) return local.teams.map(t => (t.team || t.raw || t));
   }
   const json = await _fetchWithCache(`${BASES[league]}/teams`);
   const teams = (json?.sports?.[0]?.leagues?.[0]?.teams) || json?.teams || [];
@@ -141,12 +141,21 @@ async function getTeam(league = 'nba', idOrSlug) {
   const candidate = String(idOrSlug).endsWith('.json') ? idOrSlug : `${idOrSlug}.json`;
   const local = await _tryLocal(`/db/espn/${league}/${candidate}`);
   if (local) {
-    // When a full local team JSON exists, return it as-is so callers can access detail/roster
+    // Validate inner team metadata to ensure this local file actually represents the requested id/slug
     try {
-      local._fromLocal = true;
-      local._league = league;
-    } catch (e) {}
-    return local;
+      const localTeamCandidate = local;
+      const localSlug = (localTeamCandidate?.detail?.team?.slug || localTeamCandidate?.slug || '').toLowerCase();
+      const localId = String(localTeamCandidate?.detail?.team?.id || localTeamCandidate?.id || '').toLowerCase();
+      const localDisplay = (localTeamCandidate?.detail?.team?.displayName || localTeamCandidate?.displayName || localTeamCandidate?.name || '').toLowerCase();
+      const query = String(idOrSlug || '').toLowerCase();
+      if (localSlug === query || localId === query || localDisplay === query || String(query).includes(localSlug) || localSlug.includes(String(query))) {
+        try { local._fromLocal = true; local._league = league; } catch (e) {}
+        return local;
+      }
+      // otherwise, ignore this local file and continue to remote/team-list matching below
+    } catch (e) {
+      // fallthrough
+    }
   }
 
   // Try to match against the teams list (id, slug, abbreviation)
@@ -216,7 +225,26 @@ async function getTeamRoster(league = 'nba', teamIdOrSlug) {
           for (const tname of trials) {
             if (!tname) continue;
             const tryLocal = await _tryLocal(`/db/espn/${league}/${tname}.json`);
-            if (tryLocal) { localTeam = tryLocal; break; }
+            if (tryLocal) {
+              // Validate that the local file actually represents the intended team
+              try {
+                const localTeamCandidate = tryLocal;
+                const localSlug = (localTeamCandidate?.detail?.team?.slug || localTeamCandidate?.slug || '').toLowerCase();
+                const localId = String(localTeamCandidate?.detail?.team?.id || localTeamCandidate?.id || '').toLowerCase();
+                const localDisplay = (localTeamCandidate?.detail?.team?.displayName || localTeamCandidate?.displayName || localTeamCandidate?.name || '').toLowerCase();
+                const foundSlug = (found?.slug || '').toLowerCase();
+                const foundId = String(found?.id || '').toLowerCase();
+                const foundDisplay = (found?.displayName || found?.name || '').toLowerCase();
+                // Accept file only if slug/id/displayName matches the found team, otherwise skip (prevents location-only files from matching the wrong team)
+                if (localSlug && localSlug === foundSlug) { localTeam = localTeamCandidate; break; }
+                if (localId && foundId && localId === foundId) { localTeam = localTeamCandidate; break; }
+                if (localDisplay && foundDisplay && localDisplay === foundDisplay) { localTeam = localTeamCandidate; break; }
+                // as a last resort, if the trial filename exactly matches the requested trial name, accept it
+                if (String(tname).toLowerCase() === String(teamIdOrSlug).toLowerCase()) { localTeam = localTeamCandidate; break; }
+              } catch (e) {
+                // if validation fails for any reason, skip this file
+              }
+            }
           }
         }
       } catch (e) {}

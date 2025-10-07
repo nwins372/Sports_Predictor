@@ -1,0 +1,22 @@
+{
+  "fetchedAt": "2025-09-30T00:00:00.000Z",
+  "detail": {
+    "team": {
+      "id": "135",
+      "uid": "s:20~l:28~t:135",
+      "slug": "los-angeles-chargers",
+      "location": "Los Angeles",
+      "name": "Chargers",
+      "nickname": "Chargers",
+      "abbreviation": "LAC",
+      "displayName": "Los Angeles Chargers",
+      "shortDisplayName": "Chargers",
+      "color": "002A5E",
+      "alternateColor": "FFFFFF",
+      "isActive": true
+    },
+    "roster": {
+      "entries": []
+    }
+  }
+}

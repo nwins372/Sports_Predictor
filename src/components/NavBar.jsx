@@ -15,6 +15,18 @@ const navigate = useNavigate();
   const [localTeams, setLocalTeams] = useState([]);
   const [activeIndex, setActiveIndex] = useState(-1);
   const inputRef = useRef(null);
+  // helper: normalize token and resolve a canonical local team from in-memory localTeams
+  const resolveLocalTeam = (token) => {
+    if (!token) return null;
+    const normalizeKey = (s) => String(s || '').toLowerCase().replace(/[_\s-]+/g, '');
+    const q = normalizeKey(token);
+    return localTeams.find(t => {
+      const slug = normalizeKey(t.slug || t.displayName || t.name || t.location || '');
+      const abbr = normalizeKey(t.abbreviation || '');
+      const display = normalizeKey(t.displayName || t.name || '');
+      return slug === q || abbr === q || display === q || display.includes(q) || slug.includes(q);
+    });
+  };
   useEffect(() => {
     // Check sessions
     supabase.auth.getSession().then(({ data }) => {
@@ -159,6 +171,18 @@ const navigate = useNavigate();
 
     const normalizeKey = (s) => String(s || '').toLowerCase().replace(/[_\s-]+/g, '');
 
+    // resolve a candidate team token (abbr/name/slug) to the canonical local team slug and league when possible
+    const resolveLocalTeam = (token) => {
+      if (!token) return null;
+      const q = normalizeKey(token);
+      return localTeams.find(t => {
+        const slug = normalizeKey(t.slug || t.displayName || t.name || t.location || '');
+        const abbr = normalizeKey(t.abbreviation || '');
+        const display = normalizeKey(t.displayName || t.name || '');
+        return slug === q || abbr === q || display === q || display.includes(q) || slug.includes(q);
+      });
+    };
+
     const onKey = async (e) => {
       if (!showSearch) return;
       if (e.key === 'Escape') { setShowSearch(false); }
@@ -169,10 +193,15 @@ const navigate = useNavigate();
         // prefer internal routing when possible
         if (r.type && r.type.toLowerCase().includes('team')) {
           const rawAb = r.slug || r.abbr || r.id || r.name;
-          const ab = makeSlug(rawAb);
+          let ab = makeSlug(rawAb);
           let league = r.league || r._league || null;
-          // prefer a match from in-memory localTeams (fast and authoritative for served JSON)
-          if (!league && ab) {
+          // prefer a canonical match from in-memory localTeams (fast and authoritative for served JSON)
+          const resolved = resolveLocalTeam(rawAb) || resolveLocalTeam(ab);
+          if (resolved) {
+            ab = resolved.slug || makeSlug(resolved.displayName || resolved.name || resolved.location || ab);
+            league = resolved._league || league;
+          } else if (!league && ab) {
+            // fallback: try a looser find
             const match = localTeams.find(t => normalizeKey(t.slug) === normalizeKey(ab) || normalizeKey(t.abbreviation) === normalizeKey(ab) || normalizeKey(t.displayName || t.name) === normalizeKey(ab));
             if (match) league = match._league;
           }
@@ -251,12 +280,13 @@ const navigate = useNavigate();
                       if (!actionable) return; // no-op for unavailable items
                       // click behavior mirrors Enter: prefer internal routing when type suggests team/player
                       if (r.type && r.type.toLowerCase().includes('team')) {
-                        const ab = r.abbr || r.id || r.name;
+                        let ab = r.abbr || r.id || r.name;
                         let league = r.league || r._league || null;
-                        // prefer a match from in-memory localTeams (fast and authoritative for served JSON)
-                        if (!league && ab) {
-                          const match = localTeams.find(t => ((t.slug||'').toLowerCase() === (ab||'').toLowerCase()) || ((t.abbreviation||'').toLowerCase() === (ab||'').toLowerCase()) || ((t.displayName||t.name||'').toLowerCase() === (ab||'').toLowerCase()));
-                          if (match) league = match._league;
+                        // prefer canonical slug from in-memory localTeams
+                        const resolved = resolveLocalTeam(ab);
+                        if (resolved) {
+                          ab = resolved.slug || (resolved.displayName || resolved.name || resolved.location || ab);
+                          league = resolved._league || league;
                         }
                         // last resort: consult remote team lists
                         if (!league && ab) {

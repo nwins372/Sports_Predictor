@@ -71,6 +71,8 @@ export default function Team() {
     let mounted = true;
     (async () => {
       try {
+        // reset remoteRoster before attempting fetch to avoid showing stale data
+        if (mounted) setRemoteRoster(null);
         if ((!rosterEntries || rosterEntries.length === 0) && team) {
           // try fetch from live API using resolved team's league and id/slug
           const tid = team?.detail?.team?.id || team?.id || team?.detail?.team?.slug || team?.slug || abbr;
@@ -85,7 +87,10 @@ export default function Team() {
               try { rr = await espnApi.getTeamRoster('nfl', tid); } catch (e) { rr = []; }
             }
           }
-          if (mounted && rr && rr.length > 0) setRemoteRoster(rr);
+          if (mounted) {
+            if (rr && rr.length > 0) setRemoteRoster(rr);
+            else setRemoteRoster([]);
+          }
         }
       } catch (e) {}
     })();
