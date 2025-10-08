@@ -2,6 +2,7 @@ import { useMemo, useState, useEffect } from "react";
 import nflSchedule from "../assets/nfl25.json";
 import nbaSchedule from "../assets/nba25.json";
 import mlbSchedule from "../assets/mlb25.json";
+import { getBroadcastInfo } from "../utils/broadcasts";
 import "./ScheduleBar.css";
 
 const ymd = (d) => d.toISOString().slice(0, 10);
@@ -131,32 +132,37 @@ export default function ScheduleBar() {
         </div>
       </div>
 
-      <div className="sb-cards">
-        {games.length === 0 ? (
-          <div className="sb-state">No games on this date.</div>
-        ) : (
-          games.map((g) => (
-            <a key={g.id} href={`/game/${sport}/${g.id}`} className="sb-card">
-              <div className="sb-card-top">
-                <div className="sb-teams">
-                  <div className="sb-team">{g.awayTeam}</div>
-                  <div>@</div>
-                  <div className="sb-team">{g.homeTeam}</div>
-                </div>
-                <div className="sb-right">
-                  {g.homeScore != null && g.awayScore != null ? (
-                    <div className="sb-score">({g.awayScore}–{g.homeScore})</div>
-                  ) : (
-                    <div className="sb-time">{fmtLocalTime(g.dateUtcISO)}</div>
-                  )}
-                </div>
-              </div>
-              {g.venue && <div className="sb-venue">Location: {g.venue}</div>}
-              <div className="sb-venue">Where to Watch:</div>
-            </a>
-          ))
-        )}
+  <div className="sb-cards">
+          {games.length === 0 ? (
+            <div className="sb-state">No games on this date.</div>
+          ) : (
+            games.map((g) => {
+              const broadcast = getBroadcastInfo(g, sport); 
+
+              return (
+                <a key={g.id} href={`/game/${sport}/${g.id}`} className="sb-card">
+                  <div className="sb-card-top">
+                    <div className="sb-teams">
+                      <div className="sb-team">{g.awayTeam}</div>
+                      <div>@</div>
+                      <div className="sb-team">{g.homeTeam}</div>
+                    </div>
+                    <div className="sb-right">
+                      {g.homeScore != null && g.awayScore != null ? (
+                        <div className="sb-score">({g.awayScore}–{g.homeScore})</div>
+                      ) : (
+                        <div className="sb-time">{fmtLocalTime(g.dateUtcISO)}</div>
+                      )}
+                    </div>
+                  </div>
+                  {g.venue && <div className="sb-venue">Location: {g.venue}</div>}
+                  {/* 👇 DISPLAY THE BROADCAST INFO */}
+                  <div className="sb-venue">Where to Watch: <strong>{broadcast}</strong></div>
+                </a>
+              );
+            })
+          )}
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
