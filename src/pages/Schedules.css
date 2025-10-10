@@ -116,11 +116,25 @@
 }
 
 .team-score {
-  color: #22c55e;
-  font-weight: 700;
-  font-size: 1.1rem;
-  min-width: 30px;
-  text-align: right;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.3rem;
+  min-width: 45px;
+  text-align: center;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 2px solid #22c55e;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+  transition: all 0.3s ease;
+}
+
+.team-score:hover {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  border-color: #16a34a;
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.6);
 }
 
 .vs-divider {
@@ -135,9 +149,25 @@
 }
 
 .game-time {
-  color: #94a3b8;
-  font-size: 0.9rem;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
   margin-bottom: 0.25rem;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 2px solid #3b82f6;
+  display: inline-block;
+  transition: all 0.3s ease;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.game-time:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  border-color: #2563eb;
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
 }
 
 .game-location {
@@ -529,14 +559,25 @@
 }
 
 .team-score {
-  color: #e5e7eb;
-  font-weight: 700;
-  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.4rem;
   transition: all 0.3s ease;
-  padding: 0.3rem 0.6rem;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border: 2px solid #22c55e;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.5);
+  min-width: 60px;
+  text-align: center;
+}
+
+.team-score:hover {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  border-color: #16a34a;
+  transform: scale(1.1);
+  box-shadow: 0 8px 24px rgba(34, 197, 94, 0.7);
 }
 
 .team-score.winner {
@@ -569,9 +610,15 @@
 }
 
 .score-separator {
-  color: #6b7280;
-  font-weight: 600;
-  font-size: 1.2rem;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, #6b7280, #4b5563);
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 2px solid #6b7280;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 12px rgba(107, 114, 128, 0.4);
 }
 
 .winner-indicator {

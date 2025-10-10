@@ -475,9 +475,7 @@ export class WinPercentageCalculator {
     const homeStats = this.getTeamStats(homeTeam);
     const awayStats = this.getTeamStats(awayTeam);
 
-    if (!homeStats || !awayStats) {
-      return { team1Probability: 0.5, team2Probability: 0.5, confidence: 0.1 };
-    }
+    // Note: getTeamStats now returns default stats instead of null
 
     // Basic calculation with home advantage
     const homeAdvantage = 0.05; // 5% home advantage
@@ -513,9 +511,7 @@ export class WinPercentageCalculator {
     const homeStats = this.getTeamStats(homeTeam);
     const awayStats = this.getTeamStats(awayTeam);
 
-    if (!homeStats || !awayStats) {
-      return { team1Probability: 0.5, team2Probability: 0.5, confidence: 0.1 };
-    }
+    // Note: getTeamStats now returns default stats instead of null
 
     // Factor weights
     const weights = {
@@ -584,9 +580,7 @@ export class WinPercentageCalculator {
     const homeStats = this.getTeamStats(homeTeam);
     const awayStats = this.getTeamStats(awayTeam);
 
-    if (!homeStats || !awayStats) {
-      return { team1Probability: 0.5, team2Probability: 0.5, confidence: 0.1 };
-    }
+    // Note: getTeamStats now returns default stats instead of null
 
     // Convert win percentage to ELO-like rating (1000 base + performance)
     const homeRating = 1000 + (homeStats.winPercentage - 50) * 15;
@@ -625,9 +619,7 @@ export class WinPercentageCalculator {
     const team1Stats = this.getTeamStats(team1);
     const team2Stats = this.getTeamStats(team2);
 
-    if (!team1Stats || !team2Stats) {
-      return { team1Probability: 0.5, team2Probability: 0.5, confidence: 0.1 };
-    }
+    // Note: getTeamStats now returns default stats instead of null
 
     const simulationResult = this.simulator.simulateGame(team1, team2, team1Stats, team2Stats, options);
     
@@ -787,7 +779,7 @@ export class WinPercentageCalculator {
   }
 
   /**
-   * Get team statistics with fallback for partial matches
+   * Get team statistics with fallback for partial matches and missing teams
    */
   getTeamStats(teamName) {
     // Direct match
@@ -805,7 +797,79 @@ export class WinPercentageCalculator {
       return this.teamStats[partialMatch];
     }
 
-    return null;
+    // Return default stats for unknown teams instead of null
+    return this.getDefaultTeamStats(teamName);
+  }
+
+  /**
+   * Get default team statistics for unknown teams based on league averages
+   */
+  getDefaultTeamStats(teamName) {
+    // Determine league based on team name patterns or default to NFL
+    const league = this.detectLeagueFromTeamName(teamName);
+    
+    // Default stats based on league averages
+    const defaultStats = {
+      NFL: {
+        wins: 8, losses: 9, winPercentage: 47.1,
+        offense: 72, defense: 75, specialTeams: 70,
+        recentForm: 0.45, homeRecord: 0.5, awayRecord: 0.44,
+        conference: "Unknown", division: "Unknown"
+      },
+      NBA: {
+        wins: 41, losses: 41, winPercentage: 50.0,
+        offense: 75, defense: 75, specialTeams: 70,
+        recentForm: 0.5, homeRecord: 0.55, awayRecord: 0.45,
+        conference: "Unknown", division: "Unknown"
+      },
+      MLB: {
+        wins: 81, losses: 81, winPercentage: 50.0,
+        offense: 75, defense: 75, specialTeams: 70,
+        recentForm: 0.5, homeRecord: 0.52, awayRecord: 0.48,
+        conference: "Unknown", division: "Unknown"
+      }
+    };
+
+    return defaultStats[league] || defaultStats.NFL;
+  }
+
+  /**
+   * Detect league from team name patterns
+   */
+  detectLeagueFromTeamName(teamName) {
+    const name = teamName.toLowerCase();
+    
+    // NBA team indicators
+    if (name.includes('lakers') || name.includes('warriors') || name.includes('celtics') || 
+        name.includes('heat') || name.includes('nuggets') || name.includes('bucks') ||
+        name.includes('knicks') || name.includes('nets') || name.includes('bulls') ||
+        name.includes('pistons') || name.includes('pacers') || name.includes('cavaliers') ||
+        name.includes('raptors') || name.includes('hawks') || name.includes('hornets') ||
+        name.includes('magic') || name.includes('wizards') || name.includes('thunder') ||
+        name.includes('blazers') || name.includes('jazz') || name.includes('kings') ||
+        name.includes('suns') || name.includes('clippers') || name.includes('timberwolves') ||
+        name.includes('mavericks') || name.includes('rockets') || name.includes('grizzlies') ||
+        name.includes('pelicans') || name.includes('spurs')) {
+      return 'NBA';
+    }
+    
+    // MLB team indicators
+    if (name.includes('dodgers') || name.includes('yankees') || name.includes('braves') ||
+        name.includes('astros') || name.includes('red sox') || name.includes('giants') ||
+        name.includes('phillies') || name.includes('cubs') || name.includes('brewers') ||
+        name.includes('blue jays') || name.includes('orioles') || name.includes('guardians') ||
+        name.includes('rangers') || name.includes('angels') || name.includes('athletics') ||
+        name.includes('mariners') || name.includes('tigers') || name.includes('twins') ||
+        name.includes('white sox') || name.includes('royals') || name.includes('indians') ||
+        name.includes('rays') || name.includes('marlins') || name.includes('nationals') ||
+        name.includes('mets') || name.includes('padres') || name.includes('diamondbacks') ||
+        name.includes('rockies') || name.includes('cardinals') || name.includes('pirates') ||
+        name.includes('reds')) {
+      return 'MLB';
+    }
+    
+    // Default to NFL for American football teams
+    return 'NFL';
   }
 
   /**

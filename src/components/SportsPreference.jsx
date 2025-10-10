@@ -60,11 +60,25 @@ export default function SportPrefsForm({ session }) {
       setLoading(true);
       setMsg("");
 
-      const { data, error } = await supabase
+      // First try to select with favorite_teams column
+      let { data, error } = await supabase
         .from("user_preferences")
         .select("sports_prefs, favorite_teams")
         .eq("user_id", uid)
         .maybeSingle();
+
+      // If favorite_teams column doesn't exist, try without it
+      if (error && error.message.includes('favorite_teams')) {
+        console.log('favorite_teams column not found, falling back to sports_prefs only');
+        const fallbackResult = await supabase
+          .from("user_preferences")
+          .select("sports_prefs")
+          .eq("user_id", uid)
+          .maybeSingle();
+        
+        data = fallbackResult.data;
+        error = fallbackResult.error;
+      }
 
       if (error) {
         setMsg("Could not load preferences.");
@@ -115,7 +129,8 @@ export default function SportPrefsForm({ session }) {
 
     const uid = session.user.id;
 
-    const { error } = await supabase
+    // First try to save with favorite_teams column
+    let { error } = await supabase
       .from("user_preferences")
       .upsert(
         { 
@@ -126,10 +141,29 @@ export default function SportPrefsForm({ session }) {
         { onConflict: "user_id" }              
       );
 
+    // If favorite_teams column doesn't exist, save without it
+    if (error && error.message.includes('favorite_teams')) {
+      console.log('favorite_teams column not found, saving sports_prefs only');
+      const fallbackResult = await supabase
+        .from("user_preferences")
+        .upsert(
+          { 
+            user_id: uid, 
+            sports_prefs: checked
+          }, 
+          { onConflict: "user_id" }              
+        );
+      error = fallbackResult.error;
+      
+      if (!error) {
+        setMsg("Sports preferences saved. Team preferences require database update.");
+      }
+    }
+
     if (error) {
       setMsg(error.message || "Failed to save preferences.");
-    } else {
-      setMsg("Preferences saved.");
+    } else if (!error) {
+      setMsg("Preferences saved successfully!");
     }
     setSaving(false);
   };

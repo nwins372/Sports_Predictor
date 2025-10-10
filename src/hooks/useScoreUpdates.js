@@ -76,7 +76,14 @@ export const useScoreUpdates = (sport, enabled = true) => {
     if (!enabled || !sport) return;
 
     console.log(`Registering ${sport} with scheduler service`);
-    schedulerService.registerSport(sport, updateScores);
+    
+    // Create daily reset callback that forces a fresh update
+    const dailyResetCallback = () => {
+      console.log(`Daily reset triggered for ${sport} - forcing fresh data load`);
+      updateScores();
+    };
+    
+    schedulerService.registerSport(sport, updateScores, dailyResetCallback);
 
     // Get initial scheduler status
     setSchedulerStatus(schedulerService.getStatus());
@@ -141,6 +148,11 @@ export const useTodaysGames = (sport) => {
   const [todaysGames, setTodaysGames] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [currentDate, setCurrentDate] = useState(() => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return today;
+  });
 
   const { setUpdateCallback, ...scoreUpdateProps } = useScoreUpdates(sport, true);
 
@@ -152,52 +164,79 @@ export const useTodaysGames = (sport) => {
     });
   }, [setUpdateCallback]);
 
+  // Function to load games for a specific date
+  const loadGamesForDate = useCallback(async (date) => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      let games = [];
+      switch (sport.toLowerCase()) {
+        case 'nfl':
+          games = await sportsAPI.fetchNFLData();
+          break;
+        case 'nba':
+          games = await sportsAPI.fetchNBAData();
+          break;
+        case 'mlb':
+          games = await sportsAPI.fetchMLBData();
+          break;
+        default:
+          throw new Error(`Unknown sport: ${sport}`);
+      }
+
+      // Filter for the specified date's games
+      const targetDate = new Date(date);
+      targetDate.setHours(0, 0, 0, 0);
+      const nextDay = new Date(targetDate);
+      nextDay.setDate(nextDay.getDate() + 1);
+
+      const filteredGames = games.filter(game => {
+        const gameDate = new Date(game.DateUtc);
+        return gameDate >= targetDate && gameDate < nextDay;
+      });
+
+      setTodaysGames(filteredGames);
+      setIsLoading(false);
+      
+      console.log(`Loaded ${filteredGames.length} games for ${targetDate.toDateString()} in ${sport}`);
+    } catch (err) {
+      console.error(`Error loading games for ${date.toDateString()} in ${sport}:`, err);
+      setError(err.message);
+      setIsLoading(false);
+    }
+  }, [sport]);
+
   // Initial load
   useEffect(() => {
-    const loadTodaysGames = async () => {
-      setIsLoading(true);
-      setError(null);
+    if (sport) {
+      loadGamesForDate(currentDate);
+    }
+  }, [sport, currentDate, loadGamesForDate]);
 
-      try {
-        let games = [];
-        switch (sport.toLowerCase()) {
-          case 'nfl':
-            games = await sportsAPI.fetchNFLData();
-            break;
-          case 'nba':
-            games = await sportsAPI.fetchNBAData();
-            break;
-          case 'mlb':
-            games = await sportsAPI.fetchMLBData();
-            break;
-          default:
-            throw new Error(`Unknown sport: ${sport}`);
-        }
-
-        // Filter for today's games
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-        const tomorrow = new Date(today);
-        tomorrow.setDate(tomorrow.getDate() + 1);
-
-        const todaysGames = games.filter(game => {
-          const gameDate = new Date(game.DateUtc);
-          return gameDate >= today && gameDate < tomorrow;
-        });
-
-        setTodaysGames(todaysGames);
-        setIsLoading(false);
-      } catch (err) {
-        console.error(`Error loading today's games for ${sport}:`, err);
-        setError(err.message);
-        setIsLoading(false);
+  // Set up midnight update functionality
+  useEffect(() => {
+    const checkForDateChange = () => {
+      const now = new Date();
+      const today = new Date(now);
+      today.setHours(0, 0, 0, 0);
+      
+      // Check if the date has changed
+      if (today.getTime() !== currentDate.getTime()) {
+        console.log('Date changed detected - updating to new day');
+        setCurrentDate(today);
+        // The useEffect above will trigger loadGamesForDate with the new date
       }
     };
 
-    if (sport) {
-      loadTodaysGames();
-    }
-  }, [sport]);
+    // Check every minute for date changes
+    const dateCheckInterval = setInterval(checkForDateChange, 60000);
+    
+    // Also check immediately when the component mounts
+    checkForDateChange();
+
+    return () => clearInterval(dateCheckInterval);
+  }, [currentDate]);
 
   return {
     todaysGames,
