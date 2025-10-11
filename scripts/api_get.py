@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from supabase import create_client
 from datetime import datetime
 from postgrest.exceptions import APIError
-from utility import complie_header, null_check
+from utility import null_check
 
 Seasoned = []
 
@@ -64,6 +64,7 @@ def main():
                         'league': league,
                         'name': team_name,
                         'color': null_check('color', team_dict),
+                        'seccolor': null_check('alternateColor', team_dict),
                         # 'record': null_check('record', team_dict, True),
                         # 'venue': null_check('venue', team_dict, True),
                         # 'groups': null_check('groups', team_dict, True),
