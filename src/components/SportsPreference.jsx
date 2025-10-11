@@ -46,8 +46,7 @@ const TEAM_DATA = {
 };
 
 export default function SportPrefsForm({ session }) {
-  const [checked, setChecked] = useState([]);
-  const [selectedTeams, setSelectedTeams] = useState({});
+  const [checked, setChecked] = useState([]);   
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [msg, setMsg] = useState("");
@@ -60,9 +59,10 @@ export default function SportPrefsForm({ session }) {
       setLoading(true);
       setMsg("");
 
-      const { data, error } = await supabase
+      // First try to select with favorite_teams column
+      let { data, error } = await supabase
         .from("user_preferences")
-        .select("sports_prefs")
+        .select("sports_prefs, favorite_teams")
         .eq("user_id", uid)
         .maybeSingle();
 
@@ -81,12 +81,10 @@ export default function SportPrefsForm({ session }) {
 
       if (error) {
         setMsg("Could not load preferences.");
-        setChecked([]);
-        setSelectedTeams({});
+        setChecked([]); 
       } else {
         const arr = Array.isArray(data?.sports_prefs) ? data.sports_prefs : [];
         setChecked(arr);
-        setSelectedTeams(data?.favorite_teams || {});
       }
 
       setLoading(false);
@@ -127,10 +125,15 @@ export default function SportPrefsForm({ session }) {
 
     const uid = session.user.id;
 
-    const { error } = await supabase
+    // First try to save with favorite_teams column
+    let { error } = await supabase
       .from("user_preferences")
       .upsert(
-        { user_id: uid, sports_prefs: checked }, 
+        { 
+          user_id: uid, 
+          sports_prefs: checked,
+          favorite_teams: selectedTeams
+        }, 
         { onConflict: "user_id" }              
       );
 
@@ -155,8 +158,8 @@ export default function SportPrefsForm({ session }) {
 
     if (error) {
       setMsg(error.message || "Failed to save preferences.");
-    } else {
-      setMsg("Preferences saved.");
+    } else if (!error) {
+      setMsg("Preferences saved successfully!");
     }
     setSaving(false);
   };
@@ -181,30 +184,6 @@ export default function SportPrefsForm({ session }) {
           </label>
         ))}
       </div>
-
-      {/* Team Selection */}
-      {checked.length > 0 && (
-        <div className="prefs-section">
-          <h3 className="prefs-subtitle">Favorite Teams</h3>
-          {checked.map((sport) => (
-            <div key={sport} className="team-section">
-              <h4 className="team-sport-title">{sport}</h4>
-              <div className="teams-grid">
-                {TEAM_DATA[sport]?.map((team) => (
-                  <label key={team} className="team-item">
-                    <input
-                      type="checkbox"
-                      checked={selectedTeams[sport]?.includes(team) || false}
-                      onChange={() => toggleTeam(sport, team)}
-                    />
-                    <span>{team}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
 
       <button className="prefs-save-btn" onClick={save} disabled={saving}>
         {saving ? "Saving…" : "Save"}

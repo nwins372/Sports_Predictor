@@ -133,6 +133,12 @@
     transform: none;
 }
 
+.simulation-info {
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
 /* Prediction Results Styles */
 .prediction-results {
     animation: fadeIn 0.5s ease-in;
@@ -239,6 +245,286 @@
     margin: 0;
     font-weight: 600;
     opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.prediction-details {
+    margin-top: 1rem;
+}
+
+.confidence-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.confidence-percentage {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.algorithm-info {
+    margin-top: 0.5rem;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+}
+
+.algorithm-description {
+    display: block;
+    margin-top: 0.25rem;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Calculation Breakdown Styles */
+.calculation-breakdown {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    border: 1px solid #334155;
+    border-radius: 12px;
+}
+
+.breakdown-title {
+    color: #f3f4f6;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.breakdown-content {
+    color: #e5e7eb;
+}
+
+.calculation-method h6 {
+    color: #3b82f6;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.calculation-method p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.simulation-steps {
+    margin: 1.5rem 0;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 8px;
+    border-left: 4px solid #3b82f6;
+}
+
+.step-number {
+    background: #3b82f6;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content strong {
+    color: #f3f4f6;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.step-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+}
+
+.team-factors {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(34, 197, 94, 0.1);
+    border-radius: 8px;
+    border-left: 4px solid #22c55e;
+}
+
+.team-factors h6 {
+    color: #22c55e;
+    margin-bottom: 1rem;
+}
+
+.factors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem;
+}
+
+.factor-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+}
+
+.factor-name {
+    font-weight: 500;
+    color: #f3f4f6;
+}
+
+.factor-weight {
+    font-weight: 600;
+    color: #3b82f6;
+    background: rgba(59, 130, 246, 0.2);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.formula-explanation {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.formula-explanation p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.formula-explanation strong {
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+.confidence-explanation {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(245, 158, 11, 0.1);
+    border-radius: 8px;
+    border-left: 4px solid #f59e0b;
+}
+
+.confidence-explanation h6 {
+    color: #f59e0b;
+    margin-bottom: 0.75rem;
+}
+
+.confidence-explanation p {
+    margin-bottom: 0.75rem;
+}
+
+.confidence-explanation ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.confidence-explanation li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.confidence-explanation strong {
+    color: #f3f4f6;
+}
+
+.team-stats-breakdown {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 8px;
+    border-left: 4px solid #8b5cf6;
+}
+
+.team-stats-breakdown h6 {
+    color: #8b5cf6;
+    margin-bottom: 1rem;
+}
+
+.stats-comparison {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+.team-stats {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.team-stats h7 {
+    display: block;
+    font-weight: 600;
+    color: #f3f4f6;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item:last-child {
+    border-bottom: none;
+}
+
+.stat-item span:first-child {
+    color: #cbd5e1;
+    font-size: 0.85rem;
+}
+
+.stat-item span:last-child {
+    color: #3b82f6;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.vs-stats {
+    color: #f59e0b;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-align: center;
+    background: rgba(245, 158, 11, 0.1);
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Responsive Design */
@@ -260,5 +546,42 @@
     
     .sport-btn {
         width: 200px;
+    }
+
+    .calculation-breakdown {
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+
+    .factors-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .step {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .step-content {
+        text-align: left;
+    }
+
+    .stats-comparison {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .vs-stats {
+        order: 2;
+        margin: 0 auto;
+    }
+
+    .team-stats:first-child {
+        order: 1;
+    }
+
+    .team-stats:last-child {
+        order: 3;
     }
 }
