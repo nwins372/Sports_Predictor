@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
 import "./SportsPreference.css";
 
-const all_sports = ["NFL", "NBA", "MLB", "College Sports"];
+// const all_sports = ["NFL", "NBA", "MLB", "College Sports"];
+const all_sports = ["NFL", "NBA", "MLB"];
 
 // Team data for each sport
 const TEAM_DATA = {
@@ -46,7 +47,8 @@ const TEAM_DATA = {
 };
 
 export default function SportPrefsForm({ session }) {
-  const [checked, setChecked] = useState([]);   
+  const [checked, setChecked] = useState([]);
+  const [selectedTeams, setSelectedTeams] = useState({});  
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [msg, setMsg] = useState("");
@@ -172,18 +174,46 @@ export default function SportPrefsForm({ session }) {
   return (
     <div className="prefs-card">
       <h2 className="prefs-title">Your Sports</h2>
-      <div className="prefs-grid">
-        {all_sports.map((sport) => (
-          <label key={sport} className="prefs-item">
-            <input
-              type="checkbox"
-              checked={checked.includes(sport)}
-              onChange={() => toggle(sport)}
-            />
-            <span>{sport}</span>
-          </label>
-        ))}
+      {/* Sports Selection */}
+      <div className="prefs-section">
+        <h3 className="prefs-subtitle">Sports</h3>
+        <div className="prefs-grid">
+          {all_sports.map((sport) => (
+            <label key={sport} className="prefs-item">
+              <input
+                type="checkbox"
+                checked={checked.includes(sport)}
+                onChange={() => toggle(sport)}
+              />
+              <span>{sport}</span>
+            </label>
+          ))}
+        </div>
       </div>
+
+      {/* Team Selection */}
+      {checked.length > 0 && (
+        <div className="prefs-section">
+          <h3 className="prefs-subtitle">Favorite Teams</h3>
+          {checked.map((sport) => (
+            <div key={sport} className="team-section">
+              <h4 className="team-sport-title">{sport}</h4>
+              <div className="teams-grid">
+                {TEAM_DATA[sport]?.map((team) => (
+                  <label key={team} className="team-item">
+                    <input
+                      type="checkbox"
+                      checked={selectedTeams[sport]?.includes(team) || false}
+                      onChange={() => toggleTeam(sport, team)}
+                    />
+                    <span>{team}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
 
       <button className="prefs-save-btn" onClick={save} disabled={saving}>
         {saving ? "Saving…" : "Save"}
