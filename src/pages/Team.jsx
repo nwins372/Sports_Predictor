@@ -20,6 +20,19 @@ export default function Team() {
     return det?.roster?.athletes || det?.roster?.entries || team?.roster || det?.athletes || det?.team?.roster || [];
   }, [team]);
 
+  // helper: categorize position into offense/defense/special
+  const categorizePosition = (pos) => {
+    if (!pos) return 'other';
+    const p = String(pos).toLowerCase();
+    const offense = ['qb','rb','fb','hb','wr','te','ol','lt','lg','c','rg','rt','fullback','halfback','running back','wide receiver','tight end'];
+    const defense = ['cb','s','safety','lb','olb','ilb','mlb','dl','dt','de','defensive','cornerback','linebacker','safeties'];
+    const special = ['k','p','ls','kp','kr','pr','long snapper','kicker','punter'];
+    if (offense.some(x => p.includes(x))) return 'offense';
+    if (defense.some(x => p.includes(x))) return 'defense';
+    if (special.some(x => p.includes(x))) return 'special';
+    return 'other';
+  };
+
   useEffect(() => {
     let mounted = true;
     (async () => {
@@ -125,6 +138,16 @@ export default function Team() {
   const renderPlayer = (entry, idx) => {
     const athlete = entry?.athlete || entry?.person || entry || {};
     const pid = athlete?.id || athlete?.personId || athlete?.uid || athlete?.athleteId || null;
+    // try to extract short numeric id from headshot or links
+    const extractNumeric = (s) => {
+      if (!s) return null;
+      const str = String(s);
+      const m = str.match(/\/(?:id|_id)\/(\d+)/) || str.match(/\/(?:players|full)\/(?:full\/)?(\d+)\./) || str.match(/(\d{4,7})/);
+      return m && m[1] ? m[1] : null;
+    };
+    const shortFromImg = extractNumeric(athlete?.headshot || athlete?.photo || athlete?.images?.[0]?.url || athlete?.image?.url);
+    const shortFromHref = extractNumeric(athlete?.href || athlete?.link || athlete?.canonicalUrl || (athlete?.raw && (athlete.raw.canonicalUrl || (athlete.raw.links && athlete.raw.links.web && athlete.raw.links.web.href))));
+    const shortPid = (String(pid).match(/^\d+$/) ? String(pid) : (shortFromImg || shortFromHref || null));
     const pname = athlete?.displayName || athlete?.fullName || athlete?.name || athlete?.shortName || `Player ${idx + 1}`;
     const pimg = athlete?.headshot?.href || athlete?.headshot || athlete?.photo?.href || athlete?.images?.[0]?.url || athlete?.image?.url || null;
     const position = athlete?.position || athlete?.positionName || athlete?.position?.abbreviation || (athlete?.raw && athlete.raw.position) || null;
@@ -175,7 +198,7 @@ export default function Team() {
         )}
         <div className="player-info">
           <div className="player-name">
-            {pid ? <Link to={teamLeague ? `/player/${encodeURIComponent(teamLeague)}/${encodeURIComponent(pid)}` : `/player/${encodeURIComponent(pid)}`}>{pname}</Link> : <span>{pname}</span>}
+            { (shortPid || pid) ? <Link to={teamLeague ? `/player/${encodeURIComponent(teamLeague)}/${encodeURIComponent(shortPid || pid)}` : `/player/${encodeURIComponent(shortPid || pid)}`} state={{ name: pname }}>{pname}</Link> : <span>{pname}</span>}
           </div>
           <div className="player-meta">
             {position && <span className="player-pos">{position}</span>}

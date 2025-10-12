@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import espnApi from '../utils/espnApi';
 import './Player.css';
+import FollowButton from '../components/FollowButton';
 
 export default function Player() {
   const params = useParams();
@@ -10,6 +11,9 @@ export default function Player() {
   const id = params.id || Object.values(params).slice(-1)[0];
   const leagueParam = params.league || null;
   const [player, setPlayer] = useState(null);
+  const location = useLocation();
+  const loadingName = location?.state?.name || null;
+  const loadingShortId = location?.state?.shortId || null;
 
   useEffect(() => {
     let mounted = true;
@@ -22,6 +26,7 @@ export default function Player() {
           // ensure player has league metadata
           if (!p._league) p._league = league;
           let enriched = p;
+          let enrichmentSource = 'local';
           // If local index provided only a compact record with teamSlug, try to resolve full team JSON for logo/team name
           try {
             if (!p.team && p.teamSlug) {
@@ -39,9 +44,9 @@ export default function Player() {
           const hasSeasons = (enriched.currentSeasonStats) || (enriched.seasons && enriched.seasons.length > 0);
           if (!hasSeasons) {
             try {
-              const remote = await espnApi.getPlayer(p._league || league, id);
+              // Prefer calling the full players endpoint which tends to include seasons and stats
+              const remote = await espnApi.getPlayerFull(p._league || league, id);
               if (remote) {
-                // merge remote into enriched
                 enriched = Object.assign({}, enriched, {
                   headshot: enriched.headshot || remote.headshot || remote.head,
                   head: enriched.head || remote.head || remote.headshot,
@@ -52,16 +57,14 @@ export default function Player() {
                   currentSeasonStats: remote.currentSeasonStats || enriched.currentSeasonStats || null,
                   raw: enriched.raw || remote.raw
                 });
+                enrichmentSource = 'getPlayerFull';
               }
             } catch (e) {
-              // try the alternate league when league not specified
-              if (!leagueParam) {
-                const alt = (p._league || league) === 'nba' ? 'nfl' : 'nba';
-                try {
-                  const remoteAlt = await espnApi.getPlayer(alt, id);
-                  if (remoteAlt) enriched = Object.assign({}, enriched, { seasons: remoteAlt.seasons || enriched.seasons, currentSeasonStats: remoteAlt.currentSeasonStats || enriched.currentSeasonStats, team: enriched.team || remoteAlt.team });
-                } catch (e2) {}
-              }
+              // fallback: try the existing getPlayer (which may search) in the alternate league
+              try {
+                const remoteAlt = await espnApi.getPlayer(p._league || league, id);
+                if (remoteAlt) { enriched = Object.assign({}, enriched, { seasons: remoteAlt.seasons || enriched.seasons, currentSeasonStats: remoteAlt.currentSeasonStats || enriched.currentSeasonStats, team: enriched.team || remoteAlt.team }); enrichmentSource = 'getPlayer'; }
+              } catch (e2) {}
             }
             // If still no seasons, try to pull physicals and position info from the team's roster entries
             if ((!enriched.seasons || enriched.seasons.length === 0) && enriched.team && enriched.team.detail) {
@@ -78,11 +81,58 @@ export default function Player() {
                   enriched.height = enriched.height || athlete?.height || athlete?.displayHeight || athlete?.bio?.height || athlete?.measurements?.height;
                   enriched.weight = enriched.weight || athlete?.weight || athlete?.displayWeight || athlete?.bio?.weight || athlete?.measurements?.weight;
                   enriched.position = enriched.position || (athlete?.position && (typeof athlete.position === 'string' ? athlete.position : athlete.position?.abbreviation || athlete.position?.name)) || athlete?.positionName || null;
+                  enrichmentSource = enrichmentSource || 'teamRoster';
                 }
               } catch (e) {}
             }
+            // NFL-specific: try the athlete overview endpoint as an extra fallback (espn site.web api)
+            try {
+              if ((!enriched.seasons || enriched.seasons.length === 0 || !enriched.height || !enriched.weight) && (p._league || league) === 'nfl') {
+                // Attempt to derive a numeric athlete id for the overview endpoint when the local id is a UUID or slug
+                const extractNumericId = (obj, fallbackId) => {
+                  // prefer explicit numeric id
+                  if (String(fallbackId).match(/^\d+$/)) return String(fallbackId);
+                  try {
+                    // try to extract from headshot url (/full/{digits}.png)
+                    const head = obj?.head || obj?.headshot || obj?.photo || obj?.images?.[0]?.url || obj?.headshot?.href;
+                    if (head) {
+                      const m = String(head).match(/\/(?:full|players)\/(?:full\/)?(\d+)\.png/) || String(head).match(/\/(\d+)\.png/);
+                      if (m && m[1]) return m[1];
+                    }
+                  } catch (e) {}
+                  try {
+                    // try to parse link fields in raw payload
+                    const r = obj?.raw || obj;
+                    const link = r?.link?.web || r?.links?.web?.href || r?.canonicalUrl || r?.url || null;
+                    if (link) {
+                      const m2 = String(link).match(/\/(?:id|_id)\/(\d+)/) || String(link).match(/\/(\d+)\//);
+                      if (m2 && m2[1]) return m2[1];
+                    }
+                  } catch (e) {}
+                  return null;
+                };
+
+                const athleteId = extractNumericId(enriched, id);
+                let ov = null;
+                if (athleteId) ov = await espnApi.getAthleteOverview(p._league || league, athleteId);
+                // as a last resort, try by name if numeric id not found
+                if (!ov) {
+                  try { ov = await espnApi.getAthleteOverview(p._league || league, enriched.id || enriched.name); } catch (e) { ov = null; }
+                }
+                if (ov) {
+                  enriched.height = enriched.height || ov.height || ov.displayHeight;
+                  enriched.weight = enriched.weight || ov.weight || ov.displayWeight;
+                  enriched.position = enriched.position || ov.position;
+                  enriched.seasons = (enriched.seasons && enriched.seasons.length) ? enriched.seasons : (ov.seasons || enriched.seasons || []);
+                  enriched.raw = enriched.raw || ov.raw;
+                  enrichmentSource = 'athleteOverview';
+                }
+              }
+            } catch (e) {}
           }
 
+          // attach a hint about which enrichment source supplied seasons/physicals
+          enriched._enrichmentSource = enrichmentSource;
           if (mounted) { setPlayer(enriched); return; }
         }
 
@@ -129,7 +179,7 @@ export default function Player() {
   if (!player) return (
     <>
       <NavBar />
-      <div className="player-page">Loading player {id}…</div>
+      <div className="player-page">Loading {loadingName ? (`${loadingName}`) : (`player ${id}`)}…</div>
     </>
   );
   const name = player?.name || player?.displayName || player?.fullName || player?.headline;
@@ -142,8 +192,8 @@ export default function Player() {
   const teamLogo = teamObj?.logos?.[0]?.href || teamObj?.logo || teamObj?.image?.url || teamObj?.logoURL || null;
   const position = player?.position || player?.position?.abbreviation || player?.positionName || player?.bio?.position || null;
   // physicals: try normalized props then fallbacks
-  const _rawHeight = player?.height || player?.bio?.height || (player?.seasons && player.seasons[0] && player.seasons[0].height) || null;
-  const _rawWeight = player?.weight || player?.bio?.weight || (player?.seasons && player.seasons[0] && player.seasons[0].weight) || null;
+  const _rawHeight = player?.height || player?.bio?.height || player?.displayHeight || (player?.seasons && player.seasons[0] && player.seasons[0].height) || null;
+  const _rawWeight = player?.weight || player?.bio?.weight || player?.displayWeight || (player?.seasons && player.seasons[0] && player.seasons[0].weight) || null;
   const formatHeight = (h) => {
     if (!h) return null;
     if (typeof h === 'string') {
@@ -169,13 +219,99 @@ export default function Player() {
   const height = formatHeight(_rawHeight);
   const weight = formatWeight(_rawWeight);
   // prefer currentSeasonStats; otherwise select the most recent season (highest season year) as offseason fallback
-  const currentStats = player?.currentSeasonStats || (player?.seasons && player.seasons.length > 0 ? (() => {
-    try {
-      const numericSeasons = player.seasons.map(s => ({ s, year: parseInt(s.season || s.seasonYear || (s.raw && s.raw.season) || 0, 10) || 0 }));
-      numericSeasons.sort((a,b) => b.year - a.year);
-      return numericSeasons[0]?.s?.stats || numericSeasons[0]?.s || null;
-    } catch (e) { return player.seasons[0].stats || player.seasons[0]; }
-  })() : null);
+  // Helper: choose best season object (prefer explicit currentSeasonStats, then seasons[].isCurrent, then highest season year)
+  const chooseBestSeason = (p) => {
+    if (!p) return null;
+    // only prefer currentSeasonStats if it actually contains numeric stat fields
+    const hasNumericStats = (s) => {
+      if (!s || typeof s !== 'object') return false;
+      // include common NBA and NFL stat keys
+      const keys = ['pts','points','p','ppg','reb','rebounds','r','rpg','ast','assists','a','apg','mpg','minutesPerGame','m',
+        // NFL passing
+        'passYds','passingYards','passAttempts','passAtt','cmp','completions','yds','passTd','passTds','tds','ints','int','rating','passerRating',
+        // NFL rushing/receiving
+        'rushYds','rushingYards','rushAtt','rushAttempts','rushTds','rec','receptions','recYds','receivingYards','targets','recTds',
+        // defensive
+        'tackles','sacks','ff','fumbles'
+      ];
+      return keys.some(k => typeof s[k] === 'number' || (typeof s[k] === 'string' && !isNaN(parseFloat(s[k]))));
+    };
+    if (p.currentSeasonStats && hasNumericStats(p.currentSeasonStats)) return { stats: p.currentSeasonStats, seasonLabel: 'current' };
+    const seasons = p.seasons || [];
+    if (Array.isArray(seasons) && seasons.length) {
+      // prefer an explicit isCurrent flag
+      const current = seasons.find(s => s.isCurrent || String(s.season).toLowerCase() === 'current');
+      if (current && (current.stats || Object.keys(current).length)) return { stats: current.stats || current, seasonLabel: current.season || (current.raw && (current.raw.season || current.raw.seasonYear)) || 'current' };
+      // else pick the season with the highest numeric year (parse values like '2024-25' or '2024')
+      try {
+        const parseYear = (val) => {
+          if (!val && val !== 0) return 0;
+          const s = String(val);
+          const m = s.match(/(\d{4})/); // grab first 4-digit year
+          if (m) return parseInt(m[1], 10);
+          const n = parseInt(s, 10);
+          return isNaN(n) ? 0 : n;
+        };
+        const mapped = seasons.map(s => ({ s, year: parseYear(s.season || s.seasonYear || (s.raw && (s.raw.season || s.raw.seasonYear)) || 0) }));
+        mapped.sort((a,b) => b.year - a.year);
+        const top = mapped[0];
+        if (top) return { stats: top.s.stats || top.s, seasonLabel: top.s.season || top.s.seasonYear || String(top.year) };
+      } catch (e) { /* fallthrough */ }
+      // last resort: first season entry
+      const first = seasons[0];
+      return { stats: first.stats || first, seasonLabel: first.season || first.seasonYear || 'last' };
+    }
+    return null;
+  };
+  // Heuristic: inspect raw payload for common stat fields when normalized seasons are missing
+  const extractStatsFromRaw = (p) => {
+    if (!p || !p.raw) return null;
+    const raw = p.raw || {};
+    // common places where stats may appear
+    const candidates = [];
+    if (raw.currentSeasonStats) candidates.push(raw.currentSeasonStats);
+    if (raw.player && raw.player.stats) candidates.push(raw.player.stats);
+    if (raw.player && raw.player.seasons) candidates.push(raw.player.seasons);
+    if (raw.stats) candidates.push(raw.stats);
+    if (raw.seasons) candidates.push(raw.seasons);
+    if (raw.splits) candidates.push(raw.splits);
+    if (raw.seasonStats) candidates.push(raw.seasonStats);
+    // sometimes ESPN returns per-game abbreviations or ppg/rpg/apg
+    // deep search for numeric fields
+    const flat = [].concat(...candidates.map(c => Array.isArray(c) ? c : [c]));
+    for (const cand of flat) {
+      if (!cand) continue;
+      // cand may be an object with stats map or direct fields
+      const stats = cand.stats || cand.stat || cand;
+      if (stats && (stats.pts || stats.points || stats.p || stats.ppg || stats.reb || stats.rebounds || stats.r || stats.rpg || stats.ast || stats.assists || stats.a || stats.apg || stats.mpg)) {
+        return stats;
+      }
+      // sometimes stats are flattened in the object itself
+      const maybe = {};
+      const keys = ['pts','points','p','ppg','reb','rebounds','r','rpg','ast','assists','a','apg','mpg','minutesPerGame','m'];
+      let found = false;
+      for (const k of keys) {
+        if (cand[k] !== undefined) { maybe[k] = cand[k]; found = true; }
+      }
+      if (found) return maybe;
+    }
+
+    // fallback: scan raw for top-level numeric summaries
+    const top = raw.player || raw.athlete || raw;
+    if (top) {
+      const maybe = {};
+      ['pts','points','p','reb','rebounds','r','ast','assists','a','mpg','minutesPerGame','m'].forEach(k => { if (top[k] !== undefined) maybe[k] = top[k]; });
+      if (Object.keys(maybe).length) return maybe;
+    }
+    return null;
+  };
+  // if chooseBestSeason didn't yield anything try raw extractor
+  const seasonPick = chooseBestSeason(player) || (player ? { stats: extractStatsFromRaw(player), seasonLabel: 'last-available' } : null);
+  const currentStats = seasonPick ? seasonPick.stats : null;
+  const statsSeasonLabel = seasonPick ? seasonPick.seasonLabel : null;
+
+  // Debug: show enrichment source and chosen season in browser console for verification
+  try { console.debug && console.debug('Player enrichment', { id: player?.id || id, league: playerLeague, enrichment: player?._enrichmentSource, seasonLabel: statsSeasonLabel, stats: currentStats }); } catch (e) {}
 
   return (
     <>
@@ -196,31 +332,121 @@ export default function Player() {
             )}
             {position ? ` • ${position}` : ''} • Player ID: {player?.id || id}
           </div>
+          {/* Follow button placed next to player meta */}
+          <div style={{marginTop:8}}>
+            <FollowButton entityType="player" entityId={player?.id || id} />
+          </div>
         </div>
       </div>
 
       <div className="player-bio">
         <strong>About</strong>
         <div style={{marginTop:8}}>{player?.bio || player?.shortBio || player?.headline || 'No biography available.'}</div>
-  {(height || weight) && <div style={{marginTop:8, color:'var(--muted)'}}>Physical: {height ? height + (weight ? ` • ${weight}` : '') : weight}</div>}
+
+        {(height || weight || position) && (
+          <div style={{marginTop:8, color:'var(--muted)'}}>
+            <strong>Physicals</strong>
+            <div style={{marginTop:6}}>{position ? <><strong>Position:</strong> {position}</> : null}{(position && (height || weight)) ? ' • ' : ''}{height ? `${height}` : ''}{(height && weight) ? ` • ${weight}` : (weight ? `${weight}` : '')}</div>
+          </div>
+        )}
 
         <div style={{marginTop:12}}>
-          <strong>Season stats</strong>
+          <strong>Season stats{statsSeasonLabel ? ` — ${statsSeasonLabel}` : ''}</strong>
           {currentStats ? (
             <div className="player-stats" style={{marginTop:8}}>
-              {/* Render common stat fields when present */}
-              <div className="stats-row">
-                <div>PTS</div><div>{currentStats.pts ?? currentStats.points ?? currentStats.p ?? ''}</div>
-              </div>
-              <div className="stats-row">
-                <div>REB</div><div>{currentStats.reb ?? currentStats.rebounds ?? currentStats.r ?? ''}</div>
-              </div>
-              <div className="stats-row">
-                <div>AST</div><div>{currentStats.ast ?? currentStats.assists ?? currentStats.a ?? ''}</div>
-              </div>
-              <div className="stats-row">
-                <div>MPG</div><div>{currentStats.mpg ?? currentStats.minutesPerGame ?? currentStats.m ?? ''}</div>
-              </div>
+              {/* NFL-specific rendering */}
+              { (playerLeague === 'nfl') ? (
+                <>
+                  {/* Passing */}
+                  {(currentStats?.passYds || currentStats?.passingYards || currentStats?.cmp || currentStats?.completions) && (
+                    <div>
+                      <div className="stats-group-title">Passing</div>
+                      <div className="stats-row"><div>Comp</div><div>{currentStats?.cmp ?? currentStats?.completions ?? currentStats?.passComp ?? ''}</div></div>
+                      <div className="stats-row"><div>Att</div><div>{currentStats?.passAtt ?? currentStats?.passAttempts ?? ''}</div></div>
+                      <div className="stats-row"><div>YDS</div><div>{currentStats?.passYds ?? currentStats?.passingYards ?? currentStats?.yds ?? ''}</div></div>
+                      <div className="stats-row"><div>TD</div><div>{currentStats?.passTds ?? currentStats?.passTd ?? currentStats?.tds ?? ''}</div></div>
+                      <div className="stats-row"><div>INT</div><div>{currentStats?.ints ?? currentStats?.int ?? ''}</div></div>
+                      { (currentStats?.rating || currentStats?.passerRating) && <div className="stats-row"><div>RTG</div><div>{currentStats?.rating ?? currentStats?.passerRating}</div></div> }
+                    </div>
+                  )}
+                  {/* Rushing */}
+                  {(currentStats?.rushYds || currentStats?.rushingYards || currentStats?.rushAtt) && (
+                    <div>
+                      <div className="stats-group-title">Rushing</div>
+                      <div className="stats-row"><div>Att</div><div>{currentStats?.rushAtt ?? currentStats?.rushAttempts ?? ''}</div></div>
+                      <div className="stats-row"><div>YDS</div><div>{currentStats?.rushYds ?? currentStats?.rushingYards ?? ''}</div></div>
+                      <div className="stats-row"><div>TD</div><div>{currentStats?.rushTds ?? currentStats?.rushTd ?? ''}</div></div>
+                    </div>
+                  )}
+                  {/* Receiving */}
+                  {(currentStats?.rec || currentStats?.receptions || currentStats?.recYds) && (
+                    <div>
+                      <div className="stats-group-title">Receiving</div>
+                      <div className="stats-row"><div>REC</div><div>{currentStats?.rec ?? currentStats?.receptions ?? ''}</div></div>
+                      <div className="stats-row"><div>YDS</div><div>{currentStats?.recYds ?? currentStats?.receivingYards ?? ''}</div></div>
+                      <div className="stats-row"><div>TD</div><div>{currentStats?.recTds ?? ''}</div></div>
+                      { currentStats?.targets && <div className="stats-row"><div>TGT</div><div>{currentStats?.targets}</div></div> }
+                    </div>
+                  )}
+                  {/* Defensive / other */}
+                  {(currentStats?.tackles || currentStats?.sacks || currentStats?.fumbles || currentStats?.ints || currentStats?.interceptions) && (
+                    <div>
+                      <div className="stats-group-title">Other</div>
+                      { currentStats?.tackles && <div className="stats-row"><div>TKL</div><div>{currentStats?.tackles}</div></div> }
+                      { (currentStats?.ints || currentStats?.interceptions) && <div className="stats-row"><div>INT</div><div>{currentStats?.ints ?? currentStats?.interceptions}</div></div> }
+                      { currentStats?.sacks && <div className="stats-row"><div>SCK</div><div>{currentStats?.sacks}</div></div> }
+                      { currentStats?.fumbles && <div className="stats-row"><div>FUM</div><div>{currentStats?.fumbles}</div></div> }
+                    </div>
+                  )}
+                  {/* Fallback: show a few generic numeric fields if none of the above matched */}
+                  {(!(currentStats?.passYds||currentStats?.rushYds||currentStats?.rec)&& Object.keys(currentStats||{}).some(k => typeof currentStats[k] === 'number' || (!isNaN(parseFloat(currentStats[k]))))) && (
+                    <div>
+                      {(() => {
+                        const humanLabel = (k) => {
+                          if (!k) return k;
+                          const s = String(k).toLowerCase();
+                          const map = {
+                            tot: 'Total Tackles',
+                            tackles: 'Total Tackles',
+                            tkl: 'Total Tackles',
+                            yds: 'YDS',
+                            passyds: 'Pass YDS',
+                            rushyds: 'Rush YDS',
+                            recyds: 'Rec YDS',
+                            td: 'TD',
+                            tds: 'TD',
+                            rec: 'REC',
+                            cmp: 'CMP',
+                            att: 'ATT',
+                            passatt: 'ATT',
+                            passerRating: 'RTG',
+                            rating: 'RTG',
+                            sacks: 'SACKS',
+                            fumbles: 'FUM',
+                            targets: 'TGT'
+                          };
+                          if (map[s]) return map[s];
+                          return String(k).replace(/_/g,' ').replace(/\b(yds|yards)\b/i,'YDS').replace(/\b(td|tds)\b/i,'TD').replace(/\b(att|attempts)\b/i,'ATT').toUpperCase();
+                        };
+                        return Object.entries(currentStats).slice(0,6).map(([k,v]) => (
+                          <div key={k} className="stats-row"><div>{humanLabel(k)}</div><div>{v}</div></div>
+                        ));
+                      })()}
+                    </div>
+                  )}
+                </>
+              ) : (
+                // Default/NBA rendering (existing)
+                <>
+                  <div className="stats-row"><div>PTS</div><div>{currentStats?.pts ?? currentStats?.points ?? currentStats?.p ?? currentStats?.ppg ?? ''}</div></div>
+                  <div className="stats-row"><div>REB</div><div>{currentStats?.reb ?? currentStats?.rebounds ?? currentStats?.r ?? currentStats?.rpg ?? ''}</div></div>
+                  <div className="stats-row"><div>AST</div><div>{currentStats?.ast ?? currentStats?.assists ?? currentStats?.a ?? currentStats?.apg ?? ''}</div></div>
+                  <div className="stats-row"><div>MPG</div><div>{currentStats?.mpg ?? currentStats?.minutesPerGame ?? currentStats?.m ?? ''}</div></div>
+                  { (currentStats?.fgPct || currentStats?.fg_pct) && <div className="stats-row"><div>FG%</div><div>{currentStats?.fgPct ?? currentStats?.fg_pct}</div></div> }
+                  { (currentStats?.threePtPct || currentStats?.fg3Pct) && <div className="stats-row"><div>3P%</div><div>{currentStats?.threePtPct ?? currentStats?.fg3Pct ?? currentStats?.fg3_pct}</div></div> }
+                  { (currentStats?.turnovers || currentStats?.to) && <div className="stats-row"><div>TO</div><div>{currentStats?.turnovers ?? currentStats?.to}</div></div> }
+                </>
+              )}
             </div>
           ) : (
             <div style={{marginTop:8, color:'var(--muted)'}}>No season stats available.</div>

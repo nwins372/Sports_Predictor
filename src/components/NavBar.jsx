@@ -27,6 +27,75 @@ const navigate = useNavigate();
       return slug === q || abbr === q || display === q || display.includes(q) || slug.includes(q);
     });
   };
+  // helper: derive a short numeric ESPN player id from a search result object when possible
+  const getShortPlayerId = async (r) => {
+    if (!r) return null;
+    const tryExtractFrom = (s) => {
+      if (!s) return null;
+      const str = String(s);
+      // match /id/12345 or /_id/12345 or /players/.../12345.png
+      const m1 = str.match(/\/(?:id|_id)\/(\d+)/);
+      if (m1 && m1[1]) return m1[1];
+      const m2 = str.match(/\/(?:players|full)\/(?:full\/)?(\d+)\./);
+      if (m2 && m2[1]) return m2[1];
+      const m3 = str.match(/(\d{4,7})/); // fallback: first 4-7 digit block
+      if (m3 && m3[1]) return m3[1];
+      return null;
+    };
+
+    // direct numeric id
+    if (String(r.id).match(/^\d+$/)) return String(r.id);
+
+    // uid-like id: take trailing segment after ~ if numeric
+    if (r.id && String(r.id).includes('~')) {
+      const parts = String(r.id).split('~');
+      const last = parts[parts.length - 1];
+      if (String(last).match(/^\d+$/)) return last;
+    }
+
+    // try href or img
+    const href = r.href || (r.object && r.object.links && r.object.links.web && r.object.links.web.href) || null;
+    const fromHref = tryExtractFrom(href);
+    if (fromHref) return fromHref;
+    const fromImg = tryExtractFrom(r.img || (r.object && (r.object.headshot || r.object.photo || (r.object.image && (r.object.image.default || r.object.image)))));
+    if (fromImg) return fromImg;
+
+    // try extracting from local index entry if present (may be UUID) and contains headshot/raw link
+    try {
+      if (espnApi.getPlayerLocalById) {
+        const localNba = await espnApi.getPlayerLocalById(r.id, 'nba');
+        const localNfl = await espnApi.getPlayerLocalById(r.id, 'nfl');
+        const local = localNba || localNfl;
+        if (local) {
+          const fromLocal = tryExtractFrom(local.head || local.headshot || (local.raw && (local.raw.headshot || local.raw.head)) || (local.raw && local.raw.canonicalUrl) || local.link || local.url);
+          if (fromLocal) return fromLocal;
+          // also check nested raw link fields
+          const rawLink = local.raw && (local.raw.link || (local.raw.links && local.raw.links.web && local.raw.links.web.href));
+          const fromRaw = tryExtractFrom(rawLink);
+          if (fromRaw) return fromRaw;
+        }
+      }
+    } catch (e) {}
+
+    // last resort: try remote search by name and pick a numeric candidate
+    try {
+      if (r.name) {
+        const sp = await espnApi.searchPlayers(r.name, 8);
+        if (sp && Array.isArray(sp.results)) {
+          for (const res of sp.results) {
+            const obj = res.object || res;
+            const candId = obj.id || (obj.uid && String(obj.uid).split('~').pop()) || null;
+            if (candId && String(candId).match(/^\d+$/)) return String(candId);
+            const link = (obj.link && obj.link.web) || obj.canonicalUrl || (obj.links && obj.links.web && obj.links.web.href) || null;
+            const ex = tryExtractFrom(link);
+            if (ex) return ex;
+          }
+        }
+      }
+    } catch (e) {}
+
+    return null;
+  };
   useEffect(() => {
     // Check sessions
     supabase.auth.getSession().then(({ data }) => {
@@ -212,7 +281,7 @@ const navigate = useNavigate();
           }
         }
         if (r.type && r.type.toLowerCase().includes('player')) {
-          const pid = r.id;
+          let pid = r.id;
           let league = r.league || r._league || null;
           if (!league && pid) {
             // try local NBA index
@@ -238,7 +307,9 @@ const navigate = useNavigate();
           }
           if (pid) {
             setShowSearch(false);
-            if (league) { navigate(`/player/${encodeURIComponent(league)}/${encodeURIComponent(pid)}`); } else { navigate(`/player/${encodeURIComponent(pid)}`); }
+            const path = league ? `/player/${encodeURIComponent(league)}/${encodeURIComponent(pid)}` : `/player/${encodeURIComponent(pid)}`;
+            // pass the result name in location state so the Player page can show a friendly loading label
+            navigate(path, { state: { name: r.name || null } });
             return;
           }
         }
@@ -317,7 +388,7 @@ const navigate = useNavigate();
                         }
                       }
                       if (r.type && r.type.toLowerCase().includes('player')) {
-                        const pid = r.id;
+                        let pid = r.id;
                         let league = r.league || r._league || null;
                         if (!league && pid) {
                           // try lookup in local index to find league
@@ -327,8 +398,10 @@ const navigate = useNavigate();
                           }
                         }
                         if (pid) {
+                          // try to normalize to short numeric id when possible
+                          try { const short = await getShortPlayerId(r); if (short) pid = short; } catch (e) {}
                           setShowSearch(false);
-                          if (league) { navigate(`/player/${encodeURIComponent(league)}/${encodeURIComponent(pid)}`); } else { navigate(`/player/${encodeURIComponent(pid)}`); }
+                          if (league) { navigate(`/player/${encodeURIComponent(league)}/${encodeURIComponent(pid)}`, { state: { name: r.name || null } }); } else { navigate(`/player/${encodeURIComponent(pid)}`, { state: { name: r.name || null } }); }
                           return;
                         }
                       }

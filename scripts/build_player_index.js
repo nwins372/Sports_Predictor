@@ -70,9 +70,26 @@ function main() {
     const players = extractPlayersFromTeam(j, slug);
     for (const p of players) {
       if (!index.byId[p.id]) {
-        // attach league metadata
-        const entry = Object.assign({}, p, { _league: league });
+        // try to derive a numeric espn id from uid/headshot/href
+        const tryExtract = (s) => {
+          if (!s) return null;
+          const str = String(s);
+          const m1 = str.match(/\/(?:id|_id)\/(\d+)/);
+          if (m1 && m1[1]) return m1[1];
+          const m2 = str.match(/\/(?:players|full)\/(?:full\/)?(\d+)\./);
+          if (m2 && m2[1]) return m2[1];
+          const m3 = str.match(/(\d{4,7})/);
+          if (m3 && m3[1]) return m3[1];
+          return null;
+        };
+        const espnId = tryExtract(p.head) || tryExtract(p.id) || null;
+        // attach league metadata and espnId when available
+        const entry = Object.assign({}, p, { _league: league, espnId: espnId ? String(espnId) : null });
         index.byId[p.id] = entry;
+        if (entry.espnId) {
+          index.byEspnId = index.byEspnId || {};
+          if (!index.byEspnId[entry.espnId]) index.byEspnId[entry.espnId] = entry;
+        }
         index.list.push(entry);
       }
     }

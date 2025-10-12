@@ -344,10 +344,74 @@ async function searchPlayersLocal(query, league = 'nba', limit = 40) {
   if (!query) return [];
   const idx = await buildLocalPlayerIndex(league);
   const q = query.toLowerCase();
-  return (idx.list || []).filter(p => (p.name || '').toLowerCase().includes(q)).slice(0, limit).map(p => ({ id: p.id, name: p.name, img: p.head, _league: p._league || league }));
+  const localMatches = (idx.list || []).filter(p => (p.name || '').toLowerCase().includes(q)).slice(0, limit).map(p => ({ id: p.id, name: p.name, img: p.head, _league: p._league || league }));
+  if (localMatches.length) return localMatches;
+  // If no local matches found, fallback to remote search API so teams missing from the local index (e.g., Chargers) are still discoverable
+  try {
+    const sp = await searchPlayers(query, limit);
+    const results = [];
+    if (sp && Array.isArray(sp.results)) {
+      for (const r of sp.results) {
+        // If result is a group with .contents, flatten them
+        if (Array.isArray(r.contents) && r.contents.length) {
+          for (const c of r.contents) {
+            const obj = c.object || c;
+              // try to coerce uid-style ids to the numeric trailing id when present
+              let id = obj.id || null;
+              if (!id && obj.uid) {
+                const parts = String(obj.uid).split('~');
+                id = parts.length ? parts[parts.length - 1] : obj.uid;
+              }
+              // prefer numeric id if present in headshot or links
+              if (!id) {
+                const href = obj.links && (obj.links.web || obj.links.team || obj.links.player) ? (obj.links.web?.href || obj.links.team?.href || obj.links.player?.href) : null;
+                const m = href ? String(href).match(/\/(?:id|_id)\/(\d+)/) || String(href).match(/\/(\d+)\./) : null;
+                if (m && m[1]) id = m[1];
+              }
+            const name = obj.displayName || obj.name || null;
+              const img = (obj.image && (obj.image.default || obj.image)) || (obj.links && obj.links?.image && obj.links.image?.href) || null;
+              const leagueGuess = obj.defaultLeagueSlug || (obj.sport === 'football' ? 'nfl' : (obj.sport === 'basketball' ? 'nba' : null));
+              // only include results that are clearly NFL or NBA (avoid MLB/NHL/other sports leaking in)
+              if (id && name && (leagueGuess === 'nfl' || leagueGuess === 'nba')) results.push({ id: String(id), name, img, _league: leagueGuess });
+          }
+          continue;
+        }
+        const obj = r.object || r;
+        // coerce uid-like ids
+        let id = obj.id || null;
+        if (!id && obj.uid) {
+          const parts = String(obj.uid).split('~');
+          id = parts.length ? parts[parts.length - 1] : obj.uid;
+        }
+        const name = obj.displayName || obj.name || null;
+        const img = (obj.image && (obj.image.default || obj.image)) || (obj.links && obj.links?.image && obj.links.image?.href) || null;
+        const leagueGuess = obj.defaultLeagueSlug || (obj.sport === 'football' ? 'nfl' : (obj.sport === 'basketball' ? 'nba' : null));
+        if (id && name && (leagueGuess === 'nfl' || leagueGuess === 'nba')) results.push({ id: String(id), name, img, _league: leagueGuess });
+      }
+    }
+    return results.slice(0, limit);
+  } catch (e) {
+    return localMatches;
+  }
 }
 
-async function getPlayerLocalById(id, league = 'nba') { const idx = await buildLocalPlayerIndex(league); return idx.byId && idx.byId[String(id)] ? idx.byId[String(id)] : null; }
+async function getPlayerLocalById(id, league = 'nba') {
+  const idx = await buildLocalPlayerIndex(league);
+  if (!idx) return null;
+  if (idx.byId && idx.byId[String(id)]) return idx.byId[String(id)];
+  // try numeric espn id lookup if id is numeric-like or if local entries have espnId
+  try {
+    const numeric = String(id).match(/^\d+$/) ? String(id) : null;
+    if (numeric && idx.byEspnId && idx.byEspnId[numeric]) return idx.byEspnId[numeric];
+    // if id is uid-like, try extract trailing numeric segment
+    if (String(id).includes('~')) {
+      const parts = String(id).split('~');
+      const last = parts[parts.length - 1];
+      if (last && idx.byEspnId && idx.byEspnId[last]) return idx.byEspnId[last];
+    }
+  } catch (e) {}
+  return null;
+}
 
 async function searchPlayers(query, limit = 50) { const url = `https://site.web.api.espn.com/apis/search/v2?query=${encodeURIComponent(query)}&limit=${limit}&type=player`; return _fetchWithCache(url); }
 
@@ -515,5 +579,310 @@ async function getPlayer(league = 'nba', idOrQuery) {
   return null;
 }
 
-const espnApi = { listTeams, getTeam, getTeamRoster, buildLocalPlayerIndex, searchPlayersLocal, getPlayerLocalById, getPlayer, searchPlayers };
+// espnApi export is declared at the end of this file after helper additions
+// Fetch recent news articles that mention a player (by id or name). Uses the search v2 article type.
+async function getPlayerNews(idOrName, league = 'nba', limit = 10) {
+  try {
+    let q = idOrName;
+    if (String(q).match(/^\d+$/)) {
+      // resolve numeric id to a name when possible
+      try {
+        const p = await getPlayer(league, q);
+        if (p && (p.name || p.displayName)) q = p.name || p.displayName;
+      } catch (e) {}
+    }
+    const url = `https://site.web.api.espn.com/apis/search/v2?query=${encodeURIComponent(q)}&limit=${limit}&type=article`;
+    const res = await _fetchWithCache(url, 1000 * 60 * 10);
+    const items = [];
+    if (res && Array.isArray(res.results)) {
+      for (const r of res.results) {
+        const obj = r.object || r;
+        const link = obj.link && obj.link.web ? obj.link.web : (obj.canonicalUrl || (obj.links && obj.links.web && obj.links.web.href) || null);
+        const title = obj.headline || obj.displayName || obj.title || obj.name || null;
+        const published = obj.datePublished || obj.publishDate || obj.published || null;
+        const summary = obj.summary || obj.description || obj.lede || null;
+        if (title && link) items.push({ id: obj.id || obj.uid || link, title, url: link, published, summary, raw: obj });
+      }
+    }
+    return items.slice(0, limit);
+  } catch (e) { return []; }
+}
+
+// Try to extract contract information for a player. ESPN's site payload sometimes contains a contracts field on the player
+// object; if not present, fall back to returning contract-related news articles found by searching "<name> contract".
+async function getPlayerContracts(league = 'nba', idOrName) {
+  try {
+    // If idOrName is numeric assume it's an id and fetch the player endpoint
+    if (String(idOrName).match(/^\d+$/)) {
+      try {
+        const raw = await _fetchWithCache(`${BASES[league]}/players/${encodeURIComponent(idOrName)}`, 1000 * 60 * 10);
+        const playerObj = raw?.player || raw || {};
+        let contracts = playerObj?.contracts || playerObj?.contract || null;
+        if (!contracts && playerObj?.player) contracts = playerObj.player.contracts || playerObj.player.contract || null;
+        if (contracts) {
+          if (!Array.isArray(contracts)) contracts = [contracts];
+          return contracts.map(c => ({ team: c?.team || c?.teamName || (c?.team && (c.team.displayName || c.team.name)) || null, start: c?.startDate || c?.from || null, end: c?.endDate || c?.to || null, amount: c?.value || c?.amount || c?.totalValue || c?.salary || null, raw: c }));
+        }
+      } catch (e) {}
+    }
+  } catch (e) {}
+
+  // fallback: search news for contract-related articles
+  try {
+    let name = idOrName;
+    if (String(name).match(/^\d+$/)) {
+      try { const p = await getPlayer(league, name); if (p && (p.name || p.displayName)) name = p.name || p.displayName; } catch (e) {}
+    }
+    const sp = await searchPlayers(`${name} contract`, 10);
+    const contractArticles = [];
+    if (sp && Array.isArray(sp.results)) {
+      for (const r of sp.results) {
+        const obj = r.object || r;
+        const title = obj.headline || obj.displayName || obj.title || '';
+        if (title && title.toLowerCase().includes('contract')) {
+          const link = obj.link && obj.link.web ? obj.link.web : (obj.canonicalUrl || null);
+          contractArticles.push({ title, url: link, summary: obj.summary || null, published: obj.datePublished || null, raw: obj });
+        }
+      }
+    }
+    if (contractArticles.length) return { articles: contractArticles };
+  } catch (e) {}
+
+  return null;
+}
+
+// Fetch full player payload directly from the ESPN site players endpoint and normalize it.
+async function getPlayerFull(league = 'nba', idOrQuery) {
+  if (!BASES[league]) throw new Error('Unsupported league');
+  // Try several common endpoint variants; some ESPN IDs require the '/_/id/{id}' form
+  const tried = [];
+  const candidates = [
+    `${BASES[league]}/players/${encodeURIComponent(idOrQuery)}`,
+    `${BASES[league]}/players/_/id/${encodeURIComponent(idOrQuery)}`
+  ];
+  // If idOrQuery looks like a slug (contains letters and hyphens) try appending it to the _/id variant
+  if (typeof idOrQuery === 'string' && idOrQuery.match(/[-a-zA-Z]/)) {
+    candidates.push(`${BASES[league]}/players/_/id/${encodeURIComponent(idOrQuery)}/${encodeURIComponent(idOrQuery)}`);
+  }
+
+  for (const url of candidates) {
+    try {
+      tried.push(url);
+      const raw = await _fetchWithCache(url, 1000 * 60 * 10);
+      if (raw) return _normPlayer(raw);
+    } catch (e) {
+      // continue to next candidate
+    }
+  }
+
+  // As a last resort try using the search API to find a player page URL and extract an id from it
+  try {
+    const sp = await searchPlayers(String(idOrQuery), 10);
+    if (sp && Array.isArray(sp.results)) {
+      const candidates2 = [];
+      for (const r of sp.results) {
+        const obj = r.object || r;
+        // prefer objects that look like players or have links
+        const link = (obj.link && obj.link.web) || obj.canonicalUrl || (obj?.links && obj.links.web && obj.links.web.href) || null;
+        if (link) candidates2.push(link);
+      }
+      for (const l of candidates2) {
+        try {
+          // try to extract numeric id from the web link
+          const m = String(l).match(/\/(?:id|_id)\/(\d+)/) || String(l).match(/\/(?:player)\/(?:_|)id\/(\d+)/);
+          const foundId = m ? m[1] : null;
+          if (foundId) {
+            const tryUrl = `${BASES[league]}/players/_/id/${encodeURIComponent(foundId)}`;
+            try {
+              const raw2 = await _fetchWithCache(tryUrl, 1000 * 60 * 10);
+              if (raw2) return _normPlayer(raw2);
+            } catch (e) {}
+          }
+        } catch (e) {}
+      }
+    }
+  } catch (e) {}
+
+  return null;
+}
+
+// Fetch athlete overview from the site.web.api endpoint (useful for NFL athletes)
+async function getAthleteOverview(league = 'nfl', athleteId) {
+  try {
+    // Only NFL currently supported for this endpoint shape
+    if (!athleteId) return null;
+    const base = 'https://site.web.api.espn.com/apis/common/v3/sports/football/nfl';
+    const url = `${base}/athletes/${encodeURIComponent(athleteId)}/overview`;
+    const raw = await _fetchWithCache(url, 1000 * 60 * 10);
+    if (!raw) return null;
+    // Try several likely locations for the athlete object inside the overview payload
+    const candidatePaths = [
+      raw?.athlete,
+      raw?.player,
+      raw?.person,
+      raw?.data?.athlete,
+      raw?.data?.player,
+      raw?.data?.person,
+      (Array.isArray(raw?.items) && raw.items[0]) || null,
+      (Array.isArray(raw?.data?.items) && raw.data.items[0]) || null,
+      raw?.content?.athlete,
+      raw?.content?.player,
+      raw
+    ];
+    let a = null;
+    for (const c of candidatePaths) {
+      if (!c) continue;
+      // choose object-like candidate that contains at least a name or id or displayHeight/displayWeight
+      if (typeof c === 'object' && (c.id || c.personId || c.displayName || c.fullName || c.height || c.displayHeight || c.displayWeight || c.weight)) { a = c; break; }
+    }
+    if (!a) a = raw;
+    const height = a?.height || a?.displayHeight || a?.measurements?.height || (a?.bio && (a.bio.height || a.bio.displayHeight)) || raw?.displayHeight || null;
+    const weight = a?.weight || a?.displayWeight || a?.measurements?.weight || (a?.bio && (a.bio.weight || a.bio.displayWeight)) || raw?.displayWeight || null;
+    const position = (a?.position && (typeof a.position === 'string' ? a.position : a.position?.abbreviation || a.position?.name)) || a?.positionName || (raw?.position && raw.position.name) || null;
+    // attempt to extract seasons/stats if present on the overview
+    let seasons = raw?.seasons || raw?.player?.seasons || raw?.stats || a?.seasons || a?.stats || null;
+    // normalize site.web.api statistics shape when present: { labels/names, splits: [{ displayName, stats: [...] }] }
+    try {
+      const statsRoot = raw?.statistics || raw?.stats || null;
+      if (statsRoot && Array.isArray(statsRoot.splits) && (Array.isArray(statsRoot.names) || Array.isArray(statsRoot.labels) || Array.isArray(statsRoot.displayNames))) {
+        const labels = statsRoot.labels || statsRoot.names || statsRoot.displayNames || [];
+        // mapping common uppercase/short labels to canonical keys
+        const labelMap = (lbl) => {
+          if (!lbl) return null;
+          const s = String(lbl).toLowerCase();
+          // Passing
+          if (s.match(/pass(er)?\b/) || s.match(/^cmp$|^comp$/)) {
+            if (s.match(/yd|yards/)) return 'passYds';
+            if (s.match(/^td$|tds|touchdown/)) return 'passTds';
+            if (s.match(/att|attempt/)) return 'passAtt';
+            return 'cmp';
+          }
+          if (s.match(/^cmp$|^comp$|^comp_pct$/)) return 'cmp';
+          if (s.match(/int|ints|interceptions/)) return 'ints';
+          if (s.match(/rating|passer/)) return 'passerRating';
+          // Rushing
+          if (s.match(/rush|rushing/)) {
+            if (s.match(/att|attempt/)) return 'rushAtt';
+            if (s.match(/td/)) return 'rushTds';
+            if (s.match(/yd|yards/)) return 'rushYds';
+            return 'rush';
+          }
+          // Receiving
+          if (s.match(/rec|receptions|catch/)) {
+            if (s.match(/td/)) return 'recTds';
+            if (s.match(/yd|yards/)) return 'recYds';
+            if (s.match(/tg|target|tgts/)) return 'targets';
+            return 'rec';
+          }
+          if (s.match(/\bcar\b|carries|carry/)) return 'rushAtt';
+          // Defense / misc
+          if (s.match(/tackles|tot|total tackles|solo/)) return 'tackles';
+          if (s.match(/sacks?/)) return 'sacks';
+          if (s.match(/fumble/)) return 'fumbles';
+          if (s.match(/^fd$|first down|firstdowns|first down/)) return 'firstDowns';
+          // default: slugified label
+          return String(lbl).replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '').toLowerCase();
+        };
+
+  const built = statsRoot.splits.map(sp => {
+          // sp.stats may be an array or an object mapping label->value
+          let arr = [];
+          let statsObj = {};
+          // determine split type from labels or the split displayName (passing / receiving / rushing / defense)
+          const joinedLabels = labels.join(' ').toLowerCase();
+          let splitType = null;
+          if (joinedLabels.match(/cmp|comp|pass|passing|qbr|passer/)) splitType = 'pass';
+          else if (joinedLabels.match(/rec|receptions|receiving|targets|tg/)) splitType = 'rec';
+          else if (joinedLabels.match(/rush|rushing|car|attempts|att|rush_att/)) splitType = 'rush';
+          else if (joinedLabels.match(/tackles|sacks|int|interception|fumble/)) splitType = 'def';
+          // if split has a displayName like '2025 Passing' prefer that
+          const spLabel = String(sp?.displayName || '').toLowerCase();
+          if (spLabel.includes('pass') || spLabel.includes('passing')) splitType = 'pass';
+          else if (spLabel.includes('rec') || spLabel.includes('receiving')) splitType = 'rec';
+          else if (spLabel.includes('rush') || spLabel.includes('rushing') || spLabel.includes('rush')) splitType = 'rush';
+          else if (spLabel.includes('def') || spLabel.includes('tackle') || spLabel.includes('sack')) splitType = 'def';
+
+          if (Array.isArray(sp.stats)) {
+            arr = sp.stats;
+            for (let i = 0; i < labels.length; i++) {
+              const rawLabel = labels[i] || i;
+              let key = labelMap(rawLabel);
+              // remap generic keys to split-specific keys when possible
+              if (key === 'yds' && splitType) key = (splitType === 'pass' ? 'passYds' : (splitType === 'rec' ? 'recYds' : (splitType === 'rush' ? 'rushYds' : key)));
+              if ((key === 'tds' || key === 'td') && splitType) key = (splitType === 'pass' ? 'passTds' : (splitType === 'rec' ? 'recTds' : (splitType === 'rush' ? 'rushTds' : key)));
+              if (key === 'att' && splitType) key = (splitType === 'pass' ? 'passAtt' : (splitType === 'rush' ? 'rushAtt' : key));
+              if (key === 'rec' && splitType) key = 'rec';
+              const val = arr[i] !== undefined && arr[i] !== null ? (isNaN(Number(arr[i])) ? arr[i] : Number(arr[i])) : null;
+              statsObj[key] = val;
+            }
+          } else if (sp.stats && typeof sp.stats === 'object') {
+            // object form: keys may be label names or numeric keys
+            for (const rawLabel of labels) {
+              const key = labelMap(rawLabel);
+              // try several lookup strategies
+              const rawKeyCandidates = [rawLabel, String(rawLabel).toUpperCase(), String(rawLabel).toLowerCase(), key];
+              let val = null;
+              for (const rk of rawKeyCandidates) {
+                if (rk && sp.stats[rk] !== undefined) { val = sp.stats[rk]; break; }
+              }
+              if (val === null) {
+                // also check keyed fields like 'passingYards', 'rushYds' inside sp.stats
+                if (sp.stats[key] !== undefined) val = sp.stats[key];
+                else if (sp.stats[String(rawLabel).replace(/\s+/g,'_')] !== undefined) val = sp.stats[String(rawLabel).replace(/\s+/g,'_')];
+              }
+              if (val !== null && val !== undefined) {
+                let finalKey = key;
+                if (finalKey === 'yds' && splitType) finalKey = (splitType === 'pass' ? 'passYds' : (splitType === 'rec' ? 'recYds' : (splitType === 'rush' ? 'rushYds' : finalKey)));
+                if ((finalKey === 'tds' || finalKey === 'td') && splitType) finalKey = (splitType === 'pass' ? 'passTds' : (splitType === 'rec' ? 'recTds' : (splitType === 'rush' ? 'rushTds' : finalKey)));
+                if (finalKey === 'att' && splitType) finalKey = (splitType === 'pass' ? 'passAtt' : (splitType === 'rush' ? 'rushAtt' : finalKey));
+                statsObj[finalKey] = (isNaN(Number(val)) ? val : Number(val));
+              }
+            }
+            // include any other numeric fields not covered by labels
+            for (const k of Object.keys(sp.stats)) {
+              if (statsObj[k]) continue;
+              const v = sp.stats[k];
+              if (v !== null && v !== undefined && (typeof v === 'number' || (!isNaN(Number(v)) && v !== '')) ) statsObj[String(k).replace(/\s+/g,'_').toLowerCase()] = isNaN(Number(v)) ? v : Number(v);
+            }
+          }
+          return { season: (statsRoot.displayName || sp.displayName || null), stats: statsObj, raw: sp };
+        });
+        // aggregate splits into a single combined stats object so pages can show passing/rushing/receiving together
+        try {
+          const agg = {};
+          for (const s of built) {
+            const st = s.stats || {};
+            for (const k of Object.keys(st)) {
+              const v = st[k];
+              if (v === null || v === undefined) continue;
+              if (agg[k] === undefined || agg[k] === null) agg[k] = v;
+              else if (typeof agg[k] === 'number' && typeof v === 'number' && (k.toLowerCase().includes('yd') || k.toLowerCase().includes('td') || k.toLowerCase().includes('att') || k.toLowerCase().includes('rec'))) {
+                // prefer the numeric value (do not overwrite), but as a fallback sum complementary values
+                // keep existing
+              }
+            }
+          }
+          seasons = [{ season: statsRoot.displayName || built[0]?.season || 'overview', stats: agg, raw: raw }];
+        } catch (e) {
+          seasons = built;
+        }
+      }
+    } catch (e) {}
+    return {
+      id: a?.id || a?.personId || null,
+      name: a?.displayName || a?.fullName || a?.name || null,
+      height,
+      displayHeight: a?.displayHeight || (height && (typeof height === 'number' ? null : String(height))) || null,
+      weight,
+      displayWeight: a?.displayWeight || (weight && (typeof weight === 'number' ? null : String(weight))) || null,
+      position,
+      seasons: Array.isArray(seasons) ? seasons : (seasons ? [seasons] : []),
+      raw
+    };
+  } catch (e) {
+    return null;
+  }
+}
+
+const espnApi = { listTeams, getTeam, getTeamRoster, buildLocalPlayerIndex, searchPlayersLocal, getPlayerLocalById, getPlayer, searchPlayers, getPlayerNews, getPlayerContracts, getPlayerFull, getAthleteOverview };
 module.exports = espnApi;

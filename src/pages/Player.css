@@ -6,6 +6,11 @@
 .player-bio { margin-top:14px; background:var(--surface); padding:12px; border-radius:6px; border:1px solid var(--surface-border) }
 
 .player-stats { display:flex; flex-direction:column; gap:6px; max-width:320px }
+
+/* Follow button styles */
+.follow-button { background:var(--accent, #0366d6); color:white; border:none; padding:6px 10px; border-radius:6px; cursor:pointer; font-weight:600 }
+.follow-button.following { background:var(--muted-bg, #e6e6e6); color:var(--text); }
+.follow-button:disabled { opacity:0.6; cursor:not-allowed }
 .stats-row { display:flex; justify-content:space-between; padding:6px 8px; background:rgba(255,255,255,0.02); border-radius:6px }
 .stats-row div { font-size:14px }
 

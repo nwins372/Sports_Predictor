@@ -14,8 +14,6 @@ import { useEffect, useState } from 'react';
 import SportsNewsPage from './pages/SportsNewsPage';
 import ProfileSettings from './pages/ProfileSettings';
 import Schedules from './pages/Schedules';
-import Team from './pages/Team';
-import Player from './pages/Player';
 
 const isLoggedIn = supabase.auth.getSession().then(({ data: { session } }) => !!session);
 const user = supabase.auth.getUser().then(({ data: { user } }) => user);
