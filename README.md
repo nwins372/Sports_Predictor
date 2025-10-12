@@ -22,3 +22,14 @@ npm start
 ```
 
 To use the database, Supabase credentials and access to "Sports Predictor Fall 2025" is needed.
+
+- NEW: You can build and run the project via the Dockerfile.
+- You need Docker installed
+- Then run the following commands:
+```
+docker build -t sports_predictor .
+docker run -d -p 3000:80 --name sports_predictor sports_predictor
+```
+The app can be accessed at ```localhost:3000```
+
+:)

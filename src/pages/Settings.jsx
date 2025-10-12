@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import NavBar from "../components/NavBar";
 import ScheduleBar from "../components/ScheduleBar";
+import ColorThemeSelector from "../components/ColorThemeSelector";
 import { ThemeContext } from '../context/ThemeContext';
 import './Settings.css';
 import { supabase } from '../supabaseClient';
@@ -80,44 +81,13 @@ export default function Settings() {
             </div>
           </div>
 
-          <hr />
-
-          <section className="team-picker">
-            <h3>Favorite team</h3>
-            <div className="picker-row">
-              <label>League</label>
-              <select value={league} onChange={(e) => setLeague(e.target.value)}>
-                <option value="nba">NBA</option>
-                <option value="nfl">NFL</option>
-                <option value="mlb">MLB</option>
-                <option value="nhl">NHL</option>
-              </select>
+          <div className="setting-row">
+            <div className="setting-meta">
+              <div className="setting-title">Color theme</div>
+              <div className="setting-desc">Choose your preferred accent color for the website.</div>
+              <ColorThemeSelector />
             </div>
-
-            <div className="picker-row">
-              <label>Team</label>
-              <select value={selectedTeam?.id || ''} onChange={(e) => {
-                const t = teams.find(x => String(x.id) === e.target.value);
-                setSelectedTeam(t || null);
-              }}>
-                <option value="">-- none --</option>
-                {teams.map(t => (
-                  <option key={t.id} value={t.id}>{t.name} {t.abbr ? `(${t.abbr})` : ''}</option>
-                ))}
-              </select>
-            </div>
-
-            <div className="team-preview">
-              {selectedTeam ? (
-                <div className="preview-box">
-                  <div className="team-name">{selectedTeam.name}</div>
-                  <div className="team-abbr">{selectedTeam.abbr}</div>
-                </div>
-              ) : (
-                <div className="preview-empty">No team selected</div>
-              )}
-            </div>
-          </section>
+          </div>
         </main>
       </div>
 
