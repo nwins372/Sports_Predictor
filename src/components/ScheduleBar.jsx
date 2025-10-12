@@ -12,6 +12,53 @@ const parseUtc = (s) => new Date(s.replace(" ", "T"));
 const fmtLocalTime = (isoUtc) =>
   new Date(isoUtc).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
 
+// Build a best-effort broadcast URL from a name or code
+function buildBroadcastUrl(raw) {
+  if (!raw || typeof raw !== 'string') return null;
+  const name = raw.trim().toLowerCase();
+  // Known mappings
+  const map = {
+    espn: 'https://www.espn.com',
+    'espn+': 'https://www.espn.com/watch',
+    fox: 'https://www.foxsports.com',
+    foxsports: 'https://www.foxsports.com',
+    nbc: 'https://www.nbcsports.com',
+    nbcsports: 'https://www.nbcsports.com',
+    cbs: 'https://www.cbssports.com',
+    cbssports: 'https://www.cbssports.com',
+    abc: 'https://abc.com',
+    tnt: 'https://www.tntsports.com',
+    tbs: 'https://www.tntsports.com',
+    amazon: 'https://www.primevideo.com',
+    'prime video': 'https://www.primevideo.com',
+    paramount: 'https://www.paramountplus.com',
+    'paramount+': 'https://www.paramountplus.com',
+    peacock: 'https://www.peacocktv.com',
+    apple: 'https://tv.apple.com',
+    'apple tv': 'https://tv.apple.com',
+    youtube: 'https://www.youtube.com',
+    'youtube tv': 'https://tv.youtube.com'
+  };
+
+  if (map[name]) return map[name];
+
+  // If it already looks like a URL, return as-is
+  if (name.startsWith('http://') || name.startsWith('https://')) {
+    return raw;
+  }
+
+  // Generic heuristic: try {name}.com; if it contains 'sports' already, keep it
+  const slug = name.replace(/[^a-z0-9]+/g, '');
+  if (!slug) return null;
+
+  // Prefer {slug}sports.com for names that are generic broadcasters (e.g., "nbc" -> nbcsports.com)
+  if ([ 'nbc', 'cbs', 'fox', 'tnt', 'tbs' ].includes(slug)) {
+    return `https://www.${slug}sports.com`;
+  }
+
+  return `https://www.${slug}.com`;
+}
+
 export default function ScheduleBar({ session }) {
   // Sport selection: all | nfl | nba | mlb
   const [sport, setSport] = useState(() => {
@@ -30,8 +77,9 @@ export default function ScheduleBar({ session }) {
   const { todaysGames: liveGames, lastUpdate } = useTodaysGames(sportForLive);
 
   // User preferences state
-  const [userPrefs, setUserPrefs] = useState({ sports_prefs: [], favorite_teams: {} });
-  const [prefsLoading, setPrefsLoading] = useState(true);
+  const [userPrefs, setUserPrefs] = useState({});
+  const [loading, setLoading] = useState(true);
+  // const [msg, setMsg] = useState("");
 
   // Persist sport to localStorage when it changes
   useEffect(() => {
@@ -64,47 +112,55 @@ export default function ScheduleBar({ session }) {
   }, []);
 
   // Fetch user preferences from Supabase
-  useEffect(() => {
-    if (!session || !session.user?.id) {
-      setUserPrefs({ sports_prefs: [], favorite_teams: {} });
-      setPrefsLoading(false);
-      return;
-    }
-    const uid = session.user.id;
-    (async () => {
-      setPrefsLoading(true);
-      let { data, error } = await supabase
-        .from("user_preferences")
-        .select("sports_prefs, favorite_teams")
-        .eq("user_id", uid)
-        .maybeSingle();
+  // useEffect(() => {
+  //   if (!session) return;
+  //   const uid = session.user.id;
 
-      // Fallback if favorite_teams column doesn't exist
-      if (error && error.message.includes('favorite_teams')) {
-        const fallbackResult = await supabase
-          .from("user_preferences")
-          .select("sports_prefs")
-          .eq("user_id", uid)
-          .maybeSingle();
-        data = fallbackResult.data;
-        error = fallbackResult.error;
-      }
+  //   console.log('Fetching user preferences for user ID:', uid);
+  //   console.log('Session object:', session);
+  //   (async () => {
+  //     setLoading(true);
+  //     try {
+  //       let { data, error } = await supabase
+  //         .from("user_preferences")
+  //         .select("sports_prefs, favorite_teams")
+  //         .eq("user_id", uid)
+  //         .maybeSingle();
 
-      if (error) {
-        setUserPrefs({ sports_prefs: [], favorite_teams: {} });
-      } else {
-        setUserPrefs({
-          sports_prefs: Array.isArray(data?.sports_prefs) ? data.sports_prefs : [],
-          favorite_teams: typeof data?.favorite_teams === 'object' && data.favorite_teams !== null ? data.favorite_teams : {}
-        });
-      }
-      setPrefsLoading(false);
-    })();
-  }, [session]);
+  //       let prefsData = data;
+  //       let prefsError = error;
+
+  //       // Fallback if favorite_teams column doesn't exist
+  //       if (prefsError && prefsError.message && prefsError.message.includes('favorite_teams')) {
+  //         const fallbackResult = await supabase
+  //           .from("user_preferences")
+  //           .select("sports_prefs")
+  //           .eq("user_id", uid)
+  //           .maybeSingle();
+  //         prefsData = fallbackResult.data;
+  //         prefsError = fallbackResult.error;
+  //       }
+
+  //       if (prefsError) {
+  //         console.warn('Failed to load user preferences:', prefsError.message);
+  //         setUserPrefs({ sports_prefs: [], favorite_teams: {} });
+  //       } else {
+  //         const sportsPrefs = Array.isArray(prefsData?.sports_prefs) ? prefsData.sports_prefs : [];
+  //         const favoriteTeams = typeof prefsData?.favorite_teams === 'object' && prefsData.favorite_teams !== null ? prefsData.favorite_teams : {};
+  //         setUserPrefs({ sports_prefs: sportsPrefs, favorite_teams: favoriteTeams });
+  //       }
+  //     } catch (e) {
+  //       console.error('Unexpected error loading user preferences:', e);
+  //       setUserPrefs({ sports_prefs: [], favorite_teams: {} });
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   })();
+  // }, [session]);
 
   // Set filterState to 'Favorites' by default if user has favorites for selected sport
   useEffect(() => {
-    if (prefsLoading) return;
+    if (loading) return;
     // Only set if filterState is still at initial value
     if (filterState === 'none') {
       const favTeams = userPrefs.favorite_teams?.[sport.toUpperCase()] || userPrefs.favorite_teams?.[sport] || [];
@@ -112,7 +168,7 @@ export default function ScheduleBar({ session }) {
         setFilterState('favorites');
       }
     }
-  }, [prefsLoading, userPrefs, sport, filterState]);
+  }, [loading, userPrefs, sport, filterState]);
 
   const [selected, setSelected] = useState(() => {
     const x = new Date();
@@ -247,8 +303,12 @@ export default function ScheduleBar({ session }) {
 
   function renderGameCard(g, sportKey, fmtLocalTime, getBroadcastInfo) {
     const broadcast = getBroadcastInfo(g, sportKey);
+    const broadcastUrl = buildBroadcastUrl(broadcast);
+    const isBroadcastUrl = typeof broadcastUrl === 'string';
+    const linkHref = isBroadcastUrl ? broadcastUrl : `/game/${sportKey}/${g.id}`;
+    const linkProps = isBroadcastUrl ? { target: '_blank', rel: 'noopener noreferrer' } : {};
     return (
-      <a key={g.id} href={`/game/${sportKey}/${g.id}`} className="sb-card">
+      <a key={g.id} href={linkHref} className="sb-card" {...linkProps}>
         <div className="sb-card-top">
           <div className="sb-teams">
             <div className="sb-team">{g.awayTeam}</div>
@@ -264,113 +324,113 @@ export default function ScheduleBar({ session }) {
           </div>
         </div>
         {g.venue && <div className="sb-venue">Location: {g.venue}</div>}
-        <div className="sb-venue">Where to Watch: <strong>{broadcast}</strong></div>
+        <div className="sb-venue">Where to Watch: <strong>{broadcast || 'TBD'}</strong></div>
       </a>
     );
   }
 
-  if (prefsLoading) {
-    return <div className="sb-wrap"><div className="sb-state">Loading preferences…</div></div>;
-  } else {
-    return (
-      <div className="sb-wrap">
-        <div className="sb-top">
-          <h3>
-            {sport.toUpperCase()} Schedule
-          </h3>
+  // userPrefs.sports_prefs = Array.isArray(userPrefs.sports_prefs) ? userPrefs.sports_prefs : [];
+  userPrefs.sports_prefs = ["nfl", "nba", "mlb"];
+  // if (!session) return <p className="prefs-note">Log in to manage preferences.</p>;
+  // if (loading)    return <p className="prefs-note">Loading preferences…</p>;
+  return (
+    <div className="sb-wrap">
+      <div className="sb-top">
+        <h3>
+          {sport.toUpperCase()} Schedule
+        </h3>
 
-          <div className="sb-actions" style={{ display: "flex", gap: 12, alignItems: "center" }}>
-            <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
-              <span style={{ fontSize: 12, opacity: 0.8 }}>Filter</span>
-              <select
-                value={filterState}
-                onChange={
-                  (e) => {
-                    const newFilter = e.target.value;
-                    setFilterState(newFilter);
-                    localStorage.setItem("filterState", newFilter);
-                    window.dispatchEvent(new CustomEvent("filterChanged", { detail: newFilter }));
-                  }}
-                className="sb-date-input"
-              >
-                <option value="none">Off (All Sports)</option>
-                <option value="sports">By Selected Sport</option>
-                <option value="favorites">Favorites Only</option>
-              </select>
-            </label>
-
-            <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
-              <span style={{ fontSize: 12, opacity: 0.8 }}>Sport</span>
-              <select
-                value={sport}
-                onChange={(e) => {
-                  const newSport = e.target.value;
-                  setSport(newSport);
-                  localStorage.setItem("selectedSport", newSport);
-                  window.dispatchEvent(new CustomEvent("sportChanged", { detail: newSport }));
+        <div className="sb-actions" style={{ display: "flex", gap: 12, alignItems: "center" }}>
+          <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
+            <span style={{ fontSize: 12, opacity: 0.8 }}>Filter</span>
+            <select
+              value={filterState}
+              onChange={
+                (e) => {
+                  const newFilter = e.target.value;
+                  setFilterState(newFilter);
+                  localStorage.setItem("filterState", newFilter);
+                  window.dispatchEvent(new CustomEvent("filterChanged", { detail: newFilter }));
                 }}
-                className="sb-date-input"
-                // keep sport selectable regardless of filter state
-                disabled={false}
-              >
-                <option value="all">All Sports</option>
-                {userPrefs.sports_prefs?.map((s) => (
-                  <option key={s.toLowerCase()} value={s.toLowerCase()}>{s}</option>
-                ))}
-              </select>
-            </label>
+              className="sb-date-input"
+            >
+              <option value="none">Off (All Sports)</option>
+              <option value="sports">By Selected Sport</option>
+              <option value="favorites">Favorites Only</option>
+            </select>
+          </label>
 
-            <div className="sb-date-picker-container">
-              <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                <span style={{ fontSize: 12, opacity: 0.8 }}>Date</span>
-                <div className="sb-date-display" onClick={() => document.getElementById('date-picker').showPicker()}>
-                  {selected.toLocaleDateString(undefined, {
-                    weekday: "short",
-                    month: "short",
-                    day: "numeric",
-                  })}
-                  <span className="sb-calendar-icon">📅</span>
-                </div>
-                <input
-                  id="date-picker"
-                  type="date"
-                  className="sb-date-input sb-date-hidden"
-                  value={key}
-                  onChange={(e) => {
-                    const [yy, mm, dd] = e.target.value.split("-").map(Number);
-                    const chosenDate = new Date(yy, mm - 1, dd);
-                    chosenDate.setHours(0, 0, 0, 0);
-                    setSelected(chosenDate);
-                  }}
-                />
-              </label>
-            </div>
+          <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
+            <span style={{ fontSize: 12, opacity: 0.8 }}>Sport</span>
+            <select
+              value={sport}
+              onChange={(e) => {
+                const newSport = e.target.value;
+                setSport(newSport);
+                localStorage.setItem("selectedSport", newSport);
+                window.dispatchEvent(new CustomEvent("sportChanged", { detail: newSport }));
+              }}
+              className="sb-date-input"
+              // keep sport selectable regardless of filter state
+              disabled={false}
+            >
+              <option value="all">All Sports</option>
+              {userPrefs.sports_prefs?.map((s) => ( // use user preferences for sport options
+                <option key={s.toLowerCase()} value={s.toLowerCase()}>{s}</option>
+              ))}
+            </select>
+          </label>
+
+          <div className="sb-date-picker-container">
+            <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
+              <span style={{ fontSize: 12, opacity: 0.8 }}>Date</span>
+              <div className="sb-date-display" onClick={() => document.getElementById('date-picker').showPicker()}>
+                {selected.toLocaleDateString(undefined, {
+                  weekday: "short",
+                  month: "short",
+                  day: "numeric",
+                })}
+                <span className="sb-calendar-icon">📅</span>
+              </div>
+              <input
+                id="date-picker"
+                type="date"
+                className="sb-date-input sb-date-hidden"
+                value={key}
+                onChange={(e) => {
+                  const [yy, mm, dd] = e.target.value.split("-").map(Number);
+                  const chosenDate = new Date(yy, mm - 1, dd);
+                  chosenDate.setHours(0, 0, 0, 0);
+                  setSelected(chosenDate);
+                }}
+              />
+            </label>
           </div>
         </div>
-
-        <div className="sb-cards">
-          {games.length === 0 ? (
-            <div className="sb-state">No games on this date.</div>
-          ) : (
-            (sport === "all" || filterState === "none")
-              ? Object.entries(
-                  games.reduce((acc, g) => {
-                    (acc[g.sport] ||= []).push(g);
-                    return acc;
-                  }, {})
-                ).flatMap(([sportKey, sportGames]) => [
-                  // Sport header
-                  <h4 key={sportKey + "-header"} className="sb-sport-header">{sportKey.toUpperCase()}</h4>,
-                  // All cards for this sport
-                  ...sportGames.map((g) => renderGameCard(g, sportKey, fmtLocalTime, getBroadcastInfo))
-                ])
-              : (
-                // Single sport, flat list
-                games.map((g) => renderGameCard(g, sport, fmtLocalTime, getBroadcastInfo))
-              )
-          )}
-        </div>
       </div>
-    );
-  }
+
+      <div className="sb-cards">
+        {games.length === 0 ? (
+          <div className="sb-state">No games on this date.</div>
+        ) : (
+          (sport === "all" || filterState === "none")
+            ? Object.entries(
+                games.reduce((acc, g) => {
+                  (acc[g.sport] ||= []).push(g);
+                  return acc;
+                }, {})
+              ).flatMap(([sportKey, sportGames]) => [
+                // Sport header
+                <h4 key={sportKey + "-header"} className="sb-sport-header">{sportKey.toUpperCase()}</h4>,
+                // All cards for this sport
+                ...sportGames.map((g) => renderGameCard(g, sportKey, fmtLocalTime, getBroadcastInfo))
+              ])
+            : (
+              // Single sport, flat list
+              games.map((g) => renderGameCard(g, sport, fmtLocalTime, getBroadcastInfo))
+            )
+        )}
+      </div>
+    </div>
+  );
 }
