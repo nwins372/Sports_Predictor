@@ -76,13 +76,13 @@ export default function NotificationToggle({ session }) {
 
   const onToggle = (e) => {
     const next = e.target.checked;
-    setNotifEnabled(next);          // optimistic
+    setNotifEnabled(next);          
     persist(next, frequency);
   };
 
   const onfrequencyChange = (e) => {
     const next = e.target.value;
-    setFrequency(next);               // optimistic
+    setFrequency(next);              
     persist(notifEnabled, next);
   };
 

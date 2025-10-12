@@ -1,4 +1,3 @@
-// src/components/ChangePassword.jsx
 import { useState } from "react";
 import { supabase } from "../supabaseClient";
 import "../pages/profile.css"; 
@@ -19,7 +18,7 @@ export default function PasswordChange({ session }) {
     e.preventDefault();
     setPwMsg("");
 
-    // Optional: block OAuth-only accounts from password change
+    // block OAuth-only accounts from password change
     const provider = session.user.app_metadata?.provider;
     if (provider && provider !== "email") {
       setPwMsg("This account uses a third-party login (e.g., Google). Manage your password with that provider.");

@@ -2,8 +2,31 @@ import { useMemo, useState, useEffect } from "react";
 import nflSchedule from "../assets/nfl25.json";
 import nbaSchedule from "../assets/nba25.json";
 import mlbSchedule from "../assets/mlb25.json";
+import espnLogo from "../assets/ESPN_logo.png";
+import foxLogo from "../assets/fox_logo.png";
+import nbcLogo from "../assets/nbc_logo.png";
+import tntLogo from "../assets/TNT_Logo.png";
+import abcLogo from "../assets/ABC_logo.png";
+import amazonPrimeLogo from "../assets/amazonprime_logo.png";
+import nflLogo from "../assets/NFL_logo.png";
+import nbaLogo from "../assets/NBA_logo.png";
+import appletvLogo from "../assets/appletv_logo.png";
+import cbsLogo from "../assets/CBS_logo.png";
 import { getBroadcastInfo } from "../utils/broadcasts";
 import "./ScheduleBar.css";
+
+const logoMap = {
+  fox: foxLogo,
+  espn: espnLogo,
+  nbc: nbcLogo,
+  tnt: tntLogo,
+  nba: nbaLogo,
+  abc: abcLogo,
+  prime_video: amazonPrimeLogo,
+  nfl: nflLogo,
+  cbs: cbsLogo,
+  
+};
 
 const ymd = (d) => d.toISOString().slice(0, 10);
 const parseUtc = (s) => new Date(s.replace(" ", "T"));
@@ -77,13 +100,33 @@ export default function ScheduleBar() {
 
   const key = ymd(selected);
   const games = processGames[key] || [];
-
-  return (
+return (
     <div className="sb-wrap">
       <div className="sb-top">
-        <h3>
-          {sport.toUpperCase()} Schedule
-        </h3>
+        <div className="sb-title-container">
+          <h3>{sport.toUpperCase()} Schedule</h3>
+          {sport === 'nfl' && (
+            <a
+              href="https://www.nfl.com/ways-to-watch/by-week/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sb-nfl-link"
+            >
+              Official Ways to Watch 
+            </a>
+          )}
+          {sport === 'nba' && (
+            <a
+              href="https://www.nba.com/schedule"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sb-nfl-link"
+            >
+              Official Schedule
+            </a>
+          )}
+        </div>
+
 
         <div className="sb-actions" style={{ display: "flex", gap: 12, alignItems: "center" }}>
           <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
@@ -113,7 +156,7 @@ export default function ScheduleBar() {
                   month: "short",
                   day: "numeric",
                 })}
-                <span className="sb-calendar-icon">📅</span>
+                <span className="sb-calendar-icon"></span>
               </div>
               <input
                 id="date-picker"
@@ -132,37 +175,59 @@ export default function ScheduleBar() {
         </div>
       </div>
 
-  <div className="sb-cards">
-          {games.length === 0 ? (
-            <div className="sb-state">No games on this date.</div>
-          ) : (
-            games.map((g) => {
-              const broadcast = getBroadcastInfo(g, sport); 
+      <div className="sb-cards">
+        {games.length === 0 ? (
+          <div className="sb-state">No games on this date.</div>
+        ) : (
+          games.map((g) => {
+            const broadcastInfo = getBroadcastInfo(g, sport);
 
-              return (
-                <a key={g.id} href={`/game/${sport}/${g.id}`} className="sb-card">
-                  <div className="sb-card-top">
-                    <div className="sb-teams">
-                      <div className="sb-team">{g.awayTeam}</div>
-                      <div>@</div>
-                      <div className="sb-team">{g.homeTeam}</div>
-                    </div>
-                    <div className="sb-right">
-                      {g.homeScore != null && g.awayScore != null ? (
-                        <div className="sb-score">({g.awayScore}–{g.homeScore})</div>
-                      ) : (
-                        <div className="sb-time">{fmtLocalTime(g.dateUtcISO)}</div>
-                      )}
-                    </div>
+            return (
+              <a key={g.id} href={`/game/${sport}/${g.id}`} className="sb-card">
+                <div className="sb-teams">
+                  <div className="sb-team">
+                    <div className="sb-team-name sb-away">{g.awayTeam} @</div>
+                    {g.awayScore !== null && <div className="sb-team-score">{g.awayScore}</div>}
                   </div>
-                  {g.venue && <div className="sb-venue">Location: {g.venue}</div>}
-                  {/* 👇 DISPLAY THE BROADCAST INFO */}
-                  <div className="sb-venue">Where to Watch: <strong>{broadcast}</strong></div>
-                </a>
-              );
-            })
-          )}
-        </div>
+                  <div className="sb-team">
+                    <div className="sb-team-name sb-home">{g.homeTeam}</div>
+                    {g.homeScore !== null && <div className="sb-team-score">{g.homeScore}</div>}
+                  </div>
+                </div>
+
+                <div className="sb-time">
+                  {g.homeScore === null && g.awayScore === null
+                    ? fmtLocalTime(g.dateUtcISO)
+                    : "Final"}
+                </div>
+                    
+                {g.venue && <div className="sb-venue">Location: {g.venue}</div>}
+
+                <div className="sb-watch-section">
+                  <div className="sb-watch-title">Where to Watch:</div>
+                  <div className="sb-broadcasters">
+                    {/* Maps logo to name of broadcaster */}
+                    {Array.isArray(broadcastInfo) ? (
+                      broadcastInfo.map(key => (
+                        logoMap[key] ? (
+                          <img
+                            key={key}
+                            src={logoMap[key]}
+                            alt={`${key} logo`}
+                            className="sb-logo"
+                          />
+                        ) : null
+                      ))
+                    ) : (
+                      <span className="sb-broadcast-text">{broadcastInfo}</span>
+                    )}
+                  </div>
+                </div>
+              </a>
+            );
+          })
+        )}
       </div>
-    );
-  }
+    </div>
+  );
+}

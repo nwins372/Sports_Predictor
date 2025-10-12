@@ -43,7 +43,7 @@ export default function Profile() {
       <NavBar />
       <div className="profile-container">
         <h1>hello {username}</h1>
-        <NotificationToggle session={session} />
+        <NotificationToggle session={session} /> {/* Notification Preferences, SportsPreference, Password Change  - Winston */}
         <SportPrefsForm session={session} />
 
         {/* Change Password */}

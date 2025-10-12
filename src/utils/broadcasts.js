@@ -19,41 +19,36 @@ const nflConferenceMap = {
 
 export const getBroadcastInfo = (game, sport) => {
   const gameDate = new Date(game.dateUtcISO);
-  const dayOfWeek = gameDate.getUTCDay(); // Sunday = 0, Monday = 1, ..., Saturday = 6
+  const dayOfWeek = gameDate.getUTCDay(); // Sunday = 0, Saturday = 6
 
   switch (sport) {
     case "nfl":
-      // NFL Logic
-      if (dayOfWeek === 4) return "Amazon Prime Video"; // Thursday
-      if (dayOfWeek === 1) return "ESPN / ABC"; // Monday
-      if (dayOfWeek === 0) { // Sunday
+      if (dayOfWeek === 4) return ['prime_video'];
+      if (dayOfWeek === 1) return ['espn', 'abc'];
+      if (dayOfWeek === 0) {
         const gameHourUTC = gameDate.getUTCHours();
-        // Sunday Night Football is typically around 00:20 UTC on Monday morning, which is 8:20 PM ET on Sunday night.
         if (gameHourUTC >= 0 && gameHourUTC < 4) {
-          return "NBC";
+          return ['nbc'];
         }
-        // Afternoon games
         const awayConference = nflConferenceMap[game.awayTeam];
-        if (awayConference === "AFC") return "CBS";
-        if (awayConference === "NFC") return "FOX";
-        return "CBS / FOX"; // Fallback for interconference
+        if (awayConference === "AFC") return ['cbs'];
+        if (awayConference === "NFC") return ['fox'];
+        return ['cbs', 'fox'];
       }
-      return "NFL.com";
+      return ["nfl"]; // Return text for fallbacks
 
     case "nba":
-      // NBA Logic
-      if (dayOfWeek === 3) return "ESPN"; // Wednesday
-      if (dayOfWeek === 4) return "TNT"; // Thursday
-      if (dayOfWeek === 5) return "ESPN"; // Friday
-      if (dayOfWeek === 0) return "ABC"; // Sunday
-      return "Local RSN / NBA League Pass";
+      if (dayOfWeek === 3) return ['espn'];
+      if (dayOfWeek === 4) return ['tnt'];
+      if (dayOfWeek === 5) return ['espn'];
+      if (dayOfWeek === 0) return ['abc'];
+      return "Local Network / NBA League Pass"; 
 
     case "mlb":
-      // MLB Logic
-      if (dayOfWeek === 5) return "Apple TV+"; // Friday
-      if (dayOfWeek === 6) return "FOX / FS1";   // Saturday
-      if (dayOfWeek === 0) return "ESPN / TBS / Peacock"; // Sunday
-      return "Local RSN / MLB.TV";
+      if (dayOfWeek === 5) return ['apple_tv'];
+      if (dayOfWeek === 6) return ['fox'];
+      if (dayOfWeek === 0) return ['espn']; 
+      return "Local RSN / MLB.TV"; 
 
     default:
       return "N/A";

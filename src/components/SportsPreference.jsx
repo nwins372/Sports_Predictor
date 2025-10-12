@@ -18,6 +18,7 @@ export default function SportPrefsForm({ session }) {
       setLoading(true);
       setMsg("");
 
+      // Load current user preferences
       const { data, error } = await supabase
         .from("user_preferences")
         .select("sports_prefs")
@@ -42,6 +43,7 @@ export default function SportPrefsForm({ session }) {
     );
   };
 
+  // User must be logged in to save preferences
   const save = async () => {
     if (!session) { setMsg("You must be logged in."); return; }
     setSaving(true);
@@ -69,6 +71,7 @@ export default function SportPrefsForm({ session }) {
 
   console.log("Rendering sports:", all_sports);
   
+  // Allow check sports and save
   return (
     <div className="prefs-card">
       <h2 className="prefs-title">Your Sports</h2>
