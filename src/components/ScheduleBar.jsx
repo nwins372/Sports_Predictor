@@ -1,5 +1,5 @@
 import { useMemo, useState, useEffect } from "react";
-import { supabase } from "../supabaseClient";
+// import { supabase } from "../supabaseClient";
 import nflSchedule from "../assets/nfl25.json";
 import nbaSchedule from "../assets/nba25.json";
 import mlbSchedule from "../assets/mlb25.json";
@@ -62,7 +62,9 @@ function buildBroadcastUrl(raw) {
 export default function ScheduleBar({ session }) {
   // Sport selection: all | nfl | nba | mlb
   const [sport, setSport] = useState(() => {
-    return localStorage.getItem("selectedSport") || 'all';
+    const saved = localStorage.getItem("selectedSport");
+    const normalized = typeof saved === 'string' ? saved.toLowerCase() : 'all';
+    return normalized || 'all';
   });
 
   // Filter state: none | sports | favorites
@@ -79,16 +81,16 @@ export default function ScheduleBar({ session }) {
   // User preferences state
   const [userPrefs, setUserPrefs] = useState({});
   const [loading, setLoading] = useState(true);
-  // const [msg, setMsg] = useState("");
 
   // Persist sport to localStorage when it changes
   useEffect(() => {
     const updateSport = (e) => {
       if (e.detail) {
-        setSport(e.detail); 
+        const val = String(e.detail).toLowerCase();
+        setSport(val);
       } else {
         const saved = localStorage.getItem("selectedSport") || "nfl";
-        setSport(saved);
+        setSport(String(saved).toLowerCase());
       }
     };
 
@@ -212,13 +214,20 @@ export default function ScheduleBar({ session }) {
     );
   }
 
-  function getGameDateKey(game) {
-    const dateStr = game.DateUtc || game.DateUTC || game.dateUtc || game.date;
-    const d = parseUtc(dateStr);
+  // Helper function to extract a date key (YYYY-MM-DD) from a game object
+  function getGameDateKey(game, dateBuilt = null) {
+    let d;
+    if (!dateBuilt) {
+      const dateStr = game.DateUtc || game.DateUTC || game.dateUtc || game.date;
+      d = parseUtc(dateStr);
+    } else {
+      d = dateBuilt;
+    }
     if (isNaN(d)) return null;
     return ymd(new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate())));
   }
 
+  // Builds a normalized game card object
   function buildGameCard(game, key, i = null, sportOverride = null) {
     return {
       id:
@@ -237,6 +246,7 @@ export default function ScheduleBar({ session }) {
     };
   }
 
+  // Merge live game data into existing game cards, or adds it as a new entry if not present
   function mergeLiveGame(gameCards, key, liveGame, sportOverride = null) {
     const existingGameIndex = (gameCards[key] || []).findIndex(
       g => g.homeTeam === liveGame.HomeTeam && g.awayTeam === liveGame.AwayTeam
@@ -269,8 +279,7 @@ export default function ScheduleBar({ session }) {
       if (liveGames && liveGames.length > 0) {
         liveGames.forEach((game) => {
           const gameDate = new Date(game.DateUtc);
-          if (isNaN(gameDate)) return;
-          const key = ymd(new Date(Date.UTC(gameDate.getUTCFullYear(), gameDate.getUTCMonth(), gameDate.getUTCDate())));
+          const key = getGameDateKey(game, gameDate);
 
           mergeLiveGame(gameCards, key, game, sportForLive);
         });
@@ -287,8 +296,7 @@ export default function ScheduleBar({ session }) {
       if (liveGames && liveGames.length > 0) {
         liveGames.forEach((game) => {
           const gameDate = new Date(game.DateUtc);
-          if (isNaN(gameDate)) return;
-          const key = ymd(new Date(Date.UTC(gameDate.getUTCFullYear(), gameDate.getUTCMonth(), gameDate.getUTCDate())));
+          const key = getGameDateKey(game, gameDate);
 
           mergeLiveGame(gameCards, key, game, sportForLive);
         });
@@ -329,7 +337,7 @@ export default function ScheduleBar({ session }) {
     );
   }
 
-  // userPrefs.sports_prefs = Array.isArray(userPrefs.sports_prefs) ? userPrefs.sports_prefs : [];
+  // Temporary hardcoded prefs until session is fixed
   userPrefs.sports_prefs = ["nfl", "nba", "mlb"];
   // if (!session) return <p className="prefs-note">Log in to manage preferences.</p>;
   // if (loading)    return <p className="prefs-note">Loading preferences…</p>;
@@ -360,26 +368,27 @@ export default function ScheduleBar({ session }) {
             </select>
           </label>
 
-          <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
-            <span style={{ fontSize: 12, opacity: 0.8 }}>Sport</span>
-            <select
-              value={sport}
-              onChange={(e) => {
-                const newSport = e.target.value;
-                setSport(newSport);
-                localStorage.setItem("selectedSport", newSport);
-                window.dispatchEvent(new CustomEvent("sportChanged", { detail: newSport }));
-              }}
-              className="sb-date-input"
-              // keep sport selectable regardless of filter state
-              disabled={false}
-            >
-              <option value="all">All Sports</option>
-              {userPrefs.sports_prefs?.map((s) => ( // use user preferences for sport options
-                <option key={s.toLowerCase()} value={s.toLowerCase()}>{s}</option>
-              ))}
-            </select>
-          </label>
+          {filterState !== 'none' && (
+            <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
+              <span style={{ fontSize: 12, opacity: 0.8 }}>Sport</span>
+              <select
+                value={sport}
+                onChange={(e) => {
+                  const newSport = String(e.target.value).toLowerCase();
+                  setSport(newSport);
+                  localStorage.setItem("selectedSport", newSport);
+                  window.dispatchEvent(new CustomEvent("sportChanged", { detail: newSport }));
+                }}
+                className="sb-date-input"
+                disabled={false}
+              >
+                <option value="all">All Sports</option>
+                {userPrefs.sports_prefs?.map((s) => (
+                  <option key={s.toLowerCase()} value={s.toLowerCase()}>{s}</option>
+                ))}
+              </select>
+            </label>
+          )}
 
           <div className="sb-date-picker-container">
             <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
