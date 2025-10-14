@@ -6,14 +6,14 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
+import Team from './pages/Team';
+import Player from './pages/Player';
 import { ThemeProvider } from './context/ThemeContext';
 import { supabase } from './supabaseClient';
 import { useEffect, useState } from 'react';
 import SportsNewsPage from './pages/SportsNewsPage';
 import ProfileSettings from './pages/ProfileSettings';
 import Schedules from './pages/Schedules';
-import Team from './pages/Team';
-import Player from './pages/Player';
 
 const isLoggedIn = supabase.auth.getSession().then(({ data: { session } }) => !!session);
 const user = supabase.auth.getUser().then(({ data: { user } }) => user);
@@ -24,7 +24,7 @@ const handleUpdate = (updatedInfo) => {
 };
 
 function App() {
-const [session, setSession] = useState(null);  
+const [, setSession] = useState(null);
 
 document.title = "Sports Predictor";
 
@@ -35,9 +35,11 @@ useEffect(() => {
     });
 
     // Listener checks for whether user logs in or out
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+    const listener = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
     });
+    // cleanup
+    return () => { try { listener?.data?.unsubscribe?.(); } catch (e) {} };
   }, []);
 
   return (
@@ -47,6 +49,12 @@ useEffect(() => {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
+  <Route path="/team/:league/:abbr" element={<Team />} />
+  {/* backward-compatible route (no league) */}
+  <Route path="/team/:abbr" element={<Team />} />
+  <Route path="/player/:league/:id" element={<Player />} />
+  {/* backward-compatible route (no league) */}
+  <Route path="/player/:id" element={<Player />} />
       <Route path="/settings" element={<Settings />} />
       <Route path="/sports-news" element={<SportsNewsPage />} />
       <Route path="/schedules" element={<Schedules />} />

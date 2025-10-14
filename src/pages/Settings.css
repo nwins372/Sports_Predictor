@@ -49,3 +49,13 @@
 .switch input:checked + .slider:before { transform: translateX(24px); }
 
 /* theme variables are defined globally in index.css */
+
+.picker-row { display:flex; align-items:center; gap:12px; margin-top:12px; }
+.picker-row label { width:80px; font-weight:600; }
+.picker-row select { padding:8px 10px; border-radius:6px; border:1px solid var(--surface-border); background:var(--surface); color:var(--text); }
+.team-picker { margin-top:18px; }
+.team-preview { margin-top:12px; }
+.preview-box { display:flex; align-items:center; gap:12px; padding:10px; border-radius:8px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02)); border:1px solid var(--surface-border); }
+.team-name { font-weight:700; }
+.team-abbr { color:var(--muted); }
+.preview-empty { color:var(--muted); font-style:italic; }
