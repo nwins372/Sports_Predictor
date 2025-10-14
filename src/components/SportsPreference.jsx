@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
 import "./SportsPreference.css";
 
-const all_sports = ["NFL", "NBA", "MLB", "College Sports"];
+// const all_sports = ["NFL", "NBA", "MLB", "College Sports"];
+const all_sports = ["NFL", "NBA", "MLB"];
 
 // Team data for each sport
 const TEAM_DATA = {
@@ -46,8 +47,8 @@ const TEAM_DATA = {
 };
 
 export default function SportPrefsForm({ session }) {
-  const [checked, setChecked] = useState([]);   
-  const [selectedTeams, setSelectedTeams] = useState({});
+  const [checked, setChecked] = useState([]);
+  const [selectedTeams, setSelectedTeams] = useState({});  
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [msg, setMsg] = useState("");
@@ -84,12 +85,9 @@ export default function SportPrefsForm({ session }) {
       if (error) {
         setMsg("Could not load preferences.");
         setChecked([]); 
-        setSelectedTeams({});
       } else {
-        const sportsArr = Array.isArray(data?.sports_prefs) ? data.sports_prefs : [];
-        const teamsObj = data?.favorite_teams || {};
-        setChecked(sportsArr);
-        setSelectedTeams(teamsObj);
+        const arr = Array.isArray(data?.sports_prefs) ? data.sports_prefs : [];
+        setChecked(arr);
       }
 
       setLoading(false);
@@ -178,8 +176,7 @@ export default function SportPrefsForm({ session }) {
   // Allow check sports and save
   return (
     <div className="prefs-card">
-      <h2 className="prefs-title">Your Sports & Teams</h2>
-      
+      <h2 className="prefs-title">Your Sports</h2>
       {/* Sports Selection */}
       <div className="prefs-section">
         <h3 className="prefs-subtitle">Sports</h3>

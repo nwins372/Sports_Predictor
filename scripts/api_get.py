@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from supabase import create_client
 from datetime import datetime
 from postgrest.exceptions import APIError
-from utility import complie_header, null_check
+from utility import null_check
 
 Seasoned = []
 
@@ -64,21 +64,22 @@ def main():
                         'league': league,
                         'name': team_name,
                         'color': null_check('color', team_dict),
-                        # 'record': null_check('record', team_dict, True),
-                        # 'venue': null_check('venue', team_dict, True),
-                        # 'groups': null_check('groups', team_dict, True),
-                        # 'ranks': null_check('ranks', team_dict, True),
-                        # 'statistics': null_check('statistics', team_dict, True),
-                        # 'leaders': null_check('leaders', team_dict, True),
-                        # 'links': null_check('links', team_dict),
-                        # 'injuries': null_check('injuries', team_dict, True),
-                        # 'notes': null_check('notes', team_dict, True),
-                        # 'againstthespreadrecords': null_check('againstTheSpreadRecords', team_dict, True),
-                        # 'franchise': null_check('franchise', team_dict, True),
-                        # 'events': null_check('events', team_dict, True),
-                        # 'transactions': null_check('transactions', team_dict, True),
-                        # 'coaches': null_check('coaches', team_dict, True),
-                        # 'attendance': null_check('attendance', team_dict, True)
+                        'seccolor': null_check('alternateColor', team_dict),
+                        'record': null_check('record', team_dict),
+                        'venue': null_check('venue', team_dict),
+                        'groups': null_check('groups', team_dict),
+                        'ranks': null_check('ranks', team_dict),
+                        'statistics': null_check('statistics', team_dict, True),
+                        'leaders': null_check('leaders', team_dict),
+                        'links': null_check('links', team_dict),
+                        'injuries': null_check('injuries', team_dict, True),
+                        'notes': null_check('notes', team_dict),
+                        'againstthespreadrecords': null_check('againstTheSpreadRecords', team_dict),
+                        'franchise': null_check('franchise', team_dict),
+                        'events': null_check('events', team_dict),
+                        'transactions': null_check('transactions', team_dict),
+                        'coaches': null_check('coaches', team_dict),
+                        'attendance': null_check('attendance', team_dict)
                     })
                     .execute()
             )
