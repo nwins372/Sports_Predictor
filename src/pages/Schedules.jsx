@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 import ScheduleBar from "../components/ScheduleBar";
+import WinPercentageDisplay from "../components/WinPercentageDisplay";
+import ScoreUpdateStatus from "../components/ScoreUpdateStatus";
+import { useTodaysGames } from "../hooks/useScoreUpdates";
+import { calculateWinPercentage, formatWinPercentage } from "../utils/winPercentageCalculator";
 import "./Schedules.css";
 
 // Import schedule data (fallback)
@@ -90,28 +94,52 @@ const TEAM_STATS = {
   "New York Jets": { wins: 7, losses: 10, winPercentage: 41.2 }
 };
 
-// Function to calculate win probability between two teams
+// Function to calculate win probability between two teams using the new advanced calculator
 const calculateWinProbability = (homeTeam, awayTeam, liveStats = {}) => {
-  // Use live stats if available, otherwise fall back to static stats
-  const statsSource = Object.keys(liveStats).length > 0 ? liveStats : TEAM_STATS;
-  
-  const homeStats = statsSource[homeTeam];
-  const awayStats = statsSource[awayTeam];
-  
-  if (!homeStats || !awayStats) {
-    return { homeWinProb: 50, awayWinProb: 50 };
+  try {
+    // Use the new advanced win percentage calculator - Dimers.com style
+    const result = calculateWinPercentage(homeTeam, awayTeam, {
+      algorithm: 'monteCarlo', // Use Monte Carlo simulation like Dimers.com
+      isHomeTeam1: true,
+      includeRecentForm: true,
+      includeHeadToHead: false
+    });
+
+    const formattedResult = formatWinPercentage(result);
+    
+    return {
+      homeWinProb: formattedResult.team1Percentage,
+      awayWinProb: formattedResult.team2Percentage,
+      confidence: result.confidence,
+      algorithm: formattedResult.algorithm,
+      confidenceLevel: formattedResult.confidence
+    };
+  } catch (error) {
+    console.error('Error calculating win probability:', error);
+    
+    // Fallback to simple calculation if the new calculator fails
+    const statsSource = Object.keys(liveStats).length > 0 ? liveStats : TEAM_STATS;
+    
+    const homeStats = statsSource[homeTeam];
+    const awayStats = statsSource[awayTeam];
+    
+    if (!homeStats || !awayStats) {
+      return { homeWinProb: 50, awayWinProb: 50, confidence: 0.1 };
+    }
+    
+    const homeAdvantage = 5;
+    const homeStrength = homeStats.wins / (homeStats.wins + homeStats.losses);
+    const awayStrength = awayStats.wins / (awayStats.wins + awayStats.losses);
+    
+    const homeWinPercentage = (homeStrength * 100) + homeAdvantage;
+    const awayWinPercentage = awayStrength * 100;
+    
+    const total = homeWinPercentage + awayWinPercentage;
+    const homeWinProb = Math.round((homeWinPercentage / total) * 100);
+    const awayWinProb = 100 - homeWinProb;
+    
+    return { homeWinProb, awayWinProb, confidence: 0.3 };
   }
-  
-  // Simple calculation based on win percentages with home field advantage
-  const homeAdvantage = 5; // 5% home field advantage
-  const homeWinPercentage = homeStats.winPercentage + homeAdvantage;
-  const awayWinPercentage = awayStats.winPercentage;
-  
-  const total = homeWinPercentage + awayWinPercentage;
-  const homeWinProb = Math.round((homeWinPercentage / total) * 100);
-  const awayWinProb = 100 - homeWinProb;
-  
-  return { homeWinProb, awayWinProb };
 };
 
 // Helper function to determine game status
@@ -652,6 +680,16 @@ function Schedules() {
   const [isLoadingPastGames, setIsLoadingPastGames] = useState(false);
   const [pastGamesLastUpdated, setPastGamesLastUpdated] = useState(null);
 
+  // Score update functionality
+  const [currentSport, setCurrentSport] = useState('NFL');
+  const { 
+    todaysGames: autoUpdatedGames, 
+    isLoading: isUpdatingScores, 
+    error: updateError,
+    forceUpdate: forceScoreUpdate,
+    lastUpdate: lastScoreUpdate
+  } = useTodaysGames(currentSport);
+
   useEffect(() => {
     // Initialize data loading
     loadScheduleData();
@@ -669,6 +707,60 @@ function Schedules() {
       };
     }
   }, [liveDataEnabled, hasLiveGames]);
+
+  // Handle force score update
+  const handleForceScoreUpdate = () => {
+    forceScoreUpdate();
+  };
+
+  // Update current sport when selected sport changes
+  useEffect(() => {
+    if (selectedSport !== 'All') {
+      setCurrentSport(selectedSport);
+    }
+  }, [selectedSport]);
+
+  // Merge auto-updated games with existing today's games
+  useEffect(() => {
+    if (autoUpdatedGames && autoUpdatedGames.length > 0) {
+      // Convert auto-updated games to the format expected by the component
+      const formattedGames = autoUpdatedGames.map(game => ({
+        id: game.MatchNumber || game.id,
+        name: `${game.AwayTeam} @ ${game.HomeTeam}`,
+        date: new Date(game.DateUtc).toISOString().split('T')[0],
+        time: new Date(game.DateUtc).toLocaleTimeString('en-US', { 
+          hour: 'numeric', 
+          minute: '2-digit',
+          hour12: true 
+        }),
+        location: game.Location || 'TBD',
+        homeTeam: game.HomeTeam,
+        awayTeam: game.AwayTeam,
+        homeScore: game.HomeTeamScore,
+        awayScore: game.AwayTeamScore,
+        sport: currentSport,
+        isLive: game.IsLive || game.Status === 'in' || game.Status === 'live',
+        type: game.Status === 'final' ? 'Final' : game.Status === 'in' ? 'Live' : 'Scheduled',
+        // Live game details
+        currentInning: game.currentInning,
+        inningHalf: game.inningHalf,
+        currentQuarter: game.currentQuarter,
+        quarterTime: game.quarterTime,
+        outs: game.outs,
+        down: game.down,
+        distance: game.distance,
+        shotClock: game.shotClock,
+        isOvertime: game.isOvertime
+      }));
+
+      // Update today's games with auto-updated data
+      setTodaysGames(prevGames => {
+        // Filter out games for the current sport and replace with updated ones
+        const otherSportGames = prevGames.filter(game => game.sport !== currentSport);
+        return [...otherSportGames, ...formattedGames];
+      });
+    }
+  }, [autoUpdatedGames, currentSport]);
 
   // Load schedule data (live or static)
   const loadScheduleData = async () => {
@@ -797,11 +889,40 @@ function Schedules() {
     
     setIsLoadingPastGames(true);
     try {
-      console.log(`Loading past games for ${teamName} (${sport})`);
-      const games = await sportsAPI.fetchTeamPastGames(sport, teamName);
-      setPastGames(games);
-      setPastGamesLastUpdated(new Date());
-      console.log(`Loaded ${games.length} past games for ${teamName}`);
+        console.log(`Loading past games for ${teamName} (${sport})`);
+        const games = await sportsAPI.fetchTeamPastGames(sport, teamName);
+        
+        // Calculate win percentages for each past game
+        const gamesWithWinPercentages = await Promise.all(
+          games.map(async (game) => {
+            try {
+              // Calculate win percentages using the existing function
+              const { homeWinProb, awayWinProb } = calculateWinProbability(
+                game.homeTeam, 
+                game.awayTeam, 
+                liveTeamStats
+              );
+              
+              return {
+                ...game,
+                homeWinProb,
+                awayWinProb
+              };
+            } catch (error) {
+              console.warn(`Failed to calculate win percentages for ${game.homeTeam} vs ${game.awayTeam}:`, error);
+              // Return game with default win percentages if calculation fails
+              return {
+                ...game,
+                homeWinProb: 50,
+                awayWinProb: 50
+              };
+            }
+          })
+        );
+        
+        setPastGames(gamesWithWinPercentages);
+        setPastGamesLastUpdated(new Date());
+        console.log(`Loaded ${gamesWithWinPercentages.length} past games for ${teamName} with win percentages`);
     } catch (error) {
       console.error('Error loading past games:', error);
       setPastGames([]);
@@ -1262,6 +1383,12 @@ function Schedules() {
               <h2 className="text-center mb-3" style={{ color: "#22c55e", fontWeight: "bold" }}>
                 🔴 Today's Games ({todaysGames.length})
               </h2>
+              
+              {/* Score Update Status */}
+              <ScoreUpdateStatus 
+                sport={currentSport} 
+                onForceUpdate={handleForceScoreUpdate}
+              />
               <div className="row">
                 {todaysGames.map((game, index) => (
                   <div key={`today-${game.id}-${index}`} className="col-md-6 col-lg-4 mb-3">
@@ -1334,6 +1461,20 @@ function Schedules() {
                           </div>
                         )}
                       </div>
+                      
+                      {/* Win Percentage Prediction */}
+                      {showPredictions && (
+                        <WinPercentageDisplay
+                          homeTeam={game.homeTeam}
+                          awayTeam={game.awayTeam}
+                          homeScore={game.homeScore}
+                          awayScore={game.awayScore}
+                          homeWinProb={game.homeWinProb || 50}
+                          awayWinProb={game.awayWinProb || 50}
+                          gameStatus={game.type}
+                          showActualResult={game.type === 'Final'}
+                        />
+                      )}
                     </div>
                   </div>
                 ))}
@@ -1812,6 +1953,18 @@ function Schedules() {
                                   </div>
                                 )}
                               </div>
+                              
+                              {/* Win Percentage Prediction for Past Games */}
+                              <WinPercentageDisplay
+                                homeTeam={game.homeTeam}
+                                awayTeam={game.awayTeam}
+                                homeScore={game.homeScore}
+                                awayScore={game.awayScore}
+                                homeWinProb={game.homeWinProb || 50}
+                                awayWinProb={game.awayWinProb || 50}
+                                gameStatus="Final"
+                                showActualResult={true}
+                              />
                             </div>
                           </div>
                         );

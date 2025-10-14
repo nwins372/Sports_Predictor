@@ -13,6 +13,7 @@ import nbaLogo from "../assets/NBA_logo.png";
 import appletvLogo from "../assets/appletv_logo.png";
 import cbsLogo from "../assets/CBS_logo.png";
 import { getBroadcastInfo } from "../utils/broadcasts";
+import { useTodaysGames } from "../hooks/useScoreUpdates";
 import "./ScheduleBar.css";
 
 const logoMap = {
@@ -38,6 +39,9 @@ export default function ScheduleBar() {
   const [sport, setSport] = useState(() => {
     return localStorage.getItem("selectedSport") || "nfl";
   });
+
+  // Use the score update hook for the current sport
+  const { todaysGames: liveGames, lastUpdate } = useTodaysGames(sport);
 
   useEffect(() => {
     const updateSport = (e) => {
@@ -77,6 +81,8 @@ export default function ScheduleBar() {
 
   const processGames = useMemo(() => {
     const gameCards = {};
+    
+    // Process static schedule data
     scheduleData.forEach((game, i) => {
       const dateStr = game.DateUtc || game.DateUTC || game.dateUtc || game.date;
       const d = parseUtc(dateStr);
@@ -94,10 +100,50 @@ export default function ScheduleBar() {
         awayScore: game.AwayTeamScore ?? game.awayScore ?? game.awaySets ?? null,
         venue: game.Location ?? game.venue ?? game.tournament ?? null,
         dateUtcISO: d.toISOString(),
+        isLive: game.IsLive || game.Status === 'in' || game.Status === 'live',
+        status: game.Status || 'scheduled'
       });
     });
+
+    // Merge with live games data
+    if (liveGames && liveGames.length > 0) {
+      liveGames.forEach((game) => {
+        const gameDate = new Date(game.DateUtc);
+        const key = ymd(gameDate);
+        
+        // Find existing game or create new one
+        const existingGameIndex = (gameCards[key] || []).findIndex(
+          g => g.homeTeam === game.HomeTeam && g.awayTeam === game.AwayTeam
+        );
+        
+        if (existingGameIndex >= 0) {
+          // Update existing game with live data
+          gameCards[key][existingGameIndex] = {
+            ...gameCards[key][existingGameIndex],
+            homeScore: game.HomeTeamScore,
+            awayScore: game.AwayTeamScore,
+            isLive: game.IsLive || game.Status === 'in' || game.Status === 'live',
+            status: game.Status || 'scheduled'
+          };
+        } else {
+          // Add new live game
+          (gameCards[key] ||= []).push({
+            id: game.MatchNumber || game.id,
+            homeTeam: game.HomeTeam,
+            awayTeam: game.AwayTeam,
+            homeScore: game.HomeTeamScore,
+            awayScore: game.AwayTeamScore,
+            venue: game.Location || 'TBD',
+            dateUtcISO: gameDate.toISOString(),
+            isLive: game.IsLive || game.Status === 'in' || game.Status === 'live',
+            status: game.Status || 'scheduled'
+          });
+        }
+      });
+    }
+    
     return gameCards;
-  }, [scheduleData]);
+  }, [scheduleData, liveGames]);
 
   const key = ymd(selected);
   const games = processGames[key] || [];
