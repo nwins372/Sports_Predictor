@@ -25,6 +25,7 @@ const logoMap = {
   prime_video: amazonPrimeLogo,
   nfl: nflLogo,
   cbs: cbsLogo,
+  apple_tv: appletvLogo,
   
 };
 
@@ -105,6 +106,7 @@ return (
       <div className="sb-top">
         <div className="sb-title-container">
           <h3>{sport.toUpperCase()} Schedule</h3>
+          {/* Links to official schedules for NFL and NBA, -- Winston */}
           {sport === 'nfl' && (
             <a
               href="https://www.nfl.com/ways-to-watch/by-week/"

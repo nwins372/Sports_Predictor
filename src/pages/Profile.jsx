@@ -46,7 +46,6 @@ export default function Profile() {
         <NotificationToggle session={session} /> {/* Notification Preferences, SportsPreference, Password Change  - Winston */}
         <SportPrefsForm session={session} />
 
-        {/* Change Password */}
         <PasswordChange session={session} />
 
         

@@ -1,5 +1,3 @@
-// src/utils/broadcasts.js
-
 const nflConferenceMap = {
   // AFC Teams
   "Baltimore Ravens": "AFC", "Buffalo Bills": "AFC", "Cincinnati Bengals": "AFC",

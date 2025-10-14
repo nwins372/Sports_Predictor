@@ -1,12 +1,11 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 import { Resend } from 'npm:resend'
 
-// Import the schedule data directly from the JSON files
 import nflSchedule from './nfl25.json' assert { type: 'json' }
 import nbaSchedule from './nba25.json' assert { type: 'json' }
 import mlbSchedule from './mlb25.json' assert { type: 'json' }
 
-// Helper function to parse different date formats from your JSON files
+
 const parseDate = (game) => {
   const dateStr = game.DateUtc || game.DateUTC || game.dateUtc || game.date;
   return new Date(dateStr.replace(" ", "T"));
@@ -26,7 +25,7 @@ Deno.serve(async (req) => {
     );
     const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
 
-    // 1. GATHER UPCOMING GAMES
+    // 1. Upcoming games
     const today = new Date();
     const oneWeekFromNow = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 7);
     
@@ -45,7 +44,7 @@ Deno.serve(async (req) => {
       return new Response("No upcoming games this week.", { status: 200 });
     }
 
-    // 2. FETCH SUBSCRIBED USERS
+    // 2. search for subscribed users
     const { data: users, error: userError } = await supabaseClient
       .from('users')
       .select('email')
@@ -57,7 +56,7 @@ Deno.serve(async (req) => {
       return new Response("No users subscribed to weekly notifications.", { status: 200 });
     }
 
-    // 3. BUILD AND SEND EMAILS
+    // Construct and send emails
     const gamesHtml = upcomingGames.map(game => {
       const gameDate = parseDate(game);
       const dateString = gameDate.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
@@ -74,7 +73,7 @@ Deno.serve(async (req) => {
     `;
     
     await resend.emails.send({
-      from: 'Your Sports App <notifications@yourdomain.com>',
+      from: 'weeklynews@sportspredictor.com',
       to: users.map(u => u.email),
       subject: 'Your Upcoming Weekly Game Schedule',
       html: emailHtml,
