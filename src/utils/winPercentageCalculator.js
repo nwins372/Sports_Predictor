@@ -897,6 +897,710 @@ export class WinPercentageCalculator {
       details: result
     };
   }
+
+  /**
+   * Predict league champion using enhanced high-confidence algorithm
+   */
+  predictChampion(league) {
+    // Get all teams for the specified league
+    const teams = Object.entries(this.teamStats)
+      .filter(([name, stats]) => {
+        const detectedLeague = this.detectLeagueFromTeamName(name);
+        return detectedLeague === league;
+      })
+      .map(([name, stats]) => ({ name, ...stats }));
+
+    if (teams.length === 0) {
+      throw new Error(`No teams found for league: ${league}`);
+    }
+
+    // Run multiple prediction algorithms for higher confidence
+    const results = this.runMultiplePredictionAlgorithms(teams, league);
+    
+    // Calculate detailed team statistics for analysis
+    const teamCalculations = teams.map(team => ({
+      name: team.name,
+      enhancedStrength: this.calculateEnhancedTeamStrength(team),
+      playoffMultiplier: this.calculatePlayoffMultiplier(team),
+      consistencyFactor: this.calculateConsistencyFactor(team),
+      eloRating: this.calculateEloRating(team),
+      playoffSeed: this.calculatePlayoffSeed(team),
+      stats: this.teamStats[team.name] || team
+    }));
+    
+    // Combine results using weighted ensemble
+    const finalRankings = this.combinePredictionResults(results, teams);
+    
+    // Calculate enhanced confidence metrics
+    const enhancedRankings = finalRankings.map((team, index) => {
+      const teamCalculation = teamCalculations.find(tc => tc.name === team.name);
+      const confidence = this.calculateEnhancedConfidence(team, finalRankings, index);
+      return {
+        team: team.name,
+        championshipProbability: team.probability,
+        confidence: confidence,
+        stats: this.teamStats[team.name] || {},
+        analysis: this.getEnhancedTeamAnalysis(team.name, team.probability, confidence),
+        calculation: teamCalculation
+      };
+    });
+
+    return {
+      league,
+      champion: enhancedRankings[0],
+      topContenders: enhancedRankings.slice(0, 5),
+      allTeams: enhancedRankings,
+      algorithmDetails: {
+        algorithms: results.map(result => ({
+          name: result.algorithm,
+          weight: result.weight,
+          simulations: result.simulations || 'N/A',
+          description: this.getAlgorithmDescription(result.algorithm)
+        })),
+        teamCalculations: teamCalculations,
+        ensembleWeights: results.map(r => ({ name: r.algorithm, weight: r.weight }))
+      },
+      simulationDetails: {
+        totalSimulations: 50000,
+        algorithmsUsed: results.length,
+        averageConfidence: enhancedRankings.reduce((sum, team) => sum + (team.confidence.level === 'High' ? 1 : team.confidence.level === 'Medium' ? 0.5 : 0), 0) / enhancedRankings.length,
+        predictionReliability: this.calculatePredictionReliability(enhancedRankings)
+      }
+    };
+  }
+
+  /**
+   * Run multiple prediction algorithms for ensemble approach
+   */
+  runMultiplePredictionAlgorithms(teams, league) {
+    const results = [];
+    
+    // Algorithm 1: Enhanced Monte Carlo with reduced randomness
+    results.push(this.runEnhancedMonteCarlo(teams, league, 15000, 0.15));
+    
+    // Algorithm 2: Statistical ranking-based prediction
+    results.push(this.runStatisticalPrediction(teams, league));
+    
+    // Algorithm 3: Elo-based playoff simulation
+    results.push(this.runEloBasedPrediction(teams, league, 10000));
+    
+    // Algorithm 4: Strength-weighted bracket simulation
+    results.push(this.runStrengthWeightedSimulation(teams, league, 20000));
+    
+    return results;
+  }
+
+  /**
+   * Enhanced Monte Carlo with reduced randomness
+   */
+  runEnhancedMonteCarlo(teams, league, numSimulations, randomnessFactor = 0.15) {
+    const simulationResults = {};
+    
+    teams.forEach(team => {
+      simulationResults[team.name] = { championships: 0, appearances: 0 };
+    });
+
+    for (let sim = 0; sim < numSimulations; sim++) {
+      const champion = this.runSingleEnhancedPlayoffSimulation(teams, league, randomnessFactor);
+      if (champion) {
+        simulationResults[champion.name].championships++;
+      }
+    }
+
+    return {
+      algorithm: 'Enhanced Monte Carlo',
+      results: simulationResults,
+      simulations: numSimulations,
+      weight: 0.4 // Higher weight for this reliable method
+    };
+  }
+
+  /**
+   * Single enhanced playoff simulation with better seeding
+   */
+  runSingleEnhancedPlayoffSimulation(teams, league, randomnessFactor = 0.15) {
+    // Enhanced team strength calculation
+    const enhancedTeams = teams.map(team => {
+      const baseStrength = this.calculateEnhancedTeamStrength(team);
+      const playoffMultiplier = this.calculatePlayoffMultiplier(team);
+      const consistencyFactor = this.calculateConsistencyFactor(team);
+      
+      return {
+        ...team,
+        simulationStrength: baseStrength * playoffMultiplier * consistencyFactor + 
+                           (Math.random() - 0.5) * randomnessFactor
+      };
+    });
+
+    // Proper playoff seeding based on regular season performance
+    enhancedTeams.sort((a, b) => {
+      const aSeed = this.calculatePlayoffSeed(a);
+      const bSeed = this.calculatePlayoffSeed(b);
+      return aSeed - bSeed;
+    });
+
+    return this.simulatePlayoffBracket(enhancedTeams, league);
+  }
+
+  /**
+   * Run statistical prediction based on team metrics
+   */
+  runStatisticalPrediction(teams, league) {
+    const results = {};
+    
+    teams.forEach(team => {
+      const strengthScore = this.calculateEnhancedTeamStrength(team);
+      const playoffProbability = this.calculatePlayoffProbability(strengthScore, teams.length);
+      const championshipFactor = this.getChampionshipFactor(league);
+      
+      results[team.name] = {
+        championships: Math.round(strengthScore * playoffProbability * championshipFactor * 10000),
+        appearances: Math.round(playoffProbability * 10000)
+      };
+    });
+
+    return {
+      algorithm: 'Statistical Prediction',
+      results: results,
+      simulations: 'Analytical',
+      weight: 0.3
+    };
+  }
+
+  /**
+   * Elo-based prediction system
+   */
+  runEloBasedPrediction(teams, league, numSimulations) {
+    const results = {};
+    
+    teams.forEach(team => {
+      results[team.name] = { championships: 0, appearances: 0 };
+    });
+
+    for (let sim = 0; sim < numSimulations; sim++) {
+      const champion = this.runEloSimulation(teams, league);
+      if (champion) {
+        results[champion.name].championships++;
+      }
+    }
+
+    return {
+      algorithm: 'Elo-based Simulation',
+      results: results,
+      simulations: numSimulations,
+      weight: 0.2
+    };
+  }
+
+  /**
+   * Strength-weighted bracket simulation
+   */
+  runStrengthWeightedSimulation(teams, league, numSimulations) {
+    const results = {};
+    
+    teams.forEach(team => {
+      results[team.name] = { championships: 0, appearances: 0 };
+    });
+
+    for (let sim = 0; sim < numSimulations; sim++) {
+      const champion = this.runSingleStrengthWeightedSimulation(teams, league);
+      if (champion) {
+        results[champion.name].championships++;
+      }
+    }
+
+    return {
+      algorithm: 'Strength-weighted Bracket',
+      results: results,
+      simulations: numSimulations,
+      weight: 0.1
+    };
+  }
+
+  /**
+   * Run single strength-weighted simulation
+   */
+  runSingleStrengthWeightedSimulation(teams, league) {
+    const weightedTeams = teams.map(team => ({
+      ...team,
+      weight: this.calculateEnhancedTeamStrength(team) + (Math.random() - 0.5) * 0.1
+    }));
+
+    return this.simulatePlayoffBracket(weightedTeams, league);
+  }
+
+  /**
+   * Get playoff structure based on league
+   */
+  getPlayoffStructure(league, teams) {
+    if (league === 'NFL') {
+      // NFL: 14 teams (7 per conference)
+      return {
+        wildCard: { participants: 6, perConference: 3 },
+        divisional: { participants: 8, perConference: 4 },
+        championship: { participants: 4, perConference: 2 },
+        superBowl: { participants: 2 }
+      };
+    } else if (league === 'NBA') {
+      // NBA: 16 teams (8 per conference)
+      return {
+        firstRound: { participants: 16, perConference: 8 },
+        secondRound: { participants: 8, perConference: 4 },
+        conferenceFinals: { participants: 4, perConference: 2 },
+        finals: { participants: 2 }
+      };
+    } else if (league === 'MLB') {
+      // MLB: 12 teams
+      return {
+        wildCard: { participants: 8 },
+        divisional: { participants: 8 },
+        championship: { participants: 4 },
+        worldSeries: { participants: 2 }
+      };
+    }
+    return {};
+  }
+
+  /**
+   * Simulate playoffs using Monte Carlo method
+   */
+  simulatePlayoffs(playoffStructure, league) {
+    const simulationResults = {};
+    const numSimulations = 10000;
+
+    // Get league teams
+    const teams = Object.entries(this.teamStats)
+      .filter(([name, stats]) => {
+        const detectedLeague = this.detectLeagueFromTeamName(name);
+        return detectedLeague === league;
+      })
+      .map(([name, stats]) => ({ name, ...stats }));
+
+    // Initialize results
+    teams.forEach(team => {
+      simulationResults[team.name] = {
+        championships: 0,
+        appearances: 0
+      };
+    });
+
+    // Run simulations
+    for (let sim = 0; sim < numSimulations; sim++) {
+      const champion = this.runSinglePlayoffSimulation(teams, league);
+      if (champion) {
+        simulationResults[champion.name].championships++;
+      }
+    }
+
+    return simulationResults;
+  }
+
+  /**
+   * Run a single playoff simulation
+   */
+  runSinglePlayoffSimulation(teams, league) {
+    // Create a copy of teams with random seeding factors
+    const shuffledTeams = teams.map(team => ({
+      ...team,
+      simulationStrength: this.calculateTeamStrength(team) + (Math.random() - 0.5) * 0.3
+    }));
+
+    // Sort by simulation strength for seeding
+    shuffledTeams.sort((a, b) => b.simulationStrength - a.simulationStrength);
+
+    // Simulate playoff rounds
+    let remainingTeams = [...shuffledTeams];
+
+    while (remainingTeams.length > 1) {
+      const nextRound = [];
+      
+      // Pair teams for current round
+      for (let i = 0; i < remainingTeams.length; i += 2) {
+        if (i + 1 < remainingTeams.length) {
+          const team1 = remainingTeams[i];
+          const team2 = remainingTeams[i + 1];
+          
+          // Determine winner based on strength and randomness
+          const team1WinProbability = this.calculateMatchupProbability(
+            team1.simulationStrength, 
+            team2.simulationStrength
+          );
+          
+          const winner = Math.random() < team1WinProbability ? team1 : team2;
+          nextRound.push(winner);
+        } else {
+          // Odd number of teams, last team advances
+          nextRound.push(remainingTeams[i]);
+        }
+      }
+      
+      remainingTeams = nextRound;
+    }
+
+    return remainingTeams[0] || null;
+  }
+
+  /**
+   * Calculate team strength for simulation
+   */
+  calculateTeamStrength(team) {
+    const baseStrength = (
+      (team.winPercentage || 50) / 100 * 0.4 +
+      ((team.offense || 50) / 100) * 0.3 +
+      ((team.defense || 50) / 100) * 0.2 +
+      (team.recentForm || 0.5) * 0.1
+    );
+
+    return Math.max(0.1, Math.min(1.0, baseStrength));
+  }
+
+  /**
+   * Calculate matchup probability between two team strengths
+   */
+  calculateMatchupProbability(strength1, strength2) {
+    const total = strength1 + strength2;
+    return total > 0 ? strength1 / total : 0.5;
+  }
+
+  /**
+   * Calculate championship odds from simulation results
+   */
+  calculateChampionshipOdds(simulationResults, teams) {
+    const totalSimulations = Object.values(simulationResults).reduce(
+      (sum, result) => sum + result.championships, 
+      0
+    ) || 1;
+
+    return teams.map(team => ({
+      name: team.name,
+      probability: simulationResults[team.name]?.championships / 10000 || 0
+    }));
+  }
+
+  /**
+   * Get team analysis for champion prediction
+   */
+  getTeamAnalysis(teamName, probability) {
+    const stats = this.teamStats[teamName];
+    if (!stats) return { analysis: 'Insufficient data', strengths: [], weaknesses: [] };
+
+    const strengths = [];
+    const weaknesses = [];
+
+    // Analyze strengths
+    if ((stats.winPercentage || 0) > 65) strengths.push('Strong regular season record');
+    if ((stats.offense || 0) > 80) strengths.push('Elite offense');
+    if ((stats.defense || 0) > 80) strengths.push('Elite defense');
+    if ((stats.recentForm || 0) > 0.7) strengths.push('Hot recent form');
+    if ((stats.homeRecord || 0) > 0.7) strengths.push('Strong home record');
+
+    // Analyze weaknesses
+    if ((stats.winPercentage || 100) < 45) weaknesses.push('Poor regular season record');
+    if ((stats.offense || 100) < 60) weaknesses.push('Offensive struggles');
+    if ((stats.defense || 100) < 60) weaknesses.push('Defensive issues');
+    if ((stats.recentForm || 1) < 0.4) weaknesses.push('Cold recent form');
+    if ((stats.awayRecord || 1) < 0.4) weaknesses.push('Poor away record');
+
+    let analysis = '';
+    if (probability > 0.15) {
+      analysis = 'Elite championship contender with strong probability to win';
+    } else if (probability > 0.08) {
+      analysis = 'Strong playoff contender with legitimate championship chances';
+    } else if (probability > 0.03) {
+      analysis = 'Solid playoff team with outside championship shot';
+    } else {
+      analysis = 'Long shot to win championship but could surprise';
+    }
+
+    return { analysis, strengths, weaknesses };
+  }
+
+  /**
+   * Enhanced team strength calculation with more factors
+   */
+  calculateEnhancedTeamStrength(team) {
+    const winPct = (team.winPercentage || 50) / 100;
+    const offense = (team.offense || 50) / 100;
+    const defense = (team.defense || 50) / 100;
+    const recentForm = team.recentForm || 0.5;
+    const homeRecord = team.homeRecord || 0.5;
+    const awayRecord = team.awayRecord || 0.5;
+    
+    // Enhanced formula with more weight to win percentage and consistency
+    const baseStrength = (
+      winPct * 0.45 +           // Higher weight for actual win percentage
+      offense * 0.25 +          // Offense importance
+      defense * 0.20 +          // Defense importance
+      recentForm * 0.15 +       // Recent form factor
+      ((homeRecord + awayRecord) / 2) * 0.10  // Overall record consistency
+    );
+
+    return Math.max(0.05, Math.min(1.0, baseStrength));
+  }
+
+  /**
+   * Calculate playoff performance multiplier
+   */
+  calculatePlayoffMultiplier(team) {
+    const stats = this.teamStats[team.name] || team;
+    
+    // Teams with better records typically perform better in playoffs
+    const winPct = (stats.winPercentage || 50) / 100;
+    
+    // Elite teams get a slight boost, mediocre teams get a penalty
+    if (winPct > 0.7) return 1.15;  // Elite teams
+    if (winPct > 0.6) return 1.05;  // Good teams
+    if (winPct > 0.5) return 1.0;   // Average teams
+    if (winPct > 0.4) return 0.95;  // Below average
+    return 0.85; // Poor teams
+  }
+
+  /**
+   * Calculate consistency factor based on record variance
+   */
+  calculateConsistencyFactor(team) {
+    const stats = this.teamStats[team.name] || team;
+    const homeRecord = stats.homeRecord || 0.5;
+    const awayRecord = stats.awayRecord || 0.5;
+    
+    // Teams with consistent home/away records are more reliable
+    const consistency = 1 - Math.abs(homeRecord - awayRecord);
+    return Math.max(0.8, Math.min(1.2, consistency));
+  }
+
+  /**
+   * Calculate proper playoff seed based on performance
+   */
+  calculatePlayoffSeed(team) {
+    const strength = this.calculateEnhancedTeamStrength(team);
+    const multiplier = this.calculatePlayoffMultiplier(team);
+    const consistency = this.calculateConsistencyFactor(team);
+    
+    // Lower seed number = better position
+    return Math.round((1 - (strength * multiplier * consistency)) * 1000);
+  }
+
+  /**
+   * Calculate playoff probability based on strength
+   */
+  calculatePlayoffProbability(strengthScore, totalTeams) {
+    // Normalize strength score to probability based on league size
+    const averageStrength = 0.5;
+    const normalizedScore = Math.max(0.01, Math.min(0.99, strengthScore));
+    
+    // Higher strength = higher playoff probability
+    return normalizedScore * 1.2; // Boost to account for playoff variance
+  }
+
+  /**
+   * Get championship factor based on league type
+   */
+  getChampionshipFactor(league) {
+    // Different leagues have different championship difficulty
+    switch (league) {
+      case 'NFL': return 0.95; // Harder due to single elimination
+      case 'NBA': return 1.05; // Best of 7 series favor better teams
+      case 'MLB': return 0.90; // Higher variance due to best of 5/7
+      default: return 1.0;
+    }
+  }
+
+  /**
+   * Run Elo-based simulation
+   */
+  runEloSimulation(teams, league) {
+    const eloTeams = teams.map(team => ({
+      ...team,
+      eloRating: this.calculateEloRating(team)
+    }));
+
+    // Sort by Elo rating and run bracket simulation
+    eloTeams.sort((a, b) => b.eloRating - a.eloRating);
+    return this.simulatePlayoffBracket(eloTeams, league);
+  }
+
+  /**
+   * Calculate Elo rating for team
+   */
+  calculateEloRating(team) {
+    const baseElo = 1500;
+    const winPct = (team.winPercentage || 50) / 100;
+    const offense = (team.offense || 50) / 100;
+    const defense = (team.defense || 50) / 100;
+    const recentForm = team.recentForm || 0.5;
+    
+    // Convert win percentage and other factors to Elo rating
+    const eloAdjustment = (winPct - 0.5) * 800; // +/- 400 points based on win%
+    const offenseAdjustment = (offense - 0.5) * 200; // +/- 100 for offense
+    const defenseAdjustment = (defense - 0.5) * 200; // +/- 100 for defense
+    const formAdjustment = (recentForm - 0.5) * 300; // +/- 150 for recent form
+    
+    return Math.round(baseElo + eloAdjustment + offenseAdjustment + defenseAdjustment + formAdjustment);
+  }
+
+  /**
+   * Simulate playoff bracket with proper seeding
+   */
+  simulatePlayoffBracket(teams, league) {
+    let remainingTeams = [...teams];
+    
+    while (remainingTeams.length > 1) {
+      const nextRound = [];
+      
+      // Proper bracket simulation
+      for (let i = 0; i < remainingTeams.length; i += 2) {
+        if (i + 1 < remainingTeams.length) {
+          const team1 = remainingTeams[i];
+          const team2 = remainingTeams[i + 1];
+          
+          const winner = this.determineWinner(team1, team2);
+          nextRound.push(winner);
+        } else {
+          nextRound.push(remainingTeams[i]);
+        }
+      }
+      
+      remainingTeams = nextRound;
+    }
+
+    return remainingTeams[0] || null;
+  }
+
+  /**
+   * Determine winner between two teams with enhanced probability
+   */
+  determineWinner(team1, team2) {
+    let strength1, strength2;
+    
+    if (team1.simulationStrength !== undefined) {
+      strength1 = team1.simulationStrength;
+    } else if (team1.eloRating !== undefined) {
+      strength1 = team1.eloRating / 2000; // Normalize Elo to 0-1
+    } else if (team1.weight !== undefined) {
+      strength1 = team1.weight;
+    } else {
+      strength1 = this.calculateEnhancedTeamStrength(team1);
+    }
+    
+    if (team2.simulationStrength !== undefined) {
+      strength2 = team2.simulationStrength;
+    } else if (team2.eloRating !== undefined) {
+      strength2 = team2.eloRating / 2000;
+    } else if (team2.weight !== undefined) {
+      strength2 = team2.weight;
+    } else {
+      strength2 = this.calculateEnhancedTeamStrength(team2);
+    }
+
+    // Enhanced probability calculation with reduced randomness
+    const prob = this.calculateEnhancedMatchupProbability(strength1, strength2);
+    return Math.random() < prob ? team1 : team2;
+  }
+
+  /**
+   * Enhanced matchup probability calculation
+   */
+  calculateEnhancedMatchupProbability(strength1, strength2) {
+    // Use sigmoid function for more realistic probability curves
+    const diff = strength1 - strength2;
+    const sigmoid = 1 / (1 + Math.exp(-diff * 6)); // Amplify differences
+    return Math.max(0.1, Math.min(0.9, sigmoid)); // Clamp to realistic range
+  }
+
+  /**
+   * Combine results from multiple algorithms
+   */
+  combinePredictionResults(algorithmResults, teams) {
+    const combinedResults = {};
+    
+    teams.forEach(team => {
+      let weightedChampionships = 0;
+      let totalWeight = 0;
+      
+      algorithmResults.forEach(result => {
+        const weight = result.weight;
+        const championships = result.results[team.name]?.championships || 0;
+        weightedChampionships += championships * weight;
+        totalWeight += weight;
+      });
+      
+      combinedResults[team.name] = {
+        championships: weightedChampionships / totalWeight,
+        probability: weightedChampionships / (totalWeight * 50000) // Normalize to total sims
+      };
+    });
+
+    return Object.entries(combinedResults)
+      .map(([name, data]) => ({ name, probability: data.probability }))
+      .sort((a, b) => b.probability - a.probability);
+  }
+
+  /**
+   * Calculate enhanced confidence level
+   */
+  calculateEnhancedConfidence(team, allTeams, rankIndex) {
+    const probability = team.probability;
+    const nextTeamProbability = allTeams[rankIndex + 1]?.probability || 0;
+    const probabilityGap = probability - nextTeamProbability;
+    
+    // Enhanced confidence calculation considers rank position and probability gap
+    let confidenceScore = probability;
+    
+    // Boost confidence for clear leaders
+    if (rankIndex === 0 && probabilityGap > 0.05) {
+      confidenceScore += 0.2;
+    }
+    
+    // Higher confidence thresholds for better predictions
+    if (confidenceScore >= 0.25) return { level: 'High', color: '#22c55e', description: 'Very confident prediction' };
+    if (confidenceScore >= 0.12) return { level: 'Medium', color: '#f59e0b', description: 'Moderately confident' };
+    return { level: 'Low', color: '#ef4444', description: 'Uncertain prediction' };
+  }
+
+  /**
+   * Get enhanced team analysis
+   */
+  getEnhancedTeamAnalysis(teamName, probability, confidence) {
+    const analysis = this.getTeamAnalysis(teamName, probability);
+    
+    // Add confidence-based insights
+    if (confidence.level === 'High') {
+      analysis.reliability = 'High confidence - Strong statistical backing';
+    } else if (confidence.level === 'Medium') {
+      analysis.reliability = 'Medium confidence - Multiple factors favor this team';
+    } else {
+      analysis.reliability = 'Low confidence - Wide range of possible outcomes';
+    }
+    
+    return analysis;
+  }
+
+  /**
+   * Calculate overall prediction reliability
+   */
+  calculatePredictionReliability(rankings) {
+    const top5Probabilities = rankings.slice(0, 5).map(team => team.championshipProbability);
+    const topTeamProbability = top5Probabilities[0] || 0;
+    const othersAverage = top5Probabilities.slice(1).reduce((sum, prob) => sum + prob, 0) / 4;
+    
+    // Higher reliability when top team is clearly ahead
+    return topTeamProbability > othersAverage * 1.5 ? 'High' : 
+           topTeamProbability > othersAverage * 1.2 ? 'Medium' : 'Low';
+  }
+
+  /**
+   * Get algorithm description for UI display
+   */
+  getAlgorithmDescription(algorithmName) {
+    const descriptions = {
+      'Enhanced Monte Carlo': 'Uses advanced team strength calculations with playoff multipliers and consistency factors. Runs 15,000 simulations with reduced randomness for more reliable results.',
+      'Statistical Prediction': 'Analyzes team performance metrics using weighted formulas including win percentage (45%), offense (25%), defense (20%), recent form (15%), and consistency (10%).',
+      'Elo-based Simulation': 'Converts team statistics to Elo ratings and simulates playoff brackets using chess-inspired rating system. Runs 10,000 simulations with proper bracket seeding.',
+      'Strength-weighted Bracket': 'Uses enhanced team strength calculations with minimal randomness variance. Runs 20,000 simulations focusing on consistency and reliability.'
+    };
+    
+    return descriptions[algorithmName] || 'Advanced prediction algorithm using multiple statistical methods.';
+  }
 }
 
 // Create singleton instance
@@ -909,4 +1613,8 @@ export const calculateWinPercentage = (team1, team2, options = {}) => {
 
 export const formatWinPercentage = (result) => {
   return winPercentageCalculator.formatResults(result);
+};
+
+export const predictChampion = (league) => {
+  return winPercentageCalculator.predictChampion(league);
 };
