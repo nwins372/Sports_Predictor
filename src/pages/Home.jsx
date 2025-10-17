@@ -5,7 +5,7 @@ import { supabase } from "../supabaseClient";
 import { calculateWinPercentage, formatWinPercentage, predictChampion } from "../utils/winPercentageCalculator";
 import './Home.css';
 
-// Team data for each league - All 32 NFL teams, 30 NBA teams, 30 MLB teams
+// Team data for each league - All 32 NFL teams, 30 NBA teams, 30 MLB teams, 32 NHL teams, 29 MLS teams, 20 NCAA teams
 const TEAM_DATA = {
   NFL: [
     // AFC East
@@ -135,6 +135,105 @@ const TEAM_DATA = {
     { name: "San Francisco Giants", winRate: 0.52, conference: "NL West" },
     { name: "Arizona Diamondbacks", winRate: 0.48, conference: "NL West" },
     { name: "Colorado Rockies", winRate: 0.35, conference: "NL West" }
+  ],
+
+  NHL: [
+    // Eastern Conference - Atlantic
+    { name: "Boston Bruins", winRate: 0.84, conference: "Atlantic" },
+    { name: "Toronto Maple Leafs", winRate: 0.70, conference: "Atlantic" },
+    { name: "Tampa Bay Lightning", winRate: 0.61, conference: "Atlantic" },
+    { name: "Florida Panthers", winRate: 0.57, conference: "Atlantic" },
+    { name: "Detroit Red Wings", winRate: 0.56, conference: "Atlantic" },
+    { name: "Montreal Canadiens", winRate: 0.46, conference: "Atlantic" },
+    { name: "Buffalo Sabres", winRate: 0.51, conference: "Atlantic" },
+    { name: "Ottawa Senators", winRate: 0.47, conference: "Atlantic" },
+    
+    // Eastern Conference - Metropolitan
+    { name: "New York Rangers", winRate: 0.71, conference: "Metropolitan" },
+    { name: "Carolina Hurricanes", winRate: 0.71, conference: "Metropolitan" },
+    { name: "New Jersey Devils", winRate: 0.70, conference: "Metropolitan" },
+    { name: "New York Islanders", winRate: 0.59, conference: "Metropolitan" },
+    { name: "Pittsburgh Penguins", winRate: 0.54, conference: "Metropolitan" },
+    { name: "Washington Capitals", winRate: 0.49, conference: "Metropolitan" },
+    { name: "Philadelphia Flyers", winRate: 0.54, conference: "Metropolitan" },
+    { name: "Columbus Blue Jackets", winRate: 0.39, conference: "Metropolitan" },
+    
+    // Western Conference - Central
+    { name: "Dallas Stars", winRate: 0.71, conference: "Central" },
+    { name: "Colorado Avalanche", winRate: 0.67, conference: "Central" },
+    { name: "Winnipeg Jets", winRate: 0.68, conference: "Central" },
+    { name: "Nashville Predators", winRate: 0.61, conference: "Central" },
+    { name: "St. Louis Blues", winRate: 0.57, conference: "Central" },
+    { name: "Minnesota Wild", winRate: 0.53, conference: "Central" },
+    { name: "Arizona Coyotes", winRate: 0.47, conference: "Central" },
+    { name: "Chicago Blackhawks", winRate: 0.30, conference: "Central" },
+    
+    // Western Conference - Pacific
+    { name: "Vancouver Canucks", winRate: 0.69, conference: "Pacific" },
+    { name: "Edmonton Oilers", winRate: 0.65, conference: "Pacific" },
+    { name: "Los Angeles Kings", winRate: 0.62, conference: "Pacific" },
+    { name: "Vegas Golden Knights", winRate: 0.61, conference: "Pacific" },
+    { name: "Seattle Kraken", winRate: 0.49, conference: "Pacific" },
+    { name: "Calgary Flames", winRate: 0.49, conference: "Pacific" },
+    { name: "Anaheim Ducks", winRate: 0.35, conference: "Pacific" },
+    { name: "San Jose Sharks", winRate: 0.26, conference: "Pacific" }
+  ],
+
+  MLS: [
+    // Eastern Conference
+    { name: "Inter Miami CF", winRate: 0.74, conference: "Eastern" },
+    { name: "FC Cincinnati", winRate: 0.69, conference: "Eastern" },
+    { name: "Columbus Crew", winRate: 0.64, conference: "Eastern" },
+    { name: "Orlando City SC", winRate: 0.72, conference: "Eastern" },
+    { name: "Philadelphia Union", winRate: 0.63, conference: "Eastern" },
+    { name: "Atlanta United FC", winRate: 0.54, conference: "Eastern" },
+    { name: "New England Revolution", winRate: 0.68, conference: "Eastern" },
+    { name: "New York Red Bulls", winRate: 0.46, conference: "Eastern" },
+    { name: "New York City FC", winRate: 0.38, conference: "Eastern" },
+    { name: "DC United", winRate: 0.42, conference: "Eastern" },
+    { name: "Toronto FC", winRate: 0.29, conference: "Eastern" },
+    { name: "Charlotte FC", winRate: 0.42, conference: "Eastern" },
+    { name: "Chicago Fire FC", winRate: 0.42, conference: "Eastern" },
+    { name: "CF Montréal", winRate: 0.50, conference: "Eastern" },
+    
+    // Western Conference
+    { name: "Los Angeles FC", winRate: 0.58, conference: "Western" },
+    { name: "St. Louis City SC", winRate: 0.59, conference: "Western" },
+    { name: "Seattle Sounders FC", winRate: 0.61, conference: "Western" },
+    { name: "Houston Dynamo FC", winRate: 0.56, conference: "Western" },
+    { name: "Real Salt Lake", winRate: 0.54, conference: "Western" },
+    { name: "Vancouver Whitecaps FC", winRate: 0.50, conference: "Western" },
+    { name: "Sporting Kansas City", winRate: 0.46, conference: "Western" },
+    { name: "Portland Timbers", winRate: 0.46, conference: "Western" },
+    { name: "FC Dallas", winRate: 0.46, conference: "Western" },
+    { name: "Minnesota United FC", winRate: 0.42, conference: "Western" },
+    { name: "San Jose Earthquakes", winRate: 0.40, conference: "Western" },
+    { name: "Austin FC", winRate: 0.40, conference: "Western" },
+    { name: "Colorado Rapids", winRate: 0.21, conference: "Western" }
+  ],
+
+  NCAA: [
+    // Top 20 FBS Teams
+    { name: "Georgia Bulldogs", winRate: 0.93, conference: "SEC" },
+    { name: "Michigan Wolverines", winRate: 1.00, conference: "Big Ten" },
+    { name: "Alabama Crimson Tide", winRate: 0.86, conference: "SEC" },
+    { name: "Texas Longhorns", winRate: 0.86, conference: "SEC" },
+    { name: "Washington Huskies", winRate: 0.93, conference: "Big Ten" },
+    { name: "Oregon Ducks", winRate: 0.86, conference: "Big Ten" },
+    { name: "Ohio State Buckeyes", winRate: 0.85, conference: "Big Ten" },
+    { name: "Penn State Nittany Lions", winRate: 0.77, conference: "Big Ten" },
+    { name: "Florida State Seminoles", winRate: 0.93, conference: "ACC" },
+    { name: "LSU Tigers", winRate: 0.77, conference: "SEC" },
+    { name: "Oklahoma Sooners", winRate: 0.77, conference: "SEC" },
+    { name: "Missouri Tigers", winRate: 0.85, conference: "SEC" },
+    { name: "Ole Miss Rebels", winRate: 0.85, conference: "SEC" },
+    { name: "Notre Dame Fighting Irish", winRate: 0.77, conference: "Independent" },
+    { name: "Tennessee Volunteers", winRate: 0.69, conference: "SEC" },
+    { name: "Clemson Tigers", winRate: 0.69, conference: "ACC" },
+    { name: "Iowa Hawkeyes", winRate: 0.71, conference: "Big Ten" },
+    { name: "Utah Utes", winRate: 0.62, conference: "Big 12" },
+    { name: "Kansas State Wildcats", winRate: 0.69, conference: "Big 12" },
+    { name: "Arizona Wildcats", winRate: 0.77, conference: "Big 12" }
   ]
 };
 
@@ -353,7 +452,7 @@ function Home() {
                   <div className="form-group mb-4">
                     <label className="form-label">Select Sport:</label>
                     <div className="sport-buttons">
-                      {["NFL", "NBA", "MLB"].map(sport => (
+                      {["NFL", "NBA", "MLB", "NHL", "MLS", "NCAA"].map(sport => (
                         <button
                           key={sport}
                           className={`sport-btn ${selectedSport === sport ? 'active' : ''}`}
@@ -675,7 +774,7 @@ function Home() {
                   <div className="form-group mb-4">
                     <label className="form-label">Select League:</label>
                     <div className="sport-buttons">
-                      {["NFL", "NBA", "MLB"].map(league => (
+                      {["NFL", "NBA", "MLB", "NHL", "MLS", "NCAA"].map(league => (
                         <button
                           key={league}
                           className={`sport-btn ${championLeague === league ? 'active' : ''}`}

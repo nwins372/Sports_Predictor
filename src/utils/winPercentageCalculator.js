@@ -316,6 +316,488 @@ export const ENHANCED_TEAM_STATS = {
     offense: 85, defense: 78, specialTeams: 72, 
     recentForm: 0.65, homeRecord: 0.69, awayRecord: 0.44,
     conference: "American", division: "West"
+  },
+
+  // NHL Teams - Eastern Conference
+  "Boston Bruins": { 
+    wins: 65, losses: 12, winPercentage: 84.4, 
+    offense: 85, defense: 88, specialTeams: 82, 
+    recentForm: 0.85, homeRecord: 0.89, awayRecord: 0.80,
+    conference: "Eastern", division: "Atlantic"
+  },
+  "Toronto Maple Leafs": { 
+    wins: 50, losses: 21, winPercentage: 70.4, 
+    offense: 88, defense: 75, specialTeams: 78, 
+    recentForm: 0.75, homeRecord: 0.78, awayRecord: 0.63,
+    conference: "Eastern", division: "Atlantic"
+  },
+  "Tampa Bay Lightning": { 
+    wins: 46, losses: 30, winPercentage: 60.5, 
+    offense: 82, defense: 78, specialTeams: 80, 
+    recentForm: 0.65, homeRecord: 0.72, awayRecord: 0.50,
+    conference: "Eastern", division: "Atlantic"
+  },
+  "Florida Panthers": { 
+    wins: 42, losses: 32, winPercentage: 56.8, 
+    offense: 80, defense: 75, specialTeams: 75, 
+    recentForm: 0.6, homeRecord: 0.68, awayRecord: 0.46,
+    conference: "Eastern", division: "Atlantic"
+  },
+  "Detroit Red Wings": { 
+    wins: 41, losses: 32, winPercentage: 56.2, 
+    offense: 78, defense: 72, specialTeams: 70, 
+    recentForm: 0.58, homeRecord: 0.65, awayRecord: 0.48,
+    conference: "Eastern", division: "Atlantic"
+  },
+  "Montreal Canadiens": { 
+    wins: 30, losses: 36, winPercentage: 45.5, 
+    offense: 70, defense: 75, specialTeams: 68, 
+    recentForm: 0.45, homeRecord: 0.52, awayRecord: 0.39,
+    conference: "Eastern", division: "Atlantic"
+  },
+  "Buffalo Sabres": { 
+    wins: 39, losses: 37, winPercentage: 51.3, 
+    offense: 75, defense: 72, specialTeams: 72, 
+    recentForm: 0.52, homeRecord: 0.58, awayRecord: 0.45,
+    conference: "Eastern", division: "Atlantic"
+  },
+  "Ottawa Senators": { 
+    wins: 37, losses: 41, winPercentage: 47.4, 
+    offense: 72, defense: 70, specialTeams: 68, 
+    recentForm: 0.48, homeRecord: 0.55, awayRecord: 0.40,
+    conference: "Eastern", division: "Atlantic"
+  },
+  "New York Rangers": { 
+    wins: 55, losses: 23, winPercentage: 70.5, 
+    offense: 85, defense: 82, specialTeams: 80, 
+    recentForm: 0.8, homeRecord: 0.83, awayRecord: 0.58,
+    conference: "Eastern", division: "Metropolitan"
+  },
+  "Carolina Hurricanes": { 
+    wins: 52, losses: 21, winPercentage: 71.2, 
+    offense: 82, defense: 85, specialTeams: 78, 
+    recentForm: 0.78, homeRecord: 0.82, awayRecord: 0.61,
+    conference: "Eastern", division: "Metropolitan"
+  },
+  "New Jersey Devils": { 
+    wins: 52, losses: 22, winPercentage: 70.3, 
+    offense: 88, defense: 78, specialTeams: 75, 
+    recentForm: 0.76, homeRecord: 0.80, awayRecord: 0.61,
+    conference: "Eastern", division: "Metropolitan"
+  },
+  "New York Islanders": { 
+    wins: 39, losses: 27, winPercentage: 59.1, 
+    offense: 75, defense: 80, specialTeams: 72, 
+    recentForm: 0.62, homeRecord: 0.68, awayRecord: 0.51,
+    conference: "Eastern", division: "Metropolitan"
+  },
+  "Pittsburgh Penguins": { 
+    wins: 38, losses: 32, winPercentage: 54.3, 
+    offense: 78, defense: 75, specialTeams: 75, 
+    recentForm: 0.56, homeRecord: 0.62, awayRecord: 0.47,
+    conference: "Eastern", division: "Metropolitan"
+  },
+  "Washington Capitals": { 
+    wins: 35, losses: 37, winPercentage: 48.6, 
+    offense: 72, defense: 78, specialTeams: 70, 
+    recentForm: 0.48, homeRecord: 0.55, awayRecord: 0.42,
+    conference: "Eastern", division: "Metropolitan"
+  },
+  "Philadelphia Flyers": { 
+    wins: 38, losses: 33, winPercentage: 53.5, 
+    offense: 75, defense: 75, specialTeams: 72, 
+    recentForm: 0.54, homeRecord: 0.61, awayRecord: 0.46,
+    conference: "Eastern", division: "Metropolitan"
+  },
+  "Columbus Blue Jackets": { 
+    wins: 27, losses: 43, winPercentage: 38.6, 
+    offense: 68, defense: 70, specialTeams: 65, 
+    recentForm: 0.35, homeRecord: 0.42, awayRecord: 0.35,
+    conference: "Eastern", division: "Metropolitan"
+  },
+
+  // NHL Teams - Western Conference
+  "Dallas Stars": { 
+    wins: 52, losses: 21, winPercentage: 71.2, 
+    offense: 85, defense: 82, specialTeams: 80, 
+    recentForm: 0.78, homeRecord: 0.83, awayRecord: 0.60,
+    conference: "Western", division: "Central"
+  },
+  "Colorado Avalanche": { 
+    wins: 50, losses: 25, winPercentage: 66.7, 
+    offense: 88, defense: 80, specialTeams: 82, 
+    recentForm: 0.72, homeRecord: 0.78, awayRecord: 0.56,
+    conference: "Western", division: "Central"
+  },
+  "Winnipeg Jets": { 
+    wins: 52, losses: 24, winPercentage: 68.4, 
+    offense: 82, defense: 85, specialTeams: 78, 
+    recentForm: 0.75, homeRecord: 0.81, awayRecord: 0.57,
+    conference: "Western", division: "Central"
+  },
+  "Nashville Predators": { 
+    wins: 47, losses: 30, winPercentage: 61.0, 
+    offense: 78, defense: 78, specialTeams: 75, 
+    recentForm: 0.65, homeRecord: 0.72, awayRecord: 0.51,
+    conference: "Western", division: "Central"
+  },
+  "St. Louis Blues": { 
+    wins: 43, losses: 33, winPercentage: 56.6, 
+    offense: 80, defense: 75, specialTeams: 72, 
+    recentForm: 0.58, homeRecord: 0.65, awayRecord: 0.48,
+    conference: "Western", division: "Central"
+  },
+  "Minnesota Wild": { 
+    wins: 39, losses: 34, winPercentage: 53.4, 
+    offense: 75, defense: 78, specialTeams: 70, 
+    recentForm: 0.54, homeRecord: 0.61, awayRecord: 0.46,
+    conference: "Western", division: "Central"
+  },
+  "Arizona Coyotes": { 
+    wins: 36, losses: 41, winPercentage: 46.8, 
+    offense: 72, defense: 70, specialTeams: 68, 
+    recentForm: 0.46, homeRecord: 0.53, awayRecord: 0.41,
+    conference: "Western", division: "Central"
+  },
+  "Chicago Blackhawks": { 
+    wins: 23, losses: 53, winPercentage: 30.3, 
+    offense: 62, defense: 68, specialTeams: 60, 
+    recentForm: 0.25, homeRecord: 0.32, awayRecord: 0.28,
+    conference: "Western", division: "Central"
+  },
+  "Vancouver Canucks": { 
+    wins: 50, losses: 23, winPercentage: 68.5, 
+    offense: 85, defense: 82, specialTeams: 78, 
+    recentForm: 0.76, homeRecord: 0.81, awayRecord: 0.57,
+    conference: "Western", division: "Pacific"
+  },
+  "Edmonton Oilers": { 
+    wins: 49, losses: 27, winPercentage: 64.5, 
+    offense: 88, defense: 75, specialTeams: 82, 
+    recentForm: 0.72, homeRecord: 0.78, awayRecord: 0.52,
+    conference: "Western", division: "Pacific"
+  },
+  "Los Angeles Kings": { 
+    wins: 44, losses: 27, winPercentage: 62.0, 
+    offense: 80, defense: 82, specialTeams: 75, 
+    recentForm: 0.66, homeRecord: 0.72, awayRecord: 0.52,
+    conference: "Western", division: "Pacific"
+  },
+  "Vegas Golden Knights": { 
+    wins: 45, losses: 29, winPercentage: 60.8, 
+    offense: 82, defense: 78, specialTeams: 78, 
+    recentForm: 0.68, homeRecord: 0.74, awayRecord: 0.48,
+    conference: "Western", division: "Pacific"
+  },
+  "Seattle Kraken": { 
+    wins: 34, losses: 35, winPercentage: 49.3, 
+    offense: 75, defense: 72, specialTeams: 70, 
+    recentForm: 0.5, homeRecord: 0.57, awayRecord: 0.42,
+    conference: "Western", division: "Pacific"
+  },
+  "Calgary Flames": { 
+    wins: 38, losses: 39, winPercentage: 49.4, 
+    offense: 78, defense: 75, specialTeams: 72, 
+    recentForm: 0.52, homeRecord: 0.58, awayRecord: 0.41,
+    conference: "Western", division: "Pacific"
+  },
+  "Anaheim Ducks": { 
+    wins: 27, losses: 50, winPercentage: 35.1, 
+    offense: 68, defense: 65, specialTeams: 62, 
+    recentForm: 0.32, homeRecord: 0.39, awayRecord: 0.31,
+    conference: "Western", division: "Pacific"
+  },
+  "San Jose Sharks": { 
+    wins: 19, losses: 54, winPercentage: 26.0, 
+    offense: 60, defense: 62, specialTeams: 58, 
+    recentForm: 0.22, homeRecord: 0.28, awayRecord: 0.24,
+    conference: "Western", division: "Pacific"
+  },
+
+  // MLS Teams
+  "Inter Miami CF": { 
+    wins: 14, losses: 5, winPercentage: 73.7, 
+    offense: 88, defense: 78, specialTeams: 82, 
+    recentForm: 0.8, homeRecord: 0.82, awayRecord: 0.65,
+    conference: "Eastern", division: "MLS"
+  },
+  "FC Cincinnati": { 
+    wins: 20, losses: 9, winPercentage: 69.0, 
+    offense: 82, defense: 85, specialTeams: 80, 
+    recentForm: 0.75, homeRecord: 0.88, awayRecord: 0.52,
+    conference: "Eastern", division: "MLS"
+  },
+  "Columbus Crew": { 
+    wins: 16, losses: 9, winPercentage: 64.0, 
+    offense: 85, defense: 78, specialTeams: 78, 
+    recentForm: 0.7, homeRecord: 0.80, awayRecord: 0.50,
+    conference: "Eastern", division: "MLS"
+  },
+  "Orlando City SC": { 
+    wins: 18, losses: 7, winPercentage: 72.0, 
+    offense: 80, defense: 82, specialTeams: 75, 
+    recentForm: 0.72, homeRecord: 0.84, awayRecord: 0.61,
+    conference: "Eastern", division: "MLS"
+  },
+  "Philadelphia Union": { 
+    wins: 15, losses: 9, winPercentage: 62.5, 
+    offense: 78, defense: 80, specialTeams: 72, 
+    recentForm: 0.65, homeRecord: 0.75, awayRecord: 0.52,
+    conference: "Eastern", division: "MLS"
+  },
+  "Atlanta United FC": { 
+    wins: 13, losses: 11, winPercentage: 54.2, 
+    offense: 82, defense: 72, specialTeams: 70, 
+    recentForm: 0.58, homeRecord: 0.68, awayRecord: 0.42,
+    conference: "Eastern", division: "MLS"
+  },
+  "New England Revolution": { 
+    wins: 15, losses: 7, winPercentage: 68.2, 
+    offense: 80, defense: 78, specialTeams: 75, 
+    recentForm: 0.68, homeRecord: 0.77, awayRecord: 0.60,
+    conference: "Eastern", division: "MLS"
+  },
+  "New York Red Bulls": { 
+    wins: 11, losses: 13, winPercentage: 45.8, 
+    offense: 72, defense: 75, specialTeams: 68, 
+    recentForm: 0.48, homeRecord: 0.58, awayRecord: 0.35,
+    conference: "Eastern", division: "MLS"
+  },
+  "New York City FC": { 
+    wins: 9, losses: 15, winPercentage: 37.5, 
+    offense: 70, defense: 72, specialTeams: 65, 
+    recentForm: 0.38, homeRecord: 0.48, awayRecord: 0.28,
+    conference: "Eastern", division: "MLS"
+  },
+  "DC United": { 
+    wins: 10, losses: 14, winPercentage: 41.7, 
+    offense: 68, defense: 70, specialTeams: 62, 
+    recentForm: 0.42, homeRecord: 0.52, awayRecord: 0.33,
+    conference: "Eastern", division: "MLS"
+  },
+  "Toronto FC": { 
+    wins: 7, losses: 17, winPercentage: 29.2, 
+    offense: 65, defense: 68, specialTeams: 60, 
+    recentForm: 0.28, homeRecord: 0.38, awayRecord: 0.22,
+    conference: "Eastern", division: "MLS"
+  },
+  "Charlotte FC": { 
+    wins: 10, losses: 14, winPercentage: 41.7, 
+    offense: 70, defense: 72, specialTeams: 65, 
+    recentForm: 0.43, homeRecord: 0.53, awayRecord: 0.32,
+    conference: "Eastern", division: "MLS"
+  },
+  "Chicago Fire FC": { 
+    wins: 10, losses: 14, winPercentage: 41.7, 
+    offense: 68, defense: 70, specialTeams: 63, 
+    recentForm: 0.41, homeRecord: 0.51, awayRecord: 0.33,
+    conference: "Eastern", division: "MLS"
+  },
+  "CF Montréal": { 
+    wins: 12, losses: 12, winPercentage: 50.0, 
+    offense: 75, defense: 75, specialTeams: 70, 
+    recentForm: 0.52, homeRecord: 0.62, awayRecord: 0.40,
+    conference: "Eastern", division: "MLS"
+  },
+  "Los Angeles FC": { 
+    wins: 14, losses: 10, winPercentage: 58.3, 
+    offense: 85, defense: 78, specialTeams: 80, 
+    recentForm: 0.65, homeRecord: 0.75, awayRecord: 0.43,
+    conference: "Western", division: "MLS"
+  },
+  "St. Louis City SC": { 
+    wins: 17, losses: 12, winPercentage: 58.6, 
+    offense: 82, defense: 80, specialTeams: 78, 
+    recentForm: 0.68, homeRecord: 0.79, awayRecord: 0.40,
+    conference: "Western", division: "MLS"
+  },
+  "Seattle Sounders FC": { 
+    wins: 14, losses: 9, winPercentage: 60.9, 
+    offense: 78, defense: 82, specialTeams: 75, 
+    recentForm: 0.66, homeRecord: 0.77, awayRecord: 0.46,
+    conference: "Western", division: "MLS"
+  },
+  "Houston Dynamo FC": { 
+    wins: 14, losses: 11, winPercentage: 56.0, 
+    offense: 80, defense: 75, specialTeams: 72, 
+    recentForm: 0.6, homeRecord: 0.70, awayRecord: 0.43,
+    conference: "Western", division: "MLS"
+  },
+  "Real Salt Lake": { 
+    wins: 14, losses: 12, winPercentage: 53.8, 
+    offense: 78, defense: 77, specialTeams: 73, 
+    recentForm: 0.58, homeRecord: 0.68, awayRecord: 0.41,
+    conference: "Western", division: "MLS"
+  },
+  "Vancouver Whitecaps FC": { 
+    wins: 12, losses: 12, winPercentage: 50.0, 
+    offense: 75, defense: 75, specialTeams: 70, 
+    recentForm: 0.52, homeRecord: 0.62, awayRecord: 0.40,
+    conference: "Western", division: "MLS"
+  },
+  "Sporting Kansas City": { 
+    wins: 12, losses: 14, winPercentage: 46.2, 
+    offense: 72, defense: 72, specialTeams: 68, 
+    recentForm: 0.47, homeRecord: 0.57, awayRecord: 0.36,
+    conference: "Western", division: "MLS"
+  },
+  "Portland Timbers": { 
+    wins: 11, losses: 13, winPercentage: 45.8, 
+    offense: 73, defense: 73, specialTeams: 69, 
+    recentForm: 0.46, homeRecord: 0.56, awayRecord: 0.37,
+    conference: "Western", division: "MLS"
+  },
+  "FC Dallas": { 
+    wins: 11, losses: 13, winPercentage: 45.8, 
+    offense: 72, defense: 72, specialTeams: 68, 
+    recentForm: 0.46, homeRecord: 0.56, awayRecord: 0.37,
+    conference: "Western", division: "MLS"
+  },
+  "Minnesota United FC": { 
+    wins: 10, losses: 14, winPercentage: 41.7, 
+    offense: 70, defense: 70, specialTeams: 65, 
+    recentForm: 0.42, homeRecord: 0.52, awayRecord: 0.33,
+    conference: "Western", division: "MLS"
+  },
+  "San Jose Earthquakes": { 
+    wins: 10, losses: 15, winPercentage: 40.0, 
+    offense: 68, defense: 68, specialTeams: 63, 
+    recentForm: 0.4, homeRecord: 0.50, awayRecord: 0.32,
+    conference: "Western", division: "MLS"
+  },
+  "Austin FC": { 
+    wins: 10, losses: 15, winPercentage: 40.0, 
+    offense: 70, defense: 70, specialTeams: 65, 
+    recentForm: 0.41, homeRecord: 0.51, awayRecord: 0.31,
+    conference: "Western", division: "MLS"
+  },
+  "Colorado Rapids": { 
+    wins: 5, losses: 19, winPercentage: 20.8, 
+    offense: 62, defense: 65, specialTeams: 58, 
+    recentForm: 0.18, homeRecord: 0.28, awayRecord: 0.15,
+    conference: "Western", division: "MLS"
+  },
+
+  // NCAA Football (FBS) - Top Teams
+  "Georgia Bulldogs": { 
+    wins: 13, losses: 1, winPercentage: 92.9, 
+    offense: 88, defense: 92, specialTeams: 85, 
+    recentForm: 0.9, homeRecord: 0.95, awayRecord: 0.90,
+    conference: "SEC", division: "NCAA"
+  },
+  "Michigan Wolverines": { 
+    wins: 15, losses: 0, winPercentage: 100.0, 
+    offense: 85, defense: 90, specialTeams: 82, 
+    recentForm: 0.95, homeRecord: 1.0, awayRecord: 1.0,
+    conference: "Big Ten", division: "NCAA"
+  },
+  "Alabama Crimson Tide": { 
+    wins: 12, losses: 2, winPercentage: 85.7, 
+    offense: 90, defense: 88, specialTeams: 85, 
+    recentForm: 0.88, homeRecord: 0.93, awayRecord: 0.79,
+    conference: "SEC", division: "NCAA"
+  },
+  "Texas Longhorns": { 
+    wins: 12, losses: 2, winPercentage: 85.7, 
+    offense: 87, defense: 85, specialTeams: 80, 
+    recentForm: 0.87, homeRecord: 0.92, awayRecord: 0.79,
+    conference: "SEC", division: "NCAA"
+  },
+  "Washington Huskies": { 
+    wins: 14, losses: 1, winPercentage: 93.3, 
+    offense: 89, defense: 82, specialTeams: 78, 
+    recentForm: 0.92, homeRecord: 0.97, awayRecord: 0.90,
+    conference: "Big Ten", division: "NCAA"
+  },
+  "Oregon Ducks": { 
+    wins: 12, losses: 2, winPercentage: 85.7, 
+    offense: 91, defense: 83, specialTeams: 80, 
+    recentForm: 0.88, homeRecord: 0.93, awayRecord: 0.79,
+    conference: "Big Ten", division: "NCAA"
+  },
+  "Ohio State Buckeyes": { 
+    wins: 11, losses: 2, winPercentage: 84.6, 
+    offense: 88, defense: 87, specialTeams: 82, 
+    recentForm: 0.85, homeRecord: 0.91, awayRecord: 0.77,
+    conference: "Big Ten", division: "NCAA"
+  },
+  "Penn State Nittany Lions": { 
+    wins: 10, losses: 3, winPercentage: 76.9, 
+    offense: 82, defense: 88, specialTeams: 78, 
+    recentForm: 0.78, homeRecord: 0.84, awayRecord: 0.70,
+    conference: "Big Ten", division: "NCAA"
+  },
+  "Florida State Seminoles": { 
+    wins: 13, losses: 1, winPercentage: 92.9, 
+    offense: 86, defense: 85, specialTeams: 80, 
+    recentForm: 0.9, homeRecord: 0.95, awayRecord: 0.90,
+    conference: "ACC", division: "NCAA"
+  },
+  "LSU Tigers": { 
+    wins: 10, losses: 3, winPercentage: 76.9, 
+    offense: 89, defense: 80, specialTeams: 75, 
+    recentForm: 0.77, homeRecord: 0.83, awayRecord: 0.70,
+    conference: "SEC", division: "NCAA"
+  },
+  "Oklahoma Sooners": { 
+    wins: 10, losses: 3, winPercentage: 76.9, 
+    offense: 87, defense: 82, specialTeams: 78, 
+    recentForm: 0.78, homeRecord: 0.84, awayRecord: 0.70,
+    conference: "SEC", division: "NCAA"
+  },
+  "Missouri Tigers": { 
+    wins: 11, losses: 2, winPercentage: 84.6, 
+    offense: 85, defense: 86, specialTeams: 80, 
+    recentForm: 0.84, homeRecord: 0.90, awayRecord: 0.78,
+    conference: "SEC", division: "NCAA"
+  },
+  "Ole Miss Rebels": { 
+    wins: 11, losses: 2, winPercentage: 84.6, 
+    offense: 88, defense: 82, specialTeams: 78, 
+    recentForm: 0.85, homeRecord: 0.91, awayRecord: 0.78,
+    conference: "SEC", division: "NCAA"
+  },
+  "Notre Dame Fighting Irish": { 
+    wins: 10, losses: 3, winPercentage: 76.9, 
+    offense: 83, defense: 85, specialTeams: 80, 
+    recentForm: 0.77, homeRecord: 0.83, awayRecord: 0.70,
+    conference: "Independent", division: "NCAA"
+  },
+  "Tennessee Volunteers": { 
+    wins: 9, losses: 4, winPercentage: 69.2, 
+    offense: 86, defense: 80, specialTeams: 75, 
+    recentForm: 0.7, homeRecord: 0.77, awayRecord: 0.62,
+    conference: "SEC", division: "NCAA"
+  },
+  "Clemson Tigers": { 
+    wins: 9, losses: 4, winPercentage: 69.2, 
+    offense: 82, defense: 84, specialTeams: 78, 
+    recentForm: 0.7, homeRecord: 0.76, awayRecord: 0.62,
+    conference: "ACC", division: "NCAA"
+  },
+  "Iowa Hawkeyes": { 
+    wins: 10, losses: 4, winPercentage: 71.4, 
+    offense: 75, defense: 90, specialTeams: 85, 
+    recentForm: 0.72, homeRecord: 0.79, awayRecord: 0.64,
+    conference: "Big Ten", division: "NCAA"
+  },
+  "Utah Utes": { 
+    wins: 8, losses: 5, winPercentage: 61.5, 
+    offense: 78, defense: 82, specialTeams: 75, 
+    recentForm: 0.62, homeRecord: 0.69, awayRecord: 0.54,
+    conference: "Big 12", division: "NCAA"
+  },
+  "Kansas State Wildcats": { 
+    wins: 9, losses: 4, winPercentage: 69.2, 
+    offense: 82, defense: 81, specialTeams: 76, 
+    recentForm: 0.7, homeRecord: 0.76, awayRecord: 0.62,
+    conference: "Big 12", division: "NCAA"
+  },
+  "Arizona Wildcats": { 
+    wins: 10, losses: 3, winPercentage: 76.9, 
+    offense: 85, defense: 83, specialTeams: 78, 
+    recentForm: 0.77, homeRecord: 0.83, awayRecord: 0.70,
+    conference: "Big 12", division: "NCAA"
   }
 };
 
@@ -827,6 +1309,24 @@ export class WinPercentageCalculator {
         offense: 75, defense: 75, specialTeams: 70,
         recentForm: 0.5, homeRecord: 0.52, awayRecord: 0.48,
         conference: "Unknown", division: "Unknown"
+      },
+      NHL: {
+        wins: 41, losses: 41, winPercentage: 50.0,
+        offense: 75, defense: 75, specialTeams: 70,
+        recentForm: 0.5, homeRecord: 0.55, awayRecord: 0.45,
+        conference: "Unknown", division: "Unknown"
+      },
+      MLS: {
+        wins: 12, losses: 12, winPercentage: 50.0,
+        offense: 75, defense: 75, specialTeams: 70,
+        recentForm: 0.5, homeRecord: 0.58, awayRecord: 0.42,
+        conference: "Unknown", division: "Unknown"
+      },
+      NCAA: {
+        wins: 7, losses: 6, winPercentage: 53.8,
+        offense: 80, defense: 80, specialTeams: 75,
+        recentForm: 0.55, homeRecord: 0.60, awayRecord: 0.48,
+        conference: "Unknown", division: "Unknown"
       }
     };
 
@@ -838,6 +1338,48 @@ export class WinPercentageCalculator {
    */
   detectLeagueFromTeamName(teamName) {
     const name = teamName.toLowerCase();
+    
+    // NHL team indicators
+    if (name.includes('bruins') || name.includes('maple leafs') || name.includes('lightning') ||
+        name.includes('panthers') || name.includes('red wings') || name.includes('canadiens') ||
+        name.includes('sabres') || name.includes('senators') || name.includes('rangers') ||
+        name.includes('hurricanes') || name.includes('devils') || name.includes('islanders') ||
+        name.includes('penguins') || name.includes('capitals') || name.includes('flyers') ||
+        name.includes('blue jackets') || name.includes('stars') || name.includes('avalanche') ||
+        name.includes('jets') || name.includes('predators') || name.includes('blues') ||
+        name.includes('wild') || name.includes('coyotes') || name.includes('blackhawks') ||
+        name.includes('canucks') || name.includes('oilers') || name.includes('kings') ||
+        name.includes('golden knights') || name.includes('kraken') || name.includes('flames') ||
+        name.includes('ducks') || name.includes('sharks')) {
+      return 'NHL';
+    }
+    
+    // MLS team indicators
+    if (name.includes('inter miami') || name.includes('fc cincinnati') || name.includes('crew') ||
+        name.includes('orlando city') || name.includes('union') || name.includes('atlanta united') ||
+        name.includes('revolution') || name.includes('red bulls') || name.includes('nycfc') ||
+        name.includes('dc united') || name.includes('toronto fc') || name.includes('charlotte fc') ||
+        name.includes('fire fc') || name.includes('montréal') || name.includes('lafc') ||
+        name.includes('st. louis city') || name.includes('sounders') || name.includes('dynamo') ||
+        name.includes('real salt lake') || name.includes('whitecaps') || name.includes('sporting kc') ||
+        name.includes('timbers') || name.includes('fc dallas') || name.includes('minnesota united') ||
+        name.includes('earthquakes') || name.includes('austin fc') || name.includes('rapids')) {
+      return 'MLS';
+    }
+    
+    // NCAA Football team indicators
+    if (name.includes('bulldogs') || name.includes('wolverines') || name.includes('crimson tide') ||
+        name.includes('longhorns') || name.includes('huskies') || name.includes('ducks') ||
+        name.includes('buckeyes') || name.includes('nittany lions') || name.includes('seminoles') ||
+        name.includes('tigers') || name.includes('sooners') || name.includes('rebels') ||
+        name.includes('fighting irish') || name.includes('volunteers') || name.includes('hawkeyes') ||
+        name.includes('utes') || name.includes('wildcats') || name.includes('trojans') ||
+        name.includes('badgers') || name.includes('cornhuskers') || name.includes('spartans') ||
+        name.includes('boilermakers') || name.includes('terrapins') || name.includes('hokies') ||
+        name.includes('cardinal') || name.includes('cougars') || name.includes('beavers') ||
+        name.includes('aggies') || name.includes('razorbacks') || name.includes('gamecocks')) {
+      return 'NCAA';
+    }
     
     // NBA team indicators
     if (name.includes('lakers') || name.includes('warriors') || name.includes('celtics') || 
@@ -1156,6 +1698,30 @@ export class WinPercentageCalculator {
         divisional: { participants: 8 },
         championship: { participants: 4 },
         worldSeries: { participants: 2 }
+      };
+    } else if (league === 'NHL') {
+      // NHL: 16 teams (8 per conference)
+      return {
+        firstRound: { participants: 16, perConference: 8 },
+        secondRound: { participants: 8, perConference: 4 },
+        conferenceFinals: { participants: 4, perConference: 2 },
+        stanleyCup: { participants: 2 }
+      };
+    } else if (league === 'MLS') {
+      // MLS: 18 teams (9 per conference)
+      return {
+        firstRound: { participants: 18, perConference: 9 },
+        conferenceSemifinals: { participants: 8, perConference: 4 },
+        conferenceFinals: { participants: 4, perConference: 2 },
+        mlsCup: { participants: 2 }
+      };
+    } else if (league === 'NCAA') {
+      // NCAA Football: 4-team playoff (expanding to 12)
+      return {
+        firstRound: { participants: 12 },
+        quarterfinals: { participants: 8 },
+        semifinals: { participants: 4 },
+        nationalChampionship: { participants: 2 }
       };
     }
     return {};
