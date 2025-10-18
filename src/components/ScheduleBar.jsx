@@ -3,6 +3,7 @@ import { useMemo, useState, useEffect } from "react";
 import nflSchedule from "../assets/nfl25.json";
 import nbaSchedule from "../assets/nba25.json";
 import mlbSchedule from "../assets/mlb25.json";
+
 import espnLogo from "../assets/ESPN_logo.png";
 import foxLogo from "../assets/fox_logo.png";
 import nbcLogo from "../assets/nbc_logo.png";
@@ -13,7 +14,6 @@ import nflLogo from "../assets/NFL_logo.png";
 import nbaLogo from "../assets/NBA_logo.png";
 import appletvLogo from "../assets/appletv_logo.png";
 import cbsLogo from "../assets/CBS_logo.png";
-import { getBroadcastInfo } from "../utils/broadcasts";
 import { useTodaysGames } from "../hooks/useScoreUpdates";
 import { getBroadcastInfo } from "../utils/broadcasts";
 import "./ScheduleBar.css";
