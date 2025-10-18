@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 import ScheduleBar from "../components/ScheduleBar";
 import { supabase } from "../supabaseClient";
-import { calculateWinPercentage, formatWinPercentage } from "../utils/winPercentageCalculator";
+import { calculateWinPercentage, formatWinPercentage, predictChampion } from "../utils/winPercentageCalculator";
 import './Home.css';
 
-// Team data for each league - All 32 NFL teams, 30 NBA teams, 30 MLB teams
+// Team data for each league - All 32 NFL teams, 30 NBA teams, 30 MLB teams, 32 NHL teams, 29 MLS teams, 20 NCAA teams
 const TEAM_DATA = {
   NFL: [
     // AFC East
@@ -135,6 +135,105 @@ const TEAM_DATA = {
     { name: "San Francisco Giants", winRate: 0.52, conference: "NL West" },
     { name: "Arizona Diamondbacks", winRate: 0.48, conference: "NL West" },
     { name: "Colorado Rockies", winRate: 0.35, conference: "NL West" }
+  ],
+
+  NHL: [
+    // Eastern Conference - Atlantic
+    { name: "Boston Bruins", winRate: 0.84, conference: "Atlantic" },
+    { name: "Toronto Maple Leafs", winRate: 0.70, conference: "Atlantic" },
+    { name: "Tampa Bay Lightning", winRate: 0.61, conference: "Atlantic" },
+    { name: "Florida Panthers", winRate: 0.57, conference: "Atlantic" },
+    { name: "Detroit Red Wings", winRate: 0.56, conference: "Atlantic" },
+    { name: "Montreal Canadiens", winRate: 0.46, conference: "Atlantic" },
+    { name: "Buffalo Sabres", winRate: 0.51, conference: "Atlantic" },
+    { name: "Ottawa Senators", winRate: 0.47, conference: "Atlantic" },
+    
+    // Eastern Conference - Metropolitan
+    { name: "New York Rangers", winRate: 0.71, conference: "Metropolitan" },
+    { name: "Carolina Hurricanes", winRate: 0.71, conference: "Metropolitan" },
+    { name: "New Jersey Devils", winRate: 0.70, conference: "Metropolitan" },
+    { name: "New York Islanders", winRate: 0.59, conference: "Metropolitan" },
+    { name: "Pittsburgh Penguins", winRate: 0.54, conference: "Metropolitan" },
+    { name: "Washington Capitals", winRate: 0.49, conference: "Metropolitan" },
+    { name: "Philadelphia Flyers", winRate: 0.54, conference: "Metropolitan" },
+    { name: "Columbus Blue Jackets", winRate: 0.39, conference: "Metropolitan" },
+    
+    // Western Conference - Central
+    { name: "Dallas Stars", winRate: 0.71, conference: "Central" },
+    { name: "Colorado Avalanche", winRate: 0.67, conference: "Central" },
+    { name: "Winnipeg Jets", winRate: 0.68, conference: "Central" },
+    { name: "Nashville Predators", winRate: 0.61, conference: "Central" },
+    { name: "St. Louis Blues", winRate: 0.57, conference: "Central" },
+    { name: "Minnesota Wild", winRate: 0.53, conference: "Central" },
+    { name: "Arizona Coyotes", winRate: 0.47, conference: "Central" },
+    { name: "Chicago Blackhawks", winRate: 0.30, conference: "Central" },
+    
+    // Western Conference - Pacific
+    { name: "Vancouver Canucks", winRate: 0.69, conference: "Pacific" },
+    { name: "Edmonton Oilers", winRate: 0.65, conference: "Pacific" },
+    { name: "Los Angeles Kings", winRate: 0.62, conference: "Pacific" },
+    { name: "Vegas Golden Knights", winRate: 0.61, conference: "Pacific" },
+    { name: "Seattle Kraken", winRate: 0.49, conference: "Pacific" },
+    { name: "Calgary Flames", winRate: 0.49, conference: "Pacific" },
+    { name: "Anaheim Ducks", winRate: 0.35, conference: "Pacific" },
+    { name: "San Jose Sharks", winRate: 0.26, conference: "Pacific" }
+  ],
+
+  MLS: [
+    // Eastern Conference
+    { name: "Inter Miami CF", winRate: 0.74, conference: "Eastern" },
+    { name: "FC Cincinnati", winRate: 0.69, conference: "Eastern" },
+    { name: "Columbus Crew", winRate: 0.64, conference: "Eastern" },
+    { name: "Orlando City SC", winRate: 0.72, conference: "Eastern" },
+    { name: "Philadelphia Union", winRate: 0.63, conference: "Eastern" },
+    { name: "Atlanta United FC", winRate: 0.54, conference: "Eastern" },
+    { name: "New England Revolution", winRate: 0.68, conference: "Eastern" },
+    { name: "New York Red Bulls", winRate: 0.46, conference: "Eastern" },
+    { name: "New York City FC", winRate: 0.38, conference: "Eastern" },
+    { name: "DC United", winRate: 0.42, conference: "Eastern" },
+    { name: "Toronto FC", winRate: 0.29, conference: "Eastern" },
+    { name: "Charlotte FC", winRate: 0.42, conference: "Eastern" },
+    { name: "Chicago Fire FC", winRate: 0.42, conference: "Eastern" },
+    { name: "CF Montréal", winRate: 0.50, conference: "Eastern" },
+    
+    // Western Conference
+    { name: "Los Angeles FC", winRate: 0.58, conference: "Western" },
+    { name: "St. Louis City SC", winRate: 0.59, conference: "Western" },
+    { name: "Seattle Sounders FC", winRate: 0.61, conference: "Western" },
+    { name: "Houston Dynamo FC", winRate: 0.56, conference: "Western" },
+    { name: "Real Salt Lake", winRate: 0.54, conference: "Western" },
+    { name: "Vancouver Whitecaps FC", winRate: 0.50, conference: "Western" },
+    { name: "Sporting Kansas City", winRate: 0.46, conference: "Western" },
+    { name: "Portland Timbers", winRate: 0.46, conference: "Western" },
+    { name: "FC Dallas", winRate: 0.46, conference: "Western" },
+    { name: "Minnesota United FC", winRate: 0.42, conference: "Western" },
+    { name: "San Jose Earthquakes", winRate: 0.40, conference: "Western" },
+    { name: "Austin FC", winRate: 0.40, conference: "Western" },
+    { name: "Colorado Rapids", winRate: 0.21, conference: "Western" }
+  ],
+
+  NCAA: [
+    // Top 20 FBS Teams
+    { name: "Georgia Bulldogs", winRate: 0.93, conference: "SEC" },
+    { name: "Michigan Wolverines", winRate: 1.00, conference: "Big Ten" },
+    { name: "Alabama Crimson Tide", winRate: 0.86, conference: "SEC" },
+    { name: "Texas Longhorns", winRate: 0.86, conference: "SEC" },
+    { name: "Washington Huskies", winRate: 0.93, conference: "Big Ten" },
+    { name: "Oregon Ducks", winRate: 0.86, conference: "Big Ten" },
+    { name: "Ohio State Buckeyes", winRate: 0.85, conference: "Big Ten" },
+    { name: "Penn State Nittany Lions", winRate: 0.77, conference: "Big Ten" },
+    { name: "Florida State Seminoles", winRate: 0.93, conference: "ACC" },
+    { name: "LSU Tigers", winRate: 0.77, conference: "SEC" },
+    { name: "Oklahoma Sooners", winRate: 0.77, conference: "SEC" },
+    { name: "Missouri Tigers", winRate: 0.85, conference: "SEC" },
+    { name: "Ole Miss Rebels", winRate: 0.85, conference: "SEC" },
+    { name: "Notre Dame Fighting Irish", winRate: 0.77, conference: "Independent" },
+    { name: "Tennessee Volunteers", winRate: 0.69, conference: "SEC" },
+    { name: "Clemson Tigers", winRate: 0.69, conference: "ACC" },
+    { name: "Iowa Hawkeyes", winRate: 0.71, conference: "Big Ten" },
+    { name: "Utah Utes", winRate: 0.62, conference: "Big 12" },
+    { name: "Kansas State Wildcats", winRate: 0.69, conference: "Big 12" },
+    { name: "Arizona Wildcats", winRate: 0.77, conference: "Big 12" }
   ]
 };
 
@@ -147,6 +246,11 @@ function Home() {
   const [isSimulating, setIsSimulating] = useState(false);
   const [userFavoriteTeams, setUserFavoriteTeams] = useState({});
   const [loading, setLoading] = useState(false);
+  
+  // Champion Predictor state
+  const [championLeague, setChampionLeague] = useState("NFL");
+  const [championPrediction, setChampionPrediction] = useState(null);
+  const [isPredicting, setIsPredicting] = useState(false);
 
   // Set up session management
   useEffect(() => {
@@ -290,6 +394,27 @@ function Home() {
     setTeam2("");
   };
 
+  const handleChampionPrediction = () => {
+    setIsPredicting(true);
+    
+    // Simulate loading time
+    setTimeout(() => {
+      try {
+        const result = predictChampion(championLeague);
+        setChampionPrediction(result);
+      } catch (error) {
+        console.error('Error predicting champion:', error);
+        alert("Error predicting champion. Please try again.");
+      }
+      
+      setIsPredicting(false);
+    }, 2000);
+  };
+
+  const resetChampionPrediction = () => {
+    setChampionPrediction(null);
+  };
+
   return (
     <>
       <div id="app-container">
@@ -327,7 +452,7 @@ function Home() {
                   <div className="form-group mb-4">
                     <label className="form-label">Select Sport:</label>
                     <div className="sport-buttons">
-                      {["NFL", "NBA", "MLB"].map(sport => (
+                      {["NFL", "NBA", "MLB", "NHL", "MLS", "NCAA"].map(sport => (
                         <button
                           key={sport}
                           className={`sport-btn ${selectedSport === sport ? 'active' : ''}`}
@@ -611,6 +736,263 @@ function Home() {
                           </div>
                         </div>
                       </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Champion Predictor Section */}
+          <div className="row justify-content-center mt-5">
+            <div className="col-lg-8">
+              <div className="champion-predictor">
+                <h2 className="text-center mb-4" style={{ color: "#e63946", fontFamily: "Arial Black, sans-serif" }}>
+                  🏆 Champion Predictor
+                </h2>
+                
+                <div className="prediction-info mb-4">
+                  <h5 style={{ color: "#60a5fa", marginBottom: "1rem" }}>How We Predict Champions:</h5>
+                  <div className="info-grid">
+                    <div className="info-item">
+                      <strong>📊 Team Strength Analysis:</strong> Analyze each team's win percentage, offense, defense, and recent form
+                    </div>
+                    <div className="info-item">
+                      <strong>🏈 Multi-Algorithm Simulation:</strong> Run 50,000+ simulations using 4 different algorithms: Enhanced Monte Carlo, Statistical Analysis, Elo Ratings, and Strength-weighted Brackets
+                    </div>
+                    <div className="info-item">
+                      <strong>🎯 High-Confidence Prediction:</strong> Combine multiple algorithms with weighted ensemble methods for maximum prediction accuracy and confidence
+                    </div>
+                    <div className="info-item">
+                      <strong>🏆 Champion Selection:</strong> Rank teams by championship probability to predict the most likely winner
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="champion-form">
+                  {/* League Selection */}
+                  <div className="form-group mb-4">
+                    <label className="form-label">Select League:</label>
+                    <div className="sport-buttons">
+                      {["NFL", "NBA", "MLB", "NHL", "MLS", "NCAA"].map(league => (
+                        <button
+                          key={league}
+                          className={`sport-btn ${championLeague === league ? 'active' : ''}`}
+                          onClick={() => {
+                            setChampionLeague(league);
+                            resetChampionPrediction();
+                          }}
+                        >
+                          {league}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Predict Button */}
+                  <div className="text-center mt-4">
+                    <button 
+                      className="btn btn-success btn-lg champion-btn"
+                      onClick={handleChampionPrediction}
+                      disabled={isPredicting}
+                      style={{
+                        backgroundColor: '#22c55e',
+                        borderColor: '#22c55e',
+                        fontSize: '1.2rem',
+                        padding: '12px 30px'
+                      }}
+                    >
+                      {isPredicting ? "Analyzing Teams..." : `Predict ${championLeague} Champion`}
+                    </button>
+                    <div className="prediction-info mt-2">
+                      <small className="text-muted">
+                        Running 50,000+ simulations across 4 algorithms for high-confidence prediction
+                      </small>
+                    </div>
+                  </div>
+
+                  {/* Champion Prediction Results */}
+                  {championPrediction && (
+                    <div className="champion-results mt-4">
+                      <h4 className="text-center mb-4">🏆 {championPrediction.league} Champion Prediction</h4>
+                      
+                      {/* Champion Display */}
+                      <div className="champion-winner text-center mb-4">
+                        <div className="champion-badge">
+                          <h2 className="champion-name">{championPrediction.champion.team}</h2>
+                          <div className="champion-probability">
+                            {(championPrediction.champion.championshipProbability * 100).toFixed(1)}% Chance to Win
+                          </div>
+                          <div className="champion-confidence">
+                            <span 
+                              className="confidence-badge" 
+                              style={{ backgroundColor: championPrediction.champion.confidence.color }}
+                            >
+                              {championPrediction.champion.confidence.level} Confidence
+                            </span>
+                          </div>
+                        </div>
+                        <p className="champion-analysis mt-3">
+                          {championPrediction.champion.analysis.analysis}
+                        </p>
+                      </div>
+
+                      {/* Top Contenders */}
+                      <div className="top-contenders">
+                        <h5 className="mb-3">Top 5 Contenders:</h5>
+                        <div className="contenders-list">
+                          {championPrediction.topContenders.map((contender, index) => (
+                            <div key={contender.team} className="contender-item">
+                              <div className="contender-rank">#{index + 1}</div>
+                              <div className="contender-info">
+                                <h6 className="contender-name">{contender.team}</h6>
+                                <div className="contender-stats">
+                                  <span className="win-percentage">Win%: {contender.stats.winPercentage || 'N/A'}%</span>
+                                  <span className="offense">Offense: {contender.stats.offense || 'N/A'}/100</span>
+                                  <span className="defense">Defense: {contender.stats.defense || 'N/A'}/100</span>
+                                </div>
+                              </div>
+                              <div className="contender-probability">
+                                {(contender.championshipProbability * 100).toFixed(1)}%
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Simulation Details */}
+                      <div className="simulation-details mt-4">
+                        <h6>Simulation Details:</h6>
+                        <div className="details-grid">
+                          <div className="detail-item">
+                            <strong>Total Simulations:</strong> {championPrediction.simulationDetails.totalSimulations.toLocaleString()}
+                          </div>
+                          <div className="detail-item">
+                            <strong>Algorithms Used:</strong> {championPrediction.simulationDetails.algorithmsUsed}
+                          </div>
+                          <div className="detail-item">
+                            <strong>Prediction Reliability:</strong> {championPrediction.simulationDetails.predictionReliability}
+                          </div>
+                          <div className="detail-item">
+                            <strong>Average Confidence:</strong> {championPrediction.simulationDetails.averageConfidence > 0.7 ? 'High' : championPrediction.simulationDetails.averageConfidence > 0.4 ? 'Medium' : 'Low'}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Algorithm Breakdown */}
+                      {championPrediction.algorithmDetails && (
+                        <div className="algorithm-breakdown mt-4">
+                          <h5 className="mb-3">🔬 How We Calculate Champion Predictions</h5>
+                          
+                          {/* Algorithm Details */}
+                          <div className="algorithms-section mb-4">
+                            <h6 className="mb-3">📊 Multi-Algorithm Ensemble Approach</h6>
+                            <div className="algorithms-list">
+                              {championPrediction.algorithmDetails.algorithms.map((algorithm, index) => (
+                                <div key={algorithm.name} className="algorithm-item">
+                                  <div className="algorithm-header">
+                                    <h6 className="algorithm-name">{algorithm.name}</h6>
+                                    <div className="algorithm-meta">
+                                      <span className="algorithm-weight">Weight: {Math.round(algorithm.weight * 100)}%</span>
+                                      <span className="algorithm-sims">
+                                        {typeof algorithm.simulations === 'number' 
+                                          ? `${algorithm.simulations.toLocaleString()} sims` 
+                                          : algorithm.simulations}
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <p className="algorithm-description">{algorithm.description}</p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Team Calculation Breakdown */}
+                          <div className="champion-calculation mb-4">
+                            <h6 className="mb-3">🏆 Champion Calculation Breakdown: {championPrediction.champion.team}</h6>
+                            {championPrediction.champion.calculation && (
+                              <div className="calculation-details">
+                                <div className="calculation-grid">
+                                  <div className="calc-item">
+                                    <strong>Enhanced Strength Score:</strong>
+                                    <span>{(championPrediction.champion.calculation.enhancedStrength * 100).toFixed(1)}/100</span>
+                                  </div>
+                                  <div className="calc-item">
+                                    <strong>Playoff Multiplier:</strong>
+                                    <span>{championPrediction.champion.calculation.playoffMultiplier.toFixed(3)}x</span>
+                                  </div>
+                                  <div className="calc-item">
+                                    <strong>Consistency Factor:</strong>
+                                    <span>{championPrediction.champion.calculation.consistencyFactor.toFixed(3)}</span>
+                                  </div>
+                                  <div className="calc-item">
+                                    <strong>Elo Rating:</strong>
+                                    <span>{championPrediction.champion.calculation.eloRating}</span>
+                                  </div>
+                                  <div className="calc-item">
+                                    <strong>Playoff Seed:</strong>
+                                    <span>#{championPrediction.champion.calculation.playoffSeed}</span>
+                                  </div>
+                                </div>
+
+                                {/* Formula Breakdown */}
+                                <div className="formula-breakdown mt-3">
+                                  <h6>📐 Enhanced Strength Formula:</h6>
+                                  <div className="formula-explanation">
+                                    <p><strong>Base Strength =</strong> (Win% × 45%) + (Offense × 25%) + (Defense × 20%) + (Recent Form × 15%) + (Consistency × 10%)</p>
+                                    <p><strong>Final Strength =</strong> Base Strength × Playoff Multiplier × Consistency Factor</p>
+                                    <div className="formula-values">
+                                      <div className="formula-value">
+                                        <span>Win Percentage:</span>
+                                        <span>{championPrediction.champion.calculation.stats.winPercentage || 'N/A'}% × 0.45</span>
+                                      </div>
+                                      <div className="formula-value">
+                                        <span>Offense Rating:</span>
+                                        <span>{(championPrediction.champion.calculation.stats.offense || 0) / 100} × 0.25</span>
+                                      </div>
+                                      <div className="formula-value">
+                                        <span>Defense Rating:</span>
+                                        <span>{(championPrediction.champion.calculation.stats.defense || 0) / 100} × 0.20</span>
+                                      </div>
+                                      <div className="formula-value">
+                                        <span>Recent Form:</span>
+                                        <span>{(championPrediction.champion.calculation.stats.recentForm || 0).toFixed(3)} × 0.15</span>
+                                      </div>
+                                      <div className="formula-value">
+                                        <span>Consistency:</span>
+                                        <span>{championPrediction.champion.calculation.consistencyFactor.toFixed(3)} × 0.10</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+
+                          {/* Ensemble Weights */}
+                          <div className="ensemble-weights">
+                            <h6 className="mb-3">⚖️ Ensemble Weight Distribution</h6>
+                            <div className="weights-grid">
+                              {championPrediction.algorithmDetails.ensembleWeights.map((weight) => (
+                                <div key={weight.name} className="weight-item">
+                                  <span className="weight-name">{weight.name}</span>
+                                  <div className="weight-bar">
+                                    <div 
+                                      className="weight-fill" 
+                                      style={{ width: `${weight.weight * 100}%` }}
+                                    ></div>
+                                  </div>
+                                  <span className="weight-percentage">{Math.round(weight.weight * 100)}%</span>
+                                </div>
+                              ))}
+                            </div>
+                            <p className="ensemble-explanation mt-2">
+                              <strong>Ensemble Method:</strong> Each algorithm contributes to the final prediction based on its weight. 
+                              The results are combined using weighted averaging for maximum accuracy and confidence.
+                            </p>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
