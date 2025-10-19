@@ -3,7 +3,11 @@ import { useMemo, useState, useEffect } from "react";
 import nflSchedule from "../assets/nfl25.json";
 import nbaSchedule from "../assets/nba25.json";
 import mlbSchedule from "../assets/mlb25.json";
+import { useTodaysGames } from "../hooks/useScoreUpdates";
+import { getBroadcastInfo } from "../utils/broadcasts";
+import "./ScheduleBar.css";
 
+// Logo Imports
 import espnLogo from "../assets/ESPN_logo.png";
 import foxLogo from "../assets/fox_logo.png";
 import nbcLogo from "../assets/nbc_logo.png";
@@ -14,10 +18,8 @@ import nflLogo from "../assets/NFL_logo.png";
 import nbaLogo from "../assets/NBA_logo.png";
 import appletvLogo from "../assets/appletv_logo.png";
 import cbsLogo from "../assets/CBS_logo.png";
-import { useTodaysGames } from "../hooks/useScoreUpdates";
-import { getBroadcastInfo } from "../utils/broadcasts";
-import "./ScheduleBar.css";
 
+// Logo Mapping
 const logoMap = {
   fox: foxLogo,
   espn: espnLogo,
@@ -36,115 +38,89 @@ const parseUtc = (s) => new Date(s.replace(" ", "T"));
 const fmtLocalTime = (isoUtc) =>
   new Date(isoUtc).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
 
+
+function buildBroadcastUrl(key) {
+  if (!key || typeof key !== 'string') return null;
+  const name = key.trim().toLowerCase();
+  const map = {
+    espn: 'https://www.espn.com/watch',
+    fox: 'https://www.foxsports.com',
+    nbc: 'https://www.peacocktv.com/sports', 
+    cbs: 'https://www.paramountplus.com', 
+    abc: 'https://abc.com/watch-live',
+    tnt: 'https://www.tntdrama.com/watchtnt',
+    prime_video: 'https://www.primevideo.com',
+    apple_tv: 'https://tv.apple.com',
+  };
+  return map[name] || null;
+}
+
 export default function ScheduleBar({ session }) {
-  const [sport, setSport] = useState(() => {
-    const saved = localStorage.getItem("selectedSport");
-    return saved ? saved.toLowerCase() : 'all';
-  });
-
-  const [filterState, setFilterState] = useState(() => {
-    return localStorage.getItem("filterState") || "sports";
-  });
-
-  const sportForLive = sport === 'all' ? 'nfl' : sport;
-  const { todaysGames: liveGames } = useTodaysGames(sportForLive);
-  const [userPrefs, setUserPrefs] = useState({});
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const updateSport = (e) => {
-      if (e.detail) {
-        setSport(String(e.detail).toLowerCase());
-      } else {
-        const saved = localStorage.getItem("selectedSport") || "nfl";
-        setSport(String(saved).toLowerCase());
-      }
-    };
-    window.addEventListener("sportChanged", updateSport);
-    return () => window.removeEventListener("sportChanged", updateSport);
-  }, []);
-
-  useEffect(() => {
-    const updateFilterState = (e) => {
-      if (e.detail) {
-        setFilterState(e.detail);
-      } else {
-        const saved = localStorage.getItem("filterState") || "none";
-        setFilterState(saved);
-      }
-    };
-    window.addEventListener("filterChanged", updateFilterState);
-    return () => window.removeEventListener("filterChanged", updateFilterState);
-  }, []);
-
-  // Your Supabase logic for user prefs would go here
-  // ...
-
+  const [sport, setSport] = useState(() => localStorage.getItem("selectedSport")?.toLowerCase() || 'all');
+  const [filterState, setFilterState] = useState(() => localStorage.getItem("filterState") || "sports");
+  const { todaysGames: liveGames } = useTodaysGames(sport === 'all' ? 'nfl' : sport);
+  const [userPrefs, setUserPrefs] = useState({ sports_prefs: ["nfl", "nba", "mlb"], favorite_teams: {} });
   const [selected, setSelected] = useState(() => {
     const x = new Date();
     x.setHours(0, 0, 0, 0);
     return x;
   });
 
-  let scheduleData;
-  if (sport === "all" || filterState === "none") {
-    scheduleData = [
-      ...nflSchedule.map(g => ({ ...g, sport: "nfl" })),
-      ...nbaSchedule.map(g => ({ ...g, sport: "nba" })),
-      ...mlbSchedule.map(g => ({ ...g, sport: "mlb" })),
-    ];
-  } else {
-    switch (sport) {
-      case "nfl": scheduleData = nflSchedule; break;
-      case "nba": scheduleData = nbaSchedule; break;
-      case "mlb": scheduleData = mlbSchedule; break;
-      default: scheduleData = []; break;
-    }
-  }
+  // Persist state to localStorage
+  useEffect(() => {
+    const updateSport = (e) => setSport(String(e.detail || localStorage.getItem("selectedSport") || "nfl").toLowerCase());
+    window.addEventListener("sportChanged", updateSport);
+    return () => window.removeEventListener("sportChanged", updateSport);
+  }, []);
 
-  const favTeams = userPrefs.favorite_teams?.[sport.toUpperCase()] || userPrefs.favorite_teams?.[sport] || [];
-  let filteredScheduleData = scheduleData;
-  if (filterState === 'favorites' && favTeams.length > 0) {
-    filteredScheduleData = scheduleData.filter(
-      game => favTeams.includes(game.HomeTeam) || favTeams.includes(game.AwayTeam)
-    );
-  }
-
-  function getGameDateKey(game, dateBuilt = null) {
-    let d = dateBuilt || parseUtc(game.DateUtc || game.DateUTC || game.dateUtc || game.date);
-    if (isNaN(d)) return null;
-    return ymd(new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate())));
-  }
-
-  function buildGameCard(game, key, i = null, sportOverride = null) {
-    return {
-      id: game.MatchNumber ?? game.GameId ?? `${key}-${game.AwayTeam}-${game.HomeTeam}-${i}`,
-      homeTeam: game.HomeTeam ?? "Home",
-      awayTeam: game.AwayTeam ?? "Away",
-      homeScore: game.HomeTeamScore ?? null,
-      awayScore: game.AwayTeamScore ?? null,
-      venue: game.Location ?? null,
-      dateUtcISO: (parseUtc(game.DateUtc || game.DateUTC || game.dateUtc || game.date) || new Date()).toISOString(),
-      sport: sportOverride || game.sport,
-    };
-  }
-
+  useEffect(() => {
+    const updateFilterState = (e) => setFilterState(e.detail || localStorage.getItem("filterState") || "none");
+    window.addEventListener("filterChanged", updateFilterState);
+    return () => window.removeEventListener("filterChanged", updateFilterState);
+  }, []);
+  
+  // Logic to process schedule data
   const processGames = useMemo(() => {
+    let baseSchedule;
+    if (sport === "all" || filterState === "none") {
+      baseSchedule = [
+        ...nflSchedule.map(g => ({ ...g, sport: "nfl" })),
+        ...nbaSchedule.map(g => ({ ...g, sport: "nba" })),
+        ...mlbSchedule.map(g => ({ ...g, sport: "mlb" })),
+      ];
+    } else {
+      switch (sport) {
+        case "nfl": baseSchedule = nflSchedule.map(g => ({ ...g, sport: "nfl" })); break;
+        case "nba": baseSchedule = nbaSchedule.map(g => ({ ...g, sport: "nba" })); break;
+        case "mlb": baseSchedule = mlbSchedule.map(g => ({ ...g, sport: "mlb" })); break;
+        default: baseSchedule = []; break;
+      }
+    }
+    const favTeams = userPrefs.favorite_teams?.[sport.toUpperCase()] || [];
+    const schedule = (filterState === 'favorites' && favTeams.length > 0)
+      ? baseSchedule.filter(g => favTeams.includes(g.HomeTeam) || favTeams.includes(g.AwayTeam))
+      : baseSchedule;
+
     const gameCards = {};
-    filteredScheduleData.forEach((game, i) => {
-      const key = getGameDateKey(game);
-      if (!key) return;
-      (gameCards[key] ||= []).push(buildGameCard(game, key, i));
+    schedule.forEach((g, i) => {
+      const d = parseUtc(g.DateUtc || g.DateUTC || g.dateUtc || g.date);
+      if (isNaN(d)) return;
+      const key = ymd(new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate())));
+      (gameCards[key] ||= []).push({
+        id: g.MatchNumber ?? g.GameId ?? `${key}-${g.AwayTeam}-${g.HomeTeam}-${i}`,
+        homeTeam: g.HomeTeam ?? "Home", awayTeam: g.AwayTeam ?? "Away",
+        homeScore: g.HomeTeamScore ?? null, awayScore: g.AwayTeamScore ?? null,
+        venue: g.Location ?? null, dateUtcISO: d.toISOString(), sport: g.sport,
+      });
     });
     return gameCards;
-  }, [filteredScheduleData]);
+  }, [sport, filterState, userPrefs.favorite_teams]);
 
   const key = ymd(selected);
   const games = processGames[key] || [];
 
   function renderGameCard(g, sportKey) {
     const broadcastInfo = getBroadcastInfo(g, sportKey);
-
     return (
       <a key={g.id} href={`/game/${sportKey}/${g.id}`} className="sb-card">
         <div className="sb-card-top">
@@ -168,18 +144,19 @@ export default function ScheduleBar({ session }) {
           <span className="sb-watch-title">Where to Watch:</span>
           <div className="sb-broadcasters">
             {Array.isArray(broadcastInfo) ? (
-              broadcastInfo.map(key => 
-                logoMap[key] ? (
-                  <img
-                    key={key}
-                    src={logoMap[key]}
-                    alt={`${key} logo`}
-                    className="sb-logo"
-                  />
+              broadcastInfo.map(key => {
+                const url = buildBroadcastUrl(key);
+                const content = logoMap[key] ? (
+                  <img src={logoMap[key]} alt={`${key} logo`} className="sb-logo"/>
                 ) : (
-                  <span key={key} className="sb-broadcast-text">{key.toUpperCase()}</span>
-                )
-              )
+                  <span className="sb-broadcast-text">{key.toUpperCase()}</span>
+                );
+                return url ? (
+                  <a key={key} href={url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>{content}</a>
+                ) : (
+                  <div key={key}>{content}</div>
+                );
+              })
             ) : (
               <span className="sb-broadcast-text">{broadcastInfo || 'TBD'}</span>
             )}
@@ -189,24 +166,13 @@ export default function ScheduleBar({ session }) {
     );
   }
 
-  // Temporary hardcoded prefs until session is fixed
-  userPrefs.sports_prefs = ["nfl", "nba", "mlb"];
-
   return (
     <div className="sb-wrap">
       <div className="sb-top">
         <div className="sb-title-container">
-          <h3>{sport.toUpperCase()} Schedule</h3>
-          {sport === 'nfl' && (
-            <a href="https://www.nfl.com/ways-to-watch/by-week/" target="_blank" rel="noopener noreferrer" className="sb-nfl-link">
-              Official Ways to Watch
-            </a>
-          )}
-          {sport === 'nba' && (
-            <a href="https://www.nba.com/schedule" target="_blank" rel="noopener noreferrer" className="sb-nfl-link">
-              Official Schedule
-            </a>
-          )}
+          <h3>{sport === 'all' || filterState === 'none' ? 'All Sports' : sport.toUpperCase()} Schedule</h3>
+          {sport === 'nfl' && <a href="https://www.nfl.com/ways-to-watch/by-week/" target="_blank" rel="noopener noreferrer" className="sb-nfl-link">Official Ways to Watch</a>}
+          {sport === 'nba' && <a href="https://www.nba.com/schedule" target="_blank" rel="noopener noreferrer" className="sb-nfl-link">Official Schedule</a>}
         </div>
 
         <div className="sb-actions" style={{ display: "flex", gap: 12, alignItems: "center" }}>
@@ -218,7 +184,6 @@ export default function ScheduleBar({ session }) {
                 const newFilter = e.target.value;
                 setFilterState(newFilter);
                 localStorage.setItem("filterState", newFilter);
-                window.dispatchEvent(new CustomEvent("filterChanged", { detail: newFilter }));
               }}
               className="sb-date-input"
             >
@@ -234,10 +199,9 @@ export default function ScheduleBar({ session }) {
               <select
                 value={sport}
                 onChange={(e) => {
-                  const newSport = String(e.target.value).toLowerCase();
+                  const newSport = e.target.value.toLowerCase();
                   setSport(newSport);
                   localStorage.setItem("selectedSport", newSport);
-                  window.dispatchEvent(new CustomEvent("sportChanged", { detail: newSport }));
                 }}
                 className="sb-date-input"
               >
@@ -253,11 +217,7 @@ export default function ScheduleBar({ session }) {
             <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
               <span style={{ fontSize: 12, opacity: 0.8 }}>Date</span>
               <div className="sb-date-display" onClick={() => document.getElementById('date-picker').showPicker()}>
-                {selected.toLocaleDateString(undefined, {
-                  weekday: "short",
-                  month: "short",
-                  day: "numeric",
-                })}
+                {selected.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" })}
               </div>
               <input
                 id="date-picker"
@@ -278,18 +238,14 @@ export default function ScheduleBar({ session }) {
         {games.length === 0 ? (
           <div className="sb-state">No games on this date.</div>
         ) : (
-          (sport === "all" || filterState === "none") ? (
-            Object.entries(
-              games.reduce((acc, g) => {
-                (acc[g.sport] ||= []).push(g);
-                return acc;
-              }, {})
-            ).flatMap(([sportKey, sportGames]) => [
-              <h4 key={sportKey + "-header"} className="sb-sport-header">{sportKey.toUpperCase()}</h4>,
-              ...sportGames.map((g) => renderGameCard(g, sportKey))
-            ])
+          (filterState === "none") ? (
+            Object.entries(games.reduce((acc, g) => { (acc[g.sport] ||= []).push(g); return acc; }, {}))
+              .flatMap(([sportKey, sportGames]) => [
+                <h4 key={sportKey + "-header"} className="sb-sport-header">{sportKey.toUpperCase()}</h4>,
+                ...sportGames.map((g) => renderGameCard(g, sportKey))
+              ])
           ) : (
-            games.map((g) => renderGameCard(g, sport))
+            games.map((g) => renderGameCard(g, g.sport || sport))
           )
         )}
       </div>

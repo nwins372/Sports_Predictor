@@ -1,32 +1,29 @@
-/* Container Styling */
-.sb-wrap{
+
+.sb-wrap {
   background: #0b1220;
-  color:white;
-  padding:10px 12px;
-
-}
-
-.sb-top{
-  display:grid;
-  grid-template-columns:1fr auto;
-  align-items:center;
-  gap:10px;
-  margin-bottom:10px;
-}
-
-.sb-date-input{
   color: white;
-  background:#111827;
-  border:1px solid #2f3747; 
-  padding:8px 8px;
+  padding: 10px 12px;
+}
+
+.sb-top {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.sb-date-input {
+  color: white;
+  background: #111827;
+  border: 1px solid #2f3747;
+  padding: 8px 8px;
 }
 
 select.sb-date-input {
   border-radius: 6px;
-  padding-right: 24px; 
+  padding-right: 24px;
 }
-
-/* Date picker styling */
 .sb-date-picker-container {
   position: relative;
 }
@@ -72,102 +69,100 @@ select.sb-date-input {
 }
 
 /* Cards styling */
-.sb-cards{
-  overflow-x:auto;
-  display:flex;
-  gap:8px;
-  padding-bottom:4px;
+.sb-cards {
+  overflow-x: auto;
+  display: flex;
+  gap: 8px;
+  padding-bottom: 12px; 
 }
-.sb-card{
+
+.sb-card {
   flex: 0 0 auto;
-  min-width:200px;
+  min-width: 200px;
   background: linear-gradient(135deg, #1e293b, #334155);
-  border:1px solid #475569;
-  border-radius:12px;
-  padding:12px 16px;
-  color:white;
-  text-decoration:none;
-  transition:all 0.3s ease;
-  box-shadow:0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 1px solid #475569;
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.sb-card:hover{
-  transform:translateY(-2px);
-  box-shadow:0 8px 25px rgba(0, 0, 0, 0.3);
-  border-color:#3b82f6;
+.sb-card:hover {
+  transform: translateY(1px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-color: #3b82f6;
 }
 
-.sb-cards::-webkit-scrollbar{
-  height: 8px;
-}
-.sb-cards::-webkit-scrollbar-thumb{
-  background: #263143;
-  border-radius: 8px;
-}
-
-.sb-card-top{
-  display:flex;
-  justify-content:space-between;
-  gap:8px;
-  align-items:center;
-  margin-bottom:4px;
+.sb-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 4px;
 }
 
 /* Card text style */
-.sb-teams{ 
-    display:flex; align-items:center; gap:8px; 
-}
-.sb-team{ 
-    font-size:20px; 
-    font-weight:900; 
-    color:#e5e7eb;
-    text-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
-    font-size:16px; font-weight:900; 
-}
-.sb-right{ 
-    text-align:right; 
-}
-.sb-time{ 
-    font-size:12px; 
-    font-weight:700;
-    color:#ffffff;
-    background:linear-gradient(135deg, #3b82f6, #2563eb);
-    padding:6px 8px;
-    border-radius:8px;
-    border:2px solid #3b82f6;
-    text-shadow:0 2px 4px rgba(0, 0, 0, 0.5);
-    box-shadow:0 4px 12px rgba(59, 130, 246, 0.4);
-    transition:all 0.3s ease;
+.sb-teams {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.sb-time:hover{
-    background:linear-gradient(135deg, #2563eb, #1d4ed8);
-    border-color:#2563eb;
-    transform:scale(1.08);
-    box-shadow:0 6px 20px rgba(59, 130, 246, 0.6);
-    font-size:12px; 
-}
-.sb-score{ 
-    font-size:12px; 
-    font-weight:800;
-    color:#ffffff;
-    background:linear-gradient(135deg, #22c55e, #16a34a);
-    padding:6px 10px;
-    border-radius:8px;
-    border:2px solid #22c55e;
-    text-shadow:0 2px 4px rgba(0, 0, 0, 0.5);
-    box-shadow:0 4px 12px rgba(34, 197, 94, 0.4);
-    transition:all 0.3s ease;
+.sb-team {
+  font-size: 16px;
+  font-weight: 900;
+  color: #e5e7eb;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.sb-score:hover{
-    background:linear-gradient(135deg, #16a34a, #15803d);
-    border-color:#16a34a;
-    transform:scale(1.08);
-    box-shadow:0 6px 20px rgba(34, 197, 94, 0.6);
+.sb-right {
+  text-align: right;
 }
-.sb-venue{ 
-    font-size:12px; 
+
+.sb-time {
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 2px solid #3b82f6;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+  transition: all 0.3s ease;
+}
+
+.sb-time:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  border-color: #2563eb;
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+}
+
+.sb-score {
+  font-size: 12px;
+  font-weight: 800;
+  color: #ffffff;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 2px solid #22c55e;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+  transition: all 0.3s ease;
+}
+
+.sb-score:hover {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  border-color: #16a34a;
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.6);
+}
+
+.sb-venue {
+  font-size: 12px;
 }
 
 .sb-watch-section {
@@ -195,7 +190,7 @@ select.sb-date-input {
   border-radius: 4px;
   padding: 2px;
   background-color: #fff;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .sb-broadcast-text {
@@ -224,4 +219,20 @@ select.sb-date-input {
   background-color: #d0e3ff;
   text-decoration: none;
   color: #0a58ca;
+}
+.sb-cards::-webkit-scrollbar {
+  height: 12px;
+}
+
+.sb-cards::-webkit-scrollbar-track {
+  background: #111827;
+  border-radius: 10px;
+}
+.sb-cards::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 10px;
+  border: 2px solid #111827; 
+}
+.sb-cards::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
 }

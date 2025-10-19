@@ -1,12 +1,12 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2' 
 import { createTransport } from "npm:nodemailer"; 
 
-// Import schedule data (no changes here)
+// Import schedule data 
 import nflSchedule from './nfl25.json' assert { type: 'json' }
 import nbaSchedule from './nba25.json' assert { type: 'json' }
 import mlbSchedule from './mlb25.json' assert { type: 'json' }
 
-// parseDate helper (no changes here)
+// parseDate helper
 const parseDate = (game) => {
   const dateStr = game.DateUtc || game.DateUTC || game.dateUtc || game.date;
   return new Date(dateStr.replace(" ", "T"));
