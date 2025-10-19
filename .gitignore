@@ -25,3 +25,5 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+supabase/functions/send-weekly-digest/Deno.env
+supabase/functions/send-weekly-digest/Deno.env
