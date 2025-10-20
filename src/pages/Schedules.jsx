@@ -649,6 +649,58 @@ const GAME_SCHEDULES = {
   ]
 };
 
+export function useSessionForSchedulesPage(sessionProp) {
+  // Schedule session and user info management
+  const [session, setSession] = useState(sessionProp || null);
+  const [username, setUsername] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  // Get session and user info
+  useEffect(() => {
+    if (sessionProp) {
+      setSession(sessionProp);
+      setLoading(false);
+      // Optionally fetch username if needed
+      (async () => {
+        try {
+          const { data } = await supabase
+            .from("users")
+            .select("username")
+            .eq("id", sessionProp.user.id)
+            .maybeSingle();
+          const fromTable = data?.username;
+          const fromMeta  = sessionProp.user.user_metadata?.username;
+          const fallback  = sessionProp.user.email || "user";
+          setUsername(fromTable || fromMeta || fallback);
+        } catch (e) {
+          setUsername(sessionProp.user.email || "user");
+        }
+      })();
+    } else {
+      (async () => {
+        const { data: { session }, error: sErr } = await supabase.auth.getSession();
+        if (sErr) { setError(sErr.message); setLoading(false); return; }
+        if (!session) { setError("Not logged in"); setLoading(false); return; }
+        setSession(session);
+        // Adjust table name if your usernames live in "profiles"
+        const { data } = await supabase
+          .from("users")
+          .select("username")
+          .eq("id", session.user.id)
+          .maybeSingle();
+        const fromTable = data?.username;
+        const fromMeta  = session.user.user_metadata?.username;
+        const fallback  = session.user.email || "user";
+        setUsername(fromTable || fromMeta || fallback);
+        setLoading(false);
+      })();
+    }
+  }, [sessionProp]);
+
+  return { session };
+}
+
 function Schedules({ session: sessionProp }) {
   const [selectedSport, setSelectedSport] = useState("All");
   const [selectedDate, setSelectedDate] = useState('2025-01-01');

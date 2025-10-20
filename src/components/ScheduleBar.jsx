@@ -1,8 +1,9 @@
 import { useMemo, useState, useEffect } from "react";
-// import { supabase } from "../supabaseClient";
+import { supabase } from "../supabaseClient";
 import nflSchedule from "../assets/nfl25.json";
 import nbaSchedule from "../assets/nba25.json";
 import mlbSchedule from "../assets/mlb25.json";
+import { useSessionForSchedulesPage } from "../pages/Schedules";
 
 import espnLogo from "../assets/ESPN_logo.png";
 import foxLogo from "../assets/fox_logo.png";
@@ -84,7 +85,7 @@ function buildBroadcastUrl(raw) {
   return `https://www.${slug}.com`;
 }
 
-export default function ScheduleBar({ session }) {
+export default function ScheduleBar() {
   // Sport selection: all | nfl | nba | mlb
   const [sport, setSport] = useState(() => {
     const saved = localStorage.getItem("selectedSport");
@@ -106,6 +107,7 @@ export default function ScheduleBar({ session }) {
   // User preferences state
   const [userPrefs, setUserPrefs] = useState({});
   const [loading, setLoading] = useState(true);
+  const { session } = useSessionForSchedulesPage();
 
   // Persist sport to localStorage when it changes
   useEffect(() => {
@@ -139,51 +141,51 @@ export default function ScheduleBar({ session }) {
   }, []);
 
   // Fetch user preferences from Supabase
-  // useEffect(() => {
-  //   if (!session) return;
-  //   const uid = session.user.id;
+  useEffect(() => {
+    if (!session) return;
+    const uid = session.user.id;
 
-  //   console.log('Fetching user preferences for user ID:', uid);
-  //   console.log('Session object:', session);
-  //   (async () => {
-  //     setLoading(true);
-  //     try {
-  //       let { data, error } = await supabase
-  //         .from("user_preferences")
-  //         .select("sports_prefs, favorite_teams")
-  //         .eq("user_id", uid)
-  //         .maybeSingle();
+    console.log('Fetching user preferences for user ID:', uid);
+    console.log('Session object:', session);
+    (async () => {
+      setLoading(true);
+      try {
+        let { data, error } = await supabase
+          .from("user_preferences")
+          .select("sports_prefs, favorite_teams")
+          .eq("user_id", uid)
+          .maybeSingle();
 
-  //       let prefsData = data;
-  //       let prefsError = error;
+        let prefsData = data;
+        let prefsError = error;
 
-  //       // Fallback if favorite_teams column doesn't exist
-  //       if (prefsError && prefsError.message && prefsError.message.includes('favorite_teams')) {
-  //         const fallbackResult = await supabase
-  //           .from("user_preferences")
-  //           .select("sports_prefs")
-  //           .eq("user_id", uid)
-  //           .maybeSingle();
-  //         prefsData = fallbackResult.data;
-  //         prefsError = fallbackResult.error;
-  //       }
+        // Fallback if favorite_teams column doesn't exist
+        if (prefsError && prefsError.message && prefsError.message.includes('favorite_teams')) {
+          const fallbackResult = await supabase
+            .from("user_preferences")
+            .select("sports_prefs")
+            .eq("user_id", uid)
+            .maybeSingle();
+          prefsData = fallbackResult.data;
+          prefsError = fallbackResult.error;
+        }
 
-  //       if (prefsError) {
-  //         console.warn('Failed to load user preferences:', prefsError.message);
-  //         setUserPrefs({ sports_prefs: [], favorite_teams: {} });
-  //       } else {
-  //         const sportsPrefs = Array.isArray(prefsData?.sports_prefs) ? prefsData.sports_prefs : [];
-  //         const favoriteTeams = typeof prefsData?.favorite_teams === 'object' && prefsData.favorite_teams !== null ? prefsData.favorite_teams : {};
-  //         setUserPrefs({ sports_prefs: sportsPrefs, favorite_teams: favoriteTeams });
-  //       }
-  //     } catch (e) {
-  //       console.error('Unexpected error loading user preferences:', e);
-  //       setUserPrefs({ sports_prefs: [], favorite_teams: {} });
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   })();
-  // }, [session]);
+        if (prefsError) {
+          console.warn('Failed to load user preferences:', prefsError.message);
+          setUserPrefs({ sports_prefs: [], favorite_teams: {} });
+        } else {
+          const sportsPrefs = Array.isArray(prefsData?.sports_prefs) ? prefsData.sports_prefs : [];
+          const favoriteTeams = typeof prefsData?.favorite_teams === 'object' && prefsData.favorite_teams !== null ? prefsData.favorite_teams : {};
+          setUserPrefs({ sports_prefs: sportsPrefs, favorite_teams: favoriteTeams });
+        }
+      } catch (e) {
+        console.error('Unexpected error loading user preferences:', e);
+        setUserPrefs({ sports_prefs: [], favorite_teams: {} });
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, [session]);
 
   // Set filterState to 'Favorites' by default if user has favorites for selected sport
   useEffect(() => {
@@ -362,9 +364,9 @@ export default function ScheduleBar({ session }) {
   }
 
   // Temporary hardcoded prefs until session is fixed
-  userPrefs.sports_prefs = ["nfl", "nba", "mlb"];
+  // userPrefs.sports_prefs = ["nfl", "nba", "mlb"];
   // if (!session) return <p className="prefs-note">Log in to manage preferences.</p>;
-  // if (loading)    return <p className="prefs-note">Loading preferences…</p>;
+  if (loading)    return <p className="prefs-note">Loading preferences…</p>;
 return (
     <div className="sb-wrap">
       <div className="sb-top">
