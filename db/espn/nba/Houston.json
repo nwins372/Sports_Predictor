@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2025-09-25T23:34:46.995Z",
+  "fetchedAt": "2025-10-20T18:34:08.035Z",
   "detail": {
     "team": {
       "id": "10",
@@ -148,7 +148,147 @@
           "lastUpdated": "2024-12-03T19:33Z"
         }
       ],
-      "record": {},
+      "record": {
+        "items": [
+          {
+            "description": "Overall Record",
+            "type": "total",
+            "summary": "4-0",
+            "stats": [
+              {
+                "name": "OTLosses",
+                "value": 0
+              },
+              {
+                "name": "OTWins",
+                "value": 0
+              },
+              {
+                "name": "avgPointsAgainst",
+                "value": 120.75
+              },
+              {
+                "name": "avgPointsFor",
+                "value": 131.25
+              },
+              {
+                "name": "differential",
+                "value": 10.500000000000014
+              },
+              {
+                "name": "divisionWinPercent",
+                "value": 1
+              },
+              {
+                "name": "gamesBehind",
+                "value": 0.5
+              },
+              {
+                "name": "gamesPlayed",
+                "value": 4
+              },
+              {
+                "name": "leagueWinPercent",
+                "value": 1
+              },
+              {
+                "name": "losses",
+                "value": 0
+              },
+              {
+                "name": "playoffSeed",
+                "value": 2
+              },
+              {
+                "name": "pointDifferential",
+                "value": 42
+              },
+              {
+                "name": "points",
+                "value": 2
+              },
+              {
+                "name": "pointsAgainst",
+                "value": 483
+              },
+              {
+                "name": "pointsFor",
+                "value": 525
+              },
+              {
+                "name": "streak",
+                "value": 4
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 1
+              },
+              {
+                "name": "wins",
+                "value": 4
+              }
+            ]
+          },
+          {
+            "description": "Home Record",
+            "type": "home",
+            "summary": "2-0",
+            "stats": [
+              {
+                "name": "wins",
+                "value": 2
+              },
+              {
+                "name": "losses",
+                "value": 0
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 1
+              },
+              {
+                "name": "OTLosses",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "description": "Away Record",
+            "type": "road",
+            "summary": "1-0",
+            "stats": [
+              {
+                "name": "wins",
+                "value": 1
+              },
+              {
+                "name": "losses",
+                "value": 0
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 1
+              },
+              {
+                "name": "OTLosses",
+                "value": 0
+              }
+            ]
+          }
+        ]
+      },
       "groups": {
         "id": "10",
         "parent": {
@@ -326,30 +466,30 @@
           ]
         },
         "team": {
-          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/10?lang=en&region=us"
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/teams/10?lang=en&region=us"
         }
       },
       "nextEvent": [
         {
-          "id": "401812679",
-          "date": "2025-10-07T00:00Z",
-          "name": "Atlanta Hawks at Houston Rockets",
-          "shortName": "ATL @ HOU",
+          "id": "401809243",
+          "date": "2025-10-21T23:30Z",
+          "name": "Houston Rockets at Oklahoma City Thunder",
+          "shortName": "HOU @ OKC",
           "season": {
             "year": 2026,
             "displayName": "2025-26"
           },
           "seasonType": {
-            "id": "1",
-            "type": 1,
-            "name": "Preseason",
-            "abbreviation": "pre"
+            "id": "2",
+            "type": 2,
+            "name": "Regular Season",
+            "abbreviation": "reg"
           },
           "timeValid": true,
           "competitions": [
             {
-              "id": "401812679",
-              "date": "2025-10-07T00:00Z",
+              "id": "401809243",
+              "date": "2025-10-21T23:30Z",
               "attendance": 0,
               "type": {
                 "id": "1",
@@ -363,18 +503,258 @@
               "boxscoreAvailable": false,
               "ticketsAvailable": true,
               "venue": {
-                "fullName": "Toyota Center (Houston)",
+                "fullName": "Paycom Center",
                 "address": {
-                  "city": "Houston",
-                  "state": "TX"
+                  "city": "Oklahoma City",
+                  "state": "OK"
                 }
               },
               "competitors": [
                 {
-                  "id": "10",
+                  "id": "25",
                   "type": "team",
                   "order": 0,
                   "homeAway": "home",
+                  "team": {
+                    "id": "25",
+                    "location": "Oklahoma City",
+                    "abbreviation": "OKC",
+                    "displayName": "Oklahoma City Thunder",
+                    "shortDisplayName": "Thunder",
+                    "logos": [
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "default"
+                        ],
+                        "lastUpdated": "2024-06-25T21:17Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/okc.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "dark"
+                        ],
+                        "lastUpdated": "2024-06-25T21:13Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/okc.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "scoreboard"
+                        ],
+                        "lastUpdated": "2024-06-25T21:18Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/okc.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "scoreboard",
+                          "dark"
+                        ],
+                        "lastUpdated": "2024-06-25T21:14Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/bd458c44-2d33-47eb-cebc-35d3d4ac595c/logos/primary_logo_on_white_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_white_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:32Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/bd458c44-2d33-47eb-cebc-35d3d4ac595c/logos/primary_logo_on_black_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_black_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:32Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/bd458c44-2d33-47eb-cebc-35d3d4ac595c/logos/primary_logo_on_primary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_primary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:32Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/bd458c44-2d33-47eb-cebc-35d3d4ac595c/logos/primary_logo_on_secondary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_secondary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:32Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/bd458c44-2d33-47eb-cebc-35d3d4ac595c/logos/secondary_logo_on_white_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_white_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:32Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/bd458c44-2d33-47eb-cebc-35d3d4ac595c/logos/secondary_logo_on_black_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_black_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:32Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/bd458c44-2d33-47eb-cebc-35d3d4ac595c/logos/secondary_logo_on_primary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_primary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:32Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/bd458c44-2d33-47eb-cebc-35d3d4ac595c/logos/secondary_logo_on_secondary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_secondary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:32Z"
+                      }
+                    ],
+                    "links": [
+                      {
+                        "rel": [
+                          "clubhouse",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/_/name/okc/oklahoma-city-thunder",
+                        "text": "Clubhouse"
+                      },
+                      {
+                        "rel": [
+                          "roster",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/roster/_/name/okc/oklahoma-city-thunder",
+                        "text": "Roster"
+                      },
+                      {
+                        "rel": [
+                          "stats",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/stats/_/name/okc/oklahoma-city-thunder",
+                        "text": "Statistics"
+                      },
+                      {
+                        "rel": [
+                          "schedule",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/schedule/_/name/okc",
+                        "text": "Schedule"
+                      },
+                      {
+                        "rel": [
+                          "photos",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/photos/_/name/okc",
+                        "text": "photos"
+                      },
+                      {
+                        "rel": [
+                          "tickets",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.vividseats.com/oklahoma-city-thunder-tickets--sports-nba-basketball/performer/16164?wsUser=717",
+                        "text": "Tickets"
+                      },
+                      {
+                        "rel": [
+                          "draftpicks",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/draft/teams/_/name/okc/oklahoma-city-thunder",
+                        "text": "Draft Picks"
+                      },
+                      {
+                        "rel": [
+                          "transactions",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/transactions/_/name/okc",
+                        "text": "Transactions"
+                      },
+                      {
+                        "rel": [
+                          "injuries",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/injuries/_/name/okc",
+                        "text": "Injuries"
+                      },
+                      {
+                        "rel": [
+                          "depthchart",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/depth/_/name/okc",
+                        "text": "Depth Chart"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "10",
+                  "type": "team",
+                  "order": 1,
+                  "homeAway": "away",
                   "team": {
                     "id": "10",
                     "location": "Houston",
@@ -609,259 +989,68 @@
                       }
                     ]
                   }
-                },
-                {
-                  "id": "1",
-                  "type": "team",
-                  "order": 1,
-                  "homeAway": "away",
-                  "team": {
-                    "id": "1",
-                    "location": "Atlanta",
-                    "abbreviation": "ATL",
-                    "displayName": "Atlanta Hawks",
-                    "shortDisplayName": "Hawks",
-                    "logos": [
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "default"
-                        ],
-                        "lastUpdated": "2024-06-25T21:17Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/atl.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "dark"
-                        ],
-                        "lastUpdated": "2024-06-25T21:13Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/atl.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "scoreboard"
-                        ],
-                        "lastUpdated": "2024-06-25T21:18Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/atl.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "scoreboard",
-                          "dark"
-                        ],
-                        "lastUpdated": "2024-06-25T21:13Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/15096a54-f015-c987-5ec8-55afedf6272f/logos/primary_logo_on_white_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_white_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:31Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/15096a54-f015-c987-5ec8-55afedf6272f/logos/primary_logo_on_black_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_black_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:31Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/15096a54-f015-c987-5ec8-55afedf6272f/logos/primary_logo_on_primary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_primary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:31Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/15096a54-f015-c987-5ec8-55afedf6272f/logos/primary_logo_on_secondary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_secondary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:31Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/15096a54-f015-c987-5ec8-55afedf6272f/logos/secondary_logo_on_white_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_white_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:31Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/15096a54-f015-c987-5ec8-55afedf6272f/logos/secondary_logo_on_black_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_black_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:31Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/15096a54-f015-c987-5ec8-55afedf6272f/logos/secondary_logo_on_primary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_primary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:31Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/15096a54-f015-c987-5ec8-55afedf6272f/logos/secondary_logo_on_secondary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_secondary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:31Z"
-                      }
-                    ],
-                    "links": [
-                      {
-                        "rel": [
-                          "clubhouse",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/_/name/atl/atlanta-hawks",
-                        "text": "Clubhouse"
-                      },
-                      {
-                        "rel": [
-                          "roster",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/roster/_/name/atl/atlanta-hawks",
-                        "text": "Roster"
-                      },
-                      {
-                        "rel": [
-                          "stats",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/stats/_/name/atl/atlanta-hawks",
-                        "text": "Statistics"
-                      },
-                      {
-                        "rel": [
-                          "schedule",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/schedule/_/name/atl",
-                        "text": "Schedule"
-                      },
-                      {
-                        "rel": [
-                          "photos",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/photos/_/name/atl",
-                        "text": "photos"
-                      },
-                      {
-                        "rel": [
-                          "tickets",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.vividseats.com/atlanta-hawks-tickets--sports-nba-basketball/performer/52?wsUser=717",
-                        "text": "Tickets"
-                      },
-                      {
-                        "rel": [
-                          "draftpicks",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/draft/teams/_/name/atl/atlanta-hawks",
-                        "text": "Draft Picks"
-                      },
-                      {
-                        "rel": [
-                          "transactions",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/transactions/_/name/atl",
-                        "text": "Transactions"
-                      },
-                      {
-                        "rel": [
-                          "injuries",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/injuries/_/name/atl",
-                        "text": "Injuries"
-                      },
-                      {
-                        "rel": [
-                          "depthchart",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/depth/_/name/atl",
-                        "text": "Depth Chart"
-                      }
-                    ]
-                  }
                 }
               ],
               "notes": [],
-              "broadcasts": [],
+              "broadcasts": [
+                {
+                  "type": {
+                    "id": "1",
+                    "shortName": "TV"
+                  },
+                  "market": {
+                    "id": "1",
+                    "type": "National"
+                  },
+                  "media": {
+                    "shortName": "NBC"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                },
+                {
+                  "type": {
+                    "id": "4",
+                    "shortName": "Streaming"
+                  },
+                  "market": {
+                    "id": "1",
+                    "type": "National"
+                  },
+                  "media": {
+                    "shortName": "Peacock"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                },
+                {
+                  "type": {
+                    "id": "5",
+                    "shortName": "Radio"
+                  },
+                  "market": {
+                    "id": "1",
+                    "type": "National"
+                  },
+                  "media": {
+                    "shortName": "ERADM"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                }
+              ],
               "tickets": [
                 {
-                  "id": "5853273",
-                  "summary": "Tickets as low as $5",
-                  "description": "NBA Preseason - Atlanta Hawks at Houston Rockets",
-                  "maxPrice": 2887.64,
-                  "startingPrice": 5.61,
-                  "numberAvailable": 2818,
-                  "totalPostings": 681,
+                  "id": "5924546",
+                  "summary": "Tickets as low as $85",
+                  "description": "Houston Rockets at Oklahoma City Thunder",
+                  "maxPrice": 10810.37,
+                  "startingPrice": 85.98,
+                  "numberAvailable": 937,
+                  "totalPostings": 196,
                   "links": [
                     {
                       "rel": [
@@ -869,7 +1058,7 @@
                         "desktop",
                         "event"
                       ],
-                      "href": "https://www.vividseats.com/houston-rockets-tickets-toyota-center---tx-10-6-2025--sports-nba-basketball/production/5853273?wsUser=717"
+                      "href": "https://www.vividseats.com/oklahoma-city-thunder-tickets-paycom-center-10-21-2025--sports-nba-basketball/production/5924546?wsUser=717"
                     },
                     {
                       "rel": [
@@ -877,7 +1066,7 @@
                         "desktop",
                         "venue"
                       ],
-                      "href": "https://www.vividseats.com/toyota-center-tx-tickets/venue/3030?wsUser=717"
+                      "href": "https://www.vividseats.com/paycom-center-tickets/venue/2384?wsUser=717"
                     }
                   ]
                 }
@@ -892,8 +1081,8 @@
                   "state": "pre",
                   "completed": false,
                   "description": "Scheduled",
-                  "detail": "Mon, October 6th at 8:00 PM EDT",
-                  "shortDetail": "10/6 - 8:00 PM EDT"
+                  "detail": "Tue, October 21st at 7:30 PM EDT",
+                  "shortDetail": "10/21 - 7:30 PM EDT"
                 }
               }
             }
@@ -906,7 +1095,7 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/game/_/gameId/401812679/hawks-rockets",
+              "href": "https://www.espn.com/nba/game/_/gameId/401809243/rockets-thunder",
               "text": "Gamecast",
               "shortText": "Summary",
               "isExternal": false,
@@ -920,7 +1109,7 @@
                 "app",
                 "event"
               ],
-              "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=nba&gameId=401812679",
+              "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=nba&gameId=401809243",
               "text": "Gamecast",
               "shortText": "Summary",
               "isExternal": false,
@@ -933,9 +1122,22 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/game/_/gameId/401812679",
+              "href": "https://www.espn.com/nba/game/_/gameId/401809243",
               "text": "Now",
               "shortText": "Now",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "preview",
+                "desktop",
+                "event"
+              ],
+              "href": "https://www.espn.com/nba/preview/_/gameId/401809243",
+              "text": "Preview",
+              "shortText": "Preview",
               "isExternal": false,
               "isPremium": false
             },
@@ -946,7 +1148,7 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/odds/_/gameId/401812679",
+              "href": "https://www.espn.com/nba/odds/_/gameId/401809243",
               "text": "Odds",
               "shortText": "Odds",
               "isExternal": false,
@@ -959,7 +1161,7 @@
                 "mobile",
                 "event"
               ],
-              "href": "https://m.espn.com/nba/odds/_/gameId/401812679",
+              "href": "https://m.espn.com/nba/odds/_/gameId/401809243",
               "text": "Odds",
               "shortText": "Odds",
               "isExternal": false,
@@ -968,17 +1170,17 @@
           ]
         }
       ],
-      "standingSummary": "1st in Southwest Division"
+      "standingSummary": "2nd in Southwest Division"
     }
   },
   "roster": {
-    "timestamp": "2025-09-25T23:27:24Z",
+    "timestamp": "2025-10-20T18:28:48Z",
     "status": "success",
     "season": {
       "year": 2026,
       "displayName": "2025-26",
-      "type": 1,
-      "name": "Preseason"
+      "type": 2,
+      "name": "Regular Season"
     },
     "athletes": [
       {
@@ -1263,7 +1465,7 @@
           }
         ],
         "experience": {
-          "years": 11
+          "years": 12
         },
         "contract": {
           "birdStatus": 0,
@@ -1444,7 +1646,12 @@
           "abbreviation": "C",
           "leaf": false
         },
-        "injuries": [],
+        "injuries": [
+          {
+            "status": "Day-To-Day",
+            "date": "2025-10-16T22:28Z"
+          }
+        ],
         "contracts": [
           {
             "salary": 6700000,
@@ -1544,7 +1751,7 @@
           }
         ],
         "experience": {
-          "years": 10
+          "years": 11
         },
         "contract": {
           "birdStatus": 0,
@@ -1749,6 +1956,7 @@
           "href": "https://a.espncdn.com/i/headshots/nba/players/full/4592857.png",
           "alt": "Isaiah Crawford"
         },
+        "jersey": "27",
         "position": {
           "id": "7",
           "name": "Forward",
@@ -1776,7 +1984,7 @@
           }
         ],
         "experience": {
-          "years": 0
+          "years": 1
         },
         "contract": {
           "birdStatus": 0,
@@ -1831,7 +2039,7 @@
         "displayWeight": "195 lbs",
         "height": 73,
         "displayHeight": "6' 1\"",
-        "age": 22,
+        "age": 23,
         "dateOfBirth": "2002-10-03T07:00Z",
         "links": [
           {
@@ -1981,6 +2189,7 @@
           "href": "https://a.espncdn.com/i/headshots/nba/players/full/4576085.png",
           "alt": "JD Davison"
         },
+        "jersey": "4",
         "position": {
           "id": "3",
           "name": "Guard",
@@ -2024,7 +2233,7 @@
           }
         ],
         "experience": {
-          "years": 2
+          "years": 3
         },
         "contract": {
           "birdStatus": 0,
@@ -2079,7 +2288,7 @@
         "displayWeight": "240 lbs",
         "height": 83,
         "displayHeight": "6' 11\"",
-        "age": 36,
+        "age": 37,
         "dateOfBirth": "1988-09-29T07:00Z",
         "debutYear": 2007,
         "links": [
@@ -2233,25 +2442,13 @@
         },
         "jersey": "7",
         "position": {
-          "id": "6",
-          "name": "Power Forward",
-          "displayName": "Power Forward",
-          "abbreviation": "PF",
-          "leaf": true,
-          "parent": {
-            "id": "7",
-            "name": "Forward",
-            "displayName": "Forward",
-            "abbreviation": "F",
-            "leaf": false
-          }
+          "id": "7",
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F",
+          "leaf": false
         },
-        "injuries": [
-          {
-            "status": "Day-To-Day",
-            "date": "2025-07-03T22:08Z"
-          }
-        ],
+        "injuries": [],
         "contracts": [
           {
             "salary": 54708609,
@@ -2407,7 +2604,7 @@
           }
         ],
         "experience": {
-          "years": 17
+          "years": 18
         },
         "contract": {
           "birdStatus": 0,
@@ -2423,7 +2620,7 @@
           "optionType": 0,
           "salary": 54708609,
           "salaryRemaining": 0,
-          "yearsRemaining": 1,
+          "yearsRemaining": 3,
           "season": {
             "year": 2026,
             "startDate": "2025-10-01T07:00Z",
@@ -2435,7 +2632,7 @@
             "value": 0,
             "tradeValue": 0
           },
-          "tradeRestriction": true,
+          "tradeRestriction": false,
           "unsignedForeignPick": false,
           "active": true
         },
@@ -2620,7 +2817,12 @@
           "abbreviation": "F",
           "leaf": false
         },
-        "injuries": [],
+        "injuries": [
+          {
+            "status": "Day-To-Day",
+            "date": "2025-10-16T22:25Z"
+          }
+        ],
         "contracts": [
           {
             "salary": 5675766,
@@ -2656,7 +2858,7 @@
           }
         ],
         "experience": {
-          "years": 2
+          "years": 3
         },
         "contract": {
           "birdStatus": 0,
@@ -2869,23 +3071,16 @@
           "displayValue": "Right"
         },
         "position": {
-          "id": "6",
-          "name": "Power Forward",
-          "displayName": "Power Forward",
-          "abbreviation": "PF",
-          "leaf": true,
-          "parent": {
-            "id": "7",
-            "name": "Forward",
-            "displayName": "Forward",
-            "abbreviation": "F",
-            "leaf": false
-          }
+          "id": "7",
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F",
+          "leaf": false
         },
         "injuries": [
           {
             "status": "Day-To-Day",
-            "date": "2025-07-03T22:08Z"
+            "date": "2025-10-18T18:42Z"
           }
         ],
         "contracts": [
@@ -2971,7 +3166,7 @@
           }
         ],
         "experience": {
-          "years": 8
+          "years": 9
         },
         "contract": {
           "birdStatus": 0,
@@ -3179,18 +3374,11 @@
         },
         "jersey": "32",
         "position": {
-          "id": "6",
-          "name": "Power Forward",
-          "displayName": "Power Forward",
-          "abbreviation": "PF",
-          "leaf": true,
-          "parent": {
-            "id": "7",
-            "name": "Forward",
-            "displayName": "Forward",
-            "abbreviation": "F",
-            "leaf": false
-          }
+          "id": "7",
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F",
+          "leaf": false
         },
         "injuries": [],
         "contracts": [
@@ -3348,7 +3536,7 @@
           }
         ],
         "experience": {
-          "years": 16
+          "years": 17
         },
         "contract": {
           "birdStatus": 0,
@@ -3581,7 +3769,7 @@
           }
         ],
         "experience": {
-          "years": 3
+          "years": 2
         },
         "status": {
           "id": "1",
@@ -3606,7 +3794,7 @@
         "displayWeight": "185 lbs",
         "height": 72,
         "displayHeight": "6' 0\"",
-        "age": 28,
+        "age": 29,
         "dateOfBirth": "1996-09-30T07:00Z",
         "debutYear": 2018,
         "links": [
@@ -3833,7 +4021,7 @@
           }
         ],
         "experience": {
-          "years": 6
+          "years": 7
         },
         "contract": {
           "birdStatus": 0,
@@ -3864,187 +4052,6 @@
           "tradeRestriction": false,
           "unsignedForeignPick": false,
           "active": true
-        },
-        "status": {
-          "id": "1",
-          "name": "Active",
-          "type": "active",
-          "abbreviation": "Active"
-        }
-      },
-      {
-        "id": "4432394",
-        "uid": "s:40~l:46~a:4432394",
-        "guid": "4ae3728e-43a1-3ff2-bbfc-89c47a0699b8",
-        "alternateIds": {
-          "sdr": "4432394"
-        },
-        "firstName": "Cameron",
-        "lastName": "Matthews",
-        "fullName": "Cameron Matthews",
-        "displayName": "Cameron Matthews",
-        "shortName": "C. Matthews",
-        "weight": 235,
-        "displayWeight": "235 lbs",
-        "height": 79,
-        "displayHeight": "6' 7\"",
-        "age": 23,
-        "dateOfBirth": "2001-12-23T08:00Z",
-        "links": [
-          {
-            "language": "en-US",
-            "rel": [
-              "playercard",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/_/id/4432394/cameron-matthews",
-            "text": "Player Card",
-            "shortText": "Player Card",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "stats",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/stats/_/id/4432394/cameron-matthews",
-            "text": "Stats",
-            "shortText": "Stats",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "splits",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/splits/_/id/4432394/cameron-matthews",
-            "text": "Splits",
-            "shortText": "Splits",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "gamelog",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/gamelog/_/id/4432394/cameron-matthews",
-            "text": "Game Log",
-            "shortText": "Game Log",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "news",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/news/_/id/4432394/cameron-matthews",
-            "text": "News",
-            "shortText": "News",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "bio",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/bio/_/id/4432394/cameron-matthews",
-            "text": "Bio",
-            "shortText": "Bio",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "overview",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/_/id/4432394/cameron-matthews",
-            "text": "Overview",
-            "shortText": "Overview",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "advancedstats",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/advancedstats/_/id/4432394/cameron-matthews",
-            "text": "Advanced Stats",
-            "shortText": "Advanced Stats",
-            "isExternal": false,
-            "isPremium": false
-          }
-        ],
-        "birthPlace": {
-          "city": "Olive Branch",
-          "state": "MS",
-          "country": "USA"
-        },
-        "college": {
-          "id": "344",
-          "guid": "20f064ae-ec31-3749-b0b2-c092471038f4",
-          "mascot": "Bulldogs",
-          "name": "Mississippi State",
-          "shortName": "Mississippi State",
-          "abbrev": "MSST",
-          "logos": [
-            {
-              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/344.png",
-              "width": 500,
-              "height": 500,
-              "alt": "",
-              "rel": [
-                "full",
-                "default"
-              ],
-              "lastUpdated": "2023-03-17T13:35Z"
-            },
-            {
-              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/344.png",
-              "width": 500,
-              "height": 500,
-              "alt": "",
-              "rel": [
-                "full",
-                "dark"
-              ],
-              "lastUpdated": "2023-03-17T13:36Z"
-            }
-          ]
-        },
-        "slug": "cameron-matthews",
-        "position": {
-          "id": "7",
-          "name": "Forward",
-          "displayName": "Forward",
-          "abbreviation": "F",
-          "leaf": false
-        },
-        "injuries": [],
-        "contracts": [],
-        "experience": {
-          "years": 0
         },
         "status": {
           "id": "1",
@@ -4222,18 +4229,11 @@
         },
         "jersey": "20",
         "position": {
-          "id": "5",
-          "name": "Small Forward",
-          "displayName": "Small Forward",
-          "abbreviation": "SF",
-          "leaf": true,
-          "parent": {
-            "id": "7",
-            "name": "Forward",
-            "displayName": "Forward",
-            "abbreviation": "F",
-            "leaf": false
-          }
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
         },
         "injuries": [],
         "contracts": [
@@ -4303,7 +4303,7 @@
           }
         ],
         "experience": {
-          "years": 6
+          "years": 7
         },
         "contract": {
           "birdStatus": 0,
@@ -4524,7 +4524,7 @@
           }
         ],
         "experience": {
-          "years": 3
+          "years": 4
         },
         "contract": {
           "birdStatus": 0,
@@ -4737,12 +4737,7 @@
           "abbreviation": "G",
           "leaf": false
         },
-        "injuries": [
-          {
-            "status": "Day-To-Day",
-            "date": "2025-07-21T15:39Z"
-          }
-        ],
+        "injuries": [],
         "contracts": [
           {
             "salary": 10603560,
@@ -4762,7 +4757,7 @@
           }
         ],
         "experience": {
-          "years": 0
+          "years": 1
         },
         "contract": {
           "birdStatus": 0,
@@ -4815,8 +4810,8 @@
         "shortName": "J. Smith Jr.",
         "weight": 220,
         "displayWeight": "220 lbs",
-        "height": 82,
-        "displayHeight": "6' 10\"",
+        "height": 83,
+        "displayHeight": "6' 11\"",
         "age": 22,
         "dateOfBirth": "2003-05-13T07:00Z",
         "links": [
@@ -4969,18 +4964,11 @@
         },
         "jersey": "10",
         "position": {
-          "id": "6",
-          "name": "Power Forward",
-          "displayName": "Power Forward",
-          "abbreviation": "PF",
-          "leaf": true,
-          "parent": {
-            "id": "7",
-            "name": "Forward",
-            "displayName": "Forward",
-            "abbreviation": "F",
-            "leaf": false
-          }
+          "id": "7",
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F",
+          "leaf": false
         },
         "injuries": [],
         "contracts": [
@@ -5018,7 +5006,7 @@
           }
         ],
         "experience": {
-          "years": 2
+          "years": 3
         },
         "contract": {
           "birdStatus": 0,
@@ -5226,20 +5214,18 @@
         },
         "jersey": "8",
         "position": {
-          "id": "5",
-          "name": "Small Forward",
-          "displayName": "Small Forward",
-          "abbreviation": "SF",
-          "leaf": true,
-          "parent": {
-            "id": "7",
-            "name": "Forward",
-            "displayName": "Forward",
-            "abbreviation": "F",
-            "leaf": false
-          }
+          "id": "7",
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F",
+          "leaf": false
         },
-        "injuries": [],
+        "injuries": [
+          {
+            "status": "Day-To-Day",
+            "date": "2025-10-18T18:24Z"
+          }
+        ],
         "contracts": [
           {
             "salary": 2296274,
@@ -5291,7 +5277,7 @@
           }
         ],
         "experience": {
-          "years": 4
+          "years": 5
         },
         "contract": {
           "birdStatus": 0,
@@ -5471,10 +5457,10 @@
           "displayValue": "Left"
         },
         "position": {
-          "id": "7",
-          "name": "Forward",
-          "displayName": "Forward",
-          "abbreviation": "F",
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
           "leaf": false
         },
         "injuries": [],
@@ -5505,7 +5491,7 @@
           }
         ],
         "experience": {
-          "years": 1
+          "years": 2
         },
         "contract": {
           "birdStatus": 0,
@@ -5713,18 +5699,11 @@
         },
         "jersey": "5",
         "position": {
-          "id": "1",
-          "name": "Point Guard",
-          "displayName": "Point Guard",
-          "abbreviation": "PG",
-          "leaf": true,
-          "parent": {
-            "id": "3",
-            "name": "Guard",
-            "displayName": "Guard",
-            "abbreviation": "G",
-            "leaf": false
-          }
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
         },
         "injuries": [
           {
@@ -5807,7 +5786,7 @@
           }
         ],
         "experience": {
-          "years": 8
+          "years": 9
         },
         "contract": {
           "birdStatus": 0,
@@ -5863,19 +5842,1809 @@
       "displayName": "Houston Rockets",
       "clubhouse": "https://www.espn.com/nba/team/_/name/hou/houston-rockets",
       "color": "ce1141",
-      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png"
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
+      "recordSummary": "4-0",
+      "seasonSummary": "2025-26",
+      "standingSummary": "2nd in Southwest Division"
     }
   },
   "injuries": {
-    "timestamp": "2025-09-25T23:34:45Z",
+    "timestamp": "2025-10-20T18:34:08Z",
     "status": "success",
     "season": {
       "year": 2026,
-      "type": 1,
-      "name": "Preseason",
+      "type": 2,
+      "name": "Regular Season",
       "displayName": "2025-26"
     },
     "injuries": [
+      {
+        "id": "499797",
+        "longComment": "According to coach Ime Udoka, Finney-Smith is a \"bit behind\" Jae'Sean Tate (ankle) -- Tate is hopeful to play on Opening Night. For now, it seems likely that Finney-Smith will miss a handful of games to open the 2025-26 season.",
+        "shortComment": "Finney-Smith (ankle) remains without a timetable to return, Michael Shapiro of SI.com reports.",
+        "status": "Day-To-Day",
+        "date": "2025-10-18T18:42Z",
+        "athlete": {
+          "firstName": "Dorian",
+          "lastName": "Finney-Smith",
+          "displayName": "Dorian Finney-Smith",
+          "shortName": "D. Finney-Smith",
+          "links": [
+            {
+              "language": "en-US",
+              "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/2578185/dorian-finney-smith",
+              "text": "Player Card",
+              "shortText": "Player Card",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/stats/_/id/2578185/dorian-finney-smith",
+              "text": "Stats",
+              "shortText": "Stats",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/splits/_/id/2578185/dorian-finney-smith",
+              "text": "Splits",
+              "shortText": "Splits",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/2578185/dorian-finney-smith",
+              "text": "Game Log",
+              "shortText": "Game Log",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "news",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/news/_/id/2578185/dorian-finney-smith",
+              "text": "News",
+              "shortText": "News",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/bio/_/id/2578185/dorian-finney-smith",
+              "text": "Bio",
+              "shortText": "Bio",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/2578185/dorian-finney-smith",
+              "text": "Overview",
+              "shortText": "Overview",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "advancedstats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/2578185/dorian-finney-smith",
+              "text": "Advanced Stats",
+              "shortText": "Advanced Stats",
+              "isExternal": false,
+              "isPremium": false
+            }
+          ],
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/2578185.png",
+            "alt": "Dorian Finney-Smith"
+          },
+          "position": {
+            "id": "7",
+            "name": "Forward",
+            "displayName": "Forward",
+            "abbreviation": "F",
+            "leaf": false
+          },
+          "team": {
+            "id": "10",
+            "uid": "s:40~l:46~t:10",
+            "slug": "houston-rockets",
+            "name": "Rockets",
+            "abbreviation": "HOU",
+            "displayName": "Houston Rockets",
+            "logos": [
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "default"
+                ],
+                "lastUpdated": "2024-06-25T21:17Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/hou.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "dark"
+                ],
+                "lastUpdated": "2025-01-21T22:35Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/hou.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard"
+                ],
+                "lastUpdated": "2024-06-25T21:18Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/hou.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard",
+                  "dark"
+                ],
+                "lastUpdated": "2025-01-22T15:28Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              }
+            ],
+            "links": [
+              {
+                "language": "en-US",
+                "rel": [
+                  "clubhouse",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/_/name/hou/houston-rockets",
+                "text": "Clubhouse",
+                "shortText": "Clubhouse",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "roster",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/roster/_/name/hou/houston-rockets",
+                "text": "Roster",
+                "shortText": "Roster",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "stats",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/stats/_/name/hou/houston-rockets",
+                "text": "Statistics",
+                "shortText": "Statistics",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "schedule",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/schedule/_/name/hou",
+                "text": "Schedule",
+                "shortText": "Schedule",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "photos",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/photos/_/name/hou",
+                "text": "photos",
+                "shortText": "photos",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "tickets",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.vividseats.com/houston-rockets-tickets--sports-nba-basketball/performer/360?wsUser=717",
+                "text": "Tickets",
+                "shortText": "Tickets",
+                "isExternal": true,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "draftpicks",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/draft/teams/_/name/hou/houston-rockets",
+                "text": "Draft Picks",
+                "shortText": "Draft Picks",
+                "isExternal": false,
+                "isPremium": true
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "transactions",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/transactions/_/name/hou",
+                "text": "Transactions",
+                "shortText": "Transactions",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "injuries",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/injuries/_/name/hou",
+                "text": "Injuries",
+                "shortText": "Injuries",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "depthchart",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/depth/_/name/hou",
+                "text": "Depth Chart",
+                "shortText": "Depth Chart",
+                "isExternal": false,
+                "isPremium": false
+              }
+            ]
+          },
+          "notes": {
+            "items": [
+              {
+                "id": "499797",
+                "type": "news",
+                "date": "2025-10-18T18:42Z",
+                "headline": "Finney-Smith (ankle) remains without a timetable to return, Michael Shapiro of SI.com reports.",
+                "text": "According to coach Ime Udoka, Finney-Smith is a \"bit behind\" Jae'Sean Tate (ankle) -- Tate is hopeful to play on Opening Night. For now, it seems likely that Finney-Smith will miss a handful of games to open the 2025-26 season.",
+                "source": "RotoWire",
+                "injury": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/2578185/injuries/499797?lang=en&region=us"
+                }
+              }
+            ]
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
+          }
+        },
+        "source": {
+          "id": "1",
+          "description": "basic/manual",
+          "state": "basic"
+        },
+        "type": {
+          "id": "6",
+          "name": "INJURY_STATUS_DAYTODAY",
+          "description": "day-to-day",
+          "abbreviation": "DD"
+        },
+        "details": {
+          "fantasyStatus": {
+            "description": "GTD",
+            "abbreviation": "GTD"
+          },
+          "type": "Ankle",
+          "location": "Leg",
+          "detail": "Surgery",
+          "side": "Left",
+          "returnDate": "2025-10-21"
+        }
+      },
+      {
+        "id": "499795",
+        "longComment": "According to coach Ime Udoka, the Rockets are still hoping Tate will be ready for Opening Night. Tate is projected to be on the edge of the rotation to open the season, so this news doesn't have a ton of fantasy implications.",
+        "shortComment": "Tate (ankle) was able to take contact at Saturday's practice, Danielle Lerner of the Houston Chronicle reports.",
+        "status": "Day-To-Day",
+        "date": "2025-10-18T18:24Z",
+        "athlete": {
+          "firstName": "Jae'Sean",
+          "lastName": "Tate",
+          "displayName": "Jae'Sean Tate",
+          "shortName": "J. Tate",
+          "links": [
+            {
+              "language": "en-US",
+              "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/3136777/jaesean-tate",
+              "text": "Player Card",
+              "shortText": "Player Card",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/stats/_/id/3136777/jaesean-tate",
+              "text": "Stats",
+              "shortText": "Stats",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/splits/_/id/3136777/jaesean-tate",
+              "text": "Splits",
+              "shortText": "Splits",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/3136777/jaesean-tate",
+              "text": "Game Log",
+              "shortText": "Game Log",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "news",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/news/_/id/3136777/jaesean-tate",
+              "text": "News",
+              "shortText": "News",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/bio/_/id/3136777/jaesean-tate",
+              "text": "Bio",
+              "shortText": "Bio",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/3136777/jaesean-tate",
+              "text": "Overview",
+              "shortText": "Overview",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "advancedstats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/3136777/jaesean-tate",
+              "text": "Advanced Stats",
+              "shortText": "Advanced Stats",
+              "isExternal": false,
+              "isPremium": false
+            }
+          ],
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/3136777.png",
+            "alt": "Jae'Sean Tate"
+          },
+          "position": {
+            "id": "7",
+            "name": "Forward",
+            "displayName": "Forward",
+            "abbreviation": "F",
+            "leaf": false
+          },
+          "team": {
+            "id": "10",
+            "uid": "s:40~l:46~t:10",
+            "slug": "houston-rockets",
+            "name": "Rockets",
+            "abbreviation": "HOU",
+            "displayName": "Houston Rockets",
+            "logos": [
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "default"
+                ],
+                "lastUpdated": "2024-06-25T21:17Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/hou.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "dark"
+                ],
+                "lastUpdated": "2025-01-21T22:35Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/hou.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard"
+                ],
+                "lastUpdated": "2024-06-25T21:18Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/hou.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard",
+                  "dark"
+                ],
+                "lastUpdated": "2025-01-22T15:28Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              }
+            ],
+            "links": [
+              {
+                "language": "en-US",
+                "rel": [
+                  "clubhouse",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/_/name/hou/houston-rockets",
+                "text": "Clubhouse",
+                "shortText": "Clubhouse",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "roster",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/roster/_/name/hou/houston-rockets",
+                "text": "Roster",
+                "shortText": "Roster",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "stats",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/stats/_/name/hou/houston-rockets",
+                "text": "Statistics",
+                "shortText": "Statistics",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "schedule",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/schedule/_/name/hou",
+                "text": "Schedule",
+                "shortText": "Schedule",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "photos",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/photos/_/name/hou",
+                "text": "photos",
+                "shortText": "photos",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "tickets",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.vividseats.com/houston-rockets-tickets--sports-nba-basketball/performer/360?wsUser=717",
+                "text": "Tickets",
+                "shortText": "Tickets",
+                "isExternal": true,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "draftpicks",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/draft/teams/_/name/hou/houston-rockets",
+                "text": "Draft Picks",
+                "shortText": "Draft Picks",
+                "isExternal": false,
+                "isPremium": true
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "transactions",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/transactions/_/name/hou",
+                "text": "Transactions",
+                "shortText": "Transactions",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "injuries",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/injuries/_/name/hou",
+                "text": "Injuries",
+                "shortText": "Injuries",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "depthchart",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/depth/_/name/hou",
+                "text": "Depth Chart",
+                "shortText": "Depth Chart",
+                "isExternal": false,
+                "isPremium": false
+              }
+            ]
+          },
+          "notes": {
+            "items": [
+              {
+                "id": "499795",
+                "type": "news",
+                "date": "2025-10-18T18:24Z",
+                "headline": "Tate (ankle) was able to take contact at Saturday's practice, Danielle Lerner of the Houston Chronicle reports.",
+                "text": "According to coach Ime Udoka, the Rockets are still hoping Tate will be ready for Opening Night. Tate is projected to be on the edge of the rotation to open the season, so this news doesn't have a ton of fantasy implications.",
+                "source": "RotoWire",
+                "injury": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/3136777/injuries/499795?lang=en&region=us"
+                }
+              }
+            ]
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
+          }
+        },
+        "source": {
+          "id": "1",
+          "description": "basic/manual",
+          "state": "basic"
+        },
+        "type": {
+          "id": "6",
+          "name": "INJURY_STATUS_DAYTODAY",
+          "description": "day-to-day",
+          "abbreviation": "DD"
+        },
+        "details": {
+          "fantasyStatus": {
+            "description": "GTD",
+            "abbreviation": "GTD"
+          },
+          "type": "Ankle",
+          "location": "Leg",
+          "side": "Right",
+          "returnDate": "2025-10-21"
+        }
+      },
+      {
+        "id": "499433",
+        "longComment": "Along with most of Houston's regulars, Capela will sit out the team's preseason finale. The 31-year-old center's next chance to play will come in Tuesday's regular-season opener against the Thunder.",
+        "shortComment": "Capela (rest) won't play in Thursday's preseason game against the Hawks, Vanessa Richardson of Space City Home Network reports.",
+        "status": "Day-To-Day",
+        "date": "2025-10-16T22:28Z",
+        "athlete": {
+          "firstName": "Clint",
+          "lastName": "Capela",
+          "displayName": "Clint Capela",
+          "shortName": "C. Capela",
+          "links": [
+            {
+              "language": "en-US",
+              "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/3102529/clint-capela",
+              "text": "Player Card",
+              "shortText": "Player Card",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/stats/_/id/3102529/clint-capela",
+              "text": "Stats",
+              "shortText": "Stats",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/splits/_/id/3102529/clint-capela",
+              "text": "Splits",
+              "shortText": "Splits",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/3102529/clint-capela",
+              "text": "Game Log",
+              "shortText": "Game Log",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "news",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/news/_/id/3102529/clint-capela",
+              "text": "News",
+              "shortText": "News",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/bio/_/id/3102529/clint-capela",
+              "text": "Bio",
+              "shortText": "Bio",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/3102529/clint-capela",
+              "text": "Overview",
+              "shortText": "Overview",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "advancedstats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/3102529/clint-capela",
+              "text": "Advanced Stats",
+              "shortText": "Advanced Stats",
+              "isExternal": false,
+              "isPremium": false
+            }
+          ],
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/3102529.png",
+            "alt": "Clint Capela"
+          },
+          "position": {
+            "id": "9",
+            "name": "Center",
+            "displayName": "Center",
+            "abbreviation": "C",
+            "leaf": false
+          },
+          "team": {
+            "id": "10",
+            "uid": "s:40~l:46~t:10",
+            "slug": "houston-rockets",
+            "name": "Rockets",
+            "abbreviation": "HOU",
+            "displayName": "Houston Rockets",
+            "logos": [
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "default"
+                ],
+                "lastUpdated": "2024-06-25T21:17Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/hou.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "dark"
+                ],
+                "lastUpdated": "2025-01-21T22:35Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/hou.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard"
+                ],
+                "lastUpdated": "2024-06-25T21:18Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/hou.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard",
+                  "dark"
+                ],
+                "lastUpdated": "2025-01-22T15:28Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              }
+            ],
+            "links": [
+              {
+                "language": "en-US",
+                "rel": [
+                  "clubhouse",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/_/name/hou/houston-rockets",
+                "text": "Clubhouse",
+                "shortText": "Clubhouse",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "roster",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/roster/_/name/hou/houston-rockets",
+                "text": "Roster",
+                "shortText": "Roster",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "stats",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/stats/_/name/hou/houston-rockets",
+                "text": "Statistics",
+                "shortText": "Statistics",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "schedule",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/schedule/_/name/hou",
+                "text": "Schedule",
+                "shortText": "Schedule",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "photos",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/photos/_/name/hou",
+                "text": "photos",
+                "shortText": "photos",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "tickets",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.vividseats.com/houston-rockets-tickets--sports-nba-basketball/performer/360?wsUser=717",
+                "text": "Tickets",
+                "shortText": "Tickets",
+                "isExternal": true,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "draftpicks",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/draft/teams/_/name/hou/houston-rockets",
+                "text": "Draft Picks",
+                "shortText": "Draft Picks",
+                "isExternal": false,
+                "isPremium": true
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "transactions",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/transactions/_/name/hou",
+                "text": "Transactions",
+                "shortText": "Transactions",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "injuries",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/injuries/_/name/hou",
+                "text": "Injuries",
+                "shortText": "Injuries",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "depthchart",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/depth/_/name/hou",
+                "text": "Depth Chart",
+                "shortText": "Depth Chart",
+                "isExternal": false,
+                "isPremium": false
+              }
+            ]
+          },
+          "notes": {
+            "items": [
+              {
+                "id": "499433",
+                "type": "news",
+                "date": "2025-10-16T22:28Z",
+                "headline": "Capela (rest) won't play in Thursday's preseason game against the Hawks, Vanessa Richardson of Space City Home Network reports.",
+                "text": "Along with most of Houston's regulars, Capela will sit out the team's preseason finale. The 31-year-old center's next chance to play will come in Tuesday's regular-season opener against the Thunder.",
+                "source": "RotoWire",
+                "injury": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/3102529/injuries/499433?lang=en&region=us"
+                }
+              }
+            ]
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
+          }
+        },
+        "source": {
+          "id": "1",
+          "description": "basic/manual",
+          "state": "basic"
+        },
+        "type": {
+          "id": "6",
+          "name": "INJURY_STATUS_DAYTODAY",
+          "description": "day-to-day",
+          "abbreviation": "DD"
+        },
+        "details": {
+          "fantasyStatus": {
+            "description": "GTD",
+            "abbreviation": "GTD"
+          },
+          "type": "Rest",
+          "location": "Other",
+          "returnDate": "2025-10-21"
+        }
+      },
+      {
+        "id": "499429",
+        "longComment": "The Rockets have opted to rest their key players Thursday. Eason will be looking ahead to Opening Night in Oklahoma City for his next game action.",
+        "shortComment": "Eason will rest in Thursday's preseason finale against the Hawks, Vanessa Richardson of Space City Home Network reports.",
+        "status": "Day-To-Day",
+        "date": "2025-10-16T22:25Z",
+        "athlete": {
+          "firstName": "Tari",
+          "lastName": "Eason",
+          "displayName": "Tari Eason",
+          "shortName": "T. Eason",
+          "links": [
+            {
+              "language": "en-US",
+              "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/4433192/tari-eason",
+              "text": "Player Card",
+              "shortText": "Player Card",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/stats/_/id/4433192/tari-eason",
+              "text": "Stats",
+              "shortText": "Stats",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/splits/_/id/4433192/tari-eason",
+              "text": "Splits",
+              "shortText": "Splits",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/4433192/tari-eason",
+              "text": "Game Log",
+              "shortText": "Game Log",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "news",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/news/_/id/4433192/tari-eason",
+              "text": "News",
+              "shortText": "News",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/bio/_/id/4433192/tari-eason",
+              "text": "Bio",
+              "shortText": "Bio",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/4433192/tari-eason",
+              "text": "Overview",
+              "shortText": "Overview",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "advancedstats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4433192/tari-eason",
+              "text": "Advanced Stats",
+              "shortText": "Advanced Stats",
+              "isExternal": false,
+              "isPremium": false
+            }
+          ],
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4433192.png",
+            "alt": "Tari Eason"
+          },
+          "position": {
+            "id": "7",
+            "name": "Forward",
+            "displayName": "Forward",
+            "abbreviation": "F",
+            "leaf": false
+          },
+          "team": {
+            "id": "10",
+            "uid": "s:40~l:46~t:10",
+            "slug": "houston-rockets",
+            "name": "Rockets",
+            "abbreviation": "HOU",
+            "displayName": "Houston Rockets",
+            "logos": [
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "default"
+                ],
+                "lastUpdated": "2024-06-25T21:17Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/hou.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "dark"
+                ],
+                "lastUpdated": "2025-01-21T22:35Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/hou.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard"
+                ],
+                "lastUpdated": "2024-06-25T21:18Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/hou.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard",
+                  "dark"
+                ],
+                "lastUpdated": "2025-01-22T15:28Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              }
+            ],
+            "links": [
+              {
+                "language": "en-US",
+                "rel": [
+                  "clubhouse",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/_/name/hou/houston-rockets",
+                "text": "Clubhouse",
+                "shortText": "Clubhouse",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "roster",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/roster/_/name/hou/houston-rockets",
+                "text": "Roster",
+                "shortText": "Roster",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "stats",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/stats/_/name/hou/houston-rockets",
+                "text": "Statistics",
+                "shortText": "Statistics",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "schedule",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/schedule/_/name/hou",
+                "text": "Schedule",
+                "shortText": "Schedule",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "photos",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/photos/_/name/hou",
+                "text": "photos",
+                "shortText": "photos",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "tickets",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.vividseats.com/houston-rockets-tickets--sports-nba-basketball/performer/360?wsUser=717",
+                "text": "Tickets",
+                "shortText": "Tickets",
+                "isExternal": true,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "draftpicks",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/draft/teams/_/name/hou/houston-rockets",
+                "text": "Draft Picks",
+                "shortText": "Draft Picks",
+                "isExternal": false,
+                "isPremium": true
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "transactions",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/transactions/_/name/hou",
+                "text": "Transactions",
+                "shortText": "Transactions",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "injuries",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/injuries/_/name/hou",
+                "text": "Injuries",
+                "shortText": "Injuries",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "depthchart",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/depth/_/name/hou",
+                "text": "Depth Chart",
+                "shortText": "Depth Chart",
+                "isExternal": false,
+                "isPremium": false
+              }
+            ]
+          },
+          "notes": {
+            "items": [
+              {
+                "id": "499429",
+                "type": "news",
+                "date": "2025-10-16T22:25Z",
+                "headline": "Eason will rest in Thursday's preseason finale against the Hawks, Vanessa Richardson of Space City Home Network reports.",
+                "text": "The Rockets have opted to rest their key players Thursday. Eason will be looking ahead to Opening Night in Oklahoma City for his next game action.",
+                "source": "RotoWire",
+                "injury": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4433192/injuries/499429?lang=en&region=us"
+                }
+              }
+            ]
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
+          }
+        },
+        "source": {
+          "id": "1",
+          "description": "basic/manual",
+          "state": "basic"
+        },
+        "type": {
+          "id": "6",
+          "name": "INJURY_STATUS_DAYTODAY",
+          "description": "day-to-day",
+          "abbreviation": "DD"
+        },
+        "details": {
+          "fantasyStatus": {
+            "description": "GTD",
+            "abbreviation": "GTD"
+          },
+          "type": "Rest",
+          "location": "Other",
+          "returnDate": "2025-10-21"
+        }
+      },
       {
         "id": "497641",
         "longComment": "VanVleet struggled with efficiency during his second season in Houston, but the Rockets' win-loss record with him on the court (41-19) spoke volumes about his overall impact on the team. With VanVleet sidelined, the runway is clear for Reed Sheppard, who barely had a role as a rookie. Amen Thompson could also handle a ton of ball-handling responsibilities, while Aaron Holiday is the only other true point guard on the roster currently.",
@@ -5998,11 +7767,11 @@
             "alt": "Fred VanVleet"
           },
           "position": {
-            "id": "1",
-            "name": "Point Guard",
-            "displayName": "Point Guard",
-            "abbreviation": "PG",
-            "leaf": true
+            "id": "3",
+            "name": "Guard",
+            "displayName": "Guard",
+            "abbreviation": "G",
+            "leaf": false
           },
           "team": {
             "id": "10",
@@ -6289,7 +8058,7 @@
                 "text": "VanVleet struggled with efficiency during his second season in Houston, but the Rockets' win-loss record with him on the court (41-19) spoke volumes about his overall impact on the team. With VanVleet sidelined, the runway is clear for Reed Sheppard, who barely had a role as a rookie. Amen Thompson could also handle a ton of ball-handling responsibilities, while Aaron Holiday is the only other true point guard on the roster currently.",
                 "source": "RotoWire",
                 "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/2991230/injuries/497641?lang=en&region=us"
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/2991230/injuries/497641?lang=en&region=us"
                 }
               }
             ]
@@ -6321,1348 +8090,6 @@
           "location": "Leg",
           "returnDate": "2026-04-12"
         }
-      },
-      {
-        "id": "-21854",
-        "longComment": "Sheppard was able to appear in two Summer League contests before Houston opted to shut him down. Following a disappointing rookie campaign, the 2024 second-rounder will now set his sights toward making an impression in training camp this fall.",
-        "shortComment": "The Rockets are shutting down Sheppard for the remainder of the Summer League, Kelly Iko of The Athletic reports.",
-        "status": "Day-To-Day",
-        "date": "2025-07-21T15:39Z",
-        "athlete": {
-          "firstName": "Reed",
-          "lastName": "Sheppard",
-          "displayName": "Reed Sheppard",
-          "shortName": "R. Sheppard",
-          "links": [
-            {
-              "language": "en-US",
-              "rel": [
-                "playercard",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/4711272/reed-sheppard",
-              "text": "Player Card",
-              "shortText": "Player Card",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "stats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/stats/_/id/4711272/reed-sheppard",
-              "text": "Stats",
-              "shortText": "Stats",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "splits",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/splits/_/id/4711272/reed-sheppard",
-              "text": "Splits",
-              "shortText": "Splits",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "gamelog",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/gamelog/_/id/4711272/reed-sheppard",
-              "text": "Game Log",
-              "shortText": "Game Log",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "news",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/news/_/id/4711272/reed-sheppard",
-              "text": "News",
-              "shortText": "News",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "bio",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/bio/_/id/4711272/reed-sheppard",
-              "text": "Bio",
-              "shortText": "Bio",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "overview",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/4711272/reed-sheppard",
-              "text": "Overview",
-              "shortText": "Overview",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "advancedstats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4711272/reed-sheppard",
-              "text": "Advanced Stats",
-              "shortText": "Advanced Stats",
-              "isExternal": false,
-              "isPremium": false
-            }
-          ],
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4711272.png",
-            "alt": "Reed Sheppard"
-          },
-          "position": {
-            "id": "3",
-            "name": "Guard",
-            "displayName": "Guard",
-            "abbreviation": "G",
-            "leaf": false
-          },
-          "team": {
-            "id": "10",
-            "uid": "s:40~l:46~t:10",
-            "slug": "houston-rockets",
-            "name": "Rockets",
-            "abbreviation": "HOU",
-            "displayName": "Houston Rockets",
-            "logos": [
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "default"
-                ],
-                "lastUpdated": "2024-06-25T21:17Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/hou.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "dark"
-                ],
-                "lastUpdated": "2025-01-21T22:35Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/hou.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard"
-                ],
-                "lastUpdated": "2024-06-25T21:18Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/hou.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard",
-                  "dark"
-                ],
-                "lastUpdated": "2025-01-22T15:28Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              }
-            ],
-            "links": [
-              {
-                "language": "en-US",
-                "rel": [
-                  "clubhouse",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/_/name/hou/houston-rockets",
-                "text": "Clubhouse",
-                "shortText": "Clubhouse",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "roster",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/roster/_/name/hou/houston-rockets",
-                "text": "Roster",
-                "shortText": "Roster",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "stats",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/stats/_/name/hou/houston-rockets",
-                "text": "Statistics",
-                "shortText": "Statistics",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "schedule",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/schedule/_/name/hou",
-                "text": "Schedule",
-                "shortText": "Schedule",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "photos",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/photos/_/name/hou",
-                "text": "photos",
-                "shortText": "photos",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "tickets",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.vividseats.com/houston-rockets-tickets--sports-nba-basketball/performer/360?wsUser=717",
-                "text": "Tickets",
-                "shortText": "Tickets",
-                "isExternal": true,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "draftpicks",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/draft/teams/_/name/hou/houston-rockets",
-                "text": "Draft Picks",
-                "shortText": "Draft Picks",
-                "isExternal": false,
-                "isPremium": true
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "transactions",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/transactions/_/name/hou",
-                "text": "Transactions",
-                "shortText": "Transactions",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "injuries",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/injuries/_/name/hou",
-                "text": "Injuries",
-                "shortText": "Injuries",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "depthchart",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/depth/_/name/hou",
-                "text": "Depth Chart",
-                "shortText": "Depth Chart",
-                "isExternal": false,
-                "isPremium": false
-              }
-            ]
-          },
-          "notes": {
-            "items": [
-              {
-                "id": "-21854",
-                "type": "news",
-                "date": "2025-07-21T15:39Z",
-                "headline": "The Rockets are shutting down Sheppard for the remainder of the Summer League, Kelly Iko of The Athletic reports.",
-                "text": "Sheppard was able to appear in two Summer League contests before Houston opted to shut him down. Following a disappointing rookie campaign, the 2024 second-rounder will now set his sights toward making an impression in training camp this fall.",
-                "source": "RotoWire",
-                "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/4711272/injuries/-21854?lang=en&region=us"
-                }
-              }
-            ]
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          }
-        },
-        "source": {
-          "id": "1",
-          "description": "basic/manual",
-          "state": "basic"
-        },
-        "type": {
-          "id": "6",
-          "name": "INJURY_STATUS_DAYTODAY",
-          "description": "day-to-day",
-          "abbreviation": "DD"
-        },
-        "details": {
-          "fantasyStatus": {
-            "description": "GTD",
-            "abbreviation": "GTD"
-          },
-          "type": "Rest",
-          "location": "Other",
-          "returnDate": "2025-10-01"
-        }
-      },
-      {
-        "id": "-20712",
-        "longComment": "Finney-Smith will join Houston after declining his $15.4 million player option with the Lakers for 2025-26 on Sunday. The 3-and-D forward will provide the Rockets with depth in the frontcourt after a productive 2024-25 campaign, during which he shot a career-high 41.1 percent from beyond the arc. Over 63 regular-season appearances (40 starts) between Los Angeles and Brooklyn last year, Finney-Smith averaged 8.7 points, 3.9 rebounds and 2.0 three-pointers in 28.9 minutes per game. The 32-year-old underwent surgery on his left ankle in mid-June but is expected to be ready for training camp.",
-        "shortComment": "Finney-Smith (ankle) signed a four-year, $53 million contract with the Rockets on Monday, Shams Charania of ESPN reports.",
-        "status": "Day-To-Day",
-        "date": "2025-07-03T22:08Z",
-        "athlete": {
-          "firstName": "Dorian",
-          "lastName": "Finney-Smith",
-          "displayName": "Dorian Finney-Smith",
-          "shortName": "D. Finney-Smith",
-          "links": [
-            {
-              "language": "en-US",
-              "rel": [
-                "playercard",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/2578185/dorian-finney-smith",
-              "text": "Player Card",
-              "shortText": "Player Card",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "stats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/stats/_/id/2578185/dorian-finney-smith",
-              "text": "Stats",
-              "shortText": "Stats",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "splits",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/splits/_/id/2578185/dorian-finney-smith",
-              "text": "Splits",
-              "shortText": "Splits",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "gamelog",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/gamelog/_/id/2578185/dorian-finney-smith",
-              "text": "Game Log",
-              "shortText": "Game Log",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "news",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/news/_/id/2578185/dorian-finney-smith",
-              "text": "News",
-              "shortText": "News",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "bio",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/bio/_/id/2578185/dorian-finney-smith",
-              "text": "Bio",
-              "shortText": "Bio",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "overview",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/2578185/dorian-finney-smith",
-              "text": "Overview",
-              "shortText": "Overview",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "advancedstats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/advancedstats/_/id/2578185/dorian-finney-smith",
-              "text": "Advanced Stats",
-              "shortText": "Advanced Stats",
-              "isExternal": false,
-              "isPremium": false
-            }
-          ],
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/nba/players/full/2578185.png",
-            "alt": "Dorian Finney-Smith"
-          },
-          "position": {
-            "id": "6",
-            "name": "Power Forward",
-            "displayName": "Power Forward",
-            "abbreviation": "PF",
-            "leaf": true
-          },
-          "team": {
-            "id": "10",
-            "uid": "s:40~l:46~t:10",
-            "slug": "houston-rockets",
-            "name": "Rockets",
-            "abbreviation": "HOU",
-            "displayName": "Houston Rockets",
-            "logos": [
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "default"
-                ],
-                "lastUpdated": "2024-06-25T21:17Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/hou.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "dark"
-                ],
-                "lastUpdated": "2025-01-21T22:35Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/hou.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard"
-                ],
-                "lastUpdated": "2024-06-25T21:18Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/hou.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard",
-                  "dark"
-                ],
-                "lastUpdated": "2025-01-22T15:28Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              }
-            ],
-            "links": [
-              {
-                "language": "en-US",
-                "rel": [
-                  "clubhouse",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/_/name/hou/houston-rockets",
-                "text": "Clubhouse",
-                "shortText": "Clubhouse",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "roster",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/roster/_/name/hou/houston-rockets",
-                "text": "Roster",
-                "shortText": "Roster",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "stats",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/stats/_/name/hou/houston-rockets",
-                "text": "Statistics",
-                "shortText": "Statistics",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "schedule",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/schedule/_/name/hou",
-                "text": "Schedule",
-                "shortText": "Schedule",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "photos",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/photos/_/name/hou",
-                "text": "photos",
-                "shortText": "photos",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "tickets",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.vividseats.com/houston-rockets-tickets--sports-nba-basketball/performer/360?wsUser=717",
-                "text": "Tickets",
-                "shortText": "Tickets",
-                "isExternal": true,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "draftpicks",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/draft/teams/_/name/hou/houston-rockets",
-                "text": "Draft Picks",
-                "shortText": "Draft Picks",
-                "isExternal": false,
-                "isPremium": true
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "transactions",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/transactions/_/name/hou",
-                "text": "Transactions",
-                "shortText": "Transactions",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "injuries",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/injuries/_/name/hou",
-                "text": "Injuries",
-                "shortText": "Injuries",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "depthchart",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/depth/_/name/hou",
-                "text": "Depth Chart",
-                "shortText": "Depth Chart",
-                "isExternal": false,
-                "isPremium": false
-              }
-            ]
-          },
-          "notes": {
-            "items": [
-              {
-                "id": "-20712",
-                "type": "news",
-                "date": "2025-07-03T22:08Z",
-                "headline": "Finney-Smith (ankle) signed a four-year, $53 million contract with the Rockets on Monday, Shams Charania of ESPN reports.",
-                "text": "Finney-Smith will join Houston after declining his $15.4 million player option with the Lakers for 2025-26 on Sunday. The 3-and-D forward will provide the Rockets with depth in the frontcourt after a productive 2024-25 campaign, during which he shot a career-high 41.1 percent from beyond the arc. Over 63 regular-season appearances (40 starts) between Los Angeles and Brooklyn last year, Finney-Smith averaged 8.7 points, 3.9 rebounds and 2.0 three-pointers in 28.9 minutes per game. The 32-year-old underwent surgery on his left ankle in mid-June but is expected to be ready for training camp.",
-                "source": "RotoWire",
-                "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/2578185/injuries/-20712?lang=en&region=us"
-                }
-              }
-            ]
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          }
-        },
-        "source": {
-          "id": "1",
-          "description": "basic/manual",
-          "state": "basic"
-        },
-        "type": {
-          "id": "6",
-          "name": "INJURY_STATUS_DAYTODAY",
-          "description": "day-to-day",
-          "abbreviation": "DD"
-        },
-        "details": {
-          "fantasyStatus": {
-            "description": "GTD",
-            "abbreviation": "GTD"
-          },
-          "type": "Ankle",
-          "location": "Leg",
-          "detail": "Surgery",
-          "side": "Left",
-          "returnDate": "2025-10-01"
-        }
-      },
-      {
-        "id": "-20706",
-        "longComment": "After the 2024-25 season came to a close for the Suns, Phoenix and Durant agreed to part ways and work on a trade heading into the NBA offseason. A lot of teams became potential destinations for the superstar forward, but in the end, Houston came out on top by sending Jalen Green, Dillon Brooks and six draft picks to Phoenix. During the 2024-25 campaign, Durant averaged 26.6 points, 6.0 rebounds, 4.2 assists and 1.2 blocks per game, shooting 52.7 percent from the field and 43 percent from beyond the arc.",
-        "shortComment": "The Rockets have acquired Durant in a trade with the Suns, Shams Charania of ESPN reports.",
-        "status": "Day-To-Day",
-        "date": "2025-07-03T22:08Z",
-        "athlete": {
-          "firstName": "Kevin",
-          "lastName": "Durant",
-          "displayName": "Kevin Durant",
-          "shortName": "K. Durant",
-          "links": [
-            {
-              "language": "en-US",
-              "rel": [
-                "playercard",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/3202/kevin-durant",
-              "text": "Player Card",
-              "shortText": "Player Card",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "stats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/stats/_/id/3202/kevin-durant",
-              "text": "Stats",
-              "shortText": "Stats",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "splits",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/splits/_/id/3202/kevin-durant",
-              "text": "Splits",
-              "shortText": "Splits",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "gamelog",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/gamelog/_/id/3202/kevin-durant",
-              "text": "Game Log",
-              "shortText": "Game Log",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "news",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/news/_/id/3202/kevin-durant",
-              "text": "News",
-              "shortText": "News",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "bio",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/bio/_/id/3202/kevin-durant",
-              "text": "Bio",
-              "shortText": "Bio",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "overview",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/3202/kevin-durant",
-              "text": "Overview",
-              "shortText": "Overview",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "advancedstats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/advancedstats/_/id/3202/kevin-durant",
-              "text": "Advanced Stats",
-              "shortText": "Advanced Stats",
-              "isExternal": false,
-              "isPremium": false
-            }
-          ],
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/nba/players/full/3202.png",
-            "alt": "Kevin Durant"
-          },
-          "position": {
-            "id": "6",
-            "name": "Power Forward",
-            "displayName": "Power Forward",
-            "abbreviation": "PF",
-            "leaf": true
-          },
-          "team": {
-            "id": "10",
-            "uid": "s:40~l:46~t:10",
-            "slug": "houston-rockets",
-            "name": "Rockets",
-            "abbreviation": "HOU",
-            "displayName": "Houston Rockets",
-            "logos": [
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "default"
-                ],
-                "lastUpdated": "2024-06-25T21:17Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/hou.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "dark"
-                ],
-                "lastUpdated": "2025-01-21T22:35Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/hou.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard"
-                ],
-                "lastUpdated": "2024-06-25T21:18Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/hou.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard",
-                  "dark"
-                ],
-                "lastUpdated": "2025-01-22T15:28Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              }
-            ],
-            "links": [
-              {
-                "language": "en-US",
-                "rel": [
-                  "clubhouse",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/_/name/hou/houston-rockets",
-                "text": "Clubhouse",
-                "shortText": "Clubhouse",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "roster",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/roster/_/name/hou/houston-rockets",
-                "text": "Roster",
-                "shortText": "Roster",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "stats",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/stats/_/name/hou/houston-rockets",
-                "text": "Statistics",
-                "shortText": "Statistics",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "schedule",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/schedule/_/name/hou",
-                "text": "Schedule",
-                "shortText": "Schedule",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "photos",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/photos/_/name/hou",
-                "text": "photos",
-                "shortText": "photos",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "tickets",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.vividseats.com/houston-rockets-tickets--sports-nba-basketball/performer/360?wsUser=717",
-                "text": "Tickets",
-                "shortText": "Tickets",
-                "isExternal": true,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "draftpicks",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/draft/teams/_/name/hou/houston-rockets",
-                "text": "Draft Picks",
-                "shortText": "Draft Picks",
-                "isExternal": false,
-                "isPremium": true
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "transactions",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/transactions/_/name/hou",
-                "text": "Transactions",
-                "shortText": "Transactions",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "injuries",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/injuries/_/name/hou",
-                "text": "Injuries",
-                "shortText": "Injuries",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "depthchart",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/depth/_/name/hou",
-                "text": "Depth Chart",
-                "shortText": "Depth Chart",
-                "isExternal": false,
-                "isPremium": false
-              }
-            ]
-          },
-          "notes": {
-            "items": [
-              {
-                "id": "-20706",
-                "type": "news",
-                "date": "2025-07-03T22:08Z",
-                "headline": "The Rockets have acquired Durant in a trade with the Suns, Shams Charania of ESPN reports.",
-                "text": "After the 2024-25 season came to a close for the Suns, Phoenix and Durant agreed to part ways and work on a trade heading into the NBA offseason. A lot of teams became potential destinations for the superstar forward, but in the end, Houston came out on top by sending Jalen Green, Dillon Brooks and six draft picks to Phoenix. During the 2024-25 campaign, Durant averaged 26.6 points, 6.0 rebounds, 4.2 assists and 1.2 blocks per game, shooting 52.7 percent from the field and 43 percent from beyond the arc.",
-                "source": "RotoWire",
-                "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/3202/injuries/-20706?lang=en&region=us"
-                }
-              }
-            ]
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          }
-        },
-        "source": {
-          "id": "1",
-          "description": "basic/manual",
-          "state": "basic"
-        },
-        "type": {
-          "id": "6",
-          "name": "INJURY_STATUS_DAYTODAY",
-          "description": "day-to-day",
-          "abbreviation": "DD"
-        },
-        "details": {
-          "fantasyStatus": {
-            "description": "GTD",
-            "abbreviation": "GTD"
-          },
-          "type": "Ankle",
-          "location": "Leg",
-          "detail": "Sprain",
-          "side": "Left",
-          "returnDate": "2025-10-01"
-        }
       }
     ],
     "team": {
@@ -7673,8 +8100,9 @@
       "displayName": "Houston Rockets",
       "color": "ce1141",
       "logo": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
+      "recordSummary": "4-0",
       "seasonSummary": "2025-26",
-      "standingSummary": "1st in Southwest Division"
+      "standingSummary": "2nd in Southwest Division"
     }
   }
 }

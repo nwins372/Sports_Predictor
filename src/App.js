@@ -14,6 +14,7 @@ import { useEffect, useState } from 'react';
 import SportsNewsPage from './pages/SportsNewsPage';
 import ProfileSettings from './pages/ProfileSettings';
 import Schedules from './pages/Schedules';
+import Statistics from './pages/Statistics';
 
 const isLoggedIn = supabase.auth.getSession().then(({ data: { session } }) => !!session);
 const user = supabase.auth.getUser().then(({ data: { user } }) => user);
@@ -49,29 +50,26 @@ useEffect(() => {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
-  <Route path="/team/:league/:abbr" element={<Team />} />
-  {/* backward-compatible route (no league) */}
-  <Route path="/team/:abbr" element={<Team />} />
-  <Route path="/player/:league/:id" element={<Player />} />
-  {/* backward-compatible route (no league) */}
-  <Route path="/player/:id" element={<Player />} />
-      <Route path="/settings" element={<Settings />} />
-      <Route path="/sports-news" element={<SportsNewsPage />} />
-      <Route path="/schedules" element={<Schedules />} />
       <Route path="/team/:league/:abbr" element={<Team />} />
       {/* backward-compatible route (no league) */}
       <Route path="/team/:abbr" element={<Team />} />
       <Route path="/player/:league/:id" element={<Player />} />
-        <Route
-          path="/profile-settings"
-          element={
-            <ProfileSettings
-              isLoggedIn={isLoggedIn}
-              user={user}
-              onUpdate={handleUpdate}
-            />
-          }
-        />
+      {/* backward-compatible route (no league) */}
+      <Route path="/player/:id" element={<Player />} />
+      <Route path="/settings" element={<Settings />} />
+      <Route path="/sports-news" element={<SportsNewsPage />} />
+      <Route path="/schedules" element={<Schedules />} />
+      <Route path="/statistics" element={<Statistics />} />
+      <Route
+        path="/profile-settings"
+        element={
+          <ProfileSettings
+            isLoggedIn={isLoggedIn}
+            user={user}
+            onUpdate={handleUpdate}
+          />
+        }
+      />
     </Routes>
     </BrowserRouter>
     </ThemeProvider>

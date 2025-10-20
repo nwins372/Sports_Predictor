@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2025-09-25T23:34:50.286Z",
+  "fetchedAt": "2025-10-20T18:34:13.804Z",
   "detail": {
     "team": {
       "id": "14",
@@ -148,7 +148,147 @@
           "lastUpdated": "2024-12-03T19:33Z"
         }
       ],
-      "record": {},
+      "record": {
+        "items": [
+          {
+            "description": "Overall Record",
+            "type": "total",
+            "summary": "0-6",
+            "stats": [
+              {
+                "name": "OTLosses",
+                "value": 0
+              },
+              {
+                "name": "OTWins",
+                "value": 0
+              },
+              {
+                "name": "avgPointsAgainst",
+                "value": 120.166664
+              },
+              {
+                "name": "avgPointsFor",
+                "value": 110.833336
+              },
+              {
+                "name": "differential",
+                "value": -9.400000000000006
+              },
+              {
+                "name": "divisionWinPercent",
+                "value": 0
+              },
+              {
+                "name": "gamesBehind",
+                "value": 5
+              },
+              {
+                "name": "gamesPlayed",
+                "value": 6
+              },
+              {
+                "name": "leagueWinPercent",
+                "value": 0
+              },
+              {
+                "name": "losses",
+                "value": 6
+              },
+              {
+                "name": "playoffSeed",
+                "value": 15
+              },
+              {
+                "name": "pointDifferential",
+                "value": -56
+              },
+              {
+                "name": "points",
+                "value": -3
+              },
+              {
+                "name": "pointsAgainst",
+                "value": 721
+              },
+              {
+                "name": "pointsFor",
+                "value": 665
+              },
+              {
+                "name": "streak",
+                "value": -6
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 0
+              },
+              {
+                "name": "wins",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "description": "Home Record",
+            "type": "home",
+            "summary": "0-3",
+            "stats": [
+              {
+                "name": "wins",
+                "value": 0
+              },
+              {
+                "name": "losses",
+                "value": 3
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 0
+              },
+              {
+                "name": "OTLosses",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "description": "Away Record",
+            "type": "road",
+            "summary": "0-2",
+            "stats": [
+              {
+                "name": "wins",
+                "value": 0
+              },
+              {
+                "name": "losses",
+                "value": 2
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 0
+              },
+              {
+                "name": "OTLosses",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
       "groups": {
         "id": "9",
         "parent": {
@@ -326,30 +466,30 @@
           ]
         },
         "team": {
-          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/14?lang=en&region=us"
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/teams/14?lang=en&region=us"
         }
       },
       "nextEvent": [
         {
-          "id": "401812485",
-          "date": "2025-10-05T00:00Z",
-          "name": "Orlando Magic at Miami Heat",
-          "shortName": "ORL VS MIA",
+          "id": "401809934",
+          "date": "2025-10-22T23:00Z",
+          "name": "Miami Heat at Orlando Magic",
+          "shortName": "MIA @ ORL",
           "season": {
             "year": 2026,
             "displayName": "2025-26"
           },
           "seasonType": {
-            "id": "1",
-            "type": 1,
-            "name": "Preseason",
-            "abbreviation": "pre"
+            "id": "2",
+            "type": 2,
+            "name": "Regular Season",
+            "abbreviation": "reg"
           },
           "timeValid": true,
           "competitions": [
             {
-              "id": "401812485",
-              "date": "2025-10-05T00:00Z",
+              "id": "401809934",
+              "date": "2025-10-22T23:00Z",
               "attendance": 0,
               "type": {
                 "id": "1",
@@ -359,261 +499,22 @@
                 "type": "standard"
               },
               "timeValid": true,
-              "neutralSite": true,
+              "neutralSite": false,
               "boxscoreAvailable": false,
               "ticketsAvailable": true,
               "venue": {
-                "fullName": "Coliseo de Puerto Rico",
+                "fullName": "Kia Center",
                 "address": {
-                  "city": "San Juan"
+                  "city": "Orlando",
+                  "state": "FL"
                 }
               },
               "competitors": [
                 {
-                  "id": "14",
+                  "id": "19",
                   "type": "team",
                   "order": 0,
                   "homeAway": "home",
-                  "team": {
-                    "id": "14",
-                    "location": "Miami",
-                    "abbreviation": "MIA",
-                    "displayName": "Miami Heat",
-                    "shortDisplayName": "Heat",
-                    "logos": [
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "default"
-                        ],
-                        "lastUpdated": "2024-06-25T21:17Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/mia.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "dark"
-                        ],
-                        "lastUpdated": "2024-06-25T21:13Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mia.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "scoreboard"
-                        ],
-                        "lastUpdated": "2024-06-25T21:18Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/mia.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "scoreboard",
-                          "dark"
-                        ],
-                        "lastUpdated": "2024-06-25T21:14Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_white_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_white_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_black_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_black_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_primary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_primary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_secondary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_secondary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_white_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_white_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_black_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_black_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_primary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_primary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_secondary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_secondary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      }
-                    ],
-                    "links": [
-                      {
-                        "rel": [
-                          "clubhouse",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/_/name/mia/miami-heat",
-                        "text": "Clubhouse"
-                      },
-                      {
-                        "rel": [
-                          "roster",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/roster/_/name/mia/miami-heat",
-                        "text": "Roster"
-                      },
-                      {
-                        "rel": [
-                          "stats",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/stats/_/name/mia/miami-heat",
-                        "text": "Statistics"
-                      },
-                      {
-                        "rel": [
-                          "schedule",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/schedule/_/name/mia",
-                        "text": "Schedule"
-                      },
-                      {
-                        "rel": [
-                          "photos",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/photos/_/name/mia",
-                        "text": "photos"
-                      },
-                      {
-                        "rel": [
-                          "tickets",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.vividseats.com/miami-heat-tickets--sports-nba-basketball/performer/533?wsUser=717",
-                        "text": "Tickets"
-                      },
-                      {
-                        "rel": [
-                          "draftpicks",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/draft/teams/_/name/mia/miami-heat",
-                        "text": "Draft Picks"
-                      },
-                      {
-                        "rel": [
-                          "transactions",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/transactions/_/name/mia",
-                        "text": "Transactions"
-                      },
-                      {
-                        "rel": [
-                          "injuries",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/injuries/_/name/mia",
-                        "text": "Injuries"
-                      },
-                      {
-                        "rel": [
-                          "depthchart",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/depth/_/name/mia",
-                        "text": "Depth Chart"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "id": "19",
-                  "type": "team",
-                  "order": 1,
-                  "homeAway": "away",
                   "team": {
                     "id": "19",
                     "location": "Orlando",
@@ -848,19 +749,308 @@
                       }
                     ]
                   }
+                },
+                {
+                  "id": "14",
+                  "type": "team",
+                  "order": 1,
+                  "homeAway": "away",
+                  "team": {
+                    "id": "14",
+                    "location": "Miami",
+                    "abbreviation": "MIA",
+                    "displayName": "Miami Heat",
+                    "shortDisplayName": "Heat",
+                    "logos": [
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "default"
+                        ],
+                        "lastUpdated": "2024-06-25T21:17Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/mia.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "dark"
+                        ],
+                        "lastUpdated": "2024-06-25T21:13Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mia.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "scoreboard"
+                        ],
+                        "lastUpdated": "2024-06-25T21:18Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/mia.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "scoreboard",
+                          "dark"
+                        ],
+                        "lastUpdated": "2024-06-25T21:14Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_white_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_white_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_black_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_black_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_primary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_primary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_secondary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_secondary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_white_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_white_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_black_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_black_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_primary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_primary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_secondary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_secondary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      }
+                    ],
+                    "links": [
+                      {
+                        "rel": [
+                          "clubhouse",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/_/name/mia/miami-heat",
+                        "text": "Clubhouse"
+                      },
+                      {
+                        "rel": [
+                          "roster",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/roster/_/name/mia/miami-heat",
+                        "text": "Roster"
+                      },
+                      {
+                        "rel": [
+                          "stats",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/stats/_/name/mia/miami-heat",
+                        "text": "Statistics"
+                      },
+                      {
+                        "rel": [
+                          "schedule",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/schedule/_/name/mia",
+                        "text": "Schedule"
+                      },
+                      {
+                        "rel": [
+                          "photos",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/photos/_/name/mia",
+                        "text": "photos"
+                      },
+                      {
+                        "rel": [
+                          "tickets",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.vividseats.com/miami-heat-tickets--sports-nba-basketball/performer/533?wsUser=717",
+                        "text": "Tickets"
+                      },
+                      {
+                        "rel": [
+                          "draftpicks",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/draft/teams/_/name/mia/miami-heat",
+                        "text": "Draft Picks"
+                      },
+                      {
+                        "rel": [
+                          "transactions",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/transactions/_/name/mia",
+                        "text": "Transactions"
+                      },
+                      {
+                        "rel": [
+                          "injuries",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/injuries/_/name/mia",
+                        "text": "Injuries"
+                      },
+                      {
+                        "rel": [
+                          "depthchart",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/depth/_/name/mia",
+                        "text": "Depth Chart"
+                      }
+                    ]
+                  }
                 }
               ],
               "notes": [],
-              "broadcasts": [],
+              "broadcasts": [
+                {
+                  "type": {
+                    "id": "6",
+                    "shortName": "Subscription Package"
+                  },
+                  "market": {
+                    "id": "3",
+                    "type": "Away"
+                  },
+                  "media": {
+                    "shortName": "NBA League Pass"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                },
+                {
+                  "type": {
+                    "id": "1",
+                    "shortName": "TV"
+                  },
+                  "market": {
+                    "id": "2",
+                    "type": "Home"
+                  },
+                  "media": {
+                    "shortName": "FanDuel SN FL"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                },
+                {
+                  "type": {
+                    "id": "1",
+                    "shortName": "TV"
+                  },
+                  "market": {
+                    "id": "3",
+                    "type": "Away"
+                  },
+                  "media": {
+                    "shortName": "FanDuel SN Sun"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                }
+              ],
               "tickets": [
                 {
-                  "id": "5935898",
-                  "summary": "Tickets as low as $66",
-                  "description": "NBA Preseason - Orlando Magic vs Miami Heat",
-                  "maxPrice": 5096.05,
-                  "startingPrice": 66.05,
-                  "numberAvailable": 148,
-                  "totalPostings": 75,
+                  "id": "5940274",
+                  "summary": "Tickets as low as $44",
+                  "description": "Miami Heat at Orlando Magic",
+                  "maxPrice": 120582.11,
+                  "startingPrice": 44.07,
+                  "numberAvailable": 2043,
+                  "totalPostings": 484,
                   "links": [
                     {
                       "rel": [
@@ -868,7 +1058,7 @@
                         "desktop",
                         "event"
                       ],
-                      "href": "https://www.vividseats.com/miami-heat-tickets-coliseo-de-puerto-rico-10-4-2025--sports-nba-basketball/production/5935898?wsUser=717"
+                      "href": "https://www.vividseats.com/orlando-magic-tickets-kia-center-10-22-2025--sports-nba-basketball/production/5940274?wsUser=717"
                     },
                     {
                       "rel": [
@@ -876,7 +1066,7 @@
                         "desktop",
                         "venue"
                       ],
-                      "href": "https://www.vividseats.com/venues/coliseo-de-puerto-rico-tickets.html?wsUser=717"
+                      "href": "https://www.vividseats.com/amway-center-tickets/venue/8513?wsUser=717"
                     }
                   ]
                 }
@@ -891,8 +1081,8 @@
                   "state": "pre",
                   "completed": false,
                   "description": "Scheduled",
-                  "detail": "Sat, October 4th at 8:00 PM EDT",
-                  "shortDetail": "10/4 - 8:00 PM EDT"
+                  "detail": "Wed, October 22nd at 7:00 PM EDT",
+                  "shortDetail": "10/22 - 7:00 PM EDT"
                 }
               }
             }
@@ -905,7 +1095,7 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/game/_/gameId/401812485/magic-heat",
+              "href": "https://www.espn.com/nba/game/_/gameId/401809934/heat-magic",
               "text": "Gamecast",
               "shortText": "Summary",
               "isExternal": false,
@@ -919,7 +1109,7 @@
                 "app",
                 "event"
               ],
-              "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=nba&gameId=401812485",
+              "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=nba&gameId=401809934",
               "text": "Gamecast",
               "shortText": "Summary",
               "isExternal": false,
@@ -932,7 +1122,7 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/game/_/gameId/401812485",
+              "href": "https://www.espn.com/nba/game/_/gameId/401809934",
               "text": "Now",
               "shortText": "Now",
               "isExternal": false,
@@ -945,7 +1135,7 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/odds/_/gameId/401812485",
+              "href": "https://www.espn.com/nba/odds/_/gameId/401809934",
               "text": "Odds",
               "shortText": "Odds",
               "isExternal": false,
@@ -958,7 +1148,7 @@
                 "mobile",
                 "event"
               ],
-              "href": "https://m.espn.com/nba/odds/_/gameId/401812485",
+              "href": "https://m.espn.com/nba/odds/_/gameId/401809934",
               "text": "Odds",
               "shortText": "Odds",
               "isExternal": false,
@@ -967,254 +1157,19 @@
           ]
         }
       ],
-      "standingSummary": "1st in Southeast Division"
+      "standingSummary": "5th in Southeast Division"
     }
   },
   "roster": {
-    "timestamp": "2025-09-25T23:27:27Z",
+    "timestamp": "2025-10-20T18:28:51Z",
     "status": "success",
     "season": {
       "year": 2026,
       "displayName": "2025-26",
-      "type": 1,
-      "name": "Preseason"
+      "type": 2,
+      "name": "Regular Season"
     },
     "athletes": [
-      {
-        "id": "4431679",
-        "uid": "s:40~l:46~a:4431679",
-        "guid": "79540e31-b541-3156-9ed2-fea920e18b17",
-        "alternateIds": {
-          "sdr": "4431679"
-        },
-        "firstName": "Precious",
-        "lastName": "Achiuwa",
-        "fullName": "Precious Achiuwa",
-        "displayName": "Precious Achiuwa",
-        "shortName": "P. Achiuwa",
-        "weight": 243,
-        "displayWeight": "243 lbs",
-        "height": 80,
-        "displayHeight": "6' 8\"",
-        "age": 26,
-        "dateOfBirth": "1999-09-19T07:00Z",
-        "debutYear": 2020,
-        "links": [
-          {
-            "language": "en-US",
-            "rel": [
-              "playercard",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/_/id/4431679/precious-achiuwa",
-            "text": "Player Card",
-            "shortText": "Player Card",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "stats",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/stats/_/id/4431679/precious-achiuwa",
-            "text": "Stats",
-            "shortText": "Stats",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "splits",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/splits/_/id/4431679/precious-achiuwa",
-            "text": "Splits",
-            "shortText": "Splits",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "gamelog",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/gamelog/_/id/4431679/precious-achiuwa",
-            "text": "Game Log",
-            "shortText": "Game Log",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "news",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/news/_/id/4431679/precious-achiuwa",
-            "text": "News",
-            "shortText": "News",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "bio",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/bio/_/id/4431679/precious-achiuwa",
-            "text": "Bio",
-            "shortText": "Bio",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "overview",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/_/id/4431679/precious-achiuwa",
-            "text": "Overview",
-            "shortText": "Overview",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "advancedstats",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/advancedstats/_/id/4431679/precious-achiuwa",
-            "text": "Advanced Stats",
-            "shortText": "Advanced Stats",
-            "isExternal": false,
-            "isPremium": false
-          }
-        ],
-        "birthPlace": {
-          "city": "Queens",
-          "state": "NY",
-          "country": "USA"
-        },
-        "college": {
-          "id": "235",
-          "guid": "8d093704-f81a-3c33-aa6d-e41d2b13677c",
-          "mascot": "Tigers",
-          "name": "Memphis",
-          "shortName": "Memphis",
-          "abbrev": "MEM",
-          "logos": [
-            {
-              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/235.png",
-              "width": 500,
-              "height": 500,
-              "alt": "",
-              "rel": [
-                "full",
-                "default"
-              ],
-              "lastUpdated": "2023-03-15T19:32Z"
-            },
-            {
-              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/235.png",
-              "width": 500,
-              "height": 500,
-              "alt": "",
-              "rel": [
-                "full",
-                "dark"
-              ],
-              "lastUpdated": "2023-03-15T19:32Z"
-            }
-          ]
-        },
-        "slug": "precious-achiuwa",
-        "headshot": {
-          "href": "https://a.espncdn.com/i/headshots/nba/players/full/4431679.png",
-          "alt": "Precious Achiuwa"
-        },
-        "jersey": "8",
-        "position": {
-          "id": "6",
-          "name": "Power Forward",
-          "displayName": "Power Forward",
-          "abbreviation": "PF",
-          "leaf": true,
-          "parent": {
-            "id": "7",
-            "name": "Forward",
-            "displayName": "Forward",
-            "abbreviation": "F",
-            "leaf": false
-          }
-        },
-        "injuries": [],
-        "contracts": [
-          {
-            "salary": 6000000,
-            "season": {
-              "year": 2025,
-              "startDate": "2024-09-24T07:00Z",
-              "endDate": "2025-06-27T06:59Z"
-            }
-          },
-          {
-            "salary": 4379527,
-            "season": {
-              "year": 2024,
-              "startDate": "2023-10-05T07:00Z",
-              "endDate": "2024-06-21T06:59Z"
-            }
-          },
-          {
-            "salary": 2840160,
-            "season": {
-              "year": 2023,
-              "startDate": "2022-08-30T07:00Z",
-              "endDate": "2023-06-24T06:59Z"
-            }
-          },
-          {
-            "salary": 2711280,
-            "season": {
-              "year": 2022,
-              "startDate": "2021-09-22T07:00Z",
-              "endDate": "2022-06-20T06:59Z"
-            }
-          },
-          {
-            "salary": 2582160,
-            "season": {
-              "year": 2021,
-              "startDate": "2020-12-02T08:00Z",
-              "endDate": "2021-07-23T06:59Z"
-            }
-          }
-        ],
-        "experience": {
-          "years": 4
-        },
-        "status": {
-          "id": "1",
-          "name": "Active",
-          "type": "active",
-          "abbreviation": "Active"
-        }
-      },
       {
         "id": "4066261",
         "uid": "s:40~l:46~a:4066261",
@@ -1227,8 +1182,8 @@
         "fullName": "Bam Adebayo",
         "displayName": "Bam Adebayo",
         "shortName": "B. Adebayo",
-        "weight": 255,
-        "displayWeight": "255 lbs",
+        "weight": 260,
+        "displayWeight": "260 lbs",
         "height": 81,
         "displayHeight": "6' 9\"",
         "age": 28,
@@ -1466,7 +1421,7 @@
           }
         ],
         "experience": {
-          "years": 7
+          "years": 8
         },
         "contract": {
           "birdStatus": 0,
@@ -1506,187 +1461,6 @@
         }
       },
       {
-        "id": "4432189",
-        "uid": "s:40~l:46~a:4432189",
-        "guid": "9dc878ed-1ebb-31e5-a7b5-097c62330b56",
-        "alternateIds": {
-          "sdr": "4432189"
-        },
-        "firstName": "Dain",
-        "lastName": "Dainja",
-        "fullName": "Dain Dainja",
-        "displayName": "Dain Dainja",
-        "shortName": "D. Dainja",
-        "weight": 271,
-        "displayWeight": "271 lbs",
-        "height": 81,
-        "displayHeight": "6' 9\"",
-        "age": 23,
-        "dateOfBirth": "2002-07-16T07:00Z",
-        "links": [
-          {
-            "language": "en-US",
-            "rel": [
-              "playercard",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/_/id/4432189/dain-dainja",
-            "text": "Player Card",
-            "shortText": "Player Card",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "stats",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/stats/_/id/4432189/dain-dainja",
-            "text": "Stats",
-            "shortText": "Stats",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "splits",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/splits/_/id/4432189/dain-dainja",
-            "text": "Splits",
-            "shortText": "Splits",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "gamelog",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/gamelog/_/id/4432189/dain-dainja",
-            "text": "Game Log",
-            "shortText": "Game Log",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "news",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/news/_/id/4432189/dain-dainja",
-            "text": "News",
-            "shortText": "News",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "bio",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/bio/_/id/4432189/dain-dainja",
-            "text": "Bio",
-            "shortText": "Bio",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "overview",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/_/id/4432189/dain-dainja",
-            "text": "Overview",
-            "shortText": "Overview",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "advancedstats",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/advancedstats/_/id/4432189/dain-dainja",
-            "text": "Advanced Stats",
-            "shortText": "Advanced Stats",
-            "isExternal": false,
-            "isPremium": false
-          }
-        ],
-        "birthPlace": {
-          "city": "Brooklyn Park",
-          "state": "MN",
-          "country": "USA"
-        },
-        "college": {
-          "id": "235",
-          "guid": "8d093704-f81a-3c33-aa6d-e41d2b13677c",
-          "mascot": "Tigers",
-          "name": "Memphis",
-          "shortName": "Memphis",
-          "abbrev": "MEM",
-          "logos": [
-            {
-              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/235.png",
-              "width": 500,
-              "height": 500,
-              "alt": "",
-              "rel": [
-                "full",
-                "default"
-              ],
-              "lastUpdated": "2023-03-15T19:32Z"
-            },
-            {
-              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/235.png",
-              "width": 500,
-              "height": 500,
-              "alt": "",
-              "rel": [
-                "full",
-                "dark"
-              ],
-              "lastUpdated": "2023-03-15T19:32Z"
-            }
-          ]
-        },
-        "slug": "dain-dainja",
-        "position": {
-          "id": "7",
-          "name": "Forward",
-          "displayName": "Forward",
-          "abbreviation": "F",
-          "leaf": false
-        },
-        "injuries": [],
-        "contracts": [],
-        "experience": {
-          "years": 0
-        },
-        "status": {
-          "id": "1",
-          "name": "Active",
-          "type": "active",
-          "abbreviation": "Active"
-        }
-      },
-      {
         "id": "3899664",
         "uid": "s:40~l:46~a:3899664",
         "guid": "a0409737-c86c-eca9-747b-d24b9a421c32",
@@ -1698,8 +1472,8 @@
         "fullName": "Simone Fontecchio",
         "displayName": "Simone Fontecchio",
         "shortName": "S. Fontecchio",
-        "weight": 209,
-        "displayWeight": "209 lbs",
+        "weight": 220,
+        "displayWeight": "220 lbs",
         "height": 79,
         "displayHeight": "6' 7\"",
         "age": 29,
@@ -1863,7 +1637,7 @@
           }
         ],
         "experience": {
-          "years": 2
+          "years": 3
         },
         "contract": {
           "birdStatus": 0,
@@ -1914,10 +1688,10 @@
         "fullName": "Myron Gardner",
         "displayName": "Myron Gardner",
         "shortName": "M. Gardner",
-        "weight": 220,
-        "displayWeight": "220 lbs",
-        "height": 78,
-        "displayHeight": "6' 6\"",
+        "weight": 225,
+        "displayWeight": "225 lbs",
+        "height": 77,
+        "displayHeight": "6' 5\"",
         "age": 24,
         "dateOfBirth": "2001-05-21T07:00Z",
         "links": [
@@ -2135,10 +1909,10 @@
         "fullName": "Vladislav Goldin",
         "displayName": "Vladislav Goldin",
         "shortName": "V. Goldin",
-        "weight": 250,
-        "displayWeight": "250 lbs",
-        "height": 85,
-        "displayHeight": "7' 1\"",
+        "weight": 255,
+        "displayWeight": "255 lbs",
+        "height": 84,
+        "displayHeight": "7' 0\"",
         "age": 24,
         "dateOfBirth": "2001-05-12T07:00Z",
         "links": [
@@ -2355,8 +2129,8 @@
         "fullName": "Tyler Herro",
         "displayName": "Tyler Herro",
         "shortName": "T. Herro",
-        "weight": 195,
-        "displayWeight": "195 lbs",
+        "weight": 205,
+        "displayWeight": "205 lbs",
         "height": 77,
         "displayHeight": "6' 5\"",
         "age": 25,
@@ -2512,23 +2286,16 @@
         },
         "jersey": "14",
         "position": {
-          "id": "1",
-          "name": "Point Guard",
-          "displayName": "Point Guard",
-          "abbreviation": "PG",
-          "leaf": true,
-          "parent": {
-            "id": "3",
-            "name": "Guard",
-            "displayName": "Guard",
-            "abbreviation": "G",
-            "leaf": false
-          }
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
         },
         "injuries": [
           {
             "status": "Out",
-            "date": "2025-09-19T20:17Z"
+            "date": "2025-09-30T21:35Z"
           }
         ],
         "contracts": [
@@ -2590,7 +2357,7 @@
           }
         ],
         "experience": {
-          "years": 5
+          "years": 6
         },
         "contract": {
           "birdStatus": 0,
@@ -2641,10 +2408,10 @@
         "fullName": "Kasparas Jakucionis",
         "displayName": "Kasparas Jakucionis",
         "shortName": "K. Jakucionis",
-        "weight": 200,
-        "displayWeight": "200 lbs",
-        "height": 78,
-        "displayHeight": "6' 6\"",
+        "weight": 205,
+        "displayWeight": "205 lbs",
+        "height": 77,
+        "displayHeight": "6' 5\"",
         "age": 19,
         "dateOfBirth": "2006-05-29T07:00Z",
         "links": [
@@ -2802,7 +2569,12 @@
           "abbreviation": "G",
           "leaf": false
         },
-        "injuries": [],
+        "injuries": [
+          {
+            "status": "Day-To-Day",
+            "date": "2025-10-19T16:55Z"
+          }
+        ],
         "contracts": [
           {
             "salary": 3658800,
@@ -2865,8 +2637,8 @@
         "fullName": "Jaime Jaquez Jr.",
         "displayName": "Jaime Jaquez Jr.",
         "shortName": "J. Jaquez Jr.",
-        "weight": 225,
-        "displayWeight": "225 lbs",
+        "weight": 230,
+        "displayWeight": "230 lbs",
         "height": 78,
         "displayHeight": "6' 6\"",
         "age": 24,
@@ -3021,10 +2793,10 @@
         },
         "jersey": "11",
         "position": {
-          "id": "3",
-          "name": "Guard",
-          "displayName": "Guard",
-          "abbreviation": "G",
+          "id": "7",
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F",
           "leaf": false
         },
         "injuries": [],
@@ -3055,7 +2827,7 @@
           }
         ],
         "experience": {
-          "years": 1
+          "years": 2
         },
         "contract": {
           "birdStatus": 0,
@@ -3106,10 +2878,10 @@
         "fullName": "Keshad Johnson",
         "displayName": "Keshad Johnson",
         "shortName": "K. Johnson",
-        "weight": 225,
-        "displayWeight": "225 lbs",
-        "height": 79,
-        "displayHeight": "6' 7\"",
+        "weight": 230,
+        "displayWeight": "230 lbs",
+        "height": 78,
+        "displayHeight": "6' 6\"",
         "age": 24,
         "dateOfBirth": "2001-06-23T07:00Z",
         "links": [
@@ -3339,8 +3111,8 @@
         "fullName": "Nikola Jovic",
         "displayName": "Nikola Jovic",
         "shortName": "N. Jovic",
-        "weight": 205,
-        "displayWeight": "205 lbs",
+        "weight": 240,
+        "displayWeight": "240 lbs",
         "height": 82,
         "displayHeight": "6' 10\"",
         "age": 22,
@@ -3465,7 +3237,12 @@
           "abbreviation": "F",
           "leaf": false
         },
-        "injuries": [],
+        "injuries": [
+          {
+            "status": "Day-To-Day",
+            "date": "2025-10-17T22:19Z"
+          }
+        ],
         "contracts": [
           {
             "salary": 4445417,
@@ -3501,7 +3278,7 @@
           }
         ],
         "experience": {
-          "years": 2
+          "years": 3
         },
         "contract": {
           "birdStatus": 0,
@@ -3511,13 +3288,13 @@
           "poisonPillProvision": {
             "active": false
           },
-          "incomingTradeValue": 4445417,
+          "incomingTradeValue": 13369083,
           "outgoingTradeValue": 4445417,
           "minimumSalaryException": false,
           "optionType": 0,
           "salary": 4445417,
           "salaryRemaining": 0,
-          "yearsRemaining": 1,
+          "yearsRemaining": 5,
           "season": {
             "year": 2026,
             "startDate": "2025-10-01T07:00Z",
@@ -3532,200 +3309,6 @@
           "tradeRestriction": false,
           "unsignedForeignPick": false,
           "active": true
-        },
-        "status": {
-          "id": "1",
-          "name": "Active",
-          "type": "active",
-          "abbreviation": "Active"
-        }
-      },
-      {
-        "id": "4432645",
-        "uid": "s:40~l:46~a:4432645",
-        "guid": "4a5637fa-7199-3b25-aba7-e27e664e4f25",
-        "alternateIds": {
-          "sdr": "4432645"
-        },
-        "firstName": "Trevor",
-        "lastName": "Keels",
-        "fullName": "Trevor Keels",
-        "displayName": "Trevor Keels",
-        "shortName": "T. Keels",
-        "weight": 221,
-        "displayWeight": "221 lbs",
-        "height": 76,
-        "displayHeight": "6' 4\"",
-        "age": 22,
-        "dateOfBirth": "2003-08-26T07:00Z",
-        "links": [
-          {
-            "language": "en-US",
-            "rel": [
-              "playercard",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/_/id/4432645/trevor-keels",
-            "text": "Player Card",
-            "shortText": "Player Card",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "stats",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/stats/_/id/4432645/trevor-keels",
-            "text": "Stats",
-            "shortText": "Stats",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "splits",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/splits/_/id/4432645/trevor-keels",
-            "text": "Splits",
-            "shortText": "Splits",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "gamelog",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/gamelog/_/id/4432645/trevor-keels",
-            "text": "Game Log",
-            "shortText": "Game Log",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "news",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/news/_/id/4432645/trevor-keels",
-            "text": "News",
-            "shortText": "News",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "bio",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/bio/_/id/4432645/trevor-keels",
-            "text": "Bio",
-            "shortText": "Bio",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "overview",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/_/id/4432645/trevor-keels",
-            "text": "Overview",
-            "shortText": "Overview",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "advancedstats",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/advancedstats/_/id/4432645/trevor-keels",
-            "text": "Advanced Stats",
-            "shortText": "Advanced Stats",
-            "isExternal": false,
-            "isPremium": false
-          }
-        ],
-        "birthPlace": {
-          "city": "Clinton",
-          "state": "MD",
-          "country": "USA"
-        },
-        "college": {
-          "id": "150",
-          "guid": "961248a4-28a8-365b-bb8c-fa7341c5ced0",
-          "mascot": "Blue Devils",
-          "name": "Duke",
-          "shortName": "Duke",
-          "abbrev": "DUKE",
-          "logos": [
-            {
-              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
-              "width": 500,
-              "height": 500,
-              "alt": "",
-              "rel": [
-                "full",
-                "default"
-              ],
-              "lastUpdated": "2023-09-07T19:32Z"
-            },
-            {
-              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
-              "width": 500,
-              "height": 500,
-              "alt": "",
-              "rel": [
-                "full",
-                "dark"
-              ],
-              "lastUpdated": "2023-09-07T19:32Z"
-            }
-          ]
-        },
-        "slug": "trevor-keels",
-        "headshot": {
-          "href": "https://a.espncdn.com/i/headshots/nba/players/full/4432645.png",
-          "alt": "Trevor Keels"
-        },
-        "position": {
-          "id": "3",
-          "name": "Guard",
-          "displayName": "Guard",
-          "abbreviation": "G",
-          "leaf": false
-        },
-        "injuries": [],
-        "contracts": [
-          {
-            "salary": 0,
-            "season": {
-              "year": 2023,
-              "startDate": "2022-08-30T07:00Z",
-              "endDate": "2023-06-24T06:59Z"
-            }
-          }
-        ],
-        "experience": {
-          "years": 0
         },
         "status": {
           "id": "1",
@@ -3907,12 +3490,7 @@
           "abbreviation": "G",
           "leaf": false
         },
-        "injuries": [
-          {
-            "status": "Day-To-Day",
-            "date": "2025-08-29T19:40Z"
-          }
-        ],
+        "injuries": [],
         "contracts": [
           {
             "salary": 1955377,
@@ -3983,8 +3561,8 @@
         "fullName": "Davion Mitchell",
         "displayName": "Davion Mitchell",
         "shortName": "D. Mitchell",
-        "weight": 202,
-        "displayWeight": "202 lbs",
+        "weight": 210,
+        "displayWeight": "210 lbs",
         "height": 72,
         "displayHeight": "6' 0\"",
         "age": 27,
@@ -4139,18 +3717,11 @@
         },
         "jersey": "45",
         "position": {
-          "id": "1",
-          "name": "Point Guard",
-          "displayName": "Point Guard",
-          "abbreviation": "PG",
-          "leaf": true,
-          "parent": {
-            "id": "3",
-            "name": "Guard",
-            "displayName": "Guard",
-            "abbreviation": "G",
-            "leaf": false
-          }
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
         },
         "injuries": [],
         "contracts": [
@@ -4196,7 +3767,7 @@
           }
         ],
         "experience": {
-          "years": 3
+          "years": 4
         },
         "contract": {
           "birdStatus": 0,
@@ -4502,7 +4073,7 @@
           }
         ],
         "experience": {
-          "years": 9
+          "years": 10
         },
         "contract": {
           "birdStatus": 0,
@@ -4715,25 +4286,13 @@
           "displayValue": "Right"
         },
         "position": {
-          "id": "2",
-          "name": "Shooting Guard",
-          "displayName": "Shooting Guard",
-          "abbreviation": "SG",
-          "leaf": true,
-          "parent": {
-            "id": "3",
-            "name": "Guard",
-            "displayName": "Guard",
-            "abbreviation": "G",
-            "leaf": false
-          }
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
         },
-        "injuries": [
-          {
-            "status": "Day-To-Day",
-            "date": "2025-07-03T22:08Z"
-          }
-        ],
+        "injuries": [],
         "contracts": [
           {
             "salary": 26643031,
@@ -4825,7 +4384,7 @@
           }
         ],
         "experience": {
-          "years": 9
+          "years": 10
         },
         "contract": {
           "birdStatus": 0,
@@ -4876,8 +4435,8 @@
         "fullName": "Dru Smith",
         "displayName": "Dru Smith",
         "shortName": "D. Smith",
-        "weight": 203,
-        "displayWeight": "203 lbs",
+        "weight": 200,
+        "displayWeight": "200 lbs",
         "height": 74,
         "displayHeight": "6' 2\"",
         "age": 27,
@@ -5038,12 +4597,7 @@
           "abbreviation": "G",
           "leaf": false
         },
-        "injuries": [
-          {
-            "status": "Day-To-Day",
-            "date": "2025-08-16T22:43Z"
-          }
-        ],
+        "injuries": [],
         "contracts": [
           {
             "salary": 2378870,
@@ -5079,7 +4633,7 @@
           }
         ],
         "experience": {
-          "years": 2
+          "years": 3
         },
         "contract": {
           "birdStatus": 0,
@@ -5119,238 +4673,6 @@
         }
       },
       {
-        "id": "4278516",
-        "uid": "s:40~l:46~a:4278516",
-        "guid": "eee7a511-9e66-7669-2686-9f149e2ba8a5",
-        "alternateIds": {
-          "sdr": "4278516"
-        },
-        "firstName": "Ethan",
-        "lastName": "Thompson",
-        "fullName": "Ethan Thompson",
-        "displayName": "Ethan Thompson",
-        "shortName": "E. Thompson",
-        "weight": 195,
-        "displayWeight": "195 lbs",
-        "height": 77,
-        "displayHeight": "6' 5\"",
-        "age": 26,
-        "dateOfBirth": "1999-05-04T07:00Z",
-        "links": [
-          {
-            "language": "en-US",
-            "rel": [
-              "playercard",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/_/id/4278516/ethan-thompson",
-            "text": "Player Card",
-            "shortText": "Player Card",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "stats",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/stats/_/id/4278516/ethan-thompson",
-            "text": "Stats",
-            "shortText": "Stats",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "splits",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/splits/_/id/4278516/ethan-thompson",
-            "text": "Splits",
-            "shortText": "Splits",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "gamelog",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/gamelog/_/id/4278516/ethan-thompson",
-            "text": "Game Log",
-            "shortText": "Game Log",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "news",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/news/_/id/4278516/ethan-thompson",
-            "text": "News",
-            "shortText": "News",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "bio",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/bio/_/id/4278516/ethan-thompson",
-            "text": "Bio",
-            "shortText": "Bio",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "overview",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/_/id/4278516/ethan-thompson",
-            "text": "Overview",
-            "shortText": "Overview",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "advancedstats",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/advancedstats/_/id/4278516/ethan-thompson",
-            "text": "Advanced Stats",
-            "shortText": "Advanced Stats",
-            "isExternal": false,
-            "isPremium": false
-          }
-        ],
-        "birthPlace": {
-          "city": "Los Angeles",
-          "state": "CA",
-          "country": "USA"
-        },
-        "college": {
-          "id": "204",
-          "guid": "41fda33a-d6a5-3594-ac8c-0ab5e8c1148b",
-          "mascot": "Beavers",
-          "name": "Oregon State",
-          "shortName": "Oregon State",
-          "abbrev": "ORST",
-          "logos": [
-            {
-              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/204.png",
-              "width": 500,
-              "height": 500,
-              "alt": "",
-              "rel": [
-                "full",
-                "default"
-              ],
-              "lastUpdated": "2023-02-22T17:01Z"
-            },
-            {
-              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/204.png",
-              "width": 500,
-              "height": 500,
-              "alt": "",
-              "rel": [
-                "full",
-                "dark"
-              ],
-              "lastUpdated": "2023-02-22T17:01Z"
-            }
-          ]
-        },
-        "slug": "ethan-thompson",
-        "headshot": {
-          "href": "https://a.espncdn.com/i/headshots/nba/players/full/4278516.png",
-          "alt": "Ethan Thompson"
-        },
-        "position": {
-          "id": "3",
-          "name": "Guard",
-          "displayName": "Guard",
-          "abbreviation": "G",
-          "leaf": false
-        },
-        "injuries": [],
-        "contracts": [
-          {
-            "salary": 0,
-            "season": {
-              "year": 2026,
-              "startDate": "2025-10-01T07:00Z",
-              "endDate": "2026-06-27T06:59Z"
-            }
-          },
-          {
-            "salary": 0,
-            "season": {
-              "year": 2025,
-              "startDate": "2024-09-24T07:00Z",
-              "endDate": "2025-06-27T06:59Z"
-            }
-          }
-        ],
-        "experience": {
-          "years": 0
-        },
-        "contract": {
-          "birdStatus": 0,
-          "baseYearCompensation": {
-            "active": true
-          },
-          "poisonPillProvision": {
-            "active": false
-          },
-          "incomingTradeValue": 0,
-          "outgoingTradeValue": 0,
-          "minimumSalaryException": false,
-          "optionType": 0,
-          "salary": 0,
-          "salaryRemaining": 0,
-          "yearsRemaining": 1,
-          "season": {
-            "year": 2026,
-            "startDate": "2025-10-01T07:00Z",
-            "endDate": "2026-06-27T06:59Z"
-          },
-          "tradeKicker": {
-            "active": false,
-            "percentage": 0,
-            "value": 0,
-            "tradeValue": 0
-          },
-          "tradeRestriction": false,
-          "unsignedForeignPick": false,
-          "active": true
-        },
-        "status": {
-          "id": "1",
-          "name": "Active",
-          "type": "active",
-          "abbreviation": "Active"
-        }
-      },
-      {
         "id": "5105623",
         "uid": "s:40~l:46~a:5105623",
         "guid": "dc372056-928d-3810-9e5e-588199c66bfb",
@@ -5362,8 +4684,8 @@
         "fullName": "Kel'el Ware",
         "displayName": "Kel'el Ware",
         "shortName": "K. Ware",
-        "weight": 230,
-        "displayWeight": "230 lbs",
+        "weight": 250,
+        "displayWeight": "250 lbs",
         "height": 84,
         "displayHeight": "7' 0\"",
         "age": 21,
@@ -5595,8 +4917,8 @@
         "fullName": "Andrew Wiggins",
         "displayName": "Andrew Wiggins",
         "shortName": "A. Wiggins",
-        "weight": 197,
-        "displayWeight": "197 lbs",
+        "weight": 210,
+        "displayWeight": "210 lbs",
         "height": 79,
         "displayHeight": "6' 7\"",
         "age": 30,
@@ -5752,18 +5074,11 @@
         },
         "jersey": "22",
         "position": {
-          "id": "5",
-          "name": "Small Forward",
-          "displayName": "Small Forward",
-          "abbreviation": "SF",
-          "leaf": true,
-          "parent": {
-            "id": "7",
-            "name": "Forward",
-            "displayName": "Forward",
-            "abbreviation": "F",
-            "leaf": false
-          }
+          "id": "7",
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F",
+          "leaf": false
         },
         "injuries": [],
         "contracts": [
@@ -5865,7 +5180,7 @@
           }
         ],
         "experience": {
-          "years": 10
+          "years": 11
         },
         "contract": {
           "birdStatus": 0,
@@ -5918,9 +5233,9 @@
         "shortName": "J. Young",
         "weight": 185,
         "displayWeight": "185 lbs",
-        "height": 73,
-        "displayHeight": "6' 1\"",
-        "age": 24,
+        "height": 72,
+        "displayHeight": "6' 0\"",
+        "age": 25,
         "dateOfBirth": "2000-10-07T07:00Z",
         "links": [
           {
@@ -6070,6 +5385,7 @@
           "href": "https://a.espncdn.com/i/headshots/nba/players/full/4433133.png",
           "alt": "Jahmir Young"
         },
+        "jersey": "17",
         "position": {
           "id": "3",
           "name": "Guard",
@@ -6097,7 +5413,7 @@
           }
         ],
         "experience": {
-          "years": 0
+          "years": 1
         },
         "contract": {
           "birdStatus": 0,
@@ -6153,25 +5469,922 @@
       "displayName": "Miami Heat",
       "clubhouse": "https://www.espn.com/nba/team/_/name/mia/miami-heat",
       "color": "98002e",
-      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png"
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
+      "recordSummary": "0-6",
+      "seasonSummary": "2025-26",
+      "standingSummary": "5th in Southeast Division"
     }
   },
   "injuries": {
-    "timestamp": "2025-09-25T23:34:49Z",
+    "timestamp": "2025-10-20T18:34:14Z",
     "status": "success",
     "season": {
       "year": 2026,
-      "type": 1,
-      "name": "Preseason",
+      "type": 2,
+      "name": "Regular Season",
       "displayName": "2025-26"
     },
     "injuries": [
       {
-        "id": "497624",
-        "longComment": "Herro is coming off the best season of his NBA career, averaging career-high numbers in points (23.9), assists (5.5) and steals (0.9) while also shooting a career-high 47.2 percent from the field. The Kentucky product's absence will likely result in more playing time for Davion Mitchell and Kasparas Jakucionis in the backcourt to begin the 2025-26 campaign. Miami newcomer Norman Powell will probably be leaned on to pick up the slack offensively, with the team's most talented scorer sidelined potentially until mid-November.",
-        "shortComment": "Herro (foot/ankle) is expected to take eight weeks to recover after undergoing successful surgery Friday, Shams Charania of ESPN reports.",
+        "id": "499864",
+        "longComment": "Jakucionis was held out of Sunday's practice after missing the Heat's final two preseason games. The rookie is dealing with a groin injury that hasn't been fully detailed, leaving his status for Wednesday's regular-season opener against the Magic uncertain.",
+        "shortComment": "Jakucionis (groin) did not practice Sunday, Ira Winderman of the South Florida Sun Sentinel reports.",
+        "status": "Day-To-Day",
+        "date": "2025-10-19T16:55Z",
+        "athlete": {
+          "firstName": "Kasparas",
+          "lastName": "Jakucionis",
+          "displayName": "Kasparas Jakucionis",
+          "shortName": "K. Jakucionis",
+          "links": [
+            {
+              "language": "en-US",
+              "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/5214640/kasparas-jakucionis",
+              "text": "Player Card",
+              "shortText": "Player Card",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/stats/_/id/5214640/kasparas-jakucionis",
+              "text": "Stats",
+              "shortText": "Stats",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/splits/_/id/5214640/kasparas-jakucionis",
+              "text": "Splits",
+              "shortText": "Splits",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/5214640/kasparas-jakucionis",
+              "text": "Game Log",
+              "shortText": "Game Log",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "news",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/news/_/id/5214640/kasparas-jakucionis",
+              "text": "News",
+              "shortText": "News",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/bio/_/id/5214640/kasparas-jakucionis",
+              "text": "Bio",
+              "shortText": "Bio",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/5214640/kasparas-jakucionis",
+              "text": "Overview",
+              "shortText": "Overview",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "advancedstats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/5214640/kasparas-jakucionis",
+              "text": "Advanced Stats",
+              "shortText": "Advanced Stats",
+              "isExternal": false,
+              "isPremium": false
+            }
+          ],
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/5214640.png",
+            "alt": "Kasparas Jakucionis"
+          },
+          "position": {
+            "id": "3",
+            "name": "Guard",
+            "displayName": "Guard",
+            "abbreviation": "G",
+            "leaf": false
+          },
+          "team": {
+            "id": "14",
+            "uid": "s:40~l:46~t:14",
+            "slug": "miami-heat",
+            "name": "Heat",
+            "abbreviation": "MIA",
+            "displayName": "Miami Heat",
+            "logos": [
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "default"
+                ],
+                "lastUpdated": "2024-06-25T21:17Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/mia.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:13Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mia.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard"
+                ],
+                "lastUpdated": "2024-06-25T21:18Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/mia.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:14Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              }
+            ],
+            "links": [
+              {
+                "language": "en-US",
+                "rel": [
+                  "clubhouse",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/_/name/mia/miami-heat",
+                "text": "Clubhouse",
+                "shortText": "Clubhouse",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "roster",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/roster/_/name/mia/miami-heat",
+                "text": "Roster",
+                "shortText": "Roster",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "stats",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/stats/_/name/mia/miami-heat",
+                "text": "Statistics",
+                "shortText": "Statistics",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "schedule",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/schedule/_/name/mia",
+                "text": "Schedule",
+                "shortText": "Schedule",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "photos",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/photos/_/name/mia",
+                "text": "photos",
+                "shortText": "photos",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "tickets",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.vividseats.com/miami-heat-tickets--sports-nba-basketball/performer/533?wsUser=717",
+                "text": "Tickets",
+                "shortText": "Tickets",
+                "isExternal": true,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "draftpicks",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/draft/teams/_/name/mia/miami-heat",
+                "text": "Draft Picks",
+                "shortText": "Draft Picks",
+                "isExternal": false,
+                "isPremium": true
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "transactions",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/transactions/_/name/mia",
+                "text": "Transactions",
+                "shortText": "Transactions",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "injuries",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/injuries/_/name/mia",
+                "text": "Injuries",
+                "shortText": "Injuries",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "depthchart",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/depth/_/name/mia",
+                "text": "Depth Chart",
+                "shortText": "Depth Chart",
+                "isExternal": false,
+                "isPremium": false
+              }
+            ]
+          },
+          "notes": {
+            "items": [
+              {
+                "id": "499864",
+                "type": "news",
+                "date": "2025-10-19T16:55Z",
+                "headline": "Jakucionis (groin) did not practice Sunday, Ira Winderman of the South Florida Sun Sentinel reports.",
+                "text": "Jakucionis was held out of Sunday's practice after missing the Heat's final two preseason games. The rookie is dealing with a groin injury that hasn't been fully detailed, leaving his status for Wednesday's regular-season opener against the Magic uncertain.",
+                "source": "RotoWire",
+                "injury": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/5214640/injuries/499864?lang=en&region=us"
+                }
+              }
+            ]
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
+          }
+        },
+        "source": {
+          "id": "1",
+          "description": "basic/manual",
+          "state": "basic"
+        },
+        "type": {
+          "id": "6",
+          "name": "INJURY_STATUS_DAYTODAY",
+          "description": "day-to-day",
+          "abbreviation": "DD"
+        },
+        "details": {
+          "fantasyStatus": {
+            "description": "GTD",
+            "abbreviation": "GTD"
+          },
+          "type": "Groin",
+          "location": "Groin",
+          "detail": "Soreness",
+          "returnDate": "2025-10-22"
+        }
+      },
+      {
+        "id": "499592",
+        "longComment": "Jovic is still dealing with lower back pain and will miss his third consecutive preseason game. The 22-year-old was a full participant in Thursday's practice, but his status will still be worth monitoring ahead of Wednesday's regular-season opener against the Magic.",
+        "shortComment": "Jovic (back) has been ruled out for Friday's preseason game against Memphis, Anthony Chiang of the Miami Herald reports.",
+        "status": "Day-To-Day",
+        "date": "2025-10-17T22:19Z",
+        "athlete": {
+          "firstName": "Nikola",
+          "lastName": "Jovic",
+          "displayName": "Nikola Jovic",
+          "shortName": "N. Jovic",
+          "links": [
+            {
+              "language": "en-US",
+              "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/4997528/nikola-jovic",
+              "text": "Player Card",
+              "shortText": "Player Card",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/stats/_/id/4997528/nikola-jovic",
+              "text": "Stats",
+              "shortText": "Stats",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/splits/_/id/4997528/nikola-jovic",
+              "text": "Splits",
+              "shortText": "Splits",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/4997528/nikola-jovic",
+              "text": "Game Log",
+              "shortText": "Game Log",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "news",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/news/_/id/4997528/nikola-jovic",
+              "text": "News",
+              "shortText": "News",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/bio/_/id/4997528/nikola-jovic",
+              "text": "Bio",
+              "shortText": "Bio",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/4997528/nikola-jovic",
+              "text": "Overview",
+              "shortText": "Overview",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "advancedstats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4997528/nikola-jovic",
+              "text": "Advanced Stats",
+              "shortText": "Advanced Stats",
+              "isExternal": false,
+              "isPremium": false
+            }
+          ],
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4997528.png",
+            "alt": "Nikola Jovic"
+          },
+          "position": {
+            "id": "7",
+            "name": "Forward",
+            "displayName": "Forward",
+            "abbreviation": "F",
+            "leaf": false
+          },
+          "team": {
+            "id": "14",
+            "uid": "s:40~l:46~t:14",
+            "slug": "miami-heat",
+            "name": "Heat",
+            "abbreviation": "MIA",
+            "displayName": "Miami Heat",
+            "logos": [
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "default"
+                ],
+                "lastUpdated": "2024-06-25T21:17Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/mia.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:13Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mia.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard"
+                ],
+                "lastUpdated": "2024-06-25T21:18Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/mia.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:14Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:33Z"
+              }
+            ],
+            "links": [
+              {
+                "language": "en-US",
+                "rel": [
+                  "clubhouse",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/_/name/mia/miami-heat",
+                "text": "Clubhouse",
+                "shortText": "Clubhouse",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "roster",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/roster/_/name/mia/miami-heat",
+                "text": "Roster",
+                "shortText": "Roster",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "stats",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/stats/_/name/mia/miami-heat",
+                "text": "Statistics",
+                "shortText": "Statistics",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "schedule",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/schedule/_/name/mia",
+                "text": "Schedule",
+                "shortText": "Schedule",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "photos",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/photos/_/name/mia",
+                "text": "photos",
+                "shortText": "photos",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "tickets",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.vividseats.com/miami-heat-tickets--sports-nba-basketball/performer/533?wsUser=717",
+                "text": "Tickets",
+                "shortText": "Tickets",
+                "isExternal": true,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "draftpicks",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/draft/teams/_/name/mia/miami-heat",
+                "text": "Draft Picks",
+                "shortText": "Draft Picks",
+                "isExternal": false,
+                "isPremium": true
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "transactions",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/transactions/_/name/mia",
+                "text": "Transactions",
+                "shortText": "Transactions",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "injuries",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/injuries/_/name/mia",
+                "text": "Injuries",
+                "shortText": "Injuries",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "depthchart",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/depth/_/name/mia",
+                "text": "Depth Chart",
+                "shortText": "Depth Chart",
+                "isExternal": false,
+                "isPremium": false
+              }
+            ]
+          },
+          "notes": {
+            "items": [
+              {
+                "id": "499592",
+                "type": "news",
+                "date": "2025-10-17T22:19Z",
+                "headline": "Jovic (back) has been ruled out for Friday's preseason game against Memphis, Anthony Chiang of the Miami Herald reports.",
+                "text": "Jovic is still dealing with lower back pain and will miss his third consecutive preseason game. The 22-year-old was a full participant in Thursday's practice, but his status will still be worth monitoring ahead of Wednesday's regular-season opener against the Magic.",
+                "source": "RotoWire",
+                "injury": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4997528/injuries/499592?lang=en&region=us"
+                }
+              }
+            ]
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
+          }
+        },
+        "source": {
+          "id": "1",
+          "description": "basic/manual",
+          "state": "basic"
+        },
+        "type": {
+          "id": "6",
+          "name": "INJURY_STATUS_DAYTODAY",
+          "description": "day-to-day",
+          "abbreviation": "DD"
+        },
+        "details": {
+          "fantasyStatus": {
+            "description": "GTD",
+            "abbreviation": "GTD"
+          },
+          "type": "Back",
+          "location": "Torso",
+          "detail": "Soreness",
+          "returnDate": "2025-10-22"
+        }
+      },
+      {
+        "id": "497855",
+        "longComment": "Herro underwent surgery on Sept. 19 due to a left ankle/foot impingement that had reportedly been bothering him since the middle of the summer. He's trending in the right direction less than two weeks after surgery but will still require time to ramp up his strength and conditioning once cleared to resume basketball activities. Head coach Erik Spoelstra noted that the star guard is expected to return \"sooner than later\" and will likely aim to come back by mid-to-late November, according to Anthony Chiang of the Miami Herald. The 25-year-old is fresh off his first All-Star nod in 2024-25, when he averaged 23.9 points, 5.5 assists, 5.2 rebounds and 3.3 three-pointers across 35.4 minutes per game in 77 regular-season appearances.",
+        "shortComment": "Herro (foot/ankle) said Tuesday that he's ahead of schedule in his recovery and expects to be back in 8-12 weeks, Wes Goldberg of the Locked On Podcast Network reports.",
         "status": "Out",
-        "date": "2025-09-19T20:17Z",
+        "date": "2025-09-30T21:35Z",
         "athlete": {
           "firstName": "Tyler",
           "lastName": "Herro",
@@ -6288,11 +6501,11 @@
             "alt": "Tyler Herro"
           },
           "position": {
-            "id": "1",
-            "name": "Point Guard",
-            "displayName": "Point Guard",
-            "abbreviation": "PG",
-            "leaf": true
+            "id": "3",
+            "name": "Guard",
+            "displayName": "Guard",
+            "abbreviation": "G",
+            "leaf": false
           },
           "team": {
             "id": "14",
@@ -6572,14 +6785,14 @@
           "notes": {
             "items": [
               {
-                "id": "497624",
+                "id": "497855",
                 "type": "news",
-                "date": "2025-09-19T20:17Z",
-                "headline": "Herro (foot/ankle) is expected to take eight weeks to recover after undergoing successful surgery Friday, Shams Charania of ESPN reports.",
-                "text": "Herro is coming off the best season of his NBA career, averaging career-high numbers in points (23.9), assists (5.5) and steals (0.9) while also shooting a career-high 47.2 percent from the field. The Kentucky product's absence will likely result in more playing time for Davion Mitchell and Kasparas Jakucionis in the backcourt to begin the 2025-26 campaign. Miami newcomer Norman Powell will probably be leaned on to pick up the slack offensively, with the team's most talented scorer sidelined potentially until mid-November.",
+                "date": "2025-09-30T21:35Z",
+                "headline": "Herro (foot/ankle) said Tuesday that he's ahead of schedule in his recovery and expects to be back in 8-12 weeks, Wes Goldberg of the Locked On Podcast Network reports.",
+                "text": "Herro underwent surgery on Sept. 19 due to a left ankle/foot impingement that had reportedly been bothering him since the middle of the summer. He's trending in the right direction less than two weeks after surgery but will still require time to ramp up his strength and conditioning once cleared to resume basketball activities. Head coach Erik Spoelstra noted that the star guard is expected to return \"sooner than later\" and will likely aim to come back by mid-to-late November, according to Anthony Chiang of the Miami Herald. The 25-year-old is fresh off his first All-Star nod in 2024-25, when he averaged 23.9 points, 5.5 assists, 5.2 rebounds and 3.3 three-pointers across 35.4 minutes per game in 77 regular-season appearances.",
                 "source": "RotoWire",
                 "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/4395725/injuries/497624?lang=en&region=us"
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4395725/injuries/497855?lang=en&region=us"
                 }
               }
             ]
@@ -6611,1349 +6824,7 @@
           "location": "Leg",
           "detail": "Surgery",
           "side": "Left",
-          "returnDate": "2025-11-02"
-        }
-      },
-      {
-        "id": "-23842",
-        "longComment": "Larsson's 24-point performance in Monday's win against the Celtics will be his last appearance during the Las Vegas Summer League. The Arizona product played well during his stint in Las Vegas, scoring 14 points or more in each game he played while shooting 50 percent from the floor.",
-        "shortComment": "Larsson (not injury related) has played his last game during this Las Vegas Summer League, Anthony Chiang of the Miami Herald reports.",
-        "status": "Day-To-Day",
-        "date": "2025-08-29T19:40Z",
-        "athlete": {
-          "firstName": "Pelle",
-          "lastName": "Larsson",
-          "displayName": "Pelle Larsson",
-          "shortName": "P. Larsson",
-          "links": [
-            {
-              "language": "en-US",
-              "rel": [
-                "playercard",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/4601025/pelle-larsson",
-              "text": "Player Card",
-              "shortText": "Player Card",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "stats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/stats/_/id/4601025/pelle-larsson",
-              "text": "Stats",
-              "shortText": "Stats",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "splits",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/splits/_/id/4601025/pelle-larsson",
-              "text": "Splits",
-              "shortText": "Splits",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "gamelog",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/gamelog/_/id/4601025/pelle-larsson",
-              "text": "Game Log",
-              "shortText": "Game Log",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "news",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/news/_/id/4601025/pelle-larsson",
-              "text": "News",
-              "shortText": "News",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "bio",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/bio/_/id/4601025/pelle-larsson",
-              "text": "Bio",
-              "shortText": "Bio",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "overview",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/4601025/pelle-larsson",
-              "text": "Overview",
-              "shortText": "Overview",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "advancedstats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4601025/pelle-larsson",
-              "text": "Advanced Stats",
-              "shortText": "Advanced Stats",
-              "isExternal": false,
-              "isPremium": false
-            }
-          ],
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4601025.png",
-            "alt": "Pelle Larsson"
-          },
-          "position": {
-            "id": "3",
-            "name": "Guard",
-            "displayName": "Guard",
-            "abbreviation": "G",
-            "leaf": false
-          },
-          "team": {
-            "id": "14",
-            "uid": "s:40~l:46~t:14",
-            "slug": "miami-heat",
-            "name": "Heat",
-            "abbreviation": "MIA",
-            "displayName": "Miami Heat",
-            "logos": [
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "default"
-                ],
-                "lastUpdated": "2024-06-25T21:17Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/mia.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "dark"
-                ],
-                "lastUpdated": "2024-06-25T21:13Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mia.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard"
-                ],
-                "lastUpdated": "2024-06-25T21:18Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/mia.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard",
-                  "dark"
-                ],
-                "lastUpdated": "2024-06-25T21:14Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              }
-            ],
-            "links": [
-              {
-                "language": "en-US",
-                "rel": [
-                  "clubhouse",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/_/name/mia/miami-heat",
-                "text": "Clubhouse",
-                "shortText": "Clubhouse",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "roster",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/roster/_/name/mia/miami-heat",
-                "text": "Roster",
-                "shortText": "Roster",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "stats",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/stats/_/name/mia/miami-heat",
-                "text": "Statistics",
-                "shortText": "Statistics",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "schedule",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/schedule/_/name/mia",
-                "text": "Schedule",
-                "shortText": "Schedule",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "photos",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/photos/_/name/mia",
-                "text": "photos",
-                "shortText": "photos",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "tickets",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.vividseats.com/miami-heat-tickets--sports-nba-basketball/performer/533?wsUser=717",
-                "text": "Tickets",
-                "shortText": "Tickets",
-                "isExternal": true,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "draftpicks",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/draft/teams/_/name/mia/miami-heat",
-                "text": "Draft Picks",
-                "shortText": "Draft Picks",
-                "isExternal": false,
-                "isPremium": true
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "transactions",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/transactions/_/name/mia",
-                "text": "Transactions",
-                "shortText": "Transactions",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "injuries",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/injuries/_/name/mia",
-                "text": "Injuries",
-                "shortText": "Injuries",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "depthchart",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/depth/_/name/mia",
-                "text": "Depth Chart",
-                "shortText": "Depth Chart",
-                "isExternal": false,
-                "isPremium": false
-              }
-            ]
-          },
-          "notes": {
-            "items": [
-              {
-                "id": "-23842",
-                "type": "news",
-                "date": "2025-08-29T19:40Z",
-                "headline": "Larsson (not injury related) has played his last game during this Las Vegas Summer League, Anthony Chiang of the Miami Herald reports.",
-                "text": "Larsson's 24-point performance in Monday's win against the Celtics will be his last appearance during the Las Vegas Summer League. The Arizona product played well during his stint in Las Vegas, scoring 14 points or more in each game he played while shooting 50 percent from the floor.",
-                "source": "RotoWire",
-                "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/4601025/injuries/-23842?lang=en&region=us"
-                }
-              }
-            ]
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          }
-        },
-        "source": {
-          "id": "1",
-          "description": "basic/manual",
-          "state": "basic"
-        },
-        "type": {
-          "id": "6",
-          "name": "INJURY_STATUS_DAYTODAY",
-          "description": "day-to-day",
-          "abbreviation": "DD"
-        },
-        "details": {
-          "fantasyStatus": {
-            "description": "GTD",
-            "abbreviation": "GTD"
-          },
-          "type": "Rest",
-          "location": "Other",
-          "returnDate": "2025-10-01"
-        }
-      },
-      {
-        "id": "497526",
-        "longComment": "Smith will return to Miami on a standard deal after spending the majority of the first three years of his career with the organization. The 27-year-old guard missed most of the 2023-24 campaign due to a torn ACL and appeared in only 14 regular-season games during the 2024-25 season before undergoing season-ending surgery to repair a ruptured left Achilles tendon in December. In those 14 appearances (one start), he averaged 6.2 points, 2.6 rebounds, 1.6 assists and 1.5 steals across 19.1 minutes per game. Smith will likely continue to operate as a backcourt reserve for Miami, though it remains unclear whether he'll be cleared to return by Opening Night.",
-        "shortComment": "Smith agreed to a three-year, $7.9 million deal with the Heat on Saturday, Michael Scotto of USA Today reports.",
-        "status": "Day-To-Day",
-        "date": "2025-08-16T22:43Z",
-        "athlete": {
-          "firstName": "Dru",
-          "lastName": "Smith",
-          "displayName": "Dru Smith",
-          "shortName": "D. Smith",
-          "links": [
-            {
-              "language": "en-US",
-              "rel": [
-                "playercard",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/4066993/dru-smith",
-              "text": "Player Card",
-              "shortText": "Player Card",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "stats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/stats/_/id/4066993/dru-smith",
-              "text": "Stats",
-              "shortText": "Stats",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "splits",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/splits/_/id/4066993/dru-smith",
-              "text": "Splits",
-              "shortText": "Splits",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "gamelog",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/gamelog/_/id/4066993/dru-smith",
-              "text": "Game Log",
-              "shortText": "Game Log",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "news",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/news/_/id/4066993/dru-smith",
-              "text": "News",
-              "shortText": "News",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "bio",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/bio/_/id/4066993/dru-smith",
-              "text": "Bio",
-              "shortText": "Bio",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "overview",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/4066993/dru-smith",
-              "text": "Overview",
-              "shortText": "Overview",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "advancedstats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4066993/dru-smith",
-              "text": "Advanced Stats",
-              "shortText": "Advanced Stats",
-              "isExternal": false,
-              "isPremium": false
-            }
-          ],
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4066993.png",
-            "alt": "Dru Smith"
-          },
-          "position": {
-            "id": "3",
-            "name": "Guard",
-            "displayName": "Guard",
-            "abbreviation": "G",
-            "leaf": false
-          },
-          "team": {
-            "id": "14",
-            "uid": "s:40~l:46~t:14",
-            "slug": "miami-heat",
-            "name": "Heat",
-            "abbreviation": "MIA",
-            "displayName": "Miami Heat",
-            "logos": [
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "default"
-                ],
-                "lastUpdated": "2024-06-25T21:17Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/mia.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "dark"
-                ],
-                "lastUpdated": "2024-06-25T21:13Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mia.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard"
-                ],
-                "lastUpdated": "2024-06-25T21:18Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/mia.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard",
-                  "dark"
-                ],
-                "lastUpdated": "2024-06-25T21:14Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              }
-            ],
-            "links": [
-              {
-                "language": "en-US",
-                "rel": [
-                  "clubhouse",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/_/name/mia/miami-heat",
-                "text": "Clubhouse",
-                "shortText": "Clubhouse",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "roster",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/roster/_/name/mia/miami-heat",
-                "text": "Roster",
-                "shortText": "Roster",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "stats",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/stats/_/name/mia/miami-heat",
-                "text": "Statistics",
-                "shortText": "Statistics",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "schedule",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/schedule/_/name/mia",
-                "text": "Schedule",
-                "shortText": "Schedule",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "photos",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/photos/_/name/mia",
-                "text": "photos",
-                "shortText": "photos",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "tickets",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.vividseats.com/miami-heat-tickets--sports-nba-basketball/performer/533?wsUser=717",
-                "text": "Tickets",
-                "shortText": "Tickets",
-                "isExternal": true,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "draftpicks",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/draft/teams/_/name/mia/miami-heat",
-                "text": "Draft Picks",
-                "shortText": "Draft Picks",
-                "isExternal": false,
-                "isPremium": true
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "transactions",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/transactions/_/name/mia",
-                "text": "Transactions",
-                "shortText": "Transactions",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "injuries",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/injuries/_/name/mia",
-                "text": "Injuries",
-                "shortText": "Injuries",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "depthchart",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/depth/_/name/mia",
-                "text": "Depth Chart",
-                "shortText": "Depth Chart",
-                "isExternal": false,
-                "isPremium": false
-              }
-            ]
-          },
-          "notes": {
-            "items": [
-              {
-                "id": "497526",
-                "type": "news",
-                "date": "2025-08-16T22:43Z",
-                "headline": "Smith agreed to a three-year, $7.9 million deal with the Heat on Saturday, Michael Scotto of USA Today reports.",
-                "text": "Smith will return to Miami on a standard deal after spending the majority of the first three years of his career with the organization. The 27-year-old guard missed most of the 2023-24 campaign due to a torn ACL and appeared in only 14 regular-season games during the 2024-25 season before undergoing season-ending surgery to repair a ruptured left Achilles tendon in December. In those 14 appearances (one start), he averaged 6.2 points, 2.6 rebounds, 1.6 assists and 1.5 steals across 19.1 minutes per game. Smith will likely continue to operate as a backcourt reserve for Miami, though it remains unclear whether he'll be cleared to return by Opening Night.",
-                "source": "RotoWire",
-                "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/4066993/injuries/497526?lang=en&region=us"
-                }
-              }
-            ]
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          }
-        },
-        "source": {
-          "id": "1",
-          "description": "basic/manual",
-          "state": "basic"
-        },
-        "type": {
-          "id": "6",
-          "name": "INJURY_STATUS_DAYTODAY",
-          "description": "day-to-day",
-          "abbreviation": "DD"
-        },
-        "details": {
-          "fantasyStatus": {
-            "description": "GTD",
-            "abbreviation": "GTD"
-          },
-          "type": "Achilles",
-          "location": "Leg",
-          "detail": "Surgery",
-          "side": "Left",
-          "returnDate": "2025-10-01"
-        }
-      },
-      {
-        "id": "-20795",
-        "longComment": "Rozier will miss his sixth straight outing Monday due to a sprained left ankle. There's no clear timetable for the veteran guard's return, though his absence shouldn't cause any major waves in Miami's rotation.",
-        "shortComment": "Rozier (ankle) has been ruled out for Monday's Game 4 against Cleveland.",
-        "status": "Day-To-Day",
-        "date": "2025-07-03T22:08Z",
-        "athlete": {
-          "firstName": "Terry",
-          "lastName": "Rozier",
-          "displayName": "Terry Rozier",
-          "shortName": "T. Rozier",
-          "links": [
-            {
-              "language": "en-US",
-              "rel": [
-                "playercard",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/3074752/terry-rozier",
-              "text": "Player Card",
-              "shortText": "Player Card",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "stats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/stats/_/id/3074752/terry-rozier",
-              "text": "Stats",
-              "shortText": "Stats",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "splits",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/splits/_/id/3074752/terry-rozier",
-              "text": "Splits",
-              "shortText": "Splits",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "gamelog",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/gamelog/_/id/3074752/terry-rozier",
-              "text": "Game Log",
-              "shortText": "Game Log",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "news",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/news/_/id/3074752/terry-rozier",
-              "text": "News",
-              "shortText": "News",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "bio",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/bio/_/id/3074752/terry-rozier",
-              "text": "Bio",
-              "shortText": "Bio",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "overview",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/3074752/terry-rozier",
-              "text": "Overview",
-              "shortText": "Overview",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "advancedstats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/advancedstats/_/id/3074752/terry-rozier",
-              "text": "Advanced Stats",
-              "shortText": "Advanced Stats",
-              "isExternal": false,
-              "isPremium": false
-            }
-          ],
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/nba/players/full/3074752.png",
-            "alt": "Terry Rozier"
-          },
-          "position": {
-            "id": "2",
-            "name": "Shooting Guard",
-            "displayName": "Shooting Guard",
-            "abbreviation": "SG",
-            "leaf": true
-          },
-          "team": {
-            "id": "14",
-            "uid": "s:40~l:46~t:14",
-            "slug": "miami-heat",
-            "name": "Heat",
-            "abbreviation": "MIA",
-            "displayName": "Miami Heat",
-            "logos": [
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "default"
-                ],
-                "lastUpdated": "2024-06-25T21:17Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/mia.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "dark"
-                ],
-                "lastUpdated": "2024-06-25T21:13Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mia.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard"
-                ],
-                "lastUpdated": "2024-06-25T21:18Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/mia.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard",
-                  "dark"
-                ],
-                "lastUpdated": "2024-06-25T21:14Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:33Z"
-              }
-            ],
-            "links": [
-              {
-                "language": "en-US",
-                "rel": [
-                  "clubhouse",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/_/name/mia/miami-heat",
-                "text": "Clubhouse",
-                "shortText": "Clubhouse",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "roster",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/roster/_/name/mia/miami-heat",
-                "text": "Roster",
-                "shortText": "Roster",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "stats",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/stats/_/name/mia/miami-heat",
-                "text": "Statistics",
-                "shortText": "Statistics",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "schedule",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/schedule/_/name/mia",
-                "text": "Schedule",
-                "shortText": "Schedule",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "photos",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/photos/_/name/mia",
-                "text": "photos",
-                "shortText": "photos",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "tickets",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.vividseats.com/miami-heat-tickets--sports-nba-basketball/performer/533?wsUser=717",
-                "text": "Tickets",
-                "shortText": "Tickets",
-                "isExternal": true,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "draftpicks",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/draft/teams/_/name/mia/miami-heat",
-                "text": "Draft Picks",
-                "shortText": "Draft Picks",
-                "isExternal": false,
-                "isPremium": true
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "transactions",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/transactions/_/name/mia",
-                "text": "Transactions",
-                "shortText": "Transactions",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "injuries",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/injuries/_/name/mia",
-                "text": "Injuries",
-                "shortText": "Injuries",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "depthchart",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/depth/_/name/mia",
-                "text": "Depth Chart",
-                "shortText": "Depth Chart",
-                "isExternal": false,
-                "isPremium": false
-              }
-            ]
-          },
-          "notes": {
-            "items": [
-              {
-                "id": "-20795",
-                "type": "news",
-                "date": "2025-07-03T22:08Z",
-                "headline": "Rozier (ankle) has been ruled out for Monday's Game 4 against Cleveland.",
-                "text": "Rozier will miss his sixth straight outing Monday due to a sprained left ankle. There's no clear timetable for the veteran guard's return, though his absence shouldn't cause any major waves in Miami's rotation.",
-                "source": "RotoWire",
-                "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/3074752/injuries/-20795?lang=en&region=us"
-                }
-              }
-            ]
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          }
-        },
-        "source": {
-          "id": "1",
-          "description": "basic/manual",
-          "state": "basic"
-        },
-        "type": {
-          "id": "6",
-          "name": "INJURY_STATUS_DAYTODAY",
-          "description": "day-to-day",
-          "abbreviation": "DD"
-        },
-        "details": {
-          "fantasyStatus": {
-            "description": "GTD",
-            "abbreviation": "GTD"
-          },
-          "type": "Ankle",
-          "location": "Leg",
-          "detail": "Sprain",
-          "side": "Left",
-          "returnDate": "2025-10-01"
+          "returnDate": "2025-11-17"
         }
       }
     ],
@@ -7965,8 +6836,9 @@
       "displayName": "Miami Heat",
       "color": "98002e",
       "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
+      "recordSummary": "0-6",
       "seasonSummary": "2025-26",
-      "standingSummary": "1st in Southeast Division"
+      "standingSummary": "5th in Southeast Division"
     }
   }
 }

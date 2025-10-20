@@ -23,9 +23,11 @@ const league = (argv.league || 'nfl').toLowerCase();
 const delayMs = Number(argv.delay || 300);
 
 const outDir = path.join(__dirname, '..', 'db', 'espn', league);
+const publicDir = path.join(__dirname, '..', 'public', 'db', 'espn', league);
 fs.mkdirSync(outDir, { recursive: true });
+fs.mkdirSync(publicDir, { recursive: true });
 
-const endpoints = {
+  const endpoints = {
   nfl: {
     teams: 'https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams',
     team: (idOrAbbr) => `https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/${idOrAbbr}`,
@@ -37,6 +39,12 @@ const endpoints = {
     team: (idOrAbbr) => `https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/${idOrAbbr}`,
     roster: (id) => `https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/${id}/roster`,
     injuries: (abbr) => `https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries?team=${abbr}`
+  },
+  mlb: {
+    teams: 'https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/teams',
+    team: (idOrAbbr) => `https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/teams/${idOrAbbr}`,
+    roster: (id) => `https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/teams/${id}/roster`,
+    injuries: (abbr) => `https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/injuries?team=${abbr}`
   }
 };
 
@@ -57,8 +65,8 @@ async function fetchJson(url) {
 }
 
 async function main() {
-  if (!['nfl', 'nba'].includes(league)) {
-    console.error('Unsupported league. Use --league=nfl|nba');
+  if (!['nfl', 'nba', 'mlb'].includes(league)) {
+    console.error('Unsupported league. Use --league=nfl|nba|mlb');
     process.exit(2);
   }
 
@@ -87,6 +95,11 @@ async function main() {
   const teamsFile = path.join(outDir, 'teams.json');
   fs.writeFileSync(teamsFile, JSON.stringify(simplified, null, 2));
   console.log(`Saved ${simplified.length} teams to ${teamsFile}`);
+  
+  // Also copy to public directory
+  const publicTeamsFile = path.join(publicDir, 'teams.json');
+  fs.writeFileSync(publicTeamsFile, JSON.stringify(simplified, null, 2));
+  console.log(`Also saved to ${publicTeamsFile}`);
 
   for (let idx = 0; idx < simplified.length; idx++) {
     const t = simplified[idx];
@@ -108,6 +121,11 @@ async function main() {
 
       const out = { fetchedAt: new Date().toISOString(), detail, roster, injuries };
       fs.writeFileSync(teamOut, JSON.stringify(out, null, 2));
+      
+      // Also copy to public directory for frontend access
+      const publicTeamOut = path.join(publicDir, `${fileNameSafe}.json`);
+      fs.writeFileSync(publicTeamOut, JSON.stringify(out, null, 2));
+      
       // polite delay
       await wait(delayMs);
     } catch (e) {

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2025-09-25T23:35:00.334Z",
+  "fetchedAt": "2025-10-20T18:34:29.224Z",
   "detail": {
     "team": {
       "id": "27",
@@ -148,7 +148,147 @@
           "lastUpdated": "2024-12-04T21:08Z"
         }
       ],
-      "record": {},
+      "record": {
+        "items": [
+          {
+            "description": "Overall Record",
+            "type": "total",
+            "summary": "1-2",
+            "stats": [
+              {
+                "name": "OTLosses",
+                "value": 0
+              },
+              {
+                "name": "OTWins",
+                "value": 0
+              },
+              {
+                "name": "avgPointsAgainst",
+                "value": 111.666664
+              },
+              {
+                "name": "avgPointsFor",
+                "value": 110
+              },
+              {
+                "name": "differential",
+                "value": -1.7000000000000028
+              },
+              {
+                "name": "divisionWinPercent",
+                "value": 0
+              },
+              {
+                "name": "gamesBehind",
+                "value": 2.5
+              },
+              {
+                "name": "gamesPlayed",
+                "value": 3
+              },
+              {
+                "name": "leagueWinPercent",
+                "value": 0.33333334
+              },
+              {
+                "name": "losses",
+                "value": 2
+              },
+              {
+                "name": "playoffSeed",
+                "value": 12
+              },
+              {
+                "name": "pointDifferential",
+                "value": -5
+              },
+              {
+                "name": "points",
+                "value": -0.5
+              },
+              {
+                "name": "pointsAgainst",
+                "value": 335
+              },
+              {
+                "name": "pointsFor",
+                "value": 330
+              },
+              {
+                "name": "streak",
+                "value": -1
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 0.33333334
+              },
+              {
+                "name": "wins",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "description": "Home Record",
+            "type": "home",
+            "summary": "0-1",
+            "stats": [
+              {
+                "name": "wins",
+                "value": 0
+              },
+              {
+                "name": "losses",
+                "value": 1
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 0
+              },
+              {
+                "name": "OTLosses",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "description": "Away Record",
+            "type": "road",
+            "summary": "1-1",
+            "stats": [
+              {
+                "name": "wins",
+                "value": 1
+              },
+              {
+                "name": "losses",
+                "value": 1
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 0.5
+              },
+              {
+                "name": "OTLosses",
+                "value": 0
+              }
+            ]
+          }
+        ]
+      },
       "groups": {
         "id": "9",
         "parent": {
@@ -326,30 +466,30 @@
           ]
         },
         "team": {
-          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/27?lang=en&region=us"
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/teams/27?lang=en&region=us"
         }
       },
       "nextEvent": [
         {
-          "id": "401812705",
-          "date": "2025-10-12T19:00Z",
-          "name": "Toronto Raptors at Washington Wizards",
-          "shortName": "TOR @ WSH",
+          "id": "401809939",
+          "date": "2025-10-23T00:00Z",
+          "name": "Washington Wizards at Milwaukee Bucks",
+          "shortName": "WSH @ MIL",
           "season": {
             "year": 2026,
             "displayName": "2025-26"
           },
           "seasonType": {
-            "id": "1",
-            "type": 1,
-            "name": "Preseason",
-            "abbreviation": "pre"
+            "id": "2",
+            "type": 2,
+            "name": "Regular Season",
+            "abbreviation": "reg"
           },
           "timeValid": true,
           "competitions": [
             {
-              "id": "401812705",
-              "date": "2025-10-12T19:00Z",
+              "id": "401809939",
+              "date": "2025-10-23T00:00Z",
               "attendance": 0,
               "type": {
                 "id": "1",
@@ -363,18 +503,258 @@
               "boxscoreAvailable": false,
               "ticketsAvailable": true,
               "venue": {
-                "fullName": "Capital One Arena",
+                "fullName": "Fiserv Forum",
                 "address": {
-                  "city": "Washington",
-                  "state": "DC"
+                  "city": "Milwaukee",
+                  "state": "WI"
                 }
               },
               "competitors": [
                 {
-                  "id": "27",
+                  "id": "15",
                   "type": "team",
                   "order": 0,
                   "homeAway": "home",
+                  "team": {
+                    "id": "15",
+                    "location": "Milwaukee",
+                    "abbreviation": "MIL",
+                    "displayName": "Milwaukee Bucks",
+                    "shortDisplayName": "Bucks",
+                    "logos": [
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "default"
+                        ],
+                        "lastUpdated": "2024-06-25T21:17Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/mil.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "dark"
+                        ],
+                        "lastUpdated": "2024-06-25T21:13Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mil.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "scoreboard"
+                        ],
+                        "lastUpdated": "2024-06-25T21:18Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/mil.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "scoreboard",
+                          "dark"
+                        ],
+                        "lastUpdated": "2024-06-25T21:14Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/f59bbabc-eedb-9ad2-c5dd-9bcd9f450a2f/logos/primary_logo_on_white_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_white_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/f59bbabc-eedb-9ad2-c5dd-9bcd9f450a2f/logos/primary_logo_on_black_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_black_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/f59bbabc-eedb-9ad2-c5dd-9bcd9f450a2f/logos/primary_logo_on_primary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_primary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/f59bbabc-eedb-9ad2-c5dd-9bcd9f450a2f/logos/primary_logo_on_secondary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_secondary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/f59bbabc-eedb-9ad2-c5dd-9bcd9f450a2f/logos/secondary_logo_on_white_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_white_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/f59bbabc-eedb-9ad2-c5dd-9bcd9f450a2f/logos/secondary_logo_on_black_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_black_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/f59bbabc-eedb-9ad2-c5dd-9bcd9f450a2f/logos/secondary_logo_on_primary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_primary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/f59bbabc-eedb-9ad2-c5dd-9bcd9f450a2f/logos/secondary_logo_on_secondary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_secondary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      }
+                    ],
+                    "links": [
+                      {
+                        "rel": [
+                          "clubhouse",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/_/name/mil/milwaukee-bucks",
+                        "text": "Clubhouse"
+                      },
+                      {
+                        "rel": [
+                          "roster",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/roster/_/name/mil/milwaukee-bucks",
+                        "text": "Roster"
+                      },
+                      {
+                        "rel": [
+                          "stats",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/stats/_/name/mil/milwaukee-bucks",
+                        "text": "Statistics"
+                      },
+                      {
+                        "rel": [
+                          "schedule",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/schedule/_/name/mil",
+                        "text": "Schedule"
+                      },
+                      {
+                        "rel": [
+                          "photos",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/photos/_/name/mil",
+                        "text": "photos"
+                      },
+                      {
+                        "rel": [
+                          "tickets",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.vividseats.com/milwaukee-bucks-tickets--sports-nba-basketball/performer/550?wsUser=717",
+                        "text": "Tickets"
+                      },
+                      {
+                        "rel": [
+                          "draftpicks",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/draft/teams/_/name/mil/milwaukee-bucks",
+                        "text": "Draft Picks"
+                      },
+                      {
+                        "rel": [
+                          "transactions",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/transactions/_/name/mil",
+                        "text": "Transactions"
+                      },
+                      {
+                        "rel": [
+                          "injuries",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/injuries/_/name/mil",
+                        "text": "Injuries"
+                      },
+                      {
+                        "rel": [
+                          "depthchart",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/depth/_/name/mil",
+                        "text": "Depth Chart"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "27",
+                  "type": "team",
+                  "order": 1,
+                  "homeAway": "away",
                   "team": {
                     "id": "27",
                     "location": "Washington",
@@ -609,246 +989,6 @@
                       }
                     ]
                   }
-                },
-                {
-                  "id": "28",
-                  "type": "team",
-                  "order": 1,
-                  "homeAway": "away",
-                  "team": {
-                    "id": "28",
-                    "location": "Toronto",
-                    "abbreviation": "TOR",
-                    "displayName": "Toronto Raptors",
-                    "shortDisplayName": "Raptors",
-                    "logos": [
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "default"
-                        ],
-                        "lastUpdated": "2024-06-25T21:17Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/tor.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "dark"
-                        ],
-                        "lastUpdated": "2025-01-21T22:35Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/tor.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "scoreboard"
-                        ],
-                        "lastUpdated": "2024-06-25T21:18Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/tor.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "scoreboard",
-                          "dark"
-                        ],
-                        "lastUpdated": "2025-01-22T15:28Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/5a9c33b8-63fd-ff34-a833-925fe89320a6/logos/primary_logo_on_white_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_white_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/5a9c33b8-63fd-ff34-a833-925fe89320a6/logos/primary_logo_on_black_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_black_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/5a9c33b8-63fd-ff34-a833-925fe89320a6/logos/primary_logo_on_primary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_primary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/5a9c33b8-63fd-ff34-a833-925fe89320a6/logos/primary_logo_on_secondary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_secondary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/5a9c33b8-63fd-ff34-a833-925fe89320a6/logos/secondary_logo_on_white_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_white_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/5a9c33b8-63fd-ff34-a833-925fe89320a6/logos/secondary_logo_on_black_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_black_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/5a9c33b8-63fd-ff34-a833-925fe89320a6/logos/secondary_logo_on_primary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_primary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/5a9c33b8-63fd-ff34-a833-925fe89320a6/logos/secondary_logo_on_secondary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_secondary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      }
-                    ],
-                    "links": [
-                      {
-                        "rel": [
-                          "clubhouse",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/_/name/tor/toronto-raptors",
-                        "text": "Clubhouse"
-                      },
-                      {
-                        "rel": [
-                          "roster",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/roster/_/name/tor/toronto-raptors",
-                        "text": "Roster"
-                      },
-                      {
-                        "rel": [
-                          "stats",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/stats/_/name/tor/toronto-raptors",
-                        "text": "Statistics"
-                      },
-                      {
-                        "rel": [
-                          "schedule",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/schedule/_/name/tor",
-                        "text": "Schedule"
-                      },
-                      {
-                        "rel": [
-                          "photos",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/photos/_/name/tor",
-                        "text": "photos"
-                      },
-                      {
-                        "rel": [
-                          "tickets",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.vividseats.com/toronto-raptors-tickets--sports-nba-basketball/performer/879?wsUser=717",
-                        "text": "Tickets"
-                      },
-                      {
-                        "rel": [
-                          "draftpicks",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/draft/teams/_/name/tor/toronto-raptors",
-                        "text": "Draft Picks"
-                      },
-                      {
-                        "rel": [
-                          "transactions",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/transactions/_/name/tor",
-                        "text": "Transactions"
-                      },
-                      {
-                        "rel": [
-                          "injuries",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/injuries/_/name/tor",
-                        "text": "Injuries"
-                      },
-                      {
-                        "rel": [
-                          "depthchart",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/depth/_/name/tor",
-                        "text": "Depth Chart"
-                      }
-                    ]
-                  }
                 }
               ],
               "notes": [],
@@ -859,8 +999,8 @@
                     "shortName": "TV"
                   },
                   "market": {
-                    "id": "2",
-                    "type": "Home"
+                    "id": "3",
+                    "type": "Away"
                   },
                   "media": {
                     "shortName": "MNMT"
@@ -868,17 +1008,49 @@
                   "lang": "en",
                   "region": "us",
                   "partnered": true
+                },
+                {
+                  "type": {
+                    "id": "6",
+                    "shortName": "Subscription Package"
+                  },
+                  "market": {
+                    "id": "3",
+                    "type": "Away"
+                  },
+                  "media": {
+                    "shortName": "NBA League Pass"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                },
+                {
+                  "type": {
+                    "id": "1",
+                    "shortName": "TV"
+                  },
+                  "market": {
+                    "id": "2",
+                    "type": "Home"
+                  },
+                  "media": {
+                    "shortName": "FanDuel SN WI"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
                 }
               ],
               "tickets": [
                 {
-                  "id": "5920375",
-                  "summary": "Tickets as low as $15",
-                  "description": "NBA Preseason - Toronto Raptors at Washington Wizards",
-                  "maxPrice": 13443.37,
-                  "startingPrice": 15.52,
-                  "numberAvailable": 5504,
-                  "totalPostings": 811,
+                  "id": "5939630",
+                  "summary": "Tickets as low as $23",
+                  "description": "Washington Wizards at Milwaukee Bucks",
+                  "maxPrice": 3991.05,
+                  "startingPrice": 23.45,
+                  "numberAvailable": 561,
+                  "totalPostings": 177,
                   "links": [
                     {
                       "rel": [
@@ -886,7 +1058,7 @@
                         "desktop",
                         "event"
                       ],
-                      "href": "https://www.vividseats.com/washington-wizards-tickets-capital-one-arena-10-12-2025--sports-nba-basketball/production/5920375?wsUser=717"
+                      "href": "https://www.vividseats.com/milwaukee-bucks-tickets-fiserv-forum-10-22-2025--sports-nba-basketball/production/5939630?wsUser=717"
                     },
                     {
                       "rel": [
@@ -894,7 +1066,7 @@
                         "desktop",
                         "venue"
                       ],
-                      "href": "https://www.vividseats.com/capital-one-arena-tickets/venue/1034?wsUser=717"
+                      "href": "https://www.vividseats.com/venues/fiserv-forum-tickets.html?wsUser=717"
                     }
                   ]
                 }
@@ -909,8 +1081,8 @@
                   "state": "pre",
                   "completed": false,
                   "description": "Scheduled",
-                  "detail": "Sun, October 12th at 3:00 PM EDT",
-                  "shortDetail": "10/12 - 3:00 PM EDT"
+                  "detail": "Wed, October 22nd at 8:00 PM EDT",
+                  "shortDetail": "10/22 - 8:00 PM EDT"
                 }
               }
             }
@@ -923,7 +1095,7 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/game/_/gameId/401812705/raptors-wizards",
+              "href": "https://www.espn.com/nba/game/_/gameId/401809939/wizards-bucks",
               "text": "Gamecast",
               "shortText": "Summary",
               "isExternal": false,
@@ -937,7 +1109,7 @@
                 "app",
                 "event"
               ],
-              "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=nba&gameId=401812705",
+              "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=nba&gameId=401809939",
               "text": "Gamecast",
               "shortText": "Summary",
               "isExternal": false,
@@ -950,7 +1122,7 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/game/_/gameId/401812705",
+              "href": "https://www.espn.com/nba/game/_/gameId/401809939",
               "text": "Now",
               "shortText": "Now",
               "isExternal": false,
@@ -963,7 +1135,7 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/odds/_/gameId/401812705",
+              "href": "https://www.espn.com/nba/odds/_/gameId/401809939",
               "text": "Odds",
               "shortText": "Odds",
               "isExternal": false,
@@ -976,7 +1148,7 @@
                 "mobile",
                 "event"
               ],
-              "href": "https://m.espn.com/nba/odds/_/gameId/401812705",
+              "href": "https://m.espn.com/nba/odds/_/gameId/401809939",
               "text": "Odds",
               "shortText": "Odds",
               "isExternal": false,
@@ -985,17 +1157,17 @@
           ]
         }
       ],
-      "standingSummary": "1st in Southeast Division"
+      "standingSummary": "3rd in Southeast Division"
     }
   },
   "roster": {
-    "timestamp": "2025-09-25T23:27:35Z",
+    "timestamp": "2025-10-20T18:28:58Z",
     "status": "success",
     "season": {
       "year": 2026,
       "displayName": "2025-26",
-      "type": 1,
-      "name": "Preseason"
+      "type": 2,
+      "name": "Regular Season"
     },
     "athletes": [
       {
@@ -1165,6 +1337,7 @@
           "href": "https://a.espncdn.com/i/headshots/nba/players/full/4277848.png",
           "alt": "Marvin Bagley III"
         },
+        "jersey": "35",
         "position": {
           "id": "7",
           "name": "Forward",
@@ -1240,7 +1413,7 @@
           }
         ],
         "experience": {
-          "years": 6
+          "years": 7
         },
         "contract": {
           "birdStatus": 0,
@@ -1271,6 +1444,209 @@
           "tradeRestriction": true,
           "unsignedForeignPick": false,
           "active": true
+        },
+        "status": {
+          "id": "1",
+          "name": "Active",
+          "type": "active",
+          "abbreviation": "Active"
+        }
+      },
+      {
+        "id": "4395650",
+        "uid": "s:40~l:46~a:4395650",
+        "guid": "ca5e732a-7afc-90f0-d378-afb4af228294",
+        "alternateIds": {
+          "sdr": "4395650"
+        },
+        "firstName": "Leaky",
+        "lastName": "Black",
+        "fullName": "Leaky Black",
+        "displayName": "Leaky Black",
+        "shortName": "L. Black",
+        "weight": 209,
+        "displayWeight": "209 lbs",
+        "height": 78,
+        "displayHeight": "6' 6\"",
+        "age": 26,
+        "dateOfBirth": "1999-06-14T07:00Z",
+        "links": [
+          {
+            "language": "en-US",
+            "rel": [
+              "playercard",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/_/id/4395650/leaky-black",
+            "text": "Player Card",
+            "shortText": "Player Card",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "stats",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/stats/_/id/4395650/leaky-black",
+            "text": "Stats",
+            "shortText": "Stats",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "splits",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/splits/_/id/4395650/leaky-black",
+            "text": "Splits",
+            "shortText": "Splits",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "gamelog",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/gamelog/_/id/4395650/leaky-black",
+            "text": "Game Log",
+            "shortText": "Game Log",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "news",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/news/_/id/4395650/leaky-black",
+            "text": "News",
+            "shortText": "News",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "bio",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/bio/_/id/4395650/leaky-black",
+            "text": "Bio",
+            "shortText": "Bio",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "overview",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/_/id/4395650/leaky-black",
+            "text": "Overview",
+            "shortText": "Overview",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "advancedstats",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/advancedstats/_/id/4395650/leaky-black",
+            "text": "Advanced Stats",
+            "shortText": "Advanced Stats",
+            "isExternal": false,
+            "isPremium": false
+          }
+        ],
+        "birthPlace": {
+          "city": "Concord",
+          "state": "NC",
+          "country": "USA"
+        },
+        "college": {
+          "id": "153",
+          "guid": "4c4185a8-3d7d-32bf-bbfc-001d46ba6bbf",
+          "mascot": "Tar Heels",
+          "name": "North Carolina",
+          "shortName": "North Carolina",
+          "abbrev": "UNC",
+          "logos": [
+            {
+              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/153.png",
+              "width": 500,
+              "height": 500,
+              "alt": "",
+              "rel": [
+                "full",
+                "default"
+              ],
+              "lastUpdated": "2023-02-17T21:15Z"
+            },
+            {
+              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/153.png",
+              "width": 500,
+              "height": 500,
+              "alt": "",
+              "rel": [
+                "full",
+                "dark"
+              ],
+              "lastUpdated": "2023-02-17T21:14Z"
+            }
+          ]
+        },
+        "slug": "leaky-black",
+        "headshot": {
+          "href": "https://a.espncdn.com/i/headshots/nba/players/full/4395650.png",
+          "alt": "Leaky Black"
+        },
+        "jersey": "12",
+        "position": {
+          "id": "7",
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F",
+          "leaf": false
+        },
+        "injuries": [],
+        "contracts": [
+          {
+            "salary": 0,
+            "season": {
+              "year": 2025,
+              "startDate": "2024-09-24T07:00Z",
+              "endDate": "2025-06-27T06:59Z"
+            }
+          },
+          {
+            "salary": 0,
+            "season": {
+              "year": 2024,
+              "startDate": "2023-10-05T07:00Z",
+              "endDate": "2024-06-21T06:59Z"
+            }
+          }
+        ],
+        "experience": {
+          "years": 1
         },
         "status": {
           "id": "1",
@@ -1445,6 +1821,7 @@
           "href": "https://a.espncdn.com/i/headshots/nba/players/full/4565201.png",
           "alt": "Malaki Branham"
         },
+        "jersey": "8",
         "position": {
           "id": "3",
           "name": "Guard",
@@ -1488,7 +1865,7 @@
           }
         ],
         "experience": {
-          "years": 2
+          "years": 3
         },
         "contract": {
           "birdStatus": 0,
@@ -1693,7 +2070,7 @@
           "href": "https://a.espncdn.com/i/headshots/nba/players/full/4845374.png",
           "alt": "Bub Carrington"
         },
-        "jersey": "8",
+        "jersey": "7",
         "position": {
           "id": "3",
           "name": "Guard",
@@ -1701,7 +2078,12 @@
           "abbreviation": "G",
           "leaf": false
         },
-        "injuries": [],
+        "injuries": [
+          {
+            "status": "Day-To-Day",
+            "date": "2025-10-19T17:02Z"
+          }
+        ],
         "contracts": [
           {
             "salary": 4677600,
@@ -1721,7 +2103,7 @@
           }
         ],
         "experience": {
-          "years": 0
+          "years": 1
         },
         "contract": {
           "birdStatus": 0,
@@ -1985,7 +2367,7 @@
           }
         ],
         "experience": {
-          "years": 3
+          "years": 4
         },
         "contract": {
           "birdStatus": 0,
@@ -2002,6 +2384,239 @@
           "salary": 2349578,
           "salaryRemaining": 0,
           "yearsRemaining": 3,
+          "season": {
+            "year": 2026,
+            "startDate": "2025-10-01T07:00Z",
+            "endDate": "2026-06-27T06:59Z"
+          },
+          "tradeKicker": {
+            "active": false,
+            "percentage": 0,
+            "value": 0,
+            "tradeValue": 0
+          },
+          "tradeRestriction": false,
+          "unsignedForeignPick": false,
+          "active": true
+        },
+        "status": {
+          "id": "1",
+          "name": "Active",
+          "type": "active",
+          "abbreviation": "Active"
+        }
+      },
+      {
+        "id": "4432173",
+        "uid": "s:40~l:46~a:4432173",
+        "guid": "c008dfb3-3d07-3527-ad39-2db2efc6ee55",
+        "alternateIds": {
+          "sdr": "4432173"
+        },
+        "firstName": "Sharife",
+        "lastName": "Cooper",
+        "fullName": "Sharife Cooper",
+        "displayName": "Sharife Cooper",
+        "shortName": "S. Cooper",
+        "weight": 176,
+        "displayWeight": "176 lbs",
+        "height": 73,
+        "displayHeight": "6' 1\"",
+        "age": 24,
+        "dateOfBirth": "2001-06-11T07:00Z",
+        "links": [
+          {
+            "language": "en-US",
+            "rel": [
+              "playercard",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/_/id/4432173/sharife-cooper",
+            "text": "Player Card",
+            "shortText": "Player Card",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "stats",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/stats/_/id/4432173/sharife-cooper",
+            "text": "Stats",
+            "shortText": "Stats",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "splits",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/splits/_/id/4432173/sharife-cooper",
+            "text": "Splits",
+            "shortText": "Splits",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "gamelog",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/gamelog/_/id/4432173/sharife-cooper",
+            "text": "Game Log",
+            "shortText": "Game Log",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "news",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/news/_/id/4432173/sharife-cooper",
+            "text": "News",
+            "shortText": "News",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "bio",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/bio/_/id/4432173/sharife-cooper",
+            "text": "Bio",
+            "shortText": "Bio",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "overview",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/_/id/4432173/sharife-cooper",
+            "text": "Overview",
+            "shortText": "Overview",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "advancedstats",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/advancedstats/_/id/4432173/sharife-cooper",
+            "text": "Advanced Stats",
+            "shortText": "Advanced Stats",
+            "isExternal": false,
+            "isPremium": false
+          }
+        ],
+        "birthPlace": {
+          "city": "Powder Springs",
+          "state": "GA",
+          "country": "USA"
+        },
+        "college": {
+          "id": "2",
+          "guid": "59618d4c-34bc-3c11-a064-c1359b963d27",
+          "mascot": "Tigers",
+          "name": "Auburn",
+          "shortName": "Auburn",
+          "abbrev": "AUB",
+          "logos": [
+            {
+              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2.png",
+              "width": 500,
+              "height": 500,
+              "alt": "",
+              "rel": [
+                "full",
+                "default"
+              ],
+              "lastUpdated": "2023-03-17T13:35Z"
+            },
+            {
+              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2.png",
+              "width": 500,
+              "height": 500,
+              "alt": "",
+              "rel": [
+                "full",
+                "dark"
+              ],
+              "lastUpdated": "2023-03-17T13:36Z"
+            }
+          ]
+        },
+        "slug": "sharife-cooper",
+        "headshot": {
+          "href": "https://a.espncdn.com/i/headshots/nba/players/full/4432173.png",
+          "alt": "Sharife Cooper"
+        },
+        "jersey": "13",
+        "position": {
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
+        },
+        "injuries": [],
+        "contracts": [
+          {
+            "salary": 0,
+            "season": {
+              "year": 2026,
+              "startDate": "2025-10-01T07:00Z",
+              "endDate": "2026-06-27T06:59Z"
+            }
+          },
+          {
+            "salary": 0,
+            "season": {
+              "year": 2022,
+              "startDate": "2021-09-22T07:00Z",
+              "endDate": "2022-06-20T06:59Z"
+            }
+          }
+        ],
+        "experience": {
+          "years": 2
+        },
+        "contract": {
+          "birdStatus": 0,
+          "baseYearCompensation": {
+            "active": true
+          },
+          "poisonPillProvision": {
+            "active": false
+          },
+          "incomingTradeValue": 0,
+          "outgoingTradeValue": 0,
+          "minimumSalaryException": false,
+          "optionType": 0,
+          "salary": 0,
+          "salaryRemaining": 0,
+          "yearsRemaining": 1,
           "season": {
             "year": 2026,
             "startDate": "2025-10-01T07:00Z",
@@ -2172,7 +2787,7 @@
         "injuries": [
           {
             "status": "Out",
-            "date": "2025-09-24T15:27Z"
+            "date": "2025-10-20T17:08Z"
           }
         ],
         "contracts": [
@@ -2202,7 +2817,7 @@
           }
         ],
         "experience": {
-          "years": 1
+          "years": 2
         },
         "contract": {
           "birdStatus": 0,
@@ -2434,7 +3049,7 @@
           }
         ],
         "experience": {
-          "years": 0
+          "years": 1
         },
         "contract": {
           "birdStatus": 0,
@@ -2474,6 +3089,188 @@
         }
       },
       {
+        "id": "4585618",
+        "uid": "s:40~l:46~a:4585618",
+        "guid": "779f7a0c-a91f-3567-9116-6acd2d0fbd84",
+        "alternateIds": {
+          "sdr": "4585618"
+        },
+        "firstName": "Keshon",
+        "lastName": "Gilbert",
+        "fullName": "Keshon Gilbert",
+        "displayName": "Keshon Gilbert",
+        "shortName": "K. Gilbert",
+        "weight": 200,
+        "displayWeight": "200 lbs",
+        "height": 76,
+        "displayHeight": "6' 4\"",
+        "age": 22,
+        "dateOfBirth": "2003-06-30T07:00Z",
+        "links": [
+          {
+            "language": "en-US",
+            "rel": [
+              "playercard",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/_/id/4585618/keshon-gilbert",
+            "text": "Player Card",
+            "shortText": "Player Card",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "stats",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/stats/_/id/4585618/keshon-gilbert",
+            "text": "Stats",
+            "shortText": "Stats",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "splits",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/splits/_/id/4585618/keshon-gilbert",
+            "text": "Splits",
+            "shortText": "Splits",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "gamelog",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/gamelog/_/id/4585618/keshon-gilbert",
+            "text": "Game Log",
+            "shortText": "Game Log",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "news",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/news/_/id/4585618/keshon-gilbert",
+            "text": "News",
+            "shortText": "News",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "bio",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/bio/_/id/4585618/keshon-gilbert",
+            "text": "Bio",
+            "shortText": "Bio",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "overview",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/_/id/4585618/keshon-gilbert",
+            "text": "Overview",
+            "shortText": "Overview",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "advancedstats",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/advancedstats/_/id/4585618/keshon-gilbert",
+            "text": "Advanced Stats",
+            "shortText": "Advanced Stats",
+            "isExternal": false,
+            "isPremium": false
+          }
+        ],
+        "birthPlace": {
+          "city": "Saint Louis",
+          "state": "MO",
+          "country": "USA"
+        },
+        "college": {
+          "id": "66",
+          "guid": "6bd40006-f5c1-31a9-b3c7-32f835d43c70",
+          "mascot": "Cyclones",
+          "name": "Iowa State",
+          "shortName": "Iowa State",
+          "abbrev": "ISU",
+          "logos": [
+            {
+              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/66.png",
+              "width": 500,
+              "height": 500,
+              "alt": "",
+              "rel": [
+                "full",
+                "default"
+              ],
+              "lastUpdated": "2018-06-05T12:08Z"
+            },
+            {
+              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/66.png",
+              "width": 500,
+              "height": 500,
+              "alt": "",
+              "rel": [
+                "full",
+                "dark"
+              ],
+              "lastUpdated": "2018-06-05T12:08Z"
+            }
+          ]
+        },
+        "slug": "keshon-gilbert",
+        "jersey": "55",
+        "position": {
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
+        },
+        "injuries": [],
+        "contracts": [],
+        "experience": {
+          "years": 0
+        },
+        "status": {
+          "id": "1",
+          "name": "Active",
+          "type": "active",
+          "abbreviation": "Active"
+        }
+      },
+      {
         "id": "2581184",
         "uid": "s:40~l:46~a:2581184",
         "guid": "31996336-7287-2ae0-74e4-bd8839a5ae01",
@@ -2489,7 +3286,7 @@
         "displayWeight": "230 lbs",
         "height": 80,
         "displayHeight": "6' 8\"",
-        "age": 32,
+        "age": 33,
         "dateOfBirth": "1992-10-17T07:00Z",
         "debutYear": 2020,
         "links": [
@@ -2707,7 +3504,7 @@
           }
         ],
         "experience": {
-          "years": 4
+          "years": 5
         },
         "contract": {
           "birdStatus": 0,
@@ -2880,7 +3677,7 @@
           "href": "https://a.espncdn.com/i/headshots/nba/players/full/5170947.png",
           "alt": "AJ Johnson"
         },
-        "jersey": "5",
+        "jersey": "4",
         "position": {
           "id": "3",
           "name": "Guard",
@@ -2888,12 +3685,7 @@
           "abbreviation": "G",
           "leaf": false
         },
-        "injuries": [
-          {
-            "status": "Day-To-Day",
-            "date": "2025-09-24T15:29Z"
-          }
-        ],
+        "injuries": [],
         "contracts": [
           {
             "salary": 3090480,
@@ -2913,7 +3705,7 @@
           }
         ],
         "experience": {
-          "years": 0
+          "years": 1
         },
         "contract": {
           "birdStatus": 0,
@@ -3178,238 +3970,6 @@
         }
       },
       {
-        "id": "4702159",
-        "uid": "s:40~l:46~a:4702159",
-        "guid": "ca90bc5d-8b03-3a93-bae3-87ccf76c89f5",
-        "alternateIds": {
-          "sdr": "4702159"
-        },
-        "firstName": "Dillon",
-        "lastName": "Jones",
-        "fullName": "Dillon Jones",
-        "displayName": "Dillon Jones",
-        "shortName": "D. Jones",
-        "weight": 235,
-        "displayWeight": "235 lbs",
-        "height": 77,
-        "displayHeight": "6' 5\"",
-        "age": 23,
-        "dateOfBirth": "2001-10-29T08:00Z",
-        "links": [
-          {
-            "language": "en-US",
-            "rel": [
-              "playercard",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/_/id/4702159/dillon-jones",
-            "text": "Player Card",
-            "shortText": "Player Card",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "stats",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/stats/_/id/4702159/dillon-jones",
-            "text": "Stats",
-            "shortText": "Stats",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "splits",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/splits/_/id/4702159/dillon-jones",
-            "text": "Splits",
-            "shortText": "Splits",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "gamelog",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/gamelog/_/id/4702159/dillon-jones",
-            "text": "Game Log",
-            "shortText": "Game Log",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "news",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/news/_/id/4702159/dillon-jones",
-            "text": "News",
-            "shortText": "News",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "bio",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/bio/_/id/4702159/dillon-jones",
-            "text": "Bio",
-            "shortText": "Bio",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "overview",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/_/id/4702159/dillon-jones",
-            "text": "Overview",
-            "shortText": "Overview",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "advancedstats",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/advancedstats/_/id/4702159/dillon-jones",
-            "text": "Advanced Stats",
-            "shortText": "Advanced Stats",
-            "isExternal": false,
-            "isPremium": false
-          }
-        ],
-        "birthPlace": {
-          "city": "Columbia",
-          "state": "SC",
-          "country": "USA"
-        },
-        "college": {
-          "id": "2692",
-          "guid": "947ff08b-f5f5-335c-867e-968dc6b52d45",
-          "mascot": "Wildcats",
-          "name": "Weber State",
-          "shortName": "Weber State",
-          "abbrev": "WEB",
-          "logos": [
-            {
-              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2692.png",
-              "width": 500,
-              "height": 500,
-              "alt": "",
-              "rel": [
-                "full",
-                "default"
-              ],
-              "lastUpdated": "2018-06-05T12:08Z"
-            },
-            {
-              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2692.png",
-              "width": 500,
-              "height": 500,
-              "alt": "",
-              "rel": [
-                "full",
-                "dark"
-              ],
-              "lastUpdated": "2018-06-05T12:08Z"
-            }
-          ]
-        },
-        "slug": "dillon-jones",
-        "headshot": {
-          "href": "https://a.espncdn.com/i/headshots/nba/players/full/4702159.png",
-          "alt": "Dillon Jones"
-        },
-        "position": {
-          "id": "3",
-          "name": "Guard",
-          "displayName": "Guard",
-          "abbreviation": "G",
-          "leaf": false
-        },
-        "injuries": [],
-        "contracts": [
-          {
-            "salary": 2753280,
-            "season": {
-              "year": 2026,
-              "startDate": "2025-10-01T07:00Z",
-              "endDate": "2026-06-27T06:59Z"
-            }
-          },
-          {
-            "salary": 2622360,
-            "season": {
-              "year": 2025,
-              "startDate": "2024-09-24T07:00Z",
-              "endDate": "2025-06-27T06:59Z"
-            }
-          }
-        ],
-        "experience": {
-          "years": 0
-        },
-        "contract": {
-          "birdStatus": 0,
-          "baseYearCompensation": {
-            "active": false
-          },
-          "poisonPillProvision": {
-            "active": false
-          },
-          "incomingTradeValue": 2753280,
-          "outgoingTradeValue": 2753280,
-          "minimumSalaryException": false,
-          "optionType": 0,
-          "salary": 2753280,
-          "salaryRemaining": 0,
-          "yearsRemaining": 3,
-          "season": {
-            "year": 2026,
-            "startDate": "2025-10-01T07:00Z",
-            "endDate": "2026-06-27T06:59Z"
-          },
-          "tradeKicker": {
-            "active": false,
-            "percentage": 0,
-            "value": 0,
-            "tradeValue": 0
-          },
-          "tradeRestriction": false,
-          "unsignedForeignPick": false,
-          "active": true
-        },
-        "status": {
-          "id": "1",
-          "name": "Active",
-          "type": "active",
-          "abbreviation": "Active"
-        }
-      },
-      {
         "id": "4280151",
         "uid": "s:40~l:46~a:4280151",
         "guid": "bbbd3317-3baa-ab71-f8b5-50c5fa97fc24",
@@ -3634,7 +4194,7 @@
           }
         ],
         "experience": {
-          "years": 3
+          "years": 4
         },
         "contract": {
           "birdStatus": 0,
@@ -3665,6 +4225,225 @@
           "tradeRestriction": false,
           "unsignedForeignPick": false,
           "active": true
+        },
+        "status": {
+          "id": "1",
+          "name": "Active",
+          "type": "active",
+          "abbreviation": "Active"
+        }
+      },
+      {
+        "id": "3936296",
+        "uid": "s:40~l:46~a:3936296",
+        "guid": "4f3d8652-4def-cc33-363d-133f1dc20cd6",
+        "alternateIds": {
+          "sdr": "3936296"
+        },
+        "firstName": "Skal",
+        "lastName": "Labissiere",
+        "fullName": "Skal Labissiere",
+        "displayName": "Skal Labissiere",
+        "shortName": "S. Labissiere",
+        "weight": 235,
+        "displayWeight": "235 lbs",
+        "height": 82,
+        "displayHeight": "6' 10\"",
+        "age": 29,
+        "dateOfBirth": "1996-03-18T08:00Z",
+        "debutYear": 2016,
+        "links": [
+          {
+            "language": "en-US",
+            "rel": [
+              "playercard",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/_/id/3936296/skal-labissiere",
+            "text": "Player Card",
+            "shortText": "Player Card",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "stats",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/stats/_/id/3936296/skal-labissiere",
+            "text": "Stats",
+            "shortText": "Stats",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "splits",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/splits/_/id/3936296/skal-labissiere",
+            "text": "Splits",
+            "shortText": "Splits",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "gamelog",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/gamelog/_/id/3936296/skal-labissiere",
+            "text": "Game Log",
+            "shortText": "Game Log",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "news",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/news/_/id/3936296/skal-labissiere",
+            "text": "News",
+            "shortText": "News",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "bio",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/bio/_/id/3936296/skal-labissiere",
+            "text": "Bio",
+            "shortText": "Bio",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "overview",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/_/id/3936296/skal-labissiere",
+            "text": "Overview",
+            "shortText": "Overview",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "advancedstats",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/advancedstats/_/id/3936296/skal-labissiere",
+            "text": "Advanced Stats",
+            "shortText": "Advanced Stats",
+            "isExternal": false,
+            "isPremium": false
+          }
+        ],
+        "birthPlace": {
+          "city": "Port-au-prince",
+          "country": "Haiti"
+        },
+        "college": {
+          "id": "96",
+          "guid": "c343d2aa-1f76-3d14-8a74-4a12bb54f2ba",
+          "mascot": "Wildcats",
+          "name": "Kentucky",
+          "shortName": "Kentucky",
+          "abbrev": "UK",
+          "logos": [
+            {
+              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png",
+              "width": 500,
+              "height": 500,
+              "alt": "",
+              "rel": [
+                "full",
+                "default"
+              ],
+              "lastUpdated": "2023-09-07T19:32Z"
+            },
+            {
+              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/96.png",
+              "width": 500,
+              "height": 500,
+              "alt": "",
+              "rel": [
+                "full",
+                "dark"
+              ],
+              "lastUpdated": "2023-09-07T19:32Z"
+            }
+          ]
+        },
+        "slug": "skal-labissiere",
+        "headshot": {
+          "href": "https://a.espncdn.com/i/headshots/nba/players/full/3936296.png",
+          "alt": "Skal Labissiere"
+        },
+        "jersey": "17",
+        "position": {
+          "id": "9",
+          "name": "Center",
+          "displayName": "Center",
+          "abbreviation": "C",
+          "leaf": false
+        },
+        "injuries": [],
+        "contracts": [
+          {
+            "salary": 2338847,
+            "season": {
+              "year": 2020,
+              "startDate": "2019-09-28T07:00Z",
+              "endDate": "2020-10-22T06:59Z"
+            }
+          },
+          {
+            "salary": 1544951,
+            "season": {
+              "year": 2019,
+              "startDate": "2018-09-13T07:00Z",
+              "endDate": "2019-06-24T06:59Z"
+            }
+          },
+          {
+            "salary": 1312611,
+            "season": {
+              "year": 2018,
+              "startDate": "2017-09-30T07:00Z",
+              "endDate": "2018-07-01T06:59Z"
+            }
+          },
+          {
+            "salary": 1188840,
+            "season": {
+              "year": 2017,
+              "startDate": "2016-10-01T07:00Z",
+              "endDate": "2017-07-01T06:59Z"
+            }
+          }
+        ],
+        "experience": {
+          "years": 4
         },
         "status": {
           "id": "1",
@@ -3968,7 +4747,7 @@
           }
         ],
         "experience": {
-          "years": 11
+          "years": 12
         },
         "contract": {
           "birdStatus": 0,
@@ -4306,7 +5085,7 @@
           }
         ],
         "experience": {
-          "years": 12
+          "years": 13
         },
         "contract": {
           "birdStatus": 0,
@@ -4337,6 +5116,188 @@
           "tradeRestriction": false,
           "unsignedForeignPick": false,
           "active": true
+        },
+        "status": {
+          "id": "1",
+          "name": "Active",
+          "type": "active",
+          "abbreviation": "Active"
+        }
+      },
+      {
+        "id": "4701845",
+        "uid": "s:40~l:46~a:4701845",
+        "guid": "0a484d54-4de3-3993-8c24-67223d75be4b",
+        "alternateIds": {
+          "sdr": "4701845"
+        },
+        "firstName": "Kadary",
+        "lastName": "Richmond",
+        "fullName": "Kadary Richmond",
+        "displayName": "Kadary Richmond",
+        "shortName": "K. Richmond",
+        "weight": 205,
+        "displayWeight": "205 lbs",
+        "height": 78,
+        "displayHeight": "6' 6\"",
+        "age": 24,
+        "dateOfBirth": "2001-08-25T07:00Z",
+        "links": [
+          {
+            "language": "en-US",
+            "rel": [
+              "playercard",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/_/id/4701845/kadary-richmond",
+            "text": "Player Card",
+            "shortText": "Player Card",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "stats",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/stats/_/id/4701845/kadary-richmond",
+            "text": "Stats",
+            "shortText": "Stats",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "splits",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/splits/_/id/4701845/kadary-richmond",
+            "text": "Splits",
+            "shortText": "Splits",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "gamelog",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/gamelog/_/id/4701845/kadary-richmond",
+            "text": "Game Log",
+            "shortText": "Game Log",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "news",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/news/_/id/4701845/kadary-richmond",
+            "text": "News",
+            "shortText": "News",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "bio",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/bio/_/id/4701845/kadary-richmond",
+            "text": "Bio",
+            "shortText": "Bio",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "overview",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/_/id/4701845/kadary-richmond",
+            "text": "Overview",
+            "shortText": "Overview",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "advancedstats",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/advancedstats/_/id/4701845/kadary-richmond",
+            "text": "Advanced Stats",
+            "shortText": "Advanced Stats",
+            "isExternal": false,
+            "isPremium": false
+          }
+        ],
+        "birthPlace": {
+          "city": "Brooklyn",
+          "state": "NY",
+          "country": "USA"
+        },
+        "college": {
+          "id": "2599",
+          "guid": "6d9f51b6-325f-39ce-a24c-2cac097e41b3",
+          "mascot": "Red Storm",
+          "name": "St. John's",
+          "shortName": "St. John's",
+          "abbrev": "SJU",
+          "logos": [
+            {
+              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2599.png",
+              "width": 500,
+              "height": 500,
+              "alt": "",
+              "rel": [
+                "full",
+                "default"
+              ],
+              "lastUpdated": "2018-06-05T12:08Z"
+            },
+            {
+              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2599.png",
+              "width": 500,
+              "height": 500,
+              "alt": "",
+              "rel": [
+                "full",
+                "dark"
+              ],
+              "lastUpdated": "2018-06-05T12:08Z"
+            }
+          ]
+        },
+        "slug": "kadary-richmond",
+        "jersey": "19",
+        "position": {
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
+        },
+        "injuries": [],
+        "contracts": [],
+        "experience": {
+          "years": 0
         },
         "status": {
           "id": "1",
@@ -4511,6 +5472,7 @@
           "href": "https://a.espncdn.com/i/headshots/nba/players/full/5144126.png",
           "alt": "Will Riley"
         },
+        "jersey": "27",
         "position": {
           "id": "3",
           "name": "Guard",
@@ -4714,12 +5676,7 @@
             "leaf": false
           }
         },
-        "injuries": [
-          {
-            "status": "Day-To-Day",
-            "date": "2025-09-24T15:31Z"
-          }
-        ],
+        "injuries": [],
         "contracts": [
           {
             "salary": 11808240,
@@ -4739,7 +5696,7 @@
           }
         ],
         "experience": {
-          "years": 0
+          "years": 1
         },
         "contract": {
           "birdStatus": 0,
@@ -4946,7 +5903,7 @@
           }
         ],
         "experience": {
-          "years": 1
+          "years": 2
         },
         "contract": {
           "birdStatus": 0,
@@ -5120,7 +6077,7 @@
           "mascot": "FLORIDA STATE",
           "name": "Florida State",
           "shortName": "Florida State",
-          "abbrev": "Flo",
+          "abbrev": "FSU",
           "logos": [
             {
               "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/52.png",
@@ -5151,6 +6108,7 @@
           "href": "https://a.espncdn.com/i/headshots/nba/players/full/4606840.png",
           "alt": "Jamir Watkins"
         },
+        "jersey": "5",
         "position": {
           "id": "3",
           "name": "Guard",
@@ -5375,6 +6333,12 @@
           "href": "https://a.espncdn.com/i/headshots/nba/players/full/5105592.png",
           "alt": "Cam Whitmore"
         },
+        "jersey": "1",
+        "hand": {
+          "type": "LEFT",
+          "abbreviation": "L",
+          "displayValue": "Left"
+        },
         "position": {
           "id": "7",
           "name": "Forward",
@@ -5382,7 +6346,12 @@
           "abbreviation": "F",
           "leaf": false
         },
-        "injuries": [],
+        "injuries": [
+          {
+            "status": "Day-To-Day",
+            "date": "2025-10-16T23:45Z"
+          }
+        ],
         "contracts": [
           {
             "salary": 3539760,
@@ -5410,7 +6379,7 @@
           }
         ],
         "experience": {
-          "years": 1
+          "years": 2
         },
         "contract": {
           "birdStatus": 0,
@@ -5448,6 +6417,217 @@
           "type": "active",
           "abbreviation": "Active"
         }
+      },
+      {
+        "id": "4592216",
+        "uid": "s:40~l:46~a:4592216",
+        "guid": "d4e4f172-f920-6bf1-fb24-b6ea84a62ffc",
+        "alternateIds": {
+          "sdr": "4592216"
+        },
+        "firstName": "Alondes",
+        "lastName": "Williams",
+        "fullName": "Alondes Williams",
+        "displayName": "Alondes Williams",
+        "shortName": "A. Williams",
+        "weight": 210,
+        "displayWeight": "210 lbs",
+        "height": 76,
+        "displayHeight": "6' 4\"",
+        "age": 26,
+        "dateOfBirth": "1999-06-19T07:00Z",
+        "links": [
+          {
+            "language": "en-US",
+            "rel": [
+              "playercard",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/_/id/4592216/alondes-williams",
+            "text": "Player Card",
+            "shortText": "Player Card",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "stats",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/stats/_/id/4592216/alondes-williams",
+            "text": "Stats",
+            "shortText": "Stats",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "splits",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/splits/_/id/4592216/alondes-williams",
+            "text": "Splits",
+            "shortText": "Splits",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "gamelog",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/gamelog/_/id/4592216/alondes-williams",
+            "text": "Game Log",
+            "shortText": "Game Log",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "news",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/news/_/id/4592216/alondes-williams",
+            "text": "News",
+            "shortText": "News",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "bio",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/bio/_/id/4592216/alondes-williams",
+            "text": "Bio",
+            "shortText": "Bio",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "overview",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/_/id/4592216/alondes-williams",
+            "text": "Overview",
+            "shortText": "Overview",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "advancedstats",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/advancedstats/_/id/4592216/alondes-williams",
+            "text": "Advanced Stats",
+            "shortText": "Advanced Stats",
+            "isExternal": false,
+            "isPremium": false
+          }
+        ],
+        "birthPlace": {
+          "city": "Milwaukee",
+          "state": "WI",
+          "country": "USA"
+        },
+        "college": {
+          "id": "154",
+          "guid": "877f20e8-720c-32d3-a900-8f7960900cfa",
+          "mascot": "Demon Deacons",
+          "name": "Wake Forest",
+          "shortName": "Wake Forest",
+          "abbrev": "WAKE",
+          "logos": [
+            {
+              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/154.png",
+              "width": 500,
+              "height": 500,
+              "alt": "",
+              "rel": [
+                "full",
+                "default"
+              ],
+              "lastUpdated": "2023-10-06T14:34Z"
+            },
+            {
+              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/154.png",
+              "width": 500,
+              "height": 500,
+              "alt": "",
+              "rel": [
+                "full",
+                "dark"
+              ],
+              "lastUpdated": "2022-09-07T20:49Z"
+            }
+          ]
+        },
+        "slug": "alondes-williams",
+        "headshot": {
+          "href": "https://a.espncdn.com/i/headshots/nba/players/full/4592216.png",
+          "alt": "Alondes Williams"
+        },
+        "jersey": "31",
+        "position": {
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
+        },
+        "injuries": [],
+        "contracts": [
+          {
+            "salary": 0,
+            "season": {
+              "year": 2025,
+              "startDate": "2024-09-24T07:00Z",
+              "endDate": "2025-06-27T06:59Z"
+            }
+          },
+          {
+            "salary": 0,
+            "season": {
+              "year": 2024,
+              "startDate": "2023-10-05T07:00Z",
+              "endDate": "2024-06-21T06:59Z"
+            }
+          },
+          {
+            "salary": 0,
+            "season": {
+              "year": 2023,
+              "startDate": "2022-08-30T07:00Z",
+              "endDate": "2023-06-24T06:59Z"
+            }
+          }
+        ],
+        "experience": {
+          "years": 3
+        },
+        "status": {
+          "id": "1",
+          "name": "Active",
+          "type": "active",
+          "abbreviation": "Active"
+        }
       }
     ],
     "coach": [
@@ -5466,7 +6646,10 @@
       "displayName": "Washington Wizards",
       "clubhouse": "https://www.espn.com/nba/team/_/name/wsh/washington-wizards",
       "color": "e31837",
-      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/wsh.png"
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/wsh.png",
+      "recordSummary": "1-2",
+      "seasonSummary": "2025-26",
+      "standingSummary": "3rd in Southeast Division"
     }
   },
   "injuries": null

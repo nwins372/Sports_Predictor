@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2025-09-25T23:34:57.224Z",
+  "fetchedAt": "2025-10-20T18:34:24.689Z",
   "detail": {
     "team": {
       "id": "23",
@@ -148,7 +148,147 @@
           "lastUpdated": "2024-12-03T19:32Z"
         }
       ],
-      "record": {},
+      "record": {
+        "items": [
+          {
+            "description": "Overall Record",
+            "type": "total",
+            "summary": "1-3",
+            "stats": [
+              {
+                "name": "OTLosses",
+                "value": 0
+              },
+              {
+                "name": "OTWins",
+                "value": 0
+              },
+              {
+                "name": "avgPointsAgainst",
+                "value": 119.75
+              },
+              {
+                "name": "avgPointsFor",
+                "value": 113.25
+              },
+              {
+                "name": "differential",
+                "value": -6.5
+              },
+              {
+                "name": "divisionWinPercent",
+                "value": 0.5
+              },
+              {
+                "name": "gamesBehind",
+                "value": 3.5
+              },
+              {
+                "name": "gamesPlayed",
+                "value": 4
+              },
+              {
+                "name": "leagueWinPercent",
+                "value": 0.33333334
+              },
+              {
+                "name": "losses",
+                "value": 3
+              },
+              {
+                "name": "playoffSeed",
+                "value": 13
+              },
+              {
+                "name": "pointDifferential",
+                "value": -26
+              },
+              {
+                "name": "points",
+                "value": -1
+              },
+              {
+                "name": "pointsAgainst",
+                "value": 479
+              },
+              {
+                "name": "pointsFor",
+                "value": 453
+              },
+              {
+                "name": "streak",
+                "value": 1
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 0.25
+              },
+              {
+                "name": "wins",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "description": "Home Record",
+            "type": "home",
+            "summary": "0-2",
+            "stats": [
+              {
+                "name": "wins",
+                "value": 0
+              },
+              {
+                "name": "losses",
+                "value": 2
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 0
+              },
+              {
+                "name": "OTLosses",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "description": "Away Record",
+            "type": "road",
+            "summary": "1-1",
+            "stats": [
+              {
+                "name": "wins",
+                "value": 1
+              },
+              {
+                "name": "losses",
+                "value": 1
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 0.5
+              },
+              {
+                "name": "OTLosses",
+                "value": 0
+              }
+            ]
+          }
+        ]
+      },
       "groups": {
         "id": "4",
         "parent": {
@@ -326,30 +466,30 @@
           ]
         },
         "team": {
-          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/23?lang=en&region=us"
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/teams/23?lang=en&region=us"
         }
       },
       "nextEvent": [
         {
-          "id": "401812690",
-          "date": "2025-10-09T02:00Z",
-          "name": "Toronto Raptors at Sacramento Kings",
-          "shortName": "TOR @ SAC",
+          "id": "401809941",
+          "date": "2025-10-23T02:00Z",
+          "name": "Sacramento Kings at Phoenix Suns",
+          "shortName": "SAC @ PHX",
           "season": {
             "year": 2026,
             "displayName": "2025-26"
           },
           "seasonType": {
-            "id": "1",
-            "type": 1,
-            "name": "Preseason",
-            "abbreviation": "pre"
+            "id": "2",
+            "type": 2,
+            "name": "Regular Season",
+            "abbreviation": "reg"
           },
           "timeValid": true,
           "competitions": [
             {
-              "id": "401812690",
-              "date": "2025-10-09T02:00Z",
+              "id": "401809941",
+              "date": "2025-10-23T02:00Z",
               "attendance": 0,
               "type": {
                 "id": "1",
@@ -363,18 +503,258 @@
               "boxscoreAvailable": false,
               "ticketsAvailable": true,
               "venue": {
-                "fullName": "Golden 1 Center",
+                "fullName": "Mortgage Matchup Center",
                 "address": {
-                  "city": "Sacramento",
-                  "state": "CA"
+                  "city": "Phoenix",
+                  "state": "AZ"
                 }
               },
               "competitors": [
                 {
-                  "id": "23",
+                  "id": "21",
                   "type": "team",
                   "order": 0,
                   "homeAway": "home",
+                  "team": {
+                    "id": "21",
+                    "location": "Phoenix",
+                    "abbreviation": "PHX",
+                    "displayName": "Phoenix Suns",
+                    "shortDisplayName": "Suns",
+                    "logos": [
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "default"
+                        ],
+                        "lastUpdated": "2024-06-25T21:17Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/phx.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "dark"
+                        ],
+                        "lastUpdated": "2024-06-25T21:13Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/phx.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "scoreboard"
+                        ],
+                        "lastUpdated": "2024-06-25T21:18Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/phx.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "scoreboard",
+                          "dark"
+                        ],
+                        "lastUpdated": "2024-06-25T21:14Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/c6eade89-5971-0e84-8ccb-cd91482b2b50/logos/primary_logo_on_white_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_white_color"
+                        ],
+                        "lastUpdated": "2024-12-04T21:04Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/c6eade89-5971-0e84-8ccb-cd91482b2b50/logos/primary_logo_on_black_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_black_color"
+                        ],
+                        "lastUpdated": "2024-12-04T21:04Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/c6eade89-5971-0e84-8ccb-cd91482b2b50/logos/primary_logo_on_primary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_primary_color"
+                        ],
+                        "lastUpdated": "2024-12-04T21:04Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/c6eade89-5971-0e84-8ccb-cd91482b2b50/logos/primary_logo_on_secondary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_secondary_color"
+                        ],
+                        "lastUpdated": "2024-12-04T21:04Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/c6eade89-5971-0e84-8ccb-cd91482b2b50/logos/secondary_logo_on_white_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_white_color"
+                        ],
+                        "lastUpdated": "2024-12-04T21:04Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/c6eade89-5971-0e84-8ccb-cd91482b2b50/logos/secondary_logo_on_black_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_black_color"
+                        ],
+                        "lastUpdated": "2024-12-04T21:04Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/c6eade89-5971-0e84-8ccb-cd91482b2b50/logos/secondary_logo_on_primary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_primary_color"
+                        ],
+                        "lastUpdated": "2024-12-04T21:04Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/c6eade89-5971-0e84-8ccb-cd91482b2b50/logos/secondary_logo_on_secondary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_secondary_color"
+                        ],
+                        "lastUpdated": "2024-12-04T21:04Z"
+                      }
+                    ],
+                    "links": [
+                      {
+                        "rel": [
+                          "clubhouse",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/_/name/phx/phoenix-suns",
+                        "text": "Clubhouse"
+                      },
+                      {
+                        "rel": [
+                          "roster",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/roster/_/name/phx/phoenix-suns",
+                        "text": "Roster"
+                      },
+                      {
+                        "rel": [
+                          "stats",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/stats/_/name/phx/phoenix-suns",
+                        "text": "Statistics"
+                      },
+                      {
+                        "rel": [
+                          "schedule",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/schedule/_/name/phx",
+                        "text": "Schedule"
+                      },
+                      {
+                        "rel": [
+                          "photos",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/photos/_/name/phx",
+                        "text": "photos"
+                      },
+                      {
+                        "rel": [
+                          "tickets",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.vividseats.com/phoenix-suns-tickets--sports-nba-basketball/performer/679?wsUser=717",
+                        "text": "Tickets"
+                      },
+                      {
+                        "rel": [
+                          "draftpicks",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/draft/teams/_/name/phx/phoenix-suns",
+                        "text": "Draft Picks"
+                      },
+                      {
+                        "rel": [
+                          "transactions",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/transactions/_/name/phx",
+                        "text": "Transactions"
+                      },
+                      {
+                        "rel": [
+                          "injuries",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/injuries/_/name/phx",
+                        "text": "Injuries"
+                      },
+                      {
+                        "rel": [
+                          "depthchart",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/depth/_/name/phx",
+                        "text": "Depth Chart"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "23",
+                  "type": "team",
+                  "order": 1,
+                  "homeAway": "away",
                   "team": {
                     "id": "23",
                     "location": "Sacramento",
@@ -609,259 +989,84 @@
                       }
                     ]
                   }
-                },
-                {
-                  "id": "28",
-                  "type": "team",
-                  "order": 1,
-                  "homeAway": "away",
-                  "team": {
-                    "id": "28",
-                    "location": "Toronto",
-                    "abbreviation": "TOR",
-                    "displayName": "Toronto Raptors",
-                    "shortDisplayName": "Raptors",
-                    "logos": [
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "default"
-                        ],
-                        "lastUpdated": "2024-06-25T21:17Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/tor.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "dark"
-                        ],
-                        "lastUpdated": "2025-01-21T22:35Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/tor.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "scoreboard"
-                        ],
-                        "lastUpdated": "2024-06-25T21:18Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/tor.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "scoreboard",
-                          "dark"
-                        ],
-                        "lastUpdated": "2025-01-22T15:28Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/5a9c33b8-63fd-ff34-a833-925fe89320a6/logos/primary_logo_on_white_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_white_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/5a9c33b8-63fd-ff34-a833-925fe89320a6/logos/primary_logo_on_black_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_black_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/5a9c33b8-63fd-ff34-a833-925fe89320a6/logos/primary_logo_on_primary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_primary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/5a9c33b8-63fd-ff34-a833-925fe89320a6/logos/primary_logo_on_secondary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_secondary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/5a9c33b8-63fd-ff34-a833-925fe89320a6/logos/secondary_logo_on_white_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_white_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/5a9c33b8-63fd-ff34-a833-925fe89320a6/logos/secondary_logo_on_black_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_black_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/5a9c33b8-63fd-ff34-a833-925fe89320a6/logos/secondary_logo_on_primary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_primary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/5a9c33b8-63fd-ff34-a833-925fe89320a6/logos/secondary_logo_on_secondary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_secondary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      }
-                    ],
-                    "links": [
-                      {
-                        "rel": [
-                          "clubhouse",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/_/name/tor/toronto-raptors",
-                        "text": "Clubhouse"
-                      },
-                      {
-                        "rel": [
-                          "roster",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/roster/_/name/tor/toronto-raptors",
-                        "text": "Roster"
-                      },
-                      {
-                        "rel": [
-                          "stats",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/stats/_/name/tor/toronto-raptors",
-                        "text": "Statistics"
-                      },
-                      {
-                        "rel": [
-                          "schedule",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/schedule/_/name/tor",
-                        "text": "Schedule"
-                      },
-                      {
-                        "rel": [
-                          "photos",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/photos/_/name/tor",
-                        "text": "photos"
-                      },
-                      {
-                        "rel": [
-                          "tickets",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.vividseats.com/toronto-raptors-tickets--sports-nba-basketball/performer/879?wsUser=717",
-                        "text": "Tickets"
-                      },
-                      {
-                        "rel": [
-                          "draftpicks",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/draft/teams/_/name/tor/toronto-raptors",
-                        "text": "Draft Picks"
-                      },
-                      {
-                        "rel": [
-                          "transactions",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/transactions/_/name/tor",
-                        "text": "Transactions"
-                      },
-                      {
-                        "rel": [
-                          "injuries",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/injuries/_/name/tor",
-                        "text": "Injuries"
-                      },
-                      {
-                        "rel": [
-                          "depthchart",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/depth/_/name/tor",
-                        "text": "Depth Chart"
-                      }
-                    ]
-                  }
                 }
               ],
               "notes": [],
-              "broadcasts": [],
+              "broadcasts": [
+                {
+                  "type": {
+                    "id": "1",
+                    "shortName": "TV"
+                  },
+                  "market": {
+                    "id": "3",
+                    "type": "Away"
+                  },
+                  "media": {
+                    "shortName": "NBC Sports CA"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                },
+                {
+                  "type": {
+                    "id": "6",
+                    "shortName": "Subscription Package"
+                  },
+                  "market": {
+                    "id": "3",
+                    "type": "Away"
+                  },
+                  "media": {
+                    "shortName": "NBA League Pass"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                },
+                {
+                  "type": {
+                    "id": "1",
+                    "shortName": "TV"
+                  },
+                  "market": {
+                    "id": "2",
+                    "type": "Home"
+                  },
+                  "media": {
+                    "shortName": "Arizona's Family 3TV"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                },
+                {
+                  "type": {
+                    "id": "4",
+                    "shortName": "Streaming"
+                  },
+                  "market": {
+                    "id": "2",
+                    "type": "Home"
+                  },
+                  "media": {
+                    "shortName": "Suns Live"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                }
+              ],
               "tickets": [
                 {
-                  "id": "5893711",
-                  "summary": "Tickets as low as $20",
-                  "description": "NBA Preseason - Toronto Raptors at Sacramento Kings",
-                  "maxPrice": 978.04,
-                  "startingPrice": 20.24,
-                  "numberAvailable": 2701,
-                  "totalPostings": 669,
+                  "id": "5939698",
+                  "summary": "Tickets as low as $15",
+                  "description": "Sacramento Kings at Phoenix Suns",
+                  "maxPrice": 7607.59,
+                  "startingPrice": 15.16,
+                  "numberAvailable": 1720,
+                  "totalPostings": 463,
                   "links": [
                     {
                       "rel": [
@@ -869,7 +1074,7 @@
                         "desktop",
                         "event"
                       ],
-                      "href": "https://www.vividseats.com/sacramento-kings-tickets-golden-1-center-10-8-2025--sports-nba-basketball/production/5893711?wsUser=717"
+                      "href": "https://www.vividseats.com/phoenix-suns-tickets-phx-arena-10-22-2025--sports-nba-basketball/production/5939698?wsUser=717"
                     },
                     {
                       "rel": [
@@ -877,7 +1082,7 @@
                         "desktop",
                         "venue"
                       ],
-                      "href": "https://www.vividseats.com/golden-1-center-tickets/venue/14626?wsUser=717"
+                      "href": "https://www.vividseats.com/footprint-center-tickets/venue/55?wsUser=717"
                     }
                   ]
                 }
@@ -892,8 +1097,8 @@
                   "state": "pre",
                   "completed": false,
                   "description": "Scheduled",
-                  "detail": "Wed, October 8th at 10:00 PM EDT",
-                  "shortDetail": "10/8 - 10:00 PM EDT"
+                  "detail": "Wed, October 22nd at 10:00 PM EDT",
+                  "shortDetail": "10/22 - 10:00 PM EDT"
                 }
               }
             }
@@ -906,7 +1111,7 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/game/_/gameId/401812690/raptors-kings",
+              "href": "https://www.espn.com/nba/game/_/gameId/401809941/kings-suns",
               "text": "Gamecast",
               "shortText": "Summary",
               "isExternal": false,
@@ -920,7 +1125,7 @@
                 "app",
                 "event"
               ],
-              "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=nba&gameId=401812690",
+              "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=nba&gameId=401809941",
               "text": "Gamecast",
               "shortText": "Summary",
               "isExternal": false,
@@ -933,7 +1138,7 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/game/_/gameId/401812690",
+              "href": "https://www.espn.com/nba/game/_/gameId/401809941",
               "text": "Now",
               "shortText": "Now",
               "isExternal": false,
@@ -946,7 +1151,7 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/odds/_/gameId/401812690",
+              "href": "https://www.espn.com/nba/odds/_/gameId/401809941",
               "text": "Odds",
               "shortText": "Odds",
               "isExternal": false,
@@ -959,7 +1164,7 @@
                 "mobile",
                 "event"
               ],
-              "href": "https://m.espn.com/nba/odds/_/gameId/401812690",
+              "href": "https://m.espn.com/nba/odds/_/gameId/401809941",
               "text": "Odds",
               "shortText": "Odds",
               "isExternal": false,
@@ -968,19 +1173,199 @@
           ]
         }
       ],
-      "standingSummary": "1st in Pacific Division"
+      "standingSummary": "4th in Pacific Division"
     }
   },
   "roster": {
-    "timestamp": "2025-09-25T23:27:32Z",
+    "timestamp": "2025-10-20T18:28:56Z",
     "status": "success",
     "season": {
       "year": 2026,
       "displayName": "2025-26",
-      "type": 1,
-      "name": "Preseason"
+      "type": 2,
+      "name": "Regular Season"
     },
     "athletes": [
+      {
+        "id": "4683631",
+        "uid": "s:40~l:46~a:4683631",
+        "guid": "ddd98d6f-814e-3349-8d82-5fb9fe94de14",
+        "alternateIds": {
+          "sdr": "4683631"
+        },
+        "firstName": "Daniel",
+        "lastName": "Batcho",
+        "fullName": "Daniel Batcho",
+        "displayName": "Daniel Batcho",
+        "shortName": "D. Batcho",
+        "weight": 245,
+        "displayWeight": "245 lbs",
+        "height": 83,
+        "displayHeight": "6' 11\"",
+        "age": 23,
+        "dateOfBirth": "2002-01-10T08:00Z",
+        "links": [
+          {
+            "language": "en-US",
+            "rel": [
+              "playercard",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/_/id/4683631/daniel-batcho",
+            "text": "Player Card",
+            "shortText": "Player Card",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "stats",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/stats/_/id/4683631/daniel-batcho",
+            "text": "Stats",
+            "shortText": "Stats",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "splits",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/splits/_/id/4683631/daniel-batcho",
+            "text": "Splits",
+            "shortText": "Splits",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "gamelog",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/gamelog/_/id/4683631/daniel-batcho",
+            "text": "Game Log",
+            "shortText": "Game Log",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "news",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/news/_/id/4683631/daniel-batcho",
+            "text": "News",
+            "shortText": "News",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "bio",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/bio/_/id/4683631/daniel-batcho",
+            "text": "Bio",
+            "shortText": "Bio",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "overview",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/_/id/4683631/daniel-batcho",
+            "text": "Overview",
+            "shortText": "Overview",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "advancedstats",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/advancedstats/_/id/4683631/daniel-batcho",
+            "text": "Advanced Stats",
+            "shortText": "Advanced Stats",
+            "isExternal": false,
+            "isPremium": false
+          }
+        ],
+        "birthPlace": {
+          "city": "Paris",
+          "country": "France"
+        },
+        "college": {
+          "id": "2348",
+          "guid": "b1b7ad0b-dade-38cf-8b1a-16bee7e5a2bb",
+          "mascot": "Bulldogs",
+          "name": "Louisiana Tech",
+          "shortName": "Louisiana Tech",
+          "abbrev": "LT",
+          "logos": [
+            {
+              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2348.png",
+              "width": 500,
+              "height": 500,
+              "alt": "",
+              "rel": [
+                "full",
+                "default"
+              ],
+              "lastUpdated": "2019-07-30T18:16Z"
+            },
+            {
+              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2348.png",
+              "width": 500,
+              "height": 500,
+              "alt": "",
+              "rel": [
+                "full",
+                "dark"
+              ],
+              "lastUpdated": "2019-07-30T18:16Z"
+            }
+          ]
+        },
+        "slug": "daniel-batcho",
+        "position": {
+          "id": "7",
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F",
+          "leaf": false
+        },
+        "injuries": [],
+        "contracts": [],
+        "experience": {
+          "years": 0
+        },
+        "status": {
+          "id": "1",
+          "name": "Active",
+          "type": "active",
+          "abbreviation": "Active"
+        }
+      },
       {
         "id": "4433174",
         "uid": "s:40~l:46~a:4433174",
@@ -1396,7 +1781,7 @@
           }
         ],
         "experience": {
-          "years": 0
+          "years": 1
         },
         "contract": {
           "birdStatus": 0,
@@ -1827,7 +2212,12 @@
           "href": "https://a.espncdn.com/i/headshots/nba/players/full/3919454.png",
           "alt": "Terence Davis"
         },
-        "jersey": "9",
+        "jersey": "3",
+        "hand": {
+          "type": "BOTH",
+          "abbreviation": "B",
+          "displayValue": "Both"
+        },
         "position": {
           "id": "3",
           "name": "Guard",
@@ -1879,7 +2269,7 @@
           }
         ],
         "experience": {
-          "years": 3
+          "years": 5
         },
         "contract": {
           "birdStatus": 0,
@@ -2101,7 +2491,12 @@
             "leaf": false
           }
         },
-        "injuries": [],
+        "injuries": [
+          {
+            "status": "Day-To-Day",
+            "date": "2025-10-17T22:49Z"
+          }
+        ],
         "contracts": [
           {
             "salary": 24570000,
@@ -2241,7 +2636,7 @@
           }
         ],
         "experience": {
-          "years": 15
+          "years": 16
         },
         "contract": {
           "birdStatus": 0,
@@ -2490,7 +2885,7 @@
           }
         ],
         "experience": {
-          "years": 2
+          "years": 3
         },
         "contract": {
           "birdStatus": 0,
@@ -2779,7 +3174,7 @@
           }
         ],
         "experience": {
-          "years": 6
+          "years": 7
         },
         "contract": {
           "birdStatus": 0,
@@ -3017,7 +3412,7 @@
           }
         ],
         "experience": {
-          "years": 0
+          "years": 1
         },
         "contract": {
           "birdStatus": 0,
@@ -3330,7 +3725,7 @@
           }
         ],
         "experience": {
-          "years": 10
+          "years": 11
         },
         "contract": {
           "birdStatus": 0,
@@ -3361,6 +3756,187 @@
           "tradeRestriction": false,
           "unsignedForeignPick": false,
           "active": true
+        },
+        "status": {
+          "id": "1",
+          "name": "Active",
+          "type": "active",
+          "abbreviation": "Active"
+        }
+      },
+      {
+        "id": "5241365",
+        "uid": "s:40~l:46~a:5241365",
+        "guid": "44cdfd54-6ca3-3b55-a056-38d40647af7f",
+        "alternateIds": {
+          "sdr": "5241365"
+        },
+        "firstName": "Mitch",
+        "lastName": "Mascari",
+        "fullName": "Mitch Mascari",
+        "displayName": "Mitch Mascari",
+        "shortName": "M. Mascari",
+        "weight": 200,
+        "displayWeight": "200 lbs",
+        "height": 77,
+        "displayHeight": "6' 5\"",
+        "age": 25,
+        "dateOfBirth": "2000-08-21T07:00Z",
+        "links": [
+          {
+            "language": "en-US",
+            "rel": [
+              "playercard",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/_/id/5241365/mitch-mascari",
+            "text": "Player Card",
+            "shortText": "Player Card",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "stats",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/stats/_/id/5241365/mitch-mascari",
+            "text": "Stats",
+            "shortText": "Stats",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "splits",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/splits/_/id/5241365/mitch-mascari",
+            "text": "Splits",
+            "shortText": "Splits",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "gamelog",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/gamelog/_/id/5241365/mitch-mascari",
+            "text": "Game Log",
+            "shortText": "Game Log",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "news",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/news/_/id/5241365/mitch-mascari",
+            "text": "News",
+            "shortText": "News",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "bio",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/bio/_/id/5241365/mitch-mascari",
+            "text": "Bio",
+            "shortText": "Bio",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "overview",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/_/id/5241365/mitch-mascari",
+            "text": "Overview",
+            "shortText": "Overview",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "advancedstats",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/advancedstats/_/id/5241365/mitch-mascari",
+            "text": "Advanced Stats",
+            "shortText": "Advanced Stats",
+            "isExternal": false,
+            "isPremium": false
+          }
+        ],
+        "birthPlace": {
+          "city": "Geneva",
+          "state": "IL",
+          "country": "USA"
+        },
+        "college": {
+          "id": "2181",
+          "guid": "11e08323-a530-3ba7-8898-979f0034929c",
+          "mascot": "Bulldogs",
+          "name": "Drake",
+          "shortName": "Drake",
+          "abbrev": "DRKE",
+          "logos": [
+            {
+              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2181.png",
+              "width": 500,
+              "height": 500,
+              "alt": "",
+              "rel": [
+                "full",
+                "default"
+              ],
+              "lastUpdated": "2023-12-13T21:29Z"
+            },
+            {
+              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2181.png",
+              "width": 500,
+              "height": 500,
+              "alt": "",
+              "rel": [
+                "full",
+                "dark"
+              ],
+              "lastUpdated": "2018-06-05T12:08Z"
+            }
+          ]
+        },
+        "slug": "mitch-mascari",
+        "position": {
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
+        },
+        "injuries": [],
+        "contracts": [],
+        "experience": {
+          "years": 0
         },
         "status": {
           "id": "1",
@@ -3651,7 +4227,7 @@
           }
         ],
         "experience": {
-          "years": 10
+          "years": 11
         },
         "contract": {
           "birdStatus": 0,
@@ -3875,7 +4451,7 @@
         "injuries": [
           {
             "status": "Day-To-Day",
-            "date": "2025-07-03T22:08Z"
+            "date": "2025-10-17T02:11Z"
           }
         ],
         "contracts": [
@@ -3953,7 +4529,7 @@
           }
         ],
         "experience": {
-          "years": 7
+          "years": 8
         },
         "contract": {
           "birdStatus": 0,
@@ -4173,7 +4749,12 @@
             "leaf": false
           }
         },
-        "injuries": [],
+        "injuries": [
+          {
+            "status": "Out",
+            "date": "2025-10-15T23:40Z"
+          }
+        ],
         "contracts": [
           {
             "salary": 11144093,
@@ -4209,7 +4790,7 @@
           }
         ],
         "experience": {
-          "years": 2
+          "years": 3
         },
         "contract": {
           "birdStatus": 0,
@@ -4219,13 +4800,13 @@
           "poisonPillProvision": {
             "active": false
           },
-          "incomingTradeValue": 11144093,
+          "incomingTradeValue": 25190682,
           "outgoingTradeValue": 11144093,
           "minimumSalaryException": false,
           "optionType": 0,
           "salary": 11144093,
           "salaryRemaining": 0,
-          "yearsRemaining": 1,
+          "yearsRemaining": 6,
           "season": {
             "year": 2026,
             "startDate": "2025-10-01T07:00Z",
@@ -4414,6 +4995,7 @@
           "href": "https://a.espncdn.com/i/headshots/nba/players/full/4279318.png",
           "alt": "Daeqwon Plowden"
         },
+        "jersey": "29",
         "position": {
           "id": "3",
           "name": "Guard",
@@ -4441,7 +5023,7 @@
           }
         ],
         "experience": {
-          "years": 4
+          "years": 1
         },
         "contract": {
           "birdStatus": 0,
@@ -4886,7 +5468,12 @@
             "leaf": false
           }
         },
-        "injuries": [],
+        "injuries": [
+          {
+            "status": "Out",
+            "date": "2025-10-18T19:49Z"
+          }
+        ],
         "contracts": [
           {
             "salary": 43636000,
@@ -4970,7 +5557,7 @@
           }
         ],
         "experience": {
-          "years": 8
+          "years": 9
         },
         "contract": {
           "birdStatus": 0,
@@ -5144,7 +5731,7 @@
           "href": "https://a.espncdn.com/i/headshots/nba/players/full/3032978.png",
           "alt": "Dario Saric"
         },
-        "jersey": "9",
+        "jersey": "20",
         "position": {
           "id": "6",
           "name": "Power Forward",
@@ -5259,7 +5846,7 @@
           }
         ],
         "experience": {
-          "years": 8
+          "years": 9
         },
         "contract": {
           "birdStatus": 0,
@@ -5556,7 +6143,7 @@
           }
         ],
         "experience": {
-          "years": 11
+          "years": 12
         },
         "contract": {
           "birdStatus": 0,
@@ -5761,7 +6348,7 @@
           "href": "https://a.espncdn.com/i/headshots/nba/players/full/4432117.png",
           "alt": "Isaiah Stevens"
         },
-        "jersey": "40",
+        "jersey": "24",
         "position": {
           "id": "3",
           "name": "Guard",
@@ -5789,7 +6376,7 @@
           }
         ],
         "experience": {
-          "years": 0
+          "years": 1
         },
         "contract": {
           "birdStatus": 0,
@@ -5804,6 +6391,380 @@
           "minimumSalaryException": false,
           "optionType": 0,
           "salary": 0,
+          "salaryRemaining": 0,
+          "yearsRemaining": 1,
+          "season": {
+            "year": 2026,
+            "startDate": "2025-10-01T07:00Z",
+            "endDate": "2026-06-27T06:59Z"
+          },
+          "tradeKicker": {
+            "active": false,
+            "percentage": 0,
+            "value": 0,
+            "tradeValue": 0
+          },
+          "tradeRestriction": false,
+          "unsignedForeignPick": false,
+          "active": true
+        },
+        "status": {
+          "id": "1",
+          "name": "Active",
+          "type": "active",
+          "abbreviation": "Active"
+        }
+      },
+      {
+        "id": "3468",
+        "uid": "s:40~l:46~a:3468",
+        "guid": "e849e50f-b1b7-4256-1de2-ca49862e218d",
+        "alternateIds": {
+          "sdr": "2232404"
+        },
+        "firstName": "Russell",
+        "lastName": "Westbrook",
+        "fullName": "Russell Westbrook",
+        "displayName": "Russell Westbrook",
+        "shortName": "R. Westbrook",
+        "weight": 200,
+        "displayWeight": "200 lbs",
+        "height": 76,
+        "displayHeight": "6' 4\"",
+        "age": 36,
+        "dateOfBirth": "1988-11-12T08:00Z",
+        "debutYear": 2008,
+        "links": [
+          {
+            "language": "en-US",
+            "rel": [
+              "playercard",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/_/id/3468/russell-westbrook",
+            "text": "Player Card",
+            "shortText": "Player Card",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "stats",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/stats/_/id/3468/russell-westbrook",
+            "text": "Stats",
+            "shortText": "Stats",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "splits",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/splits/_/id/3468/russell-westbrook",
+            "text": "Splits",
+            "shortText": "Splits",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "gamelog",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/gamelog/_/id/3468/russell-westbrook",
+            "text": "Game Log",
+            "shortText": "Game Log",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "news",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/news/_/id/3468/russell-westbrook",
+            "text": "News",
+            "shortText": "News",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "bio",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/bio/_/id/3468/russell-westbrook",
+            "text": "Bio",
+            "shortText": "Bio",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "overview",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/_/id/3468/russell-westbrook",
+            "text": "Overview",
+            "shortText": "Overview",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "advancedstats",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/advancedstats/_/id/3468/russell-westbrook",
+            "text": "Advanced Stats",
+            "shortText": "Advanced Stats",
+            "isExternal": false,
+            "isPremium": false
+          }
+        ],
+        "birthPlace": {
+          "city": "Long Beach",
+          "state": "CA",
+          "country": "USA"
+        },
+        "college": {
+          "id": "26",
+          "guid": "5da8e04c-d85c-376d-b336-9342e0bfdd7c",
+          "mascot": "Bruins",
+          "name": "UCLA",
+          "shortName": "UCLA",
+          "abbrev": "UCLA",
+          "logos": [
+            {
+              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png",
+              "width": 500,
+              "height": 500,
+              "alt": "",
+              "rel": [
+                "full",
+                "default"
+              ],
+              "lastUpdated": "2023-02-17T21:15Z"
+            },
+            {
+              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/26.png",
+              "width": 500,
+              "height": 500,
+              "alt": "",
+              "rel": [
+                "full",
+                "dark"
+              ],
+              "lastUpdated": "2023-02-17T21:14Z"
+            }
+          ]
+        },
+        "slug": "russell-westbrook",
+        "headshot": {
+          "href": "https://a.espncdn.com/i/headshots/nba/players/full/3468.png",
+          "alt": "Russell Westbrook"
+        },
+        "jersey": "18",
+        "position": {
+          "id": "1",
+          "name": "Point Guard",
+          "displayName": "Point Guard",
+          "abbreviation": "PG",
+          "leaf": true,
+          "parent": {
+            "id": "3",
+            "name": "Guard",
+            "displayName": "Guard",
+            "abbreviation": "G",
+            "leaf": false
+          }
+        },
+        "injuries": [
+          {
+            "status": "Day-To-Day",
+            "date": "2025-10-17T22:50Z"
+          }
+        ],
+        "contracts": [
+          {
+            "salary": 2296274,
+            "season": {
+              "year": 2026,
+              "startDate": "2025-10-01T07:00Z",
+              "endDate": "2026-06-27T06:59Z"
+            }
+          },
+          {
+            "salary": 3303771,
+            "season": {
+              "year": 2025,
+              "startDate": "2024-09-24T07:00Z",
+              "endDate": "2025-06-27T06:59Z"
+            }
+          },
+          {
+            "salary": 3835738,
+            "season": {
+              "year": 2024,
+              "startDate": "2023-10-05T07:00Z",
+              "endDate": "2024-06-21T06:59Z"
+            }
+          },
+          {
+            "salary": 495955,
+            "season": {
+              "year": 2023,
+              "startDate": "2022-08-30T07:00Z",
+              "endDate": "2023-06-24T06:59Z"
+            }
+          },
+          {
+            "salary": 44211146,
+            "season": {
+              "year": 2022,
+              "startDate": "2021-09-22T07:00Z",
+              "endDate": "2022-06-20T06:59Z"
+            }
+          },
+          {
+            "salary": 41358814,
+            "season": {
+              "year": 2021,
+              "startDate": "2020-12-02T08:00Z",
+              "endDate": "2021-07-23T06:59Z"
+            }
+          },
+          {
+            "salary": 38506482,
+            "season": {
+              "year": 2020,
+              "startDate": "2019-09-28T07:00Z",
+              "endDate": "2020-10-22T06:59Z"
+            }
+          },
+          {
+            "salary": 35654150,
+            "season": {
+              "year": 2019,
+              "startDate": "2018-09-13T07:00Z",
+              "endDate": "2019-06-24T06:59Z"
+            }
+          },
+          {
+            "salary": 28530608,
+            "season": {
+              "year": 2018,
+              "startDate": "2017-09-30T07:00Z",
+              "endDate": "2018-07-01T06:59Z"
+            }
+          },
+          {
+            "salary": 26540100,
+            "season": {
+              "year": 2017,
+              "startDate": "2016-10-01T07:00Z",
+              "endDate": "2017-07-01T06:59Z"
+            }
+          },
+          {
+            "salary": 16744218,
+            "season": {
+              "year": 2016,
+              "startDate": "2015-10-01T07:00Z",
+              "endDate": "2016-07-01T06:59Z"
+            }
+          },
+          {
+            "salary": 15719062,
+            "season": {
+              "year": 2015,
+              "startDate": "2014-10-03T07:00Z",
+              "endDate": "2015-07-01T06:59Z"
+            }
+          },
+          {
+            "salary": 14693906,
+            "season": {
+              "year": 2014,
+              "startDate": "2013-10-04T07:00Z",
+              "endDate": "2014-07-01T06:59Z"
+            }
+          },
+          {
+            "salary": 14693906,
+            "season": {
+              "year": 2013,
+              "startDate": "2012-09-20T07:00Z",
+              "endDate": "2013-07-12T06:59Z"
+            }
+          },
+          {
+            "salary": 5082416,
+            "season": {
+              "year": 2012,
+              "startDate": "2011-12-09T08:00Z",
+              "endDate": "2012-06-27T06:59Z"
+            }
+          },
+          {
+            "salary": 4017720,
+            "season": {
+              "year": 2011,
+              "startDate": "2010-10-03T07:00Z",
+              "endDate": "2011-06-22T06:59Z"
+            }
+          },
+          {
+            "salary": 3755640,
+            "season": {
+              "year": 2010,
+              "startDate": "2009-10-01T07:00Z",
+              "endDate": "2010-06-23T06:59Z"
+            }
+          },
+          {
+            "salary": 3493680,
+            "season": {
+              "year": 2009,
+              "startDate": "2008-10-05T07:00Z",
+              "endDate": "2009-06-23T06:59Z"
+            }
+          }
+        ],
+        "experience": {
+          "years": 17
+        },
+        "contract": {
+          "birdStatus": 0,
+          "baseYearCompensation": {
+            "active": false
+          },
+          "poisonPillProvision": {
+            "active": false
+          },
+          "incomingTradeValue": 2296274,
+          "outgoingTradeValue": 0,
+          "minimumSalaryException": false,
+          "optionType": 0,
+          "salary": 2296274,
           "salaryRemaining": 0,
           "yearsRemaining": 1,
           "season": {
@@ -5845,25 +6806,1369 @@
       "displayName": "Sacramento Kings",
       "clubhouse": "https://www.espn.com/nba/team/_/name/sac/sacramento-kings",
       "color": "5a2d81",
-      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/sac.png"
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/sac.png",
+      "recordSummary": "1-3",
+      "seasonSummary": "2025-26",
+      "standingSummary": "4th in Pacific Division"
     }
   },
   "injuries": {
-    "timestamp": "2025-09-25T23:34:56Z",
+    "timestamp": "2025-10-20T18:34:25Z",
     "status": "success",
     "season": {
       "year": 2026,
-      "type": 1,
-      "name": "Preseason",
+      "type": 2,
+      "name": "Regular Season",
       "displayName": "2025-26"
     },
     "injuries": [
       {
-        "id": "-20767",
-        "longComment": "Monk will miss at least the next two weeks for the Kings before having his injured left calf re-evaluated. The absence of the veteran guard is potentially a costly blow for this team, which has clinched a spot in the Play-In Tournament. Sacramento will have to lean on Keon Ellis, Devin Carter and Markelle Fultz in the backcourt.",
-        "shortComment": "Monk Shams Charania of ESPN for a strained left calf injury in two weeks, Shams Charania reports.",
+        "id": "-26324",
+        "longComment": "Sabonis is dealing with a Grade 1 hamstring strain, so it's not the worst-case scenario for the Kings. Sabonis is scheduled to be re-evaluated on Oct. 25, effectively ruling him out for the first two games of the regular season. With Sabonis sidelined, this sets up an interesting battle between Drew Eubanks, Dario Saric and Maxime Raynaud at the center spot.",
+        "shortComment": "The Kings announced Saturday that Sabonis (hamstring) will be re-evaluated in one week, Brenden Nunes of KHTK Sactown Sports 1140 reports.",
+        "status": "Out",
+        "date": "2025-10-18T19:49Z",
+        "athlete": {
+          "firstName": "Domantas",
+          "lastName": "Sabonis",
+          "displayName": "Domantas Sabonis",
+          "shortName": "D. Sabonis",
+          "links": [
+            {
+              "language": "en-US",
+              "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/3155942/domantas-sabonis",
+              "text": "Player Card",
+              "shortText": "Player Card",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/stats/_/id/3155942/domantas-sabonis",
+              "text": "Stats",
+              "shortText": "Stats",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/splits/_/id/3155942/domantas-sabonis",
+              "text": "Splits",
+              "shortText": "Splits",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/3155942/domantas-sabonis",
+              "text": "Game Log",
+              "shortText": "Game Log",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "news",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/news/_/id/3155942/domantas-sabonis",
+              "text": "News",
+              "shortText": "News",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/bio/_/id/3155942/domantas-sabonis",
+              "text": "Bio",
+              "shortText": "Bio",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/3155942/domantas-sabonis",
+              "text": "Overview",
+              "shortText": "Overview",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "advancedstats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/3155942/domantas-sabonis",
+              "text": "Advanced Stats",
+              "shortText": "Advanced Stats",
+              "isExternal": false,
+              "isPremium": false
+            }
+          ],
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/3155942.png",
+            "alt": "Domantas Sabonis"
+          },
+          "position": {
+            "id": "6",
+            "name": "Power Forward",
+            "displayName": "Power Forward",
+            "abbreviation": "PF",
+            "leaf": true
+          },
+          "team": {
+            "id": "23",
+            "uid": "s:40~l:46~t:23",
+            "slug": "sacramento-kings",
+            "name": "Kings",
+            "abbreviation": "SAC",
+            "displayName": "Sacramento Kings",
+            "logos": [
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/sac.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "default"
+                ],
+                "lastUpdated": "2024-06-25T21:17Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/sac.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:13Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/sac.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard"
+                ],
+                "lastUpdated": "2024-06-25T21:18Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/sac.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:14Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/primary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/primary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/primary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/primary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/secondary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/secondary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/secondary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/secondary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              }
+            ],
+            "links": [
+              {
+                "language": "en-US",
+                "rel": [
+                  "clubhouse",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/_/name/sac/sacramento-kings",
+                "text": "Clubhouse",
+                "shortText": "Clubhouse",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "roster",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/roster/_/name/sac/sacramento-kings",
+                "text": "Roster",
+                "shortText": "Roster",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "stats",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/stats/_/name/sac/sacramento-kings",
+                "text": "Statistics",
+                "shortText": "Statistics",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "schedule",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/schedule/_/name/sac",
+                "text": "Schedule",
+                "shortText": "Schedule",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "photos",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/photos/_/name/sac",
+                "text": "photos",
+                "shortText": "photos",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "tickets",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.vividseats.com/sacramento-kings-tickets--sports-nba-basketball/performer/748?wsUser=717",
+                "text": "Tickets",
+                "shortText": "Tickets",
+                "isExternal": true,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "draftpicks",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/draft/teams/_/name/sac/sacramento-kings",
+                "text": "Draft Picks",
+                "shortText": "Draft Picks",
+                "isExternal": false,
+                "isPremium": true
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "transactions",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/transactions/_/name/sac",
+                "text": "Transactions",
+                "shortText": "Transactions",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "injuries",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/injuries/_/name/sac",
+                "text": "Injuries",
+                "shortText": "Injuries",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "depthchart",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/depth/_/name/sac",
+                "text": "Depth Chart",
+                "shortText": "Depth Chart",
+                "isExternal": false,
+                "isPremium": false
+              }
+            ]
+          },
+          "notes": {
+            "items": [
+              {
+                "id": "-26324",
+                "type": "news",
+                "date": "2025-10-18T19:49Z",
+                "headline": "The Kings announced Saturday that Sabonis (hamstring) will be re-evaluated in one week, Brenden Nunes of KHTK Sactown Sports 1140 reports.",
+                "text": "Sabonis is dealing with a Grade 1 hamstring strain, so it's not the worst-case scenario for the Kings. Sabonis is scheduled to be re-evaluated on Oct. 25, effectively ruling him out for the first two games of the regular season. With Sabonis sidelined, this sets up an interesting battle between Drew Eubanks, Dario Saric and Maxime Raynaud at the center spot.",
+                "source": "RotoWire",
+                "injury": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/3155942/injuries/-26324?lang=en&region=us"
+                }
+              }
+            ]
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
+          }
+        },
+        "source": {
+          "id": "1",
+          "description": "basic/manual",
+          "state": "basic"
+        },
+        "type": {
+          "id": "4",
+          "name": "INJURY_STATUS_OUT",
+          "description": "out",
+          "abbreviation": "O"
+        },
+        "details": {
+          "fantasyStatus": {
+            "description": "OUT",
+            "abbreviation": "OUT"
+          },
+          "type": "Hamstring",
+          "location": "Leg",
+          "detail": "Strain",
+          "side": "Right",
+          "returnDate": "2025-10-26"
+        }
+      },
+      {
+        "id": "499616",
+        "longComment": "Westbrook is still ramping up after just joining the Kings on Thursday. The veteran floor general has five days to build up his activity before Wednesday's season opener in Phoenix.",
+        "shortComment": "Westbrook (reconditioning) is out for Friday's preseason finale against the Lakers, James Ham of ESPN 1320 Sacramento reports.",
         "status": "Day-To-Day",
-        "date": "2025-07-03T22:08Z",
+        "date": "2025-10-17T22:50Z",
+        "athlete": {
+          "firstName": "Russell",
+          "lastName": "Westbrook",
+          "displayName": "Russell Westbrook",
+          "shortName": "R. Westbrook",
+          "links": [
+            {
+              "language": "en-US",
+              "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/3468/russell-westbrook",
+              "text": "Player Card",
+              "shortText": "Player Card",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/stats/_/id/3468/russell-westbrook",
+              "text": "Stats",
+              "shortText": "Stats",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/splits/_/id/3468/russell-westbrook",
+              "text": "Splits",
+              "shortText": "Splits",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/3468/russell-westbrook",
+              "text": "Game Log",
+              "shortText": "Game Log",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "news",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/news/_/id/3468/russell-westbrook",
+              "text": "News",
+              "shortText": "News",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/bio/_/id/3468/russell-westbrook",
+              "text": "Bio",
+              "shortText": "Bio",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/3468/russell-westbrook",
+              "text": "Overview",
+              "shortText": "Overview",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "advancedstats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/3468/russell-westbrook",
+              "text": "Advanced Stats",
+              "shortText": "Advanced Stats",
+              "isExternal": false,
+              "isPremium": false
+            }
+          ],
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/3468.png",
+            "alt": "Russell Westbrook"
+          },
+          "position": {
+            "id": "1",
+            "name": "Point Guard",
+            "displayName": "Point Guard",
+            "abbreviation": "PG",
+            "leaf": true
+          },
+          "team": {
+            "id": "23",
+            "uid": "s:40~l:46~t:23",
+            "slug": "sacramento-kings",
+            "name": "Kings",
+            "abbreviation": "SAC",
+            "displayName": "Sacramento Kings",
+            "logos": [
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/sac.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "default"
+                ],
+                "lastUpdated": "2024-06-25T21:17Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/sac.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:13Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/sac.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard"
+                ],
+                "lastUpdated": "2024-06-25T21:18Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/sac.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:14Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/primary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/primary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/primary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/primary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/secondary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/secondary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/secondary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/secondary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              }
+            ],
+            "links": [
+              {
+                "language": "en-US",
+                "rel": [
+                  "clubhouse",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/_/name/sac/sacramento-kings",
+                "text": "Clubhouse",
+                "shortText": "Clubhouse",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "roster",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/roster/_/name/sac/sacramento-kings",
+                "text": "Roster",
+                "shortText": "Roster",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "stats",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/stats/_/name/sac/sacramento-kings",
+                "text": "Statistics",
+                "shortText": "Statistics",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "schedule",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/schedule/_/name/sac",
+                "text": "Schedule",
+                "shortText": "Schedule",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "photos",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/photos/_/name/sac",
+                "text": "photos",
+                "shortText": "photos",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "tickets",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.vividseats.com/sacramento-kings-tickets--sports-nba-basketball/performer/748?wsUser=717",
+                "text": "Tickets",
+                "shortText": "Tickets",
+                "isExternal": true,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "draftpicks",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/draft/teams/_/name/sac/sacramento-kings",
+                "text": "Draft Picks",
+                "shortText": "Draft Picks",
+                "isExternal": false,
+                "isPremium": true
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "transactions",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/transactions/_/name/sac",
+                "text": "Transactions",
+                "shortText": "Transactions",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "injuries",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/injuries/_/name/sac",
+                "text": "Injuries",
+                "shortText": "Injuries",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "depthchart",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/depth/_/name/sac",
+                "text": "Depth Chart",
+                "shortText": "Depth Chart",
+                "isExternal": false,
+                "isPremium": false
+              }
+            ]
+          },
+          "notes": {
+            "items": [
+              {
+                "id": "499616",
+                "type": "news",
+                "date": "2025-10-17T22:50Z",
+                "headline": "Westbrook (reconditioning) is out for Friday's preseason finale against the Lakers, James Ham of ESPN 1320 Sacramento reports.",
+                "text": "Westbrook is still ramping up after just joining the Kings on Thursday. The veteran floor general has five days to build up his activity before Wednesday's season opener in Phoenix.",
+                "source": "RotoWire",
+                "injury": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/3468/injuries/499616?lang=en&region=us"
+                }
+              }
+            ]
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
+          }
+        },
+        "source": {
+          "id": "1",
+          "description": "basic/manual",
+          "state": "basic"
+        },
+        "type": {
+          "id": "6",
+          "name": "INJURY_STATUS_DAYTODAY",
+          "description": "day-to-day",
+          "abbreviation": "DD"
+        },
+        "details": {
+          "fantasyStatus": {
+            "description": "GTD",
+            "abbreviation": "GTD"
+          },
+          "type": "Rest",
+          "location": "Other",
+          "returnDate": "2025-10-22"
+        }
+      },
+      {
+        "id": "499615",
+        "longComment": "DeRozan was considered probable due to a minor groin injury, so this is a bit surprising, even if it's just an exhibition. With Domantas Sabonis (hamstring) and Keegan Murray (thumb) already sidelined to begin the season, the Kings are being super cautious with their veteran forward.",
+        "shortComment": "DeRozan (groin) has been ruled out for Friday's preseason finale against the Lakers, James Ham of ESPN 1320 Sacramento reports.",
+        "status": "Day-To-Day",
+        "date": "2025-10-17T22:49Z",
+        "athlete": {
+          "firstName": "DeMar",
+          "lastName": "DeRozan",
+          "displayName": "DeMar DeRozan",
+          "shortName": "D. DeRozan",
+          "links": [
+            {
+              "language": "en-US",
+              "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/3978/demar-derozan",
+              "text": "Player Card",
+              "shortText": "Player Card",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/stats/_/id/3978/demar-derozan",
+              "text": "Stats",
+              "shortText": "Stats",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/splits/_/id/3978/demar-derozan",
+              "text": "Splits",
+              "shortText": "Splits",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/3978/demar-derozan",
+              "text": "Game Log",
+              "shortText": "Game Log",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "news",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/news/_/id/3978/demar-derozan",
+              "text": "News",
+              "shortText": "News",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/bio/_/id/3978/demar-derozan",
+              "text": "Bio",
+              "shortText": "Bio",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/3978/demar-derozan",
+              "text": "Overview",
+              "shortText": "Overview",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "advancedstats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/3978/demar-derozan",
+              "text": "Advanced Stats",
+              "shortText": "Advanced Stats",
+              "isExternal": false,
+              "isPremium": false
+            }
+          ],
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/3978.png",
+            "alt": "DeMar DeRozan"
+          },
+          "position": {
+            "id": "5",
+            "name": "Small Forward",
+            "displayName": "Small Forward",
+            "abbreviation": "SF",
+            "leaf": true
+          },
+          "team": {
+            "id": "23",
+            "uid": "s:40~l:46~t:23",
+            "slug": "sacramento-kings",
+            "name": "Kings",
+            "abbreviation": "SAC",
+            "displayName": "Sacramento Kings",
+            "logos": [
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/sac.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "default"
+                ],
+                "lastUpdated": "2024-06-25T21:17Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/sac.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:13Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/sac.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard"
+                ],
+                "lastUpdated": "2024-06-25T21:18Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/sac.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:14Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/primary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/primary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/primary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/primary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/secondary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/secondary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/secondary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/secondary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              }
+            ],
+            "links": [
+              {
+                "language": "en-US",
+                "rel": [
+                  "clubhouse",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/_/name/sac/sacramento-kings",
+                "text": "Clubhouse",
+                "shortText": "Clubhouse",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "roster",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/roster/_/name/sac/sacramento-kings",
+                "text": "Roster",
+                "shortText": "Roster",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "stats",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/stats/_/name/sac/sacramento-kings",
+                "text": "Statistics",
+                "shortText": "Statistics",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "schedule",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/schedule/_/name/sac",
+                "text": "Schedule",
+                "shortText": "Schedule",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "photos",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/photos/_/name/sac",
+                "text": "photos",
+                "shortText": "photos",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "tickets",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.vividseats.com/sacramento-kings-tickets--sports-nba-basketball/performer/748?wsUser=717",
+                "text": "Tickets",
+                "shortText": "Tickets",
+                "isExternal": true,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "draftpicks",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/draft/teams/_/name/sac/sacramento-kings",
+                "text": "Draft Picks",
+                "shortText": "Draft Picks",
+                "isExternal": false,
+                "isPremium": true
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "transactions",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/transactions/_/name/sac",
+                "text": "Transactions",
+                "shortText": "Transactions",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "injuries",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/injuries/_/name/sac",
+                "text": "Injuries",
+                "shortText": "Injuries",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "depthchart",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/depth/_/name/sac",
+                "text": "Depth Chart",
+                "shortText": "Depth Chart",
+                "isExternal": false,
+                "isPremium": false
+              }
+            ]
+          },
+          "notes": {
+            "items": [
+              {
+                "id": "499615",
+                "type": "news",
+                "date": "2025-10-17T22:49Z",
+                "headline": "DeRozan (groin) has been ruled out for Friday's preseason finale against the Lakers, James Ham of ESPN 1320 Sacramento reports.",
+                "text": "DeRozan was considered probable due to a minor groin injury, so this is a bit surprising, even if it's just an exhibition. With Domantas Sabonis (hamstring) and Keegan Murray (thumb) already sidelined to begin the season, the Kings are being super cautious with their veteran forward.",
+                "source": "RotoWire",
+                "injury": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/3978/injuries/499615?lang=en&region=us"
+                }
+              }
+            ]
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
+          }
+        },
+        "source": {
+          "id": "1",
+          "description": "basic/manual",
+          "state": "basic"
+        },
+        "type": {
+          "id": "6",
+          "name": "INJURY_STATUS_DAYTODAY",
+          "description": "day-to-day",
+          "abbreviation": "DD"
+        },
+        "details": {
+          "fantasyStatus": {
+            "description": "GTD",
+            "abbreviation": "GTD"
+          },
+          "type": "Groin",
+          "location": "Groin",
+          "detail": "Soreness",
+          "returnDate": "2025-10-22"
+        }
+      },
+      {
+        "id": "499490",
+        "longComment": "Monk is still recovering from an illness, so he won't suit up for Friday's preseason finale. He should have ample time to recover before Wednesday's 2025-26 regular-season opener Wednesday against the Suns.",
+        "shortComment": "Monk (illness) is out for Friday's preseason game against the Lakers, Sean Cunningham of Fox 40 Sacramento reports.",
+        "status": "Day-To-Day",
+        "date": "2025-10-17T02:11Z",
         "athlete": {
           "firstName": "Malik",
           "lastName": "Monk",
@@ -6264,14 +8569,14 @@
           "notes": {
             "items": [
               {
-                "id": "-20767",
+                "id": "499490",
                 "type": "news",
-                "date": "2025-07-03T22:08Z",
-                "headline": "Monk Shams Charania of ESPN for a strained left calf injury in two weeks, Shams Charania reports.",
-                "text": "Monk will miss at least the next two weeks for the Kings before having his injured left calf re-evaluated. The absence of the veteran guard is potentially a costly blow for this team, which has clinched a spot in the Play-In Tournament. Sacramento will have to lean on Keon Ellis, Devin Carter and Markelle Fultz in the backcourt.",
+                "date": "2025-10-17T02:11Z",
+                "headline": "Monk (illness) is out for Friday's preseason game against the Lakers, Sean Cunningham of Fox 40 Sacramento reports.",
+                "text": "Monk is still recovering from an illness, so he won't suit up for Friday's preseason finale. He should have ample time to recover before Wednesday's 2025-26 regular-season opener Wednesday against the Suns.",
                 "source": "RotoWire",
                 "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/4066262/injuries/-20767?lang=en&region=us"
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4066262/injuries/499490?lang=en&region=us"
                 }
               }
             ]
@@ -6299,11 +8604,457 @@
             "description": "GTD",
             "abbreviation": "GTD"
           },
-          "type": "Calf",
-          "location": "Leg",
-          "detail": "Strain",
+          "type": "Illness",
+          "location": "Other",
+          "returnDate": "2025-10-22"
+        }
+      },
+      {
+        "id": "499298",
+        "longComment": "Murray is recovering from a torn UCL ligament in his left thumb, which will keep him sidelined into the middle of November, at least. The 25-year-old forward has averaged at least 12 points per game in all three of his professional seasons, and he set a career high in 2024-25 in rebounds with 6.7 per game. He's started in 231 of 233 games since being selected by the Kings in the 2022 NBA Draft. Murray's efforts have earned him a significant extension, locking him in Sacramento for the long term.",
+        "shortComment": "The Kings signed Murray (thumb) to a five-year, $140 million rookie contract extension Wednesday, Shams Charania of ESPN reports.",
+        "status": "Out",
+        "date": "2025-10-15T23:40Z",
+        "athlete": {
+          "firstName": "Keegan",
+          "lastName": "Murray",
+          "displayName": "Keegan Murray",
+          "shortName": "K. Murray",
+          "links": [
+            {
+              "language": "en-US",
+              "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/4594327/keegan-murray",
+              "text": "Player Card",
+              "shortText": "Player Card",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/stats/_/id/4594327/keegan-murray",
+              "text": "Stats",
+              "shortText": "Stats",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/splits/_/id/4594327/keegan-murray",
+              "text": "Splits",
+              "shortText": "Splits",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/4594327/keegan-murray",
+              "text": "Game Log",
+              "shortText": "Game Log",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "news",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/news/_/id/4594327/keegan-murray",
+              "text": "News",
+              "shortText": "News",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/bio/_/id/4594327/keegan-murray",
+              "text": "Bio",
+              "shortText": "Bio",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/4594327/keegan-murray",
+              "text": "Overview",
+              "shortText": "Overview",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "advancedstats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4594327/keegan-murray",
+              "text": "Advanced Stats",
+              "shortText": "Advanced Stats",
+              "isExternal": false,
+              "isPremium": false
+            }
+          ],
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4594327.png",
+            "alt": "Keegan Murray"
+          },
+          "position": {
+            "id": "5",
+            "name": "Small Forward",
+            "displayName": "Small Forward",
+            "abbreviation": "SF",
+            "leaf": true
+          },
+          "team": {
+            "id": "23",
+            "uid": "s:40~l:46~t:23",
+            "slug": "sacramento-kings",
+            "name": "Kings",
+            "abbreviation": "SAC",
+            "displayName": "Sacramento Kings",
+            "logos": [
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/sac.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "default"
+                ],
+                "lastUpdated": "2024-06-25T21:17Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/sac.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:13Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/sac.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard"
+                ],
+                "lastUpdated": "2024-06-25T21:18Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/sac.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:14Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/primary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/primary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/primary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/primary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/secondary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/secondary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/secondary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/e266c4ea-9af3-1bd8-06fb-fd608fd30e26/logos/secondary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              }
+            ],
+            "links": [
+              {
+                "language": "en-US",
+                "rel": [
+                  "clubhouse",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/_/name/sac/sacramento-kings",
+                "text": "Clubhouse",
+                "shortText": "Clubhouse",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "roster",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/roster/_/name/sac/sacramento-kings",
+                "text": "Roster",
+                "shortText": "Roster",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "stats",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/stats/_/name/sac/sacramento-kings",
+                "text": "Statistics",
+                "shortText": "Statistics",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "schedule",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/schedule/_/name/sac",
+                "text": "Schedule",
+                "shortText": "Schedule",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "photos",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/photos/_/name/sac",
+                "text": "photos",
+                "shortText": "photos",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "tickets",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.vividseats.com/sacramento-kings-tickets--sports-nba-basketball/performer/748?wsUser=717",
+                "text": "Tickets",
+                "shortText": "Tickets",
+                "isExternal": true,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "draftpicks",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/draft/teams/_/name/sac/sacramento-kings",
+                "text": "Draft Picks",
+                "shortText": "Draft Picks",
+                "isExternal": false,
+                "isPremium": true
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "transactions",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/transactions/_/name/sac",
+                "text": "Transactions",
+                "shortText": "Transactions",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "injuries",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/injuries/_/name/sac",
+                "text": "Injuries",
+                "shortText": "Injuries",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "depthchart",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/depth/_/name/sac",
+                "text": "Depth Chart",
+                "shortText": "Depth Chart",
+                "isExternal": false,
+                "isPremium": false
+              }
+            ]
+          },
+          "notes": {
+            "items": [
+              {
+                "id": "499298",
+                "type": "news",
+                "date": "2025-10-15T23:40Z",
+                "headline": "The Kings signed Murray (thumb) to a five-year, $140 million rookie contract extension Wednesday, Shams Charania of ESPN reports.",
+                "text": "Murray is recovering from a torn UCL ligament in his left thumb, which will keep him sidelined into the middle of November, at least. The 25-year-old forward has averaged at least 12 points per game in all three of his professional seasons, and he set a career high in 2024-25 in rebounds with 6.7 per game. He's started in 231 of 233 games since being selected by the Kings in the 2022 NBA Draft. Murray's efforts have earned him a significant extension, locking him in Sacramento for the long term.",
+                "source": "RotoWire",
+                "injury": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4594327/injuries/499298?lang=en&region=us"
+                }
+              }
+            ]
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
+          }
+        },
+        "source": {
+          "id": "1",
+          "description": "basic/manual",
+          "state": "basic"
+        },
+        "type": {
+          "id": "4",
+          "name": "INJURY_STATUS_OUT",
+          "description": "out",
+          "abbreviation": "O"
+        },
+        "details": {
+          "fantasyStatus": {
+            "description": "OUT",
+            "abbreviation": "OUT"
+          },
+          "type": "Thumb",
+          "location": "Arm",
+          "detail": "Sprain",
           "side": "Left",
-          "returnDate": "2025-10-01"
+          "returnDate": "2025-11-30"
         }
       }
     ],
@@ -6315,8 +9066,9 @@
       "displayName": "Sacramento Kings",
       "color": "5a2d81",
       "logo": "https://a.espncdn.com/i/teamlogos/nba/500/sac.png",
+      "recordSummary": "1-3",
       "seasonSummary": "2025-26",
-      "standingSummary": "1st in Pacific Division"
+      "standingSummary": "4th in Pacific Division"
     }
   }
 }

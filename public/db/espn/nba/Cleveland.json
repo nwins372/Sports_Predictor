@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2025-09-25T23:34:43.047Z",
+  "fetchedAt": "2025-10-20T18:34:02.557Z",
   "detail": {
     "team": {
       "id": "5",
@@ -148,7 +148,147 @@
           "lastUpdated": "2024-12-03T19:32Z"
         }
       ],
-      "record": {},
+      "record": {
+        "items": [
+          {
+            "description": "Overall Record",
+            "type": "total",
+            "summary": "1-3",
+            "stats": [
+              {
+                "name": "OTLosses",
+                "value": 0
+              },
+              {
+                "name": "OTWins",
+                "value": 0
+              },
+              {
+                "name": "avgPointsAgainst",
+                "value": 118.75
+              },
+              {
+                "name": "avgPointsFor",
+                "value": 113.5
+              },
+              {
+                "name": "differential",
+                "value": -5.299999999999997
+              },
+              {
+                "name": "divisionWinPercent",
+                "value": 0.33333334
+              },
+              {
+                "name": "gamesBehind",
+                "value": 3
+              },
+              {
+                "name": "gamesPlayed",
+                "value": 4
+              },
+              {
+                "name": "leagueWinPercent",
+                "value": 0.25
+              },
+              {
+                "name": "losses",
+                "value": 3
+              },
+              {
+                "name": "playoffSeed",
+                "value": 13
+              },
+              {
+                "name": "pointDifferential",
+                "value": -21
+              },
+              {
+                "name": "points",
+                "value": -1
+              },
+              {
+                "name": "pointsAgainst",
+                "value": 475
+              },
+              {
+                "name": "pointsFor",
+                "value": 454
+              },
+              {
+                "name": "streak",
+                "value": 1
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 0.25
+              },
+              {
+                "name": "wins",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "description": "Home Record",
+            "type": "home",
+            "summary": "1-1",
+            "stats": [
+              {
+                "name": "wins",
+                "value": 1
+              },
+              {
+                "name": "losses",
+                "value": 1
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 0.5
+              },
+              {
+                "name": "OTLosses",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "description": "Away Record",
+            "type": "road",
+            "summary": "0-2",
+            "stats": [
+              {
+                "name": "wins",
+                "value": 0
+              },
+              {
+                "name": "losses",
+                "value": 2
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 0
+              },
+              {
+                "name": "OTLosses",
+                "value": 0
+              }
+            ]
+          }
+        ]
+      },
       "groups": {
         "id": "2",
         "parent": {
@@ -326,30 +466,30 @@
           ]
         },
         "team": {
-          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/5?lang=en&region=us"
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/teams/5?lang=en&region=us"
         }
       },
       "nextEvent": [
         {
-          "id": "401812684",
-          "date": "2025-10-07T23:00Z",
-          "name": "Chicago Bulls at Cleveland Cavaliers",
-          "shortName": "CHI @ CLE",
+          "id": "401809234",
+          "date": "2025-10-22T23:00Z",
+          "name": "Cleveland Cavaliers at New York Knicks",
+          "shortName": "CLE @ NY",
           "season": {
             "year": 2026,
             "displayName": "2025-26"
           },
           "seasonType": {
-            "id": "1",
-            "type": 1,
-            "name": "Preseason",
-            "abbreviation": "pre"
+            "id": "2",
+            "type": 2,
+            "name": "Regular Season",
+            "abbreviation": "reg"
           },
           "timeValid": true,
           "competitions": [
             {
-              "id": "401812684",
-              "date": "2025-10-07T23:00Z",
+              "id": "401809234",
+              "date": "2025-10-22T23:00Z",
               "attendance": 0,
               "type": {
                 "id": "1",
@@ -363,18 +503,258 @@
               "boxscoreAvailable": false,
               "ticketsAvailable": true,
               "venue": {
-                "fullName": "Rocket Arena",
+                "fullName": "Madison Square Garden",
                 "address": {
-                  "city": "Cleveland",
-                  "state": "OH"
+                  "city": "New York",
+                  "state": "NY"
                 }
               },
               "competitors": [
                 {
-                  "id": "5",
+                  "id": "18",
                   "type": "team",
                   "order": 0,
                   "homeAway": "home",
+                  "team": {
+                    "id": "18",
+                    "location": "New York",
+                    "abbreviation": "NY",
+                    "displayName": "New York Knicks",
+                    "shortDisplayName": "Knicks",
+                    "logos": [
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/ny.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "default"
+                        ],
+                        "lastUpdated": "2024-06-25T21:17Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/ny.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "dark"
+                        ],
+                        "lastUpdated": "2024-06-25T21:13Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/ny.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "scoreboard"
+                        ],
+                        "lastUpdated": "2024-06-25T21:18Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/ny.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "scoreboard",
+                          "dark"
+                        ],
+                        "lastUpdated": "2024-06-25T21:14Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/61719eb2-11c3-4e3d-90c3-0a1319fd850b/logos/primary_logo_on_white_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_white_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/61719eb2-11c3-4e3d-90c3-0a1319fd850b/logos/primary_logo_on_black_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_black_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:32Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/61719eb2-11c3-4e3d-90c3-0a1319fd850b/logos/primary_logo_on_primary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_primary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:32Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/61719eb2-11c3-4e3d-90c3-0a1319fd850b/logos/primary_logo_on_secondary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_secondary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/61719eb2-11c3-4e3d-90c3-0a1319fd850b/logos/secondary_logo_on_white_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_white_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:32Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/61719eb2-11c3-4e3d-90c3-0a1319fd850b/logos/secondary_logo_on_black_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_black_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/61719eb2-11c3-4e3d-90c3-0a1319fd850b/logos/secondary_logo_on_primary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_primary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:32Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/61719eb2-11c3-4e3d-90c3-0a1319fd850b/logos/secondary_logo_on_secondary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_secondary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:32Z"
+                      }
+                    ],
+                    "links": [
+                      {
+                        "rel": [
+                          "clubhouse",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/_/name/ny/new-york-knicks",
+                        "text": "Clubhouse"
+                      },
+                      {
+                        "rel": [
+                          "roster",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/roster/_/name/ny/new-york-knicks",
+                        "text": "Roster"
+                      },
+                      {
+                        "rel": [
+                          "stats",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/stats/_/name/ny/new-york-knicks",
+                        "text": "Statistics"
+                      },
+                      {
+                        "rel": [
+                          "schedule",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/schedule/_/name/ny",
+                        "text": "Schedule"
+                      },
+                      {
+                        "rel": [
+                          "photos",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/photos/_/name/ny",
+                        "text": "photos"
+                      },
+                      {
+                        "rel": [
+                          "tickets",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.vividseats.com/new-york-knicks-tickets--sports-nba-basketball/performer/602?wsUser=717",
+                        "text": "Tickets"
+                      },
+                      {
+                        "rel": [
+                          "draftpicks",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/draft/teams/_/name/ny/new-york-knicks",
+                        "text": "Draft Picks"
+                      },
+                      {
+                        "rel": [
+                          "transactions",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/transactions/_/name/ny",
+                        "text": "Transactions"
+                      },
+                      {
+                        "rel": [
+                          "injuries",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/injuries/_/name/ny",
+                        "text": "Injuries"
+                      },
+                      {
+                        "rel": [
+                          "depthchart",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/depth/_/name/ny",
+                        "text": "Depth Chart"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "5",
+                  "type": "team",
+                  "order": 1,
+                  "homeAway": "away",
                   "team": {
                     "id": "5",
                     "location": "Cleveland",
@@ -609,261 +989,39 @@
                       }
                     ]
                   }
-                },
-                {
-                  "id": "4",
-                  "type": "team",
-                  "order": 1,
-                  "homeAway": "away",
-                  "team": {
-                    "id": "4",
-                    "location": "Chicago",
-                    "abbreviation": "CHI",
-                    "displayName": "Chicago Bulls",
-                    "shortDisplayName": "Bulls",
-                    "logos": [
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/chi.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "default"
-                        ],
-                        "lastUpdated": "2024-06-25T21:17Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/chi.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "dark"
-                        ],
-                        "lastUpdated": "2024-06-25T21:13Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/chi.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "scoreboard"
-                        ],
-                        "lastUpdated": "2024-06-25T21:18Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/chi.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "scoreboard",
-                          "dark"
-                        ],
-                        "lastUpdated": "2024-06-25T21:13Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/e588ccf1-ba03-ea43-c34c-9a9c8d1895ca/logos/primary_logo_on_white_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_white_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/e588ccf1-ba03-ea43-c34c-9a9c8d1895ca/logos/primary_logo_on_black_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_black_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/e588ccf1-ba03-ea43-c34c-9a9c8d1895ca/logos/primary_logo_on_primary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_primary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/e588ccf1-ba03-ea43-c34c-9a9c8d1895ca/logos/primary_logo_on_secondary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_secondary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/e588ccf1-ba03-ea43-c34c-9a9c8d1895ca/logos/secondary_logo_on_white_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_white_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/e588ccf1-ba03-ea43-c34c-9a9c8d1895ca/logos/secondary_logo_on_black_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_black_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/e588ccf1-ba03-ea43-c34c-9a9c8d1895ca/logos/secondary_logo_on_primary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_primary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/e588ccf1-ba03-ea43-c34c-9a9c8d1895ca/logos/secondary_logo_on_secondary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_secondary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      }
-                    ],
-                    "links": [
-                      {
-                        "rel": [
-                          "clubhouse",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/_/name/chi/chicago-bulls",
-                        "text": "Clubhouse"
-                      },
-                      {
-                        "rel": [
-                          "roster",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/roster/_/name/chi/chicago-bulls",
-                        "text": "Roster"
-                      },
-                      {
-                        "rel": [
-                          "stats",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/stats/_/name/chi/chicago-bulls",
-                        "text": "Statistics"
-                      },
-                      {
-                        "rel": [
-                          "schedule",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/schedule/_/name/chi",
-                        "text": "Schedule"
-                      },
-                      {
-                        "rel": [
-                          "photos",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/photos/_/name/chi",
-                        "text": "photos"
-                      },
-                      {
-                        "rel": [
-                          "tickets",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.vividseats.com/chicago-bulls-tickets--sports-nba-basketball/performer/161?wsUser=717",
-                        "text": "Tickets"
-                      },
-                      {
-                        "rel": [
-                          "draftpicks",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/draft/teams/_/name/chi/chicago-bulls",
-                        "text": "Draft Picks"
-                      },
-                      {
-                        "rel": [
-                          "transactions",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/transactions/_/name/chi",
-                        "text": "Transactions"
-                      },
-                      {
-                        "rel": [
-                          "injuries",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/injuries/_/name/chi",
-                        "text": "Injuries"
-                      },
-                      {
-                        "rel": [
-                          "depthchart",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/depth/_/name/chi",
-                        "text": "Depth Chart"
-                      }
-                    ]
-                  }
                 }
               ],
               "notes": [],
               "broadcasts": [
                 {
                   "type": {
-                    "id": "4",
-                    "shortName": "Streaming"
+                    "id": "1",
+                    "shortName": "TV"
                   },
                   "market": {
                     "id": "1",
                     "type": "National"
                   },
                   "media": {
-                    "shortName": "Peacock"
+                    "shortName": "ESPN",
+                    "logo": "https://a.espncdn.com/guid/335fd2d2-97b9-336b-81ee-573eb6bdcffc/logos/default.png",
+                    "darkLogo": ""
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                },
+                {
+                  "type": {
+                    "id": "1",
+                    "shortName": "TV"
+                  },
+                  "market": {
+                    "id": "2",
+                    "type": "Home"
+                  },
+                  "media": {
+                    "shortName": "MSG"
                   },
                   "lang": "en",
                   "region": "us",
@@ -872,13 +1030,13 @@
               ],
               "tickets": [
                 {
-                  "id": "5896772",
-                  "summary": "Tickets as low as $5",
-                  "description": "NBA Preseason - Chicago Bulls at Cleveland Cavaliers",
-                  "maxPrice": 2309.7,
-                  "startingPrice": 5.25,
-                  "numberAvailable": 2086,
-                  "totalPostings": 614,
+                  "id": "5929884",
+                  "summary": "Tickets as low as $233",
+                  "description": "Cleveland Cavaliers at New York Knicks",
+                  "maxPrice": 18220.44,
+                  "startingPrice": 233.02,
+                  "numberAvailable": 1672,
+                  "totalPostings": 508,
                   "links": [
                     {
                       "rel": [
@@ -886,7 +1044,7 @@
                         "desktop",
                         "event"
                       ],
-                      "href": "https://www.vividseats.com/cleveland-cavaliers-tickets-rocket-arena-10-7-2025--sports-nba-basketball/production/5896772?wsUser=717"
+                      "href": "https://www.vividseats.com/new-york-knicks-tickets-madison-square-garden-10-22-2025--sports-nba-basketball/production/5929884?wsUser=717"
                     },
                     {
                       "rel": [
@@ -894,7 +1052,7 @@
                         "desktop",
                         "venue"
                       ],
-                      "href": "https://www.vividseats.com/rocket-mortgage-fieldhouse-tickets/venue/684?wsUser=717"
+                      "href": "https://www.vividseats.com/madison-square-garden-tickets/venue/973?wsUser=717"
                     }
                   ]
                 }
@@ -909,8 +1067,8 @@
                   "state": "pre",
                   "completed": false,
                   "description": "Scheduled",
-                  "detail": "Tue, October 7th at 7:00 PM EDT",
-                  "shortDetail": "10/7 - 7:00 PM EDT"
+                  "detail": "Wed, October 22nd at 7:00 PM EDT",
+                  "shortDetail": "10/22 - 7:00 PM EDT"
                 }
               }
             }
@@ -923,7 +1081,7 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/game/_/gameId/401812684/bulls-cavaliers",
+              "href": "https://www.espn.com/nba/game/_/gameId/401809234/cavaliers-knicks",
               "text": "Gamecast",
               "shortText": "Summary",
               "isExternal": false,
@@ -937,7 +1095,7 @@
                 "app",
                 "event"
               ],
-              "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=nba&gameId=401812684",
+              "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=nba&gameId=401809234",
               "text": "Gamecast",
               "shortText": "Summary",
               "isExternal": false,
@@ -950,9 +1108,35 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/game/_/gameId/401812684",
+              "href": "https://www.espn.com/nba/game/_/gameId/401809234",
               "text": "Now",
               "shortText": "Now",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "watchespn",
+                "desktop",
+                "event"
+              ],
+              "href": "https://www.espn.com/watchespn/index?gameId=401809234&sourceLang=en",
+              "text": "WatchESPN",
+              "shortText": "WatchESPN",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "watchespn",
+                "app",
+                "event"
+              ],
+              "href": "watchespn://showEvent?gameId=401809234&sourceLang=en",
+              "text": "WatchESPN",
+              "shortText": "WatchESPN",
               "isExternal": false,
               "isPremium": false
             },
@@ -963,7 +1147,7 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/odds/_/gameId/401812684",
+              "href": "https://www.espn.com/nba/odds/_/gameId/401809234",
               "text": "Odds",
               "shortText": "Odds",
               "isExternal": false,
@@ -976,7 +1160,7 @@
                 "mobile",
                 "event"
               ],
-              "href": "https://m.espn.com/nba/odds/_/gameId/401812684",
+              "href": "https://m.espn.com/nba/odds/_/gameId/401809234",
               "text": "Odds",
               "shortText": "Odds",
               "isExternal": false,
@@ -985,17 +1169,17 @@
           ]
         }
       ],
-      "standingSummary": "1st in Central Division"
+      "standingSummary": "5th in Central Division"
     }
   },
   "roster": {
-    "timestamp": "2025-09-25T23:27:21Z",
+    "timestamp": "2025-10-20T18:28:46Z",
     "status": "success",
     "season": {
       "year": 2026,
       "displayName": "2025-26",
-      "type": 1,
-      "name": "Preseason"
+      "type": 2,
+      "name": "Regular Season"
     },
     "athletes": [
       {
@@ -1248,7 +1432,7 @@
           }
         ],
         "experience": {
-          "years": 7
+          "years": 8
         },
         "contract": {
           "birdStatus": 0,
@@ -1301,8 +1485,8 @@
         "shortName": "L. Ball",
         "weight": 190,
         "displayWeight": "190 lbs",
-        "height": 78,
-        "displayHeight": "6' 6\"",
+        "height": 77,
+        "displayHeight": "6' 5\"",
         "age": 27,
         "dateOfBirth": "1997-10-27T08:00Z",
         "debutYear": 2017,
@@ -1461,18 +1645,11 @@
           "displayValue": "Right"
         },
         "position": {
-          "id": "1",
-          "name": "Point Guard",
-          "displayName": "Point Guard",
-          "abbreviation": "PG",
-          "leaf": true,
-          "parent": {
-            "id": "3",
-            "name": "Guard",
-            "displayName": "Guard",
-            "abbreviation": "G",
-            "leaf": false
-          }
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
         },
         "injuries": [],
         "contracts": [
@@ -1550,7 +1727,7 @@
           }
         ],
         "experience": {
-          "years": 5
+          "years": 8
         },
         "contract": {
           "birdStatus": 0,
@@ -1603,8 +1780,8 @@
         "shortName": "T. Bryant",
         "weight": 248,
         "displayWeight": "248 lbs",
-        "height": 82,
-        "displayHeight": "6' 10\"",
+        "height": 81,
+        "displayHeight": "6' 9\"",
         "age": 28,
         "dateOfBirth": "1997-07-31T07:00Z",
         "debutYear": 2017,
@@ -1756,6 +1933,12 @@
           "href": "https://a.espncdn.com/i/headshots/nba/players/full/3934723.png",
           "alt": "Thomas Bryant"
         },
+        "jersey": "3",
+        "hand": {
+          "type": "BOTH",
+          "abbreviation": "B",
+          "displayValue": "Both"
+        },
         "position": {
           "id": "9",
           "name": "Center",
@@ -1765,6 +1948,14 @@
         },
         "injuries": [],
         "contracts": [
+          {
+            "salary": 2296274,
+            "season": {
+              "year": 2026,
+              "startDate": "2025-10-01T07:00Z",
+              "endDate": "2026-06-27T06:59Z"
+            }
+          },
           {
             "salary": 2087519,
             "season": {
@@ -1831,7 +2022,37 @@
           }
         ],
         "experience": {
-          "years": 7
+          "years": 8
+        },
+        "contract": {
+          "birdStatus": 0,
+          "baseYearCompensation": {
+            "active": false
+          },
+          "poisonPillProvision": {
+            "active": false
+          },
+          "incomingTradeValue": 2296274,
+          "outgoingTradeValue": 0,
+          "minimumSalaryException": true,
+          "optionType": 0,
+          "salary": 2296274,
+          "salaryRemaining": 0,
+          "yearsRemaining": 1,
+          "season": {
+            "year": 2026,
+            "startDate": "2025-10-01T07:00Z",
+            "endDate": "2026-06-27T06:59Z"
+          },
+          "tradeKicker": {
+            "active": false,
+            "percentage": 0,
+            "value": 0,
+            "tradeValue": 0
+          },
+          "tradeRestriction": true,
+          "unsignedForeignPick": false,
+          "active": true
         },
         "status": {
           "id": "1",
@@ -2009,23 +2230,16 @@
         },
         "jersey": "10",
         "position": {
-          "id": "1",
-          "name": "Point Guard",
-          "displayName": "Point Guard",
-          "abbreviation": "PG",
-          "leaf": true,
-          "parent": {
-            "id": "3",
-            "name": "Guard",
-            "displayName": "Guard",
-            "abbreviation": "G",
-            "leaf": false
-          }
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
         },
         "injuries": [
           {
             "status": "Out",
-            "date": "2025-09-23T14:26Z"
+            "date": "2025-10-15T15:46Z"
           }
         ],
         "contracts": [
@@ -2087,7 +2301,7 @@
           }
         ],
         "experience": {
-          "years": 5
+          "years": 6
         },
         "contract": {
           "birdStatus": 0,
@@ -2140,8 +2354,8 @@
         "shortName": "D. Hunter",
         "weight": 221,
         "displayWeight": "221 lbs",
-        "height": 80,
-        "displayHeight": "6' 8\"",
+        "height": 79,
+        "displayHeight": "6' 7\"",
         "age": 27,
         "dateOfBirth": "1997-12-02T08:00Z",
         "debutYear": 2019,
@@ -2295,20 +2509,18 @@
         },
         "jersey": "12",
         "position": {
-          "id": "5",
-          "name": "Small Forward",
-          "displayName": "Small Forward",
-          "abbreviation": "SF",
-          "leaf": true,
-          "parent": {
-            "id": "7",
-            "name": "Forward",
-            "displayName": "Forward",
-            "abbreviation": "F",
-            "leaf": false
-          }
+          "id": "7",
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F",
+          "leaf": false
         },
-        "injuries": [],
+        "injuries": [
+          {
+            "status": "Day-To-Day",
+            "date": "2025-10-15T01:00Z"
+          }
+        ],
         "contracts": [
           {
             "salary": 23303571,
@@ -2368,7 +2580,7 @@
           }
         ],
         "experience": {
-          "years": 5
+          "years": 6
         },
         "contract": {
           "birdStatus": 0,
@@ -2576,18 +2788,11 @@
         },
         "jersey": "5",
         "position": {
-          "id": "2",
-          "name": "Shooting Guard",
-          "displayName": "Shooting Guard",
-          "abbreviation": "SG",
-          "leaf": true,
-          "parent": {
-            "id": "3",
-            "name": "Guard",
-            "displayName": "Guard",
-            "abbreviation": "G",
-            "leaf": false
-          }
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
         },
         "injuries": [],
         "contracts": [
@@ -2641,7 +2846,7 @@
           }
         ],
         "experience": {
-          "years": 4
+          "years": 5
         },
         "contract": {
           "birdStatus": 0,
@@ -2694,8 +2899,8 @@
         "shortName": "D. Mitchell",
         "weight": 215,
         "displayWeight": "215 lbs",
-        "height": 75,
-        "displayHeight": "6' 3\"",
+        "height": 74,
+        "displayHeight": "6' 2\"",
         "age": 29,
         "dateOfBirth": "1996-09-07T07:00Z",
         "debutYear": 2017,
@@ -2850,18 +3055,11 @@
         },
         "jersey": "45",
         "position": {
-          "id": "2",
-          "name": "Shooting Guard",
-          "displayName": "Shooting Guard",
-          "abbreviation": "SG",
-          "leaf": true,
-          "parent": {
-            "id": "3",
-            "name": "Guard",
-            "displayName": "Guard",
-            "abbreviation": "G",
-            "leaf": false
-          }
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
         },
         "injuries": [],
         "contracts": [
@@ -2939,7 +3137,7 @@
           }
         ],
         "experience": {
-          "years": 7
+          "years": 8
         },
         "contract": {
           "birdStatus": 0,
@@ -3146,18 +3344,11 @@
         },
         "jersey": "4",
         "position": {
-          "id": "6",
-          "name": "Power Forward",
-          "displayName": "Power Forward",
-          "abbreviation": "PF",
-          "leaf": true,
-          "parent": {
-            "id": "7",
-            "name": "Forward",
-            "displayName": "Forward",
-            "abbreviation": "F",
-            "leaf": false
-          }
+          "id": "9",
+          "name": "Center",
+          "displayName": "Center",
+          "abbreviation": "C",
+          "leaf": false
         },
         "injuries": [],
         "contracts": [
@@ -3203,7 +3394,7 @@
           }
         ],
         "experience": {
-          "years": 3
+          "years": 4
         },
         "contract": {
           "birdStatus": 0,
@@ -3256,8 +3447,8 @@
         "shortName": "L. Nance Jr.",
         "weight": 245,
         "displayWeight": "245 lbs",
-        "height": 80,
-        "displayHeight": "6' 8\"",
+        "height": 78,
+        "displayHeight": "6' 6\"",
         "age": 32,
         "dateOfBirth": "1993-01-01T08:00Z",
         "debutYear": 2015,
@@ -3411,18 +3602,11 @@
         },
         "jersey": "22",
         "position": {
-          "id": "6",
-          "name": "Power Forward",
-          "displayName": "Power Forward",
-          "abbreviation": "PF",
-          "leaf": true,
-          "parent": {
-            "id": "7",
-            "name": "Forward",
-            "displayName": "Forward",
-            "abbreviation": "F",
-            "leaf": false
-          }
+          "id": "7",
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F",
+          "leaf": false
         },
         "injuries": [],
         "contracts": [
@@ -3516,7 +3700,7 @@
           }
         ],
         "experience": {
-          "years": 9
+          "years": 10
         },
         "contract": {
           "birdStatus": 0,
@@ -3567,10 +3751,10 @@
         "fullName": "Craig Porter Jr.",
         "displayName": "Craig Porter Jr.",
         "shortName": "C. Porter Jr.",
-        "weight": 176,
-        "displayWeight": "176 lbs",
-        "height": 74,
-        "displayHeight": "6' 2\"",
+        "weight": 180,
+        "displayWeight": "180 lbs",
+        "height": 73,
+        "displayHeight": "6' 1\"",
         "age": 25,
         "dateOfBirth": "2000-02-26T08:00Z",
         "links": [
@@ -3729,12 +3913,7 @@
           "abbreviation": "G",
           "leaf": false
         },
-        "injuries": [
-          {
-            "status": "Day-To-Day",
-            "date": "2025-07-20T01:42Z"
-          }
-        ],
+        "injuries": [],
         "contracts": [
           {
             "salary": 2221677,
@@ -3762,7 +3941,7 @@
           }
         ],
         "experience": {
-          "years": 1
+          "years": 2
         },
         "contract": {
           "birdStatus": 0,
@@ -3813,10 +3992,10 @@
         "fullName": "Tyrese Proctor",
         "displayName": "Tyrese Proctor",
         "shortName": "T. Proctor",
-        "weight": 183,
-        "displayWeight": "183 lbs",
-        "height": 77,
-        "displayHeight": "6' 5\"",
+        "weight": 185,
+        "displayWeight": "185 lbs",
+        "height": 76,
+        "displayHeight": "6' 4\"",
         "age": 21,
         "dateOfBirth": "2004-04-01T08:00Z",
         "links": [
@@ -4200,23 +4379,16 @@
           "displayValue": "Left"
         },
         "position": {
-          "id": "2",
-          "name": "Shooting Guard",
-          "displayName": "Shooting Guard",
-          "abbreviation": "SG",
-          "leaf": true,
-          "parent": {
-            "id": "3",
-            "name": "Guard",
-            "displayName": "Guard",
-            "abbreviation": "G",
-            "leaf": false
-          }
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
         },
         "injuries": [
           {
             "status": "Out",
-            "date": "2025-08-26T20:00Z"
+            "date": "2025-09-30T20:20Z"
           }
         ],
         "contracts": [
@@ -4278,7 +4450,7 @@
           }
         ],
         "experience": {
-          "years": 5
+          "years": 6
         },
         "contract": {
           "birdStatus": 0,
@@ -4331,8 +4503,8 @@
         "shortName": "N. Tomlin",
         "weight": 210,
         "displayWeight": "210 lbs",
-        "height": 81,
-        "displayHeight": "6' 9\"",
+        "height": 80,
+        "displayHeight": "6' 8\"",
         "age": 24,
         "dateOfBirth": "2000-12-19T08:00Z",
         "links": [
@@ -4511,7 +4683,7 @@
           }
         ],
         "experience": {
-          "years": 0
+          "years": 1
         },
         "contract": {
           "birdStatus": 0,
@@ -4564,8 +4736,8 @@
         "shortName": "L. Travers",
         "weight": 207,
         "displayWeight": "207 lbs",
-        "height": 79,
-        "displayHeight": "6' 7\"",
+        "height": 78,
+        "displayHeight": "6' 6\"",
         "age": 24,
         "dateOfBirth": "2001-09-03T07:00Z",
         "links": [
@@ -4682,10 +4854,10 @@
         },
         "jersey": "33",
         "position": {
-          "id": "3",
-          "name": "Guard",
-          "displayName": "Guard",
-          "abbreviation": "G",
+          "id": "7",
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F",
           "leaf": false
         },
         "injuries": [],
@@ -4708,7 +4880,7 @@
           }
         ],
         "experience": {
-          "years": 0
+          "years": 1
         },
         "contract": {
           "birdStatus": 0,
@@ -4915,10 +5087,10 @@
         },
         "jersey": "20",
         "position": {
-          "id": "7",
-          "name": "Forward",
-          "displayName": "Forward",
-          "abbreviation": "F",
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
           "leaf": false
         },
         "injuries": [],
@@ -4941,7 +5113,7 @@
           }
         ],
         "experience": {
-          "years": 0
+          "years": 1
         },
         "contract": {
           "birdStatus": 0,
@@ -5149,18 +5321,11 @@
         },
         "jersey": "32",
         "position": {
-          "id": "6",
-          "name": "Power Forward",
-          "displayName": "Power Forward",
-          "abbreviation": "PF",
-          "leaf": true,
-          "parent": {
-            "id": "7",
-            "name": "Forward",
-            "displayName": "Forward",
-            "abbreviation": "F",
-            "leaf": false
-          }
+          "id": "7",
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F",
+          "leaf": false
         },
         "injuries": [],
         "contracts": [
@@ -5222,7 +5387,7 @@
           }
         ],
         "experience": {
-          "years": 5
+          "years": 6
         },
         "contract": {
           "birdStatus": 0,
@@ -5278,25 +5443,28 @@
       "displayName": "Cleveland Cavaliers",
       "clubhouse": "https://www.espn.com/nba/team/_/name/cle/cleveland-cavaliers",
       "color": "860038",
-      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png"
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
+      "recordSummary": "1-3",
+      "seasonSummary": "2025-26",
+      "standingSummary": "5th in Central Division"
     }
   },
   "injuries": {
-    "timestamp": "2025-09-25T23:34:41Z",
+    "timestamp": "2025-10-20T18:34:03Z",
     "status": "success",
     "season": {
       "year": 2026,
-      "type": 1,
-      "name": "Preseason",
+      "type": 2,
+      "name": "Regular Season",
       "displayName": "2025-26"
     },
     "injuries": [
       {
-        "id": "497652",
-        "longComment": "Altman added that Garland is back on the court doing basketball activities, and he'll be starting training camp with limited participation. Garland underwent surgery on his left great toe back in early June, and at the time the Cavaliers announced a 4-to-5 month timetable. It sounds like he will miss the beginning of the season as expected, setting up Donovan Mitchell to soak up a ton of usage early on.",
-        "shortComment": "Cleveland president of basketball operations Koby Altman said Tuesday that Garland (toe) remains without a timetable to return to action, Spencer Davies of SI.com reports.",
+        "id": "499246",
+        "longComment": "Garland is still on the mend after undergoing toe surgery in June. Although the Cavaliers have been encouraged by Garland's recent progress, head coach Kenny Atkinson cautioned that his return is not imminent. \"It's not linear, usually, the return to performance, and we're hoping it will be and he'll progress,\" Atkinson said. \"But I side on the side of being conservative and making sure. This is a good step today. A small step but a good step.\" The Cavaliers are likely to provide another update on Garland's timetable in the near future, but for now, fantasy managers can assume that he will miss a handful of games to open the regular season.",
+        "shortComment": "Garland (toe) participated in a scrimmage with contact Tuesday, Chris Fedor of Cleveland.com reports.",
         "status": "Out",
-        "date": "2025-09-23T14:26Z",
+        "date": "2025-10-15T15:46Z",
         "athlete": {
           "firstName": "Darius",
           "lastName": "Garland",
@@ -5411,902 +5579,6 @@
           "headshot": {
             "href": "https://a.espncdn.com/i/headshots/nba/players/full/4396907.png",
             "alt": "Darius Garland"
-          },
-          "position": {
-            "id": "1",
-            "name": "Point Guard",
-            "displayName": "Point Guard",
-            "abbreviation": "PG",
-            "leaf": true
-          },
-          "team": {
-            "id": "5",
-            "uid": "s:40~l:46~t:5",
-            "slug": "cleveland-cavaliers",
-            "name": "Cavaliers",
-            "abbreviation": "CLE",
-            "displayName": "Cleveland Cavaliers",
-            "logos": [
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "default"
-                ],
-                "lastUpdated": "2024-06-25T21:17Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/cle.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "dark"
-                ],
-                "lastUpdated": "2024-06-25T21:13Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/cle.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard"
-                ],
-                "lastUpdated": "2024-06-25T21:18Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/cle.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard",
-                  "dark"
-                ],
-                "lastUpdated": "2024-06-25T21:13Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/primary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:32Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/primary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:32Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/primary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:32Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/primary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:32Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/secondary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:32Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/secondary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:32Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/secondary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:32Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/secondary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:32Z"
-              }
-            ],
-            "links": [
-              {
-                "language": "en-US",
-                "rel": [
-                  "clubhouse",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/_/name/cle/cleveland-cavaliers",
-                "text": "Clubhouse",
-                "shortText": "Clubhouse",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "roster",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/roster/_/name/cle/cleveland-cavaliers",
-                "text": "Roster",
-                "shortText": "Roster",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "stats",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/stats/_/name/cle/cleveland-cavaliers",
-                "text": "Statistics",
-                "shortText": "Statistics",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "schedule",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/schedule/_/name/cle",
-                "text": "Schedule",
-                "shortText": "Schedule",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "photos",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/photos/_/name/cle",
-                "text": "photos",
-                "shortText": "photos",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "tickets",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.vividseats.com/cleveland-cavaliers-tickets--sports-nba-basketball/performer/182?wsUser=717",
-                "text": "Tickets",
-                "shortText": "Tickets",
-                "isExternal": true,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "draftpicks",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/draft/teams/_/name/cle/cleveland-cavaliers",
-                "text": "Draft Picks",
-                "shortText": "Draft Picks",
-                "isExternal": false,
-                "isPremium": true
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "transactions",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/transactions/_/name/cle",
-                "text": "Transactions",
-                "shortText": "Transactions",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "injuries",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/injuries/_/name/cle",
-                "text": "Injuries",
-                "shortText": "Injuries",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "depthchart",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/depth/_/name/cle",
-                "text": "Depth Chart",
-                "shortText": "Depth Chart",
-                "isExternal": false,
-                "isPremium": false
-              }
-            ]
-          },
-          "notes": {
-            "items": [
-              {
-                "id": "497652",
-                "type": "news",
-                "date": "2025-09-23T14:26Z",
-                "headline": "Cleveland president of basketball operations Koby Altman said Tuesday that Garland (toe) remains without a timetable to return to action, Spencer Davies of SI.com reports.",
-                "text": "Altman added that Garland is back on the court doing basketball activities, and he'll be starting training camp with limited participation. Garland underwent surgery on his left great toe back in early June, and at the time the Cavaliers announced a 4-to-5 month timetable. It sounds like he will miss the beginning of the season as expected, setting up Donovan Mitchell to soak up a ton of usage early on.",
-                "source": "RotoWire",
-                "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/4396907/injuries/497652?lang=en&region=us"
-                }
-              }
-            ]
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          }
-        },
-        "source": {
-          "id": "1",
-          "description": "basic/manual",
-          "state": "basic"
-        },
-        "type": {
-          "id": "4",
-          "name": "INJURY_STATUS_OUT",
-          "description": "out",
-          "abbreviation": "O"
-        },
-        "details": {
-          "fantasyStatus": {
-            "description": "OUT",
-            "abbreviation": "OUT"
-          },
-          "type": "Toe",
-          "location": "Leg",
-          "detail": "Surgery",
-          "side": "Left",
-          "returnDate": "2025-11-01"
-        }
-      },
-      {
-        "id": "497543",
-        "longComment": "Strus suffered the injury during an offseason workout, and he's now set to miss at least the first month of the regular season. De'Andre Hunter is the next man up on Cleveland's depth chart at small forward, so his fantasy stock is certainly on the rise ahead of the new year. Sam Merrill and Dean Wade will also be in line to help pick up the slack in Strus' absence to begin 2025-26.",
-        "shortComment": "Strus will miss approximately 3-to-4 months after undergoing surgery to repair a Jones fracture in his left foot, Shams Charania of ESPN reports.",
-        "status": "Out",
-        "date": "2025-08-26T20:00Z",
-        "athlete": {
-          "firstName": "Max",
-          "lastName": "Strus",
-          "displayName": "Max Strus",
-          "shortName": "M. Strus",
-          "links": [
-            {
-              "language": "en-US",
-              "rel": [
-                "playercard",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/4065778/max-strus",
-              "text": "Player Card",
-              "shortText": "Player Card",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "stats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/stats/_/id/4065778/max-strus",
-              "text": "Stats",
-              "shortText": "Stats",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "splits",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/splits/_/id/4065778/max-strus",
-              "text": "Splits",
-              "shortText": "Splits",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "gamelog",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/gamelog/_/id/4065778/max-strus",
-              "text": "Game Log",
-              "shortText": "Game Log",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "news",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/news/_/id/4065778/max-strus",
-              "text": "News",
-              "shortText": "News",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "bio",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/bio/_/id/4065778/max-strus",
-              "text": "Bio",
-              "shortText": "Bio",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "overview",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/4065778/max-strus",
-              "text": "Overview",
-              "shortText": "Overview",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "advancedstats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4065778/max-strus",
-              "text": "Advanced Stats",
-              "shortText": "Advanced Stats",
-              "isExternal": false,
-              "isPremium": false
-            }
-          ],
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4065778.png",
-            "alt": "Max Strus"
-          },
-          "position": {
-            "id": "2",
-            "name": "Shooting Guard",
-            "displayName": "Shooting Guard",
-            "abbreviation": "SG",
-            "leaf": true
-          },
-          "team": {
-            "id": "5",
-            "uid": "s:40~l:46~t:5",
-            "slug": "cleveland-cavaliers",
-            "name": "Cavaliers",
-            "abbreviation": "CLE",
-            "displayName": "Cleveland Cavaliers",
-            "logos": [
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "default"
-                ],
-                "lastUpdated": "2024-06-25T21:17Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/cle.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "dark"
-                ],
-                "lastUpdated": "2024-06-25T21:13Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/cle.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard"
-                ],
-                "lastUpdated": "2024-06-25T21:18Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/cle.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard",
-                  "dark"
-                ],
-                "lastUpdated": "2024-06-25T21:13Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/primary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:32Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/primary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:32Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/primary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:32Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/primary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:32Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/secondary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:32Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/secondary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:32Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/secondary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:32Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/secondary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:32Z"
-              }
-            ],
-            "links": [
-              {
-                "language": "en-US",
-                "rel": [
-                  "clubhouse",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/_/name/cle/cleveland-cavaliers",
-                "text": "Clubhouse",
-                "shortText": "Clubhouse",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "roster",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/roster/_/name/cle/cleveland-cavaliers",
-                "text": "Roster",
-                "shortText": "Roster",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "stats",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/stats/_/name/cle/cleveland-cavaliers",
-                "text": "Statistics",
-                "shortText": "Statistics",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "schedule",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/schedule/_/name/cle",
-                "text": "Schedule",
-                "shortText": "Schedule",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "photos",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/photos/_/name/cle",
-                "text": "photos",
-                "shortText": "photos",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "tickets",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.vividseats.com/cleveland-cavaliers-tickets--sports-nba-basketball/performer/182?wsUser=717",
-                "text": "Tickets",
-                "shortText": "Tickets",
-                "isExternal": true,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "draftpicks",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/draft/teams/_/name/cle/cleveland-cavaliers",
-                "text": "Draft Picks",
-                "shortText": "Draft Picks",
-                "isExternal": false,
-                "isPremium": true
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "transactions",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/transactions/_/name/cle",
-                "text": "Transactions",
-                "shortText": "Transactions",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "injuries",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/injuries/_/name/cle",
-                "text": "Injuries",
-                "shortText": "Injuries",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "depthchart",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/depth/_/name/cle",
-                "text": "Depth Chart",
-                "shortText": "Depth Chart",
-                "isExternal": false,
-                "isPremium": false
-              }
-            ]
-          },
-          "notes": {
-            "items": [
-              {
-                "id": "497543",
-                "type": "news",
-                "date": "2025-08-26T20:00Z",
-                "headline": "Strus will miss approximately 3-to-4 months after undergoing surgery to repair a Jones fracture in his left foot, Shams Charania of ESPN reports.",
-                "text": "Strus suffered the injury during an offseason workout, and he's now set to miss at least the first month of the regular season. De'Andre Hunter is the next man up on Cleveland's depth chart at small forward, so his fantasy stock is certainly on the rise ahead of the new year. Sam Merrill and Dean Wade will also be in line to help pick up the slack in Strus' absence to begin 2025-26.",
-                "source": "RotoWire",
-                "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/4065778/injuries/497543?lang=en&region=us"
-                }
-              }
-            ]
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          }
-        },
-        "source": {
-          "id": "1",
-          "description": "basic/manual",
-          "state": "basic"
-        },
-        "type": {
-          "id": "4",
-          "name": "INJURY_STATUS_OUT",
-          "description": "out",
-          "abbreviation": "O"
-        },
-        "details": {
-          "fantasyStatus": {
-            "description": "OUT",
-            "abbreviation": "OUT"
-          },
-          "type": "Foot",
-          "location": "Leg",
-          "detail": "Surgery",
-          "side": "Left",
-          "returnDate": "2025-12-01"
-        }
-      },
-      {
-        "id": "497404",
-        "longComment": "Porter missed the team's final four Summer League games due to a left hamstring injury, which he sustained in a loss to the Pacers on July 10. The severity of the injury is unclear, and the 25-year-old guard will now shift his focus to preparing for the 2025-26 campaign after making just one brief appearance during Summer League play.",
-        "shortComment": "Porter (hamstring) didn't play in Saturday's 82-71 Summer League loss to the Warriors.",
-        "status": "Day-To-Day",
-        "date": "2025-07-20T01:42Z",
-        "athlete": {
-          "firstName": "Craig",
-          "lastName": "Porter Jr.",
-          "displayName": "Craig Porter Jr.",
-          "shortName": "C. Porter Jr.",
-          "links": [
-            {
-              "language": "en-US",
-              "rel": [
-                "playercard",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/4701233/craig-porter-jr",
-              "text": "Player Card",
-              "shortText": "Player Card",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "stats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/stats/_/id/4701233/craig-porter-jr",
-              "text": "Stats",
-              "shortText": "Stats",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "splits",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/splits/_/id/4701233/craig-porter-jr",
-              "text": "Splits",
-              "shortText": "Splits",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "gamelog",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/gamelog/_/id/4701233/craig-porter-jr",
-              "text": "Game Log",
-              "shortText": "Game Log",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "news",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/news/_/id/4701233/craig-porter-jr",
-              "text": "News",
-              "shortText": "News",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "bio",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/bio/_/id/4701233/craig-porter-jr",
-              "text": "Bio",
-              "shortText": "Bio",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "overview",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/4701233/craig-porter-jr",
-              "text": "Overview",
-              "shortText": "Overview",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "advancedstats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4701233/craig-porter-jr",
-              "text": "Advanced Stats",
-              "shortText": "Advanced Stats",
-              "isExternal": false,
-              "isPremium": false
-            }
-          ],
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4701233.png",
-            "alt": "Craig Porter Jr."
           },
           "position": {
             "id": "3",
@@ -6593,14 +5865,462 @@
           "notes": {
             "items": [
               {
-                "id": "497404",
+                "id": "499246",
                 "type": "news",
-                "date": "2025-07-20T01:42Z",
-                "headline": "Porter (hamstring) didn't play in Saturday's 82-71 Summer League loss to the Warriors.",
-                "text": "Porter missed the team's final four Summer League games due to a left hamstring injury, which he sustained in a loss to the Pacers on July 10. The severity of the injury is unclear, and the 25-year-old guard will now shift his focus to preparing for the 2025-26 campaign after making just one brief appearance during Summer League play.",
+                "date": "2025-10-15T15:46Z",
+                "headline": "Garland (toe) participated in a scrimmage with contact Tuesday, Chris Fedor of Cleveland.com reports.",
+                "text": "Garland is still on the mend after undergoing toe surgery in June. Although the Cavaliers have been encouraged by Garland's recent progress, head coach Kenny Atkinson cautioned that his return is not imminent. \"It's not linear, usually, the return to performance, and we're hoping it will be and he'll progress,\" Atkinson said. \"But I side on the side of being conservative and making sure. This is a good step today. A small step but a good step.\" The Cavaliers are likely to provide another update on Garland's timetable in the near future, but for now, fantasy managers can assume that he will miss a handful of games to open the regular season.",
                 "source": "RotoWire",
                 "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/4701233/injuries/497404?lang=en&region=us"
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4396907/injuries/499246?lang=en&region=us"
+                }
+              }
+            ]
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
+          }
+        },
+        "source": {
+          "id": "1",
+          "description": "basic/manual",
+          "state": "basic"
+        },
+        "type": {
+          "id": "4",
+          "name": "INJURY_STATUS_OUT",
+          "description": "out",
+          "abbreviation": "O"
+        },
+        "details": {
+          "fantasyStatus": {
+            "description": "OUT",
+            "abbreviation": "OUT"
+          },
+          "type": "Toe",
+          "location": "Leg",
+          "detail": "Surgery",
+          "side": "Left",
+          "returnDate": "2025-11-01"
+        }
+      },
+      {
+        "id": "499172",
+        "longComment": "Hunter sustained the injury in the second quarter and didn't return for the second half. He'll finish with 14 points (3-6 FG, 2-3 3Pt, 6-7 FT), two assists, one rebound and one steal across 14 minutes. The 27-year-old forward is being held out as a precautionary measure, according to Fedor. Still, his status will be worth monitoring ahead of the team's regular-season opener against the Knicks on Oct. 22.",
+        "shortComment": "Hunter won't return to Tuesday's preseason game against the Pistons due to a right knee contusion, Chris Fedor of The Cleveland Plain Dealer reports.",
+        "status": "Day-To-Day",
+        "date": "2025-10-15T01:00Z",
+        "athlete": {
+          "firstName": "De'Andre",
+          "lastName": "Hunter",
+          "displayName": "De'Andre Hunter",
+          "shortName": "D. Hunter",
+          "links": [
+            {
+              "language": "en-US",
+              "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/4065732/deandre-hunter",
+              "text": "Player Card",
+              "shortText": "Player Card",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/stats/_/id/4065732/deandre-hunter",
+              "text": "Stats",
+              "shortText": "Stats",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/splits/_/id/4065732/deandre-hunter",
+              "text": "Splits",
+              "shortText": "Splits",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/4065732/deandre-hunter",
+              "text": "Game Log",
+              "shortText": "Game Log",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "news",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/news/_/id/4065732/deandre-hunter",
+              "text": "News",
+              "shortText": "News",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/bio/_/id/4065732/deandre-hunter",
+              "text": "Bio",
+              "shortText": "Bio",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/4065732/deandre-hunter",
+              "text": "Overview",
+              "shortText": "Overview",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "advancedstats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4065732/deandre-hunter",
+              "text": "Advanced Stats",
+              "shortText": "Advanced Stats",
+              "isExternal": false,
+              "isPremium": false
+            }
+          ],
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4065732.png",
+            "alt": "De'Andre Hunter"
+          },
+          "position": {
+            "id": "7",
+            "name": "Forward",
+            "displayName": "Forward",
+            "abbreviation": "F",
+            "leaf": false
+          },
+          "team": {
+            "id": "5",
+            "uid": "s:40~l:46~t:5",
+            "slug": "cleveland-cavaliers",
+            "name": "Cavaliers",
+            "abbreviation": "CLE",
+            "displayName": "Cleveland Cavaliers",
+            "logos": [
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "default"
+                ],
+                "lastUpdated": "2024-06-25T21:17Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/cle.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:13Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/cle.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard"
+                ],
+                "lastUpdated": "2024-06-25T21:18Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/cle.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:13Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/primary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/primary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/primary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/primary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/secondary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/secondary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/secondary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/secondary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              }
+            ],
+            "links": [
+              {
+                "language": "en-US",
+                "rel": [
+                  "clubhouse",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/_/name/cle/cleveland-cavaliers",
+                "text": "Clubhouse",
+                "shortText": "Clubhouse",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "roster",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/roster/_/name/cle/cleveland-cavaliers",
+                "text": "Roster",
+                "shortText": "Roster",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "stats",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/stats/_/name/cle/cleveland-cavaliers",
+                "text": "Statistics",
+                "shortText": "Statistics",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "schedule",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/schedule/_/name/cle",
+                "text": "Schedule",
+                "shortText": "Schedule",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "photos",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/photos/_/name/cle",
+                "text": "photos",
+                "shortText": "photos",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "tickets",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.vividseats.com/cleveland-cavaliers-tickets--sports-nba-basketball/performer/182?wsUser=717",
+                "text": "Tickets",
+                "shortText": "Tickets",
+                "isExternal": true,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "draftpicks",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/draft/teams/_/name/cle/cleveland-cavaliers",
+                "text": "Draft Picks",
+                "shortText": "Draft Picks",
+                "isExternal": false,
+                "isPremium": true
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "transactions",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/transactions/_/name/cle",
+                "text": "Transactions",
+                "shortText": "Transactions",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "injuries",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/injuries/_/name/cle",
+                "text": "Injuries",
+                "shortText": "Injuries",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "depthchart",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/depth/_/name/cle",
+                "text": "Depth Chart",
+                "shortText": "Depth Chart",
+                "isExternal": false,
+                "isPremium": false
+              }
+            ]
+          },
+          "notes": {
+            "items": [
+              {
+                "id": "499172",
+                "type": "news",
+                "date": "2025-10-15T01:00Z",
+                "headline": "Hunter won't return to Tuesday's preseason game against the Pistons due to a right knee contusion, Chris Fedor of The Cleveland Plain Dealer reports.",
+                "text": "Hunter sustained the injury in the second quarter and didn't return for the second half. He'll finish with 14 points (3-6 FG, 2-3 3Pt, 6-7 FT), two assists, one rebound and one steal across 14 minutes. The 27-year-old forward is being held out as a precautionary measure, according to Fedor. Still, his status will be worth monitoring ahead of the team's regular-season opener against the Knicks on Oct. 22.",
+                "source": "RotoWire",
+                "injury": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4065732/injuries/499172?lang=en&region=us"
                 }
               }
             ]
@@ -6628,11 +6348,459 @@
             "description": "GTD",
             "abbreviation": "GTD"
           },
-          "type": "Hamstring",
+          "type": "Knee",
           "location": "Leg",
-          "detail": "Not Specified",
+          "detail": "Bruise",
+          "side": "Right",
+          "returnDate": "2025-10-22"
+        }
+      },
+      {
+        "id": "497842",
+        "longComment": "Strus underwent surgery on his fractured left foot on Aug. 26, with his expected recovery process being three to four months. De'Andre Hunter will likely see more time on the floor with Strus on the mend to start the upcoming 2025-26 season.",
+        "shortComment": "Strus (foot) is no longer wearing a walking boot on Tuesday, but still has a lengthy recovery process ahead, Chris Fedor of The Cleveland Plain Dealer reports.",
+        "status": "Out",
+        "date": "2025-09-30T20:20Z",
+        "athlete": {
+          "firstName": "Max",
+          "lastName": "Strus",
+          "displayName": "Max Strus",
+          "shortName": "M. Strus",
+          "links": [
+            {
+              "language": "en-US",
+              "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/4065778/max-strus",
+              "text": "Player Card",
+              "shortText": "Player Card",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/stats/_/id/4065778/max-strus",
+              "text": "Stats",
+              "shortText": "Stats",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/splits/_/id/4065778/max-strus",
+              "text": "Splits",
+              "shortText": "Splits",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/4065778/max-strus",
+              "text": "Game Log",
+              "shortText": "Game Log",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "news",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/news/_/id/4065778/max-strus",
+              "text": "News",
+              "shortText": "News",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/bio/_/id/4065778/max-strus",
+              "text": "Bio",
+              "shortText": "Bio",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/4065778/max-strus",
+              "text": "Overview",
+              "shortText": "Overview",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "advancedstats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4065778/max-strus",
+              "text": "Advanced Stats",
+              "shortText": "Advanced Stats",
+              "isExternal": false,
+              "isPremium": false
+            }
+          ],
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4065778.png",
+            "alt": "Max Strus"
+          },
+          "position": {
+            "id": "3",
+            "name": "Guard",
+            "displayName": "Guard",
+            "abbreviation": "G",
+            "leaf": false
+          },
+          "team": {
+            "id": "5",
+            "uid": "s:40~l:46~t:5",
+            "slug": "cleveland-cavaliers",
+            "name": "Cavaliers",
+            "abbreviation": "CLE",
+            "displayName": "Cleveland Cavaliers",
+            "logos": [
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "default"
+                ],
+                "lastUpdated": "2024-06-25T21:17Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/cle.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:13Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/cle.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard"
+                ],
+                "lastUpdated": "2024-06-25T21:18Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/cle.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:13Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/primary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/primary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/primary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/primary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/secondary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/secondary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/secondary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/secondary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:32Z"
+              }
+            ],
+            "links": [
+              {
+                "language": "en-US",
+                "rel": [
+                  "clubhouse",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/_/name/cle/cleveland-cavaliers",
+                "text": "Clubhouse",
+                "shortText": "Clubhouse",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "roster",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/roster/_/name/cle/cleveland-cavaliers",
+                "text": "Roster",
+                "shortText": "Roster",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "stats",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/stats/_/name/cle/cleveland-cavaliers",
+                "text": "Statistics",
+                "shortText": "Statistics",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "schedule",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/schedule/_/name/cle",
+                "text": "Schedule",
+                "shortText": "Schedule",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "photos",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/photos/_/name/cle",
+                "text": "photos",
+                "shortText": "photos",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "tickets",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.vividseats.com/cleveland-cavaliers-tickets--sports-nba-basketball/performer/182?wsUser=717",
+                "text": "Tickets",
+                "shortText": "Tickets",
+                "isExternal": true,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "draftpicks",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/draft/teams/_/name/cle/cleveland-cavaliers",
+                "text": "Draft Picks",
+                "shortText": "Draft Picks",
+                "isExternal": false,
+                "isPremium": true
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "transactions",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/transactions/_/name/cle",
+                "text": "Transactions",
+                "shortText": "Transactions",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "injuries",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/injuries/_/name/cle",
+                "text": "Injuries",
+                "shortText": "Injuries",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "depthchart",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/depth/_/name/cle",
+                "text": "Depth Chart",
+                "shortText": "Depth Chart",
+                "isExternal": false,
+                "isPremium": false
+              }
+            ]
+          },
+          "notes": {
+            "items": [
+              {
+                "id": "497842",
+                "type": "news",
+                "date": "2025-09-30T20:20Z",
+                "headline": "Strus (foot) is no longer wearing a walking boot on Tuesday, but still has a lengthy recovery process ahead, Chris Fedor of The Cleveland Plain Dealer reports.",
+                "text": "Strus underwent surgery on his fractured left foot on Aug. 26, with his expected recovery process being three to four months. De'Andre Hunter will likely see more time on the floor with Strus on the mend to start the upcoming 2025-26 season.",
+                "source": "RotoWire",
+                "injury": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4065778/injuries/497842?lang=en&region=us"
+                }
+              }
+            ]
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
+          }
+        },
+        "source": {
+          "id": "1",
+          "description": "basic/manual",
+          "state": "basic"
+        },
+        "type": {
+          "id": "4",
+          "name": "INJURY_STATUS_OUT",
+          "description": "out",
+          "abbreviation": "O"
+        },
+        "details": {
+          "fantasyStatus": {
+            "description": "OUT",
+            "abbreviation": "OUT"
+          },
+          "type": "Foot",
+          "location": "Leg",
+          "detail": "Surgery",
           "side": "Left",
-          "returnDate": "2025-10-01"
+          "returnDate": "2025-12-01"
         }
       }
     ],
@@ -6644,8 +6812,9 @@
       "displayName": "Cleveland Cavaliers",
       "color": "860038",
       "logo": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
+      "recordSummary": "1-3",
       "seasonSummary": "2025-26",
-      "standingSummary": "1st in Central Division"
+      "standingSummary": "5th in Central Division"
     }
   }
 }
