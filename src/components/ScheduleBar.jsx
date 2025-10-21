@@ -1,5 +1,5 @@
 import { useMemo, useState, useEffect } from "react";
-// import { supabase } from "../supabaseClient";
+import { supabase } from "../supabaseClient";
 import nflSchedule from "../assets/nfl25.json";
 import nbaSchedule from "../assets/nba25.json";
 import mlbSchedule from "../assets/mlb25.json";
@@ -55,7 +55,7 @@ function buildBroadcastUrl(key) {
   return map[name] || null;
 }
 
-export default function ScheduleBar({ session }) {
+export default function ScheduleBar() {
   const [sport, setSport] = useState(() => localStorage.getItem("selectedSport")?.toLowerCase() || 'all');
   const [filterState, setFilterState] = useState(() => localStorage.getItem("filterState") || "sports");
   const { todaysGames: liveGames } = useTodaysGames(sport === 'all' ? 'nfl' : sport);
@@ -65,6 +65,7 @@ export default function ScheduleBar({ session }) {
     x.setHours(0, 0, 0, 0);
     return x;
   });
+  const { session } = useSessionForSchedulesPage();
 
   // Persist state to localStorage
   useEffect(() => {
@@ -78,29 +79,159 @@ export default function ScheduleBar({ session }) {
     window.addEventListener("filterChanged", updateFilterState);
     return () => window.removeEventListener("filterChanged", updateFilterState);
   }, []);
-  
-  // Logic to process schedule data
-  const processGames = useMemo(() => {
-    let baseSchedule;
-    if (sport === "all" || filterState === "none") {
-      baseSchedule = [
-        ...nflSchedule.map(g => ({ ...g, sport: "nfl" })),
-        ...nbaSchedule.map(g => ({ ...g, sport: "nba" })),
-        ...mlbSchedule.map(g => ({ ...g, sport: "mlb" })),
-      ];
-    } else {
-      switch (sport) {
-        case "nfl": baseSchedule = nflSchedule.map(g => ({ ...g, sport: "nfl" })); break;
-        case "nba": baseSchedule = nbaSchedule.map(g => ({ ...g, sport: "nba" })); break;
-        case "mlb": baseSchedule = mlbSchedule.map(g => ({ ...g, sport: "mlb" })); break;
-        default: baseSchedule = []; break;
+
+  // Fetch user preferences from Supabase
+  useEffect(() => {
+    if (!session) return;
+    const uid = session.user.id;
+
+    console.log('Fetching user preferences for user ID:', uid);
+    console.log('Session object:', session);
+    (async () => {
+      setLoading(true);
+      try {
+        let { data, error } = await supabase
+          .from("user_preferences")
+          .select("sports_prefs, favorite_teams")
+          .eq("user_id", uid)
+          .maybeSingle();
+
+        let prefsData = data;
+        let prefsError = error;
+
+        // Fallback if favorite_teams column doesn't exist
+        if (prefsError && prefsError.message && prefsError.message.includes('favorite_teams')) {
+          const fallbackResult = await supabase
+            .from("user_preferences")
+            .select("sports_prefs")
+            .eq("user_id", uid)
+            .maybeSingle();
+          prefsData = fallbackResult.data;
+          prefsError = fallbackResult.error;
+        }
+
+        if (prefsError) {
+          console.warn('Failed to load user preferences:', prefsError.message);
+          setUserPrefs({ sports_prefs: [], favorite_teams: {} });
+        } else {
+          const sportsPrefs = Array.isArray(prefsData?.sports_prefs) ? prefsData.sports_prefs : [];
+          const favoriteTeams = typeof prefsData?.favorite_teams === 'object' && prefsData.favorite_teams !== null ? prefsData.favorite_teams : {};
+          setUserPrefs({ sports_prefs: sportsPrefs, favorite_teams: favoriteTeams });
+        }
+      } catch (e) {
+        console.error('Unexpected error loading user preferences:', e);
+        setUserPrefs({ sports_prefs: [], favorite_teams: {} });
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, [session]);
+
+  // Set filterState to 'Favorites' by default if user has favorites for selected sport
+  useEffect(() => {
+    if (loading) return;
+    // Only set if filterState is still at initial value
+    if (filterState === 'none') {
+      const favTeams = userPrefs.favorite_teams?.[sport.toUpperCase()] || userPrefs.favorite_teams?.[sport] || [];
+      if (favTeams && favTeams.length > 0) {
+        setFilterState('favorites');
       }
     }
-    const favTeams = userPrefs.favorite_teams?.[sport.toUpperCase()] || [];
-    const schedule = (filterState === 'favorites' && favTeams.length > 0)
-      ? baseSchedule.filter(g => favTeams.includes(g.HomeTeam) || favTeams.includes(g.AwayTeam))
-      : baseSchedule;
+  }, [loading, userPrefs, sport, filterState]);
 
+  const [selected, setSelected] = useState(() => {
+    const x = new Date();
+    x.setHours(0, 0, 0, 0);
+    return x;
+  });
+
+  // Build schedule data based on filterState and selected sport
+  let scheduleData;
+  if (sport === "all" || filterState === "none") {
+    scheduleData = [
+      ...nflSchedule.map(g => ({ ...g, sport: "nfl" })),
+      ...nbaSchedule.map(g => ({ ...g, sport: "nba" })),
+      ...mlbSchedule.map(g => ({ ...g, sport: "mlb" })),
+    ];
+  } else {
+    // Filter by selected sport
+    switch (sport) {
+      case "nfl":
+        scheduleData = nflSchedule;
+        break;
+      case "nba":
+        scheduleData = nbaSchedule;
+        break;
+      case "mlb":
+        scheduleData = mlbSchedule;
+        break;
+      default:
+        scheduleData = nflSchedule.concat(nbaSchedule, mlbSchedule);
+        break;
+    }
+  }
+
+  // Filter scheduleData based on user preferences
+  let filteredScheduleData = scheduleData;
+  // Try both uppercase and lowercase keys for favorite_teams
+  const favTeams = userPrefs.favorite_teams?.[sport.toUpperCase()] || userPrefs.favorite_teams?.[sport] || [];
+  if (filterState === 'favorites' && favTeams && favTeams.length > 0) {
+    filteredScheduleData = scheduleData.filter(
+      game => favTeams.includes(game.HomeTeam) || favTeams.includes(game.AwayTeam)
+    );
+  }
+
+  // Helper function to extract a date key (YYYY-MM-DD) from a game object
+  function getGameDateKey(game, dateBuilt = null) {
+    let d;
+    if (!dateBuilt) {
+      const dateStr = game.DateUtc || game.DateUTC || game.dateUtc || game.date;
+      d = parseUtc(dateStr);
+    } else {
+      d = dateBuilt;
+    }
+    if (isNaN(d)) return null;
+    return ymd(new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate())));
+  }
+
+  // Builds a normalized game card object
+  function buildGameCard(game, key, i = null, sportOverride = null) {
+    return {
+      id:
+        game.MatchNumber ??
+        game.GameId ??
+        `${key}-${game.AwayTeam ?? game.awayPlayer}-${game.HomeTeam ?? game.homePlayer}${i !== null ? '-' + i : ''}`,
+      homeTeam: game.HomeTeam ?? game.homeTeam ?? game.homePlayer ?? "Home",
+      awayTeam: game.AwayTeam ?? game.awayTeam ?? game.awayPlayer ?? "Away",
+      homeScore: game.HomeTeamScore ?? game.homeScore ?? game.homeSets ?? null,
+      awayScore: game.AwayTeamScore ?? game.awayScore ?? game.awaySets ?? null,
+      venue: game.Location ?? game.venue ?? game.tournament ?? null,
+      dateUtcISO: (parseUtc(game.DateUtc || game.DateUTC || game.dateUtc || game.date) || new Date()).toISOString(),
+      isLive: game.IsLive || game.Status === 'in' || game.Status === 'live',
+      status: game.Status || 'scheduled',
+      sport: sportOverride || game.sport
+    };
+  }
+
+  // Merge live game data into existing game cards, or adds it as a new entry if not present
+  function mergeLiveGame(gameCards, key, liveGame, sportOverride = null) {
+    const existingGameIndex = (gameCards[key] || []).findIndex(
+      g => g.homeTeam === liveGame.HomeTeam && g.awayTeam === liveGame.AwayTeam
+    );
+    if (existingGameIndex >= 0) {
+      gameCards[key][existingGameIndex] = {
+        ...gameCards[key][existingGameIndex],
+        homeScore: liveGame.HomeTeamScore,
+        awayScore: liveGame.AwayTeamScore,
+        isLive: liveGame.IsLive || liveGame.Status === 'in' || liveGame.Status === 'live',
+        status: liveGame.Status || 'scheduled'
+      };
+    } else {
+      (gameCards[key] ||= []).push(buildGameCard(liveGame, key, null, sportOverride));
+    }
+  }
+
+  const processGames = useMemo(() => {
     const gameCards = {};
     schedule.forEach((g, i) => {
       const d = parseUtc(g.DateUtc || g.DateUTC || g.dateUtc || g.date);
@@ -166,7 +297,11 @@ export default function ScheduleBar({ session }) {
     );
   }
 
-  return (
+  // Temporary hardcoded prefs until session is fixed
+  // userPrefs.sports_prefs = ["nfl", "nba", "mlb"];
+  // if (!session) return <p className="prefs-note">Log in to manage preferences.</p>;
+  if (loading)    return <p className="prefs-note">Loading preferences…</p>;
+return (
     <div className="sb-wrap">
       <div className="sb-top">
         <div className="sb-title-container">
