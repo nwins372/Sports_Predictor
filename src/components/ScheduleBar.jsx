@@ -139,11 +139,6 @@ export default function ScheduleBar() {
     }
   }, [loading, userPrefs, sport, filterState]);
 
-  const [selected, setSelected] = useState(() => {
-    const x = new Date();
-    x.setHours(0, 0, 0, 0);
-    return x;
-  });
 
   // Build schedule data based on filterState and selected sport
   let scheduleData;
