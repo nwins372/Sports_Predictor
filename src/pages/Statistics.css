@@ -46,9 +46,11 @@
 }
 
 .teams-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .team-card {
@@ -57,6 +59,7 @@
   overflow: hidden;
   border: 1px solid #333;
   transition: all 0.3s ease;
+  width: 100%;
 }
 
 .team-card:hover {
@@ -81,6 +84,10 @@
 
 .team-header:hover {
   background: #2a2a2a;
+}
+
+.team-header:active {
+  background: #2d2d2d;
 }
 
 .team-logo-name {
@@ -132,6 +139,8 @@
   font-size: 1.2rem;
   font-weight: bold;
   transition: transform 0.3s ease;
+  min-width: 20px;
+  text-align: center;
 }
 
 .team-content {
@@ -149,6 +158,261 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.team-info-section {
+  margin-bottom: 0;
+}
+
+.team-info-section h4 {
+  color: var(--accent);
+  margin-bottom: 15px;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 8px;
+}
+
+/* Scoring Stats */
+.scoring-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 100%);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 2px solid #333;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+}
+
+.stat-card.scored::before {
+  background: linear-gradient(90deg, #4caf50 0%, transparent 100%);
+}
+
+.stat-card.allowed::before {
+  background: linear-gradient(90deg, #f44336 0%, transparent 100%);
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+  opacity: 0.9;
+}
+
+.stat-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  color: #999;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.stat-value {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.stat-avg {
+  color: #bbb;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+/* Key Stats Grid */
+.key-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.key-stat-item {
+  background: #252525;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.key-stat-item:hover {
+  background: #2a2a2a;
+  border-color: #444;
+  transform: translateY(-2px);
+}
+
+.key-stat-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.key-stat-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.key-stat-label {
+  color: #999;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+}
+
+.key-stat-value {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.team-details {
+  background: #252525;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  background: #1e1e1e;
+  border-radius: 6px;
+  border: 1px solid #2a2a2a;
+  transition: all 0.2s ease;
+}
+
+.detail-row:hover {
+  background: #242424;
+  border-color: #333;
+}
+
+.detail-row.highlight {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 193, 7, 0.05) 100%);
+  border-color: rgba(255, 193, 7, 0.3);
+}
+
+.detail-row.highlight:hover {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.15) 0%, rgba(255, 193, 7, 0.08) 100%);
+  border-color: rgba(255, 193, 7, 0.4);
+}
+
+.detail-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  min-width: 30px;
+  text-align: center;
+}
+
+.detail-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.detail-label {
+  color: #999;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.detail-value {
+  color: #fff;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.color-swatch {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid #444;
+  vertical-align: middle;
+}
+
+.team-details p {
+  margin: 8px 0;
+  color: #ddd;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.team-details strong {
+  color: var(--accent);
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.roster-notice {
+  background: rgba(255, 193, 7, 0.1);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: 6px;
+  padding: 15px;
+  text-align: center;
+}
+
+.roster-notice p {
+  margin: 8px 0;
+  color: #ffc107;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.roster-notice p:first-child {
+  font-weight: 500;
 }
 
 .roster-section {
@@ -268,7 +532,7 @@
   }
 
   .teams-container {
-    grid-template-columns: 1fr;
+    max-width: 100%;
   }
 
   .team-header {
@@ -284,6 +548,18 @@
 
   .players-list {
     max-height: 500px;
+  }
+
+  .scoring-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .key-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
   }
 }
 
@@ -315,6 +591,39 @@
 
   .player-meta {
     font-size: 0.8rem;
+  }
+
+  .key-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-icon {
+    font-size: 2rem;
+  }
+
+  .stat-value {
+    font-size: 1.3rem;
+  }
+
+  .key-stat-value {
+    font-size: 1.1rem;
+  }
+
+  .detail-row {
+    padding: 10px;
+  }
+
+  .detail-icon {
+    font-size: 1.3rem;
+    min-width: 25px;
+  }
+
+  .detail-label {
+    font-size: 0.7rem;
+  }
+
+  .detail-value {
+    font-size: 0.85rem;
   }
 }
 
