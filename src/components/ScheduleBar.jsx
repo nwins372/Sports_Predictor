@@ -140,6 +140,22 @@ export default function ScheduleBar() {
     return () => window.removeEventListener("filterChanged", updateFilterState);
   }, []);
 
+  // If the filter is not 'sports', reset sport to 'all' so we don't keep a sport-specific
+  // selection when the sport selector is hidden. This prevents the app from appearing to
+  // 'lock' into a sport when the user switches to favorites or 'none'. We only update
+  // local state and localStorage when needed.
+  useEffect(() => {
+    if (filterState !== 'sports' && sport !== 'all') {
+      setSport('all');
+      try {
+        localStorage.setItem('selectedSport', 'all');
+      } catch (e) {
+        // ignore localStorage errors
+      }
+      window.dispatchEvent(new CustomEvent('sportChanged', { detail: 'all' }));
+    }
+  }, [filterState]);
+
   // Fetch user preferences from Supabase
   useEffect(() => {
     if (!session) return;
@@ -207,7 +223,7 @@ export default function ScheduleBar() {
 
   // Build schedule data based on filterState and selected sport
   let scheduleData;
-  if (sport === "all" || filterState === "none") {
+  if (sport === "all" || filterState !== "sports") {
     scheduleData = [
       ...nflSchedule.map(g => ({ ...g, sport: "nfl" })),
       ...nbaSchedule.map(g => ({ ...g, sport: "nba" })),
@@ -233,12 +249,29 @@ export default function ScheduleBar() {
 
   // Filter scheduleData based on user preferences
   let filteredScheduleData = scheduleData;
-  // Try both uppercase and lowercase keys for favorite_teams
-  const favTeams = userPrefs.favorite_teams?.[sport.toUpperCase()] || userPrefs.favorite_teams?.[sport] || [];
-  if (filterState === 'favorites' && favTeams && favTeams.length > 0) {
-    filteredScheduleData = scheduleData.filter(
-      game => favTeams.includes(game.HomeTeam) || favTeams.includes(game.AwayTeam)
-    );
+  // Compute favorite teams depending on filterState.
+  // When the filter is 'favorites' and the sport selector is hidden, prefer matching against
+  // all favorite teams across sports so the favorites view isn't accidentally limited by the
+  // last-selected sport. When a specific sport is selected, use that sport's favorites.
+  let favTeams = [];
+  if (filterState === 'favorites') {
+    if (sport === 'all') {
+      // Flatten all favorites from every sport key (try both uppercase/lowercase keys handled upstream)
+      const allFavsObj = userPrefs.favorite_teams || {};
+      favTeams = Object.values(allFavsObj).flat().filter(Boolean);
+    } else {
+      favTeams = userPrefs.favorite_teams?.[sport.toUpperCase()] || userPrefs.favorite_teams?.[sport] || [];
+    }
+
+    if (favTeams && favTeams.length > 0) {
+      const favSet = new Set(favTeams);
+      filteredScheduleData = scheduleData.filter(
+        (game) => favSet.has(game.HomeTeam) || favSet.has(game.AwayTeam)
+      );
+    } else {
+      // No favorites available — result should be empty (no favorite games)
+      filteredScheduleData = [];
+    }
   }
 
   // Helper function to extract a date key (YYYY-MM-DD) from a game object
@@ -294,7 +327,7 @@ export default function ScheduleBar() {
   const processGames = useMemo(() => {
     const gameCards = {};
 
-    if (sport === "all" || filterState === "none") {
+    if (sport === "all" || filterState !== "sports") {
       // Simple grouping by date for all sports or no filter
       filteredScheduleData.forEach((game) => {
         const key = getGameDateKey(game);
@@ -363,9 +396,6 @@ export default function ScheduleBar() {
     );
   }
 
-  // Temporary hardcoded prefs until session is fixed
-  // userPrefs.sports_prefs = ["nfl", "nba", "mlb"];
-  // if (!session) return <p className="prefs-note">Log in to manage preferences.</p>;
   if (loading)    return <p className="prefs-note">Loading preferences…</p>;
 return (
     <div className="sb-wrap">
@@ -416,7 +446,7 @@ return (
             </select>
           </label>
 
-          {filterState !== 'none' && (
+          {filterState === 'sports' && (
             <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
               <span style={{ fontSize: 12, opacity: 0.8 }}>Sport</span>
               <select
