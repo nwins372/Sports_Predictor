@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2025-09-25T23:34:56.456Z",
+  "fetchedAt": "2025-10-20T18:34:23.589Z",
   "detail": {
     "team": {
       "id": "22",
@@ -148,7 +148,147 @@
           "lastUpdated": "2024-12-03T19:31Z"
         }
       ],
-      "record": {},
+      "record": {
+        "items": [
+          {
+            "description": "Overall Record",
+            "type": "total",
+            "summary": "1-3",
+            "stats": [
+              {
+                "name": "OTLosses",
+                "value": 0
+              },
+              {
+                "name": "OTWins",
+                "value": 0
+              },
+              {
+                "name": "avgPointsAgainst",
+                "value": 125.5
+              },
+              {
+                "name": "avgPointsFor",
+                "value": 121.75
+              },
+              {
+                "name": "differential",
+                "value": -3.700000000000003
+              },
+              {
+                "name": "divisionWinPercent",
+                "value": 0
+              },
+              {
+                "name": "gamesBehind",
+                "value": 3.5
+              },
+              {
+                "name": "gamesPlayed",
+                "value": 4
+              },
+              {
+                "name": "leagueWinPercent",
+                "value": 0.25
+              },
+              {
+                "name": "losses",
+                "value": 3
+              },
+              {
+                "name": "playoffSeed",
+                "value": 12
+              },
+              {
+                "name": "pointDifferential",
+                "value": -15
+              },
+              {
+                "name": "points",
+                "value": -1
+              },
+              {
+                "name": "pointsAgainst",
+                "value": 502
+              },
+              {
+                "name": "pointsFor",
+                "value": 487
+              },
+              {
+                "name": "streak",
+                "value": -2
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 0.25
+              },
+              {
+                "name": "wins",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "description": "Home Record",
+            "type": "home",
+            "summary": "1-1",
+            "stats": [
+              {
+                "name": "wins",
+                "value": 1
+              },
+              {
+                "name": "losses",
+                "value": 1
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 0.5
+              },
+              {
+                "name": "OTLosses",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "description": "Away Record",
+            "type": "road",
+            "summary": "0-2",
+            "stats": [
+              {
+                "name": "wins",
+                "value": 0
+              },
+              {
+                "name": "losses",
+                "value": 2
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 0
+              },
+              {
+                "name": "OTLosses",
+                "value": 0
+              }
+            ]
+          }
+        ]
+      },
       "groups": {
         "id": "11",
         "parent": {
@@ -326,30 +466,30 @@
           ]
         },
         "team": {
-          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/22?lang=en&region=us"
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/teams/22?lang=en&region=us"
         }
       },
       "nextEvent": [
         {
-          "id": "401812689",
-          "date": "2025-10-09T02:00Z",
-          "name": "Portland Trail Blazers at Golden State Warriors",
-          "shortName": "POR @ GS",
+          "id": "401809942",
+          "date": "2025-10-23T02:00Z",
+          "name": "Minnesota Timberwolves at Portland Trail Blazers",
+          "shortName": "MIN @ POR",
           "season": {
             "year": 2026,
             "displayName": "2025-26"
           },
           "seasonType": {
-            "id": "1",
-            "type": 1,
-            "name": "Preseason",
-            "abbreviation": "pre"
+            "id": "2",
+            "type": 2,
+            "name": "Regular Season",
+            "abbreviation": "reg"
           },
           "timeValid": true,
           "competitions": [
             {
-              "id": "401812689",
-              "date": "2025-10-09T02:00Z",
+              "id": "401809942",
+              "date": "2025-10-23T02:00Z",
               "attendance": 0,
               "type": {
                 "id": "1",
@@ -363,258 +503,18 @@
               "boxscoreAvailable": false,
               "ticketsAvailable": true,
               "venue": {
-                "fullName": "Chase Center",
+                "fullName": "Moda Center",
                 "address": {
-                  "city": "San Francisco",
-                  "state": "CA"
+                  "city": "Portland",
+                  "state": "OR"
                 }
               },
               "competitors": [
                 {
-                  "id": "9",
+                  "id": "22",
                   "type": "team",
                   "order": 0,
                   "homeAway": "home",
-                  "team": {
-                    "id": "9",
-                    "location": "Golden State",
-                    "abbreviation": "GS",
-                    "displayName": "Golden State Warriors",
-                    "shortDisplayName": "Warriors",
-                    "logos": [
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/gs.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "default"
-                        ],
-                        "lastUpdated": "2024-06-25T21:17Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/gs.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "dark"
-                        ],
-                        "lastUpdated": "2024-06-25T21:13Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/gs.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "scoreboard"
-                        ],
-                        "lastUpdated": "2024-06-25T21:18Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/gs.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "scoreboard",
-                          "dark"
-                        ],
-                        "lastUpdated": "2024-06-25T21:14Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/77a8546f-24bf-a333-8161-bf9f75396c49/logos/primary_logo_on_white_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_white_color"
-                        ],
-                        "lastUpdated": "2024-12-06T15:26Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/77a8546f-24bf-a333-8161-bf9f75396c49/logos/primary_logo_on_black_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_black_color"
-                        ],
-                        "lastUpdated": "2024-12-06T15:26Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/77a8546f-24bf-a333-8161-bf9f75396c49/logos/primary_logo_on_primary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_primary_color"
-                        ],
-                        "lastUpdated": "2024-12-06T15:26Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/77a8546f-24bf-a333-8161-bf9f75396c49/logos/primary_logo_on_secondary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_secondary_color"
-                        ],
-                        "lastUpdated": "2024-12-06T15:26Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/77a8546f-24bf-a333-8161-bf9f75396c49/logos/secondary_logo_on_white_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_white_color"
-                        ],
-                        "lastUpdated": "2024-12-06T15:26Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/77a8546f-24bf-a333-8161-bf9f75396c49/logos/secondary_logo_on_black_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_black_color"
-                        ],
-                        "lastUpdated": "2024-12-06T15:26Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/77a8546f-24bf-a333-8161-bf9f75396c49/logos/secondary_logo_on_primary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_primary_color"
-                        ],
-                        "lastUpdated": "2024-12-06T15:26Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/77a8546f-24bf-a333-8161-bf9f75396c49/logos/secondary_logo_on_secondary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_secondary_color"
-                        ],
-                        "lastUpdated": "2024-12-06T15:26Z"
-                      }
-                    ],
-                    "links": [
-                      {
-                        "rel": [
-                          "clubhouse",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/_/name/gs/golden-state-warriors",
-                        "text": "Clubhouse"
-                      },
-                      {
-                        "rel": [
-                          "roster",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/roster/_/name/gs/golden-state-warriors",
-                        "text": "Roster"
-                      },
-                      {
-                        "rel": [
-                          "stats",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/stats/_/name/gs/golden-state-warriors",
-                        "text": "Statistics"
-                      },
-                      {
-                        "rel": [
-                          "schedule",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/schedule/_/name/gs",
-                        "text": "Schedule"
-                      },
-                      {
-                        "rel": [
-                          "photos",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/photos/_/name/gs",
-                        "text": "photos"
-                      },
-                      {
-                        "rel": [
-                          "tickets",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.vividseats.com/golden-state-warriors-tickets--sports-nba-basketball/performer/328?wsUser=717",
-                        "text": "Tickets"
-                      },
-                      {
-                        "rel": [
-                          "draftpicks",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/draft/teams/_/name/gs/golden-state-warriors",
-                        "text": "Draft Picks"
-                      },
-                      {
-                        "rel": [
-                          "transactions",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/transactions/_/name/gs",
-                        "text": "Transactions"
-                      },
-                      {
-                        "rel": [
-                          "injuries",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/injuries/_/name/gs",
-                        "text": "Injuries"
-                      },
-                      {
-                        "rel": [
-                          "depthchart",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/depth/_/name/gs",
-                        "text": "Depth Chart"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "id": "22",
-                  "type": "team",
-                  "order": 1,
-                  "homeAway": "away",
                   "team": {
                     "id": "22",
                     "location": "Portland",
@@ -849,19 +749,324 @@
                       }
                     ]
                   }
+                },
+                {
+                  "id": "16",
+                  "type": "team",
+                  "order": 1,
+                  "homeAway": "away",
+                  "team": {
+                    "id": "16",
+                    "location": "Minnesota",
+                    "abbreviation": "MIN",
+                    "displayName": "Minnesota Timberwolves",
+                    "shortDisplayName": "Timberwolves",
+                    "logos": [
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/min.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "default"
+                        ],
+                        "lastUpdated": "2024-07-18T19:53Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/min.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "dark"
+                        ],
+                        "lastUpdated": "2024-07-18T19:54Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/min.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "scoreboard"
+                        ],
+                        "lastUpdated": "2024-07-18T19:54Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/min.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "scoreboard",
+                          "dark"
+                        ],
+                        "lastUpdated": "2024-07-18T19:54Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/13f727cb-254d-b484-a337-93fcc0047add/logos/primary_logo_on_white_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_white_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/13f727cb-254d-b484-a337-93fcc0047add/logos/primary_logo_on_black_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_black_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/13f727cb-254d-b484-a337-93fcc0047add/logos/primary_logo_on_primary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_primary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/13f727cb-254d-b484-a337-93fcc0047add/logos/primary_logo_on_secondary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_secondary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/13f727cb-254d-b484-a337-93fcc0047add/logos/secondary_logo_on_white_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_white_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/13f727cb-254d-b484-a337-93fcc0047add/logos/secondary_logo_on_black_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_black_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/13f727cb-254d-b484-a337-93fcc0047add/logos/secondary_logo_on_primary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_primary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/13f727cb-254d-b484-a337-93fcc0047add/logos/secondary_logo_on_secondary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_secondary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:33Z"
+                      }
+                    ],
+                    "links": [
+                      {
+                        "rel": [
+                          "clubhouse",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/_/name/min/minnesota-timberwolves",
+                        "text": "Clubhouse"
+                      },
+                      {
+                        "rel": [
+                          "roster",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/roster/_/name/min/minnesota-timberwolves",
+                        "text": "Roster"
+                      },
+                      {
+                        "rel": [
+                          "stats",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/stats/_/name/min/minnesota-timberwolves",
+                        "text": "Statistics"
+                      },
+                      {
+                        "rel": [
+                          "schedule",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/schedule/_/name/min",
+                        "text": "Schedule"
+                      },
+                      {
+                        "rel": [
+                          "photos",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/photos/_/name/min",
+                        "text": "photos"
+                      },
+                      {
+                        "rel": [
+                          "tickets",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.vividseats.com/minnesota-timberwolves-tickets--sports-nba-basketball/performer/553?wsUser=717",
+                        "text": "Tickets"
+                      },
+                      {
+                        "rel": [
+                          "draftpicks",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/draft/teams/_/name/min/minnesota-timberwolves",
+                        "text": "Draft Picks"
+                      },
+                      {
+                        "rel": [
+                          "transactions",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/transactions/_/name/min",
+                        "text": "Transactions"
+                      },
+                      {
+                        "rel": [
+                          "injuries",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/injuries/_/name/min",
+                        "text": "Injuries"
+                      },
+                      {
+                        "rel": [
+                          "depthchart",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/depth/_/name/min",
+                        "text": "Depth Chart"
+                      }
+                    ]
+                  }
                 }
               ],
               "notes": [],
-              "broadcasts": [],
+              "broadcasts": [
+                {
+                  "type": {
+                    "id": "1",
+                    "shortName": "TV"
+                  },
+                  "market": {
+                    "id": "2",
+                    "type": "Home"
+                  },
+                  "media": {
+                    "shortName": "KUNP 16"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                },
+                {
+                  "type": {
+                    "id": "6",
+                    "shortName": "Subscription Package"
+                  },
+                  "market": {
+                    "id": "3",
+                    "type": "Away"
+                  },
+                  "media": {
+                    "shortName": "NBA League Pass"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                },
+                {
+                  "type": {
+                    "id": "4",
+                    "shortName": "Streaming"
+                  },
+                  "market": {
+                    "id": "2",
+                    "type": "Home"
+                  },
+                  "media": {
+                    "shortName": "BlazerVision"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                },
+                {
+                  "type": {
+                    "id": "1",
+                    "shortName": "TV"
+                  },
+                  "market": {
+                    "id": "3",
+                    "type": "Away"
+                  },
+                  "media": {
+                    "shortName": "FanDuel SN North"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                }
+              ],
               "tickets": [
                 {
-                  "id": "5879352",
-                  "summary": "Tickets as low as $34",
-                  "description": "NBA Preseason - Portland Trail Blazers at Golden State Warriors",
-                  "maxPrice": 11035.06,
-                  "startingPrice": 34.54,
-                  "numberAvailable": 3180,
-                  "totalPostings": 1035,
+                  "id": "5939985",
+                  "summary": "Tickets as low as $27",
+                  "description": "Minnesota Timberwolves at Portland Trail Blazers",
+                  "maxPrice": 2809.15,
+                  "startingPrice": 27.03,
+                  "numberAvailable": 1390,
+                  "totalPostings": 269,
                   "links": [
                     {
                       "rel": [
@@ -869,7 +1074,7 @@
                         "desktop",
                         "event"
                       ],
-                      "href": "https://www.vividseats.com/golden-state-warriors-tickets-chase-center-10-8-2025--sports-nba-basketball/production/5879352?wsUser=717"
+                      "href": "https://www.vividseats.com/portland-trail-blazers-tickets-moda-center-10-22-2025--sports-nba-basketball/production/5939985?wsUser=717"
                     },
                     {
                       "rel": [
@@ -877,7 +1082,7 @@
                         "desktop",
                         "venue"
                       ],
-                      "href": "https://www.vividseats.com/chase-center-tickets/venue/23001?wsUser=717"
+                      "href": "https://www.vividseats.com/moda-center-tickets/venue/1458?wsUser=717"
                     }
                   ]
                 }
@@ -892,8 +1097,8 @@
                   "state": "pre",
                   "completed": false,
                   "description": "Scheduled",
-                  "detail": "Wed, October 8th at 10:00 PM EDT",
-                  "shortDetail": "10/8 - 10:00 PM EDT"
+                  "detail": "Wed, October 22nd at 10:00 PM EDT",
+                  "shortDetail": "10/22 - 10:00 PM EDT"
                 }
               }
             }
@@ -906,7 +1111,7 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/game/_/gameId/401812689/trail-blazers-warriors",
+              "href": "https://www.espn.com/nba/game/_/gameId/401809942/timberwolves-trail-blazers",
               "text": "Gamecast",
               "shortText": "Summary",
               "isExternal": false,
@@ -920,7 +1125,7 @@
                 "app",
                 "event"
               ],
-              "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=nba&gameId=401812689",
+              "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=nba&gameId=401809942",
               "text": "Gamecast",
               "shortText": "Summary",
               "isExternal": false,
@@ -933,7 +1138,7 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/game/_/gameId/401812689",
+              "href": "https://www.espn.com/nba/game/_/gameId/401809942",
               "text": "Now",
               "shortText": "Now",
               "isExternal": false,
@@ -946,7 +1151,7 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/odds/_/gameId/401812689",
+              "href": "https://www.espn.com/nba/odds/_/gameId/401809942",
               "text": "Odds",
               "shortText": "Odds",
               "isExternal": false,
@@ -959,7 +1164,7 @@
                 "mobile",
                 "event"
               ],
-              "href": "https://m.espn.com/nba/odds/_/gameId/401812689",
+              "href": "https://m.espn.com/nba/odds/_/gameId/401809942",
               "text": "Odds",
               "shortText": "Odds",
               "isExternal": false,
@@ -968,17 +1173,17 @@
           ]
         }
       ],
-      "standingSummary": "1st in Northwest Division"
+      "standingSummary": "3rd in Northwest Division"
     }
   },
   "roster": {
-    "timestamp": "2025-09-25T23:27:32Z",
+    "timestamp": "2025-10-20T18:28:55Z",
     "status": "success",
     "season": {
       "year": 2026,
       "displayName": "2025-26",
-      "type": 1,
-      "name": "Preseason"
+      "type": 2,
+      "name": "Regular Season"
     },
     "athletes": [
       {
@@ -1130,7 +1335,12 @@
             "leaf": false
           }
         },
-        "injuries": [],
+        "injuries": [
+          {
+            "status": "Day-To-Day",
+            "date": "2025-10-17T02:40Z"
+          }
+        ],
         "contracts": [
           {
             "salary": 14375000,
@@ -1182,7 +1392,7 @@
           }
         ],
         "experience": {
-          "years": 4
+          "years": 5
         },
         "contract": {
           "birdStatus": 0,
@@ -1394,7 +1604,12 @@
           "abbreviation": "F",
           "leaf": false
         },
-        "injuries": [],
+        "injuries": [
+          {
+            "status": "Day-To-Day",
+            "date": "2025-10-19T22:18Z"
+          }
+        ],
         "contracts": [
           {
             "salary": 2221677,
@@ -1422,7 +1637,7 @@
           }
         ],
         "experience": {
-          "years": 1
+          "years": 2
         },
         "contract": {
           "birdStatus": 0,
@@ -1630,7 +1845,7 @@
           }
         ],
         "experience": {
-          "years": 1
+          "years": 2
         },
         "contract": {
           "birdStatus": 0,
@@ -1863,7 +2078,7 @@
           }
         ],
         "experience": {
-          "years": 0
+          "years": 1
         },
         "contract": {
           "birdStatus": 0,
@@ -2084,12 +2299,7 @@
             "leaf": false
           }
         },
-        "injuries": [
-          {
-            "status": "Day-To-Day",
-            "date": "2025-07-03T22:08Z"
-          }
-        ],
+        "injuries": [],
         "contracts": [
           {
             "salary": 32000000,
@@ -2189,7 +2399,7 @@
           }
         ],
         "experience": {
-          "years": 10
+          "years": 11
         },
         "contract": {
           "birdStatus": 0,
@@ -2362,12 +2572,7 @@
           "abbreviation": "C",
           "leaf": false
         },
-        "injuries": [
-          {
-            "status": "Day-To-Day",
-            "date": "2025-07-21T15:45Z"
-          }
-        ],
+        "injuries": [],
         "contracts": [
           {
             "salary": 4422360,
@@ -2562,8 +2767,8 @@
         },
         "injuries": [
           {
-            "status": "Day-To-Day",
-            "date": "2025-07-03T22:08Z"
+            "status": "Out",
+            "date": "2025-09-26T18:39Z"
           }
         ],
         "contracts": [
@@ -2593,7 +2798,7 @@
           }
         ],
         "experience": {
-          "years": 1
+          "years": 2
         },
         "contract": {
           "birdStatus": 0,
@@ -2954,7 +3159,7 @@
           }
         ],
         "experience": {
-          "years": 15
+          "years": 16
         },
         "contract": {
           "birdStatus": 0,
@@ -3296,7 +3501,7 @@
           }
         ],
         "experience": {
-          "years": 12
+          "years": 13
         },
         "contract": {
           "birdStatus": 0,
@@ -3351,7 +3556,7 @@
         "displayWeight": "205 lbs",
         "height": 76,
         "displayHeight": "6' 4\"",
-        "age": 23,
+        "age": 24,
         "dateOfBirth": "2001-09-27T07:00Z",
         "links": [
           {
@@ -3763,7 +3968,7 @@
           }
         ],
         "experience": {
-          "years": 1
+          "years": 2
         },
         "contract": {
           "birdStatus": 0,
@@ -4004,7 +4209,7 @@
           }
         ],
         "experience": {
-          "years": 1
+          "years": 2
         },
         "contract": {
           "birdStatus": 0,
@@ -4212,7 +4417,7 @@
           }
         ],
         "experience": {
-          "years": 1
+          "years": 2
         },
         "contract": {
           "birdStatus": 0,
@@ -4432,12 +4637,7 @@
             "leaf": false
           }
         },
-        "injuries": [
-          {
-            "status": "Day-To-Day",
-            "date": "2025-07-03T22:08Z"
-          }
-        ],
+        "injuries": [],
         "contracts": [
           {
             "salary": 8399983,
@@ -4473,7 +4673,7 @@
           }
         ],
         "experience": {
-          "years": 2
+          "years": 3
         },
         "contract": {
           "birdStatus": 0,
@@ -4694,7 +4894,12 @@
             "leaf": false
           }
         },
-        "injuries": [],
+        "injuries": [
+          {
+            "status": "Day-To-Day",
+            "date": "2025-10-16T23:30Z"
+          }
+        ],
         "contracts": [
           {
             "salary": 11550000,
@@ -4754,7 +4959,7 @@
           }
         ],
         "experience": {
-          "years": 5
+          "years": 6
         },
         "contract": {
           "birdStatus": 0,
@@ -5063,7 +5268,7 @@
         "displayWeight": "249 lbs",
         "height": 81,
         "displayHeight": "6' 9\"",
-        "age": 27,
+        "age": 28,
         "dateOfBirth": "1997-10-17T07:00Z",
         "debutYear": 2018,
         "links": [
@@ -5225,7 +5430,7 @@
         "injuries": [
           {
             "status": "Day-To-Day",
-            "date": "2025-07-03T22:08Z"
+            "date": "2025-10-06T21:39Z"
           }
         ],
         "contracts": [
@@ -5295,7 +5500,7 @@
           }
         ],
         "experience": {
-          "years": 6
+          "years": 7
         },
         "contract": {
           "birdStatus": 0,
@@ -5351,30 +5556,33 @@
       "displayName": "Portland Trail Blazers",
       "clubhouse": "https://www.espn.com/nba/team/_/name/por/portland-trail-blazers",
       "color": "e03a3e",
-      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/por.png"
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
+      "recordSummary": "1-3",
+      "seasonSummary": "2025-26",
+      "standingSummary": "3rd in Northwest Division"
     }
   },
   "injuries": {
-    "timestamp": "2025-09-25T23:34:55Z",
+    "timestamp": "2025-10-20T18:34:24Z",
     "status": "success",
     "season": {
       "year": 2026,
-      "type": 1,
-      "name": "Preseason",
+      "type": 2,
+      "name": "Regular Season",
       "displayName": "2025-26"
     },
     "injuries": [
       {
-        "id": "497706",
-        "longComment": "Lillard underwent surgery on a torn Achilles tendon in his left foot over the summer after suffering the injury during the first round of the NBA playoffs with the Bucks against the Pacers. The veteran guard was then waived by Milwaukee on July 1, making him an unrestricted free agent. The future Hall of Famer then decided to return to the Blazers on a three-year contract worth $42 million with a player option for the 2027-28 season. He also has a no-trade clause in his deal.",
-        "shortComment": "Lillard won't be back on the court for the 2025-26 season, as he made clear during an interview with YouTube influencer Speed on Wednesday.",
-        "status": "Out",
-        "date": "2025-09-25T16:32Z",
+        "id": "499883",
+        "longComment": "Camara gets a long-term deal to stay with the Trail Blazers through 2029-30. The 25-year-old pro has become a key two-way piece for Portland and is coming off a season in which he averaged 11.3 points, 5.8 rebounds, 2.2 assists and 1.5 steals in 32.7 minutes per game across 78 appearances.",
+        "shortComment": "Camara (knee) signed a four-year, $82 million contract extension with the Trail Blazers on Sunday, Shams Charania of ESPN reports.",
+        "status": "Day-To-Day",
+        "date": "2025-10-19T22:18Z",
         "athlete": {
-          "firstName": "Damian",
-          "lastName": "Lillard",
-          "displayName": "Damian Lillard",
-          "shortName": "D. Lillard",
+          "firstName": "Toumani",
+          "lastName": "Camara",
+          "displayName": "Toumani Camara",
+          "shortName": "T. Camara",
           "links": [
             {
               "language": "en-US",
@@ -5383,7 +5591,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/_/id/6606/damian-lillard",
+              "href": "https://www.espn.com/nba/player/_/id/4431736/toumani-camara",
               "text": "Player Card",
               "shortText": "Player Card",
               "isExternal": false,
@@ -5396,7 +5604,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/stats/_/id/6606/damian-lillard",
+              "href": "https://www.espn.com/nba/player/stats/_/id/4431736/toumani-camara",
               "text": "Stats",
               "shortText": "Stats",
               "isExternal": false,
@@ -5409,7 +5617,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/splits/_/id/6606/damian-lillard",
+              "href": "https://www.espn.com/nba/player/splits/_/id/4431736/toumani-camara",
               "text": "Splits",
               "shortText": "Splits",
               "isExternal": false,
@@ -5422,7 +5630,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/gamelog/_/id/6606/damian-lillard",
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/4431736/toumani-camara",
               "text": "Game Log",
               "shortText": "Game Log",
               "isExternal": false,
@@ -5435,7 +5643,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/news/_/id/6606/damian-lillard",
+              "href": "https://www.espn.com/nba/player/news/_/id/4431736/toumani-camara",
               "text": "News",
               "shortText": "News",
               "isExternal": false,
@@ -5448,7 +5656,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/bio/_/id/6606/damian-lillard",
+              "href": "https://www.espn.com/nba/player/bio/_/id/4431736/toumani-camara",
               "text": "Bio",
               "shortText": "Bio",
               "isExternal": false,
@@ -5461,7 +5669,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/_/id/6606/damian-lillard",
+              "href": "https://www.espn.com/nba/player/_/id/4431736/toumani-camara",
               "text": "Overview",
               "shortText": "Overview",
               "isExternal": false,
@@ -5474,7 +5682,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/advancedstats/_/id/6606/damian-lillard",
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4431736/toumani-camara",
               "text": "Advanced Stats",
               "shortText": "Advanced Stats",
               "isExternal": false,
@@ -5482,458 +5690,14 @@
             }
           ],
           "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/nba/players/full/6606.png",
-            "alt": "Damian Lillard"
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4431736.png",
+            "alt": "Toumani Camara"
           },
           "position": {
-            "id": "1",
-            "name": "Point Guard",
-            "displayName": "Point Guard",
-            "abbreviation": "PG",
-            "leaf": true
-          },
-          "team": {
-            "id": "22",
-            "uid": "s:40~l:46~t:22",
-            "slug": "portland-trail-blazers",
-            "name": "Trail Blazers",
-            "abbreviation": "POR",
-            "displayName": "Portland Trail Blazers",
-            "logos": [
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "default"
-                ],
-                "lastUpdated": "2024-06-25T21:17Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/por.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "dark"
-                ],
-                "lastUpdated": "2024-06-25T21:13Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/por.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard"
-                ],
-                "lastUpdated": "2024-06-25T21:18Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/por.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard",
-                  "dark"
-                ],
-                "lastUpdated": "2024-06-25T21:14Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/primary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:31Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/primary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:31Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/primary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:31Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/primary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:31Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/secondary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:31Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/secondary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:31Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/secondary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:31Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/secondary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:31Z"
-              }
-            ],
-            "links": [
-              {
-                "language": "en-US",
-                "rel": [
-                  "clubhouse",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/_/name/por/portland-trail-blazers",
-                "text": "Clubhouse",
-                "shortText": "Clubhouse",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "roster",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/roster/_/name/por/portland-trail-blazers",
-                "text": "Roster",
-                "shortText": "Roster",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "stats",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/stats/_/name/por/portland-trail-blazers",
-                "text": "Statistics",
-                "shortText": "Statistics",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "schedule",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/schedule/_/name/por",
-                "text": "Schedule",
-                "shortText": "Schedule",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "photos",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/photos/_/name/por",
-                "text": "photos",
-                "shortText": "photos",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "tickets",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.vividseats.com/portland-trail-blazers-tickets--sports-nba-basketball/performer/690?wsUser=717",
-                "text": "Tickets",
-                "shortText": "Tickets",
-                "isExternal": true,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "draftpicks",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/draft/teams/_/name/por/portland-trail-blazers",
-                "text": "Draft Picks",
-                "shortText": "Draft Picks",
-                "isExternal": false,
-                "isPremium": true
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "transactions",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/transactions/_/name/por",
-                "text": "Transactions",
-                "shortText": "Transactions",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "injuries",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/injuries/_/name/por",
-                "text": "Injuries",
-                "shortText": "Injuries",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "depthchart",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/depth/_/name/por",
-                "text": "Depth Chart",
-                "shortText": "Depth Chart",
-                "isExternal": false,
-                "isPremium": false
-              }
-            ]
-          },
-          "notes": {
-            "items": [
-              {
-                "id": "497706",
-                "type": "news",
-                "date": "2025-09-25T16:32Z",
-                "headline": "Lillard won't be back on the court for the 2025-26 season, as he made clear during an interview with YouTube influencer Speed on Wednesday.",
-                "text": "Lillard underwent surgery on a torn Achilles tendon in his left foot over the summer after suffering the injury during the first round of the NBA playoffs with the Bucks against the Pacers. The veteran guard was then waived by Milwaukee on July 1, making him an unrestricted free agent. The future Hall of Famer then decided to return to the Blazers on a three-year contract worth $42 million with a player option for the 2027-28 season. He also has a no-trade clause in his deal.",
-                "source": "RotoWire",
-                "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/6606/injuries/497706?lang=en&region=us"
-                }
-              }
-            ]
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          }
-        },
-        "source": {
-          "id": "1",
-          "description": "basic/manual",
-          "state": "basic"
-        },
-        "type": {
-          "id": "4",
-          "name": "INJURY_STATUS_OUT",
-          "description": "out",
-          "abbreviation": "O"
-        },
-        "details": {
-          "fantasyStatus": {
-            "description": "OUT",
-            "abbreviation": "OUT"
-          },
-          "type": "Achilles",
-          "location": "Leg",
-          "detail": "Surgery",
-          "side": "Left",
-          "returnDate": "2026-04-01"
-        }
-      },
-      {
-        "id": "-21859",
-        "longComment": "Hansen turned a lot of heads during Summer League, as he might be a player who can contribute right away for his team once the 2025-26 campaign gets underway. The No. 16 overall pick in the 2025 NBA Draft finished with a strong outing on July 16 against the Pelicans, putting up 15 points to go along with three rebounds, two assists, one steal and two blocks.",
-        "shortComment": "Hansen (rest) won't play for the rest of the Las Vegas Summer League, Danny Marang of 1080 The Fan Portland reports.",
-        "status": "Day-To-Day",
-        "date": "2025-07-21T15:45Z",
-        "athlete": {
-          "firstName": "Yang",
-          "lastName": "Hansen",
-          "displayName": "Yang Hansen",
-          "shortName": "Y. Hansen",
-          "links": [
-            {
-              "language": "en-US",
-              "rel": [
-                "playercard",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/5217746/yang-hansen",
-              "text": "Player Card",
-              "shortText": "Player Card",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "stats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/stats/_/id/5217746/yang-hansen",
-              "text": "Stats",
-              "shortText": "Stats",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "splits",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/splits/_/id/5217746/yang-hansen",
-              "text": "Splits",
-              "shortText": "Splits",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "gamelog",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/gamelog/_/id/5217746/yang-hansen",
-              "text": "Game Log",
-              "shortText": "Game Log",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "news",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/news/_/id/5217746/yang-hansen",
-              "text": "News",
-              "shortText": "News",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "bio",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/bio/_/id/5217746/yang-hansen",
-              "text": "Bio",
-              "shortText": "Bio",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "overview",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/5217746/yang-hansen",
-              "text": "Overview",
-              "shortText": "Overview",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "advancedstats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/advancedstats/_/id/5217746/yang-hansen",
-              "text": "Advanced Stats",
-              "shortText": "Advanced Stats",
-              "isExternal": false,
-              "isPremium": false
-            }
-          ],
-          "position": {
-            "id": "9",
-            "name": "Center",
-            "displayName": "Center",
-            "abbreviation": "C",
+            "id": "7",
+            "name": "Forward",
+            "displayName": "Forward",
+            "abbreviation": "F",
             "leaf": false
           },
           "team": {
@@ -6214,14 +5978,14 @@
           "notes": {
             "items": [
               {
-                "id": "-21859",
+                "id": "499883",
                 "type": "news",
-                "date": "2025-07-21T15:45Z",
-                "headline": "Hansen (rest) won't play for the rest of the Las Vegas Summer League, Danny Marang of 1080 The Fan Portland reports.",
-                "text": "Hansen turned a lot of heads during Summer League, as he might be a player who can contribute right away for his team once the 2025-26 campaign gets underway. The No. 16 overall pick in the 2025 NBA Draft finished with a strong outing on July 16 against the Pelicans, putting up 15 points to go along with three rebounds, two assists, one steal and two blocks.",
+                "date": "2025-10-19T22:18Z",
+                "headline": "Camara (knee) signed a four-year, $82 million contract extension with the Trail Blazers on Sunday, Shams Charania of ESPN reports.",
+                "text": "Camara gets a long-term deal to stay with the Trail Blazers through 2029-30. The 25-year-old pro has become a key two-way piece for Portland and is coming off a season in which he averaged 11.3 points, 5.8 rebounds, 2.2 assists and 1.5 steals in 32.7 minutes per game across 78 appearances.",
                 "source": "RotoWire",
                 "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/5217746/injuries/-21859?lang=en&region=us"
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4431736/injuries/499883?lang=en&region=us"
                 }
               }
             ]
@@ -6249,17 +6013,914 @@
             "description": "GTD",
             "abbreviation": "GTD"
           },
-          "type": "Rest",
-          "location": "Other",
-          "returnDate": "2025-10-01"
+          "type": "Knee",
+          "location": "Leg",
+          "detail": "Soreness",
+          "returnDate": "2025-10-22"
         }
       },
       {
-        "id": "-20830",
-        "longComment": "While Williams is expected to make a full recovery, this procedure may effectively end his season since the Blazers only have 12 games left and will likely miss the postseason. Health has been a recurring issue for Williams, as he has already missed 50 games this season and has a notorious injury history, but the hopes are that this procedure allows him to tend to the pains in his knee moving forward.",
-        "shortComment": "Williams underwent an arthroscopic procedure Thursday to address inflammation in his left knee and will miss 4-6 weeks.",
+        "id": "499494",
+        "longComment": "Avdija didn't start the second half, and the team announced shortly after that he wouldn't return to the exhibition. Look for Kris Murray and Shaedon Sharpe to see an increase in minutes with Avdija shut down the rest of the way.",
+        "shortComment": "Avdija has been ruled out for the rest of Thursday's preseason game against the Jazz due to upper back stiffness.",
         "status": "Day-To-Day",
-        "date": "2025-07-03T22:08Z",
+        "date": "2025-10-17T02:40Z",
+        "athlete": {
+          "firstName": "Deni",
+          "lastName": "Avdija",
+          "displayName": "Deni Avdija",
+          "shortName": "D. Avdija",
+          "links": [
+            {
+              "language": "en-US",
+              "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/4683021/deni-avdija",
+              "text": "Player Card",
+              "shortText": "Player Card",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/stats/_/id/4683021/deni-avdija",
+              "text": "Stats",
+              "shortText": "Stats",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/splits/_/id/4683021/deni-avdija",
+              "text": "Splits",
+              "shortText": "Splits",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/4683021/deni-avdija",
+              "text": "Game Log",
+              "shortText": "Game Log",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "news",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/news/_/id/4683021/deni-avdija",
+              "text": "News",
+              "shortText": "News",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/bio/_/id/4683021/deni-avdija",
+              "text": "Bio",
+              "shortText": "Bio",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/4683021/deni-avdija",
+              "text": "Overview",
+              "shortText": "Overview",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "advancedstats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4683021/deni-avdija",
+              "text": "Advanced Stats",
+              "shortText": "Advanced Stats",
+              "isExternal": false,
+              "isPremium": false
+            }
+          ],
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4683021.png",
+            "alt": "Deni Avdija"
+          },
+          "position": {
+            "id": "5",
+            "name": "Small Forward",
+            "displayName": "Small Forward",
+            "abbreviation": "SF",
+            "leaf": true
+          },
+          "team": {
+            "id": "22",
+            "uid": "s:40~l:46~t:22",
+            "slug": "portland-trail-blazers",
+            "name": "Trail Blazers",
+            "abbreviation": "POR",
+            "displayName": "Portland Trail Blazers",
+            "logos": [
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "default"
+                ],
+                "lastUpdated": "2024-06-25T21:17Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/por.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:13Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/por.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard"
+                ],
+                "lastUpdated": "2024-06-25T21:18Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/por.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:14Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/primary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:31Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/primary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:31Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/primary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:31Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/primary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:31Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/secondary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:31Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/secondary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:31Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/secondary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:31Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/secondary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:31Z"
+              }
+            ],
+            "links": [
+              {
+                "language": "en-US",
+                "rel": [
+                  "clubhouse",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/_/name/por/portland-trail-blazers",
+                "text": "Clubhouse",
+                "shortText": "Clubhouse",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "roster",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/roster/_/name/por/portland-trail-blazers",
+                "text": "Roster",
+                "shortText": "Roster",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "stats",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/stats/_/name/por/portland-trail-blazers",
+                "text": "Statistics",
+                "shortText": "Statistics",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "schedule",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/schedule/_/name/por",
+                "text": "Schedule",
+                "shortText": "Schedule",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "photos",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/photos/_/name/por",
+                "text": "photos",
+                "shortText": "photos",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "tickets",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.vividseats.com/portland-trail-blazers-tickets--sports-nba-basketball/performer/690?wsUser=717",
+                "text": "Tickets",
+                "shortText": "Tickets",
+                "isExternal": true,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "draftpicks",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/draft/teams/_/name/por/portland-trail-blazers",
+                "text": "Draft Picks",
+                "shortText": "Draft Picks",
+                "isExternal": false,
+                "isPremium": true
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "transactions",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/transactions/_/name/por",
+                "text": "Transactions",
+                "shortText": "Transactions",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "injuries",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/injuries/_/name/por",
+                "text": "Injuries",
+                "shortText": "Injuries",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "depthchart",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/depth/_/name/por",
+                "text": "Depth Chart",
+                "shortText": "Depth Chart",
+                "isExternal": false,
+                "isPremium": false
+              }
+            ]
+          },
+          "notes": {
+            "items": [
+              {
+                "id": "499494",
+                "type": "news",
+                "date": "2025-10-17T02:40Z",
+                "headline": "Avdija has been ruled out for the rest of Thursday's preseason game against the Jazz due to upper back stiffness.",
+                "text": "Avdija didn't start the second half, and the team announced shortly after that he wouldn't return to the exhibition. Look for Kris Murray and Shaedon Sharpe to see an increase in minutes with Avdija shut down the rest of the way.",
+                "source": "RotoWire",
+                "injury": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4683021/injuries/499494?lang=en&region=us"
+                }
+              }
+            ]
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
+          }
+        },
+        "source": {
+          "id": "1",
+          "description": "basic/manual",
+          "state": "basic"
+        },
+        "type": {
+          "id": "6",
+          "name": "INJURY_STATUS_DAYTODAY",
+          "description": "day-to-day",
+          "abbreviation": "DD"
+        },
+        "details": {
+          "fantasyStatus": {
+            "description": "GTD",
+            "abbreviation": "GTD"
+          },
+          "type": "Back",
+          "location": "Torso",
+          "detail": "Not Specified",
+          "side": "Not Specified",
+          "returnDate": "2025-10-22"
+        }
+      },
+      {
+        "id": "499466",
+        "longComment": "Thybulle won't see any action during the preseason due to a lingering right knee injury. He'll have just under a week to get ready for the 2025-26 regular-season opener Wednesday against the Timberwolves.",
+        "shortComment": "Thybulle (knee) has been ruled out for Thursday's preseason game against the Jazz.",
+        "status": "Day-To-Day",
+        "date": "2025-10-16T23:30Z",
+        "athlete": {
+          "firstName": "Matisse",
+          "lastName": "Thybulle",
+          "displayName": "Matisse Thybulle",
+          "shortName": "M. Thybulle",
+          "links": [
+            {
+              "language": "en-US",
+              "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/3907498/matisse-thybulle",
+              "text": "Player Card",
+              "shortText": "Player Card",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/stats/_/id/3907498/matisse-thybulle",
+              "text": "Stats",
+              "shortText": "Stats",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/splits/_/id/3907498/matisse-thybulle",
+              "text": "Splits",
+              "shortText": "Splits",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/3907498/matisse-thybulle",
+              "text": "Game Log",
+              "shortText": "Game Log",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "news",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/news/_/id/3907498/matisse-thybulle",
+              "text": "News",
+              "shortText": "News",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/bio/_/id/3907498/matisse-thybulle",
+              "text": "Bio",
+              "shortText": "Bio",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/3907498/matisse-thybulle",
+              "text": "Overview",
+              "shortText": "Overview",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "advancedstats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/3907498/matisse-thybulle",
+              "text": "Advanced Stats",
+              "shortText": "Advanced Stats",
+              "isExternal": false,
+              "isPremium": false
+            }
+          ],
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/3907498.png",
+            "alt": "Matisse Thybulle"
+          },
+          "position": {
+            "id": "2",
+            "name": "Shooting Guard",
+            "displayName": "Shooting Guard",
+            "abbreviation": "SG",
+            "leaf": true
+          },
+          "team": {
+            "id": "22",
+            "uid": "s:40~l:46~t:22",
+            "slug": "portland-trail-blazers",
+            "name": "Trail Blazers",
+            "abbreviation": "POR",
+            "displayName": "Portland Trail Blazers",
+            "logos": [
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "default"
+                ],
+                "lastUpdated": "2024-06-25T21:17Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/por.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:13Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/por.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard"
+                ],
+                "lastUpdated": "2024-06-25T21:18Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/por.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:14Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/primary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:31Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/primary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:31Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/primary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:31Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/primary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:31Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/secondary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:31Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/secondary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:31Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/secondary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:31Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/secondary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:31Z"
+              }
+            ],
+            "links": [
+              {
+                "language": "en-US",
+                "rel": [
+                  "clubhouse",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/_/name/por/portland-trail-blazers",
+                "text": "Clubhouse",
+                "shortText": "Clubhouse",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "roster",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/roster/_/name/por/portland-trail-blazers",
+                "text": "Roster",
+                "shortText": "Roster",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "stats",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/stats/_/name/por/portland-trail-blazers",
+                "text": "Statistics",
+                "shortText": "Statistics",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "schedule",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/schedule/_/name/por",
+                "text": "Schedule",
+                "shortText": "Schedule",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "photos",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/photos/_/name/por",
+                "text": "photos",
+                "shortText": "photos",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "tickets",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.vividseats.com/portland-trail-blazers-tickets--sports-nba-basketball/performer/690?wsUser=717",
+                "text": "Tickets",
+                "shortText": "Tickets",
+                "isExternal": true,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "draftpicks",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/draft/teams/_/name/por/portland-trail-blazers",
+                "text": "Draft Picks",
+                "shortText": "Draft Picks",
+                "isExternal": false,
+                "isPremium": true
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "transactions",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/transactions/_/name/por",
+                "text": "Transactions",
+                "shortText": "Transactions",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "injuries",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/injuries/_/name/por",
+                "text": "Injuries",
+                "shortText": "Injuries",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "depthchart",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/depth/_/name/por",
+                "text": "Depth Chart",
+                "shortText": "Depth Chart",
+                "isExternal": false,
+                "isPremium": false
+              }
+            ]
+          },
+          "notes": {
+            "items": [
+              {
+                "id": "499466",
+                "type": "news",
+                "date": "2025-10-16T23:30Z",
+                "headline": "Thybulle (knee) has been ruled out for Thursday's preseason game against the Jazz.",
+                "text": "Thybulle won't see any action during the preseason due to a lingering right knee injury. He'll have just under a week to get ready for the 2025-26 regular-season opener Wednesday against the Timberwolves.",
+                "source": "RotoWire",
+                "injury": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/3907498/injuries/499466?lang=en&region=us"
+                }
+              }
+            ]
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
+          }
+        },
+        "source": {
+          "id": "1",
+          "description": "basic/manual",
+          "state": "basic"
+        },
+        "type": {
+          "id": "6",
+          "name": "INJURY_STATUS_DAYTODAY",
+          "description": "day-to-day",
+          "abbreviation": "DD"
+        },
+        "details": {
+          "fantasyStatus": {
+            "description": "GTD",
+            "abbreviation": "GTD"
+          },
+          "type": "Knee",
+          "location": "Leg",
+          "detail": "Soreness",
+          "side": "Right",
+          "returnDate": "2025-10-22"
+        }
+      },
+      {
+        "id": "498174",
+        "longComment": "Williams has participated in non-contact portions of training camp, and head coach Chauncey Billups in encouraged by the veteran big man's progress from his March arthroscopic knee surgery. Williams still remains unlikely to be available for Thursday's preseason opener in Golden State and perhaps more exhibition play beyond that. In the meantime, Yang Hansen and Duop Reath will battle for backup center minutes behind Donovan Clingan.",
+        "shortComment": "Williams (knee) still hasn't been cleared for contact, Sean Highkin of Rip City Radio 620 Portland reports.",
+        "status": "Day-To-Day",
+        "date": "2025-10-06T21:39Z",
         "athlete": {
           "firstName": "Robert",
           "lastName": "Williams III",
@@ -6660,14 +7321,14 @@
           "notes": {
             "items": [
               {
-                "id": "-20830",
+                "id": "498174",
                 "type": "news",
-                "date": "2025-07-03T22:08Z",
-                "headline": "Williams underwent an arthroscopic procedure Thursday to address inflammation in his left knee and will miss 4-6 weeks.",
-                "text": "While Williams is expected to make a full recovery, this procedure may effectively end his season since the Blazers only have 12 games left and will likely miss the postseason. Health has been a recurring issue for Williams, as he has already missed 50 games this season and has a notorious injury history, but the hopes are that this procedure allows him to tend to the pains in his knee moving forward.",
+                "date": "2025-10-06T21:39Z",
+                "headline": "Williams (knee) still hasn't been cleared for contact, Sean Highkin of Rip City Radio 620 Portland reports.",
+                "text": "Williams has participated in non-contact portions of training camp, and head coach Chauncey Billups in encouraged by the veteran big man's progress from his March arthroscopic knee surgery. Williams still remains unlikely to be available for Thursday's preseason opener in Golden State and perhaps more exhibition play beyond that. In the meantime, Yang Hansen and Duop Reath will battle for backup center minutes behind Donovan Clingan.",
                 "source": "RotoWire",
                 "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/4066211/injuries/-20830?lang=en&region=us"
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4066211/injuries/498174?lang=en&region=us"
                 }
               }
             ]
@@ -6699,463 +7360,15 @@
           "location": "Leg",
           "detail": "Surgery",
           "side": "Left",
-          "returnDate": "2025-10-01"
+          "returnDate": "2025-10-22"
         }
       },
       {
-        "id": "-20800",
-        "longComment": "Sharpe will end up missing the final two games of the regular season due to right knee soreness. With Sharpe and Scoot Henderson (concussion) sidelined, Dalano Banton and Rayan Rupert should get an extended run in Sunday's regular-season finale. With Portland eliminated from playoff contention, Sharpe will end his third season in Portland averaging 18.5 points, 4.5 rebounds, 2.8 assists and 0.9 steals over 31.3 minutes per game in 72 outings (52 starts).",
-        "shortComment": "Sharpe (knee) has been ruled out for Sunday's game against the Lakers.",
-        "status": "Day-To-Day",
-        "date": "2025-07-03T22:08Z",
-        "athlete": {
-          "firstName": "Shaedon",
-          "lastName": "Sharpe",
-          "displayName": "Shaedon Sharpe",
-          "shortName": "S. Sharpe",
-          "links": [
-            {
-              "language": "en-US",
-              "rel": [
-                "playercard",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/4914336/shaedon-sharpe",
-              "text": "Player Card",
-              "shortText": "Player Card",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "stats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/stats/_/id/4914336/shaedon-sharpe",
-              "text": "Stats",
-              "shortText": "Stats",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "splits",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/splits/_/id/4914336/shaedon-sharpe",
-              "text": "Splits",
-              "shortText": "Splits",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "gamelog",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/gamelog/_/id/4914336/shaedon-sharpe",
-              "text": "Game Log",
-              "shortText": "Game Log",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "news",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/news/_/id/4914336/shaedon-sharpe",
-              "text": "News",
-              "shortText": "News",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "bio",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/bio/_/id/4914336/shaedon-sharpe",
-              "text": "Bio",
-              "shortText": "Bio",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "overview",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/4914336/shaedon-sharpe",
-              "text": "Overview",
-              "shortText": "Overview",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "advancedstats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4914336/shaedon-sharpe",
-              "text": "Advanced Stats",
-              "shortText": "Advanced Stats",
-              "isExternal": false,
-              "isPremium": false
-            }
-          ],
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4914336.png",
-            "alt": "Shaedon Sharpe"
-          },
-          "position": {
-            "id": "2",
-            "name": "Shooting Guard",
-            "displayName": "Shooting Guard",
-            "abbreviation": "SG",
-            "leaf": true
-          },
-          "team": {
-            "id": "22",
-            "uid": "s:40~l:46~t:22",
-            "slug": "portland-trail-blazers",
-            "name": "Trail Blazers",
-            "abbreviation": "POR",
-            "displayName": "Portland Trail Blazers",
-            "logos": [
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "default"
-                ],
-                "lastUpdated": "2024-06-25T21:17Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/por.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "dark"
-                ],
-                "lastUpdated": "2024-06-25T21:13Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/por.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard"
-                ],
-                "lastUpdated": "2024-06-25T21:18Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/por.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard",
-                  "dark"
-                ],
-                "lastUpdated": "2024-06-25T21:14Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/primary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:31Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/primary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:31Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/primary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:31Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/primary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:31Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/secondary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:31Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/secondary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:31Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/secondary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:31Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/secondary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:31Z"
-              }
-            ],
-            "links": [
-              {
-                "language": "en-US",
-                "rel": [
-                  "clubhouse",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/_/name/por/portland-trail-blazers",
-                "text": "Clubhouse",
-                "shortText": "Clubhouse",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "roster",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/roster/_/name/por/portland-trail-blazers",
-                "text": "Roster",
-                "shortText": "Roster",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "stats",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/stats/_/name/por/portland-trail-blazers",
-                "text": "Statistics",
-                "shortText": "Statistics",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "schedule",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/schedule/_/name/por",
-                "text": "Schedule",
-                "shortText": "Schedule",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "photos",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/photos/_/name/por",
-                "text": "photos",
-                "shortText": "photos",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "tickets",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.vividseats.com/portland-trail-blazers-tickets--sports-nba-basketball/performer/690?wsUser=717",
-                "text": "Tickets",
-                "shortText": "Tickets",
-                "isExternal": true,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "draftpicks",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/draft/teams/_/name/por/portland-trail-blazers",
-                "text": "Draft Picks",
-                "shortText": "Draft Picks",
-                "isExternal": false,
-                "isPremium": true
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "transactions",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/transactions/_/name/por",
-                "text": "Transactions",
-                "shortText": "Transactions",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "injuries",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/injuries/_/name/por",
-                "text": "Injuries",
-                "shortText": "Injuries",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "depthchart",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/depth/_/name/por",
-                "text": "Depth Chart",
-                "shortText": "Depth Chart",
-                "isExternal": false,
-                "isPremium": false
-              }
-            ]
-          },
-          "notes": {
-            "items": [
-              {
-                "id": "-20800",
-                "type": "news",
-                "date": "2025-07-03T22:08Z",
-                "headline": "Sharpe (knee) has been ruled out for Sunday's game against the Lakers.",
-                "text": "Sharpe will end up missing the final two games of the regular season due to right knee soreness. With Sharpe and Scoot Henderson (concussion) sidelined, Dalano Banton and Rayan Rupert should get an extended run in Sunday's regular-season finale. With Portland eliminated from playoff contention, Sharpe will end his third season in Portland averaging 18.5 points, 4.5 rebounds, 2.8 assists and 0.9 steals over 31.3 minutes per game in 72 outings (52 starts).",
-                "source": "RotoWire",
-                "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/4914336/injuries/-20800?lang=en&region=us"
-                }
-              }
-            ]
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          }
-        },
-        "source": {
-          "id": "1",
-          "description": "basic/manual",
-          "state": "basic"
-        },
-        "type": {
-          "id": "6",
-          "name": "INJURY_STATUS_DAYTODAY",
-          "description": "day-to-day",
-          "abbreviation": "DD"
-        },
-        "details": {
-          "fantasyStatus": {
-            "description": "GTD",
-            "abbreviation": "GTD"
-          },
-          "type": "Knee",
-          "location": "Leg",
-          "detail": "Soreness",
-          "side": "Right",
-          "returnDate": "2025-10-01"
-        }
-      },
-      {
-        "id": "-20727",
-        "longComment": "A concussion will keep Henderson on the sidelines for the final game of the 2024-25 season. The second-year guard showed some flashes of brilliance throughout the campaign, but his fantasy upside was often limited by his role in the rotation. He ends the campaign with averages of 12.7 points and 5.1 assists per game, and aside from a slight regression compared to his rookie year, he also started in only 10 of his 66 regular-season appearances.",
-        "shortComment": "Henderson (concussion) is out for Sunday's game against the Lakers.",
-        "status": "Day-To-Day",
-        "date": "2025-07-03T22:08Z",
+        "id": "497730",
+        "longComment": "Henderson sustained the injury during an offseason workout, and the timeline for a return will likely sideline him for the start of the upcoming season. With Henderson on the shelf, Portland will likely lean on Jrue Holiday and Shaedon Sharpe in the backcourt. A clearer path to minutes in the early going should exist for Rayan Rupert as well.",
+        "shortComment": "The Trail Blazers announced Friday that Henderson will resume basketball activities in four-to-eight weeks after suffering a torn left hamstring, Marc J. Spears of ESPN.com reports.",
+        "status": "Out",
+        "date": "2025-09-26T18:39Z",
         "athlete": {
           "firstName": "Scoot",
           "lastName": "Henderson",
@@ -7556,14 +7769,14 @@
           "notes": {
             "items": [
               {
-                "id": "-20727",
+                "id": "497730",
                 "type": "news",
-                "date": "2025-07-03T22:08Z",
-                "headline": "Henderson (concussion) is out for Sunday's game against the Lakers.",
-                "text": "A concussion will keep Henderson on the sidelines for the final game of the 2024-25 season. The second-year guard showed some flashes of brilliance throughout the campaign, but his fantasy upside was often limited by his role in the rotation. He ends the campaign with averages of 12.7 points and 5.1 assists per game, and aside from a slight regression compared to his rookie year, he also started in only 10 of his 66 regular-season appearances.",
+                "date": "2025-09-26T18:39Z",
+                "headline": "The Trail Blazers announced Friday that Henderson will resume basketball activities in four-to-eight weeks after suffering a torn left hamstring, Marc J. Spears of ESPN.com reports.",
+                "text": "Henderson sustained the injury during an offseason workout, and the timeline for a return will likely sideline him for the start of the upcoming season. With Henderson on the shelf, Portland will likely lean on Jrue Holiday and Shaedon Sharpe in the backcourt. A clearer path to minutes in the early going should exist for Rayan Rupert as well.",
                 "source": "RotoWire",
                 "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/4683678/injuries/-20727?lang=en&region=us"
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4683678/injuries/497730?lang=en&region=us"
                 }
               }
             ]
@@ -7581,34 +7794,34 @@
           "state": "basic"
         },
         "type": {
-          "id": "6",
-          "name": "INJURY_STATUS_DAYTODAY",
-          "description": "day-to-day",
-          "abbreviation": "DD"
+          "id": "4",
+          "name": "INJURY_STATUS_OUT",
+          "description": "out",
+          "abbreviation": "O"
         },
         "details": {
           "fantasyStatus": {
-            "description": "GTD",
-            "abbreviation": "GTD"
+            "description": "OUT",
+            "abbreviation": "OUT"
           },
-          "type": "Concussion",
-          "location": "Head",
-          "detail": "Concussion",
+          "type": "Hamstring",
+          "location": "Leg",
+          "detail": "Strain",
           "side": "Not Specified",
-          "returnDate": "2025-10-01"
+          "returnDate": "2025-11-10"
         }
       },
       {
-        "id": "-20720",
-        "longComment": "Grant will miss his 17th straight game due to this right knee injury, and the veteran forward was pretty much a non-factor for the Trail Blazers in the second half of the season due to his recurrent injuries. He was limited to only six games since the All-Star break, a stretch in which he averaged 12.5 points per game while shooting 30.1 percent from the floor.",
-        "shortComment": "Grant (knee) is out for Sunday's game against the Lakers.",
-        "status": "Day-To-Day",
-        "date": "2025-07-03T22:08Z",
+        "id": "497706",
+        "longComment": "Lillard underwent surgery on a torn Achilles tendon in his left foot over the summer after suffering the injury during the first round of the NBA playoffs with the Bucks against the Pacers. The veteran guard was then waived by Milwaukee on July 1, making him an unrestricted free agent. The future Hall of Famer then decided to return to the Blazers on a three-year contract worth $42 million with a player option for the 2027-28 season. He also has a no-trade clause in his deal.",
+        "shortComment": "Lillard won't be back on the court for the 2025-26 season, as he made clear during an interview with YouTube influencer Speed on Wednesday.",
+        "status": "Out",
+        "date": "2025-09-25T16:32Z",
         "athlete": {
-          "firstName": "Jerami",
-          "lastName": "Grant",
-          "displayName": "Jerami Grant",
-          "shortName": "J. Grant",
+          "firstName": "Damian",
+          "lastName": "Lillard",
+          "displayName": "Damian Lillard",
+          "shortName": "D. Lillard",
           "links": [
             {
               "language": "en-US",
@@ -7617,7 +7830,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/_/id/2991070/jerami-grant",
+              "href": "https://www.espn.com/nba/player/_/id/6606/damian-lillard",
               "text": "Player Card",
               "shortText": "Player Card",
               "isExternal": false,
@@ -7630,7 +7843,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/stats/_/id/2991070/jerami-grant",
+              "href": "https://www.espn.com/nba/player/stats/_/id/6606/damian-lillard",
               "text": "Stats",
               "shortText": "Stats",
               "isExternal": false,
@@ -7643,7 +7856,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/splits/_/id/2991070/jerami-grant",
+              "href": "https://www.espn.com/nba/player/splits/_/id/6606/damian-lillard",
               "text": "Splits",
               "shortText": "Splits",
               "isExternal": false,
@@ -7656,7 +7869,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/gamelog/_/id/2991070/jerami-grant",
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/6606/damian-lillard",
               "text": "Game Log",
               "shortText": "Game Log",
               "isExternal": false,
@@ -7669,7 +7882,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/news/_/id/2991070/jerami-grant",
+              "href": "https://www.espn.com/nba/player/news/_/id/6606/damian-lillard",
               "text": "News",
               "shortText": "News",
               "isExternal": false,
@@ -7682,7 +7895,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/bio/_/id/2991070/jerami-grant",
+              "href": "https://www.espn.com/nba/player/bio/_/id/6606/damian-lillard",
               "text": "Bio",
               "shortText": "Bio",
               "isExternal": false,
@@ -7695,7 +7908,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/_/id/2991070/jerami-grant",
+              "href": "https://www.espn.com/nba/player/_/id/6606/damian-lillard",
               "text": "Overview",
               "shortText": "Overview",
               "isExternal": false,
@@ -7708,7 +7921,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/advancedstats/_/id/2991070/jerami-grant",
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/6606/damian-lillard",
               "text": "Advanced Stats",
               "shortText": "Advanced Stats",
               "isExternal": false,
@@ -7716,26 +7929,26 @@
             }
           ],
           "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/nba/players/full/2991070.png",
-            "alt": "Jerami Grant"
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/6606.png",
+            "alt": "Damian Lillard"
           },
           "position": {
-            "id": "5",
-            "name": "Small Forward",
-            "displayName": "Small Forward",
-            "abbreviation": "SF",
+            "id": "1",
+            "name": "Point Guard",
+            "displayName": "Point Guard",
+            "abbreviation": "PG",
             "leaf": true
           },
           "team": {
-            "id": "22",
-            "uid": "s:40~l:46~t:22",
-            "slug": "portland-trail-blazers",
-            "name": "Trail Blazers",
-            "abbreviation": "POR",
-            "displayName": "Portland Trail Blazers",
+            "id": "15",
+            "uid": "s:40~l:46~t:15",
+            "slug": "milwaukee-bucks",
+            "name": "Bucks",
+            "abbreviation": "MIL",
+            "displayName": "Milwaukee Bucks",
             "logos": [
               {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
                 "width": 500,
                 "height": 500,
                 "alt": "",
@@ -7746,7 +7959,7 @@
                 "lastUpdated": "2024-06-25T21:17Z"
               },
               {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/por.png",
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/mil.png",
                 "width": 500,
                 "height": 500,
                 "alt": "",
@@ -7757,7 +7970,7 @@
                 "lastUpdated": "2024-06-25T21:13Z"
               },
               {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/por.png",
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mil.png",
                 "width": 500,
                 "height": 500,
                 "alt": "",
@@ -7768,7 +7981,7 @@
                 "lastUpdated": "2024-06-25T21:18Z"
               },
               {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/por.png",
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/mil.png",
                 "width": 500,
                 "height": 500,
                 "alt": "",
@@ -7780,7 +7993,7 @@
                 "lastUpdated": "2024-06-25T21:14Z"
               },
               {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/primary_logo_on_white_color.png",
+                "href": "https://a.espncdn.com/guid/f59bbabc-eedb-9ad2-c5dd-9bcd9f450a2f/logos/primary_logo_on_white_color.png",
                 "width": 4096,
                 "height": 4096,
                 "alt": "",
@@ -7788,10 +8001,10 @@
                   "full",
                   "primary_logo_on_white_color"
                 ],
-                "lastUpdated": "2024-12-03T19:31Z"
+                "lastUpdated": "2024-12-03T19:33Z"
               },
               {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/primary_logo_on_black_color.png",
+                "href": "https://a.espncdn.com/guid/f59bbabc-eedb-9ad2-c5dd-9bcd9f450a2f/logos/primary_logo_on_black_color.png",
                 "width": 4096,
                 "height": 4096,
                 "alt": "",
@@ -7799,10 +8012,10 @@
                   "full",
                   "primary_logo_on_black_color"
                 ],
-                "lastUpdated": "2024-12-03T19:31Z"
+                "lastUpdated": "2024-12-03T19:33Z"
               },
               {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/primary_logo_on_primary_color.png",
+                "href": "https://a.espncdn.com/guid/f59bbabc-eedb-9ad2-c5dd-9bcd9f450a2f/logos/primary_logo_on_primary_color.png",
                 "width": 4096,
                 "height": 4096,
                 "alt": "",
@@ -7810,10 +8023,10 @@
                   "full",
                   "primary_logo_on_primary_color"
                 ],
-                "lastUpdated": "2024-12-03T19:31Z"
+                "lastUpdated": "2024-12-03T19:33Z"
               },
               {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/primary_logo_on_secondary_color.png",
+                "href": "https://a.espncdn.com/guid/f59bbabc-eedb-9ad2-c5dd-9bcd9f450a2f/logos/primary_logo_on_secondary_color.png",
                 "width": 4096,
                 "height": 4096,
                 "alt": "",
@@ -7821,10 +8034,10 @@
                   "full",
                   "primary_logo_on_secondary_color"
                 ],
-                "lastUpdated": "2024-12-03T19:31Z"
+                "lastUpdated": "2024-12-03T19:33Z"
               },
               {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/secondary_logo_on_white_color.png",
+                "href": "https://a.espncdn.com/guid/f59bbabc-eedb-9ad2-c5dd-9bcd9f450a2f/logos/secondary_logo_on_white_color.png",
                 "width": 4096,
                 "height": 4096,
                 "alt": "",
@@ -7832,10 +8045,10 @@
                   "full",
                   "secondary_logo_on_white_color"
                 ],
-                "lastUpdated": "2024-12-03T19:31Z"
+                "lastUpdated": "2024-12-03T19:33Z"
               },
               {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/secondary_logo_on_black_color.png",
+                "href": "https://a.espncdn.com/guid/f59bbabc-eedb-9ad2-c5dd-9bcd9f450a2f/logos/secondary_logo_on_black_color.png",
                 "width": 4096,
                 "height": 4096,
                 "alt": "",
@@ -7843,10 +8056,10 @@
                   "full",
                   "secondary_logo_on_black_color"
                 ],
-                "lastUpdated": "2024-12-03T19:31Z"
+                "lastUpdated": "2024-12-03T19:33Z"
               },
               {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/secondary_logo_on_primary_color.png",
+                "href": "https://a.espncdn.com/guid/f59bbabc-eedb-9ad2-c5dd-9bcd9f450a2f/logos/secondary_logo_on_primary_color.png",
                 "width": 4096,
                 "height": 4096,
                 "alt": "",
@@ -7854,10 +8067,10 @@
                   "full",
                   "secondary_logo_on_primary_color"
                 ],
-                "lastUpdated": "2024-12-03T19:31Z"
+                "lastUpdated": "2024-12-03T19:33Z"
               },
               {
-                "href": "https://a.espncdn.com/guid/ed294c02-3c44-db14-9e06-1b4e8cff9558/logos/secondary_logo_on_secondary_color.png",
+                "href": "https://a.espncdn.com/guid/f59bbabc-eedb-9ad2-c5dd-9bcd9f450a2f/logos/secondary_logo_on_secondary_color.png",
                 "width": 4096,
                 "height": 4096,
                 "alt": "",
@@ -7865,7 +8078,7 @@
                   "full",
                   "secondary_logo_on_secondary_color"
                 ],
-                "lastUpdated": "2024-12-03T19:31Z"
+                "lastUpdated": "2024-12-03T19:33Z"
               }
             ],
             "links": [
@@ -7876,7 +8089,7 @@
                   "desktop",
                   "team"
                 ],
-                "href": "https://www.espn.com/nba/team/_/name/por/portland-trail-blazers",
+                "href": "https://www.espn.com/nba/team/_/name/mil/milwaukee-bucks",
                 "text": "Clubhouse",
                 "shortText": "Clubhouse",
                 "isExternal": false,
@@ -7889,7 +8102,7 @@
                   "desktop",
                   "team"
                 ],
-                "href": "https://www.espn.com/nba/team/roster/_/name/por/portland-trail-blazers",
+                "href": "https://www.espn.com/nba/team/roster/_/name/mil/milwaukee-bucks",
                 "text": "Roster",
                 "shortText": "Roster",
                 "isExternal": false,
@@ -7902,7 +8115,7 @@
                   "desktop",
                   "team"
                 ],
-                "href": "https://www.espn.com/nba/team/stats/_/name/por/portland-trail-blazers",
+                "href": "https://www.espn.com/nba/team/stats/_/name/mil/milwaukee-bucks",
                 "text": "Statistics",
                 "shortText": "Statistics",
                 "isExternal": false,
@@ -7915,7 +8128,7 @@
                   "desktop",
                   "team"
                 ],
-                "href": "https://www.espn.com/nba/team/schedule/_/name/por",
+                "href": "https://www.espn.com/nba/team/schedule/_/name/mil",
                 "text": "Schedule",
                 "shortText": "Schedule",
                 "isExternal": false,
@@ -7928,7 +8141,7 @@
                   "desktop",
                   "team"
                 ],
-                "href": "https://www.espn.com/nba/team/photos/_/name/por",
+                "href": "https://www.espn.com/nba/team/photos/_/name/mil",
                 "text": "photos",
                 "shortText": "photos",
                 "isExternal": false,
@@ -7941,7 +8154,7 @@
                   "desktop",
                   "team"
                 ],
-                "href": "https://www.vividseats.com/portland-trail-blazers-tickets--sports-nba-basketball/performer/690?wsUser=717",
+                "href": "https://www.vividseats.com/milwaukee-bucks-tickets--sports-nba-basketball/performer/550?wsUser=717",
                 "text": "Tickets",
                 "shortText": "Tickets",
                 "isExternal": true,
@@ -7954,7 +8167,7 @@
                   "desktop",
                   "team"
                 ],
-                "href": "https://www.espn.com/nba/draft/teams/_/name/por/portland-trail-blazers",
+                "href": "https://www.espn.com/nba/draft/teams/_/name/mil/milwaukee-bucks",
                 "text": "Draft Picks",
                 "shortText": "Draft Picks",
                 "isExternal": false,
@@ -7967,7 +8180,7 @@
                   "desktop",
                   "team"
                 ],
-                "href": "https://www.espn.com/nba/team/transactions/_/name/por",
+                "href": "https://www.espn.com/nba/team/transactions/_/name/mil",
                 "text": "Transactions",
                 "shortText": "Transactions",
                 "isExternal": false,
@@ -7980,7 +8193,7 @@
                   "desktop",
                   "team"
                 ],
-                "href": "https://www.espn.com/nba/team/injuries/_/name/por",
+                "href": "https://www.espn.com/nba/team/injuries/_/name/mil",
                 "text": "Injuries",
                 "shortText": "Injuries",
                 "isExternal": false,
@@ -7993,7 +8206,7 @@
                   "desktop",
                   "team"
                 ],
-                "href": "https://www.espn.com/nba/team/depth/_/name/por",
+                "href": "https://www.espn.com/nba/team/depth/_/name/mil",
                 "text": "Depth Chart",
                 "shortText": "Depth Chart",
                 "isExternal": false,
@@ -8004,14 +8217,14 @@
           "notes": {
             "items": [
               {
-                "id": "-20720",
+                "id": "497706",
                 "type": "news",
-                "date": "2025-07-03T22:08Z",
-                "headline": "Grant (knee) is out for Sunday's game against the Lakers.",
-                "text": "Grant will miss his 17th straight game due to this right knee injury, and the veteran forward was pretty much a non-factor for the Trail Blazers in the second half of the season due to his recurrent injuries. He was limited to only six games since the All-Star break, a stretch in which he averaged 12.5 points per game while shooting 30.1 percent from the floor.",
+                "date": "2025-09-25T16:32Z",
+                "headline": "Lillard won't be back on the court for the 2025-26 season, as he made clear during an interview with YouTube influencer Speed on Wednesday.",
+                "text": "Lillard underwent surgery on a torn Achilles tendon in his left foot over the summer after suffering the injury during the first round of the NBA playoffs with the Bucks against the Pacers. The veteran guard was then waived by Milwaukee on July 1, making him an unrestricted free agent. The future Hall of Famer then decided to return to the Blazers on a three-year contract worth $42 million with a player option for the 2027-28 season. He also has a no-trade clause in his deal.",
                 "source": "RotoWire",
                 "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/2991070/injuries/-20720?lang=en&region=us"
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/6606/injuries/497706?lang=en&region=us"
                 }
               }
             ]
@@ -8029,21 +8242,21 @@
           "state": "basic"
         },
         "type": {
-          "id": "6",
-          "name": "INJURY_STATUS_DAYTODAY",
-          "description": "day-to-day",
-          "abbreviation": "DD"
+          "id": "4",
+          "name": "INJURY_STATUS_OUT",
+          "description": "out",
+          "abbreviation": "O"
         },
         "details": {
           "fantasyStatus": {
-            "description": "GTD",
-            "abbreviation": "GTD"
+            "description": "OUT",
+            "abbreviation": "OUT"
           },
-          "type": "Knee",
+          "type": "Achilles",
           "location": "Leg",
-          "detail": "Inflammation",
-          "side": "Right",
-          "returnDate": "2025-10-01"
+          "detail": "Surgery",
+          "side": "Left",
+          "returnDate": "2026-04-01"
         }
       }
     ],
@@ -8055,8 +8268,9 @@
       "displayName": "Portland Trail Blazers",
       "color": "e03a3e",
       "logo": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
+      "recordSummary": "1-3",
       "seasonSummary": "2025-26",
-      "standingSummary": "1st in Northwest Division"
+      "standingSummary": "3rd in Northwest Division"
     }
   }
 }

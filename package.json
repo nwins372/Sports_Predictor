@@ -21,7 +21,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "update-stats": "node scripts/fetch_team_stats.js",
+    "update-nba": "node scripts/fetch_espn_teams.js --league=nba",
+    "update-nfl": "node scripts/fetch_espn_teams.js --league=nfl",
+    "update-mlb": "node scripts/fetch_espn_teams.js --league=mlb"
   },
   "eslintConfig": {
     "extends": [

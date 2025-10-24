@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2025-09-25T23:34:59.550Z",
+  "fetchedAt": "2025-10-20T18:34:28.176Z",
   "detail": {
     "team": {
       "id": "26",
@@ -148,7 +148,147 @@
           "lastUpdated": "2024-12-04T21:03Z"
         }
       ],
-      "record": {},
+      "record": {
+        "items": [
+          {
+            "description": "Overall Record",
+            "type": "total",
+            "summary": "1-3",
+            "stats": [
+              {
+                "name": "OTLosses",
+                "value": 0
+              },
+              {
+                "name": "OTWins",
+                "value": 0
+              },
+              {
+                "name": "avgPointsAgainst",
+                "value": 129.25
+              },
+              {
+                "name": "avgPointsFor",
+                "value": 122.5
+              },
+              {
+                "name": "differential",
+                "value": -6.800000000000011
+              },
+              {
+                "name": "divisionWinPercent",
+                "value": 1
+              },
+              {
+                "name": "gamesBehind",
+                "value": 3.5
+              },
+              {
+                "name": "gamesPlayed",
+                "value": 4
+              },
+              {
+                "name": "leagueWinPercent",
+                "value": 0.25
+              },
+              {
+                "name": "losses",
+                "value": 3
+              },
+              {
+                "name": "playoffSeed",
+                "value": 11
+              },
+              {
+                "name": "pointDifferential",
+                "value": -27
+              },
+              {
+                "name": "points",
+                "value": -1
+              },
+              {
+                "name": "pointsAgainst",
+                "value": 517
+              },
+              {
+                "name": "pointsFor",
+                "value": 490
+              },
+              {
+                "name": "streak",
+                "value": 1
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 0.25
+              },
+              {
+                "name": "wins",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "description": "Home Record",
+            "type": "home",
+            "summary": "1-1",
+            "stats": [
+              {
+                "name": "wins",
+                "value": 1
+              },
+              {
+                "name": "losses",
+                "value": 1
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 0.5
+              },
+              {
+                "name": "OTLosses",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "description": "Away Record",
+            "type": "road",
+            "summary": "0-2",
+            "stats": [
+              {
+                "name": "wins",
+                "value": 0
+              },
+              {
+                "name": "losses",
+                "value": 2
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 0
+              },
+              {
+                "name": "OTLosses",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
       "groups": {
         "id": "11",
         "parent": {
@@ -326,30 +466,30 @@
           ]
         },
         "team": {
-          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/26?lang=en&region=us"
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/teams/26?lang=en&region=us"
         }
       },
       "nextEvent": [
         {
-          "id": "401812687",
-          "date": "2025-10-09T00:00Z",
-          "name": "Utah Jazz at Houston Rockets",
-          "shortName": "UTAH @ HOU",
+          "id": "401809940",
+          "date": "2025-10-23T01:00Z",
+          "name": "LA Clippers at Utah Jazz",
+          "shortName": "LAC @ UTAH",
           "season": {
             "year": 2026,
             "displayName": "2025-26"
           },
           "seasonType": {
-            "id": "1",
-            "type": 1,
-            "name": "Preseason",
-            "abbreviation": "pre"
+            "id": "2",
+            "type": 2,
+            "name": "Regular Season",
+            "abbreviation": "reg"
           },
           "timeValid": true,
           "competitions": [
             {
-              "id": "401812687",
-              "date": "2025-10-09T00:00Z",
+              "id": "401809940",
+              "date": "2025-10-23T01:00Z",
               "attendance": 0,
               "type": {
                 "id": "1",
@@ -363,258 +503,18 @@
               "boxscoreAvailable": false,
               "ticketsAvailable": true,
               "venue": {
-                "fullName": "Toyota Center (Houston)",
+                "fullName": "Delta Center",
                 "address": {
-                  "city": "Houston",
-                  "state": "TX"
+                  "city": "Salt Lake City",
+                  "state": "UT"
                 }
               },
               "competitors": [
                 {
-                  "id": "10",
+                  "id": "26",
                   "type": "team",
                   "order": 0,
                   "homeAway": "home",
-                  "team": {
-                    "id": "10",
-                    "location": "Houston",
-                    "abbreviation": "HOU",
-                    "displayName": "Houston Rockets",
-                    "shortDisplayName": "Rockets",
-                    "logos": [
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "default"
-                        ],
-                        "lastUpdated": "2024-06-25T21:17Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/hou.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "dark"
-                        ],
-                        "lastUpdated": "2025-01-21T22:35Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/hou.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "scoreboard"
-                        ],
-                        "lastUpdated": "2024-06-25T21:18Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/hou.png",
-                        "width": 500,
-                        "height": 500,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "scoreboard",
-                          "dark"
-                        ],
-                        "lastUpdated": "2025-01-22T15:28Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_white_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_white_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_black_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_black_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_primary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_primary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/primary_logo_on_secondary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "primary_logo_on_secondary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_white_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_white_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_black_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_black_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_primary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_primary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      },
-                      {
-                        "href": "https://a.espncdn.com/guid/78113ad4-1ac7-0c04-dada-388a6ff4e15e/logos/secondary_logo_on_secondary_color.png",
-                        "width": 4096,
-                        "height": 4096,
-                        "alt": "",
-                        "rel": [
-                          "full",
-                          "secondary_logo_on_secondary_color"
-                        ],
-                        "lastUpdated": "2024-12-03T19:33Z"
-                      }
-                    ],
-                    "links": [
-                      {
-                        "rel": [
-                          "clubhouse",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/_/name/hou/houston-rockets",
-                        "text": "Clubhouse"
-                      },
-                      {
-                        "rel": [
-                          "roster",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/roster/_/name/hou/houston-rockets",
-                        "text": "Roster"
-                      },
-                      {
-                        "rel": [
-                          "stats",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/stats/_/name/hou/houston-rockets",
-                        "text": "Statistics"
-                      },
-                      {
-                        "rel": [
-                          "schedule",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/schedule/_/name/hou",
-                        "text": "Schedule"
-                      },
-                      {
-                        "rel": [
-                          "photos",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/photos/_/name/hou",
-                        "text": "photos"
-                      },
-                      {
-                        "rel": [
-                          "tickets",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.vividseats.com/houston-rockets-tickets--sports-nba-basketball/performer/360?wsUser=717",
-                        "text": "Tickets"
-                      },
-                      {
-                        "rel": [
-                          "draftpicks",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/draft/teams/_/name/hou/houston-rockets",
-                        "text": "Draft Picks"
-                      },
-                      {
-                        "rel": [
-                          "transactions",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/transactions/_/name/hou",
-                        "text": "Transactions"
-                      },
-                      {
-                        "rel": [
-                          "injuries",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/injuries/_/name/hou",
-                        "text": "Injuries"
-                      },
-                      {
-                        "rel": [
-                          "depthchart",
-                          "desktop",
-                          "team"
-                        ],
-                        "href": "https://www.espn.com/nba/team/depth/_/name/hou",
-                        "text": "Depth Chart"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "id": "26",
-                  "type": "team",
-                  "order": 1,
-                  "homeAway": "away",
                   "team": {
                     "id": "26",
                     "location": "Utah",
@@ -849,19 +749,324 @@
                       }
                     ]
                   }
+                },
+                {
+                  "id": "12",
+                  "type": "team",
+                  "order": 1,
+                  "homeAway": "away",
+                  "team": {
+                    "id": "12",
+                    "location": "LA",
+                    "abbreviation": "LAC",
+                    "displayName": "LA Clippers",
+                    "shortDisplayName": "Clippers",
+                    "logos": [
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "default"
+                        ],
+                        "lastUpdated": "2024-06-25T21:17Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/lac.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "dark"
+                        ],
+                        "lastUpdated": "2024-06-25T21:13Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/lac.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "scoreboard"
+                        ],
+                        "lastUpdated": "2024-06-25T21:18Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/lac.png",
+                        "width": 500,
+                        "height": 500,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "scoreboard",
+                          "dark"
+                        ],
+                        "lastUpdated": "2024-06-25T21:14Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/083a58a6-b849-3501-e67b-059290d12295/logos/primary_logo_on_white_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_white_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:34Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/083a58a6-b849-3501-e67b-059290d12295/logos/primary_logo_on_black_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_black_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:34Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/083a58a6-b849-3501-e67b-059290d12295/logos/primary_logo_on_primary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_primary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:34Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/083a58a6-b849-3501-e67b-059290d12295/logos/primary_logo_on_secondary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "primary_logo_on_secondary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:34Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/083a58a6-b849-3501-e67b-059290d12295/logos/secondary_logo_on_white_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_white_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:34Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/083a58a6-b849-3501-e67b-059290d12295/logos/secondary_logo_on_black_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_black_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:34Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/083a58a6-b849-3501-e67b-059290d12295/logos/secondary_logo_on_primary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_primary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:34Z"
+                      },
+                      {
+                        "href": "https://a.espncdn.com/guid/083a58a6-b849-3501-e67b-059290d12295/logos/secondary_logo_on_secondary_color.png",
+                        "width": 4096,
+                        "height": 4096,
+                        "alt": "",
+                        "rel": [
+                          "full",
+                          "secondary_logo_on_secondary_color"
+                        ],
+                        "lastUpdated": "2024-12-03T19:34Z"
+                      }
+                    ],
+                    "links": [
+                      {
+                        "rel": [
+                          "clubhouse",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/_/name/lac/la-clippers",
+                        "text": "Clubhouse"
+                      },
+                      {
+                        "rel": [
+                          "roster",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/roster/_/name/lac/la-clippers",
+                        "text": "Roster"
+                      },
+                      {
+                        "rel": [
+                          "stats",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/stats/_/name/lac/la-clippers",
+                        "text": "Statistics"
+                      },
+                      {
+                        "rel": [
+                          "schedule",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/schedule/_/name/lac",
+                        "text": "Schedule"
+                      },
+                      {
+                        "rel": [
+                          "photos",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/photos/_/name/lac",
+                        "text": "photos"
+                      },
+                      {
+                        "rel": [
+                          "tickets",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.vividseats.com/la-clippers-tickets--sports-nba-basketball/performer/480?wsUser=717",
+                        "text": "Tickets"
+                      },
+                      {
+                        "rel": [
+                          "draftpicks",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/draft/teams/_/name/lac/la-clippers",
+                        "text": "Draft Picks"
+                      },
+                      {
+                        "rel": [
+                          "transactions",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/transactions/_/name/lac",
+                        "text": "Transactions"
+                      },
+                      {
+                        "rel": [
+                          "injuries",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/injuries/_/name/lac",
+                        "text": "Injuries"
+                      },
+                      {
+                        "rel": [
+                          "depthchart",
+                          "desktop",
+                          "team"
+                        ],
+                        "href": "https://www.espn.com/nba/team/depth/_/name/lac",
+                        "text": "Depth Chart"
+                      }
+                    ]
+                  }
                 }
               ],
               "notes": [],
-              "broadcasts": [],
+              "broadcasts": [
+                {
+                  "type": {
+                    "id": "1",
+                    "shortName": "TV"
+                  },
+                  "market": {
+                    "id": "2",
+                    "type": "Home"
+                  },
+                  "media": {
+                    "shortName": "KJZZ-TV"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                },
+                {
+                  "type": {
+                    "id": "4",
+                    "shortName": "Streaming"
+                  },
+                  "market": {
+                    "id": "2",
+                    "type": "Home"
+                  },
+                  "media": {
+                    "shortName": "Jazz+"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                },
+                {
+                  "type": {
+                    "id": "6",
+                    "shortName": "Subscription Package"
+                  },
+                  "market": {
+                    "id": "3",
+                    "type": "Away"
+                  },
+                  "media": {
+                    "shortName": "NBA League Pass"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                },
+                {
+                  "type": {
+                    "id": "1",
+                    "shortName": "TV"
+                  },
+                  "market": {
+                    "id": "3",
+                    "type": "Away"
+                  },
+                  "media": {
+                    "shortName": "FanDuel SN SoCal"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                }
+              ],
               "tickets": [
                 {
-                  "id": "5853282",
-                  "summary": "Tickets as low as $4",
-                  "description": "NBA Preseason - Utah Jazz at Houston Rockets",
-                  "maxPrice": 2441.86,
-                  "startingPrice": 4.96,
-                  "numberAvailable": 3122,
-                  "totalPostings": 738,
+                  "id": "5939711",
+                  "summary": "Tickets as low as $15",
+                  "description": "LA Clippers at Utah Jazz",
+                  "maxPrice": 28045.72,
+                  "startingPrice": 15.1,
+                  "numberAvailable": 1082,
+                  "totalPostings": 340,
                   "links": [
                     {
                       "rel": [
@@ -869,7 +1074,7 @@
                         "desktop",
                         "event"
                       ],
-                      "href": "https://www.vividseats.com/houston-rockets-tickets-toyota-center---tx-10-8-2025--sports-nba-basketball/production/5853282?wsUser=717"
+                      "href": "https://www.vividseats.com/utah-jazz-tickets-delta-center-10-22-2025--sports-nba-basketball/production/5939711?wsUser=717"
                     },
                     {
                       "rel": [
@@ -877,7 +1082,7 @@
                         "desktop",
                         "venue"
                       ],
-                      "href": "https://www.vividseats.com/toyota-center-tx-tickets/venue/3030?wsUser=717"
+                      "href": "https://www.vividseats.com/vivint-smart-home-arena-tickets/venue/459?wsUser=717"
                     }
                   ]
                 }
@@ -892,8 +1097,8 @@
                   "state": "pre",
                   "completed": false,
                   "description": "Scheduled",
-                  "detail": "Wed, October 8th at 8:00 PM EDT",
-                  "shortDetail": "10/8 - 8:00 PM EDT"
+                  "detail": "Wed, October 22nd at 9:00 PM EDT",
+                  "shortDetail": "10/22 - 9:00 PM EDT"
                 }
               }
             }
@@ -906,7 +1111,7 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/game/_/gameId/401812687/jazz-rockets",
+              "href": "https://www.espn.com/nba/game/_/gameId/401809940/clippers-jazz",
               "text": "Gamecast",
               "shortText": "Summary",
               "isExternal": false,
@@ -920,7 +1125,7 @@
                 "app",
                 "event"
               ],
-              "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=nba&gameId=401812687",
+              "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=nba&gameId=401809940",
               "text": "Gamecast",
               "shortText": "Summary",
               "isExternal": false,
@@ -933,7 +1138,7 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/game/_/gameId/401812687",
+              "href": "https://www.espn.com/nba/game/_/gameId/401809940",
               "text": "Now",
               "shortText": "Now",
               "isExternal": false,
@@ -946,7 +1151,7 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/odds/_/gameId/401812687",
+              "href": "https://www.espn.com/nba/odds/_/gameId/401809940",
               "text": "Odds",
               "shortText": "Odds",
               "isExternal": false,
@@ -959,7 +1164,7 @@
                 "mobile",
                 "event"
               ],
-              "href": "https://m.espn.com/nba/odds/_/gameId/401812687",
+              "href": "https://m.espn.com/nba/odds/_/gameId/401809940",
               "text": "Odds",
               "shortText": "Odds",
               "isExternal": false,
@@ -968,17 +1173,17 @@
           ]
         }
       ],
-      "standingSummary": "1st in Northwest Division"
+      "standingSummary": "3rd in Northwest Division"
     }
   },
   "roster": {
-    "timestamp": "2025-09-25T23:27:34Z",
+    "timestamp": "2025-10-20T18:28:57Z",
     "status": "success",
     "season": {
       "year": 2026,
       "displayName": "2025-26",
-      "type": 1,
-      "name": "Preseason"
+      "type": 2,
+      "name": "Regular Season"
     },
     "athletes": [
       {
@@ -1169,7 +1374,12 @@
             "leaf": false
           }
         },
-        "injuries": [],
+        "injuries": [
+          {
+            "status": "Day-To-Day",
+            "date": "2025-10-16T19:57Z"
+          }
+        ],
         "contracts": [
           {
             "salary": 9219512,
@@ -1269,7 +1479,7 @@
           }
         ],
         "experience": {
-          "years": 10
+          "years": 11
         },
         "contract": {
           "birdStatus": 0,
@@ -1485,7 +1695,7 @@
         "injuries": [
           {
             "status": "Day-To-Day",
-            "date": "2025-07-19T14:11Z"
+            "date": "2025-10-16T19:52Z"
           }
         ],
         "contracts": [
@@ -1712,12 +1922,7 @@
           "abbreviation": "G",
           "leaf": false
         },
-        "injuries": [
-          {
-            "status": "Day-To-Day",
-            "date": "2025-07-19T14:11Z"
-          }
-        ],
+        "injuries": [],
         "contracts": [
           {
             "salary": 3991320,
@@ -1784,7 +1989,7 @@
         "displayWeight": "210 lbs",
         "height": 75,
         "displayHeight": "6' 3\"",
-        "age": 20,
+        "age": 21,
         "dateOfBirth": "2004-10-08T07:00Z",
         "links": [
           {
@@ -1945,7 +2150,7 @@
         "injuries": [
           {
             "status": "Day-To-Day",
-            "date": "2025-07-19T14:11Z"
+            "date": "2025-10-16T19:55Z"
           }
         ],
         "contracts": [
@@ -1967,7 +2172,7 @@
           }
         ],
         "experience": {
-          "years": 0
+          "years": 1
         },
         "contract": {
           "birdStatus": 0,
@@ -1998,6 +2203,188 @@
           "tradeRestriction": false,
           "unsignedForeignPick": false,
           "active": true
+        },
+        "status": {
+          "id": "1",
+          "name": "Active",
+          "type": "active",
+          "abbreviation": "Active"
+        }
+      },
+      {
+        "id": "4588201",
+        "uid": "s:40~l:46~a:4588201",
+        "guid": "3ab89080-d6e9-3036-9d95-c8c656ae960e",
+        "alternateIds": {
+          "sdr": "4588201"
+        },
+        "firstName": "Steve",
+        "lastName": "Crowl",
+        "fullName": "Steve Crowl",
+        "displayName": "Steve Crowl",
+        "shortName": "S. Crowl",
+        "weight": 248,
+        "displayWeight": "248 lbs",
+        "height": 84,
+        "displayHeight": "7' 0\"",
+        "age": 24,
+        "dateOfBirth": "2001-07-01T07:00Z",
+        "links": [
+          {
+            "language": "en-US",
+            "rel": [
+              "playercard",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/_/id/4588201/steve-crowl",
+            "text": "Player Card",
+            "shortText": "Player Card",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "stats",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/stats/_/id/4588201/steve-crowl",
+            "text": "Stats",
+            "shortText": "Stats",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "splits",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/splits/_/id/4588201/steve-crowl",
+            "text": "Splits",
+            "shortText": "Splits",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "gamelog",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/gamelog/_/id/4588201/steve-crowl",
+            "text": "Game Log",
+            "shortText": "Game Log",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "news",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/news/_/id/4588201/steve-crowl",
+            "text": "News",
+            "shortText": "News",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "bio",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/bio/_/id/4588201/steve-crowl",
+            "text": "Bio",
+            "shortText": "Bio",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "overview",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/_/id/4588201/steve-crowl",
+            "text": "Overview",
+            "shortText": "Overview",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "advancedstats",
+              "desktop",
+              "athlete"
+            ],
+            "href": "https://www.espn.com/nba/player/advancedstats/_/id/4588201/steve-crowl",
+            "text": "Advanced Stats",
+            "shortText": "Advanced Stats",
+            "isExternal": false,
+            "isPremium": false
+          }
+        ],
+        "birthPlace": {
+          "city": "Eagan",
+          "state": "MN",
+          "country": "USA"
+        },
+        "college": {
+          "id": "275",
+          "guid": "bf9dd7b3-8074-3ed4-8e25-21e5aa6f41ed",
+          "mascot": "Badgers",
+          "name": "Wisconsin",
+          "shortName": "Wisconsin",
+          "abbrev": "WIS",
+          "logos": [
+            {
+              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/275.png",
+              "width": 500,
+              "height": 500,
+              "alt": "",
+              "rel": [
+                "full",
+                "default"
+              ],
+              "lastUpdated": "2022-09-02T17:08Z"
+            },
+            {
+              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/275.png",
+              "width": 500,
+              "height": 500,
+              "alt": "",
+              "rel": [
+                "full",
+                "dark"
+              ],
+              "lastUpdated": "2022-09-02T17:08Z"
+            }
+          ]
+        },
+        "slug": "steve-crowl",
+        "jersey": "25",
+        "position": {
+          "id": "9",
+          "name": "Center",
+          "displayName": "Center",
+          "abbreviation": "C",
+          "leaf": false
+        },
+        "injuries": [],
+        "contracts": [],
+        "experience": {
+          "years": 0
         },
         "status": {
           "id": "1",
@@ -2180,12 +2567,7 @@
           "abbreviation": "F",
           "leaf": false
         },
-        "injuries": [
-          {
-            "status": "Day-To-Day",
-            "date": "2025-07-19T14:11Z"
-          }
-        ],
+        "injuries": [],
         "contracts": [
           {
             "salary": 3000000,
@@ -2205,7 +2587,7 @@
           }
         ],
         "experience": {
-          "years": 0
+          "years": 1
         },
         "contract": {
           "birdStatus": 0,
@@ -2451,7 +2833,7 @@
           }
         ],
         "experience": {
-          "years": 1
+          "years": 2
         },
         "contract": {
           "birdStatus": 0,
@@ -2684,7 +3066,7 @@
           }
         ],
         "experience": {
-          "years": 0
+          "years": 1
         },
         "contract": {
           "birdStatus": 0,
@@ -2897,12 +3279,7 @@
           "abbreviation": "F",
           "leaf": false
         },
-        "injuries": [
-          {
-            "status": "Day-To-Day",
-            "date": "2025-07-03T22:08Z"
-          }
-        ],
+        "injuries": [],
         "contracts": [
           {
             "salary": 6127080,
@@ -2930,7 +3307,7 @@
           }
         ],
         "experience": {
-          "years": 1
+          "years": 2
         },
         "contract": {
           "birdStatus": 0,
@@ -3143,12 +3520,7 @@
           "abbreviation": "C",
           "leaf": false
         },
-        "injuries": [
-          {
-            "status": "Day-To-Day",
-            "date": "2025-07-03T22:08Z"
-          }
-        ],
+        "injuries": [],
         "contracts": [
           {
             "salary": 4878938,
@@ -3184,7 +3556,7 @@
           }
         ],
         "experience": {
-          "years": 2
+          "years": 3
         },
         "contract": {
           "birdStatus": 0,
@@ -3390,6 +3762,7 @@
           "href": "https://a.espncdn.com/i/headshots/nba/players/full/3449.png",
           "alt": "Kevin Love"
         },
+        "jersey": "42",
         "position": {
           "id": "6",
           "name": "Power Forward",
@@ -3552,7 +3925,7 @@
           }
         ],
         "experience": {
-          "years": 16
+          "years": 17
         },
         "contract": {
           "birdStatus": 0,
@@ -3848,7 +4221,7 @@
           }
         ],
         "experience": {
-          "years": 7
+          "years": 8
         },
         "contract": {
           "birdStatus": 0,
@@ -3888,24 +4261,23 @@
         }
       },
       {
-        "id": "4431828",
-        "uid": "s:40~l:46~a:4431828",
-        "guid": "bcece2d6-8ef4-3f00-a01a-60dac1690f59",
+        "id": "4702442",
+        "uid": "s:40~l:46~a:4702442",
+        "guid": "fbfa52e4-b22a-39fe-9bb9-e48c1ddb5b0a",
         "alternateIds": {
-          "sdr": "4431828"
+          "sdr": "4702442"
         },
-        "firstName": "KJ",
-        "lastName": "Martin",
-        "fullName": "KJ Martin",
-        "displayName": "KJ Martin",
-        "shortName": "K. Martin",
-        "weight": 215,
-        "displayWeight": "215 lbs",
-        "height": 78,
-        "displayHeight": "6' 6\"",
-        "age": 24,
-        "dateOfBirth": "2001-01-06T08:00Z",
-        "debutYear": 2020,
+        "firstName": "Matthew",
+        "lastName": "Murrell",
+        "fullName": "Matthew Murrell",
+        "displayName": "Matthew Murrell",
+        "shortName": "M. Murrell",
+        "weight": 205,
+        "displayWeight": "205 lbs",
+        "height": 76,
+        "displayHeight": "6' 4\"",
+        "age": 23,
+        "dateOfBirth": "2001-12-19T08:00Z",
         "links": [
           {
             "language": "en-US",
@@ -3914,7 +4286,7 @@
               "desktop",
               "athlete"
             ],
-            "href": "https://www.espn.com/nba/player/_/id/4431828/kj-martin",
+            "href": "https://www.espn.com/nba/player/_/id/4702442/matthew-murrell",
             "text": "Player Card",
             "shortText": "Player Card",
             "isExternal": false,
@@ -3927,7 +4299,7 @@
               "desktop",
               "athlete"
             ],
-            "href": "https://www.espn.com/nba/player/stats/_/id/4431828/kj-martin",
+            "href": "https://www.espn.com/nba/player/stats/_/id/4702442/matthew-murrell",
             "text": "Stats",
             "shortText": "Stats",
             "isExternal": false,
@@ -3940,7 +4312,7 @@
               "desktop",
               "athlete"
             ],
-            "href": "https://www.espn.com/nba/player/splits/_/id/4431828/kj-martin",
+            "href": "https://www.espn.com/nba/player/splits/_/id/4702442/matthew-murrell",
             "text": "Splits",
             "shortText": "Splits",
             "isExternal": false,
@@ -3953,7 +4325,7 @@
               "desktop",
               "athlete"
             ],
-            "href": "https://www.espn.com/nba/player/gamelog/_/id/4431828/kj-martin",
+            "href": "https://www.espn.com/nba/player/gamelog/_/id/4702442/matthew-murrell",
             "text": "Game Log",
             "shortText": "Game Log",
             "isExternal": false,
@@ -3966,7 +4338,7 @@
               "desktop",
               "athlete"
             ],
-            "href": "https://www.espn.com/nba/player/news/_/id/4431828/kj-martin",
+            "href": "https://www.espn.com/nba/player/news/_/id/4702442/matthew-murrell",
             "text": "News",
             "shortText": "News",
             "isExternal": false,
@@ -3979,7 +4351,7 @@
               "desktop",
               "athlete"
             ],
-            "href": "https://www.espn.com/nba/player/bio/_/id/4431828/kj-martin",
+            "href": "https://www.espn.com/nba/player/bio/_/id/4702442/matthew-murrell",
             "text": "Bio",
             "shortText": "Bio",
             "isExternal": false,
@@ -3992,7 +4364,7 @@
               "desktop",
               "athlete"
             ],
-            "href": "https://www.espn.com/nba/player/_/id/4431828/kj-martin",
+            "href": "https://www.espn.com/nba/player/_/id/4702442/matthew-murrell",
             "text": "Overview",
             "shortText": "Overview",
             "isExternal": false,
@@ -4005,7 +4377,7 @@
               "desktop",
               "athlete"
             ],
-            "href": "https://www.espn.com/nba/player/advancedstats/_/id/4431828/kj-martin",
+            "href": "https://www.espn.com/nba/player/advancedstats/_/id/4702442/matthew-murrell",
             "text": "Advanced Stats",
             "shortText": "Advanced Stats",
             "isExternal": false,
@@ -4013,106 +4385,55 @@
           }
         ],
         "birthPlace": {
-          "city": "West Hills",
-          "state": "CA",
+          "city": "Memphis",
+          "state": "TN",
           "country": "USA"
         },
-        "slug": "kj-martin",
-        "headshot": {
-          "href": "https://a.espncdn.com/i/headshots/nba/players/full/4431828.png",
-          "alt": "KJ Martin"
+        "college": {
+          "id": "145",
+          "guid": "858e51f9-aa4c-36c9-8f15-ff77c703ad51",
+          "mascot": "Rebels",
+          "name": "Ole Miss",
+          "shortName": "Ole Miss",
+          "abbrev": "MISS",
+          "logos": [
+            {
+              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/145.png",
+              "width": 500,
+              "height": 500,
+              "alt": "",
+              "rel": [
+                "full",
+                "default"
+              ],
+              "lastUpdated": "2023-03-17T13:35Z"
+            },
+            {
+              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/145.png",
+              "width": 500,
+              "height": 500,
+              "alt": "",
+              "rel": [
+                "full",
+                "dark"
+              ],
+              "lastUpdated": "2023-03-17T13:36Z"
+            }
+          ]
         },
-        "jersey": "99",
+        "slug": "matthew-murrell",
+        "jersey": "15",
         "position": {
-          "id": "7",
-          "name": "Forward",
-          "displayName": "Forward",
-          "abbreviation": "F",
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
           "leaf": false
         },
         "injuries": [],
-        "contracts": [
-          {
-            "salary": 8025000,
-            "season": {
-              "year": 2026,
-              "startDate": "2025-10-01T07:00Z",
-              "endDate": "2026-06-27T06:59Z"
-            }
-          },
-          {
-            "salary": 7975000,
-            "season": {
-              "year": 2025,
-              "startDate": "2024-09-24T07:00Z",
-              "endDate": "2025-06-27T06:59Z"
-            }
-          },
-          {
-            "salary": 1930681,
-            "season": {
-              "year": 2024,
-              "startDate": "2023-10-05T07:00Z",
-              "endDate": "2024-06-21T06:59Z"
-            }
-          },
-          {
-            "salary": 1782621,
-            "season": {
-              "year": 2023,
-              "startDate": "2022-08-30T07:00Z",
-              "endDate": "2023-06-24T06:59Z"
-            }
-          },
-          {
-            "salary": 1517981,
-            "season": {
-              "year": 2022,
-              "startDate": "2021-09-22T07:00Z",
-              "endDate": "2022-06-20T06:59Z"
-            }
-          },
-          {
-            "salary": 898310,
-            "season": {
-              "year": 2021,
-              "startDate": "2020-12-02T08:00Z",
-              "endDate": "2021-07-23T06:59Z"
-            }
-          }
-        ],
+        "contracts": [],
         "experience": {
-          "years": 4
-        },
-        "contract": {
-          "birdStatus": 0,
-          "baseYearCompensation": {
-            "active": false
-          },
-          "poisonPillProvision": {
-            "active": false
-          },
-          "incomingTradeValue": 8025000,
-          "outgoingTradeValue": 8025000,
-          "minimumSalaryException": false,
-          "optionType": 0,
-          "salary": 8025000,
-          "salaryRemaining": 0,
-          "yearsRemaining": 1,
-          "season": {
-            "year": 2026,
-            "startDate": "2025-10-01T07:00Z",
-            "endDate": "2026-06-27T06:59Z"
-          },
-          "tradeKicker": {
-            "active": false,
-            "percentage": 0,
-            "value": 0,
-            "tradeValue": 0
-          },
-          "tradeRestriction": false,
-          "unsignedForeignPick": false,
-          "active": true
+          "years": 0
         },
         "status": {
           "id": "1",
@@ -4287,7 +4608,7 @@
           "href": "https://a.espncdn.com/i/headshots/nba/players/full/3133602.png",
           "alt": "Svi Mykhailiuk"
         },
-        "jersey": "19",
+        "jersey": "10",
         "position": {
           "id": "2",
           "name": "Shooting Guard",
@@ -4370,7 +4691,7 @@
           }
         ],
         "experience": {
-          "years": 6
+          "years": 7
         },
         "contract": {
           "birdStatus": 0,
@@ -4591,7 +4912,12 @@
             "leaf": false
           }
         },
-        "injuries": [],
+        "injuries": [
+          {
+            "status": "Out",
+            "date": "2025-10-12T23:07Z"
+          }
+        ],
         "contracts": [
           {
             "salary": 8200000,
@@ -4675,7 +5001,7 @@
           }
         ],
         "experience": {
-          "years": 8
+          "years": 9
         },
         "contract": {
           "birdStatus": 0,
@@ -5169,12 +5495,7 @@
           "abbreviation": "F",
           "leaf": false
         },
-        "injuries": [
-          {
-            "status": "Day-To-Day",
-            "date": "2025-07-19T14:11Z"
-          }
-        ],
+        "injuries": [],
         "contracts": [
           {
             "salary": 2693760,
@@ -5644,6 +5965,14 @@
           {
             "salary": 0,
             "season": {
+              "year": 2026,
+              "startDate": "2025-10-01T07:00Z",
+              "endDate": "2026-06-27T06:59Z"
+            }
+          },
+          {
+            "salary": 0,
+            "season": {
               "year": 2025,
               "startDate": "2024-09-24T07:00Z",
               "endDate": "2025-06-27T06:59Z"
@@ -5660,6 +5989,36 @@
         ],
         "experience": {
           "years": 2
+        },
+        "contract": {
+          "birdStatus": 0,
+          "baseYearCompensation": {
+            "active": true
+          },
+          "poisonPillProvision": {
+            "active": false
+          },
+          "incomingTradeValue": 0,
+          "outgoingTradeValue": 0,
+          "minimumSalaryException": false,
+          "optionType": 0,
+          "salary": 0,
+          "salaryRemaining": 0,
+          "yearsRemaining": 1,
+          "season": {
+            "year": 2026,
+            "startDate": "2025-10-01T07:00Z",
+            "endDate": "2026-06-27T06:59Z"
+          },
+          "tradeKicker": {
+            "active": false,
+            "percentage": 0,
+            "value": 0,
+            "tradeValue": 0
+          },
+          "tradeRestriction": false,
+          "unsignedForeignPick": false,
+          "active": true
         },
         "status": {
           "id": "1",
@@ -5842,7 +6201,12 @@
           "abbreviation": "F",
           "leaf": false
         },
-        "injuries": [],
+        "injuries": [
+          {
+            "status": "Day-To-Day",
+            "date": "2025-10-16T18:50Z"
+          }
+        ],
         "contracts": [
           {
             "salary": 5742480,
@@ -5918,30 +6282,33 @@
       "displayName": "Utah Jazz",
       "clubhouse": "https://www.espn.com/nba/team/_/name/utah/utah-jazz",
       "color": "4e008e",
-      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png"
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+      "recordSummary": "1-3",
+      "seasonSummary": "2025-26",
+      "standingSummary": "3rd in Northwest Division"
     }
   },
   "injuries": {
-    "timestamp": "2025-09-25T23:34:58Z",
+    "timestamp": "2025-10-20T18:34:28Z",
     "status": "success",
     "season": {
       "year": 2026,
-      "type": 1,
-      "name": "Preseason",
+      "type": 2,
+      "name": "Regular Season",
       "displayName": "2025-26"
     },
     "injuries": [
       {
-        "id": "-21653",
-        "longComment": "Sensabaugh lit it up at the Salt Lake City Classic earlier this month but didn't appear in any Las Vegas games due to right knee soreness. The Ohio State product will aim for a larger role in his third NBA season after averaging 10.9 points, 3.0 rebounds and 1.5 assists on 45.9 percent shooting and 42.2 percent from three across 20.2 minutes in 71 regular-season games (15 starts) during the 2024-25 campaign.",
-        "shortComment": "Sensabaugh (knee) did not appear in Friday's 105-92 Summer League loss to the Bulls.",
+        "id": "499397",
+        "longComment": "The veteran forward will miss his chance at a final tune-up in Utah's exhibition finale. Anderson's next opportunity to gain clearance won't come until the regular season, which begins Wednesday against the Clippers.",
+        "shortComment": "Anderson (knee) won't play in Thursday's preseason finale against the Trail Blazers, Andy Larsen of The Salt Lake Tribune reports.",
         "status": "Day-To-Day",
-        "date": "2025-07-19T14:11Z",
+        "date": "2025-10-16T19:57Z",
         "athlete": {
-          "firstName": "Brice",
-          "lastName": "Sensabaugh",
-          "displayName": "Brice Sensabaugh",
-          "shortName": "B. Sensabaugh",
+          "firstName": "Kyle",
+          "lastName": "Anderson",
+          "displayName": "Kyle Anderson",
+          "shortName": "K. Anderson",
           "links": [
             {
               "language": "en-US",
@@ -5950,7 +6317,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/_/id/5105839/brice-sensabaugh",
+              "href": "https://www.espn.com/nba/player/_/id/2993874/kyle-anderson",
               "text": "Player Card",
               "shortText": "Player Card",
               "isExternal": false,
@@ -5963,7 +6330,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/stats/_/id/5105839/brice-sensabaugh",
+              "href": "https://www.espn.com/nba/player/stats/_/id/2993874/kyle-anderson",
               "text": "Stats",
               "shortText": "Stats",
               "isExternal": false,
@@ -5976,7 +6343,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/splits/_/id/5105839/brice-sensabaugh",
+              "href": "https://www.espn.com/nba/player/splits/_/id/2993874/kyle-anderson",
               "text": "Splits",
               "shortText": "Splits",
               "isExternal": false,
@@ -5989,7 +6356,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/gamelog/_/id/5105839/brice-sensabaugh",
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/2993874/kyle-anderson",
               "text": "Game Log",
               "shortText": "Game Log",
               "isExternal": false,
@@ -6002,7 +6369,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/news/_/id/5105839/brice-sensabaugh",
+              "href": "https://www.espn.com/nba/player/news/_/id/2993874/kyle-anderson",
               "text": "News",
               "shortText": "News",
               "isExternal": false,
@@ -6015,7 +6382,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/bio/_/id/5105839/brice-sensabaugh",
+              "href": "https://www.espn.com/nba/player/bio/_/id/2993874/kyle-anderson",
               "text": "Bio",
               "shortText": "Bio",
               "isExternal": false,
@@ -6028,7 +6395,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/_/id/5105839/brice-sensabaugh",
+              "href": "https://www.espn.com/nba/player/_/id/2993874/kyle-anderson",
               "text": "Overview",
               "shortText": "Overview",
               "isExternal": false,
@@ -6041,7 +6408,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/advancedstats/_/id/5105839/brice-sensabaugh",
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/2993874/kyle-anderson",
               "text": "Advanced Stats",
               "shortText": "Advanced Stats",
               "isExternal": false,
@@ -6049,15 +6416,15 @@
             }
           ],
           "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/nba/players/full/5105839.png",
-            "alt": "Brice Sensabaugh"
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/2993874.png",
+            "alt": "Kyle Anderson"
           },
           "position": {
-            "id": "7",
-            "name": "Forward",
-            "displayName": "Forward",
-            "abbreviation": "F",
-            "leaf": false
+            "id": "5",
+            "name": "Small Forward",
+            "displayName": "Small Forward",
+            "abbreviation": "SF",
+            "leaf": true
           },
           "team": {
             "id": "26",
@@ -6337,14 +6704,14 @@
           "notes": {
             "items": [
               {
-                "id": "-21653",
+                "id": "499397",
                 "type": "news",
-                "date": "2025-07-19T14:11Z",
-                "headline": "Sensabaugh (knee) did not appear in Friday's 105-92 Summer League loss to the Bulls.",
-                "text": "Sensabaugh lit it up at the Salt Lake City Classic earlier this month but didn't appear in any Las Vegas games due to right knee soreness. The Ohio State product will aim for a larger role in his third NBA season after averaging 10.9 points, 3.0 rebounds and 1.5 assists on 45.9 percent shooting and 42.2 percent from three across 20.2 minutes in 71 regular-season games (15 starts) during the 2024-25 campaign.",
+                "date": "2025-10-16T19:57Z",
+                "headline": "Anderson (knee) won't play in Thursday's preseason finale against the Trail Blazers, Andy Larsen of The Salt Lake Tribune reports.",
+                "text": "The veteran forward will miss his chance at a final tune-up in Utah's exhibition finale. Anderson's next opportunity to gain clearance won't come until the regular season, which begins Wednesday against the Clippers.",
                 "source": "RotoWire",
                 "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/5105839/injuries/-21653?lang=en&region=us"
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/2993874/injuries/499397?lang=en&region=us"
                 }
               }
             ]
@@ -6374,464 +6741,16 @@
           },
           "type": "Knee",
           "location": "Leg",
-          "detail": "Soreness",
-          "side": "Right",
-          "returnDate": "2025-10-01"
+          "detail": "Tendinitis",
+          "returnDate": "2025-10-22"
         }
       },
       {
-        "id": "-21646",
-        "longComment": "Filipowski dominated during the Las Vegas Summer League, including a 35-point, 11-rebound double-double during an overtime loss to the Spurs on Monday. The 2024 second-round pick had a solid rookie season, averaging 9.6 points and 6.1 rebounds on 50.2 percent shooting in 21.1 minutes across 72 regular-season games (27 starts). Filipowski could see a larger role in Year 2 after the departure of John Collins, but Utah also added Jusuf Nurkic and Kevin Love to their frontcourt depth.",
-        "shortComment": "Filipowski has been shut down for the remainder of the Las Vegas Summer League due to rest purposes, Andy Larsen of The Salt Lake Tribune reports Wednesday.",
+        "id": "499396",
+        "longComment": "A hamstring injury will have now cost Collier the entire preseason. The floor general's status appears to be in real danger for Wednesday's regular-season opener against the Clippers.",
+        "shortComment": "Collier (hamstring) won't play in Thursday's preseason finale against the Trail Blazers, Andy Larsen of The Salt Lake Tribune reports.",
         "status": "Day-To-Day",
-        "date": "2025-07-19T14:11Z",
-        "athlete": {
-          "firstName": "Kyle",
-          "lastName": "Filipowski",
-          "displayName": "Kyle Filipowski",
-          "shortName": "K. Filipowski",
-          "links": [
-            {
-              "language": "en-US",
-              "rel": [
-                "playercard",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/4684793/kyle-filipowski",
-              "text": "Player Card",
-              "shortText": "Player Card",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "stats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/stats/_/id/4684793/kyle-filipowski",
-              "text": "Stats",
-              "shortText": "Stats",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "splits",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/splits/_/id/4684793/kyle-filipowski",
-              "text": "Splits",
-              "shortText": "Splits",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "gamelog",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/gamelog/_/id/4684793/kyle-filipowski",
-              "text": "Game Log",
-              "shortText": "Game Log",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "news",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/news/_/id/4684793/kyle-filipowski",
-              "text": "News",
-              "shortText": "News",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "bio",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/bio/_/id/4684793/kyle-filipowski",
-              "text": "Bio",
-              "shortText": "Bio",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "overview",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/4684793/kyle-filipowski",
-              "text": "Overview",
-              "shortText": "Overview",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "advancedstats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4684793/kyle-filipowski",
-              "text": "Advanced Stats",
-              "shortText": "Advanced Stats",
-              "isExternal": false,
-              "isPremium": false
-            }
-          ],
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4684793.png",
-            "alt": "Kyle Filipowski"
-          },
-          "position": {
-            "id": "7",
-            "name": "Forward",
-            "displayName": "Forward",
-            "abbreviation": "F",
-            "leaf": false
-          },
-          "team": {
-            "id": "26",
-            "uid": "s:40~l:46~t:26",
-            "slug": "utah-jazz",
-            "name": "Jazz",
-            "abbreviation": "UTAH",
-            "displayName": "Utah Jazz",
-            "logos": [
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "default"
-                ],
-                "lastUpdated": "2025-06-24T15:32Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/utah.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "dark"
-                ],
-                "lastUpdated": "2025-06-24T15:43Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/utah.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard"
-                ],
-                "lastUpdated": "2025-06-24T15:34Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/utah.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard",
-                  "dark"
-                ],
-                "lastUpdated": "2025-06-24T15:34Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/primary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/primary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/primary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/primary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/secondary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/secondary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/secondary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/secondary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              }
-            ],
-            "links": [
-              {
-                "language": "en-US",
-                "rel": [
-                  "clubhouse",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/_/name/utah/utah-jazz",
-                "text": "Clubhouse",
-                "shortText": "Clubhouse",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "roster",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/roster/_/name/utah/utah-jazz",
-                "text": "Roster",
-                "shortText": "Roster",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "stats",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/stats/_/name/utah/utah-jazz",
-                "text": "Statistics",
-                "shortText": "Statistics",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "schedule",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/schedule/_/name/utah",
-                "text": "Schedule",
-                "shortText": "Schedule",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "photos",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/photos/_/name/utah",
-                "text": "photos",
-                "shortText": "photos",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "tickets",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.vividseats.com/utah-jazz-tickets--sports-nba-basketball/performer/902?wsUser=717",
-                "text": "Tickets",
-                "shortText": "Tickets",
-                "isExternal": true,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "draftpicks",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/draft/teams/_/name/utah/utah-jazz",
-                "text": "Draft Picks",
-                "shortText": "Draft Picks",
-                "isExternal": false,
-                "isPremium": true
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "transactions",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/transactions/_/name/utah",
-                "text": "Transactions",
-                "shortText": "Transactions",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "injuries",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/injuries/_/name/utah",
-                "text": "Injuries",
-                "shortText": "Injuries",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "depthchart",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/depth/_/name/utah",
-                "text": "Depth Chart",
-                "shortText": "Depth Chart",
-                "isExternal": false,
-                "isPremium": false
-              }
-            ]
-          },
-          "notes": {
-            "items": [
-              {
-                "id": "-21646",
-                "type": "news",
-                "date": "2025-07-19T14:11Z",
-                "headline": "Filipowski has been shut down for the remainder of the Las Vegas Summer League due to rest purposes, Andy Larsen of The Salt Lake Tribune reports Wednesday.",
-                "text": "Filipowski dominated during the Las Vegas Summer League, including a 35-point, 11-rebound double-double during an overtime loss to the Spurs on Monday. The 2024 second-round pick had a solid rookie season, averaging 9.6 points and 6.1 rebounds on 50.2 percent shooting in 21.1 minutes across 72 regular-season games (27 starts). Filipowski could see a larger role in Year 2 after the departure of John Collins, but Utah also added Jusuf Nurkic and Kevin Love to their frontcourt depth.",
-                "source": "RotoWire",
-                "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/4684793/injuries/-21646?lang=en&region=us"
-                }
-              }
-            ]
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          }
-        },
-        "source": {
-          "id": "1",
-          "description": "basic/manual",
-          "state": "basic"
-        },
-        "type": {
-          "id": "6",
-          "name": "INJURY_STATUS_DAYTODAY",
-          "description": "day-to-day",
-          "abbreviation": "DD"
-        },
-        "details": {
-          "fantasyStatus": {
-            "description": "GTD",
-            "abbreviation": "GTD"
-          },
-          "type": "Rest",
-          "location": "Other",
-          "side": "Not Specified",
-          "returnDate": "2025-10-01"
-        }
-      },
-      {
-        "id": "-21644",
-        "longComment": "Collier won't be able to suit up due to a tailbone contusion, and he can be considered day-to-day going forward. Through six Summer League appearances, the 2024 first-rounder has averaged 11.7 points, 6.3 assists and 1.1 steals in 26.7 minutes per game.",
-        "shortComment": "Collier (tailbone) is out for Friday's Summer League game against the Bulls, Andy Larsen of The Salt Lake Tribune reports.",
-        "status": "Day-To-Day",
-        "date": "2025-07-19T14:11Z",
+        "date": "2025-10-16T19:55Z",
         "athlete": {
           "firstName": "Isaiah",
           "lastName": "Collier",
@@ -7232,461 +7151,14 @@
           "notes": {
             "items": [
               {
-                "id": "-21644",
+                "id": "499396",
                 "type": "news",
-                "date": "2025-07-19T14:11Z",
-                "headline": "Collier (tailbone) is out for Friday's Summer League game against the Bulls, Andy Larsen of The Salt Lake Tribune reports.",
-                "text": "Collier won't be able to suit up due to a tailbone contusion, and he can be considered day-to-day going forward. Through six Summer League appearances, the 2024 first-rounder has averaged 11.7 points, 6.3 assists and 1.1 steals in 26.7 minutes per game.",
+                "date": "2025-10-16T19:55Z",
+                "headline": "Collier (hamstring) won't play in Thursday's preseason finale against the Trail Blazers, Andy Larsen of The Salt Lake Tribune reports.",
+                "text": "A hamstring injury will have now cost Collier the entire preseason. The floor general's status appears to be in real danger for Wednesday's regular-season opener against the Clippers.",
                 "source": "RotoWire",
                 "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/4683766/injuries/-21644?lang=en&region=us"
-                }
-              }
-            ]
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          }
-        },
-        "source": {
-          "id": "1",
-          "description": "basic/manual",
-          "state": "basic"
-        },
-        "type": {
-          "id": "6",
-          "name": "INJURY_STATUS_DAYTODAY",
-          "description": "day-to-day",
-          "abbreviation": "DD"
-        },
-        "details": {
-          "fantasyStatus": {
-            "description": "GTD",
-            "abbreviation": "GTD"
-          },
-          "type": "Back",
-          "location": "Torso",
-          "detail": "Bruise",
-          "returnDate": "2025-10-01"
-        }
-      },
-      {
-        "id": "-21643",
-        "longComment": "Clayton won't play for a fourth consecutive contest due to hamstring soreness, as the Jazz continue to exercise caution with their key players in these exhibitions.",
-        "shortComment": "Clayton (hamstring) will not play in Friday's Summer League game against the Bulls, Andy Larsen of The Salt Lake Tribune reports.",
-        "status": "Day-To-Day",
-        "date": "2025-07-19T14:11Z",
-        "athlete": {
-          "firstName": "Walter",
-          "lastName": "Clayton Jr.",
-          "displayName": "Walter Clayton Jr.",
-          "shortName": "W. Clayton Jr.",
-          "links": [
-            {
-              "language": "en-US",
-              "rel": [
-                "playercard",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/4896372/walter-clayton-jr",
-              "text": "Player Card",
-              "shortText": "Player Card",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "stats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/stats/_/id/4896372/walter-clayton-jr",
-              "text": "Stats",
-              "shortText": "Stats",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "splits",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/splits/_/id/4896372/walter-clayton-jr",
-              "text": "Splits",
-              "shortText": "Splits",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "gamelog",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/gamelog/_/id/4896372/walter-clayton-jr",
-              "text": "Game Log",
-              "shortText": "Game Log",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "news",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/news/_/id/4896372/walter-clayton-jr",
-              "text": "News",
-              "shortText": "News",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "bio",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/bio/_/id/4896372/walter-clayton-jr",
-              "text": "Bio",
-              "shortText": "Bio",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "overview",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/4896372/walter-clayton-jr",
-              "text": "Overview",
-              "shortText": "Overview",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "advancedstats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4896372/walter-clayton-jr",
-              "text": "Advanced Stats",
-              "shortText": "Advanced Stats",
-              "isExternal": false,
-              "isPremium": false
-            }
-          ],
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4896372.png",
-            "alt": "Walter Clayton Jr."
-          },
-          "position": {
-            "id": "3",
-            "name": "Guard",
-            "displayName": "Guard",
-            "abbreviation": "G",
-            "leaf": false
-          },
-          "team": {
-            "id": "26",
-            "uid": "s:40~l:46~t:26",
-            "slug": "utah-jazz",
-            "name": "Jazz",
-            "abbreviation": "UTAH",
-            "displayName": "Utah Jazz",
-            "logos": [
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "default"
-                ],
-                "lastUpdated": "2025-06-24T15:32Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/utah.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "dark"
-                ],
-                "lastUpdated": "2025-06-24T15:43Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/utah.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard"
-                ],
-                "lastUpdated": "2025-06-24T15:34Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/utah.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard",
-                  "dark"
-                ],
-                "lastUpdated": "2025-06-24T15:34Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/primary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/primary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/primary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/primary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/secondary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/secondary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/secondary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/secondary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              }
-            ],
-            "links": [
-              {
-                "language": "en-US",
-                "rel": [
-                  "clubhouse",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/_/name/utah/utah-jazz",
-                "text": "Clubhouse",
-                "shortText": "Clubhouse",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "roster",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/roster/_/name/utah/utah-jazz",
-                "text": "Roster",
-                "shortText": "Roster",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "stats",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/stats/_/name/utah/utah-jazz",
-                "text": "Statistics",
-                "shortText": "Statistics",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "schedule",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/schedule/_/name/utah",
-                "text": "Schedule",
-                "shortText": "Schedule",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "photos",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/photos/_/name/utah",
-                "text": "photos",
-                "shortText": "photos",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "tickets",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.vividseats.com/utah-jazz-tickets--sports-nba-basketball/performer/902?wsUser=717",
-                "text": "Tickets",
-                "shortText": "Tickets",
-                "isExternal": true,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "draftpicks",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/draft/teams/_/name/utah/utah-jazz",
-                "text": "Draft Picks",
-                "shortText": "Draft Picks",
-                "isExternal": false,
-                "isPremium": true
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "transactions",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/transactions/_/name/utah",
-                "text": "Transactions",
-                "shortText": "Transactions",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "injuries",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/injuries/_/name/utah",
-                "text": "Injuries",
-                "shortText": "Injuries",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "depthchart",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/depth/_/name/utah",
-                "text": "Depth Chart",
-                "shortText": "Depth Chart",
-                "isExternal": false,
-                "isPremium": false
-              }
-            ]
-          },
-          "notes": {
-            "items": [
-              {
-                "id": "-21643",
-                "type": "news",
-                "date": "2025-07-19T14:11Z",
-                "headline": "Clayton (hamstring) will not play in Friday's Summer League game against the Bulls, Andy Larsen of The Salt Lake Tribune reports.",
-                "text": "Clayton won't play for a fourth consecutive contest due to hamstring soreness, as the Jazz continue to exercise caution with their key players in these exhibitions.",
-                "source": "RotoWire",
-                "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/4896372/injuries/-21643?lang=en&region=us"
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4683766/injuries/499396?lang=en&region=us"
                 }
               }
             ]
@@ -7717,16 +7189,16 @@
           "type": "Hamstring",
           "location": "Leg",
           "detail": "Soreness",
-          "side": "Left",
-          "returnDate": "2025-10-01"
+          "side": "Right",
+          "returnDate": "2025-10-22"
         }
       },
       {
-        "id": "-21641",
-        "longComment": "Right hip soreness will cost Bailey a fifth consecutive game. It's understandable that the Jazz are being cautious with the No. 5 overall pick in these exhibitions.",
-        "shortComment": "Bailey (hip) will not play in Friday's Summer League contest against the Bulls, Andy Larsen of The Salt Lake Tribune reports.",
+        "id": "499395",
+        "longComment": "Bailey is out with bilateral knee tendinopathy. As a result, the rookie swingman can be considered day-to-day ahead of Wednesday's regular-season opener against the Clippers.",
+        "shortComment": "Bailey (knee) won't play in Thursday's preseason finale against Portland, Andy Larsen of The Salt Lake Tribune reports.",
         "status": "Day-To-Day",
-        "date": "2025-07-19T14:11Z",
+        "date": "2025-10-16T19:52Z",
         "athlete": {
           "firstName": "Ace",
           "lastName": "Bailey",
@@ -8127,14 +7599,14 @@
           "notes": {
             "items": [
               {
-                "id": "-21641",
+                "id": "499395",
                 "type": "news",
-                "date": "2025-07-19T14:11Z",
-                "headline": "Bailey (hip) will not play in Friday's Summer League contest against the Bulls, Andy Larsen of The Salt Lake Tribune reports.",
-                "text": "Right hip soreness will cost Bailey a fifth consecutive game. It's understandable that the Jazz are being cautious with the No. 5 overall pick in these exhibitions.",
+                "date": "2025-10-16T19:52Z",
+                "headline": "Bailey (knee) won't play in Thursday's preseason finale against Portland, Andy Larsen of The Salt Lake Tribune reports.",
+                "text": "Bailey is out with bilateral knee tendinopathy. As a result, the rookie swingman can be considered day-to-day ahead of Wednesday's regular-season opener against the Clippers.",
                 "source": "RotoWire",
                 "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/4873138/injuries/-21641?lang=en&region=us"
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4873138/injuries/499395?lang=en&region=us"
                 }
               }
             ]
@@ -8162,472 +7634,24 @@
             "description": "GTD",
             "abbreviation": "GTD"
           },
-          "type": "Hip",
-          "location": "Torso",
+          "type": "Knee",
+          "location": "Leg",
           "detail": "Soreness",
-          "side": "Right",
-          "returnDate": "2025-10-01"
-        }
-      },
-      {
-        "id": "-20741",
-        "longComment": "Kessler entered concussion protocols April 3, and it will end him sidelining him for the Jazz's final five games of the regular season. Oscar Tshiebwe and Kyle Filipowski will serve as Utah's primary big men for Sunday's regular-season finale in Walker's absence. The third-year big man out of Auburn put up solid numbers for the Jazz this season, but injuries and reconditioning caused him to miss 17 of the Pelcians' 33 games since Jan. 1. With Utah failing to qualify for the postseason, Kessler will finish the 2024-25 regular season averaging 11.1 points, 12.2 rebounds, 1.7 assists and 2.4 blocks in 30.0 minutes per game across 58 outings.",
-        "shortComment": "Kessler (concussion) has been ruled out for Sunday's game against the Timberwolves.",
-        "status": "Day-To-Day",
-        "date": "2025-07-03T22:08Z",
-        "athlete": {
-          "firstName": "Walker",
-          "lastName": "Kessler",
-          "displayName": "Walker Kessler",
-          "shortName": "W. Kessler",
-          "links": [
-            {
-              "language": "en-US",
-              "rel": [
-                "playercard",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/4433136/walker-kessler",
-              "text": "Player Card",
-              "shortText": "Player Card",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "stats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/stats/_/id/4433136/walker-kessler",
-              "text": "Stats",
-              "shortText": "Stats",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "splits",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/splits/_/id/4433136/walker-kessler",
-              "text": "Splits",
-              "shortText": "Splits",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "gamelog",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/gamelog/_/id/4433136/walker-kessler",
-              "text": "Game Log",
-              "shortText": "Game Log",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "news",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/news/_/id/4433136/walker-kessler",
-              "text": "News",
-              "shortText": "News",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "bio",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/bio/_/id/4433136/walker-kessler",
-              "text": "Bio",
-              "shortText": "Bio",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "overview",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/4433136/walker-kessler",
-              "text": "Overview",
-              "shortText": "Overview",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "advancedstats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4433136/walker-kessler",
-              "text": "Advanced Stats",
-              "shortText": "Advanced Stats",
-              "isExternal": false,
-              "isPremium": false
-            }
-          ],
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4433136.png",
-            "alt": "Walker Kessler"
-          },
-          "position": {
-            "id": "9",
-            "name": "Center",
-            "displayName": "Center",
-            "abbreviation": "C",
-            "leaf": false
-          },
-          "team": {
-            "id": "26",
-            "uid": "s:40~l:46~t:26",
-            "slug": "utah-jazz",
-            "name": "Jazz",
-            "abbreviation": "UTAH",
-            "displayName": "Utah Jazz",
-            "logos": [
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "default"
-                ],
-                "lastUpdated": "2025-06-24T15:32Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/utah.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "dark"
-                ],
-                "lastUpdated": "2025-06-24T15:43Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/utah.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard"
-                ],
-                "lastUpdated": "2025-06-24T15:34Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/utah.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard",
-                  "dark"
-                ],
-                "lastUpdated": "2025-06-24T15:34Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/primary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/primary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/primary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/primary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/secondary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/secondary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/secondary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/secondary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-04T21:03Z"
-              }
-            ],
-            "links": [
-              {
-                "language": "en-US",
-                "rel": [
-                  "clubhouse",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/_/name/utah/utah-jazz",
-                "text": "Clubhouse",
-                "shortText": "Clubhouse",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "roster",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/roster/_/name/utah/utah-jazz",
-                "text": "Roster",
-                "shortText": "Roster",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "stats",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/stats/_/name/utah/utah-jazz",
-                "text": "Statistics",
-                "shortText": "Statistics",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "schedule",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/schedule/_/name/utah",
-                "text": "Schedule",
-                "shortText": "Schedule",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "photos",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/photos/_/name/utah",
-                "text": "photos",
-                "shortText": "photos",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "tickets",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.vividseats.com/utah-jazz-tickets--sports-nba-basketball/performer/902?wsUser=717",
-                "text": "Tickets",
-                "shortText": "Tickets",
-                "isExternal": true,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "draftpicks",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/draft/teams/_/name/utah/utah-jazz",
-                "text": "Draft Picks",
-                "shortText": "Draft Picks",
-                "isExternal": false,
-                "isPremium": true
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "transactions",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/transactions/_/name/utah",
-                "text": "Transactions",
-                "shortText": "Transactions",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "injuries",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/injuries/_/name/utah",
-                "text": "Injuries",
-                "shortText": "Injuries",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "depthchart",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/depth/_/name/utah",
-                "text": "Depth Chart",
-                "shortText": "Depth Chart",
-                "isExternal": false,
-                "isPremium": false
-              }
-            ]
-          },
-          "notes": {
-            "items": [
-              {
-                "id": "-20741",
-                "type": "news",
-                "date": "2025-07-03T22:08Z",
-                "headline": "Kessler (concussion) has been ruled out for Sunday's game against the Timberwolves.",
-                "text": "Kessler entered concussion protocols April 3, and it will end him sidelining him for the Jazz's final five games of the regular season. Oscar Tshiebwe and Kyle Filipowski will serve as Utah's primary big men for Sunday's regular-season finale in Walker's absence. The third-year big man out of Auburn put up solid numbers for the Jazz this season, but injuries and reconditioning caused him to miss 17 of the Pelcians' 33 games since Jan. 1. With Utah failing to qualify for the postseason, Kessler will finish the 2024-25 regular season averaging 11.1 points, 12.2 rebounds, 1.7 assists and 2.4 blocks in 30.0 minutes per game across 58 outings.",
-                "source": "RotoWire",
-                "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/4433136/injuries/-20741?lang=en&region=us"
-                }
-              }
-            ]
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          }
-        },
-        "source": {
-          "id": "1",
-          "description": "basic/manual",
-          "state": "basic"
-        },
-        "type": {
-          "id": "6",
-          "name": "INJURY_STATUS_DAYTODAY",
-          "description": "day-to-day",
-          "abbreviation": "DD"
-        },
-        "details": {
-          "fantasyStatus": {
-            "description": "GTD",
-            "abbreviation": "GTD"
-          },
-          "type": "Concussion",
-          "location": "Head",
-          "detail": "Concussion",
           "side": "Not Specified",
-          "returnDate": "2025-10-01"
+          "returnDate": "2025-10-22"
         }
       },
       {
-        "id": "-20728",
-        "longComment": "Hendricks operation was done at the University of Utah's Orthopedic center, and it appears to have gone smoothly. The 20-year-old is a candidate to return to action at some point during the 2025-26 season. Coach Will Hardy reinforced Hendricks' future with the organization last week, expressing that the injury \"doesn't take away anything he's done to this point. He's developed as a player and as a young man...this is far from over for him.\"",
-        "shortComment": "Hendricks underwent surgery on his broken right leg and dislocated ankle Wednesday, Andy Larsen of The Salt Lake Tribune reports.",
+        "id": "499387",
+        "longComment": "The forward sees his next chance to play in Wednesday's regular-season opener against the Clippers. Give the nature of his ailment, Williams figures to be ready by then.",
+        "shortComment": "Williams is out for Thursday's preseason finale against Portland due to an illness, Andy Larsen of The Salt Lake Tribune reports.",
         "status": "Day-To-Day",
-        "date": "2025-07-03T22:08Z",
+        "date": "2025-10-16T18:50Z",
         "athlete": {
-          "firstName": "Taylor",
-          "lastName": "Hendricks",
-          "displayName": "Taylor Hendricks",
-          "shortName": "T. Hendricks",
+          "firstName": "Cody",
+          "lastName": "Williams",
+          "displayName": "Cody Williams",
+          "shortName": "C. Williams",
           "links": [
             {
               "language": "en-US",
@@ -8636,7 +7660,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/_/id/4684806/taylor-hendricks",
+              "href": "https://www.espn.com/nba/player/_/id/4895758/cody-williams",
               "text": "Player Card",
               "shortText": "Player Card",
               "isExternal": false,
@@ -8649,7 +7673,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/stats/_/id/4684806/taylor-hendricks",
+              "href": "https://www.espn.com/nba/player/stats/_/id/4895758/cody-williams",
               "text": "Stats",
               "shortText": "Stats",
               "isExternal": false,
@@ -8662,7 +7686,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/splits/_/id/4684806/taylor-hendricks",
+              "href": "https://www.espn.com/nba/player/splits/_/id/4895758/cody-williams",
               "text": "Splits",
               "shortText": "Splits",
               "isExternal": false,
@@ -8675,7 +7699,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/gamelog/_/id/4684806/taylor-hendricks",
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/4895758/cody-williams",
               "text": "Game Log",
               "shortText": "Game Log",
               "isExternal": false,
@@ -8688,7 +7712,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/news/_/id/4684806/taylor-hendricks",
+              "href": "https://www.espn.com/nba/player/news/_/id/4895758/cody-williams",
               "text": "News",
               "shortText": "News",
               "isExternal": false,
@@ -8701,7 +7725,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/bio/_/id/4684806/taylor-hendricks",
+              "href": "https://www.espn.com/nba/player/bio/_/id/4895758/cody-williams",
               "text": "Bio",
               "shortText": "Bio",
               "isExternal": false,
@@ -8714,7 +7738,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/_/id/4684806/taylor-hendricks",
+              "href": "https://www.espn.com/nba/player/_/id/4895758/cody-williams",
               "text": "Overview",
               "shortText": "Overview",
               "isExternal": false,
@@ -8727,7 +7751,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4684806/taylor-hendricks",
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4895758/cody-williams",
               "text": "Advanced Stats",
               "shortText": "Advanced Stats",
               "isExternal": false,
@@ -8735,8 +7759,8 @@
             }
           ],
           "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4684806.png",
-            "alt": "Taylor Hendricks"
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4895758.png",
+            "alt": "Cody Williams"
           },
           "position": {
             "id": "7",
@@ -9023,14 +8047,14 @@
           "notes": {
             "items": [
               {
-                "id": "-20728",
+                "id": "499387",
                 "type": "news",
-                "date": "2025-07-03T22:08Z",
-                "headline": "Hendricks underwent surgery on his broken right leg and dislocated ankle Wednesday, Andy Larsen of The Salt Lake Tribune reports.",
-                "text": "Hendricks operation was done at the University of Utah's Orthopedic center, and it appears to have gone smoothly. The 20-year-old is a candidate to return to action at some point during the 2025-26 season. Coach Will Hardy reinforced Hendricks' future with the organization last week, expressing that the injury \"doesn't take away anything he's done to this point. He's developed as a player and as a young man...this is far from over for him.\"",
+                "date": "2025-10-16T18:50Z",
+                "headline": "Williams is out for Thursday's preseason finale against Portland due to an illness, Andy Larsen of The Salt Lake Tribune reports.",
+                "text": "The forward sees his next chance to play in Wednesday's regular-season opener against the Clippers. Give the nature of his ailment, Williams figures to be ready by then.",
                 "source": "RotoWire",
                 "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/4684806/injuries/-20728?lang=en&region=us"
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4895758/injuries/499387?lang=en&region=us"
                 }
               }
             ]
@@ -9058,11 +8082,457 @@
             "description": "GTD",
             "abbreviation": "GTD"
           },
-          "type": "Lower Leg",
+          "type": "Illness",
+          "location": "Other",
+          "returnDate": "2025-10-22"
+        }
+      },
+      {
+        "id": "498835",
+        "longComment": "Niang suffered a fourth metatarsal stress reaction in his left foot while going through offseason training and conditioning. While he's progressing in his rehab, Niang will be out for at least two more weeks, which means he'll be out for a minimum of two games to start the season. If he's able to return at the two-week mark, Niang's next chance to play would come Oct. 27 against Phoenix.",
+        "shortComment": "The Jazz announced Sunday that Niang (foot) will be reevaluated in two to three weeks.",
+        "status": "Out",
+        "date": "2025-10-12T23:07Z",
+        "athlete": {
+          "firstName": "Georges",
+          "lastName": "Niang",
+          "displayName": "Georges Niang",
+          "shortName": "G. Niang",
+          "links": [
+            {
+              "language": "en-US",
+              "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/2990969/georges-niang",
+              "text": "Player Card",
+              "shortText": "Player Card",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/stats/_/id/2990969/georges-niang",
+              "text": "Stats",
+              "shortText": "Stats",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/splits/_/id/2990969/georges-niang",
+              "text": "Splits",
+              "shortText": "Splits",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/2990969/georges-niang",
+              "text": "Game Log",
+              "shortText": "Game Log",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "news",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/news/_/id/2990969/georges-niang",
+              "text": "News",
+              "shortText": "News",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/bio/_/id/2990969/georges-niang",
+              "text": "Bio",
+              "shortText": "Bio",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/2990969/georges-niang",
+              "text": "Overview",
+              "shortText": "Overview",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "advancedstats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/2990969/georges-niang",
+              "text": "Advanced Stats",
+              "shortText": "Advanced Stats",
+              "isExternal": false,
+              "isPremium": false
+            }
+          ],
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/2990969.png",
+            "alt": "Georges Niang"
+          },
+          "position": {
+            "id": "5",
+            "name": "Small Forward",
+            "displayName": "Small Forward",
+            "abbreviation": "SF",
+            "leaf": true
+          },
+          "team": {
+            "id": "26",
+            "uid": "s:40~l:46~t:26",
+            "slug": "utah-jazz",
+            "name": "Jazz",
+            "abbreviation": "UTAH",
+            "displayName": "Utah Jazz",
+            "logos": [
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "default"
+                ],
+                "lastUpdated": "2025-06-24T15:32Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/utah.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "dark"
+                ],
+                "lastUpdated": "2025-06-24T15:43Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/utah.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard"
+                ],
+                "lastUpdated": "2025-06-24T15:34Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/utah.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard",
+                  "dark"
+                ],
+                "lastUpdated": "2025-06-24T15:34Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/primary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-04T21:03Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/primary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-04T21:03Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/primary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-04T21:03Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/primary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-04T21:03Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/secondary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-04T21:03Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/secondary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-04T21:03Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/secondary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-04T21:03Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/77cea2fb-1388-b7c8-d171-2e72b3aecbfb/logos/secondary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-04T21:03Z"
+              }
+            ],
+            "links": [
+              {
+                "language": "en-US",
+                "rel": [
+                  "clubhouse",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/_/name/utah/utah-jazz",
+                "text": "Clubhouse",
+                "shortText": "Clubhouse",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "roster",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/roster/_/name/utah/utah-jazz",
+                "text": "Roster",
+                "shortText": "Roster",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "stats",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/stats/_/name/utah/utah-jazz",
+                "text": "Statistics",
+                "shortText": "Statistics",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "schedule",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/schedule/_/name/utah",
+                "text": "Schedule",
+                "shortText": "Schedule",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "photos",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/photos/_/name/utah",
+                "text": "photos",
+                "shortText": "photos",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "tickets",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.vividseats.com/utah-jazz-tickets--sports-nba-basketball/performer/902?wsUser=717",
+                "text": "Tickets",
+                "shortText": "Tickets",
+                "isExternal": true,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "draftpicks",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/draft/teams/_/name/utah/utah-jazz",
+                "text": "Draft Picks",
+                "shortText": "Draft Picks",
+                "isExternal": false,
+                "isPremium": true
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "transactions",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/transactions/_/name/utah",
+                "text": "Transactions",
+                "shortText": "Transactions",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "injuries",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/injuries/_/name/utah",
+                "text": "Injuries",
+                "shortText": "Injuries",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "depthchart",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/depth/_/name/utah",
+                "text": "Depth Chart",
+                "shortText": "Depth Chart",
+                "isExternal": false,
+                "isPremium": false
+              }
+            ]
+          },
+          "notes": {
+            "items": [
+              {
+                "id": "498835",
+                "type": "news",
+                "date": "2025-10-12T23:07Z",
+                "headline": "The Jazz announced Sunday that Niang (foot) will be reevaluated in two to three weeks.",
+                "text": "Niang suffered a fourth metatarsal stress reaction in his left foot while going through offseason training and conditioning. While he's progressing in his rehab, Niang will be out for at least two more weeks, which means he'll be out for a minimum of two games to start the season. If he's able to return at the two-week mark, Niang's next chance to play would come Oct. 27 against Phoenix.",
+                "source": "RotoWire",
+                "injury": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/2990969/injuries/498835?lang=en&region=us"
+                }
+              }
+            ]
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
+          }
+        },
+        "source": {
+          "id": "1",
+          "description": "basic/manual",
+          "state": "basic"
+        },
+        "type": {
+          "id": "4",
+          "name": "INJURY_STATUS_OUT",
+          "description": "out",
+          "abbreviation": "O"
+        },
+        "details": {
+          "fantasyStatus": {
+            "description": "OUT",
+            "abbreviation": "OUT"
+          },
+          "type": "Foot",
           "location": "Leg",
-          "detail": "Surgery",
-          "side": "Right",
-          "returnDate": "2025-10-01"
+          "detail": "Fracture",
+          "side": "Left",
+          "returnDate": "2025-10-27"
         }
       }
     ],
@@ -9074,8 +8544,9 @@
       "displayName": "Utah Jazz",
       "color": "4e008e",
       "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+      "recordSummary": "1-3",
       "seasonSummary": "2025-26",
-      "standingSummary": "1st in Northwest Division"
+      "standingSummary": "3rd in Northwest Division"
     }
   }
 }

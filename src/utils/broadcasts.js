@@ -22,7 +22,8 @@ export const getBroadcastInfo = (game, sport) => {
   switch (sport) {
     case "nfl":
       if (dayOfWeek === 4) return ['prime_video'];
-      if (dayOfWeek === 1) return ['espn', 'abc'];
+      // Monday Night Football is often on both ESPN and ABC
+      if (dayOfWeek === 1) return ['espn', 'abc']; 
       if (dayOfWeek === 0) {
         const gameHourUTC = gameDate.getUTCHours();
         if (gameHourUTC >= 0 && gameHourUTC < 4) {
@@ -33,19 +34,22 @@ export const getBroadcastInfo = (game, sport) => {
         if (awayConference === "NFC") return ['fox'];
         return ['cbs', 'fox'];
       }
-      return ["nfl"]; // Return text for fallbacks
+      return ["nfl"]; 
 
     case "nba":
-      if (dayOfWeek === 3) return ['espn'];
-      if (dayOfWeek === 4) return ['tnt'];
-      if (dayOfWeek === 5) return ['espn'];
-      if (dayOfWeek === 0) return ['abc'];
-      return "Local Network / NBA League Pass"; 
+      // National games are often also on local RSNs
+      if (dayOfWeek === 3) return ['espn', 'rsn']; 
+      if (dayOfWeek === 4) return ['tnt', 'rsn']; 
+      if (dayOfWeek === 5) return ['espn', 'rsn'];
+      if (dayOfWeek === 0) return ['abc', 'rsn'];
+      // For non-national games, it's either RSN or League Pass
+      return "Local / NBA League Pass"; 
 
     case "mlb":
       if (dayOfWeek === 5) return ['apple_tv'];
-      if (dayOfWeek === 6) return ['fox'];
-      if (dayOfWeek === 0) return ['espn']; 
+      // Saturday games on FOX are often exclusive, but we can add RSN as a possibility
+      if (dayOfWeek === 6) return ['fox', 'rsn']; 
+      if (dayOfWeek === 0) return ['espn', 'rsn']; 
       return "Local RSN / MLB.TV"; 
 
     default:

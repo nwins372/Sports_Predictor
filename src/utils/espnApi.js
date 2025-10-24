@@ -4,7 +4,8 @@
 
 const BASES = {
   nfl: 'https://site.api.espn.com/apis/site/v2/sports/football/nfl',
-  nba: 'https://site.api.espn.com/apis/site/v2/sports/basketball/nba'
+  nba: 'https://site.api.espn.com/apis/site/v2/sports/basketball/nba',
+  mlb: 'https://site.api.espn.com/apis/site/v2/sports/baseball/mlb'
 };
 
 function _cacheKey(k) { return `espn_cache:${k}`; }
@@ -414,6 +415,8 @@ async function getPlayerLocalById(id, league = 'nba') {
 }
 
 async function searchPlayers(query, limit = 50) { const url = `https://site.web.api.espn.com/apis/search/v2?query=${encodeURIComponent(query)}&limit=${limit}&type=player`; return _fetchWithCache(url); }
+
+async function searchSite(query, limit = 50) { const url = `https://site.web.api.espn.com/apis/search/v2?query=${encodeURIComponent(query)}&limit=${limit}`; return _fetchWithCache(url); }
 
 async function getPlayer(league = 'nba', idOrQuery) {
   try {
@@ -884,5 +887,5 @@ async function getAthleteOverview(league = 'nfl', athleteId) {
   }
 }
 
-const espnApi = { listTeams, getTeam, getTeamRoster, buildLocalPlayerIndex, searchPlayersLocal, getPlayerLocalById, getPlayer, searchPlayers, getPlayerNews, getPlayerContracts, getPlayerFull, getAthleteOverview };
+const espnApi = { listTeams, getTeam, getTeamRoster, buildLocalPlayerIndex, searchPlayersLocal, getPlayerLocalById, getPlayer, searchPlayers, searchSite, getPlayerNews, getPlayerContracts, getPlayerFull, getAthleteOverview };
 module.exports = espnApi;

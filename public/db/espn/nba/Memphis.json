@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2025-09-25T23:34:49.602Z",
+  "fetchedAt": "2025-10-20T18:34:12.451Z",
   "detail": {
     "team": {
       "id": "29",
@@ -148,7 +148,147 @@
           "lastUpdated": "2024-12-03T19:29Z"
         }
       ],
-      "record": {},
+      "record": {
+        "items": [
+          {
+            "description": "Overall Record",
+            "type": "total",
+            "summary": "1-4",
+            "stats": [
+              {
+                "name": "OTLosses",
+                "value": 0
+              },
+              {
+                "name": "OTWins",
+                "value": 0
+              },
+              {
+                "name": "avgPointsAgainst",
+                "value": 128.2
+              },
+              {
+                "name": "avgPointsFor",
+                "value": 117.6
+              },
+              {
+                "name": "differential",
+                "value": -10.599999999999994
+              },
+              {
+                "name": "divisionWinPercent",
+                "value": 0
+              },
+              {
+                "name": "gamesBehind",
+                "value": 4
+              },
+              {
+                "name": "gamesPlayed",
+                "value": 5
+              },
+              {
+                "name": "leagueWinPercent",
+                "value": 0
+              },
+              {
+                "name": "losses",
+                "value": 4
+              },
+              {
+                "name": "playoffSeed",
+                "value": 14
+              },
+              {
+                "name": "pointDifferential",
+                "value": -53
+              },
+              {
+                "name": "points",
+                "value": -1.5
+              },
+              {
+                "name": "pointsAgainst",
+                "value": 641
+              },
+              {
+                "name": "pointsFor",
+                "value": 588
+              },
+              {
+                "name": "streak",
+                "value": 1
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 0.2
+              },
+              {
+                "name": "wins",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "description": "Home Record",
+            "type": "home",
+            "summary": "0-3",
+            "stats": [
+              {
+                "name": "wins",
+                "value": 0
+              },
+              {
+                "name": "losses",
+                "value": 3
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 0
+              },
+              {
+                "name": "OTLosses",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "description": "Away Record",
+            "type": "road",
+            "summary": "1-0",
+            "stats": [
+              {
+                "name": "wins",
+                "value": 1
+              },
+              {
+                "name": "losses",
+                "value": 0
+              },
+              {
+                "name": "ties",
+                "value": 0
+              },
+              {
+                "name": "winPercent",
+                "value": 1
+              },
+              {
+                "name": "OTLosses",
+                "value": 0
+              }
+            ]
+          }
+        ]
+      },
       "groups": {
         "id": "10",
         "parent": {
@@ -326,30 +466,30 @@
           ]
         },
         "team": {
-          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/teams/29?lang=en&region=us"
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/teams/29?lang=en&region=us"
         }
       },
       "nextEvent": [
         {
-          "id": "401812680",
-          "date": "2025-10-07T00:00Z",
-          "name": "Detroit Pistons at Memphis Grizzlies",
-          "shortName": "DET @ MEM",
+          "id": "401809938",
+          "date": "2025-10-23T00:00Z",
+          "name": "New Orleans Pelicans at Memphis Grizzlies",
+          "shortName": "NO @ MEM",
           "season": {
             "year": 2026,
             "displayName": "2025-26"
           },
           "seasonType": {
-            "id": "1",
-            "type": 1,
-            "name": "Preseason",
-            "abbreviation": "pre"
+            "id": "2",
+            "type": 2,
+            "name": "Regular Season",
+            "abbreviation": "reg"
           },
           "timeValid": true,
           "competitions": [
             {
-              "id": "401812680",
-              "date": "2025-10-07T00:00Z",
+              "id": "401809938",
+              "date": "2025-10-23T00:00Z",
               "attendance": 0,
               "type": {
                 "id": "1",
@@ -611,19 +751,19 @@
                   }
                 },
                 {
-                  "id": "8",
+                  "id": "3",
                   "type": "team",
                   "order": 1,
                   "homeAway": "away",
                   "team": {
-                    "id": "8",
-                    "location": "Detroit",
-                    "abbreviation": "DET",
-                    "displayName": "Detroit Pistons",
-                    "shortDisplayName": "Pistons",
+                    "id": "3",
+                    "location": "New Orleans",
+                    "abbreviation": "NO",
+                    "displayName": "New Orleans Pelicans",
+                    "shortDisplayName": "Pelicans",
                     "logos": [
                       {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/det.png",
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/no.png",
                         "width": 500,
                         "height": 500,
                         "alt": "",
@@ -634,7 +774,7 @@
                         "lastUpdated": "2024-06-25T21:17Z"
                       },
                       {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/det.png",
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/no.png",
                         "width": 500,
                         "height": 500,
                         "alt": "",
@@ -645,7 +785,7 @@
                         "lastUpdated": "2024-06-25T21:13Z"
                       },
                       {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/det.png",
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/no.png",
                         "width": 500,
                         "height": 500,
                         "alt": "",
@@ -656,7 +796,7 @@
                         "lastUpdated": "2024-06-25T21:18Z"
                       },
                       {
-                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/det.png",
+                        "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/no.png",
                         "width": 500,
                         "height": 500,
                         "alt": "",
@@ -668,7 +808,7 @@
                         "lastUpdated": "2024-06-25T21:14Z"
                       },
                       {
-                        "href": "https://a.espncdn.com/guid/4e096981-dc02-51d0-3dcd-2468fcc1e22d/logos/primary_logo_on_white_color.png",
+                        "href": "https://a.espncdn.com/guid/9461f397-7882-94c0-c18c-e89bdc9e570e/logos/primary_logo_on_white_color.png",
                         "width": 4096,
                         "height": 4096,
                         "alt": "",
@@ -676,10 +816,10 @@
                           "full",
                           "primary_logo_on_white_color"
                         ],
-                        "lastUpdated": "2024-12-03T19:31Z"
+                        "lastUpdated": "2024-12-04T20:57Z"
                       },
                       {
-                        "href": "https://a.espncdn.com/guid/4e096981-dc02-51d0-3dcd-2468fcc1e22d/logos/primary_logo_on_black_color.png",
+                        "href": "https://a.espncdn.com/guid/9461f397-7882-94c0-c18c-e89bdc9e570e/logos/primary_logo_on_black_color.png",
                         "width": 4096,
                         "height": 4096,
                         "alt": "",
@@ -687,10 +827,10 @@
                           "full",
                           "primary_logo_on_black_color"
                         ],
-                        "lastUpdated": "2024-12-03T19:31Z"
+                        "lastUpdated": "2024-12-04T20:57Z"
                       },
                       {
-                        "href": "https://a.espncdn.com/guid/4e096981-dc02-51d0-3dcd-2468fcc1e22d/logos/primary_logo_on_primary_color.png",
+                        "href": "https://a.espncdn.com/guid/9461f397-7882-94c0-c18c-e89bdc9e570e/logos/primary_logo_on_primary_color.png",
                         "width": 4096,
                         "height": 4096,
                         "alt": "",
@@ -698,10 +838,10 @@
                           "full",
                           "primary_logo_on_primary_color"
                         ],
-                        "lastUpdated": "2024-12-03T19:31Z"
+                        "lastUpdated": "2024-12-04T20:57Z"
                       },
                       {
-                        "href": "https://a.espncdn.com/guid/4e096981-dc02-51d0-3dcd-2468fcc1e22d/logos/primary_logo_on_secondary_color.png",
+                        "href": "https://a.espncdn.com/guid/9461f397-7882-94c0-c18c-e89bdc9e570e/logos/primary_logo_on_secondary_color.png",
                         "width": 4096,
                         "height": 4096,
                         "alt": "",
@@ -709,10 +849,10 @@
                           "full",
                           "primary_logo_on_secondary_color"
                         ],
-                        "lastUpdated": "2024-12-03T19:31Z"
+                        "lastUpdated": "2024-12-04T20:57Z"
                       },
                       {
-                        "href": "https://a.espncdn.com/guid/4e096981-dc02-51d0-3dcd-2468fcc1e22d/logos/secondary_logo_on_white_color.png",
+                        "href": "https://a.espncdn.com/guid/9461f397-7882-94c0-c18c-e89bdc9e570e/logos/secondary_logo_on_white_color.png",
                         "width": 4096,
                         "height": 4096,
                         "alt": "",
@@ -720,10 +860,10 @@
                           "full",
                           "secondary_logo_on_white_color"
                         ],
-                        "lastUpdated": "2024-12-03T19:31Z"
+                        "lastUpdated": "2024-12-04T20:57Z"
                       },
                       {
-                        "href": "https://a.espncdn.com/guid/4e096981-dc02-51d0-3dcd-2468fcc1e22d/logos/secondary_logo_on_black_color.png",
+                        "href": "https://a.espncdn.com/guid/9461f397-7882-94c0-c18c-e89bdc9e570e/logos/secondary_logo_on_black_color.png",
                         "width": 4096,
                         "height": 4096,
                         "alt": "",
@@ -731,10 +871,10 @@
                           "full",
                           "secondary_logo_on_black_color"
                         ],
-                        "lastUpdated": "2024-12-03T19:31Z"
+                        "lastUpdated": "2024-12-04T20:57Z"
                       },
                       {
-                        "href": "https://a.espncdn.com/guid/4e096981-dc02-51d0-3dcd-2468fcc1e22d/logos/secondary_logo_on_primary_color.png",
+                        "href": "https://a.espncdn.com/guid/9461f397-7882-94c0-c18c-e89bdc9e570e/logos/secondary_logo_on_primary_color.png",
                         "width": 4096,
                         "height": 4096,
                         "alt": "",
@@ -742,10 +882,10 @@
                           "full",
                           "secondary_logo_on_primary_color"
                         ],
-                        "lastUpdated": "2024-12-03T19:31Z"
+                        "lastUpdated": "2024-12-04T20:57Z"
                       },
                       {
-                        "href": "https://a.espncdn.com/guid/4e096981-dc02-51d0-3dcd-2468fcc1e22d/logos/secondary_logo_on_secondary_color.png",
+                        "href": "https://a.espncdn.com/guid/9461f397-7882-94c0-c18c-e89bdc9e570e/logos/secondary_logo_on_secondary_color.png",
                         "width": 4096,
                         "height": 4096,
                         "alt": "",
@@ -753,7 +893,7 @@
                           "full",
                           "secondary_logo_on_secondary_color"
                         ],
-                        "lastUpdated": "2024-12-03T19:31Z"
+                        "lastUpdated": "2024-12-04T20:57Z"
                       }
                     ],
                     "links": [
@@ -763,7 +903,7 @@
                           "desktop",
                           "team"
                         ],
-                        "href": "https://www.espn.com/nba/team/_/name/det/detroit-pistons",
+                        "href": "https://www.espn.com/nba/team/_/name/no/new-orleans-pelicans",
                         "text": "Clubhouse"
                       },
                       {
@@ -772,7 +912,7 @@
                           "desktop",
                           "team"
                         ],
-                        "href": "https://www.espn.com/nba/team/roster/_/name/det/detroit-pistons",
+                        "href": "https://www.espn.com/nba/team/roster/_/name/no/new-orleans-pelicans",
                         "text": "Roster"
                       },
                       {
@@ -781,7 +921,7 @@
                           "desktop",
                           "team"
                         ],
-                        "href": "https://www.espn.com/nba/team/stats/_/name/det/detroit-pistons",
+                        "href": "https://www.espn.com/nba/team/stats/_/name/no/new-orleans-pelicans",
                         "text": "Statistics"
                       },
                       {
@@ -790,7 +930,7 @@
                           "desktop",
                           "team"
                         ],
-                        "href": "https://www.espn.com/nba/team/schedule/_/name/det",
+                        "href": "https://www.espn.com/nba/team/schedule/_/name/no",
                         "text": "Schedule"
                       },
                       {
@@ -799,7 +939,7 @@
                           "desktop",
                           "team"
                         ],
-                        "href": "https://www.espn.com/nba/team/photos/_/name/det",
+                        "href": "https://www.espn.com/nba/team/photos/_/name/no",
                         "text": "photos"
                       },
                       {
@@ -808,7 +948,7 @@
                           "desktop",
                           "team"
                         ],
-                        "href": "https://www.vividseats.com/detroit-pistons-tickets--sports-nba-basketball/performer/239?wsUser=717",
+                        "href": "https://www.vividseats.com/new-orleans-pelicans-tickets--sports-nba-basketball/performer/153?wsUser=717",
                         "text": "Tickets"
                       },
                       {
@@ -817,7 +957,7 @@
                           "desktop",
                           "team"
                         ],
-                        "href": "https://www.espn.com/nba/draft/teams/_/name/det/detroit-pistons",
+                        "href": "https://www.espn.com/nba/draft/teams/_/name/no/new-orleans-pelicans",
                         "text": "Draft Picks"
                       },
                       {
@@ -826,7 +966,7 @@
                           "desktop",
                           "team"
                         ],
-                        "href": "https://www.espn.com/nba/team/transactions/_/name/det",
+                        "href": "https://www.espn.com/nba/team/transactions/_/name/no",
                         "text": "Transactions"
                       },
                       {
@@ -835,7 +975,7 @@
                           "desktop",
                           "team"
                         ],
-                        "href": "https://www.espn.com/nba/team/injuries/_/name/det",
+                        "href": "https://www.espn.com/nba/team/injuries/_/name/no",
                         "text": "Injuries"
                       },
                       {
@@ -844,7 +984,7 @@
                           "desktop",
                           "team"
                         ],
-                        "href": "https://www.espn.com/nba/team/depth/_/name/det",
+                        "href": "https://www.espn.com/nba/team/depth/_/name/no",
                         "text": "Depth Chart"
                       }
                     ]
@@ -852,16 +992,81 @@
                 }
               ],
               "notes": [],
-              "broadcasts": [],
+              "broadcasts": [
+                {
+                  "type": {
+                    "id": "4",
+                    "shortName": "Streaming"
+                  },
+                  "market": {
+                    "id": "3",
+                    "type": "Away"
+                  },
+                  "media": {
+                    "shortName": "GCSEN"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                },
+                {
+                  "type": {
+                    "id": "4",
+                    "shortName": "Streaming"
+                  },
+                  "market": {
+                    "id": "3",
+                    "type": "Away"
+                  },
+                  "media": {
+                    "shortName": "Pelicans.com"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                },
+                {
+                  "type": {
+                    "id": "6",
+                    "shortName": "Subscription Package"
+                  },
+                  "market": {
+                    "id": "3",
+                    "type": "Away"
+                  },
+                  "media": {
+                    "shortName": "NBA League Pass"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                },
+                {
+                  "type": {
+                    "id": "1",
+                    "shortName": "TV"
+                  },
+                  "market": {
+                    "id": "2",
+                    "type": "Home"
+                  },
+                  "media": {
+                    "shortName": "FanDuel SN SE"
+                  },
+                  "lang": "en",
+                  "region": "us",
+                  "partnered": false
+                }
+              ],
               "tickets": [
                 {
-                  "id": "5906598",
-                  "summary": "Tickets as low as $4",
-                  "description": "NBA Preseason - Detroit Pistons at Memphis Grizzlies",
-                  "maxPrice": 4301.77,
-                  "startingPrice": 4.5,
-                  "numberAvailable": 2569,
-                  "totalPostings": 591,
+                  "id": "5939906",
+                  "summary": "Tickets as low as $8",
+                  "description": "New Orleans Pelicans at Memphis Grizzlies",
+                  "maxPrice": 715.99,
+                  "startingPrice": 8.13,
+                  "numberAvailable": 1053,
+                  "totalPostings": 314,
                   "links": [
                     {
                       "rel": [
@@ -869,7 +1074,7 @@
                         "desktop",
                         "event"
                       ],
-                      "href": "https://www.vividseats.com/memphis-grizzlies-tickets-fedexforum-10-6-2025--sports-nba-basketball/production/5906598?wsUser=717"
+                      "href": "https://www.vividseats.com/memphis-grizzlies-tickets-fedexforum-10-22-2025--sports-nba-basketball/production/5939906?wsUser=717"
                     },
                     {
                       "rel": [
@@ -892,8 +1097,8 @@
                   "state": "pre",
                   "completed": false,
                   "description": "Scheduled",
-                  "detail": "Mon, October 6th at 8:00 PM EDT",
-                  "shortDetail": "10/6 - 8:00 PM EDT"
+                  "detail": "Wed, October 22nd at 8:00 PM EDT",
+                  "shortDetail": "10/22 - 8:00 PM EDT"
                 }
               }
             }
@@ -906,7 +1111,7 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/game/_/gameId/401812680/pistons-grizzlies",
+              "href": "https://www.espn.com/nba/game/_/gameId/401809938/pelicans-grizzlies",
               "text": "Gamecast",
               "shortText": "Summary",
               "isExternal": false,
@@ -920,7 +1125,7 @@
                 "app",
                 "event"
               ],
-              "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=nba&gameId=401812680",
+              "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=nba&gameId=401809938",
               "text": "Gamecast",
               "shortText": "Summary",
               "isExternal": false,
@@ -933,7 +1138,7 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/game/_/gameId/401812680",
+              "href": "https://www.espn.com/nba/game/_/gameId/401809938",
               "text": "Now",
               "shortText": "Now",
               "isExternal": false,
@@ -946,7 +1151,7 @@
                 "desktop",
                 "event"
               ],
-              "href": "https://www.espn.com/nba/odds/_/gameId/401812680",
+              "href": "https://www.espn.com/nba/odds/_/gameId/401809938",
               "text": "Odds",
               "shortText": "Odds",
               "isExternal": false,
@@ -959,7 +1164,7 @@
                 "mobile",
                 "event"
               ],
-              "href": "https://m.espn.com/nba/odds/_/gameId/401812680",
+              "href": "https://m.espn.com/nba/odds/_/gameId/401809938",
               "text": "Odds",
               "shortText": "Odds",
               "isExternal": false,
@@ -968,17 +1173,17 @@
           ]
         }
       ],
-      "standingSummary": "1st in Southwest Division"
+      "standingSummary": "5th in Southwest Division"
     }
   },
   "roster": {
-    "timestamp": "2025-09-25T23:27:26Z",
+    "timestamp": "2025-10-20T18:28:50Z",
     "status": "success",
     "season": {
       "year": 2026,
       "displayName": "2025-26",
-      "type": 1,
-      "name": "Preseason"
+      "type": 2,
+      "name": "Regular Season"
     },
     "athletes": [
       {
@@ -1148,18 +1353,11 @@
         },
         "jersey": "7",
         "position": {
-          "id": "6",
-          "name": "Power Forward",
-          "displayName": "Power Forward",
-          "abbreviation": "PF",
-          "leaf": true,
-          "parent": {
-            "id": "7",
-            "name": "Forward",
-            "displayName": "Forward",
-            "abbreviation": "F",
-            "leaf": false
-          }
+          "id": "7",
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F",
+          "leaf": false
         },
         "injuries": [],
         "contracts": [
@@ -1205,7 +1403,7 @@
           }
         ],
         "experience": {
-          "years": 3
+          "years": 4
         },
         "contract": {
           "birdStatus": 0,
@@ -1236,187 +1434,6 @@
           "tradeRestriction": true,
           "unsignedForeignPick": false,
           "active": true
-        },
-        "status": {
-          "id": "1",
-          "name": "Active",
-          "type": "active",
-          "abbreviation": "Active"
-        }
-      },
-      {
-        "id": "4431914",
-        "uid": "s:40~l:46~a:4431914",
-        "guid": "147799ca-7785-3043-850a-b638470cc200",
-        "alternateIds": {
-          "sdr": "4431914"
-        },
-        "firstName": "Tyler",
-        "lastName": "Burton",
-        "fullName": "Tyler Burton",
-        "displayName": "Tyler Burton",
-        "shortName": "T. Burton",
-        "weight": 215,
-        "displayWeight": "215 lbs",
-        "height": 79,
-        "displayHeight": "6' 7\"",
-        "age": 25,
-        "dateOfBirth": "2000-02-11T08:00Z",
-        "links": [
-          {
-            "language": "en-US",
-            "rel": [
-              "playercard",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/_/id/4431914/tyler-burton",
-            "text": "Player Card",
-            "shortText": "Player Card",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "stats",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/stats/_/id/4431914/tyler-burton",
-            "text": "Stats",
-            "shortText": "Stats",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "splits",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/splits/_/id/4431914/tyler-burton",
-            "text": "Splits",
-            "shortText": "Splits",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "gamelog",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/gamelog/_/id/4431914/tyler-burton",
-            "text": "Game Log",
-            "shortText": "Game Log",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "news",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/news/_/id/4431914/tyler-burton",
-            "text": "News",
-            "shortText": "News",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "bio",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/bio/_/id/4431914/tyler-burton",
-            "text": "Bio",
-            "shortText": "Bio",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "overview",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/_/id/4431914/tyler-burton",
-            "text": "Overview",
-            "shortText": "Overview",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "advancedstats",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/advancedstats/_/id/4431914/tyler-burton",
-            "text": "Advanced Stats",
-            "shortText": "Advanced Stats",
-            "isExternal": false,
-            "isPremium": false
-          }
-        ],
-        "birthPlace": {
-          "city": "Uxbridge",
-          "state": "MA",
-          "country": "USA"
-        },
-        "college": {
-          "id": "222",
-          "guid": "ada19852-b0fa-3f60-a829-419831b024e1",
-          "mascot": "Wildcats",
-          "name": "Villanova",
-          "shortName": "Villanova",
-          "abbrev": "VILL",
-          "logos": [
-            {
-              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/222.png",
-              "width": 500,
-              "height": 500,
-              "alt": "",
-              "rel": [
-                "full",
-                "default"
-              ],
-              "lastUpdated": "2022-12-09T15:57Z"
-            },
-            {
-              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/222.png",
-              "width": 500,
-              "height": 500,
-              "alt": "",
-              "rel": [
-                "full",
-                "dark"
-              ],
-              "lastUpdated": "2022-12-09T15:58Z"
-            }
-          ]
-        },
-        "slug": "tyler-burton",
-        "position": {
-          "id": "7",
-          "name": "Forward",
-          "displayName": "Forward",
-          "abbreviation": "F",
-          "leaf": false
-        },
-        "injuries": [],
-        "contracts": [],
-        "experience": {
-          "years": 0
         },
         "status": {
           "id": "1",
@@ -1599,18 +1616,11 @@
           "displayValue": "Both"
         },
         "position": {
-          "id": "2",
-          "name": "Shooting Guard",
-          "displayName": "Shooting Guard",
-          "abbreviation": "SG",
-          "leaf": true,
-          "parent": {
-            "id": "3",
-            "name": "Guard",
-            "displayName": "Guard",
-            "abbreviation": "G",
-            "leaf": false
-          }
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
         },
         "injuries": [],
         "contracts": [
@@ -1720,7 +1730,7 @@
           }
         ],
         "experience": {
-          "years": 11
+          "years": 12
         },
         "contract": {
           "birdStatus": 0,
@@ -1928,23 +1938,16 @@
         },
         "jersey": "15",
         "position": {
-          "id": "6",
-          "name": "Power Forward",
-          "displayName": "Power Forward",
-          "abbreviation": "PF",
-          "leaf": true,
-          "parent": {
-            "id": "7",
-            "name": "Forward",
-            "displayName": "Forward",
-            "abbreviation": "F",
-            "leaf": false
-          }
+          "id": "7",
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F",
+          "leaf": false
         },
         "injuries": [
           {
-            "status": "Day-To-Day",
-            "date": "2025-07-03T22:08Z"
+            "status": "Out",
+            "date": "2025-09-28T14:39Z"
           }
         ],
         "contracts": [
@@ -2006,7 +2009,7 @@
           }
         ],
         "experience": {
-          "years": 5
+          "years": 6
         },
         "contract": {
           "birdStatus": 0,
@@ -2059,8 +2062,8 @@
         "shortName": "C. Coward",
         "weight": 206,
         "displayWeight": "206 lbs",
-        "height": 78,
-        "displayHeight": "6' 6\"",
+        "height": 77,
+        "displayHeight": "6' 5\"",
         "age": 22,
         "dateOfBirth": "2003-09-11T07:00Z",
         "links": [
@@ -2219,12 +2222,7 @@
           "abbreviation": "F",
           "leaf": false
         },
-        "injuries": [
-          {
-            "status": "Day-To-Day",
-            "date": "2025-07-22T20:27Z"
-          }
-        ],
+        "injuries": [],
         "contracts": [
           {
             "salary": 5715120,
@@ -2289,8 +2287,8 @@
         "shortName": "Z. Edey",
         "weight": 305,
         "displayWeight": "305 lbs",
-        "height": 88,
-        "displayHeight": "7' 4\"",
+        "height": 87,
+        "displayHeight": "7' 3\"",
         "age": 23,
         "dateOfBirth": "2002-03-14T08:00Z",
         "links": [
@@ -2452,7 +2450,7 @@
         "injuries": [
           {
             "status": "Out",
-            "date": "2025-07-03T22:08Z"
+            "date": "2025-09-26T19:33Z"
           }
         ],
         "contracts": [
@@ -2474,7 +2472,7 @@
           }
         ],
         "experience": {
-          "years": 0
+          "years": 1
         },
         "contract": {
           "birdStatus": 0,
@@ -2527,8 +2525,8 @@
         "shortName": "P. Hall",
         "weight": 245,
         "displayWeight": "245 lbs",
-        "height": 82,
-        "displayHeight": "6' 10\"",
+        "height": 80,
+        "displayHeight": "6' 8\"",
         "age": 23,
         "dateOfBirth": "2002-02-21T08:00Z",
         "links": [
@@ -2679,6 +2677,7 @@
           "href": "https://a.espncdn.com/i/headshots/nba/players/full/4701225.png",
           "alt": "PJ Hall"
         },
+        "jersey": "16",
         "position": {
           "id": "9",
           "name": "Center",
@@ -2706,7 +2705,7 @@
           }
         ],
         "experience": {
-          "years": 0
+          "years": 1
         },
         "contract": {
           "birdStatus": 0,
@@ -2947,7 +2946,7 @@
           }
         ],
         "experience": {
-          "years": 1
+          "years": 2
         },
         "contract": {
           "birdStatus": 0,
@@ -3153,27 +3152,15 @@
           "href": "https://a.espncdn.com/i/headshots/nba/players/full/4277961.png",
           "alt": "Jaren Jackson Jr."
         },
-        "jersey": "13",
+        "jersey": "8",
         "position": {
-          "id": "6",
-          "name": "Power Forward",
-          "displayName": "Power Forward",
-          "abbreviation": "PF",
-          "leaf": true,
-          "parent": {
-            "id": "7",
-            "name": "Forward",
-            "displayName": "Forward",
-            "abbreviation": "F",
-            "leaf": false
-          }
+          "id": "7",
+          "name": "Forward",
+          "displayName": "Forward",
+          "abbreviation": "F",
+          "leaf": false
         },
-        "injuries": [
-          {
-            "status": "Day-To-Day",
-            "date": "2025-07-03T22:08Z"
-          }
-        ],
+        "injuries": [],
         "contracts": [
           {
             "salary": 23413395,
@@ -3241,7 +3228,7 @@
           }
         ],
         "experience": {
-          "years": 6
+          "years": 7
         },
         "contract": {
           "birdStatus": 0,
@@ -3454,20 +3441,18 @@
           "displayValue": "Right"
         },
         "position": {
-          "id": "2",
-          "name": "Shooting Guard",
-          "displayName": "Shooting Guard",
-          "abbreviation": "SG",
-          "leaf": true,
-          "parent": {
-            "id": "3",
-            "name": "Guard",
-            "displayName": "Guard",
-            "abbreviation": "G",
-            "leaf": false
-          }
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
         },
-        "injuries": [],
+        "injuries": [
+          {
+            "status": "Day-To-Day",
+            "date": "2025-10-19T15:20Z"
+          }
+        ],
         "contracts": [
           {
             "salary": 8781000,
@@ -3519,7 +3504,7 @@
           }
         ],
         "experience": {
-          "years": 5
+          "years": 6
         },
         "contract": {
           "birdStatus": 0,
@@ -3550,217 +3535,6 @@
           "tradeRestriction": true,
           "unsignedForeignPick": false,
           "active": true
-        },
-        "status": {
-          "id": "1",
-          "name": "Active",
-          "type": "active",
-          "abbreviation": "Active"
-        }
-      },
-      {
-        "id": "4066240",
-        "uid": "s:40~l:46~a:4066240",
-        "guid": "52948410-0bd0-186c-e986-65be19c95d1c",
-        "alternateIds": {
-          "sdr": "4066240"
-        },
-        "firstName": "Braxton",
-        "lastName": "Key",
-        "fullName": "Braxton Key",
-        "displayName": "Braxton Key",
-        "shortName": "B. Key",
-        "weight": 225,
-        "displayWeight": "225 lbs",
-        "height": 80,
-        "displayHeight": "6' 8\"",
-        "age": 28,
-        "dateOfBirth": "1997-02-14T08:00Z",
-        "links": [
-          {
-            "language": "en-US",
-            "rel": [
-              "playercard",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/_/id/4066240/braxton-key",
-            "text": "Player Card",
-            "shortText": "Player Card",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "stats",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/stats/_/id/4066240/braxton-key",
-            "text": "Stats",
-            "shortText": "Stats",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "splits",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/splits/_/id/4066240/braxton-key",
-            "text": "Splits",
-            "shortText": "Splits",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "gamelog",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/gamelog/_/id/4066240/braxton-key",
-            "text": "Game Log",
-            "shortText": "Game Log",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "news",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/news/_/id/4066240/braxton-key",
-            "text": "News",
-            "shortText": "News",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "bio",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/bio/_/id/4066240/braxton-key",
-            "text": "Bio",
-            "shortText": "Bio",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "overview",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/_/id/4066240/braxton-key",
-            "text": "Overview",
-            "shortText": "Overview",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "advancedstats",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/advancedstats/_/id/4066240/braxton-key",
-            "text": "Advanced Stats",
-            "shortText": "Advanced Stats",
-            "isExternal": false,
-            "isPremium": false
-          }
-        ],
-        "birthPlace": {
-          "city": "Charlotte",
-          "state": "NC",
-          "country": "USA"
-        },
-        "college": {
-          "id": "258",
-          "guid": "50802e46-c116-39a6-a930-42ac9881bfe7",
-          "mascot": "Cavaliers",
-          "name": "Virginia",
-          "shortName": "Virginia",
-          "abbrev": "UVA",
-          "logos": [
-            {
-              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/258.png",
-              "width": 500,
-              "height": 500,
-              "alt": "",
-              "rel": [
-                "full",
-                "default"
-              ],
-              "lastUpdated": "2020-09-16T19:21Z"
-            },
-            {
-              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/258.png",
-              "width": 500,
-              "height": 500,
-              "alt": "",
-              "rel": [
-                "full",
-                "dark"
-              ],
-              "lastUpdated": "2020-06-16T14:21Z"
-            }
-          ]
-        },
-        "slug": "braxton-key",
-        "headshot": {
-          "href": "https://a.espncdn.com/i/headshots/nba/players/full/4066240.png",
-          "alt": "Braxton Key"
-        },
-        "jersey": "12",
-        "position": {
-          "id": "7",
-          "name": "Forward",
-          "displayName": "Forward",
-          "abbreviation": "F",
-          "leaf": false
-        },
-        "injuries": [],
-        "contracts": [
-          {
-            "salary": 0,
-            "season": {
-              "year": 2025,
-              "startDate": "2024-09-24T07:00Z",
-              "endDate": "2025-06-27T06:59Z"
-            }
-          },
-          {
-            "salary": 0,
-            "season": {
-              "year": 2024,
-              "startDate": "2023-10-05T07:00Z",
-              "endDate": "2024-06-21T06:59Z"
-            }
-          },
-          {
-            "salary": 0,
-            "season": {
-              "year": 2023,
-              "startDate": "2022-08-30T07:00Z",
-              "endDate": "2023-06-24T06:59Z"
-            }
-          }
-        ],
-        "experience": {
-          "years": 3
         },
         "status": {
           "id": "1",
@@ -3938,18 +3712,11 @@
         },
         "jersey": "46",
         "position": {
-          "id": "2",
-          "name": "Shooting Guard",
-          "displayName": "Shooting Guard",
-          "abbreviation": "SG",
-          "leaf": true,
-          "parent": {
-            "id": "3",
-            "name": "Guard",
-            "displayName": "Guard",
-            "abbreviation": "G",
-            "leaf": false
-          }
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
         },
         "injuries": [],
         "contracts": [
@@ -4011,7 +3778,7 @@
           }
         ],
         "experience": {
-          "years": 5
+          "years": 6
         },
         "contract": {
           "birdStatus": 0,
@@ -4217,6 +3984,7 @@
           "href": "https://a.espncdn.com/i/headshots/nba/players/full/3146557.png",
           "alt": "Jock Landale"
         },
+        "jersey": "31",
         "position": {
           "id": "9",
           "name": "Center",
@@ -4268,7 +4036,7 @@
           }
         ],
         "experience": {
-          "years": 3
+          "years": 4
         },
         "contract": {
           "birdStatus": 0,
@@ -4299,187 +4067,6 @@
           "tradeRestriction": false,
           "unsignedForeignPick": false,
           "active": true
-        },
-        "status": {
-          "id": "1",
-          "name": "Active",
-          "type": "active",
-          "abbreviation": "Active"
-        }
-      },
-      {
-        "id": "4596528",
-        "uid": "s:40~l:46~a:4596528",
-        "guid": "c975c4e3-3f20-3b67-8a3c-e14058315d3c",
-        "alternateIds": {
-          "sdr": "4596528"
-        },
-        "firstName": "Lawson",
-        "lastName": "Lovering",
-        "fullName": "Lawson Lovering",
-        "displayName": "Lawson Lovering",
-        "shortName": "L. Lovering",
-        "weight": 233,
-        "displayWeight": "233 lbs",
-        "height": 85,
-        "displayHeight": "7' 1\"",
-        "age": 22,
-        "dateOfBirth": "2003-05-09T07:00Z",
-        "links": [
-          {
-            "language": "en-US",
-            "rel": [
-              "playercard",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/_/id/4596528/lawson-lovering",
-            "text": "Player Card",
-            "shortText": "Player Card",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "stats",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/stats/_/id/4596528/lawson-lovering",
-            "text": "Stats",
-            "shortText": "Stats",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "splits",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/splits/_/id/4596528/lawson-lovering",
-            "text": "Splits",
-            "shortText": "Splits",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "gamelog",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/gamelog/_/id/4596528/lawson-lovering",
-            "text": "Game Log",
-            "shortText": "Game Log",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "news",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/news/_/id/4596528/lawson-lovering",
-            "text": "News",
-            "shortText": "News",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "bio",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/bio/_/id/4596528/lawson-lovering",
-            "text": "Bio",
-            "shortText": "Bio",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "overview",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/_/id/4596528/lawson-lovering",
-            "text": "Overview",
-            "shortText": "Overview",
-            "isExternal": false,
-            "isPremium": false
-          },
-          {
-            "language": "en-US",
-            "rel": [
-              "advancedstats",
-              "desktop",
-              "athlete"
-            ],
-            "href": "https://www.espn.com/nba/player/advancedstats/_/id/4596528/lawson-lovering",
-            "text": "Advanced Stats",
-            "shortText": "Advanced Stats",
-            "isExternal": false,
-            "isPremium": false
-          }
-        ],
-        "birthPlace": {
-          "city": "Cheyenne",
-          "state": "WY",
-          "country": "USA"
-        },
-        "college": {
-          "id": "254",
-          "guid": "9a038720-0f73-391f-91a4-00a582539a08",
-          "mascot": "Utes",
-          "name": "Utah",
-          "shortName": "Utah",
-          "abbrev": "UTAH",
-          "logos": [
-            {
-              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/254.png",
-              "width": 500,
-              "height": 500,
-              "alt": "",
-              "rel": [
-                "full",
-                "default"
-              ],
-              "lastUpdated": "2023-09-07T19:32Z"
-            },
-            {
-              "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/254.png",
-              "width": 500,
-              "height": 500,
-              "alt": "",
-              "rel": [
-                "full",
-                "dark"
-              ],
-              "lastUpdated": "2023-09-07T19:32Z"
-            }
-          ]
-        },
-        "slug": "lawson-lovering",
-        "position": {
-          "id": "9",
-          "name": "Center",
-          "displayName": "Center",
-          "abbreviation": "C",
-          "leaf": false
-        },
-        "injuries": [],
-        "contracts": [],
-        "experience": {
-          "years": 0
         },
         "status": {
           "id": "1",
@@ -4657,23 +4244,16 @@
         },
         "jersey": "12",
         "position": {
-          "id": "1",
-          "name": "Point Guard",
-          "displayName": "Point Guard",
-          "abbreviation": "PG",
-          "leaf": true,
-          "parent": {
-            "id": "3",
-            "name": "Guard",
-            "displayName": "Guard",
-            "abbreviation": "G",
-            "leaf": false
-          }
+          "id": "3",
+          "name": "Guard",
+          "displayName": "Guard",
+          "abbreviation": "G",
+          "leaf": false
         },
         "injuries": [
           {
             "status": "Day-To-Day",
-            "date": "2025-07-03T22:08Z"
+            "date": "2025-10-17T23:22Z"
           }
         ],
         "contracts": [
@@ -4735,7 +4315,7 @@
           }
         ],
         "experience": {
-          "years": 5
+          "years": 6
         },
         "contract": {
           "birdStatus": 0,
@@ -4788,8 +4368,8 @@
         "shortName": "S. Pippen Jr.",
         "weight": 170,
         "displayWeight": "170 lbs",
-        "height": 73,
-        "displayHeight": "6' 1\"",
+        "height": 74,
+        "displayHeight": "6' 2\"",
         "age": 24,
         "dateOfBirth": "2000-11-10T08:00Z",
         "links": [
@@ -4953,7 +4533,12 @@
           "abbreviation": "G",
           "leaf": false
         },
-        "injuries": [],
+        "injuries": [
+          {
+            "status": "Out",
+            "date": "2025-10-18T17:37Z"
+          }
+        ],
         "contracts": [
           {
             "salary": 2270735,
@@ -4989,7 +4574,7 @@
           }
         ],
         "experience": {
-          "years": 2
+          "years": 3
         },
         "contract": {
           "birdStatus": 0,
@@ -5230,7 +4815,7 @@
           }
         ],
         "experience": {
-          "years": 1
+          "years": 2
         },
         "contract": {
           "birdStatus": 0,
@@ -5283,8 +4868,8 @@
         "shortName": "J. Small",
         "weight": 190,
         "displayWeight": "190 lbs",
-        "height": 75,
-        "displayHeight": "6' 3\"",
+        "height": 73,
+        "displayHeight": "6' 1\"",
         "age": 22,
         "dateOfBirth": "2002-12-19T08:00Z",
         "links": [
@@ -5508,8 +5093,8 @@
         "shortName": "C. Spencer",
         "weight": 205,
         "displayWeight": "205 lbs",
-        "height": 76,
-        "displayHeight": "6' 4\"",
+        "height": 75,
+        "displayHeight": "6' 3\"",
         "age": 25,
         "dateOfBirth": "2000-04-06T07:00Z",
         "links": [
@@ -5688,7 +5273,7 @@
           }
         ],
         "experience": {
-          "years": 0
+          "years": 1
         },
         "contract": {
           "birdStatus": 0,
@@ -5741,8 +5326,8 @@
         "shortName": "J. Wells",
         "weight": 206,
         "displayWeight": "206 lbs",
-        "height": 80,
-        "displayHeight": "6' 8\"",
+        "height": 79,
+        "displayHeight": "6' 7\"",
         "age": 22,
         "dateOfBirth": "2003-08-26T07:00Z",
         "links": [
@@ -5921,7 +5506,7 @@
           }
         ],
         "experience": {
-          "years": 0
+          "years": 1
         },
         "contract": {
           "birdStatus": 0,
@@ -6170,7 +5755,7 @@
           }
         ],
         "experience": {
-          "years": 2
+          "years": 3
         },
         "contract": {
           "birdStatus": 0,
@@ -6226,30 +5811,33 @@
       "displayName": "Memphis Grizzlies",
       "clubhouse": "https://www.espn.com/nba/team/_/name/mem/memphis-grizzlies",
       "color": "5d76a9",
-      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png"
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+      "recordSummary": "1-4",
+      "seasonSummary": "2025-26",
+      "standingSummary": "5th in Southwest Division"
     }
   },
   "injuries": {
-    "timestamp": "2025-09-25T23:34:48Z",
+    "timestamp": "2025-10-20T18:34:13Z",
     "status": "success",
     "season": {
       "year": 2026,
-      "type": 1,
-      "name": "Preseason",
+      "type": 2,
+      "name": "Regular Season",
       "displayName": "2025-26"
     },
     "injuries": [
       {
-        "id": "-21934",
-        "longComment": "The Grizzlies traded up to select Coward with the 11th overall pick in the 2025 NBA Draft, and they're expected to be extremely cautious with his recovery. The former Washington State suffered a shredded rotator cuff and partially torn labrum in his left (non-shooting) shoulder in late November and underwent surgery. Even though Coward recently stated that he's almost recovered from the injury, the reality is that he hasn't yet taken part in five-on-five practices. Until that happens, he's not going to participate in any games. In other words, his chances of seeing the court in the Summer League are slim to none.",
-        "shortComment": "Coward (shoulder) is doubtful to play in the 2025 Summer League, according to Damichael Cole of The Memphis Commercial Appeal.",
+        "id": "499855",
+        "longComment": "Jerome sustained a right calf injury during Friday's preseason matchup against the Heat and exited after logging just four minutes. The guard, who signed a three-year deal with the Grizzlies this offseason, will have his health closely monitored heading into the regular season given Ja Morant (ankle) is still ramping up and Scotty Pippen (toe) is sidelined for three months.",
+        "shortComment": "Jerome (calf) will be further evaluated this weekend, Michael Wallace of the Grizzlies' official site reports.",
         "status": "Day-To-Day",
-        "date": "2025-07-22T20:27Z",
+        "date": "2025-10-19T15:20Z",
         "athlete": {
-          "firstName": "Cedric",
-          "lastName": "Coward",
-          "displayName": "Cedric Coward",
-          "shortName": "C. Coward",
+          "firstName": "Ty",
+          "lastName": "Jerome",
+          "displayName": "Ty Jerome",
+          "shortName": "T. Jerome",
           "links": [
             {
               "language": "en-US",
@@ -6258,7 +5846,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/_/id/4903027/cedric-coward",
+              "href": "https://www.espn.com/nba/player/_/id/4065733/ty-jerome",
               "text": "Player Card",
               "shortText": "Player Card",
               "isExternal": false,
@@ -6271,7 +5859,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/stats/_/id/4903027/cedric-coward",
+              "href": "https://www.espn.com/nba/player/stats/_/id/4065733/ty-jerome",
               "text": "Stats",
               "shortText": "Stats",
               "isExternal": false,
@@ -6284,7 +5872,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/splits/_/id/4903027/cedric-coward",
+              "href": "https://www.espn.com/nba/player/splits/_/id/4065733/ty-jerome",
               "text": "Splits",
               "shortText": "Splits",
               "isExternal": false,
@@ -6297,7 +5885,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/gamelog/_/id/4903027/cedric-coward",
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/4065733/ty-jerome",
               "text": "Game Log",
               "shortText": "Game Log",
               "isExternal": false,
@@ -6310,7 +5898,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/news/_/id/4903027/cedric-coward",
+              "href": "https://www.espn.com/nba/player/news/_/id/4065733/ty-jerome",
               "text": "News",
               "shortText": "News",
               "isExternal": false,
@@ -6323,7 +5911,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/bio/_/id/4903027/cedric-coward",
+              "href": "https://www.espn.com/nba/player/bio/_/id/4065733/ty-jerome",
               "text": "Bio",
               "shortText": "Bio",
               "isExternal": false,
@@ -6336,7 +5924,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/_/id/4903027/cedric-coward",
+              "href": "https://www.espn.com/nba/player/_/id/4065733/ty-jerome",
               "text": "Overview",
               "shortText": "Overview",
               "isExternal": false,
@@ -6349,7 +5937,7 @@
                 "desktop",
                 "athlete"
               ],
-              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4903027/cedric-coward",
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4065733/ty-jerome",
               "text": "Advanced Stats",
               "shortText": "Advanced Stats",
               "isExternal": false,
@@ -6357,8 +5945,1351 @@
             }
           ],
           "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4903027.png",
-            "alt": "Cedric Coward"
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4065733.png",
+            "alt": "Ty Jerome"
+          },
+          "position": {
+            "id": "3",
+            "name": "Guard",
+            "displayName": "Guard",
+            "abbreviation": "G",
+            "leaf": false
+          },
+          "team": {
+            "id": "29",
+            "uid": "s:40~l:46~t:29",
+            "slug": "memphis-grizzlies",
+            "name": "Grizzlies",
+            "abbreviation": "MEM",
+            "displayName": "Memphis Grizzlies",
+            "logos": [
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "default"
+                ],
+                "lastUpdated": "2024-06-25T21:17Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/mem.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:13Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mem.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard"
+                ],
+                "lastUpdated": "2024-06-25T21:18Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/mem.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:14Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              }
+            ],
+            "links": [
+              {
+                "language": "en-US",
+                "rel": [
+                  "clubhouse",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/_/name/mem/memphis-grizzlies",
+                "text": "Clubhouse",
+                "shortText": "Clubhouse",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "roster",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/roster/_/name/mem/memphis-grizzlies",
+                "text": "Roster",
+                "shortText": "Roster",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "stats",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/stats/_/name/mem/memphis-grizzlies",
+                "text": "Statistics",
+                "shortText": "Statistics",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "schedule",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/schedule/_/name/mem",
+                "text": "Schedule",
+                "shortText": "Schedule",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "photos",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/photos/_/name/mem",
+                "text": "photos",
+                "shortText": "photos",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "tickets",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.vividseats.com/memphis-grizzlies-tickets--sports-nba-basketball/performer/910?wsUser=717",
+                "text": "Tickets",
+                "shortText": "Tickets",
+                "isExternal": true,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "draftpicks",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/draft/teams/_/name/mem/memphis-grizzlies",
+                "text": "Draft Picks",
+                "shortText": "Draft Picks",
+                "isExternal": false,
+                "isPremium": true
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "transactions",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/transactions/_/name/mem",
+                "text": "Transactions",
+                "shortText": "Transactions",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "injuries",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/injuries/_/name/mem",
+                "text": "Injuries",
+                "shortText": "Injuries",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "depthchart",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/depth/_/name/mem",
+                "text": "Depth Chart",
+                "shortText": "Depth Chart",
+                "isExternal": false,
+                "isPremium": false
+              }
+            ]
+          },
+          "notes": {
+            "items": [
+              {
+                "id": "499855",
+                "type": "news",
+                "date": "2025-10-19T15:20Z",
+                "headline": "Jerome (calf) will be further evaluated this weekend, Michael Wallace of the Grizzlies' official site reports.",
+                "text": "Jerome sustained a right calf injury during Friday's preseason matchup against the Heat and exited after logging just four minutes. The guard, who signed a three-year deal with the Grizzlies this offseason, will have his health closely monitored heading into the regular season given Ja Morant (ankle) is still ramping up and Scotty Pippen (toe) is sidelined for three months.",
+                "source": "RotoWire",
+                "injury": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4065733/injuries/499855?lang=en&region=us"
+                }
+              }
+            ]
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
+          }
+        },
+        "source": {
+          "id": "1",
+          "description": "basic/manual",
+          "state": "basic"
+        },
+        "type": {
+          "id": "6",
+          "name": "INJURY_STATUS_DAYTODAY",
+          "description": "day-to-day",
+          "abbreviation": "DD"
+        },
+        "details": {
+          "fantasyStatus": {
+            "description": "GTD",
+            "abbreviation": "GTD"
+          },
+          "type": "Calf",
+          "location": "Leg",
+          "side": "Right",
+          "returnDate": "2025-10-22"
+        }
+      },
+      {
+        "id": "499784",
+        "longComment": "Memphis' awful injury luck continues. Based on this timetable, the earliest possible return for Pippen will be around Jan. 11 against the Nets. Pippen was projected to be the third-string point guard behind Ja Morant (ankle) and Ty Jerome (calf) to open the season, opening the door for Cam Spencer or Javon Small to step up.",
+        "shortComment": "Pippen will undergo a procedure for a left big toe injury and will be re-evaluated in 12 weeks, ESPN's Shams Charania reported Saturday.",
+        "status": "Out",
+        "date": "2025-10-18T17:37Z",
+        "athlete": {
+          "firstName": "Scotty",
+          "lastName": "Pippen Jr.",
+          "displayName": "Scotty Pippen Jr.",
+          "shortName": "S. Pippen Jr.",
+          "links": [
+            {
+              "language": "en-US",
+              "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/4431785/scotty-pippen-jr",
+              "text": "Player Card",
+              "shortText": "Player Card",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/stats/_/id/4431785/scotty-pippen-jr",
+              "text": "Stats",
+              "shortText": "Stats",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/splits/_/id/4431785/scotty-pippen-jr",
+              "text": "Splits",
+              "shortText": "Splits",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/4431785/scotty-pippen-jr",
+              "text": "Game Log",
+              "shortText": "Game Log",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "news",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/news/_/id/4431785/scotty-pippen-jr",
+              "text": "News",
+              "shortText": "News",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/bio/_/id/4431785/scotty-pippen-jr",
+              "text": "Bio",
+              "shortText": "Bio",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/4431785/scotty-pippen-jr",
+              "text": "Overview",
+              "shortText": "Overview",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "advancedstats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4431785/scotty-pippen-jr",
+              "text": "Advanced Stats",
+              "shortText": "Advanced Stats",
+              "isExternal": false,
+              "isPremium": false
+            }
+          ],
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4431785.png",
+            "alt": "Scotty Pippen Jr."
+          },
+          "position": {
+            "id": "3",
+            "name": "Guard",
+            "displayName": "Guard",
+            "abbreviation": "G",
+            "leaf": false
+          },
+          "team": {
+            "id": "29",
+            "uid": "s:40~l:46~t:29",
+            "slug": "memphis-grizzlies",
+            "name": "Grizzlies",
+            "abbreviation": "MEM",
+            "displayName": "Memphis Grizzlies",
+            "logos": [
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "default"
+                ],
+                "lastUpdated": "2024-06-25T21:17Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/mem.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:13Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mem.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard"
+                ],
+                "lastUpdated": "2024-06-25T21:18Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/mem.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:14Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              }
+            ],
+            "links": [
+              {
+                "language": "en-US",
+                "rel": [
+                  "clubhouse",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/_/name/mem/memphis-grizzlies",
+                "text": "Clubhouse",
+                "shortText": "Clubhouse",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "roster",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/roster/_/name/mem/memphis-grizzlies",
+                "text": "Roster",
+                "shortText": "Roster",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "stats",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/stats/_/name/mem/memphis-grizzlies",
+                "text": "Statistics",
+                "shortText": "Statistics",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "schedule",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/schedule/_/name/mem",
+                "text": "Schedule",
+                "shortText": "Schedule",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "photos",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/photos/_/name/mem",
+                "text": "photos",
+                "shortText": "photos",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "tickets",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.vividseats.com/memphis-grizzlies-tickets--sports-nba-basketball/performer/910?wsUser=717",
+                "text": "Tickets",
+                "shortText": "Tickets",
+                "isExternal": true,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "draftpicks",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/draft/teams/_/name/mem/memphis-grizzlies",
+                "text": "Draft Picks",
+                "shortText": "Draft Picks",
+                "isExternal": false,
+                "isPremium": true
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "transactions",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/transactions/_/name/mem",
+                "text": "Transactions",
+                "shortText": "Transactions",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "injuries",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/injuries/_/name/mem",
+                "text": "Injuries",
+                "shortText": "Injuries",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "depthchart",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/depth/_/name/mem",
+                "text": "Depth Chart",
+                "shortText": "Depth Chart",
+                "isExternal": false,
+                "isPremium": false
+              }
+            ]
+          },
+          "notes": {
+            "items": [
+              {
+                "id": "499784",
+                "type": "news",
+                "date": "2025-10-18T17:37Z",
+                "headline": "Pippen will undergo a procedure for a left big toe injury and will be re-evaluated in 12 weeks, ESPN's Shams Charania reported Saturday.",
+                "text": "Memphis' awful injury luck continues. Based on this timetable, the earliest possible return for Pippen will be around Jan. 11 against the Nets. Pippen was projected to be the third-string point guard behind Ja Morant (ankle) and Ty Jerome (calf) to open the season, opening the door for Cam Spencer or Javon Small to step up.",
+                "source": "RotoWire",
+                "injury": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4431785/injuries/499784?lang=en&region=us"
+                }
+              }
+            ]
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
+          }
+        },
+        "source": {
+          "id": "1",
+          "description": "basic/manual",
+          "state": "basic"
+        },
+        "type": {
+          "id": "4",
+          "name": "INJURY_STATUS_OUT",
+          "description": "out",
+          "abbreviation": "O"
+        },
+        "details": {
+          "fantasyStatus": {
+            "description": "OUT",
+            "abbreviation": "OUT"
+          },
+          "type": "Toe",
+          "location": "Leg",
+          "detail": "Surgery",
+          "side": "Left",
+          "returnDate": "2026-01-15"
+        }
+      },
+      {
+        "id": "499625",
+        "longComment": "Morant is still recovering from a sprained left ankle, though the Grizzlies are hopeful he'll return for Wednesday's regular-season opener against the Pelicans. With the star guard sidelined and Ty Jerome on a minutes restriction, Cam Spencer and Javon Small are candidates for a bump in minutes.",
+        "shortComment": "Head coach Tuomas Iisalo said Morant (ankle) won't play in Friday's preseason game against the Heat but \"is progressing really well\" and participated in the team's shootaround, Michael Wallace of the Grizzlies' official site reports.",
+        "status": "Day-To-Day",
+        "date": "2025-10-17T23:22Z",
+        "athlete": {
+          "firstName": "Ja",
+          "lastName": "Morant",
+          "displayName": "Ja Morant",
+          "shortName": "J. Morant",
+          "links": [
+            {
+              "language": "en-US",
+              "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/4279888/ja-morant",
+              "text": "Player Card",
+              "shortText": "Player Card",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/stats/_/id/4279888/ja-morant",
+              "text": "Stats",
+              "shortText": "Stats",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/splits/_/id/4279888/ja-morant",
+              "text": "Splits",
+              "shortText": "Splits",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/4279888/ja-morant",
+              "text": "Game Log",
+              "shortText": "Game Log",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "news",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/news/_/id/4279888/ja-morant",
+              "text": "News",
+              "shortText": "News",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/bio/_/id/4279888/ja-morant",
+              "text": "Bio",
+              "shortText": "Bio",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/4279888/ja-morant",
+              "text": "Overview",
+              "shortText": "Overview",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "advancedstats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4279888/ja-morant",
+              "text": "Advanced Stats",
+              "shortText": "Advanced Stats",
+              "isExternal": false,
+              "isPremium": false
+            }
+          ],
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4279888.png",
+            "alt": "Ja Morant"
+          },
+          "position": {
+            "id": "3",
+            "name": "Guard",
+            "displayName": "Guard",
+            "abbreviation": "G",
+            "leaf": false
+          },
+          "team": {
+            "id": "29",
+            "uid": "s:40~l:46~t:29",
+            "slug": "memphis-grizzlies",
+            "name": "Grizzlies",
+            "abbreviation": "MEM",
+            "displayName": "Memphis Grizzlies",
+            "logos": [
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "default"
+                ],
+                "lastUpdated": "2024-06-25T21:17Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/mem.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:13Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mem.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard"
+                ],
+                "lastUpdated": "2024-06-25T21:18Z"
+              },
+              {
+                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/mem.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "scoreboard",
+                  "dark"
+                ],
+                "lastUpdated": "2024-06-25T21:14Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "primary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_white_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_white_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_black_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_black_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_primary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_primary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              },
+              {
+                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_secondary_color.png",
+                "width": 4096,
+                "height": 4096,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "secondary_logo_on_secondary_color"
+                ],
+                "lastUpdated": "2024-12-03T19:29Z"
+              }
+            ],
+            "links": [
+              {
+                "language": "en-US",
+                "rel": [
+                  "clubhouse",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/_/name/mem/memphis-grizzlies",
+                "text": "Clubhouse",
+                "shortText": "Clubhouse",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "roster",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/roster/_/name/mem/memphis-grizzlies",
+                "text": "Roster",
+                "shortText": "Roster",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "stats",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/stats/_/name/mem/memphis-grizzlies",
+                "text": "Statistics",
+                "shortText": "Statistics",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "schedule",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/schedule/_/name/mem",
+                "text": "Schedule",
+                "shortText": "Schedule",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "photos",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/photos/_/name/mem",
+                "text": "photos",
+                "shortText": "photos",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "tickets",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.vividseats.com/memphis-grizzlies-tickets--sports-nba-basketball/performer/910?wsUser=717",
+                "text": "Tickets",
+                "shortText": "Tickets",
+                "isExternal": true,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "draftpicks",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/draft/teams/_/name/mem/memphis-grizzlies",
+                "text": "Draft Picks",
+                "shortText": "Draft Picks",
+                "isExternal": false,
+                "isPremium": true
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "transactions",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/transactions/_/name/mem",
+                "text": "Transactions",
+                "shortText": "Transactions",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "injuries",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/injuries/_/name/mem",
+                "text": "Injuries",
+                "shortText": "Injuries",
+                "isExternal": false,
+                "isPremium": false
+              },
+              {
+                "language": "en-US",
+                "rel": [
+                  "depthchart",
+                  "desktop",
+                  "team"
+                ],
+                "href": "https://www.espn.com/nba/team/depth/_/name/mem",
+                "text": "Depth Chart",
+                "shortText": "Depth Chart",
+                "isExternal": false,
+                "isPremium": false
+              }
+            ]
+          },
+          "notes": {
+            "items": [
+              {
+                "id": "499625",
+                "type": "news",
+                "date": "2025-10-17T23:22Z",
+                "headline": "Head coach Tuomas Iisalo said Morant (ankle) won't play in Friday's preseason game against the Heat but \"is progressing really well\" and participated in the team's shootaround, Michael Wallace of the Grizzlies' official site reports.",
+                "text": "Morant is still recovering from a sprained left ankle, though the Grizzlies are hopeful he'll return for Wednesday's regular-season opener against the Pelicans. With the star guard sidelined and Ty Jerome on a minutes restriction, Cam Spencer and Javon Small are candidates for a bump in minutes.",
+                "source": "RotoWire",
+                "injury": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4279888/injuries/499625?lang=en&region=us"
+                }
+              }
+            ]
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
+          }
+        },
+        "source": {
+          "id": "1",
+          "description": "basic/manual",
+          "state": "basic"
+        },
+        "type": {
+          "id": "6",
+          "name": "INJURY_STATUS_DAYTODAY",
+          "description": "day-to-day",
+          "abbreviation": "DD"
+        },
+        "details": {
+          "fantasyStatus": {
+            "description": "GTD",
+            "abbreviation": "GTD"
+          },
+          "type": "Ankle",
+          "location": "Leg",
+          "detail": "Bruise",
+          "side": "Left",
+          "returnDate": "2025-10-22"
+        }
+      },
+      {
+        "id": "-25463",
+        "longComment": "Clarke missed the last 14 regular-season games and the four games in the first round of the playoffs during the 2024-25 campaign due to a PCL sprain. The 28-year-old has frequently battled injuries throughout his career, as he has never played more than 64 regular-season games during his previous six seasons in Memphis. He is expected to make a full recovery from the procedure on his knee, but it is uncertain when he'll make his debut during the 2025-26 season.",
+        "shortComment": "Clarke will undergo a procedure to address knee synovitis and will be re-evaluated in six weeks, Shams Charania of ESPNreports.",
+        "status": "Out",
+        "date": "2025-09-28T14:39Z",
+        "athlete": {
+          "firstName": "Brandon",
+          "lastName": "Clarke",
+          "displayName": "Brandon Clarke",
+          "shortName": "B. Clarke",
+          "links": [
+            {
+              "language": "en-US",
+              "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/3906665/brandon-clarke",
+              "text": "Player Card",
+              "shortText": "Player Card",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/stats/_/id/3906665/brandon-clarke",
+              "text": "Stats",
+              "shortText": "Stats",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/splits/_/id/3906665/brandon-clarke",
+              "text": "Splits",
+              "shortText": "Splits",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/gamelog/_/id/3906665/brandon-clarke",
+              "text": "Game Log",
+              "shortText": "Game Log",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "news",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/news/_/id/3906665/brandon-clarke",
+              "text": "News",
+              "shortText": "News",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/bio/_/id/3906665/brandon-clarke",
+              "text": "Bio",
+              "shortText": "Bio",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/_/id/3906665/brandon-clarke",
+              "text": "Overview",
+              "shortText": "Overview",
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "rel": [
+                "advancedstats",
+                "desktop",
+                "athlete"
+              ],
+              "href": "https://www.espn.com/nba/player/advancedstats/_/id/3906665/brandon-clarke",
+              "text": "Advanced Stats",
+              "shortText": "Advanced Stats",
+              "isExternal": false,
+              "isPremium": false
+            }
+          ],
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/nba/players/full/3906665.png",
+            "alt": "Brandon Clarke"
           },
           "position": {
             "id": "7",
@@ -6645,14 +7576,14 @@
           "notes": {
             "items": [
               {
-                "id": "-21934",
+                "id": "-25463",
                 "type": "news",
-                "date": "2025-07-22T20:27Z",
-                "headline": "Coward (shoulder) is doubtful to play in the 2025 Summer League, according to Damichael Cole of The Memphis Commercial Appeal.",
-                "text": "The Grizzlies traded up to select Coward with the 11th overall pick in the 2025 NBA Draft, and they're expected to be extremely cautious with his recovery. The former Washington State suffered a shredded rotator cuff and partially torn labrum in his left (non-shooting) shoulder in late November and underwent surgery. Even though Coward recently stated that he's almost recovered from the injury, the reality is that he hasn't yet taken part in five-on-five practices. Until that happens, he's not going to participate in any games. In other words, his chances of seeing the court in the Summer League are slim to none.",
+                "date": "2025-09-28T14:39Z",
+                "headline": "Clarke will undergo a procedure to address knee synovitis and will be re-evaluated in six weeks, Shams Charania of ESPNreports.",
+                "text": "Clarke missed the last 14 regular-season games and the four games in the first round of the playoffs during the 2024-25 campaign due to a PCL sprain. The 28-year-old has frequently battled injuries throughout his career, as he has never played more than 64 regular-season games during his previous six seasons in Memphis. He is expected to make a full recovery from the procedure on his knee, but it is uncertain when he'll make his debut during the 2025-26 season.",
                 "source": "RotoWire",
                 "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/4903027/injuries/-21934?lang=en&region=us"
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/3906665/injuries/-25463?lang=en&region=us"
                 }
               }
             ]
@@ -6670,925 +7601,29 @@
           "state": "basic"
         },
         "type": {
-          "id": "6",
-          "name": "INJURY_STATUS_DAYTODAY",
-          "description": "day-to-day",
-          "abbreviation": "DD"
+          "id": "4",
+          "name": "INJURY_STATUS_OUT",
+          "description": "out",
+          "abbreviation": "O"
         },
         "details": {
           "fantasyStatus": {
-            "description": "GTD",
-            "abbreviation": "GTD"
+            "description": "OUT",
+            "abbreviation": "OUT"
           },
-          "type": "Shoulder",
-          "location": "Arm",
-          "detail": "Surgery",
-          "side": "Left",
-          "returnDate": "2025-10-01"
-        }
-      },
-      {
-        "id": "-20769",
-        "longComment": "Morant missed Saturday's elimination game loss to the Thunder due to a hip injury. He finished the first-round series with averages of 18.3 points, 5.0 assists and 2.0 rebounds across 27.3 minutes per contest in three appearances. The star point guard dealt with several injuries throughout the season after playing only nine games during the 2023-24 campaign. Morant recorded 13 games with a double-double and one with a triple-double in the 2024-25 season, during which he also supplied shooting splits of 45.4/30.9/82.4 while averaging a career-high 1.8 three-pointers per game.",
-        "shortComment": "Morant (hip) finished the 2024-25 campaign with averages of 23.2 points, 7.3 assists, 4.1 rebounds and 1.2 steals across 30.4 minutes per game in 50 regular-season appearances.",
-        "status": "Day-To-Day",
-        "date": "2025-07-03T22:08Z",
-        "athlete": {
-          "firstName": "Ja",
-          "lastName": "Morant",
-          "displayName": "Ja Morant",
-          "shortName": "J. Morant",
-          "links": [
-            {
-              "language": "en-US",
-              "rel": [
-                "playercard",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/4279888/ja-morant",
-              "text": "Player Card",
-              "shortText": "Player Card",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "stats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/stats/_/id/4279888/ja-morant",
-              "text": "Stats",
-              "shortText": "Stats",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "splits",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/splits/_/id/4279888/ja-morant",
-              "text": "Splits",
-              "shortText": "Splits",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "gamelog",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/gamelog/_/id/4279888/ja-morant",
-              "text": "Game Log",
-              "shortText": "Game Log",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "news",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/news/_/id/4279888/ja-morant",
-              "text": "News",
-              "shortText": "News",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "bio",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/bio/_/id/4279888/ja-morant",
-              "text": "Bio",
-              "shortText": "Bio",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "overview",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/4279888/ja-morant",
-              "text": "Overview",
-              "shortText": "Overview",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "advancedstats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4279888/ja-morant",
-              "text": "Advanced Stats",
-              "shortText": "Advanced Stats",
-              "isExternal": false,
-              "isPremium": false
-            }
-          ],
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4279888.png",
-            "alt": "Ja Morant"
-          },
-          "position": {
-            "id": "1",
-            "name": "Point Guard",
-            "displayName": "Point Guard",
-            "abbreviation": "PG",
-            "leaf": true
-          },
-          "team": {
-            "id": "29",
-            "uid": "s:40~l:46~t:29",
-            "slug": "memphis-grizzlies",
-            "name": "Grizzlies",
-            "abbreviation": "MEM",
-            "displayName": "Memphis Grizzlies",
-            "logos": [
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "default"
-                ],
-                "lastUpdated": "2024-06-25T21:17Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/mem.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "dark"
-                ],
-                "lastUpdated": "2024-06-25T21:13Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mem.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard"
-                ],
-                "lastUpdated": "2024-06-25T21:18Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/mem.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard",
-                  "dark"
-                ],
-                "lastUpdated": "2024-06-25T21:14Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              }
-            ],
-            "links": [
-              {
-                "language": "en-US",
-                "rel": [
-                  "clubhouse",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/_/name/mem/memphis-grizzlies",
-                "text": "Clubhouse",
-                "shortText": "Clubhouse",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "roster",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/roster/_/name/mem/memphis-grizzlies",
-                "text": "Roster",
-                "shortText": "Roster",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "stats",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/stats/_/name/mem/memphis-grizzlies",
-                "text": "Statistics",
-                "shortText": "Statistics",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "schedule",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/schedule/_/name/mem",
-                "text": "Schedule",
-                "shortText": "Schedule",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "photos",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/photos/_/name/mem",
-                "text": "photos",
-                "shortText": "photos",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "tickets",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.vividseats.com/memphis-grizzlies-tickets--sports-nba-basketball/performer/910?wsUser=717",
-                "text": "Tickets",
-                "shortText": "Tickets",
-                "isExternal": true,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "draftpicks",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/draft/teams/_/name/mem/memphis-grizzlies",
-                "text": "Draft Picks",
-                "shortText": "Draft Picks",
-                "isExternal": false,
-                "isPremium": true
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "transactions",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/transactions/_/name/mem",
-                "text": "Transactions",
-                "shortText": "Transactions",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "injuries",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/injuries/_/name/mem",
-                "text": "Injuries",
-                "shortText": "Injuries",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "depthchart",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/depth/_/name/mem",
-                "text": "Depth Chart",
-                "shortText": "Depth Chart",
-                "isExternal": false,
-                "isPremium": false
-              }
-            ]
-          },
-          "notes": {
-            "items": [
-              {
-                "id": "-20769",
-                "type": "news",
-                "date": "2025-07-03T22:08Z",
-                "headline": "Morant (hip) finished the 2024-25 campaign with averages of 23.2 points, 7.3 assists, 4.1 rebounds and 1.2 steals across 30.4 minutes per game in 50 regular-season appearances.",
-                "text": "Morant missed Saturday's elimination game loss to the Thunder due to a hip injury. He finished the first-round series with averages of 18.3 points, 5.0 assists and 2.0 rebounds across 27.3 minutes per contest in three appearances. The star point guard dealt with several injuries throughout the season after playing only nine games during the 2023-24 campaign. Morant recorded 13 games with a double-double and one with a triple-double in the 2024-25 season, during which he also supplied shooting splits of 45.4/30.9/82.4 while averaging a career-high 1.8 three-pointers per game.",
-                "source": "RotoWire",
-                "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/4279888/injuries/-20769?lang=en&region=us"
-                }
-              }
-            ]
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          }
-        },
-        "source": {
-          "id": "1",
-          "description": "basic/manual",
-          "state": "basic"
-        },
-        "type": {
-          "id": "6",
-          "name": "INJURY_STATUS_DAYTODAY",
-          "description": "day-to-day",
-          "abbreviation": "DD"
-        },
-        "details": {
-          "fantasyStatus": {
-            "description": "GTD",
-            "abbreviation": "GTD"
-          },
-          "type": "Hip",
-          "location": "Torso",
-          "detail": "Bruise",
-          "side": "Not Specified",
-          "returnDate": "2025-10-01"
-        }
-      },
-      {
-        "id": "-20735",
-        "longComment": "The Grizzlies are scheduled to re-evaluate Jackson in 12 weeks, and it's worth noting that this injury historically takes about this much time to heal after surgery. Fortunately for Memphis, this means Jackson could potentially be cleared in time for Opening Night. Right before his injury occurred, Jackson and the Grizzlies agreed to terms on a five-year, $240 million contract extension.",
-        "shortComment": "Jackson underwent successful surgery to repair a turf toe injury in his right foot, the Grizzlies announced Wednesday.",
-        "status": "Day-To-Day",
-        "date": "2025-07-03T22:08Z",
-        "athlete": {
-          "firstName": "Jaren",
-          "lastName": "Jackson Jr.",
-          "displayName": "Jaren Jackson Jr.",
-          "shortName": "J. Jackson Jr.",
-          "links": [
-            {
-              "language": "en-US",
-              "rel": [
-                "playercard",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/4277961/jaren-jackson-jr",
-              "text": "Player Card",
-              "shortText": "Player Card",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "stats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/stats/_/id/4277961/jaren-jackson-jr",
-              "text": "Stats",
-              "shortText": "Stats",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "splits",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/splits/_/id/4277961/jaren-jackson-jr",
-              "text": "Splits",
-              "shortText": "Splits",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "gamelog",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/gamelog/_/id/4277961/jaren-jackson-jr",
-              "text": "Game Log",
-              "shortText": "Game Log",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "news",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/news/_/id/4277961/jaren-jackson-jr",
-              "text": "News",
-              "shortText": "News",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "bio",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/bio/_/id/4277961/jaren-jackson-jr",
-              "text": "Bio",
-              "shortText": "Bio",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "overview",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/4277961/jaren-jackson-jr",
-              "text": "Overview",
-              "shortText": "Overview",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "advancedstats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/advancedstats/_/id/4277961/jaren-jackson-jr",
-              "text": "Advanced Stats",
-              "shortText": "Advanced Stats",
-              "isExternal": false,
-              "isPremium": false
-            }
-          ],
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/nba/players/full/4277961.png",
-            "alt": "Jaren Jackson Jr."
-          },
-          "position": {
-            "id": "6",
-            "name": "Power Forward",
-            "displayName": "Power Forward",
-            "abbreviation": "PF",
-            "leaf": true
-          },
-          "team": {
-            "id": "29",
-            "uid": "s:40~l:46~t:29",
-            "slug": "memphis-grizzlies",
-            "name": "Grizzlies",
-            "abbreviation": "MEM",
-            "displayName": "Memphis Grizzlies",
-            "logos": [
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "default"
-                ],
-                "lastUpdated": "2024-06-25T21:17Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/mem.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "dark"
-                ],
-                "lastUpdated": "2024-06-25T21:13Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mem.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard"
-                ],
-                "lastUpdated": "2024-06-25T21:18Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/mem.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard",
-                  "dark"
-                ],
-                "lastUpdated": "2024-06-25T21:14Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              }
-            ],
-            "links": [
-              {
-                "language": "en-US",
-                "rel": [
-                  "clubhouse",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/_/name/mem/memphis-grizzlies",
-                "text": "Clubhouse",
-                "shortText": "Clubhouse",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "roster",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/roster/_/name/mem/memphis-grizzlies",
-                "text": "Roster",
-                "shortText": "Roster",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "stats",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/stats/_/name/mem/memphis-grizzlies",
-                "text": "Statistics",
-                "shortText": "Statistics",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "schedule",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/schedule/_/name/mem",
-                "text": "Schedule",
-                "shortText": "Schedule",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "photos",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/photos/_/name/mem",
-                "text": "photos",
-                "shortText": "photos",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "tickets",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.vividseats.com/memphis-grizzlies-tickets--sports-nba-basketball/performer/910?wsUser=717",
-                "text": "Tickets",
-                "shortText": "Tickets",
-                "isExternal": true,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "draftpicks",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/draft/teams/_/name/mem/memphis-grizzlies",
-                "text": "Draft Picks",
-                "shortText": "Draft Picks",
-                "isExternal": false,
-                "isPremium": true
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "transactions",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/transactions/_/name/mem",
-                "text": "Transactions",
-                "shortText": "Transactions",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "injuries",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/injuries/_/name/mem",
-                "text": "Injuries",
-                "shortText": "Injuries",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "depthchart",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/depth/_/name/mem",
-                "text": "Depth Chart",
-                "shortText": "Depth Chart",
-                "isExternal": false,
-                "isPremium": false
-              }
-            ]
-          },
-          "notes": {
-            "items": [
-              {
-                "id": "-20735",
-                "type": "news",
-                "date": "2025-07-03T22:08Z",
-                "headline": "Jackson underwent successful surgery to repair a turf toe injury in his right foot, the Grizzlies announced Wednesday.",
-                "text": "The Grizzlies are scheduled to re-evaluate Jackson in 12 weeks, and it's worth noting that this injury historically takes about this much time to heal after surgery. Fortunately for Memphis, this means Jackson could potentially be cleared in time for Opening Night. Right before his injury occurred, Jackson and the Grizzlies agreed to terms on a five-year, $240 million contract extension.",
-                "source": "RotoWire",
-                "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/4277961/injuries/-20735?lang=en&region=us"
-                }
-              }
-            ]
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          }
-        },
-        "source": {
-          "id": "1",
-          "description": "basic/manual",
-          "state": "basic"
-        },
-        "type": {
-          "id": "6",
-          "name": "INJURY_STATUS_DAYTODAY",
-          "description": "day-to-day",
-          "abbreviation": "DD"
-        },
-        "details": {
-          "fantasyStatus": {
-            "description": "GTD",
-            "abbreviation": "GTD"
-          },
-          "type": "Toe",
+          "type": "Knee",
           "location": "Leg",
           "detail": "Surgery",
           "side": "Right",
-          "returnDate": "2025-10-01"
+          "returnDate": "2025-11-15"
         }
       },
       {
-        "id": "-20708",
-        "longComment": "Edey is expected to make a full recovery after re-spraining his ankle during an offseason workout. The big man is set to be re-evaluated before the start of the 2025-26 regular season, though it wouldn't be surprising if he missed additional time while recovering from the injury. The 23-year-old appeared in 66 regular-season outings (55 starts) during his rookie season, finishing with averages of 9.2 points, 8.3 rebounds, 1.3 blocks and 1.0 assists while shooting 58.0 percent from the field across 21.5 minutes per game.",
-        "shortComment": "Edey underwent successful surgery Tuesday to re-stabilize his sprained left ankle and will be re-evaluated in four months, NBA reporter Marc Stein reports.",
+        "id": "497734",
+        "longComment": "Edey underwent surgery to address laxity in his left ankle on June 7. He'll likely get back on the floor at some point in November if all goes well, which is good news for Memphis, who also have Brandon Clarke (knee), Cedric Coward (shoulder) and Jaren Jackson Jr. (foot) on the mend.",
+        "shortComment": "Edey has been cleared to begin ramping up basketball activities and is expected to return to play in six to nine weeks.",
         "status": "Out",
-        "date": "2025-07-03T22:08Z",
+        "date": "2025-09-26T19:33Z",
         "athlete": {
           "firstName": "Zach",
           "lastName": "Edey",
@@ -7989,14 +8024,14 @@
           "notes": {
             "items": [
               {
-                "id": "-20708",
+                "id": "497734",
                 "type": "news",
-                "date": "2025-07-03T22:08Z",
-                "headline": "Edey underwent successful surgery Tuesday to re-stabilize his sprained left ankle and will be re-evaluated in four months, NBA reporter Marc Stein reports.",
-                "text": "Edey is expected to make a full recovery after re-spraining his ankle during an offseason workout. The big man is set to be re-evaluated before the start of the 2025-26 regular season, though it wouldn't be surprising if he missed additional time while recovering from the injury. The 23-year-old appeared in 66 regular-season outings (55 starts) during his rookie season, finishing with averages of 9.2 points, 8.3 rebounds, 1.3 blocks and 1.0 assists while shooting 58.0 percent from the field across 21.5 minutes per game.",
+                "date": "2025-09-26T19:33Z",
+                "headline": "Edey has been cleared to begin ramping up basketball activities and is expected to return to play in six to nine weeks.",
+                "text": "Edey underwent surgery to address laxity in his left ankle on June 7. He'll likely get back on the floor at some point in November if all goes well, which is good news for Memphis, who also have Brandon Clarke (knee), Cedric Coward (shoulder) and Jaren Jackson Jr. (foot) on the mend.",
                 "source": "RotoWire",
                 "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/4600663/injuries/-20708?lang=en&region=us"
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4600663/injuries/497734?lang=en&region=us"
                 }
               }
             ]
@@ -8028,455 +8063,7 @@
           "location": "Leg",
           "detail": "Surgery",
           "side": "Left",
-          "returnDate": "2025-11-01"
-        }
-      },
-      {
-        "id": "-20690",
-        "longComment": "Clarke suffered a high-grade PCL sprain in his right knee against the Trail Blazers on March 19. He went through several consultations to determine a rehab schedule, and it was determined that the 2019 first-round pick will not need surgery. Clarke appeared in 64 regular-season games (including 18 starts) and averaged 8.3 points, 5.1 rebounds and 1.0 assists across 18.9 minutes per game prior to his knee injury.",
-        "shortComment": "Clarke received an orthobiologic injection in his right knee Monday, but he will not require surgery and is expected to make a full recovery prior to the 2025-26 regular season.",
-        "status": "Day-To-Day",
-        "date": "2025-07-03T22:08Z",
-        "athlete": {
-          "firstName": "Brandon",
-          "lastName": "Clarke",
-          "displayName": "Brandon Clarke",
-          "shortName": "B. Clarke",
-          "links": [
-            {
-              "language": "en-US",
-              "rel": [
-                "playercard",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/3906665/brandon-clarke",
-              "text": "Player Card",
-              "shortText": "Player Card",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "stats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/stats/_/id/3906665/brandon-clarke",
-              "text": "Stats",
-              "shortText": "Stats",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "splits",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/splits/_/id/3906665/brandon-clarke",
-              "text": "Splits",
-              "shortText": "Splits",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "gamelog",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/gamelog/_/id/3906665/brandon-clarke",
-              "text": "Game Log",
-              "shortText": "Game Log",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "news",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/news/_/id/3906665/brandon-clarke",
-              "text": "News",
-              "shortText": "News",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "bio",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/bio/_/id/3906665/brandon-clarke",
-              "text": "Bio",
-              "shortText": "Bio",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "overview",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/_/id/3906665/brandon-clarke",
-              "text": "Overview",
-              "shortText": "Overview",
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "rel": [
-                "advancedstats",
-                "desktop",
-                "athlete"
-              ],
-              "href": "https://www.espn.com/nba/player/advancedstats/_/id/3906665/brandon-clarke",
-              "text": "Advanced Stats",
-              "shortText": "Advanced Stats",
-              "isExternal": false,
-              "isPremium": false
-            }
-          ],
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/nba/players/full/3906665.png",
-            "alt": "Brandon Clarke"
-          },
-          "position": {
-            "id": "6",
-            "name": "Power Forward",
-            "displayName": "Power Forward",
-            "abbreviation": "PF",
-            "leaf": true
-          },
-          "team": {
-            "id": "29",
-            "uid": "s:40~l:46~t:29",
-            "slug": "memphis-grizzlies",
-            "name": "Grizzlies",
-            "abbreviation": "MEM",
-            "displayName": "Memphis Grizzlies",
-            "logos": [
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "default"
-                ],
-                "lastUpdated": "2024-06-25T21:17Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/mem.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "dark"
-                ],
-                "lastUpdated": "2024-06-25T21:13Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mem.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard"
-                ],
-                "lastUpdated": "2024-06-25T21:18Z"
-              },
-              {
-                "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/mem.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "scoreboard",
-                  "dark"
-                ],
-                "lastUpdated": "2024-06-25T21:14Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/primary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "primary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_white_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_white_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_black_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_black_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_primary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_primary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              },
-              {
-                "href": "https://a.espncdn.com/guid/af5d4942-aeb5-2d07-2a8a-f70b54617e51/logos/secondary_logo_on_secondary_color.png",
-                "width": 4096,
-                "height": 4096,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "secondary_logo_on_secondary_color"
-                ],
-                "lastUpdated": "2024-12-03T19:29Z"
-              }
-            ],
-            "links": [
-              {
-                "language": "en-US",
-                "rel": [
-                  "clubhouse",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/_/name/mem/memphis-grizzlies",
-                "text": "Clubhouse",
-                "shortText": "Clubhouse",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "roster",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/roster/_/name/mem/memphis-grizzlies",
-                "text": "Roster",
-                "shortText": "Roster",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "stats",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/stats/_/name/mem/memphis-grizzlies",
-                "text": "Statistics",
-                "shortText": "Statistics",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "schedule",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/schedule/_/name/mem",
-                "text": "Schedule",
-                "shortText": "Schedule",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "photos",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/photos/_/name/mem",
-                "text": "photos",
-                "shortText": "photos",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "tickets",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.vividseats.com/memphis-grizzlies-tickets--sports-nba-basketball/performer/910?wsUser=717",
-                "text": "Tickets",
-                "shortText": "Tickets",
-                "isExternal": true,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "draftpicks",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/draft/teams/_/name/mem/memphis-grizzlies",
-                "text": "Draft Picks",
-                "shortText": "Draft Picks",
-                "isExternal": false,
-                "isPremium": true
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "transactions",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/transactions/_/name/mem",
-                "text": "Transactions",
-                "shortText": "Transactions",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "injuries",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/injuries/_/name/mem",
-                "text": "Injuries",
-                "shortText": "Injuries",
-                "isExternal": false,
-                "isPremium": false
-              },
-              {
-                "language": "en-US",
-                "rel": [
-                  "depthchart",
-                  "desktop",
-                  "team"
-                ],
-                "href": "https://www.espn.com/nba/team/depth/_/name/mem",
-                "text": "Depth Chart",
-                "shortText": "Depth Chart",
-                "isExternal": false,
-                "isPremium": false
-              }
-            ]
-          },
-          "notes": {
-            "items": [
-              {
-                "id": "-20690",
-                "type": "news",
-                "date": "2025-07-03T22:08Z",
-                "headline": "Clarke received an orthobiologic injection in his right knee Monday, but he will not require surgery and is expected to make a full recovery prior to the 2025-26 regular season.",
-                "text": "Clarke suffered a high-grade PCL sprain in his right knee against the Trail Blazers on March 19. He went through several consultations to determine a rehab schedule, and it was determined that the 2019 first-round pick will not need surgery. Clarke appeared in 64 regular-season games (including 18 starts) and averaged 8.3 points, 5.1 rebounds and 1.0 assists across 18.9 minutes per game prior to his knee injury.",
-                "source": "RotoWire",
-                "injury": {
-                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2025/athletes/3906665/injuries/-20690?lang=en&region=us"
-                }
-              }
-            ]
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          }
-        },
-        "source": {
-          "id": "1",
-          "description": "basic/manual",
-          "state": "basic"
-        },
-        "type": {
-          "id": "6",
-          "name": "INJURY_STATUS_DAYTODAY",
-          "description": "day-to-day",
-          "abbreviation": "DD"
-        },
-        "details": {
-          "fantasyStatus": {
-            "description": "GTD",
-            "abbreviation": "GTD"
-          },
-          "type": "Knee",
-          "location": "Leg",
-          "detail": "Sprain",
-          "side": "Right",
-          "returnDate": "2025-10-01"
+          "returnDate": "2025-11-07"
         }
       }
     ],
@@ -8488,8 +8075,9 @@
       "displayName": "Memphis Grizzlies",
       "color": "5d76a9",
       "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+      "recordSummary": "1-4",
       "seasonSummary": "2025-26",
-      "standingSummary": "1st in Southwest Division"
+      "standingSummary": "5th in Southwest Division"
     }
   }
 }

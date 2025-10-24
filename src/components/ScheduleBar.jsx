@@ -1,10 +1,13 @@
 import { useMemo, useState, useEffect } from "react";
-import { supabase } from "../supabaseClient";
+// import { supabase } from "../supabaseClient";
 import nflSchedule from "../assets/nfl25.json";
 import nbaSchedule from "../assets/nba25.json";
 import mlbSchedule from "../assets/mlb25.json";
-import { useSessionForSchedulesPage } from "../pages/Schedules";
+import { useTodaysGames } from "../hooks/useScoreUpdates";
+import { getBroadcastInfo } from "../utils/broadcasts";
+import "./ScheduleBar.css";
 
+// Logo Imports
 import espnLogo from "../assets/ESPN_logo.png";
 import foxLogo from "../assets/fox_logo.png";
 import nbcLogo from "../assets/nbc_logo.png";
@@ -15,10 +18,8 @@ import nflLogo from "../assets/NFL_logo.png";
 import nbaLogo from "../assets/NBA_logo.png";
 import appletvLogo from "../assets/appletv_logo.png";
 import cbsLogo from "../assets/CBS_logo.png";
-import { useTodaysGames } from "../hooks/useScoreUpdates";
-import { getBroadcastInfo } from "../utils/broadcasts";
-import "./ScheduleBar.css";
 
+// Logo Mapping
 const logoMap = {
   fox: foxLogo,
   espn: espnLogo,
@@ -30,7 +31,6 @@ const logoMap = {
   nfl: nflLogo,
   cbs: cbsLogo,
   apple_tv: appletvLogo,
-  
 };
 
 const ymd = (d) => d.toISOString().slice(0, 10);
@@ -38,104 +38,43 @@ const parseUtc = (s) => new Date(s.replace(" ", "T"));
 const fmtLocalTime = (isoUtc) =>
   new Date(isoUtc).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
 
-// Build a best-effort broadcast URL from a name or code
-function buildBroadcastUrl(raw) {
-  if (!raw || typeof raw !== 'string') return null;
-  const name = raw.trim().toLowerCase();
-  // Known mappings
+
+function buildBroadcastUrl(key) {
+  if (!key || typeof key !== 'string') return null;
+  const name = key.trim().toLowerCase();
   const map = {
-    espn: 'https://www.espn.com',
-    'espn+': 'https://www.espn.com/watch',
+    espn: 'https://www.espn.com/watch',
     fox: 'https://www.foxsports.com',
-    foxsports: 'https://www.foxsports.com',
-    nbc: 'https://www.nbcsports.com',
-    nbcsports: 'https://www.nbcsports.com',
-    cbs: 'https://www.cbssports.com',
-    cbssports: 'https://www.cbssports.com',
-    abc: 'https://abc.com',
-    tnt: 'https://www.tntsports.com',
-    tbs: 'https://www.tntsports.com',
-    amazon: 'https://www.primevideo.com',
-    'prime video': 'https://www.primevideo.com',
-    paramount: 'https://www.paramountplus.com',
-    'paramount+': 'https://www.paramountplus.com',
-    peacock: 'https://www.peacocktv.com',
-    apple: 'https://tv.apple.com',
-    'apple tv': 'https://tv.apple.com',
-    youtube: 'https://www.youtube.com',
-    'youtube tv': 'https://tv.youtube.com'
+    nbc: 'https://www.peacocktv.com/sports', 
+    cbs: 'https://www.paramountplus.com', 
+    abc: 'https://abc.com/watch-live',
+    tnt: 'https://www.tntdrama.com/watchtnt',
+    prime_video: 'https://www.primevideo.com',
+    apple_tv: 'https://tv.apple.com',
   };
-
-  if (map[name]) return map[name];
-
-  // If it already looks like a URL, return as-is
-  if (name.startsWith('http://') || name.startsWith('https://')) {
-    return raw;
-  }
-
-  // Generic heuristic: try {name}.com; if it contains 'sports' already, keep it
-  const slug = name.replace(/[^a-z0-9]+/g, '');
-  if (!slug) return null;
-
-  // Prefer {slug}sports.com for names that are generic broadcasters (e.g., "nbc" -> nbcsports.com)
-  if ([ 'nbc', 'cbs', 'fox', 'tnt', 'tbs' ].includes(slug)) {
-    return `https://www.${slug}sports.com`;
-  }
-
-  return `https://www.${slug}.com`;
+  return map[name] || null;
 }
 
-export default function ScheduleBar() {
-  // Sport selection: all | nfl | nba | mlb
-  const [sport, setSport] = useState(() => {
-    const saved = localStorage.getItem("selectedSport");
-    const normalized = typeof saved === 'string' ? saved.toLowerCase() : 'all';
-    return normalized || 'all';
+export default function ScheduleBar({ session }) {
+  const [sport, setSport] = useState(() => localStorage.getItem("selectedSport")?.toLowerCase() || 'all');
+  const [filterState, setFilterState] = useState(() => localStorage.getItem("filterState") || "sports");
+  const { todaysGames: liveGames } = useTodaysGames(sport === 'all' ? 'nfl' : sport);
+  const [userPrefs, setUserPrefs] = useState({ sports_prefs: ["nfl", "nba", "mlb"], favorite_teams: {} });
+  const [selected, setSelected] = useState(() => {
+    const x = new Date();
+    x.setHours(0, 0, 0, 0);
+    return x;
   });
 
-  // Filter state: none | sports | favorites
-  const [filterState, setFilterState] = useState(() => {
-    // default to 'sports' so sport selection is enabled by default
-    return localStorage.getItem("filterState") || "sports";
-  });
-
-  // Use the score update hook for the current sport
-  // Avoid passing 'all' into the hook; pick a valid sport or skip
-  const sportForLive = sport === 'all' ? 'nfl' : sport;
-  const { todaysGames: liveGames, lastUpdate } = useTodaysGames(sportForLive);
-
-  // User preferences state
-  const [userPrefs, setUserPrefs] = useState({});
-  const [loading, setLoading] = useState(true);
-  const { session } = useSessionForSchedulesPage();
-
-  // Persist sport to localStorage when it changes
+  // Persist state to localStorage
   useEffect(() => {
-    const updateSport = (e) => {
-      if (e.detail) {
-        const val = String(e.detail).toLowerCase();
-        setSport(val);
-      } else {
-        const saved = localStorage.getItem("selectedSport") || "nfl";
-        setSport(String(saved).toLowerCase());
-      }
-    };
-
+    const updateSport = (e) => setSport(String(e.detail || localStorage.getItem("selectedSport") || "nfl").toLowerCase());
     window.addEventListener("sportChanged", updateSport);
     return () => window.removeEventListener("sportChanged", updateSport);
   }, []);
 
-  // Persist filterState to localStorage when it changes
   useEffect(() => {
-    const updateFilterState = (e) => {
-      if (e.detail) {
-        setFilterState(e.detail); 
-      } else {
-        const saved = localStorage.getItem("filterState") || "none";
-        setFilterState(saved);
-      }
-    };
-
+    const updateFilterState = (e) => setFilterState(e.detail || localStorage.getItem("filterState") || "none");
     window.addEventListener("filterChanged", updateFilterState);
     return () => window.removeEventListener("filterChanged", updateFilterState);
   }, []);
@@ -364,18 +303,15 @@ export default function ScheduleBar() {
     }
 
     return gameCards;
-  }, [filteredScheduleData, liveGames, favTeams, sport, filterState]);
+  }, [sport, filterState, userPrefs.favorite_teams]);
 
   const key = ymd(selected);
   const games = processGames[key] || [];
-  function renderGameCard(g, sportKey, fmtLocalTime, getBroadcastInfo) {
-    const broadcast = getBroadcastInfo(g, sportKey);
-    const broadcastUrl = buildBroadcastUrl(broadcast);
-    const isBroadcastUrl = typeof broadcastUrl === 'string';
-    const linkHref = isBroadcastUrl ? broadcastUrl : `/game/${sportKey}/${g.id}`;
-    const linkProps = isBroadcastUrl ? { target: '_blank', rel: 'noopener noreferrer' } : {};
+
+  function renderGameCard(g, sportKey) {
+    const broadcastInfo = getBroadcastInfo(g, sportKey);
     return (
-      <a key={g.id} href={linkHref} className="sb-card" {...linkProps}>
+      <a key={g.id} href={`/game/${sportKey}/${g.id}`} className="sb-card">
         <div className="sb-card-top">
           <div className="sb-teams">
             <div className="sb-team">{g.awayTeam}</div>
@@ -390,8 +326,31 @@ export default function ScheduleBar() {
             )}
           </div>
         </div>
+        
         {g.venue && <div className="sb-venue">Location: {g.venue}</div>}
-        <div className="sb-venue">Where to Watch: <strong>{broadcast || 'TBD'}</strong></div>
+        
+        <div className="sb-watch-section">
+          <span className="sb-watch-title">Where to Watch:</span>
+          <div className="sb-broadcasters">
+            {Array.isArray(broadcastInfo) ? (
+              broadcastInfo.map(key => {
+                const url = buildBroadcastUrl(key);
+                const content = logoMap[key] ? (
+                  <img src={logoMap[key]} alt={`${key} logo`} className="sb-logo"/>
+                ) : (
+                  <span className="sb-broadcast-text">{key.toUpperCase()}</span>
+                );
+                return url ? (
+                  <a key={key} href={url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>{content}</a>
+                ) : (
+                  <div key={key}>{content}</div>
+                );
+              })
+            ) : (
+              <span className="sb-broadcast-text">{broadcastInfo || 'TBD'}</span>
+            )}
+          </div>
+        </div>
       </a>
     );
   }
@@ -401,43 +360,21 @@ return (
     <div className="sb-wrap">
       <div className="sb-top">
         <div className="sb-title-container">
-          <h3>{sport.toUpperCase()} Schedule</h3>
-          {/* Links to official schedules for NFL and NBA, -- Winston */}
-          {sport === 'nfl' && (
-            <a
-              href="https://www.nfl.com/ways-to-watch/by-week/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="sb-nfl-link"
-            >
-              Official Ways to Watch 
-            </a>
-          )}
-          {sport === 'nba' && (
-            <a
-              href="https://www.nba.com/schedule"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="sb-nfl-link"
-            >
-              Official Schedule
-            </a>
-          )}
+          <h3>{sport === 'all' || filterState === 'none' ? 'All Sports' : sport.toUpperCase()} Schedule</h3>
+          {sport === 'nfl' && <a href="https://www.nfl.com/ways-to-watch/by-week/" target="_blank" rel="noopener noreferrer" className="sb-nfl-link">Official Ways to Watch</a>}
+          {sport === 'nba' && <a href="https://www.nba.com/schedule" target="_blank" rel="noopener noreferrer" className="sb-nfl-link">Official Schedule</a>}
         </div>
-
 
         <div className="sb-actions" style={{ display: "flex", gap: 12, alignItems: "center" }}>
           <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
             <span style={{ fontSize: 12, opacity: 0.8 }}>Filter</span>
             <select
               value={filterState}
-              onChange={
-                (e) => {
-                  const newFilter = e.target.value;
-                  setFilterState(newFilter);
-                  localStorage.setItem("filterState", newFilter);
-                  window.dispatchEvent(new CustomEvent("filterChanged", { detail: newFilter }));
-                }}
+              onChange={(e) => {
+                const newFilter = e.target.value;
+                setFilterState(newFilter);
+                localStorage.setItem("filterState", newFilter);
+              }}
               className="sb-date-input"
             >
               <option value="none">Off (All Sports)</option>
@@ -452,17 +389,15 @@ return (
               <select
                 value={sport}
                 onChange={(e) => {
-                  const newSport = String(e.target.value).toLowerCase();
+                  const newSport = e.target.value.toLowerCase();
                   setSport(newSport);
                   localStorage.setItem("selectedSport", newSport);
-                  window.dispatchEvent(new CustomEvent("sportChanged", { detail: newSport }));
                 }}
                 className="sb-date-input"
-                disabled={false}
               >
                 <option value="all">All Sports</option>
                 {userPrefs.sports_prefs?.map((s) => (
-                  <option key={s.toLowerCase()} value={s.toLowerCase()}>{s}</option>
+                  <option key={s.toLowerCase()} value={s.toLowerCase()}>{s.toUpperCase()}</option>
                 ))}
               </select>
             </label>
@@ -472,12 +407,7 @@ return (
             <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
               <span style={{ fontSize: 12, opacity: 0.8 }}>Date</span>
               <div className="sb-date-display" onClick={() => document.getElementById('date-picker').showPicker()}>
-                {selected.toLocaleDateString(undefined, {
-                  weekday: "short",
-                  month: "short",
-                  day: "numeric",
-                })}
-                <span className="sb-calendar-icon"></span>
+                {selected.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" })}
               </div>
               <input
                 id="date-picker"
@@ -486,9 +416,7 @@ return (
                 value={key}
                 onChange={(e) => {
                   const [yy, mm, dd] = e.target.value.split("-").map(Number);
-                  const chosenDate = new Date(yy, mm - 1, dd);
-                  chosenDate.setHours(0, 0, 0, 0);
-                  setSelected(chosenDate);
+                  setSelected(new Date(yy, mm - 1, dd));
                 }}
               />
             </label>
@@ -500,22 +428,15 @@ return (
         {games.length === 0 ? (
           <div className="sb-state">No games on this date.</div>
         ) : (
-          (sport === "all" || filterState === "none")
-            ? Object.entries(
-                games.reduce((acc, g) => {
-                  (acc[g.sport] ||= []).push(g);
-                  return acc;
-                }, {})
-              ).flatMap(([sportKey, sportGames]) => [
-                // Sport header
+          (filterState === "none") ? (
+            Object.entries(games.reduce((acc, g) => { (acc[g.sport] ||= []).push(g); return acc; }, {}))
+              .flatMap(([sportKey, sportGames]) => [
                 <h4 key={sportKey + "-header"} className="sb-sport-header">{sportKey.toUpperCase()}</h4>,
-                // All cards for this sport
-                ...sportGames.map((g) => renderGameCard(g, sportKey, fmtLocalTime, getBroadcastInfo))
+                ...sportGames.map((g) => renderGameCard(g, sportKey))
               ])
-            : (
-              // Single sport, flat list
-              games.map((g) => renderGameCard(g, sport, fmtLocalTime, getBroadcastInfo))
-            )
+          ) : (
+            games.map((g) => renderGameCard(g, g.sport || sport))
+          )
         )}
       </div>
     </div>

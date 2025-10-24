@@ -328,13 +328,14 @@ const navigate = useNavigate();
 
       <div className="navbar-center">
         <Link to="/following" className="nav-link" id="following">Following</Link>
-        <Link to="/sports" className="nav-link" id="sports">Sports</Link>
+        <Link to="/statistics" className="nav-link" id="statistics">Statistics</Link>
         <Link to="/sports-news" className="nav-link">Sports News</Link>
         {!session && <Link to="/login" id="login-button">Login</Link>}
+        <Link to="/schedules" className="nav-link">Schedules</Link>
         <button className="nav-link icon-placeholder" id="search" onClick={() => { setShowSearch(s => !s); setTimeout(() => inputRef.current?.focus(), 50); }} aria-haspopup="true" aria-expanded={showSearch} aria-label="Search">
           <img src={mg} alt="Search Icon" width="26" height="26" />
         </button>
-
+        
         {showSearch && (
           <div className="search-popup" role="dialog" aria-label="Search">
             <input ref={inputRef} value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search teams or players…" className="search-input" />
