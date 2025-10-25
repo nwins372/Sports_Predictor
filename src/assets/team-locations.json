@@ -1,0 +1,401 @@
+[
+  {
+    "team": "Los Angeles Lakers",
+    "league": "NBA",
+    "lat": 34.0430,
+    "lon": -118.2673
+  },
+  {
+    "team": "Los Angeles Clippers",
+    "league": "NBA",
+    "lat": 33.9533,
+    "lon": -118.3417
+  },
+  {
+    "team": "Los Angeles Dodgers",
+    "league": "MLB",
+    "lat": 34.0739,
+    "lon": -118.2400
+  },
+  {
+    "team": "Los Angeles Rams",
+    "league": "NFL",
+    "lat": 33.9533,
+    "lon": -118.3392
+  },
+  {
+    "team": "San Diego Padres",
+    "league": "MLB",
+    "lat": 32.7076,
+    "lon": -117.1570
+  },
+  {
+    "team": "Los Angeles Chargers",
+    "league": "NFL",
+    "lat": 33.9533,
+    "lon": -118.3392
+  },
+  {
+    "team": "San Francisco 49ers",
+    "league": "NFL",
+    "lat": 37.4030,
+    "lon": -121.9694
+  },
+  {
+    "team": "Golden State Warriors",
+    "league": "NBA",
+    "lat": 37.7680,
+    "lon": -122.3877
+  },
+  {
+    "team": "Los Angeles Angels",
+    "league": "MLB",
+    "lat": 33.8003,
+    "lon": -117.8827
+  },
+  {
+    "team": "San Francisco Giants",
+    "league": "MLB",
+    "lat": 37.7786,
+    "lon": -122.3893
+  },
+  {
+    "team": "Sacramento Kings",
+    "league": "NBA",
+    "lat": 38.5805,
+    "lon": -121.4996
+  },
+  {
+    "team": "Portland Trail Blazers",
+    "league": "NBA",
+    "lat": 45.5316,
+    "lon": -122.6668
+  },
+  {
+    "team": "Seattle Mariners",
+    "league": "MLB",
+    "lat": 47.5914,
+    "lon": -122.3325
+  },
+  {
+    "team": "Seattle Seahawks",
+    "league": "NFL",
+    "lat": 47.5952,
+    "lon": -122.3316
+  },
+  {
+    "team": "Phoenix Suns",
+    "league": "NBA",
+    "lat": 33.4456,
+    "lon": -112.0712
+  },
+  {
+    "team": "Arizona Diamondbacks",
+    "league": "MLB",
+    "lat": 33.4456,
+    "lon": -112.0667
+  },
+  {
+    "team": "Arizona Cardinals",
+    "league": "NFL",
+    "lat": 33.4456,
+    "lon": -112.0712
+  },
+  {
+    "team": "Houston Texans",
+    "league": "NFL",
+    "lat": 29.6847,
+    "lon": -95.4107
+  },
+  {
+    "team": "Buffalo Bills",
+    "league": "NFL",
+    "lat": 42.7738,
+    "lon": -78.7865
+  },
+  {
+    "team": "Pittsburgh Steelers",
+    "league": "NFL",
+    "lat": 40.4467,
+    "lon": -80.0158
+  },
+  {
+    "team": "Miami Dolphins",
+    "league": "NFL",
+    "lat": 25.9580,
+    "lon": -80.2389
+  },
+  {
+    "team": "New England Patriots",
+    "league": "NFL",
+    "lat": 42.0909,
+    "lon": -71.2643
+  },
+  {
+    "team": "New York Jets",
+    "league": "NFL",
+    "lat": 40.8135,
+    "lon": -74.0745
+  },
+  {
+    "team": "Baltimore Ravens",
+    "league": "NFL",
+    "lat": 39.2779,
+    "lon": -76.6227
+  },
+  {
+    "team": "Cincinatti Bengals",
+    "league": "NFL",
+    "lat": 39.0954,
+    "lon": -84.5161
+  },
+  {
+    "team": "Cleveland Browns",
+    "league": "NFL",
+    "lat": 41.5061,
+    "lon": -81.6995
+  },
+  {
+    "team": "Indianapolis Colts",
+    "league": "NFL",
+    "lat": 39.7601,
+    "lon": -86.1639
+  },
+  {
+    "team": "Jacksonville Jaguars",
+    "league": "NFL",
+    "lat": 30.3249,
+    "lon": -81.6370
+  },
+  {
+    "team": "Tennessee Titans",
+    "league": "NFL",
+    "lat": 36.1665,
+    "lon": -86.7713
+  },
+  {
+    "team": "Dallas Cowboys",
+    "league": "NFL",
+    "lat": 32.7473,
+    "lon": -97.0945
+  },
+  {
+    "team": "New York Giants",
+    "league": "NFL",
+    "lat": 40.8135,
+    "lon": -74.0745
+  },
+  {
+    "team": "Philadelphia Eagles",
+    "league": "NFL",
+    "lat": 39.9008,
+    "lon": -75.1675
+  },
+  {
+    "team": "Washington Commanders",
+    "league": "NFL",
+    "lat": 38.9078,
+    "lon": -77.0203
+  },
+  {
+    "team": "Chicago Bears",
+    "league": "NFL",
+    "lat": 41.8623,
+    "lon": -87.6167
+  },
+  {
+    "team": "Detroit Lions",
+    "league": "NFL",
+    "lat": 42.3400,
+    "lon": -83.0456
+  },
+  {
+    "team": "Green Bay Packers",
+    "league": "NFL",
+    "lat": 44.5013,
+    "lon": -88.0622
+  },
+  {
+    "team": "Minnesota Vikings",
+    "league": "NFL",
+    "lat": 44.9730,
+    "lon": -93.2570
+  },
+  {
+    "team": "Atlanta Falcons",
+    "league": "NFL",
+    "lat": 33.7550,
+    "lon": -84.4008
+  },
+  {
+    "team": "Carolina Panthers",
+    "league": "NFL",
+    "lat": 35.2251,
+    "lon": -80.8529
+  },
+  {
+    "team": "New Orleans Saints",
+    "league": "NFL",
+    "lat": 29.9511,
+    "lon": -90.0812
+  },
+  {
+    "team": "Tampa Bay Buccaneers",
+    "league": "NFL",
+    "lat": 27.9759,
+    "lon": -82.5033
+  },
+  {
+    "team": "Utah Jazz",
+    "league": "NBA",
+    "lat": 40.7681,
+    "lon": -111.9011
+  },
+  {
+    "team": "Denver Nuggets",
+    "league": "NBA",
+    "lat": 39.7487,
+    "lon": -104.9916
+  },
+  {
+    "team": "Oklahoma City Thunder",
+    "league": "NBA",
+    "lat": 35.4634,
+    "lon": -97.5151
+  },
+  {
+    "team": "Dallas Mavericks",
+    "league": "NBA",
+    "lat": 32.7905,
+    "lon": -96.8103
+  },
+  {
+    "team": "Houston Rockets",
+    "league": "NBA",
+    "lat": 29.7508,
+    "lon": -95.3621
+  },
+  {
+    "team": "San Antonio Spurs",
+    "league": "NBA",
+    "lat": 29.4260,
+    "lon": -98.4375
+  },
+  {
+    "team": "New Orleans Pelicans",
+    "league": "NBA",
+    "lat": 29.9511,
+    "lon": -90.0812
+  },
+  {
+    "team": "Minnesota Timberwolves",
+    "league": "NBA",
+    "lat": 44.9790,
+    "lon": -93.2760
+  },
+  {
+    "team": "Milwaukee Bucks",
+    "league": "NBA",
+    "lat": 43.0451,
+    "lon": -87.9172
+  },
+  {
+    "team": "Chicago Bulls",
+    "league": "NBA",
+    "lat": 41.8807,
+    "lon": -87.6742
+  },
+  {
+    "team": "Indiana Pacers",
+    "league": "NBA",
+    "lat": 39.7684,
+    "lon": -86.1581
+  },
+  {
+    "team": "Memphis Grizzlies",
+    "league": "NBA",
+    "lat": 35.1382,
+    "lon": -90.0505
+  },
+  {
+    "team": "Atlanta Hawks",
+    "league": "NBA",
+    "lat": 33.7550,
+    "lon": -84.4008
+  },
+  {
+    "team": "Orlando Magic",
+    "league": "NBA",
+    "lat": 27.9759,
+    "lon": -82.5033
+  },
+  {
+    "team": "Miami Heat",
+    "league": "NBA",
+    "lat": 25.7814,
+    "lon": -80.1870
+  },
+  {
+    "team": "Charlotte Hornets",
+    "league": "NBA",
+    "lat": 35.2251,
+    "lon": -80.8529
+  },
+  {
+    "team": "Washington Wizards",
+    "league": "NBA",
+    "lat": 38.8981,
+    "lon": -77.0209
+  },
+  {
+    "team": "Philadelphia 76ers",
+    "league": "NBA",
+    "lat": 39.9012,
+    "lon": -75.1720
+  },
+  {
+    "team": "Cleveland Cavaliers",
+    "league": "NBA",
+    "lat": 41.4962,
+    "lon": -81.6883
+  },
+  {
+    "team": "Toronto Raptors",
+    "league": "NBA",
+    "lat": 43.6435,
+    "lon": -79.3791
+  },
+  {
+    "team": "New York Knicks",
+    "league": "NBA",
+    "lat": 40.7505,
+    "lon": -73.9934
+  },
+  {
+    "team": "Boston Celtics",
+    "league": "NBA",
+    "lat": 42.3662,
+    "lon": -71.0621
+  },
+  {
+    "team": "Las Vegas Raiders",
+    "league": "NFL",
+    "lat": 36.0909,
+    "lon": -115.1830
+  },
+  {
+    "team": "Kansas City Chiefs",
+    "league": "NFL",
+    "lat": 39.0490,
+    "lon": -94.4839
+  },
+  {
+    "team": "Boston Celtics",
+    "league": "NBA",
+    "lat": 42.3662,
+    "lon": -71.0621
+  }
+
+  
+  
+]

@@ -1,0 +1,128 @@
+.local-sports-container {
+  max-width: 1250px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #0b1220; 
+  color: #e5e7eb;    
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+.local-sports-container h1 {
+  font-size: 32px;
+  margin-bottom: 16px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.local-sports-container p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 12px;    
+    text-align: center;
+}
+
+.local-sports-form {
+    display: grid;
+    gap: 14px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.local-sports-form input {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #374151;
+    background: #111827;
+    color: #e5e7eb;
+    font-size: 14px;
+}
+
+.local-sports-form input:focus {
+    outline: none;
+    border-color: #3b82f6; 
+    box-shadow: 0 0 0 2px rgba(59,130,246,0.25);
+}
+
+.local-sports-form .input-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.local-sports-form .input-row input {
+  flex: 1;        
+  min-width: 0;  
+}
+.local-sports-form .input-row button {
+  flex: 0;
+  white-space: nowrap;
+}
+
+/* Style for "Showing results for..." */
+.results-city-name {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+}
+
+/* Style for "Nearby Teams..." */
+.results-container h3 {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+}
+
+/* This is the grid that holds all the cards */
+.team-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* This is the individual team card */
+.team-card {
+  position: relative; 
+  background-color: #1e293b; 
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+
+.team-card-league {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 0.75rem; 
+  font-weight: 600;
+  color: #cbd5e1;
+  background-color: #334155;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.team-card-name {
+  font-size: 1.25rem; 
+  font-weight: 700;
+  color: #f1f5f9; 
+  margin: 0;
+  margin-top: 16px;
+}
+
+@media (max-width: 420px) {
+  .local-sports-form .input-row { flex-direction: column; }
+  .local-sports-form .input-row button { width: 100%; }
+}

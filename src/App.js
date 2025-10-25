@@ -15,6 +15,7 @@ import SportsNewsPage from './pages/SportsNewsPage';
 import ProfileSettings from './pages/ProfileSettings';
 import Schedules from './pages/Schedules';
 import Statistics from './pages/Statistics';
+import LocalSports from './pages/LocalSports';
 
 const isLoggedIn = supabase.auth.getSession().then(({ data: { session } }) => !!session);
 const user = supabase.auth.getUser().then(({ data: { user } }) => user);
@@ -70,6 +71,7 @@ useEffect(() => {
           />
         }
       />
+      <Route path="/local-sports" element={<LocalSports />} />
     </Routes>
     </BrowserRouter>
     </ThemeProvider>
