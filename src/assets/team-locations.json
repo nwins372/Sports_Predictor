@@ -1,24 +1,28 @@
 [
   {
     "team": "Los Angeles Lakers",
+    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
     "league": "NBA",
     "lat": 34.0430,
     "lon": -118.2673
   },
   {
     "team": "Los Angeles Clippers",
+    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
     "league": "NBA",
     "lat": 33.9533,
     "lon": -118.3417
   },
   {
     "team": "Los Angeles Dodgers",
+    "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/lad.png",
     "league": "MLB",
     "lat": 34.0739,
     "lon": -118.2400
   },
   {
     "team": "Los Angeles Rams",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png",
     "league": "NFL",
     "lat": 33.9533,
     "lon": -118.3392
@@ -31,30 +35,35 @@
   },
   {
     "team": "Los Angeles Chargers",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Los_Angeles_Chargers_logo.svg",
     "league": "NFL",
     "lat": 33.9533,
     "lon": -118.3392
   },
   {
     "team": "San Francisco 49ers",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
     "league": "NFL",
     "lat": 37.4030,
     "lon": -121.9694
   },
   {
     "team": "Golden State Warriors",
+    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/gs.png",
     "league": "NBA",
     "lat": 37.7680,
     "lon": -122.3877
   },
   {
     "team": "Los Angeles Angels",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Los_Angeles_Angels_of_Anaheim.svg/1920px-Los_Angeles_Angels_of_Anaheim.svg.png",
     "league": "MLB",
     "lat": 33.8003,
     "lon": -117.8827
   },
   {
     "team": "San Francisco Giants",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/58/San_Francisco_Giants_Logo.svg/2880px-San_Francisco_Giants_Logo.svg.png",
     "league": "MLB",
     "lat": 37.7786,
     "lon": -122.3893
@@ -390,8 +399,8 @@
     "lon": -94.4839
   },
   {
-    "team": "Boston Celtics",
-    "league": "NBA",
+    "team": "Boston Red Sox",
+    "league": "MLB",
     "lat": 42.3662,
     "lon": -71.0621
   }

@@ -16,7 +16,7 @@
 }
 
 .local-sports-container p {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.5;
     margin-bottom: 12px;    
     text-align: center;
@@ -25,7 +25,7 @@
 .local-sports-form {
     display: grid;
     gap: 14px;
-    max-width: 400px;
+    max-width: 700px;
     margin: 0 auto;
 }
 
@@ -51,12 +51,30 @@
 }
 
 .local-sports-form .input-row input {
-  flex: 1;        
-  min-width: 0;  
+  flex: 2;
+  min-width: 0;
 }
-.local-sports-form .input-row button {
-  flex: 0;
-  white-space: nowrap;
+
+.local-sports-form .input-row button,
+.local-sports-form .input-row .dropbtn {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  height: 42px; 
+}
+
+.local-sports-form .input-row .dropbtn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.local-sports-form .input-row .dropbtn:hover {
+  background: #2563eb;
 }
 
 /* Style for "Showing results for..." */
@@ -84,7 +102,21 @@
   margin-top: 16px;
 }
 
-/* This is the individual team card */
+.team-card-logo {
+  width: 60px; 
+  height: 60px;
+  object-fit: contain;
+  margin: 12px auto 8px auto; 
+  display: block;
+}
+
+.team-card-logo {
+  width: 60px;  
+  height: 60px;
+  object-fit: contain; 
+  margin: 12px auto 8px auto; 
+  display: block;
+}
 .team-card {
   position: relative; 
   background-color: #1e293b; 
@@ -93,13 +125,9 @@
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+  text-align: center; 
 }
-
-.team-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-}
-
 
 .team-card-league {
   position: absolute;
@@ -119,7 +147,50 @@
   font-weight: 700;
   color: #f1f5f9; 
   margin: 0;
-  margin-top: 16px;
+
+}
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;        
+margin-left: 8px;
+}
+.dropbtn {
+  color: white;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  border-radius: 8px;
+  z-index: 1;
+}
+.dropdown-content a {
+  color: #e5e7eb;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 0.5px solid #334155;
+}
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+.dropdown-content a:hover {
+  background-color: #3b82f6;
+  color: white;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 @media (max-width: 420px) {

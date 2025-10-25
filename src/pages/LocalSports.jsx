@@ -21,6 +21,7 @@ function getDistanceInMiles(lat1, lon1, lat2, lon2) {
 export default function LocalSports() {
   const navigate = useNavigate();
   const [city, setCity] = useState("");
+  const [radius, setRadius] = useState(25);
   const [searchCoords, setSearchCoords] = useState(null);
   const [error, setError] = useState(null);
   
@@ -59,8 +60,6 @@ export default function LocalSports() {
     if (!searchCoords) {
       return []; // No location searched yet
     }
-    const radiusInMiles = 25;
-    
     return teamLocations.filter(team => {
       const distance = getDistanceInMiles(
         searchCoords.lat,
@@ -68,9 +67,9 @@ export default function LocalSports() {
         team.lat,
         team.lon
       );
-      return distance <= radiusInMiles;
+      return distance <= radius;
     });
-  }, [searchCoords]);
+  }, [searchCoords, radius]);
 
   return (
     <div>
@@ -91,6 +90,14 @@ export default function LocalSports() {
               className="local-sports-input"
             />
             <button type="submit">Search</button>
+            <div className="dropdown">
+                <button className="dropbtn" type="button">Select Radius</button>
+                <div className="dropdown-content">
+                  <button type="button" onClick={() => setRadius(25)}>25 miles</button>
+                  <button type="button" onClick={() => setRadius(50)}>50 miles</button>
+                  <button type="button" onClick={() => setRadius(100)}>100 miles</button>
+                </div>
+            </div>
           </div>
         </form>
 
@@ -103,12 +110,17 @@ export default function LocalSports() {
             
               {nearbyTeams.length > 0 ? (
                 <>
-                  <h3>Nearby Teams (within 25 miles)</h3>
+                  <h3>Nearby Teams (within {radius} miles)</h3>
                   
                   <div className="team-results-grid">
                     {nearbyTeams.map(team => (
                       <div key={team.team} className="team-card">
                         <span className="team-card-league">{team.league.toUpperCase()}</span>
+                        <img 
+                            src={team.logo} 
+                            alt={`${team.team} logo`} 
+                            className="team-card-logo" 
+                        />
                         <h4 className="team-card-name">{team.team}</h4>
                       </div>
                     ))}
