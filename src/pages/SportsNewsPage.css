@@ -50,3 +50,28 @@ h2 {
 .text-muted {
   color: #bbbbbb !important;
 }
+
+/* News filter select and label colors */
+.news-filter-label .news-filter-label-text {
+  color: #bbbbbb !important;
+}
+
+/* Ensure the select shows the selected value even when Bootstrap/theme styles apply. */
+.news-filter-select {
+  color: #bbbbbb !important; /* selected value color */
+  min-width: 140px; /* avoid truncated display */
+  background: transparent !important;
+  -webkit-appearance: menulist-button; /* keep native dropdown appearance */
+  appearance: menulist-button;
+}
+
+/* Option styling: browsers vary, use !important to increase chance options inherit color */
+.news-filter-select option {
+  color: #bbbbbb !important;
+  background: transparent !important;
+}
+
+/* If the select still appears visually hidden due to background, ensure focused/active color remains visible */
+.news-filter-select:focus {
+  color: #bbbbbb !important;
+}

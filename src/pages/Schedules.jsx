@@ -707,6 +707,8 @@ function Schedules({ session: sessionProp }) {
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [realSchedules, setRealSchedules] = useState({});
   const [showPredictions, setShowPredictions] = useState(true);
+  const [showFavorites, setShowFavorites] = useState(false);
+  const [userPrefs, setUserPrefs] = useState({ sports_prefs: [], favorite_teams: {} });
   const [currentPage, setCurrentPage] = useState(1);
   const [eventsPerPage] = useState(50); // Show 50 events per page
   const [selectedMonth, setSelectedMonth] = useState('all');
@@ -790,6 +792,32 @@ function Schedules({ session: sessionProp }) {
       })();
     }
   }, [sessionProp]);
+
+  // Load user preferences (favorite teams) when session is available
+  useEffect(() => {
+    if (!session) return;
+    (async () => {
+      try {
+        const { data, error } = await supabase
+          .from('user_preferences')
+          .select('sports_prefs, favorite_teams')
+          .eq('user_id', session.user.id)
+          .maybeSingle();
+
+        if (error) {
+          console.warn('Could not load user preferences:', error.message || error);
+          setUserPrefs({ sports_prefs: [], favorite_teams: {} });
+        } else {
+          const sportsPrefs = Array.isArray(data?.sports_prefs) ? data.sports_prefs : [];
+          const favoriteTeams = typeof data?.favorite_teams === 'object' && data.favorite_teams !== null ? data.favorite_teams : {};
+          setUserPrefs({ sports_prefs: sportsPrefs, favorite_teams: favoriteTeams });
+        }
+      } catch (e) {
+        console.error('Error loading user preferences:', e);
+        setUserPrefs({ sports_prefs: [], favorite_teams: {} });
+      }
+    })();
+  }, [session]);
 
   useEffect(() => {
     // Initialize data loading
@@ -1072,7 +1100,7 @@ function Schedules({ session: sessionProp }) {
 
   useEffect(() => {
     filterEvents();
-  }, [selectedSport, selectedDate, selectedMonth, dateRangeStart, dateRangeEnd, filterMode, realSchedules, showPredictions]);
+  }, [selectedSport, selectedDate, selectedMonth, dateRangeStart, dateRangeEnd, filterMode, realSchedules, showPredictions, showFavorites, userPrefs]);
 
   useEffect(() => {
     // Reset to first page when filters change
@@ -1121,6 +1149,28 @@ function Schedules({ session: sessionProp }) {
           return { ...event, sport: selectedSport };
         });
         events = [...events, ...sportEvents];
+      }
+    }
+
+    // Apply favorites filtering if requested
+    if (showFavorites) {
+      let favTeams = [];
+      if (selectedSport === "All") {
+        // Flatten all favorite teams across sports
+        const allFavs = userPrefs.favorite_teams || {};
+        favTeams = Object.values(allFavs).flat().filter(Boolean);
+      } else {
+        favTeams = userPrefs.favorite_teams?.[selectedSport.toUpperCase()] || userPrefs.favorite_teams?.[selectedSport] || [];
+      }
+
+      if (favTeams && favTeams.length > 0) {
+        const favSet = new Set(favTeams);
+        events = events.filter(
+          event => favSet.has(event.homeTeam) || favSet.has(event.awayTeam)
+        );
+      } else {
+        // No favorites — nothing to show
+        events = [];
       }
     }
 
@@ -1629,7 +1679,7 @@ function Schedules({ session: sessionProp }) {
               
               <div className="col-md-2">
                 <div className="filter-group">
-                  <label className="filter-label">Show Predictions:</label>
+                  <label className="filter-label">Options:</label>
                   <div className="prediction-toggle">
                     <input 
                       type="checkbox"
@@ -1637,7 +1687,16 @@ function Schedules({ session: sessionProp }) {
                       checked={showPredictions}
                       onChange={(e) => setShowPredictions(e.target.checked)}
                     />
-                    <label htmlFor="predictions" className="toggle-label">Win %</label>
+                    <label htmlFor="predictions" className="toggle-label">Show Win %</label>
+                  </div>
+                  <div className="favorites-toggle" style={{ marginTop: 8 }}>
+                    <input
+                      type="checkbox"
+                      id="favoritesOnly"
+                      checked={showFavorites}
+                      onChange={(e) => setShowFavorites(e.target.checked)}
+                    />
+                    <label htmlFor="favoritesOnly" className="toggle-label">Favorite Teams Only</label>
                   </div>
                 </div>
               </div>

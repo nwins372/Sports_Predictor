@@ -5,6 +5,7 @@ import nbaSchedule from "../assets/nba25.json";
 import mlbSchedule from "../assets/mlb25.json";
 import { useTodaysGames } from "../hooks/useScoreUpdates";
 import { getBroadcastInfo } from "../utils/broadcasts";
+import useScheduleFilters from "../hooks/useScheduleFilters";
 import { useSessionForSchedulesPage } from "../pages/Schedules";
 import "./ScheduleBar.css";
 
@@ -57,8 +58,7 @@ function buildBroadcastUrl(key) {
 }
 
 export default function ScheduleBar() {
-  const [sport, setSport] = useState(() => localStorage.getItem("selectedSport")?.toLowerCase() || 'all');
-  const [filterState, setFilterState] = useState(() => localStorage.getItem("filterState") || "sports");
+  const { sport, setSport, filterState, setFilterState, selected, setSelected } = useScheduleFilters();
   const sportForLive = sport === 'all' ? 'nfl' : sport;
   const { todaysGames: liveGames, lastUpdate } = useTodaysGames(sportForLive);
 
@@ -66,12 +66,6 @@ export default function ScheduleBar() {
   const [userPrefs, setUserPrefs] = useState({});
   const [loading, setLoading] = useState(true);
   const { session } = useSessionForSchedulesPage();
-
-  const [selected, setSelected] = useState(() => {
-    const x = new Date();
-    x.setHours(0, 0, 0, 0);
-    return x;
-  });
 
   // Persist state to localStorage
   useEffect(() => {
