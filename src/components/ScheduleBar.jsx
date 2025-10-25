@@ -1,10 +1,11 @@
 import { useMemo, useState, useEffect } from "react";
-// import { supabase } from "../supabaseClient";
+import { supabase } from "../supabaseClient";
 import nflSchedule from "../assets/nfl25.json";
 import nbaSchedule from "../assets/nba25.json";
 import mlbSchedule from "../assets/mlb25.json";
 import { useTodaysGames } from "../hooks/useScoreUpdates";
 import { getBroadcastInfo } from "../utils/broadcasts";
+import { useSessionForSchedulesPage } from "../pages/Schedules";
 import "./ScheduleBar.css";
 
 // Logo Imports
@@ -55,11 +56,17 @@ function buildBroadcastUrl(key) {
   return map[name] || null;
 }
 
-export default function ScheduleBar({ session }) {
+export default function ScheduleBar() {
   const [sport, setSport] = useState(() => localStorage.getItem("selectedSport")?.toLowerCase() || 'all');
   const [filterState, setFilterState] = useState(() => localStorage.getItem("filterState") || "sports");
-  const { todaysGames: liveGames } = useTodaysGames(sport === 'all' ? 'nfl' : sport);
-  const [userPrefs, setUserPrefs] = useState({ sports_prefs: ["nfl", "nba", "mlb"], favorite_teams: {} });
+  const sportForLive = sport === 'all' ? 'nfl' : sport;
+  const { todaysGames: liveGames, lastUpdate } = useTodaysGames(sportForLive);
+
+  // User preferences state
+  const [userPrefs, setUserPrefs] = useState({});
+  const [loading, setLoading] = useState(true);
+  const { session } = useSessionForSchedulesPage();
+
   const [selected, setSelected] = useState(() => {
     const x = new Date();
     x.setHours(0, 0, 0, 0);
@@ -153,12 +160,6 @@ export default function ScheduleBar({ session }) {
       }
     }
   }, [loading, userPrefs, sport, filterState]);
-
-  const [selected, setSelected] = useState(() => {
-    const x = new Date();
-    x.setHours(0, 0, 0, 0);
-    return x;
-  });
 
   // Build schedule data based on filterState and selected sport
   let scheduleData;
