@@ -186,9 +186,12 @@ class TranslationService {
         translatedArticle.description = await this.translateText(article.description, targetLang, sourceLang);
       }
 
-      // Translate content if available
-      if (article.content) {
+      // Translate content if available and substantial
+      if (article.content && article.content.length > 50) {
         translatedArticle.content = await this.translateText(article.content, targetLang, sourceLang);
+      } else if (article.content) {
+        // Keep short content as-is
+        translatedArticle.content = article.content;
       }
 
       // Add translation metadata

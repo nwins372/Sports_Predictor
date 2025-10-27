@@ -73,10 +73,18 @@ export default function ArticleModal({ article, userLanguage, isOpen, onClose })
                   {translatedContent?.description || article.description}
                 </p>
 
-                {translatedContent?.content && (
+                {translatedContent?.content && translatedContent.content.length > 100 ? (
                   <div className="article-modal-full-content">
                     <h4>Full Article:</h4>
                     <p>{translatedContent.content}</p>
+                  </div>
+                ) : (
+                  <div className="article-modal-no-content">
+                    <h4>Full Article Content Not Available</h4>
+                    <p>
+                      The full article content is not available from the news source. 
+                      Click "Read Full Article" below to view the complete article on the original website.
+                    </p>
                   </div>
                 )}
 
@@ -106,14 +114,26 @@ export default function ArticleModal({ article, userLanguage, isOpen, onClose })
                     </small>
                   )}
                 </div>
-                <a
-                  href={article.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="article-modal-read-more"
-                >
-                  Read Full Article
-                </a>
+                <div className="article-modal-buttons">
+                  {userLanguage !== 'en' && (
+                    <a
+                      href={`https://translate.google.com/translate?sl=en&tl=${userLanguage}&u=${encodeURIComponent(article.url)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="article-modal-read-translated"
+                    >
+                      Read Full Article (Translated)
+                    </a>
+                  )}
+                  <a
+                    href={article.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="article-modal-read-more"
+                  >
+                    Read Full Article (Original)
+                  </a>
+                </div>
               </div>
             </>
           )}
