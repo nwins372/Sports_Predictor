@@ -271,6 +271,8 @@ function SportsNewsPage() {
   }
 
   const handleArticleClick = (article) => {
+    console.log("Article clicked:", article.title);
+    console.log("User language:", userLanguage);
     setSelectedArticle(article);
     setIsModalOpen(true);
   };
