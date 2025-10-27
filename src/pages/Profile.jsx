@@ -5,6 +5,7 @@ import NavBar from "../components/NavBar";
 import PasswordChange from "../components/PasswordChange"; 
 import SportPrefsForm from "../components/SportsPreference";
 import NotificationToggle from "../components/NotificationToggle";
+import LanguagePreference from "../components/LanguagePreference";
 import "./profile.css";
 
 export default function Profile() {
@@ -45,7 +46,7 @@ export default function Profile() {
         <h1>hello {username}</h1>
         <NotificationToggle session={session} /> {/* Notification Preferences, SportsPreference, Password Change  - Winston */}
         <SportPrefsForm session={session} />
-
+        <LanguagePreference session={session} />
         <PasswordChange session={session} />
 
         

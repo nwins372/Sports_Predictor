@@ -3,6 +3,8 @@ import NavBar from "../components/NavBar";
 import "./SportsNewsPage.css";
 import ScheduleBar from "../components/ScheduleBar";
 import { supabase } from "../supabaseClient";
+import translationService from "../services/translationService";
+import ArticleModal from "../components/ArticleModal";
 
 const API_KEY = "f9f8b0829ca84fe1a1d450e0fe7dbbd1";
 const API_URL = `https://newsapi.org/v2/top-headlines?category=sports&language=en&pageSize=20&apiKey=${API_KEY}`;
@@ -12,6 +14,11 @@ function SportsNewsPage() {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [prefs, setPrefs] = useState([]); // ["NFL","NBA",...] from Supabase
+  const [userLanguage, setUserLanguage] = useState('en');
+  const [translatedNews, setTranslatedNews] = useState([]);
+  const [isTranslating, setIsTranslating] = useState(false);
+  const [selectedArticle, setSelectedArticle] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Lowercase keyword map for basic matching
   const keywordMap = useMemo(() => ({
@@ -54,23 +61,45 @@ function SportsNewsPage() {
 
       // 1) Get session and user preferences
       let selectedPrefs = [];
+      let userLang = 'en';
       try {
         const { data: sessionData } = await supabase.auth.getSession();
         const session = sessionData?.session;
         if (session?.user?.id) {
           const { data, error } = await supabase
             .from("user_preferences")
-            .select("sports_prefs")
+            .select("sports_prefs, preferred_language")
             .eq("user_id", session.user.id)
             .maybeSingle();
-          if (!error && Array.isArray(data?.sports_prefs)) {
-            selectedPrefs = data.sports_prefs;
+          if (!error) {
+            if (Array.isArray(data?.sports_prefs)) {
+              selectedPrefs = data.sports_prefs;
+            }
+            if (data?.preferred_language) {
+              userLang = data.preferred_language;
+              console.log("Using database language:", userLang);
+            }
+          }
+          
+          // Always check localStorage as fallback, regardless of database result
+          const localLanguage = localStorage.getItem('user_preferred_language');
+          console.log("Checking localStorage fallback:", localLanguage);
+          if (localLanguage && (!data?.preferred_language || data.preferred_language === 'en')) {
+            userLang = localLanguage;
+            console.log("Using localStorage language:", userLang);
           }
         }
       } catch (e) {
-        // Non-fatal: fall back to showing all
+        // Non-fatal: fall back to localStorage
+        const localLanguage = localStorage.getItem('user_preferred_language');
+        console.log("localStorage language preference:", localLanguage);
+        if (localLanguage) {
+          userLang = localLanguage;
+        }
       }
+      console.log("Final user language set to:", userLang);
       setPrefs(selectedPrefs);
+      setUserLanguage(userLang);
 
       // 2) Try to use preference-aware cache
       const cacheKey = `sportsNews:${selectedPrefs && selectedPrefs.length ? selectedPrefs.slice().sort().join("-") : "all"}`;
@@ -124,6 +153,26 @@ function SportsNewsPage() {
 
         const filtered = filterArticlesByPreferences(deduped, selectedPrefs, keywordMap);
         setNews(filtered);
+
+        // Translate news if user language is not English
+        console.log("User language:", userLang, "Filtered articles count:", filtered.length);
+        if (userLang !== 'en') {
+          setIsTranslating(true);
+          console.log("Starting translation to:", userLang);
+          try {
+            const translated = await translationService.translateArticles(filtered, userLang, 'en');
+            console.log("Translation completed:", translated.length, "articles");
+            setTranslatedNews(translated);
+          } catch (error) {
+            console.error("Translation error:", error);
+            setTranslatedNews(filtered); // Fallback to original
+          } finally {
+            setIsTranslating(false);
+          }
+        } else {
+          console.log("No translation needed, language is English");
+          setTranslatedNews(filtered);
+        }
 
         localStorage.setItem(cacheKey, JSON.stringify(filtered));
         localStorage.setItem(tsKey, now.toString());
@@ -190,6 +239,27 @@ function SportsNewsPage() {
 
       const filtered = filterArticlesByPreferences(deduped, selectedPrefs, keywordMap);
       setNews(filtered);
+
+      // Translate news if user language is not English
+      console.log("Refresh - User language:", userLanguage, "Filtered articles count:", filtered.length);
+      if (userLanguage !== 'en') {
+        setIsTranslating(true);
+        console.log("Refresh - Starting translation to:", userLanguage);
+        try {
+          const translated = await translationService.translateArticles(filtered, userLanguage, 'en');
+          console.log("Refresh - Translation completed:", translated.length, "articles");
+          setTranslatedNews(translated);
+        } catch (error) {
+          console.error("Refresh - Translation error:", error);
+          setTranslatedNews(filtered); // Fallback to original
+        } finally {
+          setIsTranslating(false);
+        }
+      } else {
+        console.log("Refresh - No translation needed, language is English");
+        setTranslatedNews(filtered);
+      }
+
       const now = Date.now();
       localStorage.setItem(cacheKey, JSON.stringify(filtered));
       localStorage.setItem(tsKey, now.toString());
@@ -199,6 +269,16 @@ function SportsNewsPage() {
       setLoading(false);
     }
   }
+
+  const handleArticleClick = (article) => {
+    setSelectedArticle(article);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedArticle(null);
+  };
 
   return (
     <>
@@ -219,23 +299,33 @@ function SportsNewsPage() {
             type="button"
             className="btn btn-outline-secondary btn-sm"
             onClick={handleRefresh}
-            disabled={loading}
+            disabled={loading || isTranslating}
           >
-            {loading ? "Refreshing…" : "Refresh"}
+            {loading ? "Refreshing…" : isTranslating ? "Translating…" : "Refresh"}
           </button>
+          {userLanguage !== 'en' && (
+            <div className="mt-2">
+              <small className="text-muted">
+                News translated to {translationService.getLanguageName(userLanguage)}
+              </small>
+            </div>
+          )}
         </div>
 
-        {loading ? (
-          <p className="text-center">Loading latest sports news...</p>
-        ) : news.length === 0 ? (
+        {loading || isTranslating ? (
+          <p className="text-center">
+            {loading ? "Loading latest sports news..." : "Translating news..."}
+          </p>
+        ) : translatedNews.length === 0 ? (
           <p className="text-center">No news available. Try again later.</p>
         ) : (
           <div className="row">
-            {news.map((article, index) => (
+            {translatedNews.map((article, index) => (
               <div key={index} className="col-md-6 mb-4">
                 <div
-                  className="card h-100 shadow-sm"
-                  style={{ border: "2px solid #1d3557" }}
+                  className="card h-100 shadow-sm article-card"
+                  style={{ border: "2px solid #1d3557", cursor: "pointer" }}
+                  onClick={() => handleArticleClick(article)}
                 >
                   {article.urlToImage && (
                     <img
@@ -253,14 +343,15 @@ function SportsNewsPage() {
                     <small className="text-muted">
                       {new Date(article.publishedAt).toLocaleDateString()}
                     </small>
-                    <a
-                      href={article.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
                       className="btn btn-sm btn-primary"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(article.url, '_blank', 'noopener,noreferrer');
+                      }}
                     >
                       Read More
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -268,6 +359,14 @@ function SportsNewsPage() {
           </div>
         )}
       </div>
+
+      {/* Article Modal */}
+      <ArticleModal
+        article={selectedArticle}
+        userLanguage={userLanguage}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </>
   );
 }
