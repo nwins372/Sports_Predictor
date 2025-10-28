@@ -635,6 +635,13 @@
         "league": "MLB",
         "lat": 41.9484,
         "lon": -87.6553 
+    },
+    {
+        "team": "Denver Broncos",
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/den.png",
+        "league": "NFL",
+        "lat": 39.7439,
+        "lon": -105.0201
     }
   
   

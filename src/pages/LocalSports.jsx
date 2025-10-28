@@ -21,7 +21,7 @@ function getDistanceInMiles(lat1, lon1, lat2, lon2) {
 export default function LocalSports() {
   const navigate = useNavigate();
   const [city, setCity] = useState("");
-  const [radius, setRadius] = useState(25);
+  const [radius, setRadius] = useState(50);
   const [searchCoords, setSearchCoords] = useState(null);
   const [error, setError] = useState(null);
   
@@ -93,9 +93,9 @@ export default function LocalSports() {
             <div className="dropdown">
                 <button className="dropbtn" type="button">Select Radius</button>
                 <div className="dropdown-content">
-                  <button type="button" onClick={() => setRadius(25)}>25 miles</button>
                   <button type="button" onClick={() => setRadius(50)}>50 miles</button>
                   <button type="button" onClick={() => setRadius(100)}>100 miles</button>
+                  <button type="button" onClick={() => setRadius(100)}>200 miles</button>
                 </div>
             </div>
           </div>

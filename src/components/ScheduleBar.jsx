@@ -34,9 +34,22 @@ const logoMap = {
 };
 
 const ymd = (d) => d.toISOString().slice(0, 10);
-const parseUtc = (s) => new Date(s.replace(" ", "T"));
+// keep this if your JSON is UTC or has a trailing Z
+const parseUtc = (s) => {
+  const t = s.replace(" ", "T");
+  // If no timezone info, assume UTC by appending Z
+  return new Date(/[zZ]|[+\-]\d\d:?\d\d$/.test(t) ? t : t + "Z");
+};
+
+// local YYYY-MM-DD
+const ymdLocal = (d) => {
+  const pad = (n) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+};
+
 const fmtLocalTime = (isoUtc) =>
   new Date(isoUtc).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+
 
 
 function buildBroadcastUrl(key) {
@@ -105,7 +118,7 @@ export default function ScheduleBar({ session }) {
     schedule.forEach((g, i) => {
       const d = parseUtc(g.DateUtc || g.DateUTC || g.dateUtc || g.date);
       if (isNaN(d)) return;
-      const key = ymd(new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate())));
+      const key = ymdLocal(d);
       (gameCards[key] ||= []).push({
         id: g.MatchNumber ?? g.GameId ?? `${key}-${g.AwayTeam}-${g.HomeTeam}-${i}`,
         homeTeam: g.HomeTeam ?? "Home", awayTeam: g.AwayTeam ?? "Away",
