@@ -576,7 +576,61 @@ async function getPlayer(league = 'nba', idOrQuery) {
       }
     }
   } catch (e) {}
+
   // If no local record, try remote players endpoint then search API
+  // Special-case NFL: try the site.web.api athlete overview endpoint as a high-value fallback
+  try {
+    // If league is nfl, attempt to resolve an athlete id then call getAthleteOverview
+    if ((league || '').toLowerCase() === 'nfl') {
+      // If idOrQuery is numeric-like, try it directly
+      let candidateId = null;
+      if (String(idOrQuery).match(/^\d+$/)) candidateId = String(idOrQuery);
+      // Otherwise try to discover an id via the search API
+      if (!candidateId) {
+        try {
+          const sp = await searchPlayers(String(idOrQuery), 10);
+          if (sp && Array.isArray(sp.results) && sp.results.length > 0) {
+            // look through results for a numeric id in .id, .uid or link
+            for (const r of sp.results) {
+              const objs = Array.isArray(r.contents) && r.contents.length ? r.contents : [r.object || r];
+              for (const o of objs) {
+                const oid = o && (o.id || (o.uid && String(o.uid).split('~').pop()));
+                if (oid && String(oid).match(/^\d+$/)) { candidateId = String(oid); break; }
+                // try to extract numeric id from link fields
+                const link = o && ((o.link && o.link.web) || (o.links && o.links.web && o.links.web.href) || o.canonicalUrl || null);
+                if (link) {
+                  const m = String(link).match(/\/(?:id|_id)\/(\d+)/) || String(link).match(/\/(\d+)\./);
+                  if (m && m[1]) { candidateId = m[1]; break; }
+                }
+              }
+              if (candidateId) break;
+            }
+          }
+        } catch (e) {}
+      }
+
+      if (candidateId) {
+        try {
+          const overview = await getAthleteOverview('nfl', candidateId);
+          if (overview) {
+            // normalize overview into a player-like shape
+            const playerLike = {
+              id: overview.id || candidateId,
+              name: overview.name || null,
+              headshot: overview.headshot || null,
+              height: overview.height || overview.displayHeight || null,
+              weight: overview.weight || overview.displayWeight || null,
+              position: overview.position || null,
+              seasons: overview.seasons || [],
+              raw: overview.raw || overview
+            };
+            return playerLike;
+          }
+        } catch (e) {}
+      }
+    }
+  } catch (e) {}
+
   try { const raw = await _fetchWithCache(`${BASES[league]}/players/${encodeURIComponent(idOrQuery)}`); return _normPlayer(raw); } catch (e) {}
   try { const sp = await searchPlayers(idOrQuery, 10); if (sp && Array.isArray(sp.results) && sp.results.length > 0) return _normPlayer(sp.results[0].object || sp.results[0]); } catch (e) {}
   return null;
