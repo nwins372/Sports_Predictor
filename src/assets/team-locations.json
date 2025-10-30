@@ -4,7 +4,8 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
     "league": "NBA",
     "lat": 34.0430,
-    "lon": -118.2673
+    "lon": -118.2673,
+    "link": "https://lakers.com"
   },
   {
     "team": "Los Angeles Clippers",

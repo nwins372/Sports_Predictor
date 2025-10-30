@@ -116,11 +116,13 @@ export default function LocalSports() {
                     {nearbyTeams.map(team => (
                       <div key={team.team} className="team-card">
                         <span className="team-card-league">{team.league.toUpperCase()}</span>
-                        <img 
+                        <a href={team.link} target="_blank" rel="noopener noreferrer">
+                          <img 
                             src={team.logo} 
                             alt={`${team.team} logo`} 
                             className="team-card-logo" 
-                        />
+                          />
+                        </a>
                         <h4 className="team-card-name">{team.team}</h4>
                       </div>
                     ))}
