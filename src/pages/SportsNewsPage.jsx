@@ -18,6 +18,9 @@ function SportsNewsPage() {
   const [isTranslating, setIsTranslating] = useState(false);
   const [selectedArticle, setSelectedArticle] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [filterMode, setFilterMode] = useState(() => {
+    try { return localStorage.getItem('newsFilterMode') || 'preferences'; } catch (_) { return 'preferences'; }
+  });
 
   // Lowercase keyword map for basic matching
   const keywordMap = useMemo(() => ({
@@ -101,8 +104,8 @@ function SportsNewsPage() {
       setUserLanguage(userLang);
 
       // 2) Try to use preference-aware cache
-      const cacheKey = `sportsNews:${selectedPrefs && selectedPrefs.length ? selectedPrefs.slice().sort().join("-") : "all"}`;
-      const tsKey = `${cacheKey}:ts`;
+  const cacheKey = `sportsNews:${filterMode}:${selectedPrefs && selectedPrefs.length ? selectedPrefs.slice().sort().join("-") : "all"}`;
+  const tsKey = `${cacheKey}:ts`;
       const cached = localStorage.getItem(cacheKey);
       const lastUpdate = localStorage.getItem(tsKey);
       const now = new Date().getTime();
@@ -172,7 +175,7 @@ function SportsNewsPage() {
           setTranslatedNews(filtered);
         }
 
-        localStorage.setItem(cacheKey, JSON.stringify(filtered));
+        localStorage.setItem(cacheKey, JSON.stringify(resultArticles));
         localStorage.setItem(tsKey, now.toString());
       } catch (error) {
         console.error("Error fetching sports news:", error);
@@ -183,7 +186,7 @@ function SportsNewsPage() {
 
     run();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [filterMode]);
 
   function filterArticlesByPreferences(articles, selectedPrefs, map) {
     if (!Array.isArray(articles) || articles.length === 0) return [];
@@ -202,7 +205,7 @@ function SportsNewsPage() {
     setLoading(true);
     try {
       const selectedPrefs = Array.isArray(prefs) ? prefs : [];
-      const cacheKey = `sportsNews:${selectedPrefs && selectedPrefs.length ? selectedPrefs.slice().sort().join("-") : "all"}`;
+      const cacheKey = `sportsNews:${filterMode}:${selectedPrefs && selectedPrefs.length ? selectedPrefs.slice().sort().join("-") : "all"}`;
       const tsKey = `${cacheKey}:ts`;
       localStorage.removeItem(cacheKey);
       localStorage.removeItem(tsKey);
@@ -258,7 +261,7 @@ function SportsNewsPage() {
       }
 
       const now = Date.now();
-      localStorage.setItem(cacheKey, JSON.stringify(filtered));
+      localStorage.setItem(cacheKey, JSON.stringify(resultArticles));
       localStorage.setItem(tsKey, now.toString());
     } catch (e) {
       console.error("Error refreshing sports news:", e);
@@ -300,14 +303,15 @@ function SportsNewsPage() {
           Sports News
         </h2>
         <div className="text-center mb-4">
-          <button
-            type="button"
-            className="btn btn-outline-secondary btn-sm"
-            onClick={handleRefresh}
-            disabled={loading || isTranslating}
-          >
-            {loading ? "Refreshing…" : isTranslating ? "Translating…" : "Refresh"}
-          </button>
+          <div style={{ display: 'inline-flex', gap: 8, alignItems: 'center' }}>
+            <button
+              type="button"
+              className="btn btn-outline-secondary btn-sm"
+              onClick={handleRefresh}
+              disabled={loading || isTranslating}
+            >
+              {loading ? "Refreshing…" : isTranslating ? "Translating…" : "Refresh"}
+            </button>
           {userLanguage !== 'en' && (
             <div className="mt-2">
               <small className="text-muted">
@@ -315,6 +319,30 @@ function SportsNewsPage() {
               </small>
             </div>
           )}
+
+            <label className="news-filter-label" style={{ display: 'flex', alignItems: 'center', gap: 6, marginLeft: 6 }}>
+              <span className="news-filter-label-text" style={{ fontSize: 12, opacity: 0.85 }}>Mode</span>
+              <select
+                value={filterMode}
+                onChange={(e) => {
+                  const m = e.target.value;
+                  setFilterMode(m);
+                  try { localStorage.setItem('newsFilterMode', m); } catch (_) {}
+                  // clear caches for both modes so switching forces a fresh fetch
+                  try {
+                    const prefsKey = prefs && prefs.length ? prefs.slice().sort().join('-') : 'all';
+                    localStorage.removeItem(`sportsNews:preferences:${prefsKey}`);
+                    localStorage.removeItem(`sportsNews:all:${prefsKey}`);
+                  } catch (_) {}
+                }}
+                className="form-select form-select-sm news-filter-select"
+                style={{ height: 30 }}
+              >
+                <option value="preferences">By Preferences</option>
+                <option value="all">All Articles</option>
+              </select>
+            </label>
+          </div>
         </div>
 
         {loading || isTranslating ? (
