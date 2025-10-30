@@ -313,7 +313,7 @@ export default function ScheduleBar() {
     return gameCards;
   }, [sport, filterState, userPrefs.favorite_teams]);
 
-  const key = ymd(selected);
+  const key = ymdLocal(selected);
   const games = processGames[key] || [];
 
   function renderGameCard(g, sportKey) {
