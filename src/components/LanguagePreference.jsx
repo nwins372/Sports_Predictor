@@ -112,7 +112,7 @@ export default function LanguagePreference({ session }) {
 
     try {
       // Try to save to user_preferences table first
-      const { data: existingData, error: checkError } = await supabase
+      const { data: existingData } = await supabase
         .from("user_preferences")
         .select("id, sports_prefs, favorite_teams")
         .eq("user_id", session.user.id)
@@ -223,18 +223,6 @@ export default function LanguagePreference({ session }) {
         className="language-save-btn"
       >
         {saving ? "Saving..." : "Save Language Preference"}
-      </button>
-
-      {/* Debug button - remove this later */}
-      <button
-        onClick={() => {
-          localStorage.setItem('user_preferred_language', 'es');
-          console.log("Manually set localStorage to es:", localStorage.getItem('user_preferred_language'));
-          setMessage("Debug: Set to Spanish");
-        }}
-        style={{ marginTop: '10px', padding: '5px 10px', fontSize: '12px' }}
-      >
-        Debug: Set Spanish
       </button>
 
       {message && (

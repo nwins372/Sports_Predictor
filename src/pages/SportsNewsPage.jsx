@@ -11,7 +11,6 @@ const API_URL = `https://newsapi.org/v2/top-headlines?category=sports&language=e
 const TOP_HEADLINES_BASE = "https://newsapi.org/v2/top-headlines";
 
 function SportsNewsPage() {
-  const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [prefs, setPrefs] = useState([]); // ["NFL","NBA",...] from Supabase
   const [userLanguage, setUserLanguage] = useState('en');
@@ -53,7 +52,7 @@ function SportsNewsPage() {
     "College Sports": "(\"college football\" OR \"NCAA football\" OR \"College Football Playoff\" OR Heisman OR \"college basketball\" OR \"NCAA basketball\" OR \"March Madness\" OR \"Final Four\" OR \"college baseball\" OR \"NCAA baseball\" OR \"College World Series\")",
   }), []);
 
-  const prefsKey = useMemo(() => (prefs && prefs.length ? prefs.slice().sort().join("-") : "all"), [prefs]);
+  // const prefsKey = useMemo(() => (prefs && prefs.length ? prefs.slice().sort().join("-") : "all"), [prefs]);
 
   useEffect(() => {
     const run = async () => {
@@ -110,7 +109,7 @@ function SportsNewsPage() {
       if (cached && lastUpdate && now - Number(lastUpdate) < 24 * 60 * 60 * 1000) {
         try {
           const parsed = JSON.parse(cached);
-          setNews(parsed);
+          setTranslatedNews(parsed);
           setLoading(false);
           return;
         } catch (_) {
@@ -152,7 +151,6 @@ function SportsNewsPage() {
         }
 
         const filtered = filterArticlesByPreferences(deduped, selectedPrefs, keywordMap);
-        setNews(filtered);
 
         // Translate news if user language is not English
         console.log("User language:", userLang, "Filtered articles count:", filtered.length);
@@ -238,7 +236,6 @@ function SportsNewsPage() {
       }
 
       const filtered = filterArticlesByPreferences(deduped, selectedPrefs, keywordMap);
-      setNews(filtered);
 
       // Translate news if user language is not English
       console.log("Refresh - User language:", userLanguage, "Filtered articles count:", filtered.length);
@@ -273,6 +270,12 @@ function SportsNewsPage() {
   const handleArticleClick = (article) => {
     console.log("Article clicked:", article.title);
     console.log("User language:", userLanguage);
+    console.log("Article data:", {
+      title: article.title,
+      description: article.description,
+      content: article.content,
+      url: article.url
+    });
     setSelectedArticle(article);
     setIsModalOpen(true);
   };
@@ -326,8 +329,7 @@ function SportsNewsPage() {
               <div key={index} className="col-md-6 mb-4">
                 <div
                   className="card h-100 shadow-sm article-card"
-                  style={{ border: "2px solid #1d3557", cursor: "pointer" }}
-                  onClick={() => handleArticleClick(article)}
+                  style={{ border: "2px solid #1d3557" }}
                 >
                   {article.urlToImage && (
                     <img
@@ -345,15 +347,32 @@ function SportsNewsPage() {
                     <small className="text-muted">
                       {new Date(article.publishedAt).toLocaleDateString()}
                     </small>
-                    <button
-                      className="btn btn-sm btn-primary"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        window.open(article.url, '_blank', 'noopener,noreferrer');
-                      }}
-                    >
-                      Read More
-                    </button>
+                    <div className="d-flex gap-2">
+                      {userLanguage !== 'en' && (
+                        <button
+                          className="btn btn-sm btn-success"
+                          onClick={() => handleArticleClick(article)}
+                        >
+                          Read Translated
+                        </button>
+                      )}
+                      {userLanguage !== 'en' && (
+                        <a
+                          href={`https://translate.google.com/translate?sl=en&tl=${userLanguage}&u=${encodeURIComponent(article.url)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-sm btn-warning"
+                        >
+                          Auto Translate
+                        </a>
+                      )}
+                      <button
+                        className="btn btn-sm btn-primary"
+                        onClick={() => window.open(article.url, '_blank', 'noopener,noreferrer')}
+                      >
+                        Read Original
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
