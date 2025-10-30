@@ -34,6 +34,7 @@ const logoMap = {
   cbs: cbsLogo,
   apple_tv: appletvLogo,
   NBA: nbaLogo,
+  rsn: nbaLogo
 };
 
 const ymd = (d) => d.toISOString().slice(0, 10);
@@ -68,6 +69,8 @@ function buildBroadcastUrl(key) {
     prime_video: 'https://www.primevideo.com',
     apple_tv: 'https://tv.apple.com',
     nba: 'https://www.nba.com/watch',
+    nfl: 'https://www.nfl.com/',
+    rsn: 'https://www.nba.com/schedule'
   };
   return map[name] || null;
 }
