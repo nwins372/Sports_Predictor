@@ -1256,6 +1256,14 @@
       "_league": "nfl",
       "espnId": "2978524"
     },
+    "2978935": {
+      "id": "2978935",
+      "name": "Xavien Howard",
+      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/2978935.png",
+      "teamSlug": "Indianapolis",
+      "_league": "nfl",
+      "espnId": "2978935"
+    },
     "2979482": {
       "id": "2979482",
       "name": "Dan Feeney",
@@ -2484,7 +2492,7 @@
       "id": "3116724",
       "name": "Germaine Pratt",
       "head": "https://a.espncdn.com/i/headshots/nfl/players/full/3116724.png",
-      "teamSlug": "Indianapolis",
+      "teamSlug": "Las_Vegas",
       "_league": "nfl",
       "espnId": "3116724"
     },
@@ -2855,14 +2863,6 @@
       "teamSlug": "Miami",
       "_league": "nfl",
       "espnId": "3122976"
-    },
-    "3123052": {
-      "id": "3123052",
-      "name": "Michael Badgley",
-      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/3123052.png",
-      "teamSlug": "Indianapolis",
-      "_league": "nfl",
-      "espnId": "3123052"
     },
     "3123075": {
       "id": "3123075",
@@ -6079,14 +6079,6 @@
       "teamSlug": "Seattle",
       "_league": "nfl",
       "espnId": "4046675"
-    },
-    "4046679": {
-      "id": "4046679",
-      "name": "Troy Pride Jr.",
-      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/4046679.png",
-      "teamSlug": "Indianapolis",
-      "_league": "nfl",
-      "espnId": "4046679"
     },
     "4046690": {
       "id": "4046690",
@@ -10624,6 +10616,14 @@
       "_league": "nfl",
       "espnId": "4372070"
     },
+    "4372085": {
+      "id": "4372085",
+      "name": "Cameron McGrone",
+      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/4372085.png",
+      "teamSlug": "Indianapolis",
+      "_league": "nfl",
+      "espnId": "4372085"
+    },
     "4372091": {
       "id": "4372091",
       "name": "Ryan Hayes",
@@ -11615,14 +11615,6 @@
       "teamSlug": "Los_Angeles",
       "_league": "nfl",
       "espnId": "4426515"
-    },
-    "4426517": {
-      "id": "4426517",
-      "name": "Keenan Garber",
-      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/4426517.png",
-      "teamSlug": "Indianapolis",
-      "_league": "nfl",
-      "espnId": "4426517"
     },
     "4426535": {
       "id": "4426535",
@@ -27291,6 +27283,14 @@
       "espnId": "4374171"
     },
     {
+      "id": "4036507",
+      "name": "Joe Bachie",
+      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/4036507.png",
+      "teamSlug": "Indianapolis",
+      "_league": "nfl",
+      "espnId": "4036507"
+    },
+    {
       "id": "4360677",
       "name": "Mekhi Blackmon",
       "head": "https://a.espncdn.com/i/headshots/nfl/players/full/4360677.png",
@@ -27355,20 +27355,20 @@
       "espnId": "3892883"
     },
     {
+      "id": "2978935",
+      "name": "Xavien Howard",
+      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/2978935.png",
+      "teamSlug": "Indianapolis",
+      "_league": "nfl",
+      "espnId": "2978935"
+    },
+    {
       "id": "4050971",
       "name": "Eric Johnson II",
       "head": "https://a.espncdn.com/i/headshots/nfl/players/full/4050971.png",
       "teamSlug": "Indianapolis",
       "_league": "nfl",
       "espnId": "4050971"
-    },
-    {
-      "id": "3128630",
-      "name": "Chris Lammons",
-      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/3128630.png",
-      "teamSlug": "Indianapolis",
-      "_league": "nfl",
-      "espnId": "3128630"
     },
     {
       "id": "4426473",
@@ -27385,6 +27385,14 @@
       "teamSlug": "Indianapolis",
       "_league": "nfl",
       "espnId": "3040513"
+    },
+    {
+      "id": "4372085",
+      "name": "Cameron McGrone",
+      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/4372085.png",
+      "teamSlug": "Indianapolis",
+      "_league": "nfl",
+      "espnId": "4372085"
     },
     {
       "id": "4218312",
@@ -27419,12 +27427,12 @@
       "espnId": "4258194"
     },
     {
-      "id": "3116724",
-      "name": "Germaine Pratt",
-      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/3116724.png",
+      "id": "4242415",
+      "name": "Daniel Scott",
+      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/4242415.png",
       "teamSlug": "Indianapolis",
       "_league": "nfl",
-      "espnId": "3116724"
+      "espnId": "4242415"
     },
     {
       "id": "4058825",
@@ -27459,22 +27467,6 @@
       "espnId": "4037361"
     },
     {
-      "id": "4599160",
-      "name": "Trey Washington",
-      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/4599160.png",
-      "teamSlug": "Indianapolis",
-      "_league": "nfl",
-      "espnId": "4599160"
-    },
-    {
-      "id": "3123052",
-      "name": "Michael Badgley",
-      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/3123052.png",
-      "teamSlug": "Indianapolis",
-      "_league": "nfl",
-      "espnId": "3123052"
-    },
-    {
       "id": "2566045",
       "name": "Luke Rhodes",
       "head": "https://a.espncdn.com/i/headshots/nfl/players/full/2566045.png",
@@ -27491,20 +27483,20 @@
       "espnId": "3914922"
     },
     {
+      "id": "4571557",
+      "name": "Spencer Shrader",
+      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/4571557.png",
+      "teamSlug": "Indianapolis",
+      "_league": "nfl",
+      "espnId": "4571557"
+    },
+    {
       "id": "4243315",
       "name": "Salvon Ahmed",
       "head": "https://a.espncdn.com/i/headshots/nfl/players/full/4243315.png",
       "teamSlug": "Indianapolis",
       "_league": "nfl",
       "espnId": "4243315"
-    },
-    {
-      "id": "4036507",
-      "name": "Joe Bachie",
-      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/4036507.png",
-      "teamSlug": "Indianapolis",
-      "_league": "nfl",
-      "espnId": "4036507"
     },
     {
       "id": "4601021",
@@ -27545,22 +27537,6 @@
       "teamSlug": "Indianapolis",
       "_league": "nfl",
       "espnId": "4242206"
-    },
-    {
-      "id": "4242415",
-      "name": "Daniel Scott",
-      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/4242415.png",
-      "teamSlug": "Indianapolis",
-      "_league": "nfl",
-      "espnId": "4242415"
-    },
-    {
-      "id": "4571557",
-      "name": "Spencer Shrader",
-      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/4571557.png",
-      "teamSlug": "Indianapolis",
-      "_league": "nfl",
-      "espnId": "4571557"
     },
     {
       "id": "4682909",
@@ -27611,14 +27587,6 @@
       "espnId": "4606181"
     },
     {
-      "id": "4426517",
-      "name": "Keenan Garber",
-      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/4426517.png",
-      "teamSlug": "Indianapolis",
-      "_league": "nfl",
-      "espnId": "4426517"
-    },
-    {
       "id": "2980383",
       "name": "Mike Hilton",
       "head": "https://a.espncdn.com/i/headshots/nfl/players/full/2980383.png",
@@ -27633,6 +27601,14 @@
       "teamSlug": "Indianapolis",
       "_league": "nfl",
       "espnId": "4363547"
+    },
+    {
+      "id": "3128630",
+      "name": "Chris Lammons",
+      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/3128630.png",
+      "teamSlug": "Indianapolis",
+      "_league": "nfl",
+      "espnId": "3128630"
     },
     {
       "id": "4608691",
@@ -27683,14 +27659,6 @@
       "espnId": "4578436"
     },
     {
-      "id": "4046679",
-      "name": "Troy Pride Jr.",
-      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/4046679.png",
-      "teamSlug": "Indianapolis",
-      "_league": "nfl",
-      "espnId": "4046679"
-    },
-    {
       "id": "4039243",
       "name": "Josh Sills",
       "head": "https://a.espncdn.com/i/headshots/nfl/players/full/4039243.png",
@@ -27721,6 +27689,14 @@
       "teamSlug": "Indianapolis",
       "_league": "nfl",
       "espnId": "3045251"
+    },
+    {
+      "id": "4599160",
+      "name": "Trey Washington",
+      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/4599160.png",
+      "teamSlug": "Indianapolis",
+      "_league": "nfl",
+      "espnId": "4599160"
     },
     {
       "id": "4911851",
@@ -29281,6 +29257,14 @@
       "teamSlug": "Las_Vegas",
       "_league": "nfl",
       "espnId": "4430330"
+    },
+    {
+      "id": "3116724",
+      "name": "Germaine Pratt",
+      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/3116724.png",
+      "teamSlug": "Las_Vegas",
+      "_league": "nfl",
+      "espnId": "3116724"
     },
     {
       "id": "4605498",
@@ -38956,6 +38940,14 @@
       "_league": "nfl",
       "espnId": "2978524"
     },
+    "2978935": {
+      "id": "2978935",
+      "name": "Xavien Howard",
+      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/2978935.png",
+      "teamSlug": "Indianapolis",
+      "_league": "nfl",
+      "espnId": "2978935"
+    },
     "2979482": {
       "id": "2979482",
       "name": "Dan Feeney",
@@ -40184,7 +40176,7 @@
       "id": "3116724",
       "name": "Germaine Pratt",
       "head": "https://a.espncdn.com/i/headshots/nfl/players/full/3116724.png",
-      "teamSlug": "Indianapolis",
+      "teamSlug": "Las_Vegas",
       "_league": "nfl",
       "espnId": "3116724"
     },
@@ -40555,14 +40547,6 @@
       "teamSlug": "Miami",
       "_league": "nfl",
       "espnId": "3122976"
-    },
-    "3123052": {
-      "id": "3123052",
-      "name": "Michael Badgley",
-      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/3123052.png",
-      "teamSlug": "Indianapolis",
-      "_league": "nfl",
-      "espnId": "3123052"
     },
     "3123075": {
       "id": "3123075",
@@ -43779,14 +43763,6 @@
       "teamSlug": "Seattle",
       "_league": "nfl",
       "espnId": "4046675"
-    },
-    "4046679": {
-      "id": "4046679",
-      "name": "Troy Pride Jr.",
-      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/4046679.png",
-      "teamSlug": "Indianapolis",
-      "_league": "nfl",
-      "espnId": "4046679"
     },
     "4046690": {
       "id": "4046690",
@@ -48324,6 +48300,14 @@
       "_league": "nfl",
       "espnId": "4372070"
     },
+    "4372085": {
+      "id": "4372085",
+      "name": "Cameron McGrone",
+      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/4372085.png",
+      "teamSlug": "Indianapolis",
+      "_league": "nfl",
+      "espnId": "4372085"
+    },
     "4372091": {
       "id": "4372091",
       "name": "Ryan Hayes",
@@ -49315,14 +49299,6 @@
       "teamSlug": "Los_Angeles",
       "_league": "nfl",
       "espnId": "4426515"
-    },
-    "4426517": {
-      "id": "4426517",
-      "name": "Keenan Garber",
-      "head": "https://a.espncdn.com/i/headshots/nfl/players/full/4426517.png",
-      "teamSlug": "Indianapolis",
-      "_league": "nfl",
-      "espnId": "4426517"
     },
     "4426535": {
       "id": "4426535",
