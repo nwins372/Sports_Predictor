@@ -33,6 +33,7 @@ const logoMap = {
   nfl: nflLogo,
   cbs: cbsLogo,
   apple_tv: appletvLogo,
+  NBA: nbaLogo,
 };
 
 const ymd = (d) => d.toISOString().slice(0, 10);
@@ -66,6 +67,7 @@ function buildBroadcastUrl(key) {
     tnt: 'https://www.tntdrama.com/watchtnt',
     prime_video: 'https://www.primevideo.com',
     apple_tv: 'https://tv.apple.com',
+    nba: 'https://www.nba.com/watch',
   };
   return map[name] || null;
 }
@@ -231,7 +233,7 @@ export default function ScheduleBar() {
       d = dateBuilt;
     }
     if (isNaN(d)) return null;
-    return ymd(new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate())));
+    return ymdLocal(new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate())));
   }
 
   // Builds a normalized game card object
@@ -285,7 +287,7 @@ export default function ScheduleBar() {
       // Merge with live games data
       if (liveGames && liveGames.length > 0) {
         liveGames.forEach((game) => {
-          const gameDate = new Date(game.DateUtc);
+          const gameDate = parseUtc(game.DateUtc || game.DateUTC || game.dateUtc || game.date);
           const key = getGameDateKey(game, gameDate);
 
           mergeLiveGame(gameCards, key, game, sportForLive);
@@ -302,7 +304,7 @@ export default function ScheduleBar() {
       // Merge with live games data
       if (liveGames && liveGames.length > 0) {
         liveGames.forEach((game) => {
-          const gameDate = new Date(game.DateUtc);
+          const gameDate = parseUtc(game.DateUtc || game.DateUTC || game.dateUtc || game.date);
           const key = getGameDateKey(game, gameDate);
 
           mergeLiveGame(gameCards, key, game, sportForLive);

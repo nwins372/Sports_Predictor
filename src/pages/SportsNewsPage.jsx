@@ -174,7 +174,9 @@ function SportsNewsPage() {
           console.log("No translation needed, language is English");
           setTranslatedNews(filtered);
         }
-
+        const resultArticles = filterMode === 'all'
+          ? deduped
+          : filterArticlesByPreferences(deduped, selectedPrefs, keywordMap);
         localStorage.setItem(cacheKey, JSON.stringify(resultArticles));
         localStorage.setItem(tsKey, now.toString());
       } catch (error) {
@@ -259,7 +261,9 @@ function SportsNewsPage() {
         console.log("Refresh - No translation needed, language is English");
         setTranslatedNews(filtered);
       }
-
+      const resultArticles = filterMode === 'all'
+          ? deduped
+          : filterArticlesByPreferences(deduped, selectedPrefs, keywordMap);
       const now = Date.now();
       localStorage.setItem(cacheKey, JSON.stringify(resultArticles));
       localStorage.setItem(tsKey, now.toString());
