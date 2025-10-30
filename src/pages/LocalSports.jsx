@@ -83,7 +83,7 @@ export default function LocalSports() {
             <input
               type="text"
               name="city"
-              placeholder="Enter city name (e.g., Los Angeles, CA)"
+              placeholder="Enter city name (ex: Los Angeles, CA)"
               required
               value={city}
               onChange={e => setCity(e.target.value)}
