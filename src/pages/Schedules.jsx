@@ -95,9 +95,7 @@ const TEAM_STATS = {
   "New York Jets": { wins: 7, losses: 10, winPercentage: 41.2 }
 };
 
-const calculateRecommendedValue = (homeTeam, awayTeam, liveStats = {}) => {
-  
-}
+
 
 // Function to calculate win probability between two teams using the new advanced calculator
 const calculateWinProbability = (homeTeam, awayTeam, liveStats = {}) => {
@@ -146,6 +144,8 @@ const calculateWinProbability = (homeTeam, awayTeam, liveStats = {}) => {
     return { homeWinProb, awayWinProb, confidence: 0.3 };
   }
 };
+
+
 
 // Helper function to determine game status
 const getGameStatus = (game) => {
@@ -202,6 +202,78 @@ const processScheduleData = (data, sport, liveStats = {}) => {
     return false;
   });
   
+// Funct
+function calculateRecommendedValue(sessionProp) {
+  try {
+    const {loading, setLoading} = useState(true);
+    const {session} = sessionProp;
+    const {frequency, popularity} = useState({});
+
+    
+
+    // Fetch user preferences from Supabase
+    useEffect(() => {
+      if (!session) return;
+      const uid = session.user.id;
+
+      console.log('Fetching user preferences for user ID:', uid);
+      console.log('Session object:', session);
+      (async () => {
+        setLoading(true);
+        try {
+          let { data } = await supabase
+            .from("user_preferences")
+            .select("favorite_teams")
+            .maybeSingle();
+
+          let prefsData = data.favorite_teams; // already has json values from the data
+          
+          function countFavTeams(prefsData) {
+            const teamCounts = {};
+
+            for (const key in prefsData) {
+              if (Object.prototype.hasOwnProperty.call(prefsData, key)) {
+                const value = prefsData[key];
+
+                if (teamCounts[value]) {
+                  teamCounts[value]++;
+                } else {
+                  teamCounts[value] = 1;
+                }
+              }
+            }
+
+            return teamCounts;
+          }
+
+          
+          /* // Fallback if favorite_teams column doesn't exist
+          if (prefsError && prefsError.message && prefsError.message.includes('favorite_teams')) {
+            const fallbackResult = await supabase
+              .from("user_preferences")
+              .select("sports_prefs")
+              .eq("user_id", uid)
+              .maybeSingle();
+            prefsData = fallbackResult.data;
+            prefsError = fallbackResult.error;
+          }
+          */
+
+        } catch (e) {
+          console.error('Unexpected error loading user preferences:', e);
+          setUserPrefs({ sports_prefs: [], favorite_teams: {} });
+        } finally {
+          setLoading(false);
+        }
+      })();
+    }, [session])
+
+
+    }
+    catch (error) {}
+
+};
+
   // For MLB, show all filtered games; for other sports, limit to avoid performance issues
   const gamesToProcess = sport === 'MLB' ? filteredGames : filteredGames.slice(0, 100);
   
