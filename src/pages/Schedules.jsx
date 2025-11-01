@@ -246,7 +246,12 @@ function calculateRecommendedValue(sessionProp) {
             return teamCounts;
           }
 
-          
+          let userWinPercentage = TEAM_STATS[countFavTeams.teamCounts]?.winPercentage || null;
+
+          if (userWinPercentage >= 60.0) {
+            
+          }
+
           /* // Fallback if favorite_teams column doesn't exist
           if (prefsError && prefsError.message && prefsError.message.includes('favorite_teams')) {
             const fallbackResult = await supabase
