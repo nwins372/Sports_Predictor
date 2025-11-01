@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import espnApi from '../utils/espnApi';
 import './Team.css';
+import FollowButton from '../components/FollowButton';
 
 export default function Team() {
   const params = useParams();
@@ -226,6 +227,10 @@ export default function Team() {
           <div className="team-meta">{teamObj?.location || ''} {teamObj?.nickname ? `• ${teamObj.nickname}` : ''}</div>
           {record && record.summary && <div className="team-record">{record.summary}</div>}
           {venue && venue.fullName && <div className="team-venue">Arena: {venue.fullName}</div>}
+          {/* Follow team button: also updates favorite team preference via FollowButton */}
+          <div style={{marginTop: '8px'}}>
+            <FollowButton entityType="team" entityId={teamObj?.slug || teamObj?.id || name} label={`Follow ${teamObj?.shortDisplayName || name}`} entityMeta={{ name, slug: teamObj?.slug, id: teamObj?.id }} />
+          </div>
         </div>
       </div>
 

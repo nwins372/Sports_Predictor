@@ -1,0 +1,739 @@
+[
+  {
+    "team": "Los Angeles Lakers",
+    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
+    "league": "NBA",
+    "lat": 34.0430,
+    "lon": -118.2673,
+    "link": "https://lakers.com"
+  },
+  {
+    "team": "Los Angeles Clippers",
+    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+    "league": "NBA",
+    "lat": 33.9533,
+    "lon": -118.3417,
+    "link": "https://clippers.com"
+  },
+  {
+    "team": "Los Angeles Dodgers",
+    "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/lad.png",
+    "league": "MLB",
+    "lat": 34.0739,
+    "lon": -118.2400,
+    "link": "https://dodgers.com"
+  },
+  {
+    "team": "Los Angeles Rams",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png",
+    "league": "NFL",
+    "lat": 33.9533,
+    "lon": -118.3392,
+    "link": "https://therams.com"
+  },
+  {
+    "team": "San Diego Padres",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/San_Diego_Padres_%282020%29_cap_logo.svg/1920px-San_Diego_Padres_%282020%29_cap_logo.svg.png",
+    "league": "MLB",
+    "lat": 32.7076,
+    "lon": -117.1570,
+    "link": "https://padres.com"
+  },
+  {
+    "team": "Los Angeles Chargers",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Los_Angeles_Chargers_logo.svg",
+    "league": "NFL",
+    "lat": 33.9533,
+    "lon": -118.3392,
+    "link": "https://chargers.com"
+  },
+  {
+    "team": "San Francisco 49ers",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
+    "league": "NFL",
+    "lat": 37.4030,
+    "lon": -121.9694,
+    "link": "https://49ers.com"
+  },
+  {
+    "team": "Golden State Warriors",
+    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/gs.png",
+    "league": "NBA",
+    "lat": 37.7680,
+    "lon": -122.3877,
+    "link": "https://warriors.com"
+  },
+  {
+    "team": "Los Angeles Angels",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Los_Angeles_Angels_of_Anaheim.svg/1920px-Los_Angeles_Angels_of_Anaheim.svg.png",
+    "league": "MLB",
+    "lat": 33.8003,
+    "lon": -117.8827,
+    "link": "https://angels.com"
+  },
+  {
+    "team": "San Francisco Giants",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/58/San_Francisco_Giants_Logo.svg/2880px-San_Francisco_Giants_Logo.svg.png",
+    "league": "MLB",
+    "lat": 37.7786,
+    "lon": -122.3893,
+    "link": "https://giants.com"
+  },
+  {
+    "team": "Sacramento Kings",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c7/SacramentoKings.svg/1920px-SacramentoKings.svg.png",
+    "league": "NBA",
+    "lat": 38.5805,
+    "lon": -121.4996,
+    "link": "https://kings.com"
+  },
+  {
+    "team": "Portland Trail Blazers",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Portland_Trail_Blazers_logo.svg/2560px-Portland_Trail_Blazers_logo.svg.png",
+    "league": "NBA",
+    "lat": 45.5316,
+    "lon": -122.6668,
+    "link": "https://trailblazers.com"
+  },
+  {
+    "team": "Seattle Mariners",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6d/Seattle_Mariners_logo_%28low_res%29.svg/200px-Seattle_Mariners_logo_%28low_res%29.svg.png",
+    "league": "MLB",
+    "lat": 47.5914,
+    "lon": -122.3325,
+    "link": "https://mariners.com"
+  },
+  {
+    "team": "Seattle Seahawks",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Seattle_Seahawks_logo.svg/200px-Seattle_Seahawks_logo.svg.png",
+    "league": "NFL",
+    "lat": 47.5952,
+    "lon": -122.3316,
+    "link": "https://seahawks.com"
+  },
+  {
+    "team": "Phoenix Suns",
+    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+    "league": "NBA",
+    "lat": 33.4456,
+    "lon": -112.0712,
+    "link": "https://suns.com"
+  },
+  {
+    "team": "Arizona Diamondbacks",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Arizona_Diamondbacks_logo_teal.svg/250px-Arizona_Diamondbacks_logo_teal.svg.png",
+    "league": "MLB",
+    "lat": 33.4456,
+    "lon": -112.0667,
+    "link": "https://diamondbacks.com"
+  },
+  {
+    "team": "Arizona Cardinals",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Arizona_Cardinals_logo.svg/200px-Arizona_Cardinals_logo.svg.png",
+    "league": "NFL",
+    "lat": 33.4456,
+    "lon": -112.0712,
+    "link": "https://cardinals.com"
+  },
+  {
+    "team": "Houston Texans",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Houston_Texans_logo.svg/2560px-Houston_Texans_logo.svg.png",
+    "league": "NFL",
+    "lat": 29.6847,
+    "lon": -95.4107,
+    "link": "https://texans.com"
+  },
+  {
+    "team": "Buffalo Bills",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/7/77/Buffalo_Bills_logo.svg/200px-Buffalo_Bills_logo.svg.png",
+    "league": "NFL",
+    "lat": 42.7738,
+    "lon": -78.7865,
+    "link": "https://bills.com"
+  },
+  {
+    "team": "Pittsburgh Steelers",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Pittsburgh_Steelers_logo.svg/200px-Pittsburgh_Steelers_logo.svg.png",
+    "league": "NFL",
+    "lat": 40.4467,
+    "lon": -80.0158,
+    "link": "https://steelers.com"
+  },
+  {
+    "team": "Miami Dolphins",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Miami_Dolphins_logo.svg/2560px-Miami_Dolphins_logo.svg.png",
+    "league": "NFL",
+    "lat": 25.9580,
+    "lon": -80.2389,
+    "link": "https://dolphins.com"
+  },
+  {
+    "team": "New England Patriots",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
+    "league": "NFL",
+    "lat": 42.0909,
+    "lon": -71.2643,
+    "link": "https://patriots.com"
+  },
+  {
+    "team": "New York Jets",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/New_York_Jets_2024.svg/2880px-New_York_Jets_2024.svg.png",
+    "league": "NFL",
+    "lat": 40.8135,
+    "lon": -74.0745,
+    "link": "https://jets.com"
+  },
+  {
+    "team": "Baltimore Ravens",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/16/Baltimore_Ravens_logo.svg/250px-Baltimore_Ravens_logo.svg.png",
+    "league": "NFL",
+    "lat": 39.2779,
+    "lon": -76.6227,
+    "link": "https://ravens.com"
+  },
+  {
+    "team": "Cincinatti Bengals",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Cincinnati_Bengals_logo.svg/250px-Cincinnati_Bengals_logo.svg.png",
+    "league": "NFL",
+    "lat": 39.0954,
+    "lon": -84.5161,
+    "link": "https://bengals.com"
+  },
+  {
+    "team": "Cleveland Browns",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d9/Cleveland_Browns_logo.svg/250px-Cleveland_Browns_logo.svg.png",
+    "league": "NFL",
+    "lat": 41.5061,
+    "lon": -81.6995,
+    "link": "https://browns.com"
+  },
+  {
+    "team": "Indianapolis Colts",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Indianapolis_Colts_logo.svg/200px-Indianapolis_Colts_logo.svg.png", 
+    "league": "NFL",
+    "lat": 39.7601,
+    "lon": -86.1639,
+    "link": "https://colts.com"
+  },
+  {
+    "team": "Jacksonville Jaguars",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/7/74/Jacksonville_Jaguars_logo.svg/200px-Jacksonville_Jaguars_logo.svg.png",
+    "league": "NFL",
+    "lat": 30.3249,
+    "lon": -81.6370,
+    "link": "https://jaguars.com"
+  },
+  {
+    "team": "Tennessee Titans",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c1/Tennessee_Titans_logo.svg/250px-Tennessee_Titans_logo.svg.png",
+    "league": "NFL",
+    "lat": 36.1665,
+    "lon": -86.7713,
+    "link": "https://www.tennesseetitans.com/"
+  },
+  {
+    "team": "Dallas Cowboys",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Dallas_Cowboys.svg/2560px-Dallas_Cowboys.svg.png",
+    "league": "NFL",
+    "lat": 32.7473,
+    "lon": -97.0945,
+    "link": "https://www.dallascowboys.com/"
+  },
+  {
+    "team": "New York Giants",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/New_York_Giants_logo.svg/2560px-New_York_Giants_logo.svg.png",
+    "league": "NFL",
+    "lat": 40.8135,
+    "lon": -74.0745,
+    "link": "https://giants.com"
+  },
+  {
+    "team": "Philadelphia Eagles",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Philadelphia_Eagles_logo.svg/2880px-Philadelphia_Eagles_logo.svg.png",
+    "league": "NFL",
+    "lat": 39.9008,
+    "lon": -75.1675,
+    "link": "https://www.philadelphiaeagles.com/"
+  },
+  {
+    "team": "Washington Commanders",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Washington_Commanders_logo.svg/250px-Washington_Commanders_logo.svg.png",
+    "league": "NFL",
+    "lat": 38.9078,
+    "lon": -77.0203,
+    "link": "https://commanders.com"
+  },
+  {
+    "team": "Chicago Bears",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/15/Chicago_Bears_logo_primary.svg/250px-Chicago_Bears_logo_primary.svg.png",
+    "league": "NFL",
+    "lat": 41.8623,
+    "lon": -87.6167,
+    "link": "https://www.chicagobears.com/"
+  },
+  {
+    "team": "Detroit Lions",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/7/71/Detroit_Lions_logo.svg/200px-Detroit_Lions_logo.svg.png",
+    "league": "NFL",
+    "lat": 42.3400,
+    "lon": -83.0456,
+    "link": "https://www.detroitlions.com/"
+  },
+  {
+    "team": "Green Bay Packers",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Green_Bay_Packers_logo.svg/200px-Green_Bay_Packers_logo.svg.png",
+    "league": "NFL",
+    "lat": 44.5013,
+    "lon": -88.0622,
+    "link": "https://packers.com"
+  },
+  {
+    "team": "Minnesota Vikings",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/48/Minnesota_Vikings_logo.svg/200px-Minnesota_Vikings_logo.svg.png",
+    "league": "NFL",
+    "lat": 44.9730,
+    "lon": -93.2570,
+    "link": "https://vikings.com"
+  },
+  {
+    "team": "Atlanta Falcons",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/Atlanta_Falcons_logo.svg/200px-Atlanta_Falcons_logo.svg.png",
+    "league": "NFL",
+    "lat": 33.7550,
+    "lon": -84.4008,
+    "link": "https://falcons.com"
+  },
+  {
+    "team": "Carolina Panthers",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/Carolina_Panthers_logo.svg/200px-Carolina_Panthers_logo.svg.png",
+    "league": "NFL",
+    "lat": 35.2251,
+    "lon": -80.8529,
+    "link": "https://panthers.com"
+  },
+  {
+    "team": "New Orleans Saints",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/New_Orleans_Saints_logo.svg/200px-New_Orleans_Saints_logo.svg.png",
+    "league": "NFL",
+    "lat": 29.9511,
+    "lon": -90.0812,
+    "link": "https://www.neworleanssaints.com/"
+  },
+  {
+    "team": "Tampa Bay Buccaneers",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/Tampa_Bay_Buccaneers_logo.svg/250px-Tampa_Bay_Buccaneers_logo.svg.png",
+    "league": "NFL",
+    "lat": 27.9759,
+    "lon": -82.5033,
+    "link": "https://buccaneers.com"
+  },
+  {
+    "team": "Utah Jazz",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/7/77/Utah_Jazz_logo_2025.svg/2880px-Utah_Jazz_logo_2025.svg.png",
+    "league": "NBA",
+    "lat": 40.7681,
+    "lon": -111.9011,
+    "link": "https://www.nba.com/jazz/"
+  },
+  {
+    "team": "Denver Nuggets",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/7/76/Denver_Nuggets.svg/400px-Denver_Nuggets.svg.png",
+    "league": "NBA",
+    "lat": 39.7487,
+    "lon": -104.9916,
+    "link": "https://www.nba.com/nuggets/"
+  },
+  {
+    "team": "Oklahoma City Thunder",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5d/Oklahoma_City_Thunder.svg/400px-Oklahoma_City_Thunder.svg.png",
+    "league": "NBA",
+    "lat": 35.4634,
+    "lon": -97.5151,
+    "link": "https://www.nba.com/thunder/"
+  },
+  {
+    "team": "Dallas Mavericks",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/9/97/Dallas_Mavericks_logo.svg/1920px-Dallas_Mavericks_logo.svg.png",
+    "league": "NBA",
+    "lat": 32.7905,
+    "lon": -96.8103,
+    "link": "https://www.nba.com/mavs/"
+  },
+  {
+    "team": "Houston Rockets",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Houston_Rockets.svg/1920px-Houston_Rockets.svg.png",
+    "league": "NBA",
+    "lat": 29.7508,
+    "lon": -95.3621,
+    "link": "https://www.nba.com/rockets/"
+  },
+  {
+    "team": "San Antonio Spurs",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/San_Antonio_Spurs.svg/2880px-San_Antonio_Spurs.svg.png",
+    "league": "NBA",
+    "lat": 29.4260,
+    "lon": -98.4375,
+    "link": "https://www.nba.com/spurs/"
+  },
+  {
+    "team": "New Orleans Pelicans",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0d/New_Orleans_Pelicans_logo.svg/500px-New_Orleans_Pelicans_logo.svg.png",
+    "league": "NBA",
+    "lat": 29.9511,
+    "lon": -90.0812,
+    "link": "https://www.nba.com/pelicans/"
+  },
+  {
+    "team": "Minnesota Timberwolves",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/Minnesota_Timberwolves_logo.svg/400px-Minnesota_Timberwolves_logo.svg.png",
+    "league": "NBA",
+    "lat": 44.9790,
+    "lon": -93.2760,
+    "link": "https://www.nba.com/timberwolves/"
+  },
+  {
+    "team": "Milwaukee Bucks",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Milwaukee_Bucks_logo.svg/360px-Milwaukee_Bucks_logo.svg.png",
+    "league": "NBA",
+    "lat": 43.0451,
+    "lon": -87.9172,
+    "link": "https://www.nba.com/bucks/"
+  },
+  {
+    "team": "Chicago Bulls",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/6/67/Chicago_Bulls_logo.svg/400px-Chicago_Bulls_logo.svg.png",
+    "league": "NBA",
+    "lat": 41.8807,
+    "lon": -87.6742,
+    "link": "https://www.nba.com/bulls/"
+  },
+  {
+    "team": "Indiana Pacers",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Indiana_Pacers.svg/400px-Indiana_Pacers.svg.png",
+    "league": "NBA",
+    "lat": 39.7684,
+    "lon": -86.1581
+  },
+  {
+    "team": "Memphis Grizzlies",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f1/Memphis_Grizzlies.svg/1920px-Memphis_Grizzlies.svg.png",
+    "league": "NBA",
+    "lat": 35.1382,
+    "lon": -90.0505,
+    "link": "https://www.nba.com/grizzlies/"
+  },
+  {
+    "team": "Atlanta Hawks",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/2/24/Atlanta_Hawks_logo.svg/400px-Atlanta_Hawks_logo.svg.png",
+    "league": "NBA",
+    "lat": 33.7550,
+    "lon": -84.4008,
+    "link": "https://www.nba.com/hawks/"
+  },
+  {
+    "team": "Orlando Magic",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/10/Orlando_Magic_logo.svg/500px-Orlando_Magic_logo.svg.png",
+    "league": "NBA",
+    "lat": 27.9759,
+    "lon": -82.5033,
+    "link": "https://www.nba.com/magic/"
+  },
+  {
+    "team": "Miami Heat",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/fb/Miami_Heat_logo.svg/400px-Miami_Heat_logo.svg.png",
+    "league": "NBA",
+    "lat": 25.7814,
+    "lon": -80.1870,
+    "link": "https://www.nba.com/heat/"
+  },
+  {
+    "team": "Charlotte Hornets",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Charlotte_Hornets_%282014%29.svg/1920px-Charlotte_Hornets_%282014%29.svg.png",
+    "league": "NBA",
+    "lat": 35.2251,
+    "lon": -80.8529,
+    "link": "https://www.nba.com/hornets/"
+  },
+  {
+    "team": "Washington Wizards",
+    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/wsh.png",
+    "league": "NBA",
+    "lat": 38.8981,
+    "lon": -77.0209,
+    "link": "https://www.nba.com/wizards/"
+  },
+  {
+    "team": "Philadelphia 76ers",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0e/Philadelphia_76ers_logo.svg/1920px-Philadelphia_76ers_logo.svg.png",
+    "league": "NBA",
+    "lat": 39.9012,
+    "lon": -75.1720,
+    "link": "https://www.nba.com/sixers/"
+  },
+  {
+    "team": "Cleveland Cavaliers",
+    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
+    "league": "NBA",
+    "lat": 41.4962,
+    "lon": -81.6883,
+    "link": "https://www.nba.com/cavaliers/"
+  },
+  {
+    "team": "Toronto Raptors",
+    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
+    "league": "NBA",
+    "lat": 43.6435,
+    "lon": -79.3791,
+    "link": "https://www.nba.com/raptors/"
+  },
+  {
+    "team": "New York Knicks",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/2/25/New_York_Knicks_logo.svg/2560px-New_York_Knicks_logo.svg.png",
+    "league": "NBA",
+    "lat": 40.7505,
+    "lon": -73.9934,
+    "link": "https://www.nba.com/knicks/"
+  },
+  {
+    "team": "Boston Celtics",
+    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bos.png",
+    "league": "NBA",
+    "lat": 42.3662,
+    "lon": -71.0621,
+    "link": "https://www.nba.com/celtics/"
+  },
+  {
+    "team": "Detroit Pistons",
+    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/det.png",
+    "league": "NBA",
+    "lat": 42.3400,
+    "lon": -83.0456,
+    "link": "https://www.nba.com/pistons/"
+  },
+  {
+    "team": "Las Vegas Raiders",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/48/Las_Vegas_Raiders_logo.svg/250px-Las_Vegas_Raiders_logo.svg.png",
+    "league": "NFL",
+    "lat": 36.0909,
+    "lon": -115.1830,
+    "link": "https://www.raiders.com/"
+  },
+  {
+    "team": "Kansas City Chiefs",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
+    "league": "NFL",
+    "lat": 39.0490,
+    "lon": -94.4839,
+    "link": "https://www.chiefs.com/"
+  },
+  {
+    "team": "Boston Red Sox",
+    "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/bos.png",
+    "league": "MLB",
+    "lat": 42.3662,
+    "lon": -71.0621,
+    "link": "https://www.redsox.com/"
+  },
+    {
+        "team": "New York Yankees",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/nyy.png",
+        "league": "MLB",
+        "lat": 40.8296,
+        "lon": -73.9262,
+        "link": "https://www.mlb.com/yankees"
+    },
+    {
+        "team": "Brooklyn Nets",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/40/Brooklyn_Nets_primary_icon_logo_2024.svg/1920px-Brooklyn_Nets_primary_icon_logo_2024.svg.png",
+        "league": "NBA",
+        "lat": 40.6826,
+        "lon": -73.9754,
+        "link": "https://www.nba.com/nets/"
+    },
+    {
+        "team": "New York Mets",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/nym.png",
+        "league": "MLB",
+        "lat": 40.7570,
+        "lon": -73.8458,
+        "link": "https://www.mlb.com/mets"
+    },
+    {
+        "team" : "Philadelphia Phillies",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/phi.png",
+        "league": "MLB",
+        "lat": 39.9055,
+        "lon": -75.1669,
+        "link": "https://www.mlb.com/phillies"
+    },
+    {
+        "team": "Washington Nationals",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/was.png",
+        "league": "MLB",
+        "lat": 38.8730,
+        "lon": -77.0074,
+        "link": "https://www.mlb.com/nationals"
+    },
+    {
+        "team": "Toronto Blue Jays",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+        "league": "MLB",
+        "lat": 43.6414,
+        "lon": -79.3894,
+        "link": "https://www.mlb.com/bluejays"
+    },
+    {
+        "team": "Athletics",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/oak.png",
+        "league": "MLB",
+        "lat": 37.7516,
+        "lon": -122.2005,
+        "link": "https://www.mlb.com/athletics"
+    },
+    {
+        "team": "St. Louis Cardinals",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/sln.png",
+        "league": "MLB",
+        "lat": 38.6226,
+        "lon": -90.1928,
+        "link": "https://www.mlb.com/cardinals"
+    },
+    {
+        "team": "Cincinnati Reds",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/cin.png",
+        "league": "MLB",
+        "lat": 39.0974,
+        "lon": -84.5060,
+        "link": "https://www.mlb.com/reds"
+    },
+    {
+        "team": "Milwaukee Brewers",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/mil.png",
+        "league": "MLB",
+        "lat": 43.0286,
+        "lon": -87.9711,
+        "link": "https://www.mlb.com/brewers"
+    },
+    {
+        "team": "Minnesota Twins",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/min.png",
+        "league": "MLB",
+        "lat": 44.9817,
+        "lon": -93.2773,
+        "link": "https://www.mlb.com/twins"
+    },
+    {
+        "team": "Chicago White Sox",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/chw.png",
+        "league": "MLB",
+        "lat": 41.8303,
+        "lon": -87.6337,
+        "link": "https://www.mlb.com/whitesox"
+    },
+    {
+        "team": "Cleveland Guardians",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/cle.png",
+        "league": "MLB",
+        "lat": 41.4962,
+        "lon": -81.6883,
+        "link": "https://www.mlb.com/guardians"
+    },
+    {
+        "team": "Detroit Tigers",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/det.png",
+        "league": "MLB",
+        "lat": 42.3400,
+        "lon": -83.0456,
+        "link": "https://www.mlb.com/tigers"
+    },
+    {
+        "team": "Kansas City Royals",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/kc.png",
+        "league": "MLB",
+        "lat": 39.0510,
+        "lon": -94.4803,
+        "link": "https://www.mlb.com/royals"
+    },
+    {
+        "team": "Houston Astros",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/hou.png",
+        "league": "MLB",
+        "lat": 29.7573,
+        "lon": -95.3555,
+        "link": "https://www.mlb.com/astros"
+    },
+    {
+        "team": "Texas Rangers",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tex.png",
+        "league": "MLB",
+        "lat": 32.7516,
+        "lon": -97.0820,
+        "link": "https://www.mlb.com/rangers"
+    },
+    {
+        "team": "Tampa Bay Rays",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tb.png",
+        "league": "MLB",
+        "lat": 27.7683,
+        "lon": -82.6534,
+        "link": "https://www.mlb.com/rays"
+    },
+    {
+        "team": "Atlanta Braves",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/atl.png",
+        "league": "MLB",
+        "lat": 33.8908,
+        "lon": -84.4677,
+        "link": "https://www.mlb.com/braves"
+    },
+    {
+        "team": "Miami Marlins",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/mia.png",
+        "league": "MLB",
+        "lat": 25.7781,
+        "lon": -80.2195,
+        "link": "https://www.mlb.com/marlins"
+    },
+    {
+        "team": "Baltimore Orioles",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/bal.png",
+        "league": "MLB",
+        "lat": 39.2839,
+        "lon": -76.6216,
+        "link": "https://www.mlb.com/orioles"
+    },
+    {
+        "team": "Pittsburgh Pirates",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/pit.png",
+        "league": "MLB",
+        "lat": 40.4467,
+        "lon": -80.0158,
+        "link": "https://www.mlb.com/pirates"
+    },
+    {
+        "team": "Colorado Rockies",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/col.png",
+        "league": "MLB",
+        "lat": 39.7561,
+        "lon": -104.9942,
+        "link": "https://www.mlb.com/rockies"
+    },
+    {
+        "team": "Chicago Cubs",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/chc.png",
+        "league": "MLB",
+        "lat": 41.9484,
+        "lon": -87.6553,
+        "link": "https://www.mlb.com/cubs"
+    },
+    {
+        "team": "Denver Broncos",
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/den.png",
+        "league": "NFL",
+        "lat": 39.7439,
+        "lon": -105.0201,
+        "link": "https://www.denverbroncos.com/"
+    }
+  
+  
+]

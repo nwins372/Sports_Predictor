@@ -20,7 +20,7 @@ const TEAM_FILE_MAP = {
   "Houston Texans": { filename: "Houston", league: "nfl" },
   "Kansas City Chiefs": { filename: "Kansas_City", league: "nfl" },
   "Las Vegas Raiders": { filename: "Las_Vegas", league: "nfl" },
-  "Los Angeles Chargers": { filename: "Los_Angeles", league: "nfl" },
+  // "Los Angeles Chargers": { filename: "Los_Angeles_Chargers", league: "nfl" }, // Data file not available yet
   "Denver Broncos": { filename: "Denver", league: "nfl" },
   "Philadelphia Eagles": { filename: "Philadelphia", league: "nfl" },
   "Dallas Cowboys": { filename: "Dallas", league: "nfl" },
@@ -214,18 +214,43 @@ function Statistics() {
 
   const getTeamStats = (team) => {
     // Extract team statistics from the team data
-    const stats = team?.detail?.team?.record?.items?.[0]?.stats || team?.team?.record?.items?.[0]?.stats || [];
+    const statsArray = team?.detail?.team?.record?.items?.[0]?.stats || team?.team?.record?.items?.[0]?.stats || [];
     const record = team?.detail?.team?.record?.items?.[0] || team?.team?.record?.items?.[0] || {};
+    
+    // Convert stats array to object for easier access
+    const statsObj = {};
+    statsArray.forEach(stat => {
+      if (stat.name && stat.value !== undefined) {
+        statsObj[stat.name] = stat.value;
+      }
+    });
     
     return {
       wins: record.wins || 0,
       losses: record.losses || 0,
       ties: record.ties || 0,
-      stats: stats,
+      stats: statsArray,
+      statsObj: statsObj,
+      // Main stats
+      pointsFor: statsObj.pointsFor || 0,
+      pointsAgainst: statsObj.pointsAgainst || 0,
+      avgPointsFor: statsObj.avgPointsFor || 0,
+      avgPointsAgainst: statsObj.avgPointsAgainst || 0,
+      pointDifferential: statsObj.pointDifferential || 0,
+      winPercent: statsObj.winPercent ? (statsObj.winPercent * 100).toFixed(1) : '0.0',
+      streak: statsObj.streak || 0,
+      divisionWinPercent: statsObj.divisionWinPercent ? (statsObj.divisionWinPercent * 100).toFixed(1) : '0.0',
     };
   };
 
   const getRoster = (team) => {
+    // Note: Current JSON files don't include roster data
+    // Roster data would need to be fetched separately from ESPN API
+    // For now, return empty array to prevent errors
+    console.log('Roster data not available in current team JSON files');
+    return [];
+    
+    /* Original code - keeping for reference when roster data is added
     const roster = team?.detail?.roster?.entries || team?.detail?.roster || team?.athletes || team?.roster || [];
     
     // Flatten roster if it's grouped
@@ -243,6 +268,7 @@ function Statistics() {
     }
     
     return Array.isArray(roster) ? roster : [];
+    */
   };
 
   const getPlayerStats = (player) => {
@@ -264,11 +290,46 @@ function Statistics() {
     return formattedStats;
   };
 
+  const getKeyStats = (team, league) => {
+    const teamStats = getTeamStats(team);
+    
+    // Define key stats based on league
+    const keyStatsConfig = {
+      nfl: [
+        { label: 'Win %', value: `${teamStats.winPercent}%`, icon: '📊' },
+        { label: 'Point Diff', value: teamStats.pointDifferential > 0 ? `+${teamStats.pointDifferential}` : teamStats.pointDifferential, icon: '➕' },
+        { label: 'Avg Points/Game', value: teamStats.avgPointsFor.toFixed(1), icon: '🎯' },
+        { label: 'Avg Allowed/Game', value: teamStats.avgPointsAgainst.toFixed(1), icon: '🛡️' },
+        { label: 'Current Streak', value: teamStats.streak > 0 ? `W${teamStats.streak}` : `L${Math.abs(teamStats.streak)}`, icon: '🔥' },
+      ],
+      nba: [
+        { label: 'Win %', value: `${teamStats.winPercent}%`, icon: '📊' },
+        { label: 'Point Diff', value: teamStats.pointDifferential > 0 ? `+${teamStats.pointDifferential}` : teamStats.pointDifferential, icon: '➕' },
+        { label: 'Avg Points/Game', value: teamStats.avgPointsFor.toFixed(1), icon: '🎯' },
+        { label: 'Avg Allowed/Game', value: teamStats.avgPointsAgainst.toFixed(1), icon: '🛡️' },
+        { label: 'Current Streak', value: teamStats.streak > 0 ? `W${teamStats.streak}` : `L${Math.abs(teamStats.streak)}`, icon: '🔥' },
+      ],
+      mlb: [
+        { label: 'Win %', value: `${teamStats.winPercent}%`, icon: '📊' },
+        { label: 'Run Diff', value: teamStats.pointDifferential > 0 ? `+${teamStats.pointDifferential}` : teamStats.pointDifferential, icon: '➕' },
+        { label: 'Avg Runs/Game', value: teamStats.avgPointsFor.toFixed(2), icon: '🎯' },
+        { label: 'Avg Allowed/Game', value: teamStats.avgPointsAgainst.toFixed(2), icon: '🛡️' },
+        { label: 'Current Streak', value: teamStats.streak > 0 ? `W${teamStats.streak}` : `L${Math.abs(teamStats.streak)}`, icon: '🔥' },
+      ],
+    };
+    
+    return keyStatsConfig[league] || keyStatsConfig.nfl;
+  };
+
   const renderTeamCard = (teamName, team) => {
     const isExpanded = expandedTeams[teamName];
     const logo = getTeamLogo(team);
     const teamStats = getTeamStats(team);
     const roster = getRoster(team);
+    const keyStats = getKeyStats(team, team.league);
+    
+    // Determine the appropriate label for points based on league
+    const pointsLabel = team.league === 'mlb' ? 'Runs' : 'Points';
 
     return (
       <div key={teamName} className="team-card">
@@ -304,35 +365,119 @@ function Statistics() {
 
         {isExpanded && (
           <div className="team-content">
-            <div className="roster-section">
-              <h4>Roster ({roster?.length || 0} players)</h4>
-              <div className="players-list">
-                {roster && roster.length > 0 ? (
-                  roster.slice(0, 25).map((player, idx) => {
-                    const athlete = player?.athlete || player?.person || player || {};
-                    const position = athlete?.position?.abbreviation || athlete?.position?.name || athlete?.position || "N/A";
-                    const jersey = athlete?.jersey || athlete?.displayJersey || "N/A";
-                    const name = athlete?.displayName || athlete?.fullName || athlete?.name || "Unknown Player";
-                    const headshot = athlete?.headshot?.href || athlete?.photo?.href || athlete?.images?.[0]?.url || null;
+            <div className="team-info-section">
+              {/* Scoring Stats */}
+              <div className="scoring-stats">
+                <div className="stat-card scored">
+                  <div className="stat-icon">⚡</div>
+                  <div className="stat-content">
+                    <div className="stat-label">{pointsLabel} Scored</div>
+                    <div className="stat-value">{teamStats.pointsFor}</div>
+                    <div className="stat-avg">Avg: {teamStats.avgPointsFor.toFixed(1)} per game</div>
+                  </div>
+                </div>
+                <div className="stat-card allowed">
+                  <div className="stat-icon">🛡️</div>
+                  <div className="stat-content">
+                    <div className="stat-label">{pointsLabel} Allowed</div>
+                    <div className="stat-value">{teamStats.pointsAgainst}</div>
+                    <div className="stat-avg">Avg: {teamStats.avgPointsAgainst.toFixed(1)} per game</div>
+                  </div>
+                </div>
+              </div>
 
-                    return (
-                      <div key={idx} className="player-row">
-                        {headshot ? (
-                          <img src={headshot} alt={name} className="player-headshot" />
-                        ) : (
-                          <div className="player-headshot placeholder">
-                            <span>#{jersey}</span>
-                          </div>
-                        )}
-                        <div className="player-details">
-                          <span className="player-name">{name}</span>
-                          <span className="player-meta">#{jersey} • {position}</span>
-                        </div>
-                      </div>
-                    );
-                  })
-                ) : (
-                  <p className="no-roster">No roster data available</p>
+              {/* Key Stats Grid */}
+              <h4>Key Statistics</h4>
+              <div className="key-stats-grid">
+                {keyStats.map((stat, idx) => (
+                  <div key={idx} className="key-stat-item">
+                    <span className="key-stat-icon">{stat.icon}</span>
+                    <div className="key-stat-info">
+                      <div className="key-stat-label">{stat.label}</div>
+                      <div className="key-stat-value">{stat.value}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Team Details */}
+              <h4>Team Information</h4>
+              <div className="team-details">
+                <div className="detail-row">
+                  <span className="detail-icon">🏆</span>
+                  <div className="detail-content">
+                    <span className="detail-label">League & Sport</span>
+                    <span className="detail-value">{team.league?.toUpperCase()} • {team.sport}</span>
+                  </div>
+                </div>
+                
+                <div className="detail-row">
+                  <span className="detail-icon">📋</span>
+                  <div className="detail-content">
+                    <span className="detail-label">Overall Record</span>
+                    <span className="detail-value">{teamStats.wins}-{teamStats.losses}{teamStats.ties > 0 ? `-${teamStats.ties}` : ''} ({teamStats.winPercent}% Win Rate)</span>
+                  </div>
+                </div>
+
+                {team.detail?.team?.standingSummary && (
+                  <div className="detail-row">
+                    <span className="detail-icon">📊</span>
+                    <div className="detail-content">
+                      <span className="detail-label">Standings</span>
+                      <span className="detail-value">{team.detail.team.standingSummary}</span>
+                    </div>
+                  </div>
+                )}
+
+                <div className="detail-row">
+                  <span className="detail-icon">📍</span>
+                  <div className="detail-content">
+                    <span className="detail-label">Location</span>
+                    <span className="detail-value">{team.detail?.team?.location || 'N/A'}</span>
+                  </div>
+                </div>
+
+                {team.detail?.team?.nickname && (
+                  <div className="detail-row">
+                    <span className="detail-icon">✨</span>
+                    <div className="detail-content">
+                      <span className="detail-label">Nickname</span>
+                      <span className="detail-value">{team.detail.team.nickname}</span>
+                    </div>
+                  </div>
+                )}
+
+                {team.detail?.nextEvent?.[0] && (
+                  <div className="detail-row highlight">
+                    <span className="detail-icon">🗓️</span>
+                    <div className="detail-content">
+                      <span className="detail-label">Next Game</span>
+                      <span className="detail-value">
+                        {team.detail.nextEvent[0].shortName} • {new Date(team.detail.nextEvent[0].date).toLocaleDateString('en-US', { 
+                          weekday: 'short', 
+                          month: 'short', 
+                          day: 'numeric',
+                          hour: 'numeric',
+                          minute: '2-digit'
+                        })}
+                      </span>
+                    </div>
+                  </div>
+                )}
+
+                {team.detail?.nextEvent?.[0]?.competitions?.[0]?.venue && (
+                  <div className="detail-row">
+                    <span className="detail-icon">🏟️</span>
+                    <div className="detail-content">
+                      <span className="detail-label">Next Game Venue</span>
+                      <span className="detail-value">
+                        {team.detail.nextEvent[0].competitions[0].venue.fullName}
+                        {team.detail.nextEvent[0].competitions[0].venue.address?.city && 
+                          ` • ${team.detail.nextEvent[0].competitions[0].venue.address.city}, ${team.detail.nextEvent[0].competitions[0].venue.address.state}`
+                        }
+                      </span>
+                    </div>
+                  </div>
                 )}
               </div>
             </div>

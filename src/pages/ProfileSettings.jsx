@@ -1,6 +1,8 @@
 // src/pages/ProfileSettings.jsx
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import LanguagePreference from "../components/LanguagePreference";
+import { supabase } from "../supabaseClient";
 
 function ProfileSettings({ isLoggedIn, onUpdate }) {
   const navigate = useNavigate();
@@ -11,10 +13,19 @@ function ProfileSettings({ isLoggedIn, onUpdate }) {
     password: "",
   });
 
-  // Redirect if not logged in
+  const [session, setSession] = useState(null);
+
+  // Redirect if not logged in and get session
   useEffect(() => {
     if (!isLoggedIn) {
       navigate("/login");
+    } else {
+      // Get session for language preference component
+      const getSession = async () => {
+        const { data: { session } } = await supabase.auth.getSession();
+        setSession(session);
+      };
+      getSession();
     }
   }, [isLoggedIn, navigate]);
 
@@ -85,6 +96,13 @@ function ProfileSettings({ isLoggedIn, onUpdate }) {
           </form>
         </div>
       </div>
+
+      {/* Language Preference Section */}
+      {session && (
+        <div className="mt-4">
+          <LanguagePreference session={session} />
+        </div>
+      )}
     </div>
   );
 }
