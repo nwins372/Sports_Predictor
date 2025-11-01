@@ -221,49 +221,39 @@ function calculateRecommendedValue(sessionProp) {
       (async () => {
         setLoading(true);
         try {
-          let { data } = await supabase
+          let { data, error } = await supabase
             .from("user_preferences")
             .select("favorite_teams")
+            .eq("user_id", uid)
             .maybeSingle();
 
-          let prefsData = data.favorite_teams; // already has json values from the data
+
+            if (error) throw error;
+            const prefsData = data.favorite_teams; // already has json values from the data
           
-          function countFavTeams(prefsData) {
-            const teamCounts = {};
+          
+          const teamCounts = {};
+          for (const team of prefsData) {
+            teamCounts[team] = (teamCounts[team] || 0) + 1;
+          }
 
-            for (const key in prefsData) {
-              if (Object.prototype.hasOwnProperty.call(prefsData, key)) {
-                const value = prefsData[key];
+          let totalValue = 0;
+          let totalTeams = 0;
 
-                if (teamCounts[value]) {
-                  teamCounts[value]++;
-                } else {
-                  teamCounts[value] = 1;
-                }
-              }
+          for (const team in teamCounts) {
+            const stats = TEAM_STATS[team];
+            if (stats) {
+              const teamValue = stats.winPercentage * teamCounts[team];
+              totalValue += teamValue;
+              totalTeams++;
             }
-
-            return teamCounts;
           }
+          
+          const avgValue = totalTeams > 0 ? totalValue / totalTeams : 0;
 
-          let userWinPercentage = TEAM_STATS[countFavTeams.teamCounts]?.winPercentage || null;
+          calculateRecommendedValue(avgValue);
 
-          if (userWinPercentage >= 60.0) {
-            
-          }
-
-          /* // Fallback if favorite_teams column doesn't exist
-          if (prefsError && prefsError.message && prefsError.message.includes('favorite_teams')) {
-            const fallbackResult = await supabase
-              .from("user_preferences")
-              .select("sports_prefs")
-              .eq("user_id", uid)
-              .maybeSingle();
-            prefsData = fallbackResult.data;
-            prefsError = fallbackResult.error;
-          }
-          */
-
+          console.log("Recommended Value:", avgValue);
         } catch (e) {
           console.error('Unexpected error loading user preferences:', e);
           setUserPrefs({ sports_prefs: [], favorite_teams: {} });
@@ -271,7 +261,7 @@ function calculateRecommendedValue(sessionProp) {
           setLoading(false);
         }
       })();
-    }, [session])
+    }, [session]);
 
 
     }
