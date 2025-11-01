@@ -248,62 +248,62 @@ export function calculateRecommendedValue(sessionProp) {
 // For MLB, show all filtered games; for other sports, limit to avoid performance issues
 const gamesToProcess = sport === 'MLB' ? filteredGames : filteredGames.slice(0, 100);
 
-return gamesToProcess.map((game, index) => {
-  const gameDate = new Date(game.DateUtc);
-  const homeTeam = game.HomeTeam;
-  const awayTeam = game.AwayTeam;
-  const { homeWinProb, awayWinProb } = calculateWinProbability(homeTeam, awayTeam, liveStats);
-  const gameStatus = getGameStatus(game);
-  
-  return {
-    id: `${sport}-${game.MatchNumber}`,
-    name: `${awayTeam} @ ${homeTeam}`,
-    date: gameDate.toISOString().split('T')[0],
-    time: gameDate.toLocaleTimeString('en-US', { 
-      hour: 'numeric', 
-      minute: '2-digit',
-      hour12: true 
-    }),
-    location: game.Location,
-    type: gameStatus,
-    week: `Round ${game.RoundNumber}`,
-    homeTeam,
-    awayTeam,
-    homeWinProb,
-    awayWinProb,
-    homeScore: game.HomeTeamScore,
-    awayScore: game.AwayTeamScore,
-    sport,
-    status: game.Status,
-    isLive: gameStatus === "Live",
-    // Enhanced live game details
-    currentInning: game.currentInning,
-    inningHalf: game.inningHalf,
-    currentQuarter: game.currentQuarter,
-    quarterTime: game.quarterTime,
-    timeRemaining: game.timeRemaining,
-    gameClock: game.gameClock,
-    period: game.period,
-    isTopInning: game.isTopInning,
-    // MLB specific
-    outs: game.outs,
-    baseRunners: game.baseRunners,
-    pitcher: game.pitcher,
-    batter: game.batter,
-    // NFL specific
-    down: game.down,
-    distance: game.distance,
-    fieldPosition: game.fieldPosition,
-    possession: game.possession,
-    yardLine: game.yardLine,
-    isRedZone: game.isRedZone,
-    timeout: game.timeout,
-    // NBA specific
-    shotClock: game.shotClock,
-    lead: game.lead,
-    isOvertime: game.isOvertime
-  };
-});
+  return gamesToProcess.map((game, index) => {
+    const gameDate = new Date(game.DateUtc);
+    const homeTeam = game.HomeTeam;
+    const awayTeam = game.AwayTeam;
+    const { homeWinProb, awayWinProb } = calculateWinProbability(homeTeam, awayTeam, liveStats);
+    const gameStatus = getGameStatus(game);
+    
+    return {
+      id: `${sport}-${game.MatchNumber}`,
+      name: `${awayTeam} @ ${homeTeam}`,
+      date: gameDate.toISOString().split('T')[0],
+      time: gameDate.toLocaleTimeString('en-US', { 
+        hour: 'numeric', 
+        minute: '2-digit',
+        hour12: true 
+      }),
+      location: game.Location,
+      type: gameStatus,
+      week: `Round ${game.RoundNumber}`,
+      homeTeam,
+      awayTeam,
+      homeWinProb,
+      awayWinProb,
+      homeScore: game.HomeTeamScore,
+      awayScore: game.AwayTeamScore,
+      sport,
+      status: game.Status,
+      isLive: gameStatus === "Live",
+      // Enhanced live game details
+      currentInning: game.currentInning,
+      inningHalf: game.inningHalf,
+      currentQuarter: game.currentQuarter,
+      quarterTime: game.quarterTime,
+      timeRemaining: game.timeRemaining,
+      gameClock: game.gameClock,
+      period: game.period,
+      isTopInning: game.isTopInning,
+      // MLB specific
+      outs: game.outs,
+      baseRunners: game.baseRunners,
+      pitcher: game.pitcher,
+      batter: game.batter,
+      // NFL specific
+      down: game.down,
+      distance: game.distance,
+      fieldPosition: game.fieldPosition,
+      possession: game.possession,
+      yardLine: game.yardLine,
+      isRedZone: game.isRedZone,
+      timeout: game.timeout,
+      // NBA specific
+      shotClock: game.shotClock,
+      lead: game.lead,
+      isOvertime: game.isOvertime
+    };
+  });
 
 
 // Major sporting events with enhanced details
