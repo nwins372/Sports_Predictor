@@ -77,7 +77,6 @@
   background: #2563eb;
 }
 
-/* Style for "Showing results for..." */
 .results-city-name {
   margin-top: 30px;
   font-size: 1.5rem;
@@ -88,13 +87,11 @@
   margin-bottom: 24px;
 }
 
-/* Style for "Nearby Teams..." */
 .results-container h3 {
   font-size: 1.2rem;
   color: #cbd5e1;
 }
 
-/* This is the grid that holds all the cards */
 .team-results-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
