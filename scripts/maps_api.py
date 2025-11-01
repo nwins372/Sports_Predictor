@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 MAPS_API_URL = "https://maps.googleapis.com/maps/api"
-MAPS_API_KEY = os.getenv("GOOGLE_MAPS_API_KEY")
+MAPS_API_KEY = os.getenv("REACT_APP_GOOGLE_MAPS_API_KEY")
 
 def search_local_sports_venues(address):
     '''
