@@ -7,6 +7,7 @@ import { useTodaysGames } from "../hooks/useScoreUpdates";
 import { getBroadcastInfo } from "../utils/broadcasts";
 import "./ScheduleBar.css";
 
+
 // Logo Imports
 import espnLogo from "../assets/ESPN_logo.png";
 import foxLogo from "../assets/fox_logo.png";
@@ -96,6 +97,10 @@ export default function ScheduleBar({ session }) {
         default: baseSchedule = []; break;
       }
     }
+
+    // sort by RecommendedValue aka RecValue
+
+
     const favTeams = userPrefs.favorite_teams?.[sport.toUpperCase()] || [];
     const schedule = (filterState === 'favorites' && favTeams.length > 0)
       ? baseSchedule.filter(g => favTeams.includes(g.HomeTeam) || favTeams.includes(g.AwayTeam))
