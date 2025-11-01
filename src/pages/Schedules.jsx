@@ -204,13 +204,10 @@ const processScheduleData = (data, sport, liveStats = {}) => {
   
 // Funct
 function calculateRecommendedValue(sessionProp) {
-  try {
-    const {loading, setLoading} = useState(true);
+    const [loading, setLoading] = useState(true);
+    const [recommendedValue, setRecommendedValue] = useState(null);
     const {session} = sessionProp;
-    const {frequency, popularity} = useState({});
-
     
-
     // Fetch user preferences from Supabase
     useEffect(() => {
       if (!session) return;
@@ -251,23 +248,20 @@ function calculateRecommendedValue(sessionProp) {
           
           const avgValue = totalTeams > 0 ? totalValue / totalTeams : 0;
 
-          calculateRecommendedValue(avgValue);
+          setRecommendedValue(avgValue);
 
           console.log("Recommended Value:", avgValue);
         } catch (e) {
           console.error('Unexpected error loading user preferences:', e);
-          setUserPrefs({ sports_prefs: [], favorite_teams: {} });
         } finally {
           setLoading(false);
         }
       })();
     }, [session]);
 
+    return { loading, recommendedValue };
 
-    }
-    catch (error) {}
-
-};
+}
 
   // For MLB, show all filtered games; for other sports, limit to avoid performance issues
   const gamesToProcess = sport === 'MLB' ? filteredGames : filteredGames.slice(0, 100);
