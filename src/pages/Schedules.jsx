@@ -179,7 +179,7 @@ const getGameStatus = (game) => {
   return "Scheduled";
 };
 
-export function calculateRecommendedValue(sessionProp) {
+export function useRecommendedValue(sessionProp) {
   const [loading, setLoading] = useState(true);
   const [recommendedValue, setRecommendedValue] = useState(null);
   const { session } = sessionProp;
