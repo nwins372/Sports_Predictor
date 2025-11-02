@@ -328,6 +328,7 @@ const navigate = useNavigate();
 
       <div className="navbar-center">
         <Link to="/following" className="nav-link" id="following">Following</Link>
+        <Link to="/comments" className="nav-link" id="comments">Comments</Link>
         <Link to="/statistics" className="nav-link" id="statistics">Statistics</Link>
         <Link to="/sports-news" className="nav-link">Sports News</Link>
         {!session && <Link to="/login" id="login-button">Login</Link>}
