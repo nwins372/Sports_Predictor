@@ -98,7 +98,7 @@ export default function ScheduleBar({ session }) {
       }
     }
 
-    // sort by RecommendedValue aka RecValue
+    /*// sort by RecommendedValue aka RecValue
     baseSchedule.sort((a, b) => {
       const aScore = getTeamScore(a);
       const bScore = getTeamScore(b);
@@ -114,8 +114,8 @@ export default function ScheduleBar({ session }) {
       // Average both teams' win percentages
       return (home + away) / 2;
     }
+*/
 
-    
     const favTeams = userPrefs.favorite_teams?.[sport.toUpperCase()] || [];
     const schedule = (filterState === 'favorites' && favTeams.length > 0)
       ? baseSchedule.filter(g => favTeams.includes(g.HomeTeam) || favTeams.includes(g.AwayTeam))
