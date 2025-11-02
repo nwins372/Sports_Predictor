@@ -99,7 +99,21 @@ export default function ScheduleBar({ session }) {
     }
 
     // sort by RecommendedValue aka RecValue
+    baseSchedule.sort((a, b) => {
+      const aScore = getTeamScore(a);
+      const bScore = getTeamScore(b);
+      return bScore - aScore; // highest first
+    });
 
+    // Helper function
+    function getTeamScore(game) {
+      // Default to 0 if team not found in TEAM_STATS
+      const home = TEAM_STATS[game.HomeTeam]?.winPercentage || 0;
+      const away = TEAM_STATS[game.AwayTeam]?.winPercentage || 0;
+
+      // Average both teams' win percentages
+      return (home + away) / 2;
+    }
 
     const favTeams = userPrefs.favorite_teams?.[sport.toUpperCase()] || [];
     const schedule = (filterState === 'favorites' && favTeams.length > 0)
