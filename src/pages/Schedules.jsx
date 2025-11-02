@@ -179,7 +179,6 @@ const getGameStatus = (game) => {
   return "Scheduled";
 };
 
-// Funct
 export function calculateRecommendedValue(sessionProp) {
   const [loading, setLoading] = useState(true);
   const [recommendedValue, setRecommendedValue] = useState(null);
@@ -220,7 +219,7 @@ export function calculateRecommendedValue(sessionProp) {
   }, [session]);
 
   return { loading, recommendedValue };
-}
+};
 // Function to process real schedule data with smart filtering
 const processScheduleData = (data, sport, liveStats = {}) => {
   const now = new Date();
@@ -243,6 +242,7 @@ const processScheduleData = (data, sport, liveStats = {}) => {
     // Exclude older games
     return false;
   });
+  // Funct
 
   // For MLB, show all filtered games; for other sports, limit to avoid performance issues
   const gamesToProcess = sport === 'MLB' ? filteredGames : filteredGames.slice(0, 100);
