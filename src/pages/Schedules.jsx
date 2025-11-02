@@ -179,29 +179,6 @@ const getGameStatus = (game) => {
   return "Scheduled";
 };
 
-// Function to process real schedule data with smart filtering
-const processScheduleData = (data, sport, liveStats = {}) => {
-  const now = new Date();
-  const oneMonthAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
-  
-  // Filter games to prioritize: live games, future games, and games within the last month
-  const filteredGames = data.filter(game => {
-    const gameDate = new Date(game.DateUtc);
-    const gameStatus = getGameStatus(game);
-    
-    // Always include live games
-    if (gameStatus === "Live") return true;
-    
-    // Include future games
-    if (gameDate > now) return true;
-    
-    // Include games from the last month
-    if (gameDate >= oneMonthAgo && gameDate <= now) return true;
-    
-    // Exclude older games
-    return false;
-  });
-}
 // Funct
 export function calculateRecommendedValue(sessionProp) {
   const [loading, setLoading] = useState(true);
@@ -244,67 +221,89 @@ export function calculateRecommendedValue(sessionProp) {
 
   return { loading, recommendedValue };
 }
-
-// For MLB, show all filtered games; for other sports, limit to avoid performance issues
-const gamesToProcess = sport === 'MLB' ? filteredGames : filteredGames.slice(0, 100);
-
-return gamesToProcess.map((game, index) => {
-  const gameDate = new Date(game.DateUtc);
-  const homeTeam = game.HomeTeam;
-  const awayTeam = game.AwayTeam;
-  const { homeWinProb, awayWinProb } = calculateWinProbability(homeTeam, awayTeam, liveStats);
-  const gameStatus = getGameStatus(game);
+// Function to process real schedule data with smart filtering
+const processScheduleData = (data, sport, liveStats = {}) => {
+  const now = new Date();
+  const oneMonthAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
   
-  return {
-    id: `${sport}-${game.MatchNumber}`,
-    name: `${awayTeam} @ ${homeTeam}`,
-    date: gameDate.toISOString().split('T')[0],
-    time: gameDate.toLocaleTimeString('en-US', { 
-      hour: 'numeric', 
-      minute: '2-digit',
-      hour12: true 
-    }),
-    location: game.Location,
-    type: gameStatus,
-    week: `Round ${game.RoundNumber}`,
-    homeTeam,
-    awayTeam,
-    homeWinProb,
-    awayWinProb,
-    homeScore: game.HomeTeamScore,
-    awayScore: game.AwayTeamScore,
-    sport,
-    status: game.Status,
-    isLive: gameStatus === "Live",
-    // Enhanced live game details
-    currentInning: game.currentInning,
-    inningHalf: game.inningHalf,
-    currentQuarter: game.currentQuarter,
-    quarterTime: game.quarterTime,
-    timeRemaining: game.timeRemaining,
-    gameClock: game.gameClock,
-    period: game.period,
-    isTopInning: game.isTopInning,
-    // MLB specific
-    outs: game.outs,
-    baseRunners: game.baseRunners,
-    pitcher: game.pitcher,
-    batter: game.batter,
-    // NFL specific
-    down: game.down,
-    distance: game.distance,
-    fieldPosition: game.fieldPosition,
-    possession: game.possession,
-    yardLine: game.yardLine,
-    isRedZone: game.isRedZone,
-    timeout: game.timeout,
-    // NBA specific
-    shotClock: game.shotClock,
-    lead: game.lead,
-    isOvertime: game.isOvertime
-  };
-});
+  // Filter games to prioritize: live games, future games, and games within the last month
+  const filteredGames = data.filter(game => {
+    const gameDate = new Date(game.DateUtc);
+    const gameStatus = getGameStatus(game);
+    
+    // Always include live games
+    if (gameStatus === "Live") return true;
+    
+    // Include future games
+    if (gameDate > now) return true;
+    
+    // Include games from the last month
+    if (gameDate >= oneMonthAgo && gameDate <= now) return true;
+    
+    // Exclude older games
+    return false;
+  });
 
+  // For MLB, show all filtered games; for other sports, limit to avoid performance issues
+  const gamesToProcess = sport === 'MLB' ? filteredGames : filteredGames.slice(0, 100);
+
+  return gamesToProcess.map((game, index) => {
+    const gameDate = new Date(game.DateUtc);
+    const homeTeam = game.HomeTeam;
+    const awayTeam = game.AwayTeam;
+    const { homeWinProb, awayWinProb } = calculateWinProbability(homeTeam, awayTeam, liveStats);
+    const gameStatus = getGameStatus(game);
+    
+    return {
+      id: `${sport}-${game.MatchNumber}`,
+      name: `${awayTeam} @ ${homeTeam}`,
+      date: gameDate.toISOString().split('T')[0],
+      time: gameDate.toLocaleTimeString('en-US', { 
+        hour: 'numeric', 
+        minute: '2-digit',
+        hour12: true 
+      }),
+      location: game.Location,
+      type: gameStatus,
+      week: `Round ${game.RoundNumber}`,
+      homeTeam,
+      awayTeam,
+      homeWinProb,
+      awayWinProb,
+      homeScore: game.HomeTeamScore,
+      awayScore: game.AwayTeamScore,
+      sport,
+      status: game.Status,
+      isLive: gameStatus === "Live",
+      // Enhanced live game details
+      currentInning: game.currentInning,
+      inningHalf: game.inningHalf,
+      currentQuarter: game.currentQuarter,
+      quarterTime: game.quarterTime,
+      timeRemaining: game.timeRemaining,
+      gameClock: game.gameClock,
+      period: game.period,
+      isTopInning: game.isTopInning,
+      // MLB specific
+      outs: game.outs,
+      baseRunners: game.baseRunners,
+      pitcher: game.pitcher,
+      batter: game.batter,
+      // NFL specific
+      down: game.down,
+      distance: game.distance,
+      fieldPosition: game.fieldPosition,
+      possession: game.possession,
+      yardLine: game.yardLine,
+      isRedZone: game.isRedZone,
+      timeout: game.timeout,
+      // NBA specific
+      shotClock: game.shotClock,
+      lead: game.lead,
+      isOvertime: game.isOvertime
+    };
+  });
+};
 
 // Major sporting events with enhanced details
 const MAJOR_SPORTING_EVENTS = {
