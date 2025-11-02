@@ -1,0 +1,12 @@
+.prediction-calculator { background: #0b1220; border: 2px solid #1d3557; border-radius: 12px; padding: 1.5rem; color: #e5e7eb; }
+.prediction-calculator h1 { margin: 0 0 0.5rem 0; }
+.muted { color: #9ca3af; }
+.controls { margin: 12px 0; display:flex; gap:12px; align-items:center }
+.simulate-btn { background: linear-gradient(135deg,#22c55e,#16a34a); border: none; color: white; padding: 10px 18px; border-radius: 8px; font-weight:700; cursor:pointer }
+.simulate-btn:disabled { opacity: 0.6; cursor: not-allowed }
+.champion-results { margin-top: 18px; background: #111827; border: 1px solid #1d3557; border-radius: 10px; padding: 1rem; }
+.result-table { width:100%; border-collapse: collapse; }
+.result-table th, .result-table td { border: 1px solid #233044; padding: 8px; }
+.result-table th { background: #0f1724; color: #cbd5e1; }
+.notes { margin-top: 18px; color: #cbd5e1 }
+.hint { color: #9ca3af; font-size: 0.95rem; }

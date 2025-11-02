@@ -1,5 +1,4 @@
 import { useState } from "react";
-import NavBar from "../components/NavBar";
 import { supabase } from "../supabaseClient";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
@@ -103,7 +102,6 @@ export default function App() {
 
   return (
     <div>
-      <NavBar />
       <div className="login-container">
         <h1>{page === "login" ? "Login" : "Register"}</h1>
 
