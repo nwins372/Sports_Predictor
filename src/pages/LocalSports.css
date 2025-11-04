@@ -56,14 +56,46 @@
 }
 
 .local-sports-form .input-row button,
-.local-sports-form .input-row .dropbtn {
+.local-sports-form .input-row .dropbtn,
+.local-sports-form .input-row .myloc {
   flex: 1;
   min-width: 0;
-  padding: 10px 14px;
-  border-radius: 8px;
-  font-size: 14px;
+  height: 42px;
+  font-size: 16px;
   font-weight: 600;
-  height: 42px; 
+  border-radius: 8px;
+  border: none;
+  margin: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+
+/* Search button */
+.local-sports-form .input-row button[type="submit"] {
+  background: #3b82f6;
+  color: white;
+}
+.local-sports-form .input-row button[type="submit"]:hover {
+  background: #2563eb;
+}
+
+/* Search My Location button */
+.local-sports-form .input-row .myloc {
+  background: #10b981;
+  color: white;
+  font-size: 12px;
+}
+.local-sports-form .input-row .myloc:hover {
+  background: #059669;
+  transform: scale(1.05);
+}
+
+/* Select Radius button */
+.local-sports-form .input-row .dropbtn {
+  background: #f59e42;
+  color: white;
+}
+.local-sports-form .input-row .dropbtn:hover {
+  background: #d97706;
 }
 
 /* Specific styling for get-location button - MUST come before .dropbtn */
@@ -94,6 +126,7 @@
   background: #2563eb;
 }
 
+/* Style for "Showing results for..." */
 .results-city-name {
   margin-top: 30px;
   font-size: 1.5rem;
@@ -104,11 +137,13 @@
   margin-bottom: 24px;
 }
 
+/* Style for "Nearby Teams..." */
 .results-container h3 {
   font-size: 1.2rem;
   color: #cbd5e1;
 }
 
+/* This is the grid that holds all the cards */
 .team-results-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -205,6 +240,20 @@
 }
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.myloc {
+  background-color: #0ea673; 
+  color: white;
+  border: none;
+  font-size: 18px;
+
+}
+.myloc:hover {
+  background-color: #059669; 
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: all 0.2s ease;
 }
 
 @media (max-width: 420px) {

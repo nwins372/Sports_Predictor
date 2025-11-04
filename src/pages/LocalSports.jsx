@@ -19,6 +19,7 @@ function getDistanceInMiles(lat1, lon1, lat2, lon2) {
 
 export default function LocalSports() {
   const navigate = useNavigate();
+  const [userLocation, setUserLocation] = useState(null);
   const [city, setCity] = useState("");
   const [radius, setRadius] = useState(50);
   const [searchCoords, setSearchCoords] = useState(null);
@@ -33,7 +34,7 @@ export default function LocalSports() {
     setFoundCityName(null); 
 
     const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(city)}&key=${apiKey}`;
+    let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(city)}&key=${apiKey}`;
 
     try {
       const response = await fetch(url);
@@ -52,6 +53,27 @@ export default function LocalSports() {
       }
     } catch (err) {
       setError("Failed to fetch location data.");
+    }
+  };
+
+  const handleMyLocationSearch = () => {
+    setError(null);
+    setFoundCityName("Your Location");
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setSearchCoords({
+            lat: position.coords.latitude,
+            lon: position.coords.longitude
+          });
+          setCity(""); // Optionally clear city input
+        },
+        (error) => {
+          setError("Unable to retrieve your location.");
+        }
+      );
+    } else {
+      setError("Geolocation is not supported by your browser.");
     }
   };
 
@@ -75,7 +97,7 @@ export default function LocalSports() {
     <div>
       <div className="local-sports-container">
         <h1>Local Sports Search</h1>
-        <p>Please enter a city, and we will return sports teams nearby!</p>
+        <p>Please enter a city or click "Search My Location", and we will return sports teams nearby!</p>
         
         <form className="local-sports-form" onSubmit={handleSearch}>
           <div className="input-row">
@@ -83,11 +105,14 @@ export default function LocalSports() {
               type="text"
               name="city"
               placeholder="Enter city name (ex: Los Angeles, CA)"
-              required
+              
               value={city}
               onChange={e => setCity(e.target.value)}
               className="local-sports-input"
             />
+            <button type="button" className="myloc" onClick={handleMyLocationSearch}>
+              Search My Location
+            </button>
             <button type="submit">Search</button>
             <div className="dropdown">
                 <button className="dropbtn" type="button">Select Radius</button>
