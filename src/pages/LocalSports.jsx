@@ -1,5 +1,4 @@
 import { useState, useMemo } from "react";
-import NavBar from "../components/NavBar";
 import { useNavigate } from "react-router-dom";
 import "./LocalSports.css";
 
@@ -74,7 +73,6 @@ export default function LocalSports() {
 
   return (
     <div>
-      <NavBar />
       <div className="local-sports-container">
         <h1>Local Sports Search</h1>
         <p>Please enter a city, and we will return sports teams nearby!</p>

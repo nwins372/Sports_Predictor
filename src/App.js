@@ -8,6 +8,8 @@ import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import Team from './pages/Team';
 import Player from './pages/Player';
+import MockDraft from './pages/MockDraft';
+import NavBar from './components/NavBar';
 import { ThemeProvider } from './context/ThemeContext';
 import { supabase } from './supabaseClient';
 import { useEffect, useState } from 'react';
@@ -46,8 +48,9 @@ useEffect(() => {
 
   return (
     <ThemeProvider>
-    <BrowserRouter>
-    <Routes>
+  <BrowserRouter>
+  <NavBar />
+  <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
@@ -57,6 +60,7 @@ useEffect(() => {
       <Route path="/player/:league/:id" element={<Player />} />
       {/* backward-compatible route (no league) */}
       <Route path="/player/:id" element={<Player />} />
+  <Route path="/mock-draft" element={<MockDraft />} />
       <Route path="/settings" element={<Settings />} />
       <Route path="/sports-news" element={<SportsNewsPage />} />
       <Route path="/schedules" element={<Schedules />} />

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import NavBar from "../components/NavBar";
 import ScheduleBar from "../components/ScheduleBar";
 import { supabase } from "../supabaseClient";
 import { calculateWinPercentage, formatWinPercentage, predictChampion } from "../utils/winPercentageCalculator";
@@ -418,7 +417,6 @@ function Home() {
   return (
     <>
       <div id="app-container">
-        <NavBar />
         <ScheduleBar />
         
         <div className="container mt-4">

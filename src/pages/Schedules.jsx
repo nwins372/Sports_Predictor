@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { supabase } from "../supabaseClient";
-import NavBar from "../components/NavBar";
 import ScheduleBar from "../components/ScheduleBar";
 import WinPercentageDisplay from "../components/WinPercentageDisplay";
 import ScoreUpdateStatus from "../components/ScoreUpdateStatus";
@@ -1522,7 +1521,6 @@ function Schedules({ session: sessionProp }) {
 
   return (
     <>
-      <NavBar />
   <ScheduleBar session={session}/>
       
       <div className="container mt-4">

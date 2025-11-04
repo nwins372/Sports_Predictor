@@ -1,7 +1,6 @@
 // src/pages/Profile.jsx
 import { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
-import NavBar from "../components/NavBar";
 import PasswordChange from "../components/PasswordChange"; 
 import SportPrefsForm from "../components/SportsPreference";
 import NotificationToggle from "../components/NotificationToggle";
@@ -40,9 +39,7 @@ export default function Profile() {
   if (error) return <p className="error">{error}</p>;
 
   return (
-    <>
-      <NavBar />
-      <div className="profile-container">
+    <div className="profile-container">
         <h1>hello {username}</h1>
         <NotificationToggle session={session} /> {/* Notification Preferences, SportsPreference, Password Change  - Winston */}
         <SportPrefsForm session={session} />
@@ -50,7 +47,6 @@ export default function Profile() {
         <PasswordChange session={session} />
 
         
-      </div>
-    </>
+    </div>
   );
 }
