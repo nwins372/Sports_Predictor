@@ -20,71 +20,99 @@ function getDistanceInMiles(lat1, lon1, lat2, lon2) {
 
 export default function LocalSports() {
   const navigate = useNavigate();
+  const [city, setCity] = useState("");
   const [radius, setRadius] = useState(50);
-  const [userLocation, setUserLocation] = useState(null);
+  const [searchCoords, setSearchCoords] = useState(null);
   const [error, setError] = useState(null);
+  
+  const [foundCityName, setFoundCityName] = useState(null);
 
-  const getUserLocation = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setUserLocation({
-            lat: position.coords.latitude,
-            lon: position.coords.longitude
-          });
-        },
-        (error) => {
-          setError("Unable to retrieve your location.");
-        }
-      );
-    } else {
-      setError("Geolocation is not supported by your browser.");
+  const handleSearch = async (event) => {
+    event.preventDefault(); 
+    setError(null);
+    setSearchCoords(null);
+    setFoundCityName(null); 
+
+    const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(city)}&key=${apiKey}`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data.status === 'OK') {
+        const result = data.results[0];
+        const location = result.geometry.location; // { lat, lng }
+        
+        setSearchCoords({ lat: location.lat, lon: location.lng });
+
+        setFoundCityName(result.formatted_address);
+        
+      } else {
+        setError(data.error_message || "Could not find that location.");
+      }
+    } catch (err) {
+      setError("Failed to fetch location data.");
     }
-  }
+  };
 
   const nearbyTeams = useMemo(() => {
-    if (!userLocation) {
+    if (!searchCoords) {
       return []; // No location searched yet
     }
+    // search for terms within radius
     return teamLocations.filter(team => {
       const distance = getDistanceInMiles(
-        userLocation.lat,
-        userLocation.lon,
+        searchCoords.lat,
+        searchCoords.lon,
         team.lat,
         team.lon
       );
       return distance <= radius;
     });
-  }, [userLocation, radius]);
+  }, [searchCoords, radius]);
 
   return (
     <div>
       <NavBar />
       <div className="local-sports-container">
         <h1>Local Sports Search</h1>
-        <p>Search for local sports teams in your area.</p>
+        <p>Please enter a city, and we will return sports teams nearby!</p>
         
-        <div className="input-row">
-          <button onClick={getUserLocation} className="get-location-button" type="button">Search My Location</button>
-          <div className="dropdown">
-              <button className="dropbtn" type="button">Select Radius</button>
-              <div className="dropdown-content">
-                <button type="button" onClick={() => setRadius(50)}>50 miles</button>
-                <button type="button" onClick={() => setRadius(100)}>100 miles</button>
-                <button type="button" onClick={() => setRadius(200)}>200 miles</button>
-              </div>
+        <form className="local-sports-form" onSubmit={handleSearch}>
+          <div className="input-row">
+            <input
+              type="text"
+              name="city"
+              placeholder="Enter city name (ex: Los Angeles, CA)"
+              required
+              value={city}
+              onChange={e => setCity(e.target.value)}
+              className="local-sports-input"
+            />
+            <button type="submit">Search</button>
+            <div className="dropdown">
+                <button className="dropbtn" type="button">Select Radius</button>
+                <div className="dropdown-content">
+                  <button type="button" onClick={() => setRadius(50)}>50 miles</button>
+                  <button type="button" onClick={() => setRadius(100)}>100 miles</button>
+                  <button type="button" onClick={() => setRadius(100)}>200 miles</button>
+                </div>
+            </div>
           </div>
-        </div>
+        </form>
 
         <div className="results-container">
           {error && <p className="error-message">{error}</p>}
           
-          {userLocation && (
+          {searchCoords && (
             <>
-              <h2 className="results-city-name">Nearby Teams (within {radius} miles)</h2>
+              <h2 className="results-city-name">Showing results for: {foundCityName}</h2>
             
               {nearbyTeams.length > 0 ? (
                 <>
+                  <h3>Nearby Teams (within {radius} miles)</h3>
+                  
                   <div className="team-results-grid">
                     {nearbyTeams.map(team => (
                       <div key={team.team} className="team-card">

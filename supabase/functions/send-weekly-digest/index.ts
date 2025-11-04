@@ -227,8 +227,8 @@ Deno.serve(async (req) => {
                 console.warn(`[Edge Function] Skipping user ${user.id}: Missing email.`);
                 continue;
             }
-            // Preferences might be an array if multiple rows match (shouldn't happen with 1-to-1)
-            // Or null if no preferences row exists (filtered by .not() above, but good practice to check)
+            // Preferences might be an array if multiple rows match 
+            // Or null if no preferences row exists 
             const prefs = user.user_preferences ? (Array.isArray(user.user_preferences) ? user.user_preferences[0] : user.user_preferences) : {};
 
             const userEmail = user.email;
