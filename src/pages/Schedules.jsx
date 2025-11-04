@@ -94,9 +94,7 @@ const TEAM_STATS = {
   "New York Jets": { wins: 7, losses: 10, winPercentage: 41.2 }
 };
 
-const calculateRecommendedValue = (homeTeam, awayTeam, liveStats = {}) => {
-  
-}
+
 
 // Function to calculate win probability between two teams using the new advanced calculator
 const calculateWinProbability = (homeTeam, awayTeam, liveStats = {}) => {
@@ -146,6 +144,8 @@ const calculateWinProbability = (homeTeam, awayTeam, liveStats = {}) => {
   }
 };
 
+
+
 // Helper function to determine game status
 const getGameStatus = (game) => {
   const gameDate = new Date(game.DateUtc);
@@ -178,48 +178,39 @@ const getGameStatus = (game) => {
   return "Scheduled";
 };
 
+
 // Function to process real schedule data with smart filtering
+// Pure function to process schedule data — no hooks here
 const processScheduleData = (data, sport, liveStats = {}) => {
   const now = new Date();
   const oneMonthAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
-  
-  // Filter games to prioritize: live games, future games, and games within the last month
+
   const filteredGames = data.filter(game => {
     const gameDate = new Date(game.DateUtc);
     const gameStatus = getGameStatus(game);
-    
-    // Always include live games
+
     if (gameStatus === "Live") return true;
-    
-    // Include future games
     if (gameDate > now) return true;
-    
-    // Include games from the last month
     if (gameDate >= oneMonthAgo && gameDate <= now) return true;
-    
-    // Exclude older games
+
     return false;
   });
-  
-  // For MLB, show all filtered games; for other sports, limit to avoid performance issues
+
+  // Limit for performance
   const gamesToProcess = sport === 'MLB' ? filteredGames : filteredGames.slice(0, 100);
-  
-  return gamesToProcess.map((game, index) => {
+
+  return gamesToProcess.map(game => {
     const gameDate = new Date(game.DateUtc);
     const homeTeam = game.HomeTeam;
     const awayTeam = game.AwayTeam;
     const { homeWinProb, awayWinProb } = calculateWinProbability(homeTeam, awayTeam, liveStats);
     const gameStatus = getGameStatus(game);
-    
+
     return {
       id: `${sport}-${game.MatchNumber}`,
       name: `${awayTeam} @ ${homeTeam}`,
       date: gameDate.toISOString().split('T')[0],
-      time: gameDate.toLocaleTimeString('en-US', { 
-        hour: 'numeric', 
-        minute: '2-digit',
-        hour12: true 
-      }),
+      time: gameDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true }),
       location: game.Location,
       type: gameStatus,
       week: `Round ${game.RoundNumber}`,
@@ -262,6 +253,48 @@ const processScheduleData = (data, sport, liveStats = {}) => {
   });
 };
 
+// Top-level exported hook — must be outside any other function
+export function useRecommendedValue(sessionProp) {
+  const [loading, setLoading] = useState(true);
+  const [recommendedValue, setRecommendedValue] = useState(null);
+  const { session } = sessionProp;
+
+  useEffect(() => {
+    if (!session) return;
+
+    (async () => {
+      try {
+        setLoading(true);
+        const { data, error } = await supabase
+          .from("user_preferences")
+          .select("favorite_teams")
+          .eq("user_id", session.user.id)
+          .maybeSingle();
+
+        if (error) throw error;
+        const prefs = data?.favorite_teams || [];
+
+        let total = 0;
+        let count = 0;
+        for (const team of prefs) {
+          const stats = TEAM_STATS[team];
+          if (stats) {
+            total += stats.winPercentage;
+            count++;
+          }
+        }
+
+        setRecommendedValue(count ? total / count : 0);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, [session]);
+
+  return { loading, recommendedValue };
+}
 // Major sporting events with enhanced details
 const MAJOR_SPORTING_EVENTS = {
   "Olympics & International": [
