@@ -95,6 +95,10 @@ const TEAM_STATS = {
   "New York Jets": { wins: 7, losses: 10, winPercentage: 41.2 }
 };
 
+const calculateRecommendedValue = (homeTeam, awayTeam, liveStats = {}) => {
+  
+}
+
 // Function to calculate win probability between two teams using the new advanced calculator
 const calculateWinProbability = (homeTeam, awayTeam, liveStats = {}) => {
   try {
