@@ -153,7 +153,7 @@
           {
             "description": "Overall Record",
             "type": "total",
-            "summary": "76-86",
+            "summary": "62-100",
             "stats": [
               {
                 "name": "OTLosses",
@@ -197,7 +197,7 @@
               },
               {
                 "name": "losses",
-                "value": 86
+                "value": 100
               },
               {
                 "name": "playoffSeed",
@@ -229,11 +229,11 @@
               },
               {
                 "name": "winPercent",
-                "value": 0.4691358
+                "value": 0.38271604938271603
               },
               {
                 "name": "wins",
-                "value": 76
+                "value": 62
               },
               {
                 "name": "divisionGamesBehind",
@@ -287,7 +287,10 @@
                 "name": "wildCardPercent",
                 "value": 0
               }
-            ]
+            ],
+            "wins": 62,
+            "losses": 100,
+            "ties": 0
           },
           {
             "description": "Home Record",
