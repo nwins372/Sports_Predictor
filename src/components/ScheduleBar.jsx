@@ -97,8 +97,8 @@ export default function ScheduleBar({ session }) {
         default: baseSchedule = []; break;
       }
     }
-
-    /*// sort by RecommendedValue aka RecValue
+/*
+    // sort by RecommendedValue aka RecValue
     baseSchedule.sort((a, b) => {
       const aScore = getTeamScore(a);
       const bScore = getTeamScore(b);
