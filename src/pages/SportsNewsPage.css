@@ -31,6 +31,17 @@ h2 {
 
 .card:hover { transform: translateY(-5px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
 
+/* Clickable article card */
+.article-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border-color: #3b82f6 !important;
+}
+
 .card-img-top { border-bottom: 3px solid var(--sn-header); }
 
 /* Headline */
@@ -48,5 +59,30 @@ h2 {
 
 /* Date text */
 .text-muted {
+  color: #bbbbbb !important;
+}
+
+/* News filter select and label colors */
+.news-filter-label .news-filter-label-text {
+  color: #bbbbbb !important;
+}
+
+/* Ensure the select shows the selected value even when Bootstrap/theme styles apply. */
+.news-filter-select {
+  color: #bbbbbb !important; /* selected value color */
+  min-width: 140px; /* avoid truncated display */
+  background: transparent !important;
+  -webkit-appearance: menulist-button; /* keep native dropdown appearance */
+  appearance: menulist-button;
+}
+
+/* Option styling: browsers vary, use !important to increase chance options inherit color */
+.news-filter-select option {
+  color: #bbbbbb !important;
+  background: transparent !important;
+}
+
+/* If the select still appears visually hidden due to background, ensure focused/active color remains visible */
+.news-filter-select:focus {
   color: #bbbbbb !important;
 }

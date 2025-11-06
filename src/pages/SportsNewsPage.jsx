@@ -1,17 +1,25 @@
 import React, { useEffect, useMemo, useState } from "react";
-import NavBar from "../components/NavBar";  
 import "./SportsNewsPage.css";
 import ScheduleBar from "../components/ScheduleBar";
 import { supabase } from "../supabaseClient";
+import translationService from "../services/translationService";
+import ArticleModal from "../components/ArticleModal";
 
 const API_KEY = "f9f8b0829ca84fe1a1d450e0fe7dbbd1";
 const API_URL = `https://newsapi.org/v2/top-headlines?category=sports&language=en&pageSize=20&apiKey=${API_KEY}`;
 const TOP_HEADLINES_BASE = "https://newsapi.org/v2/top-headlines";
 
 function SportsNewsPage() {
-  const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [prefs, setPrefs] = useState([]); // ["NFL","NBA",...] from Supabase
+  const [userLanguage, setUserLanguage] = useState('en');
+  const [translatedNews, setTranslatedNews] = useState([]);
+  const [isTranslating, setIsTranslating] = useState(false);
+  const [selectedArticle, setSelectedArticle] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [filterMode, setFilterMode] = useState(() => {
+    try { return localStorage.getItem('newsFilterMode') || 'preferences'; } catch (_) { return 'preferences'; }
+  });
 
   // Lowercase keyword map for basic matching
   const keywordMap = useMemo(() => ({
@@ -46,7 +54,7 @@ function SportsNewsPage() {
     "College Sports": "(\"college football\" OR \"NCAA football\" OR \"College Football Playoff\" OR Heisman OR \"college basketball\" OR \"NCAA basketball\" OR \"March Madness\" OR \"Final Four\" OR \"college baseball\" OR \"NCAA baseball\" OR \"College World Series\")",
   }), []);
 
-  const prefsKey = useMemo(() => (prefs && prefs.length ? prefs.slice().sort().join("-") : "all"), [prefs]);
+  // const prefsKey = useMemo(() => (prefs && prefs.length ? prefs.slice().sort().join("-") : "all"), [prefs]);
 
   useEffect(() => {
     const run = async () => {
@@ -54,34 +62,56 @@ function SportsNewsPage() {
 
       // 1) Get session and user preferences
       let selectedPrefs = [];
+      let userLang = 'en';
       try {
         const { data: sessionData } = await supabase.auth.getSession();
         const session = sessionData?.session;
         if (session?.user?.id) {
           const { data, error } = await supabase
             .from("user_preferences")
-            .select("sports_prefs")
+            .select("sports_prefs, preferred_language")
             .eq("user_id", session.user.id)
             .maybeSingle();
-          if (!error && Array.isArray(data?.sports_prefs)) {
-            selectedPrefs = data.sports_prefs;
+          if (!error) {
+            if (Array.isArray(data?.sports_prefs)) {
+              selectedPrefs = data.sports_prefs;
+            }
+            if (data?.preferred_language) {
+              userLang = data.preferred_language;
+              console.log("Using database language:", userLang);
+            }
+          }
+          
+          // Always check localStorage as fallback, regardless of database result
+          const localLanguage = localStorage.getItem('user_preferred_language');
+          console.log("Checking localStorage fallback:", localLanguage);
+          if (localLanguage && (!data?.preferred_language || data.preferred_language === 'en')) {
+            userLang = localLanguage;
+            console.log("Using localStorage language:", userLang);
           }
         }
       } catch (e) {
-        // Non-fatal: fall back to showing all
+        // Non-fatal: fall back to localStorage
+        const localLanguage = localStorage.getItem('user_preferred_language');
+        console.log("localStorage language preference:", localLanguage);
+        if (localLanguage) {
+          userLang = localLanguage;
+        }
       }
+      console.log("Final user language set to:", userLang);
       setPrefs(selectedPrefs);
+      setUserLanguage(userLang);
 
       // 2) Try to use preference-aware cache
-      const cacheKey = `sportsNews:${selectedPrefs && selectedPrefs.length ? selectedPrefs.slice().sort().join("-") : "all"}`;
-      const tsKey = `${cacheKey}:ts`;
+  const cacheKey = `sportsNews:${filterMode}:${selectedPrefs && selectedPrefs.length ? selectedPrefs.slice().sort().join("-") : "all"}`;
+  const tsKey = `${cacheKey}:ts`;
       const cached = localStorage.getItem(cacheKey);
       const lastUpdate = localStorage.getItem(tsKey);
       const now = new Date().getTime();
       if (cached && lastUpdate && now - Number(lastUpdate) < 24 * 60 * 60 * 1000) {
         try {
           const parsed = JSON.parse(cached);
-          setNews(parsed);
+          setTranslatedNews(parsed);
           setLoading(false);
           return;
         } catch (_) {
@@ -123,9 +153,30 @@ function SportsNewsPage() {
         }
 
         const filtered = filterArticlesByPreferences(deduped, selectedPrefs, keywordMap);
-        setNews(filtered);
 
-        localStorage.setItem(cacheKey, JSON.stringify(filtered));
+        // Translate news if user language is not English
+        console.log("User language:", userLang, "Filtered articles count:", filtered.length);
+        if (userLang !== 'en') {
+          setIsTranslating(true);
+          console.log("Starting translation to:", userLang);
+          try {
+            const translated = await translationService.translateArticles(filtered, userLang, 'en');
+            console.log("Translation completed:", translated.length, "articles");
+            setTranslatedNews(translated);
+          } catch (error) {
+            console.error("Translation error:", error);
+            setTranslatedNews(filtered); // Fallback to original
+          } finally {
+            setIsTranslating(false);
+          }
+        } else {
+          console.log("No translation needed, language is English");
+          setTranslatedNews(filtered);
+        }
+        const resultArticles = filterMode === 'all'
+          ? deduped
+          : filterArticlesByPreferences(deduped, selectedPrefs, keywordMap);
+        localStorage.setItem(cacheKey, JSON.stringify(resultArticles));
         localStorage.setItem(tsKey, now.toString());
       } catch (error) {
         console.error("Error fetching sports news:", error);
@@ -136,7 +187,7 @@ function SportsNewsPage() {
 
     run();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [filterMode]);
 
   function filterArticlesByPreferences(articles, selectedPrefs, map) {
     if (!Array.isArray(articles) || articles.length === 0) return [];
@@ -155,7 +206,7 @@ function SportsNewsPage() {
     setLoading(true);
     try {
       const selectedPrefs = Array.isArray(prefs) ? prefs : [];
-      const cacheKey = `sportsNews:${selectedPrefs && selectedPrefs.length ? selectedPrefs.slice().sort().join("-") : "all"}`;
+      const cacheKey = `sportsNews:${filterMode}:${selectedPrefs && selectedPrefs.length ? selectedPrefs.slice().sort().join("-") : "all"}`;
       const tsKey = `${cacheKey}:ts`;
       localStorage.removeItem(cacheKey);
       localStorage.removeItem(tsKey);
@@ -189,9 +240,31 @@ function SportsNewsPage() {
       }
 
       const filtered = filterArticlesByPreferences(deduped, selectedPrefs, keywordMap);
-      setNews(filtered);
+
+      // Translate news if user language is not English
+      console.log("Refresh - User language:", userLanguage, "Filtered articles count:", filtered.length);
+      if (userLanguage !== 'en') {
+        setIsTranslating(true);
+        console.log("Refresh - Starting translation to:", userLanguage);
+        try {
+          const translated = await translationService.translateArticles(filtered, userLanguage, 'en');
+          console.log("Refresh - Translation completed:", translated.length, "articles");
+          setTranslatedNews(translated);
+        } catch (error) {
+          console.error("Refresh - Translation error:", error);
+          setTranslatedNews(filtered); // Fallback to original
+        } finally {
+          setIsTranslating(false);
+        }
+      } else {
+        console.log("Refresh - No translation needed, language is English");
+        setTranslatedNews(filtered);
+      }
+      const resultArticles = filterMode === 'all'
+          ? deduped
+          : filterArticlesByPreferences(deduped, selectedPrefs, keywordMap);
       const now = Date.now();
-      localStorage.setItem(cacheKey, JSON.stringify(filtered));
+      localStorage.setItem(cacheKey, JSON.stringify(resultArticles));
       localStorage.setItem(tsKey, now.toString());
     } catch (e) {
       console.error("Error refreshing sports news:", e);
@@ -200,9 +273,26 @@ function SportsNewsPage() {
     }
   }
 
+  const handleArticleClick = (article) => {
+    console.log("Article clicked:", article.title);
+    console.log("User language:", userLanguage);
+    console.log("Article data:", {
+      title: article.title,
+      description: article.description,
+      content: article.content,
+      url: article.url
+    });
+    setSelectedArticle(article);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedArticle(null);
+  };
+
   return (
     <>
-      <NavBar />   
       <ScheduleBar />
       <div className="container mt-5">
         <h2
@@ -215,26 +305,60 @@ function SportsNewsPage() {
           Sports News
         </h2>
         <div className="text-center mb-4">
-          <button
-            type="button"
-            className="btn btn-outline-secondary btn-sm"
-            onClick={handleRefresh}
-            disabled={loading}
-          >
-            {loading ? "Refreshing…" : "Refresh"}
-          </button>
+          <div style={{ display: 'inline-flex', gap: 8, alignItems: 'center' }}>
+            <button
+              type="button"
+              className="btn btn-outline-secondary btn-sm"
+              onClick={handleRefresh}
+              disabled={loading || isTranslating}
+            >
+              {loading ? "Refreshing…" : isTranslating ? "Translating…" : "Refresh"}
+            </button>
+          {userLanguage !== 'en' && (
+            <div className="mt-2">
+              <small className="text-muted">
+                News translated to {translationService.getLanguageName(userLanguage)}
+              </small>
+            </div>
+          )}
+
+            <label className="news-filter-label" style={{ display: 'flex', alignItems: 'center', gap: 6, marginLeft: 6 }}>
+              <span className="news-filter-label-text" style={{ fontSize: 12, opacity: 0.85 }}>Mode</span>
+              <select
+                value={filterMode}
+                onChange={(e) => {
+                  const m = e.target.value;
+                  setFilterMode(m);
+                  try { localStorage.setItem('newsFilterMode', m); } catch (_) {}
+                  // clear caches for both modes so switching forces a fresh fetch
+                  try {
+                    const prefsKey = prefs && prefs.length ? prefs.slice().sort().join('-') : 'all';
+                    localStorage.removeItem(`sportsNews:preferences:${prefsKey}`);
+                    localStorage.removeItem(`sportsNews:all:${prefsKey}`);
+                  } catch (_) {}
+                }}
+                className="form-select form-select-sm news-filter-select"
+                style={{ height: 30 }}
+              >
+                <option value="preferences">By Preferences</option>
+                <option value="all">All Articles</option>
+              </select>
+            </label>
+          </div>
         </div>
 
-        {loading ? (
-          <p className="text-center">Loading latest sports news...</p>
-        ) : news.length === 0 ? (
+        {loading || isTranslating ? (
+          <p className="text-center">
+            {loading ? "Loading latest sports news..." : "Translating news..."}
+          </p>
+        ) : translatedNews.length === 0 ? (
           <p className="text-center">No news available. Try again later.</p>
         ) : (
           <div className="row">
-            {news.map((article, index) => (
+            {translatedNews.map((article, index) => (
               <div key={index} className="col-md-6 mb-4">
                 <div
-                  className="card h-100 shadow-sm"
+                  className="card h-100 shadow-sm article-card"
                   style={{ border: "2px solid #1d3557" }}
                 >
                   {article.urlToImage && (
@@ -253,14 +377,32 @@ function SportsNewsPage() {
                     <small className="text-muted">
                       {new Date(article.publishedAt).toLocaleDateString()}
                     </small>
-                    <a
-                      href={article.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-sm btn-primary"
-                    >
-                      Read More
-                    </a>
+                    <div className="d-flex gap-2">
+                      {userLanguage !== 'en' && (
+                        <button
+                          className="btn btn-sm btn-success"
+                          onClick={() => handleArticleClick(article)}
+                        >
+                          Read Translated
+                        </button>
+                      )}
+                      {userLanguage !== 'en' && (
+                        <a
+                          href={`https://translate.google.com/translate?sl=en&tl=${userLanguage}&u=${encodeURIComponent(article.url)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-sm btn-warning"
+                        >
+                          Auto Translate
+                        </a>
+                      )}
+                      <button
+                        className="btn btn-sm btn-primary"
+                        onClick={() => window.open(article.url, '_blank', 'noopener,noreferrer')}
+                      >
+                        Read Original
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -268,6 +410,14 @@ function SportsNewsPage() {
           </div>
         )}
       </div>
+
+      {/* Article Modal */}
+      <ArticleModal
+        article={selectedArticle}
+        userLanguage={userLanguage}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </>
   );
 }

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { supabase } from "../supabaseClient";
-import NavBar from "../components/NavBar";
 import ScheduleBar from "../components/ScheduleBar";
 import WinPercentageDisplay from "../components/WinPercentageDisplay";
 import ScoreUpdateStatus from "../components/ScoreUpdateStatus";
@@ -16,83 +15,105 @@ import mlbData from '../assets/mlb25.json';
 // Import live API service
 import sportsAPI from '../services/sportsAPI';
 
-// Team win percentages and records (mock data for demonstration)
+// Team win percentages and records (Updated: November 4, 2025)
 const TEAM_STATS = {
-  // NFL Teams
-  "Kansas City Chiefs": { wins: 14, losses: 3, winPercentage: 82.4 },
-  "Buffalo Bills": { wins: 13, losses: 4, winPercentage: 76.5 },
-  "Philadelphia Eagles": { wins: 12, losses: 5, winPercentage: 70.6 },
-  "Dallas Cowboys": { wins: 11, losses: 6, winPercentage: 64.7 },
-  "Baltimore Ravens": { wins: 13, losses: 4, winPercentage: 76.5 },
-  "Cincinnati Bengals": { wins: 10, losses: 7, winPercentage: 58.8 },
-  "San Francisco 49ers": { wins: 12, losses: 5, winPercentage: 70.6 },
-  "Detroit Lions": { wins: 11, losses: 6, winPercentage: 64.7 },
-  "Miami Dolphins": { wins: 9, losses: 8, winPercentage: 52.9 },
-  "New England Patriots": { wins: 4, losses: 13, winPercentage: 23.5 },
+  // NFL Teams - 2025 Season (Week 10)
+  "Kansas City Chiefs": { wins: 5, losses: 4, winPercentage: 55.6 },
+  "Buffalo Bills": { wins: 6, losses: 2, winPercentage: 75.0 },
+  "Philadelphia Eagles": { wins: 6, losses: 2, winPercentage: 75.0 },
+  "Dallas Cowboys": { wins: 3, losses: 5, winPercentage: 37.5 },
+  "Baltimore Ravens": { wins: 3, losses: 5, winPercentage: 37.5 },
+  "Cincinnati Bengals": { wins: 3, losses: 6, winPercentage: 33.3 },
+  "San Francisco 49ers": { wins: 6, losses: 3, winPercentage: 66.7 },
+  "Detroit Lions": { wins: 5, losses: 3, winPercentage: 62.5 },
+  "Miami Dolphins": { wins: 2, losses: 7, winPercentage: 22.2 },
+  "New England Patriots": { wins: 7, losses: 2, winPercentage: 77.8 },
+  "Washington Commanders": { wins: 3, losses: 6, winPercentage: 33.3 },
+  "New York Giants": { wins: 2, losses: 7, winPercentage: 22.2 },
+  "New York Jets": { wins: 1, losses: 7, winPercentage: 12.5 },
+  "Pittsburgh Steelers": { wins: 5, losses: 3, winPercentage: 62.5 },
+  "Cleveland Browns": { wins: 2, losses: 6, winPercentage: 25.0 },
+  "Houston Texans": { wins: 3, losses: 5, winPercentage: 37.5 },
+  "Indianapolis Colts": { wins: 7, losses: 2, winPercentage: 77.8 },
+  "Jacksonville Jaguars": { wins: 5, losses: 3, winPercentage: 62.5 },
+  "Tennessee Titans": { wins: 1, losses: 8, winPercentage: 11.1 },
+  "Denver Broncos": { wins: 7, losses: 2, winPercentage: 77.8 },
+  "Las Vegas Raiders": { wins: 2, losses: 6, winPercentage: 25.0 },
+  "Los Angeles Rams": { wins: 6, losses: 2, winPercentage: 75.0 },
+  "Seattle Seahawks": { wins: 6, losses: 2, winPercentage: 75.0 },
+  "Arizona Cardinals": { wins: 3, losses: 5, winPercentage: 37.5 },
+  "Green Bay Packers": { wins: 5, losses: 2, winPercentage: 71.4 },
+  "Minnesota Vikings": { wins: 4, losses: 4, winPercentage: 50.0 },
+  "Chicago Bears": { wins: 5, losses: 3, winPercentage: 62.5 },
+  "Tampa Bay Buccaneers": { wins: 6, losses: 2, winPercentage: 75.0 },
+  "Atlanta Falcons": { wins: 3, losses: 5, winPercentage: 37.5 },
+  "Carolina Panthers": { wins: 5, losses: 4, winPercentage: 55.6 },
+  "New Orleans Saints": { wins: 1, losses: 8, winPercentage: 11.1 },
   
-  // NBA Teams
-  "Boston Celtics": { wins: 55, losses: 27, winPercentage: 67.1 },
-  "Los Angeles Lakers": { wins: 47, losses: 35, winPercentage: 57.3 },
-  "Golden State Warriors": { wins: 44, losses: 38, winPercentage: 53.7 },
-  "Miami Heat": { wins: 46, losses: 36, winPercentage: 56.1 },
-  "Denver Nuggets": { wins: 57, losses: 25, winPercentage: 69.5 },
-  "Milwaukee Bucks": { wins: 49, losses: 33, winPercentage: 59.8 },
+  // NBA Teams - 2025-26 Season (Current)
+  "Boston Celtics": { wins: 3, losses: 5, winPercentage: 37.5 },
+  "Los Angeles Lakers": { wins: 6, losses: 2, winPercentage: 75.0 },
+  "Golden State Warriors": { wins: 4, losses: 3, winPercentage: 57.1 },
+  "Miami Heat": { wins: 4, losses: 3, winPercentage: 57.1 },
+  "Denver Nuggets": { wins: 4, losses: 2, winPercentage: 66.7 },
+  "Milwaukee Bucks": { wins: 5, losses: 2, winPercentage: 71.4 },
+  "Philadelphia 76ers": { wins: 5, losses: 1, winPercentage: 83.3 },
+  "Brooklyn Nets": { wins: 0, losses: 7, winPercentage: 0.0 },
+  "New York Knicks": { wins: 4, losses: 3, winPercentage: 57.1 },
+  "Toronto Raptors": { wins: 3, losses: 4, winPercentage: 42.9 },
+  "Chicago Bulls": { wins: 5, losses: 1, winPercentage: 83.3 },
+  "Cleveland Cavaliers": { wins: 4, losses: 3, winPercentage: 57.1 },
+  "Detroit Pistons": { wins: 5, losses: 2, winPercentage: 71.4 },
+  "Indiana Pacers": { wins: 1, losses: 6, winPercentage: 14.3 },
+  "Atlanta Hawks": { wins: 3, losses: 4, winPercentage: 42.9 },
+  "Charlotte Hornets": { wins: 3, losses: 4, winPercentage: 42.9 },
+  "Orlando Magic": { wins: 3, losses: 4, winPercentage: 42.9 },
+  "Washington Wizards": { wins: 1, losses: 6, winPercentage: 14.3 },
+  "Oklahoma City Thunder": { wins: 7, losses: 0, winPercentage: 100.0 },
+  "Portland Trail Blazers": { wins: 4, losses: 3, winPercentage: 57.1 },
+  "Utah Jazz": { wins: 3, losses: 4, winPercentage: 42.9 },
+  "Minnesota Timberwolves": { wins: 4, losses: 3, winPercentage: 57.1 },
+  "Dallas Mavericks": { wins: 2, losses: 5, winPercentage: 28.6 },
+  "Houston Rockets": { wins: 4, losses: 2, winPercentage: 66.7 },
+  "Memphis Grizzlies": { wins: 3, losses: 5, winPercentage: 37.5 },
+  "New Orleans Pelicans": { wins: 0, losses: 6, winPercentage: 0.0 },
+  "San Antonio Spurs": { wins: 5, losses: 1, winPercentage: 83.3 },
+  "Phoenix Suns": { wins: 3, losses: 4, winPercentage: 42.9 },
+  "Sacramento Kings": { wins: 2, losses: 5, winPercentage: 28.6 },
+  "Los Angeles Clippers": { wins: 3, losses: 3, winPercentage: 50.0 },
   
-  // MLB Teams
-  "Los Angeles Dodgers": { wins: 100, losses: 62, winPercentage: 61.7 },
-  "New York Yankees": { wins: 94, losses: 68, winPercentage: 58.0 },
-  "Atlanta Braves": { wins: 89, losses: 73, winPercentage: 54.9 },
-  "Houston Astros": { wins: 90, losses: 72, winPercentage: 55.6 },
-  "Boston Red Sox": { wins: 78, losses: 84, winPercentage: 48.1 },
-  "San Francisco Giants": { wins: 80, losses: 82, winPercentage: 49.4 },
-  "Philadelphia Phillies": { wins: 87, losses: 75, winPercentage: 53.7 },
-  "Chicago Cubs": { wins: 83, losses: 79, winPercentage: 51.2 },
-  "Milwaukee Brewers": { wins: 93, losses: 69, winPercentage: 57.4 },
-  "Toronto Blue Jays": { wins: 74, losses: 88, winPercentage: 45.7 },
-  "Baltimore Orioles": { wins: 91, losses: 71, winPercentage: 56.2 },
-  "Cleveland Guardians": { wins: 92, losses: 70, winPercentage: 56.8 },
-  "Texas Rangers": { wins: 90, losses: 72, winPercentage: 55.6 },
-  "Arizona Diamondbacks": { wins: 84, losses: 78, winPercentage: 51.9 },
-  "Miami Marlins": { wins: 84, losses: 78, winPercentage: 51.9 },
-  "San Diego Padres": { wins: 82, losses: 80, winPercentage: 50.6 },
-  "Minnesota Twins": { wins: 87, losses: 75, winPercentage: 53.7 },
-  "Seattle Mariners": { wins: 88, losses: 74, winPercentage: 54.3 },
-  "Tampa Bay Rays": { wins: 99, losses: 63, winPercentage: 61.1 },
-  "New York Mets": { wins: 75, losses: 87, winPercentage: 46.3 },
-  "St. Louis Cardinals": { wins: 71, losses: 91, winPercentage: 43.8 },
-  "Cincinnati Reds": { wins: 82, losses: 80, winPercentage: 50.6 },
-  "Pittsburgh Pirates": { wins: 76, losses: 86, winPercentage: 46.9 },
-  "Washington Nationals": { wins: 71, losses: 91, winPercentage: 43.8 },
-  "Colorado Rockies": { wins: 59, losses: 103, winPercentage: 36.4 },
-  "Oakland Athletics": { wins: 50, losses: 112, winPercentage: 30.9 },
-  "Los Angeles Angels": { wins: 73, losses: 89, winPercentage: 45.1 },
-  "Kansas City Royals": { wins: 56, losses: 106, winPercentage: 34.6 },
-  "Chicago White Sox": { wins: 61, losses: 101, winPercentage: 37.7 },
-  "Detroit Tigers": { wins: 78, losses: 84, winPercentage: 48.1 },
-  
-  // Additional NFL Teams
-  "Green Bay Packers": { wins: 9, losses: 8, winPercentage: 52.9 },
-  "Minnesota Vikings": { wins: 7, losses: 10, winPercentage: 41.2 },
-  "Chicago Bears": { wins: 7, losses: 10, winPercentage: 41.2 },
-  "Tampa Bay Buccaneers": { wins: 8, losses: 9, winPercentage: 47.1 },
-  "Atlanta Falcons": { wins: 7, losses: 10, winPercentage: 41.2 },
-  "Carolina Panthers": { wins: 2, losses: 15, winPercentage: 11.8 },
-  "New Orleans Saints": { wins: 9, losses: 8, winPercentage: 52.9 },
-  "Seattle Seahawks": { wins: 9, losses: 8, winPercentage: 52.9 },
-  "Los Angeles Rams": { wins: 10, losses: 7, winPercentage: 58.8 },
-  "Arizona Cardinals": { wins: 4, losses: 13, winPercentage: 23.5 },
-  "Las Vegas Raiders": { wins: 8, losses: 9, winPercentage: 47.1 },
-  "Los Angeles Chargers": { wins: 5, losses: 12, winPercentage: 29.4 },
-  "Denver Broncos": { wins: 8, losses: 9, winPercentage: 47.1 },
-  "Pittsburgh Steelers": { wins: 10, losses: 7, winPercentage: 58.8 },
-  "Cleveland Browns": { wins: 11, losses: 6, winPercentage: 64.7 },
-  "Indianapolis Colts": { wins: 9, losses: 8, winPercentage: 52.9 },
-  "Tennessee Titans": { wins: 6, losses: 11, winPercentage: 35.3 },
-  "Jacksonville Jaguars": { wins: 9, losses: 8, winPercentage: 52.9 },
-  "Houston Texans": { wins: 10, losses: 7, winPercentage: 58.8 },
-  "New York Giants": { wins: 6, losses: 11, winPercentage: 35.3 },
-  "Washington Commanders": { wins: 8, losses: 9, winPercentage: 47.1 },
-  "New York Jets": { wins: 7, losses: 10, winPercentage: 41.2 }
+  // MLB Teams - 2025 Final Season Standings (World Series: Dodgers def. Blue Jays 4-3)
+  "Los Angeles Dodgers": { wins: 101, losses: 61, winPercentage: 62.3 },
+  "Toronto Blue Jays": { wins: 97, losses: 65, winPercentage: 59.9 },
+  "Milwaukee Brewers": { wins: 95, losses: 67, winPercentage: 58.6 },
+  "Seattle Mariners": { wins: 93, losses: 69, winPercentage: 57.4 },
+  "Atlanta Braves": { wins: 92, losses: 70, winPercentage: 56.8 },
+  "New York Yankees": { wins: 91, losses: 71, winPercentage: 56.2 },
+  "San Diego Padres": { wins: 89, losses: 73, winPercentage: 54.9 },
+  "Philadelphia Phillies": { wins: 89, losses: 73, winPercentage: 54.9 },
+  "Detroit Tigers": { wins: 88, losses: 74, winPercentage: 54.3 },
+  "Chicago Cubs": { wins: 87, losses: 75, winPercentage: 53.7 },
+  "Houston Astros": { wins: 86, losses: 76, winPercentage: 53.1 },
+  "Arizona Diamondbacks": { wins: 85, losses: 77, winPercentage: 52.5 },
+  "Cleveland Guardians": { wins: 85, losses: 77, winPercentage: 52.5 },
+  "Baltimore Orioles": { wins: 84, losses: 78, winPercentage: 51.9 },
+  "Boston Red Sox": { wins: 82, losses: 80, winPercentage: 50.6 },
+  "Minnesota Twins": { wins: 81, losses: 81, winPercentage: 50.0 },
+  "Tampa Bay Rays": { wins: 79, losses: 83, winPercentage: 48.8 },
+  "San Francisco Giants": { wins: 78, losses: 84, winPercentage: 48.1 },
+  "Kansas City Royals": { wins: 77, losses: 85, winPercentage: 47.5 },
+  "St. Louis Cardinals": { wins: 76, losses: 86, winPercentage: 46.9 },
+  "Texas Rangers": { wins: 75, losses: 87, winPercentage: 46.3 },
+  "Cincinnati Reds": { wins: 74, losses: 88, winPercentage: 45.7 },
+  "Pittsburgh Pirates": { wins: 71, losses: 91, winPercentage: 43.8 },
+  "Miami Marlins": { wins: 68, losses: 94, winPercentage: 42.0 },
+  "Washington Nationals": { wins: 67, losses: 95, winPercentage: 41.4 },
+  "Los Angeles Angels": { wins: 65, losses: 97, winPercentage: 40.1 },
+  "Oakland Athletics": { wins: 62, losses: 100, winPercentage: 38.3 },
+  "Colorado Rockies": { wins: 48, losses: 114, winPercentage: 29.6 },
+  "New York Mets": { wins: 83, losses: 79, winPercentage: 51.2 },
+  "Chicago White Sox": { wins: 70, losses: 92, winPercentage: 43.2 },
+  "Los Angeles Chargers": { wins: 6, losses: 3, winPercentage: 66.7 }
 };
 
 
@@ -744,6 +765,8 @@ function Schedules({ session: sessionProp }) {
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [realSchedules, setRealSchedules] = useState({});
   const [showPredictions, setShowPredictions] = useState(true);
+  const [showFavorites, setShowFavorites] = useState(false);
+  const [userPrefs, setUserPrefs] = useState({ sports_prefs: [], favorite_teams: {} });
   const [currentPage, setCurrentPage] = useState(1);
   const [eventsPerPage] = useState(50); // Show 50 events per page
   const [selectedMonth, setSelectedMonth] = useState('all');
@@ -827,6 +850,32 @@ function Schedules({ session: sessionProp }) {
       })();
     }
   }, [sessionProp]);
+
+  // Load user preferences (favorite teams) when session is available
+  useEffect(() => {
+    if (!session) return;
+    (async () => {
+      try {
+        const { data, error } = await supabase
+          .from('user_preferences')
+          .select('sports_prefs, favorite_teams')
+          .eq('user_id', session.user.id)
+          .maybeSingle();
+
+        if (error) {
+          console.warn('Could not load user preferences:', error.message || error);
+          setUserPrefs({ sports_prefs: [], favorite_teams: {} });
+        } else {
+          const sportsPrefs = Array.isArray(data?.sports_prefs) ? data.sports_prefs : [];
+          const favoriteTeams = typeof data?.favorite_teams === 'object' && data.favorite_teams !== null ? data.favorite_teams : {};
+          setUserPrefs({ sports_prefs: sportsPrefs, favorite_teams: favoriteTeams });
+        }
+      } catch (e) {
+        console.error('Error loading user preferences:', e);
+        setUserPrefs({ sports_prefs: [], favorite_teams: {} });
+      }
+    })();
+  }, [session]);
 
   useEffect(() => {
     // Initialize data loading
@@ -1109,7 +1158,7 @@ function Schedules({ session: sessionProp }) {
 
   useEffect(() => {
     filterEvents();
-  }, [selectedSport, selectedDate, selectedMonth, dateRangeStart, dateRangeEnd, filterMode, realSchedules, showPredictions]);
+  }, [selectedSport, selectedDate, selectedMonth, dateRangeStart, dateRangeEnd, filterMode, realSchedules, showPredictions, showFavorites, userPrefs]);
 
   useEffect(() => {
     // Reset to first page when filters change
@@ -1158,6 +1207,28 @@ function Schedules({ session: sessionProp }) {
           return { ...event, sport: selectedSport };
         });
         events = [...events, ...sportEvents];
+      }
+    }
+
+    // Apply favorites filtering if requested
+    if (showFavorites) {
+      let favTeams = [];
+      if (selectedSport === "All") {
+        // Flatten all favorite teams across sports
+        const allFavs = userPrefs.favorite_teams || {};
+        favTeams = Object.values(allFavs).flat().filter(Boolean);
+      } else {
+        favTeams = userPrefs.favorite_teams?.[selectedSport.toUpperCase()] || userPrefs.favorite_teams?.[selectedSport] || [];
+      }
+
+      if (favTeams && favTeams.length > 0) {
+        const favSet = new Set(favTeams);
+        events = events.filter(
+          event => favSet.has(event.homeTeam) || favSet.has(event.awayTeam)
+        );
+      } else {
+        // No favorites — nothing to show
+        events = [];
       }
     }
 
@@ -1505,7 +1576,6 @@ function Schedules({ session: sessionProp }) {
 
   return (
     <>
-      <NavBar />
   <ScheduleBar session={session}/>
       
       <div className="container mt-4">
@@ -1666,7 +1736,7 @@ function Schedules({ session: sessionProp }) {
               
               <div className="col-md-2">
                 <div className="filter-group">
-                  <label className="filter-label">Show Predictions:</label>
+                  <label className="filter-label">Options:</label>
                   <div className="prediction-toggle">
                     <input 
                       type="checkbox"
@@ -1674,7 +1744,16 @@ function Schedules({ session: sessionProp }) {
                       checked={showPredictions}
                       onChange={(e) => setShowPredictions(e.target.checked)}
                     />
-                    <label htmlFor="predictions" className="toggle-label">Win %</label>
+                    <label htmlFor="predictions" className="toggle-label">Show Win %</label>
+                  </div>
+                  <div className="favorites-toggle" style={{ marginTop: 8 }}>
+                    <input
+                      type="checkbox"
+                      id="favoritesOnly"
+                      checked={showFavorites}
+                      onChange={(e) => setShowFavorites(e.target.checked)}
+                    />
+                    <label htmlFor="favoritesOnly" className="toggle-label">Favorite Teams Only</label>
                   </div>
                 </div>
               </div>

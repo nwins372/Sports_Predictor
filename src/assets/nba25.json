@@ -7,8 +7,8 @@
     "HomeTeam": "Oklahoma City Thunder",
     "AwayTeam": "Houston Rockets",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 125,
+    "AwayTeamScore": 124
   },
   {
     "MatchNumber": 2,
@@ -18,8 +18,8 @@
     "HomeTeam": "Los Angeles Lakers",
     "AwayTeam": "Golden State Warriors",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 109,
+    "AwayTeamScore": 119
   },
   {
     "MatchNumber": 3,
@@ -29,8 +29,8 @@
     "HomeTeam": "New York Knicks",
     "AwayTeam": "Cleveland Cavaliers",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 119,
+    "AwayTeamScore": 111
   },
   {
     "MatchNumber": 5,
@@ -40,8 +40,8 @@
     "HomeTeam": "Charlotte Hornets",
     "AwayTeam": "Brooklyn Nets",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 136,
+    "AwayTeamScore": 117
   },
   {
     "MatchNumber": 6,
@@ -51,8 +51,8 @@
     "HomeTeam": "Orlando Magic",
     "AwayTeam": "Miami Heat",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 125,
+    "AwayTeamScore": 121
   },
   {
     "MatchNumber": 7,
@@ -62,8 +62,8 @@
     "HomeTeam": "Atlanta Hawks",
     "AwayTeam": "Toronto Raptors",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 118,
+    "AwayTeamScore": 138
   },
   {
     "MatchNumber": 8,
@@ -73,8 +73,8 @@
     "HomeTeam": "Boston Celtics",
     "AwayTeam": "Philadelphia 76ers",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 116,
+    "AwayTeamScore": 117
   },
   {
     "MatchNumber": 9,
@@ -84,8 +84,8 @@
     "HomeTeam": "Chicago Bulls",
     "AwayTeam": "Detroit Pistons",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 115,
+    "AwayTeamScore": 111
   },
   {
     "MatchNumber": 10,
@@ -95,8 +95,8 @@
     "HomeTeam": "Memphis Grizzlies",
     "AwayTeam": "New Orleans Pelicans",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 128,
+    "AwayTeamScore": 122
   },
   {
     "MatchNumber": 11,
@@ -106,8 +106,8 @@
     "HomeTeam": "Milwaukee Bucks",
     "AwayTeam": "Washington Wizards",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 133,
+    "AwayTeamScore": 120
   },
   {
     "MatchNumber": 12,
@@ -117,8 +117,8 @@
     "HomeTeam": "Utah Jazz",
     "AwayTeam": "LA Clippers",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 129,
+    "AwayTeamScore": 108
   },
   {
     "MatchNumber": 4,
@@ -128,19 +128,19 @@
     "HomeTeam": "Dallas Mavericks",
     "AwayTeam": "San Antonio Spurs",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 92,
+    "AwayTeamScore": 125
   },
   {
     "MatchNumber": 13,
     "RoundNumber": 1,
     "DateUtc": "2025-10-23 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Sacramento Kings",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 120,
+    "AwayTeamScore": 116
   },
   {
     "MatchNumber": 14,
@@ -150,8 +150,8 @@
     "HomeTeam": "Portland Trail Blazers",
     "AwayTeam": "Minnesota Timberwolves",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 114,
+    "AwayTeamScore": 118
   },
   {
     "MatchNumber": 15,
@@ -161,8 +161,8 @@
     "HomeTeam": "Indiana Pacers",
     "AwayTeam": "Oklahoma City Thunder",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 135,
+    "AwayTeamScore": 141
   },
   {
     "MatchNumber": 16,
@@ -172,8 +172,19 @@
     "HomeTeam": "Golden State Warriors",
     "AwayTeam": "Denver Nuggets",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 137,
+    "AwayTeamScore": 131
+  },
+  {
+    "MatchNumber": 21,
+    "RoundNumber": 1,
+    "DateUtc": "2025-10-24 22:30:00Z",
+    "Location": "Scotiabank Arena",
+    "HomeTeam": "Toronto Raptors",
+    "AwayTeam": "Milwaukee Bucks",
+    "Group": null,
+    "HomeTeamScore": 116,
+    "AwayTeamScore": 122
   },
   {
     "MatchNumber": 19,
@@ -183,8 +194,8 @@
     "HomeTeam": "Orlando Magic",
     "AwayTeam": "Atlanta Hawks",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 107,
+    "AwayTeamScore": 111
   },
   {
     "MatchNumber": 17,
@@ -194,8 +205,8 @@
     "HomeTeam": "New York Knicks",
     "AwayTeam": "Boston Celtics",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 105,
+    "AwayTeamScore": 95
   },
   {
     "MatchNumber": 20,
@@ -205,19 +216,8 @@
     "HomeTeam": "Brooklyn Nets",
     "AwayTeam": "Cleveland Cavaliers",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
-  },
-  {
-    "MatchNumber": 21,
-    "RoundNumber": 1,
-    "DateUtc": "2025-10-24 23:30:00Z",
-    "Location": "Scotiabank Arena",
-    "HomeTeam": "Toronto Raptors",
-    "AwayTeam": "Milwaukee Bucks",
-    "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 124,
+    "AwayTeamScore": 131
   },
   {
     "MatchNumber": 22,
@@ -227,8 +227,8 @@
     "HomeTeam": "Houston Rockets",
     "AwayTeam": "Detroit Pistons",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 111,
+    "AwayTeamScore": 115
   },
   {
     "MatchNumber": 23,
@@ -238,8 +238,8 @@
     "HomeTeam": "Memphis Grizzlies",
     "AwayTeam": "Miami Heat",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 114,
+    "AwayTeamScore": 146
   },
   {
     "MatchNumber": 24,
@@ -249,8 +249,8 @@
     "HomeTeam": "New Orleans Pelicans",
     "AwayTeam": "San Antonio Spurs",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 116,
+    "AwayTeamScore": 120
   },
   {
     "MatchNumber": 25,
@@ -260,8 +260,8 @@
     "HomeTeam": "Dallas Mavericks",
     "AwayTeam": "Washington Wizards",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 107,
+    "AwayTeamScore": 117
   },
   {
     "MatchNumber": 18,
@@ -271,8 +271,8 @@
     "HomeTeam": "Los Angeles Lakers",
     "AwayTeam": "Minnesota Timberwolves",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 128,
+    "AwayTeamScore": 110
   },
   {
     "MatchNumber": 26,
@@ -282,8 +282,8 @@
     "HomeTeam": "Portland Trail Blazers",
     "AwayTeam": "Golden State Warriors",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 139,
+    "AwayTeamScore": 119
   },
   {
     "MatchNumber": 27,
@@ -293,8 +293,8 @@
     "HomeTeam": "Sacramento Kings",
     "AwayTeam": "Utah Jazz",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 105,
+    "AwayTeamScore": 104
   },
   {
     "MatchNumber": 28,
@@ -304,8 +304,8 @@
     "HomeTeam": "LA Clippers",
     "AwayTeam": "Phoenix Suns",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 129,
+    "AwayTeamScore": 102
   },
   {
     "MatchNumber": 29,
@@ -315,8 +315,8 @@
     "HomeTeam": "Orlando Magic",
     "AwayTeam": "Chicago Bulls",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 98,
+    "AwayTeamScore": 110
   },
   {
     "MatchNumber": 30,
@@ -326,8 +326,8 @@
     "HomeTeam": "Atlanta Hawks",
     "AwayTeam": "Oklahoma City Thunder",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 100,
+    "AwayTeamScore": 117
   },
   {
     "MatchNumber": 31,
@@ -337,8 +337,8 @@
     "HomeTeam": "Philadelphia 76ers",
     "AwayTeam": "Charlotte Hornets",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 125,
+    "AwayTeamScore": 121
   },
   {
     "MatchNumber": 32,
@@ -348,8 +348,8 @@
     "HomeTeam": "Memphis Grizzlies",
     "AwayTeam": "Indiana Pacers",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 128,
+    "AwayTeamScore": 103
   },
   {
     "MatchNumber": 33,
@@ -359,8 +359,8 @@
     "HomeTeam": "Denver Nuggets",
     "AwayTeam": "Phoenix Suns",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 133,
+    "AwayTeamScore": 111
   },
   {
     "MatchNumber": 34,
@@ -370,8 +370,8 @@
     "HomeTeam": "San Antonio Spurs",
     "AwayTeam": "Brooklyn Nets",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 118,
+    "AwayTeamScore": 107
   },
   {
     "MatchNumber": 35,
@@ -381,8 +381,8 @@
     "HomeTeam": "Detroit Pistons",
     "AwayTeam": "Boston Celtics",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 119,
+    "AwayTeamScore": 113
   },
   {
     "MatchNumber": 36,
@@ -392,8 +392,8 @@
     "HomeTeam": "Cleveland Cavaliers",
     "AwayTeam": "Milwaukee Bucks",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 118,
+    "AwayTeamScore": 113
   },
   {
     "MatchNumber": 37,
@@ -403,8 +403,8 @@
     "HomeTeam": "Miami Heat",
     "AwayTeam": "New York Knicks",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 115,
+    "AwayTeamScore": 107
   },
   {
     "MatchNumber": 38,
@@ -414,8 +414,8 @@
     "HomeTeam": "Washington Wizards",
     "AwayTeam": "Charlotte Hornets",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 113,
+    "AwayTeamScore": 139
   },
   {
     "MatchNumber": 39,
@@ -425,8 +425,8 @@
     "HomeTeam": "Minnesota Timberwolves",
     "AwayTeam": "Indiana Pacers",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 114,
+    "AwayTeamScore": 110
   },
   {
     "MatchNumber": 40,
@@ -436,8 +436,8 @@
     "HomeTeam": "Dallas Mavericks",
     "AwayTeam": "Toronto Raptors",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 139,
+    "AwayTeamScore": 129
   },
   {
     "MatchNumber": 41,
@@ -447,8 +447,8 @@
     "HomeTeam": "LA Clippers",
     "AwayTeam": "Portland Trail Blazers",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 114,
+    "AwayTeamScore": 107
   },
   {
     "MatchNumber": 42,
@@ -458,8 +458,8 @@
     "HomeTeam": "Sacramento Kings",
     "AwayTeam": "Los Angeles Lakers",
     "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
+    "HomeTeamScore": 120,
+    "AwayTeamScore": 127
   },
   {
     "MatchNumber": 43,
@@ -638,6 +638,17 @@
     "AwayTeamScore": null
   },
   {
+    "MatchNumber": 62,
+    "RoundNumber": 2,
+    "DateUtc": "2025-10-29 22:30:00Z",
+    "Location": "Scotiabank Arena",
+    "HomeTeam": "Toronto Raptors",
+    "AwayTeam": "Houston Rockets",
+    "Group": null,
+    "HomeTeamScore": null,
+    "AwayTeamScore": null
+  },
+  {
     "MatchNumber": 59,
     "RoundNumber": 2,
     "DateUtc": "2025-10-29 23:00:00Z",
@@ -666,17 +677,6 @@
     "Location": "Barclays Center",
     "HomeTeam": "Brooklyn Nets",
     "AwayTeam": "Atlanta Hawks",
-    "Group": null,
-    "HomeTeamScore": null,
-    "AwayTeamScore": null
-  },
-  {
-    "MatchNumber": 62,
-    "RoundNumber": 2,
-    "DateUtc": "2025-10-29 23:30:00Z",
-    "Location": "Scotiabank Arena",
-    "HomeTeam": "Toronto Raptors",
-    "AwayTeam": "Houston Rockets",
     "Group": null,
     "HomeTeamScore": null,
     "AwayTeamScore": null
@@ -740,7 +740,7 @@
     "MatchNumber": 68,
     "RoundNumber": 2,
     "DateUtc": "2025-10-30 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Memphis Grizzlies",
     "Group": null,
@@ -850,7 +850,7 @@
     "MatchNumber": 78,
     "RoundNumber": 2,
     "DateUtc": "2025-11-01 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Utah Jazz",
     "Group": null,
@@ -1015,7 +1015,7 @@
     "MatchNumber": 93,
     "RoundNumber": 2,
     "DateUtc": "2025-11-03 01:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "San Antonio Spurs",
     "Group": null,
@@ -1323,7 +1323,7 @@
     "MatchNumber": 121,
     "RoundNumber": 3,
     "DateUtc": "2025-11-07 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "LA Clippers",
     "Group": null,
@@ -1686,7 +1686,7 @@
     "MatchNumber": 154,
     "RoundNumber": 3,
     "DateUtc": "2025-11-11 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "New Orleans Pelicans",
     "Group": null,
@@ -1928,7 +1928,7 @@
     "MatchNumber": 176,
     "RoundNumber": 4,
     "DateUtc": "2025-11-14 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Indiana Pacers",
     "Group": null,
@@ -2170,7 +2170,7 @@
     "MatchNumber": 198,
     "RoundNumber": 4,
     "DateUtc": "2025-11-17 01:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Atlanta Hawks",
     "Group": null,
@@ -2544,7 +2544,7 @@
     "MatchNumber": 232,
     "RoundNumber": 5,
     "DateUtc": "2025-11-22 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Minnesota Timberwolves",
     "Group": null,
@@ -2731,7 +2731,7 @@
     "MatchNumber": 249,
     "RoundNumber": 5,
     "DateUtc": "2025-11-24 01:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "San Antonio Spurs",
     "Group": null,
@@ -2830,7 +2830,7 @@
     "MatchNumber": 258,
     "RoundNumber": 5,
     "DateUtc": "2025-11-25 02:30:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Houston Rockets",
     "Group": null,
@@ -3182,7 +3182,7 @@
     "MatchNumber": 290,
     "RoundNumber": 6,
     "DateUtc": "2025-11-30 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Denver Nuggets",
     "Group": null,
@@ -4051,7 +4051,7 @@
     "MatchNumber": 369,
     "RoundNumber": 8,
     "DateUtc": "2025-12-19 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Golden State Warriors",
     "Group": null,
@@ -4491,7 +4491,7 @@
     "MatchNumber": 409,
     "RoundNumber": 8,
     "DateUtc": "2025-12-24 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Los Angeles Lakers",
     "Group": null,
@@ -5261,7 +5261,7 @@
     "MatchNumber": 479,
     "RoundNumber": 10,
     "DateUtc": "2026-01-03 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Sacramento Kings",
     "Group": null,
@@ -5437,7 +5437,7 @@
     "MatchNumber": 495,
     "RoundNumber": 10,
     "DateUtc": "2026-01-05 01:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Oklahoma City Thunder",
     "Group": null,
@@ -5866,7 +5866,7 @@
     "MatchNumber": 534,
     "RoundNumber": 11,
     "DateUtc": "2026-01-10 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "New York Knicks",
     "Group": null,
@@ -6053,7 +6053,7 @@
     "MatchNumber": 551,
     "RoundNumber": 11,
     "DateUtc": "2026-01-12 01:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Washington Wizards",
     "Group": null,
@@ -7197,7 +7197,7 @@
     "MatchNumber": 655,
     "RoundNumber": 13,
     "DateUtc": "2026-01-26 01:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Miami Heat",
     "Group": null,
@@ -7351,7 +7351,7 @@
     "MatchNumber": 669,
     "RoundNumber": 13,
     "DateUtc": "2026-01-28 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Brooklyn Nets",
     "Group": null,
@@ -7527,7 +7527,7 @@
     "MatchNumber": 685,
     "RoundNumber": 14,
     "DateUtc": "2026-01-30 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Detroit Pistons",
     "Group": null,
@@ -7615,7 +7615,7 @@
     "MatchNumber": 693,
     "RoundNumber": 14,
     "DateUtc": "2026-01-31 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Cleveland Cavaliers",
     "Group": null,
@@ -7791,7 +7791,7 @@
     "MatchNumber": 709,
     "RoundNumber": 14,
     "DateUtc": "2026-02-02 01:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "LA Clippers",
     "Group": null,
@@ -8121,7 +8121,7 @@
     "MatchNumber": 739,
     "RoundNumber": 15,
     "DateUtc": "2026-02-06 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Golden State Warriors",
     "Group": null,
@@ -8286,7 +8286,7 @@
     "MatchNumber": 754,
     "RoundNumber": 15,
     "DateUtc": "2026-02-08 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Philadelphia 76ers",
     "Group": null,
@@ -8495,7 +8495,7 @@
     "MatchNumber": 773,
     "RoundNumber": 15,
     "DateUtc": "2026-02-11 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Dallas Mavericks",
     "Group": null,
@@ -8627,7 +8627,7 @@
     "MatchNumber": 785,
     "RoundNumber": 15,
     "DateUtc": "2026-02-12 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Oklahoma City Thunder",
     "Group": null,
@@ -8913,7 +8913,7 @@
     "MatchNumber": 811,
     "RoundNumber": 16,
     "DateUtc": "2026-02-21 22:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Orlando Magic",
     "Group": null,
@@ -9078,7 +9078,7 @@
     "MatchNumber": 826,
     "RoundNumber": 16,
     "DateUtc": "2026-02-23 01:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Portland Trail Blazers",
     "Group": null,
@@ -9221,7 +9221,7 @@
     "MatchNumber": 839,
     "RoundNumber": 16,
     "DateUtc": "2026-02-25 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Boston Celtics",
     "Group": null,
@@ -9397,7 +9397,7 @@
     "MatchNumber": 855,
     "RoundNumber": 17,
     "DateUtc": "2026-02-27 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Los Angeles Lakers",
     "Group": null,
@@ -9947,7 +9947,7 @@
     "MatchNumber": 905,
     "RoundNumber": 18,
     "DateUtc": "2026-03-06 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Chicago Bulls",
     "Group": null,
@@ -10024,7 +10024,7 @@
     "MatchNumber": 912,
     "RoundNumber": 18,
     "DateUtc": "2026-03-07 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "New Orleans Pelicans",
     "Group": null,
@@ -10200,7 +10200,7 @@
     "MatchNumber": 928,
     "RoundNumber": 18,
     "DateUtc": "2026-03-09 01:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Charlotte Hornets",
     "Group": null,
@@ -11333,7 +11333,7 @@
     "MatchNumber": 1031,
     "RoundNumber": 20,
     "DateUtc": "2026-03-22 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Milwaukee Bucks",
     "Group": null,
@@ -11388,7 +11388,7 @@
     "MatchNumber": 1036,
     "RoundNumber": 20,
     "DateUtc": "2026-03-23 01:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Toronto Raptors",
     "Group": null,
@@ -11542,7 +11542,7 @@
     "MatchNumber": 1050,
     "RoundNumber": 20,
     "DateUtc": "2026-03-25 03:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Denver Nuggets",
     "Group": null,
@@ -11883,7 +11883,7 @@
     "MatchNumber": 1081,
     "RoundNumber": 21,
     "DateUtc": "2026-03-29 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Utah Jazz",
     "Group": null,
@@ -12719,7 +12719,7 @@
     "MatchNumber": 1157,
     "RoundNumber": 22,
     "DateUtc": "2026-04-08 03:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Houston Rockets",
     "Group": null,
@@ -12796,7 +12796,7 @@
     "MatchNumber": 1164,
     "RoundNumber": 23,
     "DateUtc": "2026-04-09 02:00:00Z",
-    "Location": "PHX Arena",
+    "Location": "Mortgage Matchup Center",
     "HomeTeam": "Phoenix Suns",
     "AwayTeam": "Dallas Mavericks",
     "Group": null,

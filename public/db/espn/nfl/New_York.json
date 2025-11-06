@@ -153,7 +153,7 @@
         "items": [
           {
             "type": "total",
-            "summary": "0-3",
+            "summary": "2-7",
             "stats": [
               {
                 "name": "OTLosses",
@@ -185,7 +185,7 @@
               },
               {
                 "name": "gamesPlayed",
-                "value": 3
+                "value": 9
               },
               {
                 "name": "leagueWinPercent",
@@ -193,7 +193,7 @@
               },
               {
                 "name": "losses",
-                "value": 3
+                "value": 7
               },
               {
                 "name": "playoffSeed",
@@ -225,11 +225,11 @@
               },
               {
                 "name": "winPercent",
-                "value": 0
+                "value": 0.2222222222222222
               },
               {
                 "name": "wins",
-                "value": 0
+                "value": 2
               },
               {
                 "name": "divisionLosses",
@@ -247,7 +247,10 @@
                 "name": "divisionWins",
                 "value": 0
               }
-            ]
+            ],
+            "wins": 2,
+            "losses": 7,
+            "ties": 0
           },
           {
             "description": "Home Record",

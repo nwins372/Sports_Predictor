@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
-import NavBar from '../components/NavBar';
 import espnApi from '../utils/espnApi';
 import './Player.css';
 import FollowButton from '../components/FollowButton';
@@ -177,10 +176,7 @@ export default function Player() {
   }, [id, leagueParam]);
 
   if (!player) return (
-    <>
-      <NavBar />
-      <div className="player-page">Loading {loadingName ? (`${loadingName}`) : (`player ${id}`)}…</div>
-    </>
+    <div className="player-page">Loading {loadingName ? (`${loadingName}`) : (`player ${id}`)}…</div>
   );
   const name = player?.name || player?.displayName || player?.fullName || player?.headline;
   const head = player?.head || player?.headshot?.href || player?.photo?.href || player?.images?.[0]?.url || null;
@@ -314,9 +310,7 @@ export default function Player() {
   try { console.debug && console.debug('Player enrichment', { id: player?.id || id, league: playerLeague, enrichment: player?._enrichmentSource, seasonLabel: statsSeasonLabel, stats: currentStats }); } catch (e) {}
 
   return (
-    <>
-      <NavBar />
-      <div className="player-page">
+    <div className="player-page">
       <div className="player-hero">
         {head ? <img src={head} alt={name} className="player-headshot" /> : <div className="player-headshot placeholder" />}
         <div>
@@ -453,7 +447,6 @@ export default function Player() {
           )}
         </div>
       </div>
-      </div>
-    </>
+    </div>
   );
 }

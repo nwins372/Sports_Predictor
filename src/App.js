@@ -8,6 +8,8 @@ import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import Team from './pages/Team';
 import Player from './pages/Player';
+import MockDraft from './pages/MockDraft';
+import NavBar from './components/NavBar';
 import { ThemeProvider } from './context/ThemeContext';
 import { supabase } from './supabaseClient';
 import { useEffect, useState } from 'react';
@@ -15,6 +17,7 @@ import SportsNewsPage from './pages/SportsNewsPage';
 import ProfileSettings from './pages/ProfileSettings';
 import Schedules from './pages/Schedules';
 import Statistics from './pages/Statistics';
+import LocalSports from './pages/LocalSports';
 
 const isLoggedIn = supabase.auth.getSession().then(({ data: { session } }) => !!session);
 const user = supabase.auth.getUser().then(({ data: { user } }) => user);
@@ -45,8 +48,9 @@ useEffect(() => {
 
   return (
     <ThemeProvider>
-    <BrowserRouter>
-    <Routes>
+  <BrowserRouter>
+  <NavBar />
+  <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
@@ -56,6 +60,7 @@ useEffect(() => {
       <Route path="/player/:league/:id" element={<Player />} />
       {/* backward-compatible route (no league) */}
       <Route path="/player/:id" element={<Player />} />
+  <Route path="/mock-draft" element={<MockDraft />} />
       <Route path="/settings" element={<Settings />} />
       <Route path="/sports-news" element={<SportsNewsPage />} />
       <Route path="/schedules" element={<Schedules />} />
@@ -70,6 +75,7 @@ useEffect(() => {
           />
         }
       />
+      <Route path="/local-sports" element={<LocalSports />} />
     </Routes>
     </BrowserRouter>
     </ThemeProvider>

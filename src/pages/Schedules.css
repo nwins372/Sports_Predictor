@@ -686,6 +686,19 @@
   cursor: pointer;
 }
 
+/* Favorites Toggle */
+.favorites-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.favorites-toggle input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #f59e0b;
+}
+
 /* Quick Filter Buttons */
 .quick-filters {
   display: flex;

@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import NavBar from '../components/NavBar';
 import espnApi from '../utils/espnApi';
 import './Team.css';
+import FollowButton from '../components/FollowButton';
 
 export default function Team() {
   const params = useParams();
@@ -111,10 +111,7 @@ export default function Team() {
   }, [team, rosterEntries, abbr]);
 
   if (!team) return (
-    <>
-      <NavBar />
-      <div className="team-page">Loading team {abbr}…</div>
-    </>
+    <div className="team-page">Loading team {abbr}…</div>
   );
 
   const detail = team?.detail || team;
@@ -212,9 +209,7 @@ export default function Team() {
   };
 
   return (
-    <>
-      <NavBar />
-      <div className="team-page">
+    <div className="team-page">
       <div className="team-hero">
         {logo ? (
           <img src={logo} alt={`${name} logo`} className="team-logo" onError={() => setLogoError(true)} />
@@ -226,6 +221,10 @@ export default function Team() {
           <div className="team-meta">{teamObj?.location || ''} {teamObj?.nickname ? `• ${teamObj.nickname}` : ''}</div>
           {record && record.summary && <div className="team-record">{record.summary}</div>}
           {venue && venue.fullName && <div className="team-venue">Arena: {venue.fullName}</div>}
+          {/* Follow team button: also updates favorite team preference via FollowButton */}
+          <div style={{marginTop: '8px'}}>
+            <FollowButton entityType="team" entityId={teamObj?.slug || teamObj?.id || name} label={`Follow ${teamObj?.shortDisplayName || name}`} entityMeta={{ name, slug: teamObj?.slug, id: teamObj?.id }} />
+          </div>
         </div>
       </div>
 
@@ -242,6 +241,5 @@ export default function Team() {
 
         <div className="team-debug">Loaded from checked-in JSON (debug output hidden in production)</div>
       </div>
-    </>
-  );
+    );
 }
