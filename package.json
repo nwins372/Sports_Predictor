@@ -29,6 +29,8 @@
     "update-nba": "node scripts/fetch_espn_teams.js --league=nba",
     "update-nfl": "node scripts/fetch_espn_teams.js --league=nfl",
     "update-mlb": "node scripts/fetch_espn_teams.js --league=mlb",
+    "schedule:start": "node scripts/scheduler.js",
+    "schedule:install": "npm install node-cron",
     "fetch-prospects": "node scripts/fetch_nba2026_prospects.js"
   },
   "eslintConfig": {
