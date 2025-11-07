@@ -79,12 +79,11 @@ async function searchLocalSportsVenues(lat, lng, radiusMeters) {
 
 export default function LocalSports() {
   const navigate = useNavigate();
-  const [userLocation, setUserLocation] = useState(null);
-  const [city, setCity] = useState("");
   const [radius, setRadius] = useState(50);
-  const [searchCoords, setSearchCoords] = useState(null);
+  const [userLocation, setUserLocation] = useState(null);
   const [error, setError] = useState(null);
   const [venues, setVenues] = useState([]);
+  const [city, setCity] = useState("");
   const [loadingVenues, setLoadingVenues] = useState(false);
   const [mapsLoaded, setMapsLoaded] = useState(false);
 
@@ -101,14 +100,12 @@ export default function LocalSports() {
       });
   }, []);
 
-  const getUserLocation = () => {
-  
   const [foundCityName, setFoundCityName] = useState(null);
 
   const handleSearch = async (event) => {
     event.preventDefault(); 
-    setError(null);
-    setSearchCoords(null);
+  setError(null);
+  setUserLocation(null);
     setFoundCityName(null); 
 
     const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
@@ -122,9 +119,22 @@ export default function LocalSports() {
         const result = data.results[0];
         const location = result.geometry.location; // { lat, lng }
         
-        setSearchCoords({ lat: location.lat, lon: location.lng });
+        setUserLocation({ lat: location.lat, lon: location.lng });
 
         setFoundCityName(result.formatted_address);
+
+        // Fetch nearby venues when location is obtained
+          if (mapsLoaded) {
+            setLoadingVenues(true);
+            try {
+              const foundVenues = await searchLocalSportsVenues(location.lat, location.lon, radius * 1609.34); // Convert miles to meters
+              setVenues(foundVenues);
+            } catch (error) {
+              setError('Failed to fetch nearby venues.');
+            } finally {
+              setLoadingVenues(false);
+            }
+          }
         
       } else {
         setError(data.error_message || "Could not find that location.");
@@ -134,9 +144,7 @@ export default function LocalSports() {
     }
   };
 
-  const handleMyLocationSearch = () => {
-    setError(null);
-    setFoundCityName("Your Location");
+  const getUserLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         async (position) => {
@@ -144,7 +152,6 @@ export default function LocalSports() {
             lat: position.coords.latitude,
             lon: position.coords.longitude
           };
-          setCity(""); // Optionally clear city input
           setUserLocation(location);
           
           // Fetch nearby venues when location is obtained
@@ -159,7 +166,6 @@ export default function LocalSports() {
               setLoadingVenues(false);
             }
           }
-          });
         },
         (error) => {
           setError("Unable to retrieve your location.");
@@ -168,23 +174,22 @@ export default function LocalSports() {
     } else {
       setError("Geolocation is not supported by your browser.");
     }
-  };
+  }
 
   const nearbyTeams = useMemo(() => {
-    if (!searchCoords) {
+    if (!userLocation) {
       return []; // No location searched yet
     }
-    // search for terms within radius
     return teamLocations.filter(team => {
       const distance = getDistanceInMiles(
-        searchCoords.lat,
-        searchCoords.lon,
+        userLocation.lat,
+        userLocation.lon,
         team.lat,
         team.lon
       );
       return distance <= radius;
     });
-  }, [searchCoords, radius]);
+  }, [userLocation, radius]);
 
   return (
     <div>
@@ -203,7 +208,7 @@ export default function LocalSports() {
               onChange={e => setCity(e.target.value)}
               className="local-sports-input"
             />
-            <button type="button" className="myloc" onClick={handleMyLocationSearch}>
+            <button type="button" className="myloc" onClick={getUserLocation}>
               Search My Location
             </button>
             <button type="submit">Search</button>
@@ -212,34 +217,21 @@ export default function LocalSports() {
                 <div className="dropdown-content">
                   <button type="button" onClick={() => setRadius(50)}>50 miles</button>
                   <button type="button" onClick={() => setRadius(100)}>100 miles</button>
-                  <button type="button" onClick={() => setRadius(100)}>200 miles</button>
+                  <button type="button" onClick={() => setRadius(200)}>200 miles</button>
                 </div>
             </div>
           </div>
         </form>
-        <div className="input-row">
-          <button onClick={getUserLocation} style={{ marginRight: '8px', backgroundColor: '#5b79a8ff', color: 'black', padding: '8px 10px', fontWeight: 600 }} type="button">Search My Location</button>
-          <div className="dropdown">
-              <button className="dropbtn" type="button">Select Radius</button>
-              <div className="dropdown-content">
-                <button type="button" onClick={() => setRadius(50)}>50 miles</button>
-                <button type="button" onClick={() => setRadius(100)}>100 miles</button>
-                <button type="button" onClick={() => setRadius(200)}>200 miles</button>
-              </div>
-          </div>
-        </div>
 
         <div className="results-container">
           {error && <p className="error-message">{error}</p>}
           
-          {searchCoords && (
+          {userLocation && (
             <>
-              <h2 className="results-city-name">Showing results for: {foundCityName}</h2>
+              <h2 className="results-city-name">Nearby Teams (within {radius} miles)</h2>
             
               {nearbyTeams.length > 0 ? (
                 <>
-                  <h3>Nearby Teams (within {radius} miles)</h3>
-                  
                   <div className="team-results-grid">
                     {nearbyTeams.map(team => (
                       <div key={team.team} className="team-card">
