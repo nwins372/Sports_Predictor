@@ -59,13 +59,13 @@ async function searchLocalSportsVenues(lat, lng, radiusMeters) {
     // Create a temporary map element (required for PlacesService)
     const map = new window.google.maps.Map(document.createElement('div'));
     const service = new window.google.maps.places.PlacesService(map);
-    
+
     const request = {
       location: new window.google.maps.LatLng(lat, lng),
       radius: radiusMeters,
       type: 'stadium'
     };
-    
+
     service.nearbySearch(request, (results, status) => {
       if (status === window.google.maps.places.PlacesServiceStatus.OK && results) {
         resolve(results);
@@ -83,7 +83,8 @@ export default function LocalSports() {
   const [userLocation, setUserLocation] = useState(null);
   const [error, setError] = useState(null);
   const [venues, setVenues] = useState([]);
-  const [city, setCity] = useState("");
+  const [address, setAddress] = useState("");
+  const [foundAddress, setFoundAddress] = useState(null);
   const [loadingVenues, setLoadingVenues] = useState(false);
   const [mapsLoaded, setMapsLoaded] = useState(false);
 
@@ -100,16 +101,39 @@ export default function LocalSports() {
       });
   }, []);
 
-  const [foundCityName, setFoundCityName] = useState(null);
+  // Update venues when location or radius changes
+  useEffect(() => {
+    const updateVenues = async () => {
+      if (!userLocation || !mapsLoaded) return;
+
+      setLoadingVenues(true);
+      try {
+        // Convert miles to meters for the Places API
+        const radiusInMeters = radius * 1609.34;
+        const foundVenues = await searchLocalSportsVenues(
+          userLocation.lat,
+          userLocation.lon,
+          radiusInMeters
+        );
+        setVenues(foundVenues);
+      } catch (error) {
+        console.error('Error fetching venues:', error);
+        setError('Failed to fetch nearby venues.');
+      } finally {
+        setLoadingVenues(false);
+      }
+    };
+
+    updateVenues();
+  }, [userLocation, radius, mapsLoaded]); // Dependencies: re-run when these change
 
   const handleSearch = async (event) => {
     event.preventDefault(); 
-  setError(null);
-  setUserLocation(null);
-    setFoundCityName(null); 
+    setError(null);
+    setUserLocation(null);
+    setFoundAddress(null); 
 
-    const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-    let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(city)}&key=${apiKey}`;
+    let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${MAPS_API_KEY}`;
 
     try {
       const response = await fetch(url);
@@ -120,22 +144,8 @@ export default function LocalSports() {
         const location = result.geometry.location; // { lat, lng }
         
         setUserLocation({ lat: location.lat, lon: location.lng });
-
-        setFoundCityName(result.formatted_address);
-
-        // Fetch nearby venues when location is obtained
-          if (mapsLoaded) {
-            setLoadingVenues(true);
-            try {
-              const foundVenues = await searchLocalSportsVenues(location.lat, location.lon, radius * 1609.34); // Convert miles to meters
-              setVenues(foundVenues);
-            } catch (error) {
-              setError('Failed to fetch nearby venues.');
-            } finally {
-              setLoadingVenues(false);
-            }
-          }
-        
+        setFoundAddress(result.formatted_address);
+        // The useEffect hook will handle fetching venues
       } else {
         setError(data.error_message || "Could not find that location.");
       }
@@ -147,25 +157,13 @@ export default function LocalSports() {
   const getUserLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
-        async (position) => {
+        (position) => {
           const location = {
             lat: position.coords.latitude,
             lon: position.coords.longitude
           };
           setUserLocation(location);
-          
-          // Fetch nearby venues when location is obtained
-          if (mapsLoaded) {
-            setLoadingVenues(true);
-            try {
-              const foundVenues = await searchLocalSportsVenues(location.lat, location.lon, radius * 1609.34); // Convert miles to meters
-              setVenues(foundVenues);
-            } catch (error) {
-              setError('Failed to fetch nearby venues.');
-            } finally {
-              setLoadingVenues(false);
-            }
-          }
+          // The useEffect hook will handle fetching venues
         },
         (error) => {
           setError("Unable to retrieve your location.");
@@ -201,11 +199,11 @@ export default function LocalSports() {
           <div className="input-row">
             <input
               type="text"
-              name="city"
-              placeholder="Enter city name (ex: Los Angeles, CA)"
-              
-              value={city}
-              onChange={e => setCity(e.target.value)}
+              name="address"
+              placeholder="Enter a address (ex: 123 Main St, City, State)"
+
+              value={address}
+              onChange={e => setAddress(e.target.value)}
               className="local-sports-input"
             />
             <button type="button" className="myloc" onClick={getUserLocation}>
@@ -215,9 +213,9 @@ export default function LocalSports() {
             <div className="dropdown">
                 <button className="dropbtn" type="button">Select Radius</button>
                 <div className="dropdown-content">
+                  <button type="button" onClick={() => setRadius(10)}>10 miles</button>
+                  <button type="button" onClick={() => setRadius(25)}>25 miles</button>
                   <button type="button" onClick={() => setRadius(50)}>50 miles</button>
-                  <button type="button" onClick={() => setRadius(100)}>100 miles</button>
-                  <button type="button" onClick={() => setRadius(200)}>200 miles</button>
                 </div>
             </div>
           </div>
