@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
-import NavBar from "../components/NavBar";
 import "./Statistics.css";
 
 // Mapping from full team names to their JSON filenames and leagues
@@ -20,7 +19,7 @@ const TEAM_FILE_MAP = {
   "Houston Texans": { filename: "Houston", league: "nfl" },
   "Kansas City Chiefs": { filename: "Kansas_City", league: "nfl" },
   "Las Vegas Raiders": { filename: "Las_Vegas", league: "nfl" },
-  // "Los Angeles Chargers": { filename: "Los_Angeles_Chargers", league: "nfl" }, // Data file not available yet
+  "Los Angeles Chargers": { filename: "Los_Angeles_Chargers", league: "nfl" },
   "Denver Broncos": { filename: "Denver", league: "nfl" },
   "Philadelphia Eagles": { filename: "Philadelphia", league: "nfl" },
   "Dallas Cowboys": { filename: "Dallas", league: "nfl" },
@@ -81,7 +80,7 @@ const TEAM_FILE_MAP = {
   "Kansas City Royals": { filename: "Kansas_City", league: "mlb" },
   "Minnesota Twins": { filename: "Minnesota", league: "mlb" },
   "Houston Astros": { filename: "Houston", league: "mlb" },
-  "Los Angeles Angels": { filename: "Los_Angeles", league: "mlb" },
+  "Los Angeles Angels": { filename: "Angels", league: "mlb" },
   "Oakland Athletics": { filename: "Athletics", league: "mlb" },
   "Seattle Mariners": { filename: "Seattle", league: "mlb" },
   "Texas Rangers": { filename: "Texas", league: "mlb" },
@@ -489,44 +488,33 @@ function Statistics() {
 
   if (loading) {
     return (
-      <>
-        <NavBar />
-        <div className="statistics-container">
-          <div className="loading">Loading your team statistics...</div>
-        </div>
-      </>
+      <div className="statistics-container">
+        <div className="loading">Loading your team statistics...</div>
+      </div>
     );
   }
 
   if (error) {
     return (
-      <>
-        <NavBar />
-        <div className="statistics-container">
-          <div className="error-message">{error}</div>
-        </div>
-      </>
+      <div className="statistics-container">
+        <div className="error-message">{error}</div>
+      </div>
     );
   }
 
   if (Object.keys(favoriteTeams).length === 0) {
     return (
-      <>
-        <NavBar />
-        <div className="statistics-container">
-          <div className="no-teams">
-            <h2>No Favorite Teams</h2>
-            <p>Go to your Profile to select your favorite teams and view their statistics here.</p>
-          </div>
+      <div className="statistics-container">
+        <div className="no-teams">
+          <h2>No Favorite Teams</h2>
+          <p>Go to your Profile to select your favorite teams and view their statistics here.</p>
         </div>
-      </>
+      </div>
     );
   }
 
   return (
-    <>
-      <NavBar />
-      <div className="statistics-container">
+    <div className="statistics-container">
         <h1>Your Team Statistics</h1>
         
         {Object.entries(favoriteTeams).map(([sport, teams]) => (
@@ -552,8 +540,7 @@ function Statistics() {
             </div>
           </div>
         ))}
-      </div>
-    </>
+    </div>
   );
 }
 

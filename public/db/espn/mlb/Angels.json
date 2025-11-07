@@ -1,0 +1,1755 @@
+{
+  "team": {
+    "id": "3",
+    "uid": "s:1~l:10~t:3",
+    "slug": "los-angeles-angels",
+    "location": "Los Angeles",
+    "name": "Angels",
+    "abbreviation": "LAA",
+    "displayName": "Los Angeles Angels",
+    "shortDisplayName": "Angels",
+    "color": "ba0021",
+    "alternateColor": "c4ced4",
+    "isActive": true,
+    "logos": [
+      {
+        "href": "https://a.espncdn.com/i/teamlogos/mlb/500/laa.png",
+        "width": 500,
+        "height": 500,
+        "alt": "",
+        "rel": [
+          "full",
+          "default"
+        ],
+        "lastUpdated": "2024-07-01T17:48Z"
+      },
+      {
+        "href": "https://a.espncdn.com/i/teamlogos/mlb/500-dark/laa.png",
+        "width": 500,
+        "height": 500,
+        "alt": "",
+        "rel": [
+          "full",
+          "dark"
+        ],
+        "lastUpdated": "2024-07-01T17:49Z"
+      },
+      {
+        "href": "https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/laa.png",
+        "width": 500,
+        "height": 500,
+        "alt": "",
+        "rel": [
+          "full",
+          "scoreboard"
+        ],
+        "lastUpdated": "2024-07-01T17:48Z"
+      },
+      {
+        "href": "https://a.espncdn.com/i/teamlogos/mlb/500-dark/scoreboard/laa.png",
+        "width": 500,
+        "height": 500,
+        "alt": "",
+        "rel": [
+          "full",
+          "scoreboard",
+          "dark"
+        ],
+        "lastUpdated": "2024-07-01T17:49Z"
+      },
+      {
+        "href": "https://a.espncdn.com/guid/053868c7-8bff-5edb-3cb6-f5490f33ef99/logos/primary_logo_on_white_color.png",
+        "width": 4096,
+        "height": 4096,
+        "alt": "",
+        "rel": [
+          "full",
+          "primary_logo_on_white_color"
+        ],
+        "lastUpdated": "2024-12-03T19:57Z"
+      },
+      {
+        "href": "https://a.espncdn.com/guid/053868c7-8bff-5edb-3cb6-f5490f33ef99/logos/primary_logo_on_black_color.png",
+        "width": 4096,
+        "height": 4096,
+        "alt": "",
+        "rel": [
+          "full",
+          "primary_logo_on_black_color"
+        ],
+        "lastUpdated": "2024-12-03T19:56Z"
+      },
+      {
+        "href": "https://a.espncdn.com/guid/053868c7-8bff-5edb-3cb6-f5490f33ef99/logos/primary_logo_on_primary_color.png",
+        "width": 4096,
+        "height": 4096,
+        "alt": "",
+        "rel": [
+          "full",
+          "primary_logo_on_primary_color"
+        ],
+        "lastUpdated": "2024-12-03T19:56Z"
+      },
+      {
+        "href": "https://a.espncdn.com/guid/053868c7-8bff-5edb-3cb6-f5490f33ef99/logos/primary_logo_on_secondary_color.png",
+        "width": 4096,
+        "height": 4096,
+        "alt": "",
+        "rel": [
+          "full",
+          "primary_logo_on_secondary_color"
+        ],
+        "lastUpdated": "2024-12-03T19:56Z"
+      },
+      {
+        "href": "https://a.espncdn.com/guid/053868c7-8bff-5edb-3cb6-f5490f33ef99/logos/secondary_logo_on_white_color.png",
+        "width": 4096,
+        "height": 4096,
+        "alt": "",
+        "rel": [
+          "full",
+          "secondary_logo_on_white_color"
+        ],
+        "lastUpdated": "2024-12-03T19:56Z"
+      },
+      {
+        "href": "https://a.espncdn.com/guid/053868c7-8bff-5edb-3cb6-f5490f33ef99/logos/secondary_logo_on_black_color.png",
+        "width": 4096,
+        "height": 4096,
+        "alt": "",
+        "rel": [
+          "full",
+          "secondary_logo_on_black_color"
+        ],
+        "lastUpdated": "2024-12-03T19:57Z"
+      },
+      {
+        "href": "https://a.espncdn.com/guid/053868c7-8bff-5edb-3cb6-f5490f33ef99/logos/secondary_logo_on_primary_color.png",
+        "width": 4096,
+        "height": 4096,
+        "alt": "",
+        "rel": [
+          "full",
+          "secondary_logo_on_primary_color"
+        ],
+        "lastUpdated": "2024-12-03T19:56Z"
+      },
+      {
+        "href": "https://a.espncdn.com/guid/053868c7-8bff-5edb-3cb6-f5490f33ef99/logos/secondary_logo_on_secondary_color.png",
+        "width": 4096,
+        "height": 4096,
+        "alt": "",
+        "rel": [
+          "full",
+          "secondary_logo_on_secondary_color"
+        ],
+        "lastUpdated": "2024-12-03T19:56Z"
+      }
+    ],
+    "record": {
+      "items": [
+        {
+          "description": "Overall Record",
+          "type": "total",
+          "summary": "65-97",
+          "stats": [
+            {
+              "name": "OTLosses",
+              "value": 5
+            },
+            {
+              "name": "OTWins",
+              "value": 9
+            },
+            {
+              "name": "avgPointsAgainst",
+              "value": 5.1666665
+            },
+            {
+              "name": "avgPointsFor",
+              "value": 4.154321
+            },
+            {
+              "name": "clincher",
+              "value": 4
+            },
+            {
+              "name": "differential",
+              "value": -1
+            },
+            {
+              "name": "divisionWinPercent",
+              "value": 0.44230768
+            },
+            {
+              "name": "gamesBehind",
+              "value": 0
+            },
+            {
+              "name": "gamesPlayed",
+              "value": 162
+            },
+            {
+              "name": "leagueWinPercent",
+              "value": 0.4385965
+            },
+            {
+              "name": "losses",
+              "value": 97
+            },
+            {
+              "name": "playoffSeed",
+              "value": 13
+            },
+            {
+              "name": "pointDifferential",
+              "value": -164
+            },
+            {
+              "name": "points",
+              "value": -9
+            },
+            {
+              "name": "pointsAgainst",
+              "value": 837
+            },
+            {
+              "name": "pointsFor",
+              "value": 673
+            },
+            {
+              "name": "streak",
+              "value": -2
+            },
+            {
+              "name": "ties",
+              "value": 0
+            },
+            {
+              "name": "winPercent",
+              "value": 0.4012345679012346
+            },
+            {
+              "name": "wins",
+              "value": 65
+            },
+            {
+              "name": "divisionGamesBehind",
+              "value": 18
+            },
+            {
+              "name": "divisionPercent",
+              "value": 0
+            },
+            {
+              "name": "divisionTied",
+              "value": 0
+            },
+            {
+              "name": "homeLosses",
+              "value": 42
+            },
+            {
+              "name": "homeTies",
+              "value": 0
+            },
+            {
+              "name": "homeWins",
+              "value": 39
+            },
+            {
+              "name": "magicNumberDivision",
+              "value": 19
+            },
+            {
+              "name": "magicNumberWildcard",
+              "value": 18
+            },
+            {
+              "name": "playoffPercent",
+              "value": 0
+            },
+            {
+              "name": "roadLosses",
+              "value": 48
+            },
+            {
+              "name": "roadTies",
+              "value": 0
+            },
+            {
+              "name": "roadWins",
+              "value": 33
+            },
+            {
+              "name": "wildCardPercent",
+              "value": 0
+            }
+          ],
+          "wins": 65,
+          "losses": 97,
+          "ties": 0
+        },
+        {
+          "description": "Home Record",
+          "type": "home",
+          "summary": "39-42",
+          "stats": [
+            {
+              "name": "OTLosses",
+              "value": 2
+            },
+            {
+              "name": "OTWins",
+              "value": 4
+            },
+            {
+              "name": "avgPointsAgainst",
+              "value": 5.185185
+            },
+            {
+              "name": "avgPointsFor",
+              "value": 4.271605
+            },
+            {
+              "name": "clincher",
+              "value": 4
+            },
+            {
+              "name": "differential",
+              "value": -0.9000000000000004
+            },
+            {
+              "name": "divisionWinPercent",
+              "value": 0
+            },
+            {
+              "name": "gamesBehind",
+              "value": 0
+            },
+            {
+              "name": "gamesPlayed",
+              "value": 81
+            },
+            {
+              "name": "leagueWinPercent",
+              "value": 0
+            },
+            {
+              "name": "losses",
+              "value": 42
+            },
+            {
+              "name": "playoffSeed",
+              "value": 0
+            },
+            {
+              "name": "pointDifferential",
+              "value": -74
+            },
+            {
+              "name": "points",
+              "value": -1.5
+            },
+            {
+              "name": "pointsAgainst",
+              "value": 420
+            },
+            {
+              "name": "pointsFor",
+              "value": 346
+            },
+            {
+              "name": "streak",
+              "value": 0
+            },
+            {
+              "name": "ties",
+              "value": 0
+            },
+            {
+              "name": "winPercent",
+              "value": 0.4814815
+            },
+            {
+              "name": "wins",
+              "value": 39
+            },
+            {
+              "name": "divisionGamesBehind",
+              "value": 0
+            },
+            {
+              "name": "divisionPercent",
+              "value": 0
+            },
+            {
+              "name": "divisionTied",
+              "value": 0
+            },
+            {
+              "name": "homeLosses",
+              "value": 0
+            },
+            {
+              "name": "homeTies",
+              "value": 0
+            },
+            {
+              "name": "homeWins",
+              "value": 0
+            },
+            {
+              "name": "magicNumberDivision",
+              "value": 0
+            },
+            {
+              "name": "magicNumberWildcard",
+              "value": 0
+            },
+            {
+              "name": "playoffPercent",
+              "value": 0
+            },
+            {
+              "name": "roadLosses",
+              "value": 0
+            },
+            {
+              "name": "roadTies",
+              "value": 0
+            },
+            {
+              "name": "roadWins",
+              "value": 0
+            },
+            {
+              "name": "wildCardPercent",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "description": "Away Record",
+          "type": "road",
+          "summary": "33-48",
+          "stats": [
+            {
+              "name": "OTLosses",
+              "value": 3
+            },
+            {
+              "name": "OTWins",
+              "value": 5
+            },
+            {
+              "name": "avgPointsAgainst",
+              "value": 5.148148
+            },
+            {
+              "name": "avgPointsFor",
+              "value": 4.037037
+            },
+            {
+              "name": "clincher",
+              "value": 4
+            },
+            {
+              "name": "differential",
+              "value": -1.0999999999999996
+            },
+            {
+              "name": "divisionWinPercent",
+              "value": 0
+            },
+            {
+              "name": "gamesBehind",
+              "value": 0
+            },
+            {
+              "name": "gamesPlayed",
+              "value": 81
+            },
+            {
+              "name": "leagueWinPercent",
+              "value": 0
+            },
+            {
+              "name": "losses",
+              "value": 48
+            },
+            {
+              "name": "playoffSeed",
+              "value": 0
+            },
+            {
+              "name": "pointDifferential",
+              "value": -90
+            },
+            {
+              "name": "points",
+              "value": -7.5
+            },
+            {
+              "name": "pointsAgainst",
+              "value": 417
+            },
+            {
+              "name": "pointsFor",
+              "value": 327
+            },
+            {
+              "name": "streak",
+              "value": 0
+            },
+            {
+              "name": "ties",
+              "value": 0
+            },
+            {
+              "name": "winPercent",
+              "value": 0.4074074
+            },
+            {
+              "name": "wins",
+              "value": 33
+            },
+            {
+              "name": "divisionGamesBehind",
+              "value": 0
+            },
+            {
+              "name": "divisionPercent",
+              "value": 0
+            },
+            {
+              "name": "divisionTied",
+              "value": 0
+            },
+            {
+              "name": "homeLosses",
+              "value": 0
+            },
+            {
+              "name": "homeTies",
+              "value": 0
+            },
+            {
+              "name": "homeWins",
+              "value": 0
+            },
+            {
+              "name": "magicNumberDivision",
+              "value": 0
+            },
+            {
+              "name": "magicNumberWildcard",
+              "value": 0
+            },
+            {
+              "name": "playoffPercent",
+              "value": 0
+            },
+            {
+              "name": "roadLosses",
+              "value": 0
+            },
+            {
+              "name": "roadTies",
+              "value": 0
+            },
+            {
+              "name": "roadWins",
+              "value": 0
+            },
+            {
+              "name": "wildCardPercent",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    "groups": {
+      "id": "3",
+      "parent": {
+        "id": "7"
+      },
+      "isConference": false
+    },
+    "links": [
+      {
+        "language": "en-US",
+        "rel": [
+          "clubhouse",
+          "desktop",
+          "team"
+        ],
+        "href": "https://www.espn.com/mlb/team/_/name/laa/los-angeles-angels",
+        "text": "Clubhouse",
+        "shortText": "Clubhouse",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": [
+          "roster",
+          "desktop",
+          "team"
+        ],
+        "href": "https://www.espn.com/mlb/team/roster/_/name/laa/los-angeles-angels",
+        "text": "Roster",
+        "shortText": "Roster",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": [
+          "stats",
+          "desktop",
+          "team"
+        ],
+        "href": "https://www.espn.com/mlb/team/stats/_/name/laa/los-angeles-angels",
+        "text": "Statistics",
+        "shortText": "Statistics",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": [
+          "schedule",
+          "desktop",
+          "team"
+        ],
+        "href": "https://www.espn.com/mlb/team/schedule/_/name/laa",
+        "text": "Schedule",
+        "shortText": "Schedule",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": [
+          "photos",
+          "desktop",
+          "team"
+        ],
+        "href": "https://www.espn.com/mlb/team/photos/_/name/laa",
+        "text": "photos",
+        "shortText": "photos",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": [
+          "tickets",
+          "desktop",
+          "team"
+        ],
+        "href": "https://www.vividseats.com/los-angeles-angels-of-anaheim-tickets--sports-mlb-baseball/performer/29?wsUser=717",
+        "text": "Tickets",
+        "shortText": "Tickets",
+        "isExternal": true,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": [
+          "transactions",
+          "desktop",
+          "team"
+        ],
+        "href": "https://www.espn.com/mlb/team/transactions/_/name/laa",
+        "text": "Transactions",
+        "shortText": "Transactions",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": [
+          "injuries",
+          "desktop",
+          "team"
+        ],
+        "href": "https://www.espn.com/mlb/team/injuries/_/name/laa",
+        "text": "Injuries",
+        "shortText": "Injuries",
+        "isExternal": false,
+        "isPremium": false
+      },
+      {
+        "language": "en-US",
+        "rel": [
+          "depthchart",
+          "desktop",
+          "team"
+        ],
+        "href": "https://www.espn.com/mlb/team/depth/_/name/laa",
+        "text": "Depth Chart",
+        "shortText": "Depth Chart",
+        "isExternal": false,
+        "isPremium": false
+      }
+    ],
+    "franchise": {
+      "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/franchises/3?lang=en&region=us",
+      "id": "3",
+      "uid": "s:1~l:10~f:3",
+      "slug": "los-angeles-angels",
+      "location": "Los Angeles",
+      "name": "Angels",
+      "abbreviation": "LAA",
+      "displayName": "Los Angeles Angels",
+      "shortDisplayName": "Angels",
+      "color": "ba0021",
+      "isActive": true,
+      "venue": {
+        "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/venues/3?lang=en&region=us",
+        "id": "3",
+        "fullName": "Angel Stadium",
+        "address": {
+          "city": "Anaheim",
+          "state": "California",
+          "zipCode": "92806"
+        },
+        "grass": true,
+        "indoor": false,
+        "images": [
+          {
+            "href": "https://a.espncdn.com/i/venues/mlb/day/3.jpg",
+            "width": 2000,
+            "height": 1125,
+            "alt": "",
+            "rel": [
+              "full",
+              "day"
+            ]
+          }
+        ]
+      },
+      "team": {
+        "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/3?lang=en&region=us"
+      },
+      "awards": {
+        "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/franchises/3/awards?lang=en&region=us"
+      }
+    },
+    "nextEvent": [
+      {
+        "id": "401697335",
+        "date": "2025-09-28T19:07Z",
+        "name": "Houston Astros at Los Angeles Angels",
+        "shortName": "HOU @ LAA",
+        "season": {
+          "year": 2025,
+          "displayName": "2025"
+        },
+        "seasonType": {
+          "id": "2",
+          "type": 2,
+          "name": "Regular Season",
+          "abbreviation": "reg"
+        },
+        "timeValid": true,
+        "competitions": [
+          {
+            "id": "401697335",
+            "date": "2025-09-28T19:07Z",
+            "attendance": 30609,
+            "type": {
+              "id": "1",
+              "text": "Standard",
+              "abbreviation": "STD",
+              "slug": "standard",
+              "type": "standard"
+            },
+            "timeValid": true,
+            "neutralSite": false,
+            "boxscoreAvailable": true,
+            "ticketsAvailable": false,
+            "venue": {
+              "fullName": "Angel Stadium",
+              "address": {
+                "city": "Anaheim",
+                "state": "California",
+                "zipCode": "92806"
+              }
+            },
+            "competitors": [
+              {
+                "id": "3",
+                "type": "team",
+                "order": 0,
+                "homeAway": "home",
+                "winner": false,
+                "team": {
+                  "id": "3",
+                  "location": "Los Angeles",
+                  "abbreviation": "LAA",
+                  "displayName": "Los Angeles Angels",
+                  "shortDisplayName": "Angels",
+                  "logos": [
+                    {
+                      "href": "https://a.espncdn.com/i/teamlogos/mlb/500/laa.png",
+                      "width": 500,
+                      "height": 500,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "default"
+                      ],
+                      "lastUpdated": "2024-07-01T17:48Z"
+                    },
+                    {
+                      "href": "https://a.espncdn.com/i/teamlogos/mlb/500-dark/laa.png",
+                      "width": 500,
+                      "height": 500,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "dark"
+                      ],
+                      "lastUpdated": "2024-07-01T17:49Z"
+                    },
+                    {
+                      "href": "https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/laa.png",
+                      "width": 500,
+                      "height": 500,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "scoreboard"
+                      ],
+                      "lastUpdated": "2024-07-01T17:48Z"
+                    },
+                    {
+                      "href": "https://a.espncdn.com/i/teamlogos/mlb/500-dark/scoreboard/laa.png",
+                      "width": 500,
+                      "height": 500,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "scoreboard",
+                        "dark"
+                      ],
+                      "lastUpdated": "2024-07-01T17:49Z"
+                    },
+                    {
+                      "href": "https://a.espncdn.com/guid/053868c7-8bff-5edb-3cb6-f5490f33ef99/logos/primary_logo_on_white_color.png",
+                      "width": 4096,
+                      "height": 4096,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "primary_logo_on_white_color"
+                      ],
+                      "lastUpdated": "2024-12-03T19:57Z"
+                    },
+                    {
+                      "href": "https://a.espncdn.com/guid/053868c7-8bff-5edb-3cb6-f5490f33ef99/logos/primary_logo_on_black_color.png",
+                      "width": 4096,
+                      "height": 4096,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "primary_logo_on_black_color"
+                      ],
+                      "lastUpdated": "2024-12-03T19:56Z"
+                    },
+                    {
+                      "href": "https://a.espncdn.com/guid/053868c7-8bff-5edb-3cb6-f5490f33ef99/logos/primary_logo_on_primary_color.png",
+                      "width": 4096,
+                      "height": 4096,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "primary_logo_on_primary_color"
+                      ],
+                      "lastUpdated": "2024-12-03T19:56Z"
+                    },
+                    {
+                      "href": "https://a.espncdn.com/guid/053868c7-8bff-5edb-3cb6-f5490f33ef99/logos/primary_logo_on_secondary_color.png",
+                      "width": 4096,
+                      "height": 4096,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "primary_logo_on_secondary_color"
+                      ],
+                      "lastUpdated": "2024-12-03T19:56Z"
+                    },
+                    {
+                      "href": "https://a.espncdn.com/guid/053868c7-8bff-5edb-3cb6-f5490f33ef99/logos/secondary_logo_on_white_color.png",
+                      "width": 4096,
+                      "height": 4096,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "secondary_logo_on_white_color"
+                      ],
+                      "lastUpdated": "2024-12-03T19:56Z"
+                    },
+                    {
+                      "href": "https://a.espncdn.com/guid/053868c7-8bff-5edb-3cb6-f5490f33ef99/logos/secondary_logo_on_black_color.png",
+                      "width": 4096,
+                      "height": 4096,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "secondary_logo_on_black_color"
+                      ],
+                      "lastUpdated": "2024-12-03T19:57Z"
+                    },
+                    {
+                      "href": "https://a.espncdn.com/guid/053868c7-8bff-5edb-3cb6-f5490f33ef99/logos/secondary_logo_on_primary_color.png",
+                      "width": 4096,
+                      "height": 4096,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "secondary_logo_on_primary_color"
+                      ],
+                      "lastUpdated": "2024-12-03T19:56Z"
+                    },
+                    {
+                      "href": "https://a.espncdn.com/guid/053868c7-8bff-5edb-3cb6-f5490f33ef99/logos/secondary_logo_on_secondary_color.png",
+                      "width": 4096,
+                      "height": 4096,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "secondary_logo_on_secondary_color"
+                      ],
+                      "lastUpdated": "2024-12-03T19:56Z"
+                    }
+                  ],
+                  "links": [
+                    {
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/_/name/laa/los-angeles-angels",
+                      "text": "Clubhouse"
+                    },
+                    {
+                      "rel": [
+                        "roster",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/roster/_/name/laa/los-angeles-angels",
+                      "text": "Roster"
+                    },
+                    {
+                      "rel": [
+                        "stats",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/stats/_/name/laa/los-angeles-angels",
+                      "text": "Statistics"
+                    },
+                    {
+                      "rel": [
+                        "schedule",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/schedule/_/name/laa",
+                      "text": "Schedule"
+                    },
+                    {
+                      "rel": [
+                        "photos",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/photos/_/name/laa",
+                      "text": "photos"
+                    },
+                    {
+                      "rel": [
+                        "tickets",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.vividseats.com/los-angeles-angels-of-anaheim-tickets--sports-mlb-baseball/performer/29?wsUser=717",
+                      "text": "Tickets"
+                    },
+                    {
+                      "rel": [
+                        "transactions",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/transactions/_/name/laa",
+                      "text": "Transactions"
+                    },
+                    {
+                      "rel": [
+                        "injuries",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/injuries/_/name/laa",
+                      "text": "Injuries"
+                    },
+                    {
+                      "rel": [
+                        "depthchart",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/depth/_/name/laa",
+                      "text": "Depth Chart"
+                    }
+                  ]
+                },
+                "score": {
+                  "value": 2,
+                  "displayValue": "2"
+                },
+                "record": [
+                  {
+                    "id": "615",
+                    "abbreviation": "Game",
+                    "displayName": "Record Year To Date",
+                    "shortDisplayName": "YTD",
+                    "description": "Overall Record",
+                    "type": "total",
+                    "displayValue": "72-90"
+                  },
+                  {
+                    "id": "61533",
+                    "displayName": "Home",
+                    "shortDisplayName": "HOME",
+                    "description": "Home Record",
+                    "type": "home",
+                    "displayValue": "39-42"
+                  },
+                  {
+                    "id": "61534",
+                    "displayName": "Road",
+                    "shortDisplayName": "AWAY",
+                    "description": "Away Record",
+                    "type": "road",
+                    "displayValue": "33-48"
+                  }
+                ]
+              },
+              {
+                "id": "18",
+                "type": "team",
+                "order": 1,
+                "homeAway": "away",
+                "winner": true,
+                "team": {
+                  "id": "18",
+                  "location": "Houston",
+                  "abbreviation": "HOU",
+                  "displayName": "Houston Astros",
+                  "shortDisplayName": "Astros",
+                  "logos": [
+                    {
+                      "href": "https://a.espncdn.com/i/teamlogos/mlb/500/hou.png",
+                      "width": 500,
+                      "height": 500,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "default"
+                      ],
+                      "lastUpdated": "2024-07-01T17:48Z"
+                    },
+                    {
+                      "href": "https://a.espncdn.com/i/teamlogos/mlb/500-dark/hou.png",
+                      "width": 500,
+                      "height": 500,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "dark"
+                      ],
+                      "lastUpdated": "2024-07-01T17:49Z"
+                    },
+                    {
+                      "href": "https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/hou.png",
+                      "width": 500,
+                      "height": 500,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "scoreboard"
+                      ],
+                      "lastUpdated": "2024-07-01T17:48Z"
+                    },
+                    {
+                      "href": "https://a.espncdn.com/i/teamlogos/mlb/500-dark/scoreboard/hou.png",
+                      "width": 500,
+                      "height": 500,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "scoreboard",
+                        "dark"
+                      ],
+                      "lastUpdated": "2024-07-01T17:49Z"
+                    },
+                    {
+                      "href": "https://a.espncdn.com/guid/00a3015f-09ec-1b03-52af-656f5e0a18d5/logos/primary_logo_on_white_color.png",
+                      "width": 4096,
+                      "height": 4096,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "primary_logo_on_white_color"
+                      ],
+                      "lastUpdated": "2024-12-03T19:56Z"
+                    },
+                    {
+                      "href": "https://a.espncdn.com/guid/00a3015f-09ec-1b03-52af-656f5e0a18d5/logos/primary_logo_on_black_color.png",
+                      "width": 4096,
+                      "height": 4096,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "primary_logo_on_black_color"
+                      ],
+                      "lastUpdated": "2024-12-03T19:56Z"
+                    },
+                    {
+                      "href": "https://a.espncdn.com/guid/00a3015f-09ec-1b03-52af-656f5e0a18d5/logos/primary_logo_on_primary_color.png",
+                      "width": 4096,
+                      "height": 4096,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "primary_logo_on_primary_color"
+                      ],
+                      "lastUpdated": "2024-12-03T19:56Z"
+                    },
+                    {
+                      "href": "https://a.espncdn.com/guid/00a3015f-09ec-1b03-52af-656f5e0a18d5/logos/primary_logo_on_secondary_color.png",
+                      "width": 4096,
+                      "height": 4096,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "primary_logo_on_secondary_color"
+                      ],
+                      "lastUpdated": "2024-12-03T19:56Z"
+                    },
+                    {
+                      "href": "https://a.espncdn.com/guid/00a3015f-09ec-1b03-52af-656f5e0a18d5/logos/secondary_logo_on_white_color.png",
+                      "width": 4096,
+                      "height": 4096,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "secondary_logo_on_white_color"
+                      ],
+                      "lastUpdated": "2024-12-03T19:56Z"
+                    },
+                    {
+                      "href": "https://a.espncdn.com/guid/00a3015f-09ec-1b03-52af-656f5e0a18d5/logos/secondary_logo_on_black_color.png",
+                      "width": 4096,
+                      "height": 4096,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "secondary_logo_on_black_color"
+                      ],
+                      "lastUpdated": "2024-12-03T19:56Z"
+                    },
+                    {
+                      "href": "https://a.espncdn.com/guid/00a3015f-09ec-1b03-52af-656f5e0a18d5/logos/secondary_logo_on_primary_color.png",
+                      "width": 4096,
+                      "height": 4096,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "secondary_logo_on_primary_color"
+                      ],
+                      "lastUpdated": "2024-12-03T19:56Z"
+                    },
+                    {
+                      "href": "https://a.espncdn.com/guid/00a3015f-09ec-1b03-52af-656f5e0a18d5/logos/secondary_logo_on_secondary_color.png",
+                      "width": 4096,
+                      "height": 4096,
+                      "alt": "",
+                      "rel": [
+                        "full",
+                        "secondary_logo_on_secondary_color"
+                      ],
+                      "lastUpdated": "2024-12-03T19:56Z"
+                    }
+                  ],
+                  "links": [
+                    {
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/_/name/hou/houston-astros",
+                      "text": "Clubhouse"
+                    },
+                    {
+                      "rel": [
+                        "roster",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/roster/_/name/hou/houston-astros",
+                      "text": "Roster"
+                    },
+                    {
+                      "rel": [
+                        "stats",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/stats/_/name/hou/houston-astros",
+                      "text": "Statistics"
+                    },
+                    {
+                      "rel": [
+                        "schedule",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/schedule/_/name/hou",
+                      "text": "Schedule"
+                    },
+                    {
+                      "rel": [
+                        "photos",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/photos/_/name/hou",
+                      "text": "photos"
+                    },
+                    {
+                      "rel": [
+                        "tickets",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.vividseats.com/houston-astros-tickets--sports-mlb-baseball/performer/358?wsUser=717",
+                      "text": "Tickets"
+                    },
+                    {
+                      "rel": [
+                        "transactions",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/transactions/_/name/hou",
+                      "text": "Transactions"
+                    },
+                    {
+                      "rel": [
+                        "injuries",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/injuries/_/name/hou",
+                      "text": "Injuries"
+                    },
+                    {
+                      "rel": [
+                        "depthchart",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/depth/_/name/hou",
+                      "text": "Depth Chart"
+                    }
+                  ]
+                },
+                "score": {
+                  "value": 6,
+                  "displayValue": "6"
+                },
+                "record": [
+                  {
+                    "id": "615",
+                    "abbreviation": "Game",
+                    "displayName": "Record Year To Date",
+                    "shortDisplayName": "YTD",
+                    "description": "Overall Record",
+                    "type": "total",
+                    "displayValue": "87-75"
+                  },
+                  {
+                    "id": "61533",
+                    "displayName": "Home",
+                    "shortDisplayName": "HOME",
+                    "description": "Home Record",
+                    "type": "home",
+                    "displayValue": "46-35"
+                  },
+                  {
+                    "id": "61534",
+                    "displayName": "Road",
+                    "shortDisplayName": "AWAY",
+                    "description": "Away Record",
+                    "type": "road",
+                    "displayValue": "41-40"
+                  }
+                ]
+              }
+            ],
+            "notes": [],
+            "broadcasts": [
+              {
+                "type": {
+                  "id": "6",
+                  "shortName": "Subscription Package"
+                },
+                "market": {
+                  "id": "3",
+                  "type": "Away"
+                },
+                "media": {
+                  "shortName": "MLB.TV"
+                },
+                "lang": "en",
+                "region": "us",
+                "partnered": false
+              },
+              {
+                "type": {
+                  "id": "1",
+                  "shortName": "TV"
+                },
+                "market": {
+                  "id": "2",
+                  "type": "Home"
+                },
+                "media": {
+                  "shortName": "FanDuel SN West"
+                },
+                "lang": "en",
+                "region": "us",
+                "partnered": false
+              },
+              {
+                "type": {
+                  "id": "1",
+                  "shortName": "TV"
+                },
+                "market": {
+                  "id": "2",
+                  "type": "Home"
+                },
+                "media": {
+                  "shortName": "KCOP"
+                },
+                "lang": "en",
+                "region": "us",
+                "partnered": false
+              },
+              {
+                "type": {
+                  "id": "1",
+                  "shortName": "TV"
+                },
+                "market": {
+                  "id": "3",
+                  "type": "Away"
+                },
+                "media": {
+                  "shortName": "Space City Home Network"
+                },
+                "lang": "en",
+                "region": "us",
+                "partnered": false
+              }
+            ],
+            "status": {
+              "clock": 0,
+              "displayClock": "0:00",
+              "period": 9,
+              "type": {
+                "id": "3",
+                "name": "STATUS_FINAL",
+                "state": "post",
+                "completed": true,
+                "description": "Final",
+                "detail": "Final",
+                "shortDetail": "Final"
+              },
+              "featuredAthletes": [
+                {
+                  "name": "winningPitcher",
+                  "displayName": "Winning Pitcher",
+                  "shortDisplayName": "Win",
+                  "abbreviation": "WP",
+                  "playerId": 5133837,
+                  "athlete": {
+                    "id": "5133837",
+                    "lastName": "Gordon",
+                    "displayName": "Colton Gordon",
+                    "shortName": "C. Gordon",
+                    "links": [
+                      {
+                        "rel": [
+                          "playercard",
+                          "desktop",
+                          "athlete"
+                        ],
+                        "href": "https://www.espn.com/mlb/player/_/id/5133837"
+                      },
+                      {
+                        "rel": [
+                          "stats",
+                          "desktop",
+                          "athlete"
+                        ],
+                        "href": "https://www.espn.com/mlb/player/stats/_/id/5133837/colton-gordon"
+                      },
+                      {
+                        "rel": [
+                          "splits",
+                          "desktop",
+                          "athlete"
+                        ],
+                        "href": "https://www.espn.com/mlb/player/splits/_/id/5133837/colton-gordon"
+                      },
+                      {
+                        "rel": [
+                          "gamelog",
+                          "desktop",
+                          "athlete"
+                        ],
+                        "href": "https://www.espn.com/mlb/player/gamelog/_/id/5133837/colton-gordon"
+                      },
+                      {
+                        "rel": [
+                          "news",
+                          "desktop",
+                          "athlete"
+                        ],
+                        "href": "https://www.espn.com/mlb/player/news/_/id/5133837/colton-gordon"
+                      },
+                      {
+                        "rel": [
+                          "bio",
+                          "desktop",
+                          "athlete"
+                        ],
+                        "href": "https://www.espn.com/mlb/player/bio/_/id/5133837/colton-gordon"
+                      },
+                      {
+                        "rel": [
+                          "overview",
+                          "desktop",
+                          "athlete"
+                        ],
+                        "href": "https://www.espn.com/mlb/player/_/id/5133837/colton-gordon"
+                      },
+                      {
+                        "rel": [
+                          "batvspitch",
+                          "desktop",
+                          "athlete"
+                        ],
+                        "href": "https://www.espn.com/mlb/player/batvspitch/_/id/5133837/colton-gordon"
+                      }
+                    ]
+                  },
+                  "team": {
+                    "id": "18",
+                    "name": "Astros"
+                  }
+                },
+                {
+                  "name": "losingPitcher",
+                  "displayName": "Losing Pitcher",
+                  "shortDisplayName": "Loss",
+                  "abbreviation": "LP",
+                  "playerId": 5221123,
+                  "athlete": {
+                    "id": "5221123",
+                    "lastName": "Aldegheri",
+                    "displayName": "Sam Aldegheri",
+                    "shortName": "S. Aldegheri",
+                    "links": [
+                      {
+                        "rel": [
+                          "playercard",
+                          "desktop",
+                          "athlete"
+                        ],
+                        "href": "https://www.espn.com/mlb/player/_/id/5221123"
+                      },
+                      {
+                        "rel": [
+                          "stats",
+                          "desktop",
+                          "athlete"
+                        ],
+                        "href": "https://www.espn.com/mlb/player/stats/_/id/5221123/sam-aldegheri"
+                      },
+                      {
+                        "rel": [
+                          "splits",
+                          "desktop",
+                          "athlete"
+                        ],
+                        "href": "https://www.espn.com/mlb/player/splits/_/id/5221123/sam-aldegheri"
+                      },
+                      {
+                        "rel": [
+                          "gamelog",
+                          "desktop",
+                          "athlete"
+                        ],
+                        "href": "https://www.espn.com/mlb/player/gamelog/_/id/5221123/sam-aldegheri"
+                      },
+                      {
+                        "rel": [
+                          "news",
+                          "desktop",
+                          "athlete"
+                        ],
+                        "href": "https://www.espn.com/mlb/player/news/_/id/5221123/sam-aldegheri"
+                      },
+                      {
+                        "rel": [
+                          "bio",
+                          "desktop",
+                          "athlete"
+                        ],
+                        "href": "https://www.espn.com/mlb/player/bio/_/id/5221123/sam-aldegheri"
+                      },
+                      {
+                        "rel": [
+                          "overview",
+                          "desktop",
+                          "athlete"
+                        ],
+                        "href": "https://www.espn.com/mlb/player/_/id/5221123/sam-aldegheri"
+                      },
+                      {
+                        "rel": [
+                          "batvspitch",
+                          "desktop",
+                          "athlete"
+                        ],
+                        "href": "https://www.espn.com/mlb/player/batvspitch/_/id/5221123/sam-aldegheri"
+                      }
+                    ]
+                  },
+                  "team": {
+                    "id": "3",
+                    "name": "Angels"
+                  }
+                }
+              ],
+              "halfInning": 17,
+              "periodPrefix": "End"
+            }
+          }
+        ],
+        "links": [
+          {
+            "language": "en-US",
+            "rel": [
+              "summary",
+              "desktop",
+              "event"
+            ],
+            "href": "https://www.espn.com/mlb/game/_/gameId/401697335/astros-angels",
+            "text": "Gamecast",
+            "shortText": "Summary",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "summary",
+              "sportscenter",
+              "app",
+              "event"
+            ],
+            "href": "sportscenter://x-callback-url/showGame?sportName=baseball&leagueAbbrev=mlb&gameId=401697335",
+            "text": "Gamecast",
+            "shortText": "Summary",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "now",
+              "desktop",
+              "event"
+            ],
+            "href": "https://www.espn.com/mlb/game/_/gameId/401697335",
+            "text": "Now",
+            "shortText": "Now",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "teamstats",
+              "desktop",
+              "event"
+            ],
+            "href": "https://www.espn.com/mlb/matchup?gameId=401697335",
+            "text": "Team Stats",
+            "shortText": "Team Stats",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "boxscore",
+              "desktop",
+              "event"
+            ],
+            "href": "https://www.espn.com/mlb/boxscore/_/gameId/401697335",
+            "text": "Box Score",
+            "shortText": "Box Score",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "boxscore",
+              "sportscenter",
+              "app",
+              "event"
+            ],
+            "href": "sportscenter://x-callback-url/showGame?sportName=baseball&leagueAbbrev=mlb&gameId=401697335",
+            "text": "Box Score",
+            "shortText": "Box Score",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "gamecast",
+              "desktop",
+              "event"
+            ],
+            "href": "https://www.espn.com/mlb/game/_/gameId/401697335",
+            "text": "Gamecast",
+            "shortText": "Gamecast",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "gamecast",
+              "mobile",
+              "event"
+            ],
+            "href": "http://m.espn.com/mlb/gamecast?gameId=401697335&action=summary",
+            "text": "Gamecast",
+            "shortText": "Gamecast",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "gamecast",
+              "sportscenter",
+              "app",
+              "event"
+            ],
+            "href": "sportscenter://x-callback-url/showGame?sportName=baseball&leagueAbbrev=mlb&gameId=401697335",
+            "text": "Gamecast",
+            "shortText": "Gamecast",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "recap",
+              "desktop",
+              "event"
+            ],
+            "href": "https://www.espn.com/mlb/recap?gameId=401697335",
+            "text": "Recap",
+            "shortText": "Recap",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "pbp",
+              "desktop",
+              "event"
+            ],
+            "href": "https://www.espn.com/mlb/playbyplay/_/gameId/401697335",
+            "text": "Play-by-Play",
+            "shortText": "Play-by-Play",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "videos",
+              "desktop",
+              "event"
+            ],
+            "href": "https://www.espn.com/mlb/video?gameId=401697335",
+            "text": "Videos",
+            "shortText": "Videos",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "odds",
+              "desktop",
+              "event"
+            ],
+            "href": "https://www.espn.com/mlb/odds/_/gameId/401697335",
+            "text": "Odds",
+            "shortText": "Odds",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "odds",
+              "mobile",
+              "event"
+            ],
+            "href": "https://m.espn.com/mlb/odds/_/gameId/401697335",
+            "text": "Odds",
+            "shortText": "Odds",
+            "isExternal": false,
+            "isPremium": false
+          }
+        ]
+      }
+    ],
+    "standingSummary": "5th in AL West"
+  }
+}

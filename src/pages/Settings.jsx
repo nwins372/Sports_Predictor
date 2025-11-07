@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import NavBar from "../components/NavBar";
 import ScheduleBar from "../components/ScheduleBar";
 import ColorThemeSelector from "../components/ColorThemeSelector";
 import { ThemeContext } from '../context/ThemeContext';
@@ -59,7 +58,6 @@ export default function Settings() {
 
   return (
     <div id="app-container">
-      <NavBar />
       <ScheduleBar />
 
       <div className="container settings-page">

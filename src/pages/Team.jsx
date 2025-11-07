@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import NavBar from '../components/NavBar';
 import espnApi from '../utils/espnApi';
 import './Team.css';
 import FollowButton from '../components/FollowButton';
@@ -112,10 +111,7 @@ export default function Team() {
   }, [team, rosterEntries, abbr]);
 
   if (!team) return (
-    <>
-      <NavBar />
-      <div className="team-page">Loading team {abbr}…</div>
-    </>
+    <div className="team-page">Loading team {abbr}…</div>
   );
 
   const detail = team?.detail || team;
@@ -213,9 +209,7 @@ export default function Team() {
   };
 
   return (
-    <>
-      <NavBar />
-      <div className="team-page">
+    <div className="team-page">
       <div className="team-hero">
         {logo ? (
           <img src={logo} alt={`${name} logo`} className="team-logo" onError={() => setLogoError(true)} />
@@ -247,6 +241,5 @@ export default function Team() {
 
         <div className="team-debug">Loaded from checked-in JSON (debug output hidden in production)</div>
       </div>
-    </>
-  );
+    );
 }

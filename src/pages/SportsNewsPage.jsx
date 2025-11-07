@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from "react";
-import NavBar from "../components/NavBar";  
 import "./SportsNewsPage.css";
 import ScheduleBar from "../components/ScheduleBar";
 import { supabase } from "../supabaseClient";
@@ -294,7 +293,6 @@ function SportsNewsPage() {
 
   return (
     <>
-      <NavBar />   
       <ScheduleBar />
       <div className="container mt-5">
         <h2

@@ -9,9 +9,11 @@ import mlbSchedule from './mlb25.json' assert { type: 'json' }
 
 import { XMLParser } from "fast-xml-parser";
 
+// Read and parse ESPN RSS feed
 const espnRSS = "https://www.espn.com/espn/rss/news";
 
 const fetchESPNNews = async () => {
+  // Fetch the RSS feed
   const res = await fetch(espnRSS, {
     headers: { "User-Agent": "Mozilla/5.0 (EdgeFunction)" }
   });
@@ -55,6 +57,7 @@ try {
   espnNews = [];
 }
 
+// Template for ESPN news feed
 const newsBlock = espnNews.length ? `
   <div style="margin-top:24px; border-top:1px solid #374151; padding-top:16px;">
     <h3 style="margin:0 0 12px; font-size:18px; color:#F3F4F6; text-align:center;">Top ESPN Headlines</h3>
@@ -100,11 +103,10 @@ const ymdLocal = (d) => {
   const pad = (n) => String(n).padStart(2, "0");
   return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
 };
-
+// Filter games based on user preferences
 const filterGamesForUser = (allUpcomingGames: any[], sportsPrefs: string[] | null, favoriteTeams: { [key: string]: string[] } | null): any[] => {
     const gamesToFilter = Array.isArray(allUpcomingGames) ? allUpcomingGames : [];
 
-    // Safely normalize preferences
     const preferredLeagues = (Array.isArray(sportsPrefs) && sportsPrefs.length > 0)
         ? sportsPrefs.map(s => String(s || '').toUpperCase()).filter(Boolean) 
         : null; // If null, user hasn't specified leagues, so show all leagues initially
@@ -225,8 +227,8 @@ Deno.serve(async (req) => {
                 console.warn(`[Edge Function] Skipping user ${user.id}: Missing email.`);
                 continue;
             }
-            // Preferences might be an array if multiple rows match (shouldn't happen with 1-to-1)
-            // Or null if no preferences row exists (filtered by .not() above, but good practice to check)
+            // Preferences might be an array if multiple rows match 
+            // Or null if no preferences row exists 
             const prefs = user.user_preferences ? (Array.isArray(user.user_preferences) ? user.user_preferences[0] : user.user_preferences) : {};
 
             const userEmail = user.email;
@@ -267,7 +269,12 @@ Deno.serve(async (req) => {
                 const away = game.AwayTeam || game.awayTeam || "Away Team";
                 const home = game.HomeTeam || game.homeTeam || "Home Team";
                 gamesHtml += `
-                  <li style="font-size: 15px; padding: 12px 16px; border-bottom: 1px solid #374151; background-color: #111827; display: flex; align-items: center; justify-content: space-between;">
+                  <li style="font-size: 15px; 
+                  padding: 12px 16px; 
+                  border-bottom: 1px solid #374151; 
+                  background-color: #111827; display: flex; 
+                  align-items: center; 
+                  justify-content: space-between;">
                     <span style="color: #D1D5DB;">
                       <strong style="color: #F9FAFB; background-color: #374151; padding: 3px 6px; border-radius: 4px; font-size: 12px; margin-right: 8px;">${game.league || 'SPORT'}</strong>
                       ${away} at ${home}
@@ -277,11 +284,20 @@ Deno.serve(async (req) => {
             }
 
              const finalEmailHtml = `
-               <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #111827;">
+               <body style="margin: 0; padding: 0; background-color: #111827;">
                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
                    <tr>
                      <td style="padding: 20px 0;">
-                       <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.4); background-color: #1F2937; color: #D1D5DB;">
+                       <table align="center" border="0" 
+                       cellpadding="0" 
+                       cellspacing="0" 
+                       width="600" 
+                       style="border-collapse: collapse; 
+                       border-radius: 8px; 
+                       overflow: hidden; 
+                       box-shadow: 0 4px 15px rgba(0,0,0,0.4); 
+                       background-color: #1F2937; 
+                       color: #D1D5DB;">
                          <tr>
                            <td align="center" style="background-color: #0b1220; padding: 30px 20px; color: #ffffff;">
                              <h1 style="margin: 0; font-size: 28px; font-weight: 600; background: linear-gradient(135deg, #b91c1c); padding: 6px 12px;">Sports Predictor</h1>
@@ -324,7 +340,7 @@ Deno.serve(async (req) => {
                 console.log(`[Edge Function] Sent personalized digest to ${userEmail}`);
             } catch (emailError) {
                 console.error(`[Edge Function] Failed to send email to ${userEmail}:`, emailError);
-                // Optional: Implement retry logic or logging to a monitoring service
+              
             }
         }
 

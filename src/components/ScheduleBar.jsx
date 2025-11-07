@@ -40,14 +40,12 @@ const logoMap = {
 };
 
 const ymd = (d) => d.toISOString().slice(0, 10);
-// keep this if your JSON is UTC or has a trailing Z
 const parseUtc = (s) => {
   const t = s.replace(" ", "T");
   // If no timezone info, assume UTC by appending Z
   return new Date(/[zZ]|[+\-]\d\d:?\d\d$/.test(t) ? t : t + "Z");
 };
 
-// local YYYY-MM-DD
 const ymdLocal = (d) => {
   const pad = (n) => String(n).padStart(2, "0");
   return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
@@ -321,7 +319,7 @@ export default function ScheduleBar() {
     return gameCards;
   }, [sport, filterState, userPrefs.favorite_teams]);
 
-  const key = ymdLocal(selected);
+  const key = ymdLocal(selected); // adjust for local timezone
   const games = processGames[key] || [];
 
   function renderGameCard(g, sportKey) {
