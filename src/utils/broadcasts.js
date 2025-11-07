@@ -43,14 +43,14 @@ export const getBroadcastInfo = (game, sport) => {
       if (dayOfWeek === 5) return ['espn', 'rsn'];
       if (dayOfWeek === 0) return ['abc', 'rsn'];
       // For non-national games, it's either RSN or League Pass
-      return "NBA"; 
+      return ["NBA"]; 
 
     case "mlb":
       if (dayOfWeek === 5) return ['apple_tv'];
       // Saturday games on FOX are often exclusive, but we can add RSN as a possibility
       if (dayOfWeek === 6) return ['fox', 'rsn']; 
       if (dayOfWeek === 0) return ['espn', 'rsn']; 
-      return "Local RSN / MLB.TV"; 
+      return ['mlb']; 
 
     default:
       return "N/A";
