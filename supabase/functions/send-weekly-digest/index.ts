@@ -284,7 +284,7 @@ Deno.serve(async (req) => {
             }
 
              const finalEmailHtml = `
-               <body style="margin: 0; padding: 0; background-color: #111827;">
+               <body style="margin: 0; padding: 0; background-color: #111827; font-family: Arial, sans-serif;">
                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
                    <tr>
                      <td style="padding: 20px 0;">
