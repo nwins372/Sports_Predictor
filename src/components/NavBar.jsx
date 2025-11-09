@@ -331,8 +331,10 @@ const navigate = useNavigate();
         <Link to="/following" className="nav-link" id="following">Following</Link>
         <Link to="/statistics" className="nav-link" id="statistics">Statistics</Link>
   <Link to="/mock-draft" className="nav-link" id="mock-draft">Mock Draft</Link>
+        <Link to="/trade-machine" className="nav-link" id="trade-machine">Trade Machine</Link>
+  <Link to="/transactions" className="nav-link" id="transactions">Transactions</Link>
         <Link to="/sports-news" className="nav-link">Sports News</Link>
-        {!session && <Link to="/login" id="login-button">Login</Link>}
+  {/* login is shown in the right area for consistent placement */}
         <Link to="/schedules" className="nav-link">Schedules</Link>
         <button className="nav-link icon-placeholder" id="search" onClick={() => { setShowSearch(s => !s); setTimeout(() => inputRef.current?.focus(), 50); }} aria-haspopup="true" aria-expanded={showSearch} aria-label="Search">
           <img src={mg} alt="Search Icon" width="26" height="26" />
@@ -430,11 +432,11 @@ const navigate = useNavigate();
 
     {/* Signout Button if logged in */}
       <div className="navbar-right">
-          {session && ( <button onClick={async () => { await supabase.auth.signOut();}} className="nav-link"> Logout </button>
-  )}
+          {!session && <Link to="/login" id="login-button" className="nav-link">Login</Link>}
+          {session && ( <button onClick={async () => { await supabase.auth.signOut();}} className="nav-link"> Logout </button> )}
 
-  {/* Profile link shown always */}
-  { session && <Link to="/profile" className="nav-link" id="profile">Profile</Link> }
+          {/* Profile link shown when logged in */}
+          { session && <Link to="/profile" className="nav-link" id="profile">Profile</Link> }
         {/* Settings link always available */}
         <Link to="/settings" className="nav-link" id="settings">Settings</Link>
       </div>

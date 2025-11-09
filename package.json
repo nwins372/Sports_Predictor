@@ -30,6 +30,7 @@
     "update-nfl": "node scripts/fetch_espn_teams.js --league=nfl",
     "update-mlb": "node scripts/fetch_espn_teams.js --league=mlb",
     "fetch-prospects": "node scripts/fetch_nba2026_prospects.js"
+    ,"fetch-espn-salaries": "node scripts/fetch_espn_salaries.js"
   },
   "eslintConfig": {
     "extends": [

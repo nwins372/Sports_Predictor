@@ -1,0 +1,26 @@
+.transactions-page { padding: 18px; max-width:1100px; margin:0 auto; }
+.transaction-row { display:flex; gap:16px; padding:14px; border-bottom:1px solid var(--surface-border); align-items:flex-start; background:var(--surface); border-radius:8px; margin-bottom:10px; box-shadow: var(--card-shadow); }
+.tx-left { width:160px; color:var(--muted); display:flex; flex-direction:column; gap:6px; }
+.tx-date { font-size:13px; }
+.tx-action { font-weight:700; background: rgba(0,0,0,0.04); padding:6px 8px; border-radius:6px; display:inline-block; }
+.tx-body { flex:1; }
+.player-headshot-small, .team-logo-small { width:56px; height:56px; border-radius:8px; object-fit:cover; }
+.player-headshot-small.placeholder, .team-logo-small.placeholder { background:var(--toggle-bg); width:56px; height:56px; border-radius:8px; }
+.trade-box { display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+.trade-team { text-align:center; min-width:90px; }
+.trade-players { display:flex; gap:12px; margin-left:8px; flex-wrap:wrap; }
+.player-headshot-small { border:1px solid var(--surface-border); }
+.player-name { font-weight:600; }
+.tx-badge { position:absolute; right:-8px; bottom:-8px; background:#fff; border-radius:50%; width:22px; height:22px; display:flex; align-items:center; justify-content:center; font-weight:700; box-shadow: var(--card-shadow); }
+.tx-badge.add { background: #16a34a; color:#fff; }
+.tx-badge.cut { background: #dc2626; color:#fff; }
+.follow-btn { background:var(--accent); color:#fff; border:none; padding:8px 10px; border-radius:8px; cursor:pointer; }
+.follow-btn:hover { opacity:0.95; }
+.tx-right { display:flex; gap:8px; align-items:center; }
+.injury-card { border:1px solid var(--surface-border); padding:10px; margin-bottom:8px; background:var(--surface); border-radius:8px; }
+
+@media (max-width: 800px) {
+	.transaction-row { flex-direction:column; }
+	.tx-left { width:100%; flex-direction:row; justify-content:space-between; }
+	.tx-right { align-self:flex-end; }
+}
