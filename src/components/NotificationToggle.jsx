@@ -118,6 +118,7 @@ export default function NotificationToggle({ session }) {
             disabled={loading || saving}
           >
             <option value="daily">Daily</option>
+            <option value="weekly_son">Every Sunday</option>
             <option value="weekly_mon">Every Monday</option>
           </select>
         </label>
