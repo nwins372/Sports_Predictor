@@ -20,6 +20,7 @@ import nflLogo from "../assets/NFL_logo.png";
 import nbaLogo from "../assets/NBA_logo.png";
 import appletvLogo from "../assets/appletv_logo.png";
 import cbsLogo from "../assets/CBS_logo.png";
+import mlb_logo from "../assets/mlb_logo.png";
 
 // Logo Mapping
 const logoMap = {
@@ -34,7 +35,8 @@ const logoMap = {
   cbs: cbsLogo,
   apple_tv: appletvLogo,
   NBA: nbaLogo,
-  rsn: nbaLogo
+  rsn: nbaLogo,
+  mlb: mlb_logo
 };
 
 const ymd = (d) => d.toISOString().slice(0, 10);
@@ -68,7 +70,8 @@ function buildBroadcastUrl(key) {
     apple_tv: 'https://tv.apple.com',
     nba: 'https://www.nba.com/watch',
     nfl: 'https://www.nfl.com/',
-    rsn: 'https://www.nba.com/schedule'
+    rsn: 'https://www.nba.com/schedule',
+    mlb: 'https://www.mlb.com/live-stream-games'
   };
   return map[name] || null;
 }
@@ -322,7 +325,8 @@ export default function ScheduleBar() {
   function renderGameCard(g, sportKey) {
     const broadcastInfo = getBroadcastInfo(g, sportKey);
     return (
-      <a key={g.id} href={`/game/${sportKey}/${g.id}`} className="sb-card">
+      // <a key={g.id} href={`/game/${sportKey}/${g.id}`} className="sb-card"></a>
+      <a key={g.id} className="sb-card">
         <div className="sb-card-top">
           <div className="sb-teams">
             <div className="sb-team">{g.awayTeam}</div>

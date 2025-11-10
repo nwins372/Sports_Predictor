@@ -50,7 +50,7 @@ export const getBroadcastInfo = (game, sport) => {
       // Saturday games on FOX are often exclusive, but we can add RSN as a possibility
       if (dayOfWeek === 6) return ['fox', 'rsn']; 
       if (dayOfWeek === 0) return ['espn', 'rsn']; 
-      return "Local RSN / MLB.TV"; 
+      return ['mlb']; 
 
     default:
       return "N/A";
