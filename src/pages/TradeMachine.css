@@ -1,0 +1,58 @@
+.trade-container {
+  padding: 20px;
+}
+.trade-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.team-panel {
+  flex: 1 1 420px;
+  border: 1px solid var(--muted-border, #ddd);
+  padding: 12px;
+  border-radius: 6px;
+  background: var(--panel-bg, #fff);
+}
+.team-panel label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.team-panel select {
+  width: 100%;
+  padding: 6px 8px;
+  margin-bottom: 8px;
+}
+.roster { margin-top: 8px; }
+.roster-list { list-style: none; padding: 0; margin: 0; max-height: 420px; overflow: auto; }
+.roster-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-bottom: 1px solid #f0f0f0;
+  min-height: 56px;
+}
+.roster-item.selected { background: rgba(0,128,0,0.06); border-left:4px solid var(--accent, #0b5ed7); padding-left:8px; }
+.player-left { flex: 1 1 auto; min-width: 0; }
+.player-name { font-weight:600; color: var(--text, #111); margin-bottom:2px; word-break:break-word; }
+/* Ensure this page's player-name wins over any global .player-name rules (e.g. dark-themed pages) */
+.team-panel .player-name { color: var(--text, #111) !important; }
+.player-meta { color: var(--muted, #666); font-size: 12px; }
+.player-actions { display:flex; gap:8px; align-items:center; flex-shrink:0; }
+.player-actions button { padding:6px 10px; border-radius:4px; background:var(--accent, #0b5ed7); color:white; border:none; cursor:pointer; white-space:nowrap; }
+.player-actions button:hover { opacity:0.95; }
+.player-salary { font-size: 13px; color:var(--muted, #666); min-width:110px; text-align:right; }
+.roster-table { width: 100%; border-collapse: collapse; max-height: 420px; overflow: auto; display: table; }
+.roster-table thead th { text-align: left; font-size: 13px; padding: 8px 10px; border-bottom: 1px solid #e6e6e6; color: var(--muted, #666); }
+.team-panel, .roster-table td, .roster-table th { color: var(--text, #111); }
+.roster-table tbody tr { border-bottom: 1px solid #f0f0f0; }
+.roster-table tbody tr.selected { background: rgba(0,128,0,0.04); }
+.roster-table td { padding: 10px; vertical-align: middle; }
+.player-salary { font-size: 13px; color:var(--muted, #666); text-align:right; white-space:nowrap; }
+.roster-table button { padding:6px 10px; border-radius:4px; background:var(--accent, #0b5ed7); color:white; border:none; cursor:pointer; }
+.trade-summary { margin-top: 10px; font-size: 14px; }
+.verdict { margin-top: 18px; padding: 12px; border-radius:6px; border:1px solid #eee; background: #fafafa; }
+.allowed { color: #0a7a07; font-weight:600; }
+.disallowed { color: #a10000; font-weight:600; }
+.sb-state { padding:12px; color:var(--muted); }

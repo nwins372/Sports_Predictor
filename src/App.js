@@ -8,7 +8,10 @@ import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import Team from './pages/Team';
 import Player from './pages/Player';
+import Transactions from './pages/Transactions';
+import Following from './pages/Following';
 import MockDraft from './pages/MockDraft';
+import TradeMachine from './pages/TradeMachine';
 import NavBar from './components/NavBar';
 import { ThemeProvider } from './context/ThemeContext';
 import { supabase } from './supabaseClient';
@@ -61,6 +64,9 @@ useEffect(() => {
       {/* backward-compatible route (no league) */}
       <Route path="/player/:id" element={<Player />} />
   <Route path="/mock-draft" element={<MockDraft />} />
+  <Route path="/trade-machine" element={<TradeMachine />} />
+  <Route path="/transactions" element={<Transactions />} />
+  <Route path="/following" element={<Following />} />
       <Route path="/settings" element={<Settings />} />
       <Route path="/sports-news" element={<SportsNewsPage />} />
       <Route path="/schedules" element={<Schedules />} />

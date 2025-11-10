@@ -63,10 +63,11 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);    
 }
 
+/* Login button: use theme variables so it's visible in light and dark themes */
 #login-button{
   background: transparent;
-  color: white;
-  border: 1px solid white;
+  color: var(--text);
+  border: 1px solid var(--surface-border);
   padding: 6px 10px;
   border-radius: 8px;
   cursor: pointer;
@@ -93,8 +94,8 @@
 .icon-placeholder:focus, .icon-placeholder:active { outline: 2px solid rgba(99,102,241,0.24); box-shadow: 0 6px 18px rgba(15,23,42,0.12); }
 .navbar-right button{
   background: transparent;
-  color: white;
-  border: 1px solid white;
+  color: var(--text);
+  border: 1px solid var(--surface-border);
   padding: 6px 10px;
   border-radius: 8px;
   cursor: pointer;

@@ -18,3 +18,23 @@
 .team-link { color:inherit; text-decoration:none; display:inline-flex; align-items:center }
 .free-agent { color:var(--muted); display:inline-flex; align-items:center }
 .league-badge { background:var(--surface); border:1px solid var(--surface-border); padding:2px 6px; margin-right:8px; border-radius:4px; font-size:12px }
+
+/* Athlete overview enhancements */
+.player-overview { margin-top:16px; background:var(--surface); padding:12px; border-radius:6px; border:1px solid var(--surface-border) }
+.overview-grid { display:flex; gap:16px; align-items:flex-start }
+.overview-left { flex:1 }
+.overview-right { width:220px; text-align:left }
+.overview-section { margin-top:12px }
+.contracts-list { display:flex; flex-direction:column; gap:6px; margin-top:8px }
+.contract-row { display:flex; gap:12px; justify-content:space-between; padding:6px; background:rgba(255,255,255,0.02); border-radius:6px }
+.seasons-list { display:flex; flex-direction:column; gap:10px; margin-top:8px }
+.season-item { background:rgba(255,255,255,0.015); padding:8px; border-radius:6px }
+.season-title { font-weight:600; margin-bottom:6px }
+.overview-season-table { width:100%; border-collapse:collapse; font-size:13px }
+.overview-season-table th { text-align:left; padding:6px 8px; border-bottom:1px solid rgba(255,255,255,0.04); color:var(--muted) }
+.overview-season-table td { padding:6px 8px; border-bottom:1px solid rgba(255,255,255,0.02) }
+.player-headshot.small { width:90px; height:90px; border-radius:6px; object-fit:cover }
+.toggle-raw { margin-top:8px; padding:6px 10px; background:transparent; border:1px solid var(--surface-border); border-radius:6px; cursor:pointer }
+.raw-json { max-height:360px; overflow:auto; background:#0b0b0b; color:#ddd; padding:8px; border-radius:6px; margin-top:8px }
+.stat-key { color:var(--muted); width:40% }
+.stat-val { text-align:right }

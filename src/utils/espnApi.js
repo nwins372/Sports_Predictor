@@ -764,11 +764,86 @@ async function getPlayerFull(league = 'nba', idOrQuery) {
 }
 
 // Fetch athlete overview from the site.web.api endpoint (useful for NFL athletes)
+// Implementation is defined later in this file (kept after helper functions).
+// See the `getAthleteOverview` function implementation further below.
+
+// Fetch athlete stat splits from site.web.api (canonical splits endpoint)
+async function getPlayerSplits(league = 'nfl', athleteId) {
+  try {
+    if (!athleteId) return null;
+    const leagueBaseMap = {
+      nfl: 'https://site.web.api.espn.com/apis/common/v3/sports/football/nfl',
+      nba: 'https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba',
+      mlb: 'https://site.web.api.espn.com/apis/common/v3/sports/baseball/mlb',
+      nhl: 'https://site.web.api.espn.com/apis/common/v3/sports/hockey/nhl'
+    };
+    const base = leagueBaseMap[(league || '').toLowerCase()] || leagueBaseMap.nfl;
+    const url = `${base}/athletes/${encodeURIComponent(athleteId)}/splits`;
+    const raw = await _fetchWithCache(url, 1000 * 60 * 10);
+    return raw || null;
+  } catch (e) { return null; }
+}
+
+// Fetch athlete gamelog from site.web.api
+async function getPlayerGamelog(league = 'nfl', athleteId) {
+  try {
+    if (!athleteId) return null;
+    const leagueBaseMap = {
+      nfl: 'https://site.web.api.espn.com/apis/common/v3/sports/football/nfl',
+      nba: 'https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba',
+      mlb: 'https://site.web.api.espn.com/apis/common/v3/sports/baseball/mlb',
+      nhl: 'https://site.web.api.espn.com/apis/common/v3/sports/hockey/nhl'
+    };
+    const base = leagueBaseMap[(league || '').toLowerCase()] || leagueBaseMap.nfl;
+    const url = `${base}/athletes/${encodeURIComponent(athleteId)}/gamelog`;
+    const raw = await _fetchWithCache(url, 1000 * 60 * 10);
+    return raw || null;
+  } catch (e) { return null; }
+}
+
+// Fetch fantasy/news API (ESPN fantasy news for players)
+async function getPlayerFantasyNews(playerId, limit = 50) {
+  try {
+    if (!playerId) return [];
+    const url = `https://site.api.espn.com/apis/fantasy/v2/games/ffl/news/players?limit=${Number(limit || 50)}&playerId=${encodeURIComponent(playerId)}`;
+    const raw = await _fetchWithCache(url, 1000 * 60 * 10);
+    // try to normalize structure: raw?.players?.[playerId]?.news or raw?.items
+    const items = [];
+    try {
+      if (raw && raw.items && Array.isArray(raw.items)) {
+        for (const it of raw.items) {
+          const title = it?.headline || it?.title || it?.displayName || null;
+          const urlLink = it?.links?.web?.href || it?.link || it?.url || null;
+          const published = it?.lastModified || it?.date || it?.published || null;
+          const summary = it?.summary || it?.description || null;
+          if (title && urlLink) items.push({ title, url: urlLink, published, summary, raw: it });
+        }
+      } else if (raw && raw.players && raw.players[String(playerId)] && Array.isArray(raw.players[String(playerId)].news)) {
+        for (const it of raw.players[String(playerId)].news) {
+          const title = it?.headline || it?.title || null;
+          const urlLink = it?.link || (it?.links && it.links.web && it.links.web.href) || null;
+          const published = it?.lastModified || it?.date || null;
+          const summary = it?.summary || null;
+          if (title && urlLink) items.push({ title, url: urlLink, published, summary, raw: it });
+        }
+      }
+    } catch (e) {}
+    return items.slice(0, limit);
+  } catch (e) { return []; }
+}
+
+// athlete overview implementation
 async function getAthleteOverview(league = 'nfl', athleteId) {
   try {
-    // Only NFL currently supported for this endpoint shape
     if (!athleteId) return null;
-    const base = 'https://site.web.api.espn.com/apis/common/v3/sports/football/nfl';
+    // support multiple leagues: prefer site.web.api athlete overview path for each sport
+    const leagueBaseMap = {
+      nfl: 'https://site.web.api.espn.com/apis/common/v3/sports/football/nfl',
+      nba: 'https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba',
+      mlb: 'https://site.web.api.espn.com/apis/common/v3/sports/baseball/mlb',
+      nhl: 'https://site.web.api.espn.com/apis/common/v3/sports/hockey/nhl'
+    };
+    const base = leagueBaseMap[(league || '').toLowerCase()] || 'https://site.web.api.espn.com/apis/common/v3/sports/football/nfl';
     const url = `${base}/athletes/${encodeURIComponent(athleteId)}/overview`;
     const raw = await _fetchWithCache(url, 1000 * 60 * 10);
     if (!raw) return null;
@@ -941,5 +1016,186 @@ async function getAthleteOverview(league = 'nfl', athleteId) {
   }
 }
 
-const espnApi = { listTeams, getTeam, getTeamRoster, buildLocalPlayerIndex, searchPlayersLocal, getPlayerLocalById, getPlayer, searchPlayers, searchSite, getPlayerNews, getPlayerContracts, getPlayerFull, getAthleteOverview };
-module.exports = espnApi;
+const espnApi = { listTeams, getTeam, getTeamRoster, buildLocalPlayerIndex, searchPlayersLocal, getPlayerLocalById, getPlayer, searchPlayers, searchSite, getPlayerNews, getPlayerContracts, getPlayerFull, getAthleteOverview, getPlayerSplits, getPlayerGamelog, getPlayerFantasyNews };
+export default espnApi;
+
+// Transactions and injuries helpers
+// Try a few candidate ESPN endpoints and normalize results to {type, date, players: [{id,name,headshot,team}], teams: [{id,slug,name,logo}], action: 'add'|'cut'|'trade'|'waive'|'release'|..., raw}
+async function getTransactions(league = 'nfl', sinceTimestamp = null, limit = 200) {
+  try {
+    const baseMap = {
+      nfl: 'https://site.api.espn.com/apis/fantasy/v2',
+      nba: 'https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba'
+    };
+    // Candidate endpoints (prefer canonical v2 core API when available)
+    const candidates = [];
+    // canonical v2 core API (user-provided): /v2/sports/{sport}/leagues/{league}/transactions
+    const sportMap = { nfl: 'football', nba: 'basketball', mlb: 'baseball', nhl: 'hockey' };
+    try {
+      const sport = sportMap[(league || '').toLowerCase()] || 'football';
+      candidates.push(`https://sports.core.api.espn.com/v2/sports/${sport}/leagues/${encodeURIComponent((league || '').toLowerCase())}/transactions`);
+    } catch (e) {}
+    // common v3 transactions (per league)
+    if (league === 'nfl' || league === 'nba' || league === 'mlb' || league === 'nhl') {
+      const cbase = `https://site.web.api.espn.com/apis/common/v3/sports/${league === 'nfl' ? 'football/nfl' : (league === 'nba' ? 'basketball/nba' : (league === 'mlb' ? 'baseball/mlb' : 'hockey/nhl'))}`;
+      candidates.push(`${cbase}/transactions`);
+    }
+    // fantasy transactions endpoint (fallback)
+    candidates.push(`https://site.api.espn.com/apis/fantasy/v2/games/${league === 'nfl' ? 'ffl' : (league === 'nba' ? 'nba' : 'ffl')}/transactions`);
+    // site search for 'transaction' as fallback
+    candidates.push(`https://site.web.api.espn.com/apis/search/v2?query=transaction&limit=50&type=article`);
+
+    for (const url of candidates) {
+      try {
+        const raw = await _fetchWithCache(url, 1000 * 60 * 5);
+        if (!raw) continue;
+        // attempt normalization heuristics
+        // If raw.transactions or raw.items present return normalized list
+        let items = [];
+        if (raw.transactions && Array.isArray(raw.transactions)) items = raw.transactions;
+        else if (raw.items && Array.isArray(raw.items)) items = raw.items;
+        else if (raw.events && Array.isArray(raw.events)) items = raw.events;
+        // try fantasy format
+        else if (raw && raw.players && typeof raw.players === 'object') {
+          // iterate players -> transactions
+          for (const pid of Object.keys(raw.players)) {
+            const node = raw.players[pid];
+            if (node && Array.isArray(node.transactions)) items.push(...node.transactions);
+          }
+        }
+        if (!items || items.length === 0) continue;
+        // normalize - tolerate several shapes incl. v2 core API
+        const normalized = items.slice(0, limit).map(it => {
+          // v2 core: may have attributes like effective, created, published
+          const date = it.effective || it.effectiveDate || it.date || it.timestamp || it.posted || it.created || it.published || null;
+          const players = [];
+          try {
+            // v2 often nests parties/participants
+            if (Array.isArray(it.participants) && it.participants.length) {
+              for (const p of it.participants) {
+                // participant may have role and person reference
+                const person = p.person || p.player || p;
+                players.push({ id: person?.id || person?.personId || person?.playerId || null, name: person?.displayName || person?.fullName || person?.name || p?.name || null, headshot: person?.headshot || person?.photo || person?.images?.[0]?.url || null, team: (p.team && (p.team.displayName || p.team.name)) || person?.team || null });
+              }
+            } else if (it.players && Array.isArray(it.players)) {
+              for (const p of it.players) players.push({ id: p.id || p.playerId || null, name: p.name || p.displayName || p.fullName || null, headshot: p.headshot || p.photo || null, team: (p.team && (p.team.displayName || p.team.name)) || p.team || null });
+            } else if (it.player) {
+              const p = it.player; players.push({ id: p.id || p.playerId || null, name: p.name || p.displayName || p.fullName || null, headshot: p.headshot || p.photo || null, team: (p.team && (p.team.displayName || p.team.name)) || p.team || null });
+            }
+          } catch (e) {}
+          const teams = [];
+          try {
+            if (it.teams && Array.isArray(it.teams)) {
+              for (const t of it.teams) teams.push({ id: t.id || t.teamId || null, slug: t.slug || t.abbreviation || (t.displayName||t.name||'')?.toLowerCase().replace(/\s+/g,'_') || null, name: t.displayName || t.name || null, logo: (t.logos && t.logos[0] && t.logos[0].href) || t.logo || null });
+            } else if (it.team) {
+              const t = it.team; teams.push({ id: t.id || null, slug: t.slug || t.abbreviation || (t.displayName||t.name||'')?.toLowerCase().replace(/\s+/g,'_') || null, name: t.displayName || t.name || null, logo: (t.logos && t.logos[0] && t.logos[0].href) || t.logo || null });
+            } else if (it.parties && Array.isArray(it.parties)) {
+              for (const pty of it.parties) {
+                const t = pty.team || pty;
+                if (t) teams.push({ id: t.id || null, slug: t.slug || (t.displayName||t.name||'')?.toLowerCase().replace(/\s+/g,'_') || null, name: t.displayName || t.name || null, logo: (t.logos && t.logos[0] && t.logos[0].href) || t.logo || null });
+              }
+            }
+          } catch (e) {}
+          // action heuristics from titles/descriptions or explicit type
+          const text = (it.description || it.summary || it.title || it.headline || JSON.stringify(it)).toLowerCase();
+          let action = (it.type || it.action || 'other')?.toString?.().toLowerCase?.() || 'other';
+          if (!action || action === 'other') {
+            if (text.includes('trade')) action = 'trade';
+            else if (text.includes('add') || text.includes('signed') || text.includes('acquired') || text.includes('picked up')) action = 'add';
+            else if (text.includes('cut') || text.includes('waived') || text.includes('released')) action = 'cut';
+          }
+          return { type: 'transaction', date, players, teams, action, text, raw: it };
+        });
+        // sort chronologically (newest first)
+        normalized.sort((a,b) => { const da = new Date(a.date||0).getTime(); const db = new Date(b.date||0).getTime(); return db - da; });
+        return normalized;
+      } catch (e) {
+        continue;
+      }
+    }
+    return [];
+  } catch (e) { return []; }
+}
+
+async function getTeamInjuries(league = 'nfl', teamIdOrSlug) {
+  try {
+    if (!teamIdOrSlug) return [];
+    const base = `https://site.web.api.espn.com/apis/common/v3/sports/${league === 'nfl' ? 'football/nfl' : (league === 'nba' ? 'basketball/nba' : 'football/nfl')}`;
+    const candidates = [`${base}/teams/${encodeURIComponent(teamIdOrSlug)}/injuries`, `${base}/teams/${encodeURIComponent(teamIdOrSlug)}/news`, `${base}/teams/${encodeURIComponent(teamIdOrSlug)}/roster`];
+    for (const url of candidates) {
+      try {
+        const raw = await _fetchWithCache(url, 1000 * 60 * 10);
+        if (!raw) continue;
+        const inj = [];
+        // search for injuries array
+        if (raw.injuries && Array.isArray(raw.injuries)) {
+          for (const i of raw.injuries) inj.push(i);
+        } else if (raw.items && Array.isArray(raw.items)) {
+          for (const it of raw.items) if (it.type && String(it.type).toLowerCase().includes('injury')) inj.push(it);
+        } else if (raw.roster && Array.isArray(raw.roster)) {
+          for (const r of raw.roster) if (r.injury) inj.push(r.injury || r);
+        }
+        if (inj.length) return inj;
+      } catch (e) {}
+    }
+    return [];
+  } catch (e) { return []; }
+}
+
+// Attach new helpers to exported api
+espnApi.getTransactions = getTransactions;
+espnApi.getTeamInjuries = getTeamInjuries;
+
+// Fetch the next upcoming game for a team (attempts schedule/events endpoints)
+async function getTeamNextGame(league = 'nba', teamIdOrSlug) {
+  try {
+    if (!teamIdOrSlug) return null;
+    const base = BASES[league] || BASES['nba'];
+    const candidates = [
+      `${base}/teams/${encodeURIComponent(teamIdOrSlug)}/schedule`,
+      `${base}/teams/${encodeURIComponent(teamIdOrSlug)}/events`,
+      `${base}/teams/${encodeURIComponent(teamIdOrSlug)}`
+    ];
+    for (const url of candidates) {
+      try {
+        const raw = await _fetchWithCache(url, 1000 * 60 * 5);
+        if (!raw) continue;
+        // schedule endpoint may return { events: [...] } or { schedule: { events: [...] } }
+        const events = raw?.events || raw?.schedule?.events || raw?.schedule || raw?.games || null;
+        const now = Date.now();
+        let arr = [];
+        if (Array.isArray(events)) arr = events;
+        else if (events && Array.isArray(events.items)) arr = events.items;
+        // attempt to find the next upcoming event by start date
+        if (arr && arr.length) {
+          const upcoming = arr
+            .map(e => ({
+              raw: e,
+              start: e.date || e.eventDate || e.time || e.startDate || e.startTime || (e.season && e.season.startDate) || null,
+              opponent: (e.opponent && (e.opponent.displayName || e.opponent.name)) || e.opponentName || (e.opponent && e.opponent.abbreviation) || null,
+              venue: e.venue || null
+            }))
+            .filter(x => x.start)
+            .map(x => ({ ...x, ts: new Date(x.start).getTime() }))
+            .filter(x => !isNaN(x.ts))
+            .sort((a,b) => a.ts - b.ts)
+            .find(x => x.ts >= now) || null;
+          if (upcoming) return { start: upcoming.start, opponent: upcoming.opponent, venue: upcoming.venue, raw: upcoming.raw };
+        }
+        // some endpoint shapes include nextEvent/nextGame directly
+        if (raw?.nextEvent) return { start: raw.nextEvent.date || raw.nextEvent.eventDate, opponent: raw.nextEvent.opponent || null, raw: raw.nextEvent };
+        if (raw?.nextGame) return { start: raw.nextGame.date || raw.nextGame.eventDate, opponent: raw.nextGame.opponent || null, raw: raw.nextGame };
+      } catch (e) { /* try next candidate */ }
+    }
+    return null;
+  } catch (e) { return null; }
+}
+
+espnApi.getTeamNextGame = getTeamNextGame;
+
+// Ensure a `default` property exists on the CommonJS export so ESM-style
+// imports (import espnApi from '...') work with bundlers that look for
+// `module.exports.default`.
+// In environments that still `require()` this file, some tooling may expect
+// a CommonJS `module.exports`. If that's necessary, we could add a small
+// wrapper file for Node scripts; for the browser build we use ESM default export.

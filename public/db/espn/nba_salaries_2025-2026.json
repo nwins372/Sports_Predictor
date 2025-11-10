@@ -1,0 +1,4750 @@
+{
+  "year": "2025-2026",
+  "generated": "2025-11-09T04:18:46.863Z",
+  "list": [
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Stephen Curry",
+      "team": "Golden State Warriors",
+      "salary": 59606817,
+      "salaryRaw": "$59,606,817",
+      "href": "https://www.espn.com/nba/player/_/id/3975/stephen-curry",
+      "playerId": "3975"
+    },
+    {
+      "name": "Joel Embiid",
+      "team": "Philadelphia 76ers",
+      "salary": 55224526,
+      "salaryRaw": "$55,224,526",
+      "href": "https://www.espn.com/nba/player/_/id/3059318/joel-embiid",
+      "playerId": "3059318"
+    },
+    {
+      "name": "Nikola Jokic",
+      "team": "Denver Nuggets",
+      "salary": 55224526,
+      "salaryRaw": "$55,224,526",
+      "href": "https://www.espn.com/nba/player/_/id/3112335/nikola-jokic",
+      "playerId": "3112335"
+    },
+    {
+      "name": "Kevin Durant",
+      "team": "Houston Rockets",
+      "salary": 54708609,
+      "salaryRaw": "$54,708,609",
+      "href": "https://www.espn.com/nba/player/_/id/3202/kevin-durant",
+      "playerId": "3202"
+    },
+    {
+      "name": "Giannis Antetokounmpo",
+      "team": "Milwaukee Bucks",
+      "salary": 54126450,
+      "salaryRaw": "$54,126,450",
+      "href": "https://www.espn.com/nba/player/_/id/3032977/giannis-antetokounmpo",
+      "playerId": "3032977"
+    },
+    {
+      "name": "Luka Doncic",
+      "team": "Los Angeles Lakers",
+      "salary": 54126450,
+      "salaryRaw": "$54,126,450",
+      "href": "https://www.espn.com/nba/player/_/id/3945274/luka-doncic",
+      "playerId": "3945274"
+    },
+    {
+      "name": "Jimmy Butler III",
+      "team": "Golden State Warriors",
+      "salary": 54126450,
+      "salaryRaw": "$54,126,450",
+      "href": "https://www.espn.com/nba/player/_/id/6430/jimmy-butler-iii",
+      "playerId": "6430"
+    },
+    {
+      "name": "Anthony Davis",
+      "team": "Dallas Mavericks",
+      "salary": 54126450,
+      "salaryRaw": "$54,126,450",
+      "href": "https://www.espn.com/nba/player/_/id/6583/anthony-davis",
+      "playerId": "6583"
+    },
+    {
+      "name": "Jayson Tatum",
+      "team": "Boston Celtics",
+      "salary": 54126450,
+      "salaryRaw": "$54,126,450",
+      "href": "https://www.espn.com/nba/player/_/id/4065648/jayson-tatum",
+      "playerId": "4065648"
+    },
+    {
+      "name": "Bradley Beal",
+      "team": "LA Clippers",
+      "salary": 53666270,
+      "salaryRaw": "$53,666,270",
+      "href": "https://www.espn.com/nba/player/_/id/6580/bradley-beal",
+      "playerId": "6580"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Devin Booker",
+      "team": "Phoenix Suns",
+      "salary": 53142264,
+      "salaryRaw": "$53,142,264",
+      "href": "https://www.espn.com/nba/player/_/id/3136193/devin-booker",
+      "playerId": "3136193"
+    },
+    {
+      "name": "Karl-Anthony Towns",
+      "team": "New York Knicks",
+      "salary": 53142264,
+      "salaryRaw": "$53,142,264",
+      "href": "https://www.espn.com/nba/player/_/id/3136195/karl-anthony-towns",
+      "playerId": "3136195"
+    },
+    {
+      "name": "Jaylen Brown",
+      "team": "Boston Celtics",
+      "salary": 53142264,
+      "salaryRaw": "$53,142,264",
+      "href": "https://www.espn.com/nba/player/_/id/3917376/jaylen-brown",
+      "playerId": "3917376"
+    },
+    {
+      "name": "LeBron James",
+      "team": "Los Angeles Lakers",
+      "salary": 52627153,
+      "salaryRaw": "$52,627,153",
+      "href": "https://www.espn.com/nba/player/_/id/1966/lebron-james",
+      "playerId": "1966"
+    },
+    {
+      "name": "Paul George",
+      "team": "Philadelphia 76ers",
+      "salary": 51666090,
+      "salaryRaw": "$51,666,090",
+      "href": "https://www.espn.com/nba/player/_/id/4251/paul-george",
+      "playerId": "4251"
+    },
+    {
+      "name": "Kawhi Leonard",
+      "team": "LA Clippers",
+      "salary": 50000000,
+      "salaryRaw": "$50,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/6450/kawhi-leonard",
+      "playerId": "6450"
+    },
+    {
+      "name": "Zach LaVine",
+      "team": "Sacramento Kings",
+      "salary": 47499660,
+      "salaryRaw": "$47,499,660",
+      "href": "https://www.espn.com/nba/player/_/id/3064440/zach-lavine",
+      "playerId": "3064440"
+    },
+    {
+      "name": "Lauri Markkanen",
+      "team": "Utah Jazz",
+      "salary": 46394100,
+      "salaryRaw": "$46,394,100",
+      "href": "https://www.espn.com/nba/player/_/id/4066336/lauri-markkanen",
+      "playerId": "4066336"
+    },
+    {
+      "name": "Cade Cunningham",
+      "team": "Detroit Pistons",
+      "salary": 46394100,
+      "salaryRaw": "$46,394,100",
+      "href": "https://www.espn.com/nba/player/_/id/4432166/cade-cunningham",
+      "playerId": "4432166"
+    },
+    {
+      "name": "Jamal Murray",
+      "team": "Denver Nuggets",
+      "salary": 46394100,
+      "salaryRaw": "$46,394,100",
+      "href": "https://www.espn.com/nba/player/_/id/3936299/jamal-murray",
+      "playerId": "3936299"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Evan Mobley",
+      "team": "Cleveland Cavaliers",
+      "salary": 46394100,
+      "salaryRaw": "$46,394,100",
+      "href": "https://www.espn.com/nba/player/_/id/4432158/evan-mobley",
+      "playerId": "4432158"
+    },
+    {
+      "name": "Donovan Mitchell",
+      "team": "Cleveland Cavaliers",
+      "salary": 46394100,
+      "salaryRaw": "$46,394,100",
+      "href": "https://www.espn.com/nba/player/_/id/3908809/donovan-mitchell",
+      "playerId": "3908809"
+    },
+    {
+      "name": "Trae Young",
+      "team": "Atlanta Hawks",
+      "salary": 45997800,
+      "salaryRaw": "$45,997,800",
+      "href": "https://www.espn.com/nba/player/_/id/4277905/trae-young",
+      "playerId": "4277905"
+    },
+    {
+      "name": "Anthony Edwards",
+      "team": "Minnesota Timberwolves",
+      "salary": 45550512,
+      "salaryRaw": "$45,550,512",
+      "href": "https://www.espn.com/nba/player/_/id/4594268/anthony-edwards",
+      "playerId": "4594268"
+    },
+    {
+      "name": "Tyrese Haliburton",
+      "team": "Indiana Pacers",
+      "salary": 45550512,
+      "salaryRaw": "$45,550,512",
+      "href": "https://www.espn.com/nba/player/_/id/4396993/tyrese-haliburton",
+      "playerId": "4396993"
+    },
+    {
+      "name": "Pascal Siakam",
+      "team": "Indiana Pacers",
+      "salary": 45550512,
+      "salaryRaw": "$45,550,512",
+      "href": "https://www.espn.com/nba/player/_/id/3149673/pascal-siakam",
+      "playerId": "3149673"
+    },
+    {
+      "name": "Domantas Sabonis",
+      "team": "Sacramento Kings",
+      "salary": 43636000,
+      "salaryRaw": "$43,636,000",
+      "href": "https://www.espn.com/nba/player/_/id/3155942/domantas-sabonis",
+      "playerId": "3155942"
+    },
+    {
+      "name": "OG Anunoby",
+      "team": "New York Knicks",
+      "salary": 39568966,
+      "salaryRaw": "$39,568,966",
+      "href": "https://www.espn.com/nba/player/_/id/3934719/og-anunoby",
+      "playerId": "3934719"
+    },
+    {
+      "name": "Ja Morant",
+      "team": "Memphis Grizzlies",
+      "salary": 39446090,
+      "salaryRaw": "$39,446,090",
+      "href": "https://www.espn.com/nba/player/_/id/4279888/ja-morant",
+      "playerId": "4279888"
+    },
+    {
+      "name": "Darius Garland",
+      "team": "Cleveland Cavaliers",
+      "salary": 39446090,
+      "salaryRaw": "$39,446,090",
+      "href": "https://www.espn.com/nba/player/_/id/4396907/darius-garland",
+      "playerId": "4396907"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Zion Williamson",
+      "team": "New Orleans Pelicans",
+      "salary": 39446090,
+      "salaryRaw": "$39,446,090",
+      "href": "https://www.espn.com/nba/player/_/id/4395628/zion-williamson",
+      "playerId": "4395628"
+    },
+    {
+      "name": "James Harden",
+      "team": "LA Clippers",
+      "salary": 39182692,
+      "salaryRaw": "$39,182,692",
+      "href": "https://www.espn.com/nba/player/_/id/3992/james-harden",
+      "playerId": "3992"
+    },
+    {
+      "name": "Scottie Barnes",
+      "team": "Toronto Raptors",
+      "salary": 38661750,
+      "salaryRaw": "$38,661,750",
+      "href": "https://www.espn.com/nba/player/_/id/4433134/scottie-barnes",
+      "playerId": "4433134"
+    },
+    {
+      "name": "Franz Wagner",
+      "team": "Orlando Magic",
+      "salary": 38661750,
+      "salaryRaw": "$38,661,750",
+      "href": "https://www.espn.com/nba/player/_/id/4566434/franz-wagner",
+      "playerId": "4566434"
+    },
+    {
+      "name": "Shai Gilgeous-Alexander",
+      "team": "Oklahoma City Thunder",
+      "salary": 38333050,
+      "salaryRaw": "$38,333,050",
+      "href": "https://www.espn.com/nba/player/_/id/4278073/shai-gilgeous-alexander",
+      "playerId": "4278073"
+    },
+    {
+      "name": "Michael Porter Jr.",
+      "team": "Brooklyn Nets",
+      "salary": 38333050,
+      "salaryRaw": "$38,333,050",
+      "href": "https://www.espn.com/nba/player/_/id/4278104/michael-porter-jr.",
+      "playerId": "4278104"
+    },
+    {
+      "name": "Brandon Ingram",
+      "team": "Toronto Raptors",
+      "salary": 38095238,
+      "salaryRaw": "$38,095,238",
+      "href": "https://www.espn.com/nba/player/_/id/3913176/brandon-ingram",
+      "playerId": "3913176"
+    },
+    {
+      "name": "LaMelo Ball",
+      "team": "Charlotte Hornets",
+      "salary": 37958760,
+      "salaryRaw": "$37,958,760",
+      "href": "https://www.espn.com/nba/player/_/id/4432816/lamelo-ball",
+      "playerId": "4432816"
+    },
+    {
+      "name": "Tyrese Maxey",
+      "team": "Philadelphia 76ers",
+      "salary": 37958760,
+      "salaryRaw": "$37,958,760",
+      "href": "https://www.espn.com/nba/player/_/id/4431678/tyrese-maxey",
+      "playerId": "4431678"
+    },
+    {
+      "name": "De'Aaron Fox",
+      "team": "San Antonio Spurs",
+      "salary": 37096620,
+      "salaryRaw": "$37,096,620",
+      "href": "https://www.espn.com/nba/player/_/id/4066259/de'aaron-fox",
+      "playerId": "4066259"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Bam Adebayo",
+      "team": "Miami Heat",
+      "salary": 37096620,
+      "salaryRaw": "$37,096,620",
+      "href": "https://www.espn.com/nba/player/_/id/4066261/bam-adebayo",
+      "playerId": "4066261"
+    },
+    {
+      "name": "Desmond Bane",
+      "team": "Orlando Magic",
+      "salary": 36725670,
+      "salaryRaw": "$36,725,670",
+      "href": "https://www.espn.com/nba/player/_/id/4066320/desmond-bane",
+      "playerId": "4066320"
+    },
+    {
+      "name": "Kyrie Irving",
+      "team": "Dallas Mavericks",
+      "salary": 36566002,
+      "salaryRaw": "$36,566,002",
+      "href": "https://www.espn.com/nba/player/_/id/6442/kyrie-irving",
+      "playerId": "6442"
+    },
+    {
+      "name": "Jalen Suggs",
+      "team": "Orlando Magic",
+      "salary": 35000000,
+      "salaryRaw": "$35,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4432165/jalen-suggs",
+      "playerId": "4432165"
+    },
+    {
+      "name": "Rudy Gobert",
+      "team": "Minnesota Timberwolves",
+      "salary": 35000000,
+      "salaryRaw": "$35,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/3032976/rudy-gobert",
+      "playerId": "3032976"
+    },
+    {
+      "name": "Jalen Brunson",
+      "team": "New York Knicks",
+      "salary": 34944001,
+      "salaryRaw": "$34,944,001",
+      "href": "https://www.espn.com/nba/player/_/id/3934672/jalen-brunson",
+      "playerId": "3934672"
+    },
+    {
+      "name": "Alperen Sengun",
+      "team": "Houston Rockets",
+      "salary": 33944954,
+      "salaryRaw": "$33,944,954",
+      "href": "https://www.espn.com/nba/player/_/id/4871144/alperen-sengun",
+      "playerId": "4871144"
+    },
+    {
+      "name": "Khris Middleton",
+      "team": "Washington Wizards",
+      "salary": 33926296,
+      "salaryRaw": "$33,926,296",
+      "href": "https://www.espn.com/nba/player/_/id/6609/khris-middleton",
+      "playerId": "6609"
+    },
+    {
+      "name": "Jalen Green",
+      "team": "Phoenix Suns",
+      "salary": 33548499,
+      "salaryRaw": "$33,548,499",
+      "href": "https://www.espn.com/nba/player/_/id/4437244/jalen-green",
+      "playerId": "4437244"
+    },
+    {
+      "name": "Immanuel Quickley",
+      "team": "Toronto Raptors",
+      "salary": 32500000,
+      "salaryRaw": "$32,500,000",
+      "href": "https://www.espn.com/nba/player/_/id/4395724/immanuel-quickley",
+      "playerId": "4395724"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Jrue Holiday",
+      "team": "Portland Trail Blazers",
+      "salary": 32400000,
+      "salaryRaw": "$32,400,000",
+      "href": "https://www.espn.com/nba/player/_/id/3995/jrue-holiday",
+      "playerId": "3995"
+    },
+    {
+      "name": "Jerami Grant",
+      "team": "Portland Trail Blazers",
+      "salary": 32000000,
+      "salaryRaw": "$32,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/2991070/jerami-grant",
+      "playerId": "2991070"
+    },
+    {
+      "name": "Jordan Poole",
+      "team": "New Orleans Pelicans",
+      "salary": 31848215,
+      "salaryRaw": "$31,848,215",
+      "href": "https://www.espn.com/nba/player/_/id/4277956/jordan-poole",
+      "playerId": "4277956"
+    },
+    {
+      "name": "Tyler Herro",
+      "team": "Miami Heat",
+      "salary": 31000000,
+      "salaryRaw": "$31,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4395725/tyler-herro",
+      "playerId": "4395725"
+    },
+    {
+      "name": "Julius Randle",
+      "team": "Minnesota Timberwolves",
+      "salary": 30864198,
+      "salaryRaw": "$30,864,198",
+      "href": "https://www.espn.com/nba/player/_/id/3064514/julius-randle",
+      "playerId": "3064514"
+    },
+    {
+      "name": "Dejounte Murray",
+      "team": "New Orleans Pelicans",
+      "salary": 30801103,
+      "salaryRaw": "$30,801,103",
+      "href": "https://www.espn.com/nba/player/_/id/3907497/dejounte-murray",
+      "playerId": "3907497"
+    },
+    {
+      "name": "Kristaps Porzingis",
+      "team": "Atlanta Hawks",
+      "salary": 30731707,
+      "salaryRaw": "$30,731,707",
+      "href": "https://www.espn.com/nba/player/_/id/3102531/kristaps-porzingis",
+      "playerId": "3102531"
+    },
+    {
+      "name": "CJ McCollum",
+      "team": "Washington Wizards",
+      "salary": 30666666,
+      "salaryRaw": "$30,666,666",
+      "href": "https://www.espn.com/nba/player/_/id/2490149/cj-mccollum",
+      "playerId": "2490149"
+    },
+    {
+      "name": "Jalen Johnson",
+      "team": "Atlanta Hawks",
+      "salary": 30000000,
+      "salaryRaw": "$30,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4701230/jalen-johnson",
+      "playerId": "4701230"
+    },
+    {
+      "name": "Isaiah Hartenstein",
+      "team": "Oklahoma City Thunder",
+      "salary": 28500000,
+      "salaryRaw": "$28,500,000",
+      "href": "https://www.espn.com/nba/player/_/id/4222252/isaiah-hartenstein",
+      "playerId": "4222252"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Andrew Wiggins",
+      "team": "Miami Heat",
+      "salary": 28223214,
+      "salaryRaw": "$28,223,214",
+      "href": "https://www.espn.com/nba/player/_/id/3059319/andrew-wiggins",
+      "playerId": "3059319"
+    },
+    {
+      "name": "Derrick White",
+      "team": "Boston Celtics",
+      "salary": 28100001,
+      "salaryRaw": "$28,100,001",
+      "href": "https://www.espn.com/nba/player/_/id/3078576/derrick-white",
+      "playerId": "3078576"
+    },
+    {
+      "name": "RJ Barrett",
+      "team": "Toronto Raptors",
+      "salary": 27705357,
+      "salaryRaw": "$27,705,357",
+      "href": "https://www.espn.com/nba/player/_/id/4395625/rj-barrett",
+      "playerId": "4395625"
+    },
+    {
+      "name": "Anfernee Simons",
+      "team": "Boston Celtics",
+      "salary": 27678571,
+      "salaryRaw": "$27,678,571",
+      "href": "https://www.espn.com/nba/player/_/id/4351851/anfernee-simons",
+      "playerId": "4351851"
+    },
+    {
+      "name": "Devin Vassell",
+      "team": "San Antonio Spurs",
+      "salary": 27000000,
+      "salaryRaw": "$27,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4395630/devin-vassell",
+      "playerId": "4395630"
+    },
+    {
+      "name": "Terry Rozier",
+      "team": "Miami Heat",
+      "salary": 26643031,
+      "salaryRaw": "$26,643,031",
+      "href": "https://www.espn.com/nba/player/_/id/3074752/terry-rozier",
+      "playerId": "3074752"
+    },
+    {
+      "name": "Tobias Harris",
+      "team": "Detroit Pistons",
+      "salary": 26634146,
+      "salaryRaw": "$26,634,146",
+      "href": "https://www.espn.com/nba/player/_/id/6440/tobias-harris",
+      "playerId": "6440"
+    },
+    {
+      "name": "John Collins",
+      "team": "LA Clippers",
+      "salary": 26580000,
+      "salaryRaw": "$26,580,000",
+      "href": "https://www.espn.com/nba/player/_/id/3908845/john-collins",
+      "playerId": "3908845"
+    },
+    {
+      "name": "Draymond Green",
+      "team": "Golden State Warriors",
+      "salary": 25892857,
+      "salaryRaw": "$25,892,857",
+      "href": "https://www.espn.com/nba/player/_/id/6589/draymond-green",
+      "playerId": "6589"
+    },
+    {
+      "name": "Nic Claxton",
+      "team": "Brooklyn Nets",
+      "salary": 25352272,
+      "salaryRaw": "$25,352,272",
+      "href": "https://www.espn.com/nba/player/_/id/4278067/nic-claxton",
+      "playerId": "4278067"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Myles Turner",
+      "team": "Milwaukee Bucks",
+      "salary": 25318251,
+      "salaryRaw": "$25,318,251",
+      "href": "https://www.espn.com/nba/player/_/id/3133628/myles-turner",
+      "playerId": "3133628"
+    },
+    {
+      "name": "Miles Bridges",
+      "team": "Charlotte Hornets",
+      "salary": 25000000,
+      "salaryRaw": "$25,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4066383/miles-bridges",
+      "playerId": "4066383"
+    },
+    {
+      "name": "Josh Giddey",
+      "team": "Chicago Bulls",
+      "salary": 25000000,
+      "salaryRaw": "$25,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4871145/josh-giddey",
+      "playerId": "4871145"
+    },
+    {
+      "name": "Trey Murphy III",
+      "team": "New Orleans Pelicans",
+      "salary": 25000000,
+      "salaryRaw": "$25,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4397688/trey-murphy-iii",
+      "playerId": "4397688"
+    },
+    {
+      "name": "Mikal Bridges",
+      "team": "New York Knicks",
+      "salary": 24900000,
+      "salaryRaw": "$24,900,000",
+      "href": "https://www.espn.com/nba/player/_/id/3147657/mikal-bridges",
+      "playerId": "3147657"
+    },
+    {
+      "name": "Jaden McDaniels",
+      "team": "Minnesota Timberwolves",
+      "salary": 24858622,
+      "salaryRaw": "$24,858,622",
+      "href": "https://www.espn.com/nba/player/_/id/4431671/jaden-mcdaniels",
+      "playerId": "4431671"
+    },
+    {
+      "name": "DeMar DeRozan",
+      "team": "Sacramento Kings",
+      "salary": 24570000,
+      "salaryRaw": "$24,570,000",
+      "href": "https://www.espn.com/nba/player/_/id/3978/demar-derozan",
+      "playerId": "3978"
+    },
+    {
+      "name": "Fred VanVleet",
+      "team": "Houston Rockets",
+      "salary": 24038462,
+      "salaryRaw": "$24,038,462",
+      "href": "https://www.espn.com/nba/player/_/id/2991230/fred-vanvleet",
+      "playerId": "2991230"
+    },
+    {
+      "name": "Jaren Jackson Jr.",
+      "team": "Memphis Grizzlies",
+      "salary": 23413395,
+      "salaryRaw": "$23,413,395",
+      "href": "https://www.espn.com/nba/player/_/id/4277961/jaren-jackson-jr.",
+      "playerId": "4277961"
+    },
+    {
+      "name": "De'Andre Hunter",
+      "team": "Cleveland Cavaliers",
+      "salary": 23303571,
+      "salaryRaw": "$23,303,571",
+      "href": "https://www.espn.com/nba/player/_/id/4065732/de'andre-hunter",
+      "playerId": "4065732"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Aaron Gordon",
+      "team": "Denver Nuggets",
+      "salary": 22841455,
+      "salaryRaw": "$22,841,455",
+      "href": "https://www.espn.com/nba/player/_/id/3064290/aaron-gordon",
+      "playerId": "3064290"
+    },
+    {
+      "name": "Jonathan Kuminga",
+      "team": "Golden State Warriors",
+      "salary": 22500000,
+      "salaryRaw": "$22,500,000",
+      "href": "https://www.espn.com/nba/player/_/id/4433247/jonathan-kuminga",
+      "playerId": "4433247"
+    },
+    {
+      "name": "Dillon Brooks",
+      "team": "Phoenix Suns",
+      "salary": 22124110,
+      "salaryRaw": "$22,124,110",
+      "href": "https://www.espn.com/nba/player/_/id/3155526/dillon-brooks",
+      "playerId": "3155526"
+    },
+    {
+      "name": "Kyle Kuzma",
+      "team": "Milwaukee Bucks",
+      "salary": 21810605,
+      "salaryRaw": "$21,810,605",
+      "href": "https://www.espn.com/nba/player/_/id/3134907/kyle-kuzma",
+      "playerId": "3134907"
+    },
+    {
+      "name": "Kentavious Caldwell-Pope",
+      "team": "Memphis Grizzlies",
+      "salary": 21621500,
+      "salaryRaw": "$21,621,500",
+      "href": "https://www.espn.com/nba/player/_/id/2581018/kentavious-caldwell-pope",
+      "playerId": "2581018"
+    },
+    {
+      "name": "Naz Reid",
+      "team": "Minnesota Timberwolves",
+      "salary": 21551724,
+      "salaryRaw": "$21,551,724",
+      "href": "https://www.espn.com/nba/player/_/id/4396971/naz-reid",
+      "playerId": "4396971"
+    },
+    {
+      "name": "Nikola Vucevic",
+      "team": "Chicago Bulls",
+      "salary": 21481481,
+      "salaryRaw": "$21,481,481",
+      "href": "https://www.espn.com/nba/player/_/id/6478/nikola-vucevic",
+      "playerId": "6478"
+    },
+    {
+      "name": "Cameron Johnson",
+      "team": "Denver Nuggets",
+      "salary": 21057065,
+      "salaryRaw": "$21,057,065",
+      "href": "https://www.espn.com/nba/player/_/id/3138196/cameron-johnson",
+      "playerId": "3138196"
+    },
+    {
+      "name": "Norman Powell",
+      "team": "Miami Heat",
+      "salary": 20482758,
+      "salaryRaw": "$20,482,758",
+      "href": "https://www.espn.com/nba/player/_/id/2595516/norman-powell",
+      "playerId": "2595516"
+    },
+    {
+      "name": "Jarrett Allen",
+      "team": "Cleveland Cavaliers",
+      "salary": 20000000,
+      "salaryRaw": "$20,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4066328/jarrett-allen",
+      "playerId": "4066328"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Jakob Poeltl",
+      "team": "Toronto Raptors",
+      "salary": 19500000,
+      "salaryRaw": "$19,500,000",
+      "href": "https://www.espn.com/nba/player/_/id/3134908/jakob-poeltl",
+      "playerId": "3134908"
+    },
+    {
+      "name": "Josh Hart",
+      "team": "New York Knicks",
+      "salary": 19472240,
+      "salaryRaw": "$19,472,240",
+      "href": "https://www.espn.com/nba/player/_/id/3062679/josh-hart",
+      "playerId": "3062679"
+    },
+    {
+      "name": "Jusuf Nurkic",
+      "team": "Utah Jazz",
+      "salary": 19375000,
+      "salaryRaw": "$19,375,000",
+      "href": "https://www.espn.com/nba/player/_/id/3102530/jusuf-nurkic",
+      "playerId": "3102530"
+    },
+    {
+      "name": "Collin Sexton",
+      "team": "Charlotte Hornets",
+      "salary": 19170000,
+      "salaryRaw": "$19,170,000",
+      "href": "https://www.espn.com/nba/player/_/id/4277811/collin-sexton",
+      "playerId": "4277811"
+    },
+    {
+      "name": "Harrison Barnes",
+      "team": "San Antonio Spurs",
+      "salary": 19000000,
+      "salaryRaw": "$19,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/6578/harrison-barnes",
+      "playerId": "6578"
+    },
+    {
+      "name": "Malik Monk",
+      "team": "Sacramento Kings",
+      "salary": 18797618,
+      "salaryRaw": "$18,797,618",
+      "href": "https://www.espn.com/nba/player/_/id/4066262/malik-monk",
+      "playerId": "4066262"
+    },
+    {
+      "name": "Santi Aldama",
+      "team": "Memphis Grizzlies",
+      "salary": 18485916,
+      "salaryRaw": "$18,485,916",
+      "href": "https://www.espn.com/nba/player/_/id/4593125/santi-aldama",
+      "playerId": "4593125"
+    },
+    {
+      "name": "Rui Hachimura",
+      "team": "Los Angeles Lakers",
+      "salary": 18259259,
+      "salaryRaw": "$18,259,259",
+      "href": "https://www.espn.com/nba/player/_/id/4066648/rui-hachimura",
+      "playerId": "4066648"
+    },
+    {
+      "name": "Luguentz Dort",
+      "team": "Oklahoma City Thunder",
+      "salary": 18222222,
+      "salaryRaw": "$18,222,222",
+      "href": "https://www.espn.com/nba/player/_/id/4397020/luguentz-dort",
+      "playerId": "4397020"
+    },
+    {
+      "name": "Alex Caruso",
+      "team": "Oklahoma City Thunder",
+      "salary": 18102000,
+      "salaryRaw": "$18,102,000",
+      "href": "https://www.espn.com/nba/player/_/id/2991350/alex-caruso",
+      "playerId": "2991350"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Ivica Zubac",
+      "team": "LA Clippers",
+      "salary": 18102000,
+      "salaryRaw": "$18,102,000",
+      "href": "https://www.espn.com/nba/player/_/id/4017837/ivica-zubac",
+      "playerId": "4017837"
+    },
+    {
+      "name": "Andrew Nembhard",
+      "team": "Indiana Pacers",
+      "salary": 18102000,
+      "salaryRaw": "$18,102,000",
+      "href": "https://www.espn.com/nba/player/_/id/4395712/andrew-nembhard",
+      "playerId": "4395712"
+    },
+    {
+      "name": "Zach Collins",
+      "team": "Chicago Bulls",
+      "salary": 18080496,
+      "salaryRaw": "$18,080,496",
+      "href": "https://www.espn.com/nba/player/_/id/4066650/zach-collins",
+      "playerId": "4066650"
+    },
+    {
+      "name": "Patrick Williams",
+      "team": "Chicago Bulls",
+      "salary": 18000000,
+      "salaryRaw": "$18,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4431687/patrick-williams",
+      "playerId": "4431687"
+    },
+    {
+      "name": "Kevin Huerter",
+      "team": "Chicago Bulls",
+      "salary": 17991071,
+      "salaryRaw": "$17,991,071",
+      "href": "https://www.espn.com/nba/player/_/id/4066372/kevin-huerter",
+      "playerId": "4066372"
+    },
+    {
+      "name": "Keldon Johnson",
+      "team": "San Antonio Spurs",
+      "salary": 17500000,
+      "salaryRaw": "$17,500,000",
+      "href": "https://www.espn.com/nba/player/_/id/4395723/keldon-johnson",
+      "playerId": "4395723"
+    },
+    {
+      "name": "Grayson Allen",
+      "team": "Phoenix Suns",
+      "salary": 16875000,
+      "salaryRaw": "$16,875,000",
+      "href": "https://www.espn.com/nba/player/_/id/3135045/grayson-allen",
+      "playerId": "3135045"
+    },
+    {
+      "name": "Duncan Robinson",
+      "team": "Detroit Pistons",
+      "salary": 16834692,
+      "salaryRaw": "$16,834,692",
+      "href": "https://www.espn.com/nba/player/_/id/3157465/duncan-robinson",
+      "playerId": "3157465"
+    },
+    {
+      "name": "Klay Thompson",
+      "team": "Dallas Mavericks",
+      "salary": 16666667,
+      "salaryRaw": "$16,666,667",
+      "href": "https://www.espn.com/nba/player/_/id/6475/klay-thompson",
+      "playerId": "6475"
+    },
+    {
+      "name": "Bogdan Bogdanovic",
+      "team": "LA Clippers",
+      "salary": 16020000,
+      "salaryRaw": "$16,020,000",
+      "href": "https://www.espn.com/nba/player/_/id/3037789/bogdan-bogdanovic",
+      "playerId": "3037789"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Max Strus",
+      "team": "Cleveland Cavaliers",
+      "salary": 15936452,
+      "salaryRaw": "$15,936,452",
+      "href": "https://www.espn.com/nba/player/_/id/4065778/max-strus",
+      "playerId": "4065778"
+    },
+    {
+      "name": "Terance Mann",
+      "team": "Brooklyn Nets",
+      "salary": 15500000,
+      "salaryRaw": "$15,500,000",
+      "href": "https://www.espn.com/nba/player/_/id/3907823/terance-mann",
+      "playerId": "3907823"
+    },
+    {
+      "name": "Paolo Banchero",
+      "team": "Orlando Magic",
+      "salary": 15334769,
+      "salaryRaw": "$15,334,769",
+      "href": "https://www.espn.com/nba/player/_/id/4432573/paolo-banchero",
+      "playerId": "4432573"
+    },
+    {
+      "name": "Nickeil Alexander-Walker",
+      "team": "Atlanta Hawks",
+      "salary": 15161800,
+      "salaryRaw": "$15,161,800",
+      "href": "https://www.espn.com/nba/player/_/id/4278039/nickeil-alexander-walker",
+      "playerId": "4278039"
+    },
+    {
+      "name": "Jonathan Isaac",
+      "team": "Orlando Magic",
+      "salary": 15000000,
+      "salaryRaw": "$15,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4065654/jonathan-isaac",
+      "playerId": "4065654"
+    },
+    {
+      "name": "Isaiah Stewart",
+      "team": "Detroit Pistons",
+      "salary": 15000000,
+      "salaryRaw": "$15,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4432810/isaiah-stewart",
+      "playerId": "4432810"
+    },
+    {
+      "name": "Onyeka Okongwu",
+      "team": "Atlanta Hawks",
+      "salary": 15000000,
+      "salaryRaw": "$15,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4431680/onyeka-okongwu",
+      "playerId": "4431680"
+    },
+    {
+      "name": "Cooper Flagg",
+      "team": "Dallas Mavericks",
+      "salary": 14386320,
+      "salaryRaw": "$14,386,320",
+      "href": "https://www.espn.com/nba/player/_/id/5041939/cooper-flagg",
+      "playerId": "5041939"
+    },
+    {
+      "name": "Daniel Gafford",
+      "team": "Dallas Mavericks",
+      "salary": 14386320,
+      "salaryRaw": "$14,386,320",
+      "href": "https://www.espn.com/nba/player/_/id/4278049/daniel-gafford",
+      "playerId": "4278049"
+    },
+    {
+      "name": "Deni Avdija",
+      "team": "Portland Trail Blazers",
+      "salary": 14375000,
+      "salaryRaw": "$14,375,000",
+      "href": "https://www.espn.com/nba/player/_/id/4683021/deni-avdija",
+      "playerId": "4683021"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "P.J. Washington",
+      "team": "Dallas Mavericks",
+      "salary": 14152174,
+      "salaryRaw": "$14,152,174",
+      "href": "https://www.espn.com/nba/player/_/id/4278078/p.j.-washington",
+      "playerId": "4278078"
+    },
+    {
+      "name": "Steven Adams",
+      "team": "Houston Rockets",
+      "salary": 14130434,
+      "salaryRaw": "$14,130,434",
+      "href": "https://www.espn.com/nba/player/_/id/2991235/steven-adams",
+      "playerId": "2991235"
+    },
+    {
+      "name": "Dennis Schroder",
+      "team": "Sacramento Kings",
+      "salary": 14104000,
+      "salaryRaw": "$14,104,000",
+      "href": "https://www.espn.com/nba/player/_/id/3032979/dennis-schroder",
+      "playerId": "3032979"
+    },
+    {
+      "name": "Damian Lillard",
+      "team": "Portland Trail Blazers",
+      "salary": 14104000,
+      "salaryRaw": "$14,104,000",
+      "href": "https://www.espn.com/nba/player/_/id/6606/damian-lillard",
+      "playerId": "6606"
+    },
+    {
+      "name": "Caris LeVert",
+      "team": "Detroit Pistons",
+      "salary": 14104000,
+      "salaryRaw": "$14,104,000",
+      "href": "https://www.espn.com/nba/player/_/id/2991043/caris-levert",
+      "playerId": "2991043"
+    },
+    {
+      "name": "Obi Toppin",
+      "team": "Indiana Pacers",
+      "salary": 14000000,
+      "salaryRaw": "$14,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4278355/obi-toppin",
+      "playerId": "4278355"
+    },
+    {
+      "name": "Corey Kispert",
+      "team": "Washington Wizards",
+      "salary": 13975000,
+      "salaryRaw": "$13,975,000",
+      "href": "https://www.espn.com/nba/player/_/id/4280151/corey-kispert",
+      "playerId": "4280151"
+    },
+    {
+      "name": "Austin Reaves",
+      "team": "Los Angeles Lakers",
+      "salary": 13937574,
+      "salaryRaw": "$13,937,574",
+      "href": "https://www.espn.com/nba/player/_/id/4066457/austin-reaves",
+      "playerId": "4066457"
+    },
+    {
+      "name": "Herbert Jones",
+      "team": "New Orleans Pelicans",
+      "salary": 13937574,
+      "salaryRaw": "$13,937,574",
+      "href": "https://www.espn.com/nba/player/_/id/4277813/herbert-jones",
+      "playerId": "4277813"
+    },
+    {
+      "name": "Chet Holmgren",
+      "team": "Oklahoma City Thunder",
+      "salary": 13731368,
+      "salaryRaw": "$13,731,368",
+      "href": "https://www.espn.com/nba/player/_/id/4433255/chet-holmgren",
+      "playerId": "4433255"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Josh Green",
+      "team": "Charlotte Hornets",
+      "salary": 13666667,
+      "salaryRaw": "$13,666,667",
+      "href": "https://www.espn.com/nba/player/_/id/4432811/josh-green",
+      "playerId": "4432811"
+    },
+    {
+      "name": "Grant Williams",
+      "team": "Charlotte Hornets",
+      "salary": 13645500,
+      "salaryRaw": "$13,645,500",
+      "href": "https://www.espn.com/nba/player/_/id/4066218/grant-williams",
+      "playerId": "4066218"
+    },
+    {
+      "name": "Bobby Portis",
+      "team": "Milwaukee Bucks",
+      "salary": 13580247,
+      "salaryRaw": "$13,580,247",
+      "href": "https://www.espn.com/nba/player/_/id/3064482/bobby-portis",
+      "playerId": "3064482"
+    },
+    {
+      "name": "Kelly Olynyk",
+      "team": "San Antonio Spurs",
+      "salary": 13445122,
+      "salaryRaw": "$13,445,122",
+      "href": "https://www.espn.com/nba/player/_/id/2489663/kelly-olynyk",
+      "playerId": "2489663"
+    },
+    {
+      "name": "Victor Wembanyama",
+      "team": "San Antonio Spurs",
+      "salary": 13376880,
+      "salaryRaw": "$13,376,880",
+      "href": "https://www.espn.com/nba/player/_/id/5104157/victor-wembanyama",
+      "playerId": "5104157"
+    },
+    {
+      "name": "Robert Williams III",
+      "team": "Portland Trail Blazers",
+      "salary": 13285713,
+      "salaryRaw": "$13,285,713",
+      "href": "https://www.espn.com/nba/player/_/id/4066211/robert-williams-iii",
+      "playerId": "4066211"
+    },
+    {
+      "name": "Richaun Holmes",
+      "team": "Washington Wizards",
+      "salary": 13280737,
+      "salaryRaw": "$13,280,737",
+      "href": "https://www.espn.com/nba/player/_/id/2993370/richaun-holmes",
+      "playerId": "2993370"
+    },
+    {
+      "name": "Zaccharie Risacher",
+      "team": "Atlanta Hawks",
+      "salary": 13197720,
+      "salaryRaw": "$13,197,720",
+      "href": "https://www.espn.com/nba/player/_/id/5211175/zaccharie-risacher",
+      "playerId": "5211175"
+    },
+    {
+      "name": "Cole Anthony",
+      "team": "Milwaukee Bucks",
+      "salary": 13100000,
+      "salaryRaw": "$13,100,000",
+      "href": "https://www.espn.com/nba/player/_/id/4432809/cole-anthony",
+      "playerId": "4432809"
+    },
+    {
+      "name": "Mitchell Robinson",
+      "team": "New York Knicks",
+      "salary": 12954546,
+      "salaryRaw": "$12,954,546",
+      "href": "https://www.espn.com/nba/player/_/id/4351852/mitchell-robinson",
+      "playerId": "4351852"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Coby White",
+      "team": "Chicago Bulls",
+      "salary": 12888889,
+      "salaryRaw": "$12,888,889",
+      "href": "https://www.espn.com/nba/player/_/id/4395651/coby-white",
+      "playerId": "4395651"
+    },
+    {
+      "name": "Dorian Finney-Smith",
+      "team": "Houston Rockets",
+      "salary": 12700000,
+      "salaryRaw": "$12,700,000",
+      "href": "https://www.espn.com/nba/player/_/id/2578185/dorian-finney-smith",
+      "playerId": "2578185"
+    },
+    {
+      "name": "Brandon Clarke",
+      "team": "Memphis Grizzlies",
+      "salary": 12500000,
+      "salaryRaw": "$12,500,000",
+      "href": "https://www.espn.com/nba/player/_/id/3906665/brandon-clarke",
+      "playerId": "3906665"
+    },
+    {
+      "name": "Dylan Harper",
+      "team": "San Antonio Spurs",
+      "salary": 12370320,
+      "salaryRaw": "$12,370,320",
+      "href": "https://www.espn.com/nba/player/_/id/5037871/dylan-harper",
+      "playerId": "5037871"
+    },
+    {
+      "name": "Isaiah Joe",
+      "team": "Oklahoma City Thunder",
+      "salary": 12362338,
+      "salaryRaw": "$12,362,338",
+      "href": "https://www.espn.com/nba/player/_/id/4395702/isaiah-joe",
+      "playerId": "4395702"
+    },
+    {
+      "name": "Jabari Smith Jr.",
+      "team": "Houston Rockets",
+      "salary": 12350392,
+      "salaryRaw": "$12,350,392",
+      "href": "https://www.espn.com/nba/player/_/id/4432639/jabari-smith-jr.",
+      "playerId": "4432639"
+    },
+    {
+      "name": "Donte DiVincenzo",
+      "team": "Minnesota Timberwolves",
+      "salary": 11990000,
+      "salaryRaw": "$11,990,000",
+      "href": "https://www.espn.com/nba/player/_/id/3934673/donte-divincenzo",
+      "playerId": "3934673"
+    },
+    {
+      "name": "Brandon Miller",
+      "team": "Charlotte Hornets",
+      "salary": 11968800,
+      "salaryRaw": "$11,968,800",
+      "href": "https://www.espn.com/nba/player/_/id/4433287/brandon-miller",
+      "playerId": "4433287"
+    },
+    {
+      "name": "Alex Sarr",
+      "team": "Washington Wizards",
+      "salary": 11808240,
+      "salaryRaw": "$11,808,240",
+      "href": "https://www.espn.com/nba/player/_/id/5160992/alex-sarr",
+      "playerId": "5160992"
+    },
+    {
+      "name": "Davion Mitchell",
+      "team": "Miami Heat",
+      "salary": 11600000,
+      "salaryRaw": "$11,600,000",
+      "href": "https://www.espn.com/nba/player/_/id/4278053/davion-mitchell",
+      "playerId": "4278053"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Moses Moody",
+      "team": "Golden State Warriors",
+      "salary": 11574074,
+      "salaryRaw": "$11,574,074",
+      "href": "https://www.espn.com/nba/player/_/id/4432171/moses-moody",
+      "playerId": "4432171"
+    },
+    {
+      "name": "Jarred Vanderbilt",
+      "team": "Los Angeles Lakers",
+      "salary": 11571429,
+      "salaryRaw": "$11,571,429",
+      "href": "https://www.espn.com/nba/player/_/id/4278077/jarred-vanderbilt",
+      "playerId": "4278077"
+    },
+    {
+      "name": "Matisse Thybulle",
+      "team": "Portland Trail Blazers",
+      "salary": 11550000,
+      "salaryRaw": "$11,550,000",
+      "href": "https://www.espn.com/nba/player/_/id/3907498/matisse-thybulle",
+      "playerId": "3907498"
+    },
+    {
+      "name": "Gabe Vincent",
+      "team": "Los Angeles Lakers",
+      "salary": 11500000,
+      "salaryRaw": "$11,500,000",
+      "href": "https://www.espn.com/nba/player/_/id/3137259/gabe-vincent",
+      "playerId": "3137259"
+    },
+    {
+      "name": "Keegan Murray",
+      "team": "Sacramento Kings",
+      "salary": 11144093,
+      "salaryRaw": "$11,144,093",
+      "href": "https://www.espn.com/nba/player/_/id/4594327/keegan-murray",
+      "playerId": "4594327"
+    },
+    {
+      "name": "VJ Edgecombe",
+      "team": "Philadelphia 76ers",
+      "salary": 11108880,
+      "salaryRaw": "$11,108,880",
+      "href": "https://www.espn.com/nba/player/_/id/5124612/vj-edgecombe",
+      "playerId": "5124612"
+    },
+    {
+      "name": "Luke Kornet",
+      "team": "San Antonio Spurs",
+      "salary": 11000000,
+      "salaryRaw": "$11,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/3064560/luke-kornet",
+      "playerId": "3064560"
+    },
+    {
+      "name": "Maxi Kleber",
+      "team": "Los Angeles Lakers",
+      "salary": 11000000,
+      "salaryRaw": "$11,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/2960236/maxi-kleber",
+      "playerId": "2960236"
+    },
+    {
+      "name": "Aaron Nesmith",
+      "team": "Indiana Pacers",
+      "salary": 11000000,
+      "salaryRaw": "$11,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4396909/aaron-nesmith",
+      "playerId": "4396909"
+    },
+    {
+      "name": "Isaac Okoro",
+      "team": "Chicago Bulls",
+      "salary": 11000000,
+      "salaryRaw": "$11,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4432822/isaac-okoro",
+      "playerId": "4432822"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Luke Kennard",
+      "team": "Atlanta Hawks",
+      "salary": 11000000,
+      "salaryRaw": "$11,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/3913174/luke-kennard",
+      "playerId": "3913174"
+    },
+    {
+      "name": "Wendell Carter Jr.",
+      "team": "Orlando Magic",
+      "salary": 10850000,
+      "salaryRaw": "$10,850,000",
+      "href": "https://www.espn.com/nba/player/_/id/4277847/wendell-carter-jr.",
+      "playerId": "4277847"
+    },
+    {
+      "name": "Mike Conley",
+      "team": "Minnesota Timberwolves",
+      "salary": 10774038,
+      "salaryRaw": "$10,774,038",
+      "href": "https://www.espn.com/nba/player/_/id/3195/mike-conley",
+      "playerId": "3195"
+    },
+    {
+      "name": "Scoot Henderson",
+      "team": "Portland Trail Blazers",
+      "salary": 10748040,
+      "salaryRaw": "$10,748,040",
+      "href": "https://www.espn.com/nba/player/_/id/4683678/scoot-henderson",
+      "playerId": "4683678"
+    },
+    {
+      "name": "Reed Sheppard",
+      "team": "Houston Rockets",
+      "salary": 10603560,
+      "salaryRaw": "$10,603,560",
+      "href": "https://www.espn.com/nba/player/_/id/4711272/reed-sheppard",
+      "playerId": "4711272"
+    },
+    {
+      "name": "Jonas Valanciunas",
+      "team": "Denver Nuggets",
+      "salary": 10395000,
+      "salaryRaw": "$10,395,000",
+      "href": "https://www.espn.com/nba/player/_/id/6477/jonas-valanciunas",
+      "playerId": "6477"
+    },
+    {
+      "name": "T.J. McConnell",
+      "team": "Indiana Pacers",
+      "salary": 10200000,
+      "salaryRaw": "$10,200,000",
+      "href": "https://www.espn.com/nba/player/_/id/2530530/t.j.-mcconnell",
+      "playerId": "2530530"
+    },
+    {
+      "name": "Royce O'Neale",
+      "team": "Phoenix Suns",
+      "salary": 10125000,
+      "salaryRaw": "$10,125,000",
+      "href": "https://www.espn.com/nba/player/_/id/2583632/royce-o'neale",
+      "playerId": "2583632"
+    },
+    {
+      "name": "Jaden Ivey",
+      "team": "Detroit Pistons",
+      "salary": 10107163,
+      "salaryRaw": "$10,107,163",
+      "href": "https://www.espn.com/nba/player/_/id/4433218/jaden-ivey",
+      "playerId": "4433218"
+    },
+    {
+      "name": "Aaron Wiggins",
+      "team": "Oklahoma City Thunder",
+      "salary": 10102802,
+      "salaryRaw": "$10,102,802",
+      "href": "https://www.espn.com/nba/player/_/id/4397183/aaron-wiggins",
+      "playerId": "4397183"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Sam Hauser",
+      "team": "Boston Celtics",
+      "salary": 10044643,
+      "salaryRaw": "$10,044,643",
+      "href": "https://www.espn.com/nba/player/_/id/4065804/sam-hauser",
+      "playerId": "4065804"
+    },
+    {
+      "name": "Kon Knueppel",
+      "team": "Charlotte Hornets",
+      "salary": 10015680,
+      "salaryRaw": "$10,015,680",
+      "href": "https://www.espn.com/nba/player/_/id/5061575/kon-knueppel",
+      "playerId": "5061575"
+    },
+    {
+      "name": "Derrick Jones Jr.",
+      "team": "LA Clippers",
+      "salary": 10000000,
+      "salaryRaw": "$10,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/3936099/derrick-jones-jr.",
+      "playerId": "3936099"
+    },
+    {
+      "name": "Lonzo Ball",
+      "team": "Cleveland Cavaliers",
+      "salary": 10000000,
+      "salaryRaw": "$10,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4066421/lonzo-ball",
+      "playerId": "4066421"
+    },
+    {
+      "name": "Amen Thompson",
+      "team": "Houston Rockets",
+      "salary": 9690600,
+      "salaryRaw": "$9,690,600",
+      "href": "https://www.espn.com/nba/player/_/id/4684740/amen-thompson",
+      "playerId": "4684740"
+    },
+    {
+      "name": "Caleb Martin",
+      "team": "Dallas Mavericks",
+      "salary": 9594044,
+      "salaryRaw": "$9,594,044",
+      "href": "https://www.espn.com/nba/player/_/id/3138160/caleb-martin",
+      "playerId": "3138160"
+    },
+    {
+      "name": "Stephon Castle",
+      "team": "San Antonio Spurs",
+      "salary": 9560520,
+      "salaryRaw": "$9,560,520",
+      "href": "https://www.espn.com/nba/player/_/id/4845367/stephon-castle",
+      "playerId": "4845367"
+    },
+    {
+      "name": "Pat Connaughton",
+      "team": "Charlotte Hornets",
+      "salary": 9423869,
+      "salaryRaw": "$9,423,869",
+      "href": "https://www.espn.com/nba/player/_/id/2578239/pat-connaughton",
+      "playerId": "2578239"
+    },
+    {
+      "name": "Kyle Anderson",
+      "team": "Utah Jazz",
+      "salary": 9219512,
+      "salaryRaw": "$9,219,512",
+      "href": "https://www.espn.com/nba/player/_/id/2993874/kyle-anderson",
+      "playerId": "2993874"
+    },
+    {
+      "name": "Buddy Hield",
+      "team": "Golden State Warriors",
+      "salary": 9219512,
+      "salaryRaw": "$9,219,512",
+      "href": "https://www.espn.com/nba/player/_/id/2990984/buddy-hield",
+      "playerId": "2990984"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Bennedict Mathurin",
+      "team": "Indiana Pacers",
+      "salary": 9187573,
+      "salaryRaw": "$9,187,573",
+      "href": "https://www.espn.com/nba/player/_/id/4683634/bennedict-mathurin",
+      "playerId": "4683634"
+    },
+    {
+      "name": "Ace Bailey",
+      "team": "Utah Jazz",
+      "salary": 9069840,
+      "salaryRaw": "$9,069,840",
+      "href": "https://www.espn.com/nba/player/_/id/4873138/ace-bailey",
+      "playerId": "4873138"
+    },
+    {
+      "name": "Naji Marshall",
+      "team": "Dallas Mavericks",
+      "salary": 9000000,
+      "salaryRaw": "$9,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4278594/naji-marshall",
+      "playerId": "4278594"
+    },
+    {
+      "name": "Jalen Smith",
+      "team": "Chicago Bulls",
+      "salary": 9000000,
+      "salaryRaw": "$9,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4397189/jalen-smith",
+      "playerId": "4397189"
+    },
+    {
+      "name": "Ty Jerome",
+      "team": "Memphis Grizzlies",
+      "salary": 8781000,
+      "salaryRaw": "$8,781,000",
+      "href": "https://www.espn.com/nba/player/_/id/4065733/ty-jerome",
+      "playerId": "4065733"
+    },
+    {
+      "name": "Ausar Thompson",
+      "team": "Detroit Pistons",
+      "salary": 8775000,
+      "salaryRaw": "$8,775,000",
+      "href": "https://www.espn.com/nba/player/_/id/4684742/ausar-thompson",
+      "playerId": "4684742"
+    },
+    {
+      "name": "Brook Lopez",
+      "team": "LA Clippers",
+      "salary": 8750000,
+      "salaryRaw": "$8,750,000",
+      "href": "https://www.espn.com/nba/player/_/id/3448/brook-lopez",
+      "playerId": "3448"
+    },
+    {
+      "name": "Quentin Grimes",
+      "team": "Philadelphia 76ers",
+      "salary": 8741209,
+      "salaryRaw": "$8,741,209",
+      "href": "https://www.espn.com/nba/player/_/id/4397014/quentin-grimes",
+      "playerId": "4397014"
+    },
+    {
+      "name": "Cody Martin",
+      "team": "Indiana Pacers",
+      "salary": 8680000,
+      "salaryRaw": "$8,680,000",
+      "href": "https://www.espn.com/nba/player/_/id/3138161/cody-martin",
+      "playerId": "3138161"
+    },
+    {
+      "name": "Ronald Holland II",
+      "team": "Detroit Pistons",
+      "salary": 8657280,
+      "salaryRaw": "$8,657,280",
+      "href": "https://www.espn.com/nba/player/_/id/4683771/ronald-holland-ii",
+      "playerId": "4683771"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Sam Merrill",
+      "team": "Cleveland Cavaliers",
+      "salary": 8482143,
+      "salaryRaw": "$8,482,143",
+      "href": "https://www.espn.com/nba/player/_/id/4066757/sam-merrill",
+      "playerId": "4066757"
+    },
+    {
+      "name": "Jaylin Williams",
+      "team": "Oklahoma City Thunder",
+      "salary": 8450794,
+      "salaryRaw": "$8,450,794",
+      "href": "https://www.espn.com/nba/player/_/id/4432823/jaylin-williams",
+      "playerId": "4432823"
+    },
+    {
+      "name": "Shaedon Sharpe",
+      "team": "Portland Trail Blazers",
+      "salary": 8399983,
+      "salaryRaw": "$8,399,983",
+      "href": "https://www.espn.com/nba/player/_/id/4914336/shaedon-sharpe",
+      "playerId": "4914336"
+    },
+    {
+      "name": "Kelly Oubre Jr.",
+      "team": "Philadelphia 76ers",
+      "salary": 8382150,
+      "salaryRaw": "$8,382,150",
+      "href": "https://www.espn.com/nba/player/_/id/3133603/kelly-oubre-jr.",
+      "playerId": "3133603"
+    },
+    {
+      "name": "Goga Bitadze",
+      "team": "Orlando Magic",
+      "salary": 8333333,
+      "salaryRaw": "$8,333,333",
+      "href": "https://www.espn.com/nba/player/_/id/4348700/goga-bitadze",
+      "playerId": "4348700"
+    },
+    {
+      "name": "Simone Fontecchio",
+      "team": "Miami Heat",
+      "salary": 8307692,
+      "salaryRaw": "$8,307,692",
+      "href": "https://www.espn.com/nba/player/_/id/3899664/simone-fontecchio",
+      "playerId": "3899664"
+    },
+    {
+      "name": "Tre Johnson",
+      "team": "Washington Wizards",
+      "salary": 8237640,
+      "salaryRaw": "$8,237,640",
+      "href": "https://www.espn.com/nba/player/_/id/5238230/tre-johnson",
+      "playerId": "5238230"
+    },
+    {
+      "name": "Georges Niang",
+      "team": "Utah Jazz",
+      "salary": 8200000,
+      "salaryRaw": "$8,200,000",
+      "href": "https://www.espn.com/nba/player/_/id/2990969/georges-niang",
+      "playerId": "2990969"
+    },
+    {
+      "name": "Zeke Nnaji",
+      "team": "Denver Nuggets",
+      "salary": 8177778,
+      "salaryRaw": "$8,177,778",
+      "href": "https://www.espn.com/nba/player/_/id/4431690/zeke-nnaji",
+      "playerId": "4431690"
+    },
+    {
+      "name": "Deandre Ayton",
+      "team": "Los Angeles Lakers",
+      "salary": 8104000,
+      "salaryRaw": "$8,104,000",
+      "href": "https://www.espn.com/nba/player/_/id/4278129/deandre-ayton",
+      "playerId": "4278129"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "KJ Martin",
+      "team": "Utah Jazz",
+      "salary": 8025000,
+      "salaryRaw": "$8,025,000",
+      "href": "https://www.espn.com/nba/player/_/id/4431828/kj-martin",
+      "playerId": "4431828"
+    },
+    {
+      "name": "Tre Mann",
+      "team": "Charlotte Hornets",
+      "salary": 8000000,
+      "salaryRaw": "$8,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4432819/tre-mann",
+      "playerId": "4432819"
+    },
+    {
+      "name": "Jock Landale",
+      "team": "Memphis Grizzlies",
+      "salary": 8000000,
+      "salaryRaw": "$8,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/3146557/jock-landale",
+      "playerId": "3146557"
+    },
+    {
+      "name": "Tre Jones",
+      "team": "Chicago Bulls",
+      "salary": 8000000,
+      "salaryRaw": "$8,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4395626/tre-jones",
+      "playerId": "4395626"
+    },
+    {
+      "name": "Kevon Looney",
+      "team": "New Orleans Pelicans",
+      "salary": 8000000,
+      "salaryRaw": "$8,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/3155535/kevon-looney",
+      "playerId": "3155535"
+    },
+    {
+      "name": "Anthony Black",
+      "team": "Orlando Magic",
+      "salary": 7970280,
+      "salaryRaw": "$7,970,280",
+      "href": "https://www.espn.com/nba/player/_/id/4712849/anthony-black",
+      "playerId": "4712849"
+    },
+    {
+      "name": "Tidjane Salaun",
+      "team": "Charlotte Hornets",
+      "salary": 7863240,
+      "salaryRaw": "$7,863,240",
+      "href": "https://www.espn.com/nba/player/_/id/5211176/tidjane-salaun",
+      "playerId": "5211176"
+    },
+    {
+      "name": "Josh Okogie",
+      "team": "Houston Rockets",
+      "salary": 7750000,
+      "salaryRaw": "$7,750,000",
+      "href": "https://www.espn.com/nba/player/_/id/4065663/josh-okogie",
+      "playerId": "4065663"
+    },
+    {
+      "name": "Max Christie",
+      "team": "Dallas Mavericks",
+      "salary": 7714286,
+      "salaryRaw": "$7,714,286",
+      "href": "https://www.espn.com/nba/player/_/id/4432582/max-christie",
+      "playerId": "4432582"
+    },
+    {
+      "name": "Dyson Daniels",
+      "team": "Atlanta Hawks",
+      "salary": 7707709,
+      "salaryRaw": "$7,707,709",
+      "href": "https://www.espn.com/nba/player/_/id/4869342/dyson-daniels",
+      "playerId": "4869342"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Jeremiah Fears",
+      "team": "New Orleans Pelicans",
+      "salary": 7520040,
+      "salaryRaw": "$7,520,040",
+      "href": "https://www.espn.com/nba/player/_/id/5144091/jeremiah-fears",
+      "playerId": "5144091"
+    },
+    {
+      "name": "Ayo Dosunmu",
+      "team": "Chicago Bulls",
+      "salary": 7518519,
+      "salaryRaw": "$7,518,519",
+      "href": "https://www.espn.com/nba/player/_/id/4397002/ayo-dosunmu",
+      "playerId": "4397002"
+    },
+    {
+      "name": "Bilal Coulibaly",
+      "team": "Washington Wizards",
+      "salary": 7275600,
+      "salaryRaw": "$7,275,600",
+      "href": "https://www.espn.com/nba/player/_/id/5104155/bilal-coulibaly",
+      "playerId": "5104155"
+    },
+    {
+      "name": "Payton Pritchard",
+      "team": "Boston Celtics",
+      "salary": 7232143,
+      "salaryRaw": "$7,232,143",
+      "href": "https://www.espn.com/nba/player/_/id/4066354/payton-pritchard",
+      "playerId": "4066354"
+    },
+    {
+      "name": "Donovan Clingan",
+      "team": "Portland Trail Blazers",
+      "salary": 7178400,
+      "salaryRaw": "$7,178,400",
+      "href": "https://www.espn.com/nba/player/_/id/5105565/donovan-clingan",
+      "playerId": "5105565"
+    },
+    {
+      "name": "Kenrich Williams",
+      "team": "Oklahoma City Thunder",
+      "salary": 7163000,
+      "salaryRaw": "$7,163,000",
+      "href": "https://www.espn.com/nba/player/_/id/3133626/kenrich-williams",
+      "playerId": "3133626"
+    },
+    {
+      "name": "Jeremy Sochan",
+      "team": "San Antonio Spurs",
+      "salary": 7096231,
+      "salaryRaw": "$7,096,231",
+      "href": "https://www.espn.com/nba/player/_/id/4610139/jeremy-sochan",
+      "playerId": "4610139"
+    },
+    {
+      "name": "Tyus Jones",
+      "team": "Orlando Magic",
+      "salary": 7000000,
+      "salaryRaw": "$7,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/3135046/tyus-jones",
+      "playerId": "3135046"
+    },
+    {
+      "name": "Isaiah Jackson",
+      "team": "Indiana Pacers",
+      "salary": 7000000,
+      "salaryRaw": "$7,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4432170/isaiah-jackson",
+      "playerId": "4432170"
+    },
+    {
+      "name": "Egor Demin",
+      "team": "Brooklyn Nets",
+      "salary": 6889200,
+      "salaryRaw": "$6,889,200",
+      "href": "https://www.espn.com/nba/player/_/id/5175643/egor-demin",
+      "playerId": "5175643"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Jevon Carter",
+      "team": "Chicago Bulls",
+      "salary": 6809524,
+      "salaryRaw": "$6,809,524",
+      "href": "https://www.espn.com/nba/player/_/id/3133635/jevon-carter",
+      "playerId": "3133635"
+    },
+    {
+      "name": "Clint Capela",
+      "team": "Houston Rockets",
+      "salary": 6700000,
+      "salaryRaw": "$6,700,000",
+      "href": "https://www.espn.com/nba/player/_/id/3102529/clint-capela",
+      "playerId": "3102529"
+    },
+    {
+      "name": "Ousmane Dieng",
+      "team": "Oklahoma City Thunder",
+      "salary": 6670882,
+      "salaryRaw": "$6,670,882",
+      "href": "https://www.espn.com/nba/player/_/id/4997526/ousmane-dieng",
+      "playerId": "4997526"
+    },
+    {
+      "name": "Jarace Walker",
+      "team": "Indiana Pacers",
+      "salary": 6665520,
+      "salaryRaw": "$6,665,520",
+      "href": "https://www.espn.com/nba/player/_/id/5106060/jarace-walker",
+      "playerId": "5106060"
+    },
+    {
+      "name": "Dean Wade",
+      "team": "Cleveland Cavaliers",
+      "salary": 6623456,
+      "salaryRaw": "$6,623,456",
+      "href": "https://www.espn.com/nba/player/_/id/3912848/dean-wade",
+      "playerId": "3912848"
+    },
+    {
+      "name": "Jalen Williams",
+      "team": "Oklahoma City Thunder",
+      "salary": 6580997,
+      "salaryRaw": "$6,580,997",
+      "href": "https://www.espn.com/nba/player/_/id/4593803/jalen-williams",
+      "playerId": "4593803"
+    },
+    {
+      "name": "Rob Dillingham",
+      "team": "Minnesota Timberwolves",
+      "salary": 6576120,
+      "salaryRaw": "$6,576,120",
+      "href": "https://www.espn.com/nba/player/_/id/4684275/rob-dillingham",
+      "playerId": "4684275"
+    },
+    {
+      "name": "Jalen Duren",
+      "team": "Detroit Pistons",
+      "salary": 6483144,
+      "salaryRaw": "$6,483,144",
+      "href": "https://www.espn.com/nba/player/_/id/4433621/jalen-duren",
+      "playerId": "4433621"
+    },
+    {
+      "name": "Ochai Agbaji",
+      "team": "Toronto Raptors",
+      "salary": 6383525,
+      "salaryRaw": "$6,383,525",
+      "href": "https://www.espn.com/nba/player/_/id/4397018/ochai-agbaji",
+      "playerId": "4397018"
+    },
+    {
+      "name": "Collin Murray-Boyles",
+      "team": "Toronto Raptors",
+      "salary": 6332520,
+      "salaryRaw": "$6,332,520",
+      "href": "https://www.espn.com/nba/player/_/id/5093267/collin-murray-boyles",
+      "playerId": "5093267"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Mark Williams",
+      "team": "Phoenix Suns",
+      "salary": 6276531,
+      "salaryRaw": "$6,276,531",
+      "href": "https://www.espn.com/nba/player/_/id/4701232/mark-williams",
+      "playerId": "4701232"
+    },
+    {
+      "name": "Ziaire Williams",
+      "team": "Brooklyn Nets",
+      "salary": 6250000,
+      "salaryRaw": "$6,250,000",
+      "href": "https://www.espn.com/nba/player/_/id/4433137/ziaire-williams",
+      "playerId": "4433137"
+    },
+    {
+      "name": "Day'Ron Sharpe",
+      "team": "Brooklyn Nets",
+      "salary": 6250000,
+      "salaryRaw": "$6,250,000",
+      "href": "https://www.espn.com/nba/player/_/id/4432194/day'ron-sharpe",
+      "playerId": "4432194"
+    },
+    {
+      "name": "John Konchar",
+      "team": "Memphis Grizzlies",
+      "salary": 6165000,
+      "salaryRaw": "$6,165,000",
+      "href": "https://www.espn.com/nba/player/_/id/3134932/john-konchar",
+      "playerId": "3134932"
+    },
+    {
+      "name": "Taylor Hendricks",
+      "team": "Utah Jazz",
+      "salary": 6127080,
+      "salaryRaw": "$6,127,080",
+      "href": "https://www.espn.com/nba/player/_/id/4684806/taylor-hendricks",
+      "playerId": "4684806"
+    },
+    {
+      "name": "Saddiq Bey",
+      "team": "New Orleans Pelicans",
+      "salary": 6118644,
+      "salaryRaw": "$6,118,644",
+      "href": "https://www.espn.com/nba/player/_/id/4397136/saddiq-bey",
+      "playerId": "4397136"
+    },
+    {
+      "name": "Zach Edey",
+      "team": "Memphis Grizzlies",
+      "salary": 6045000,
+      "salaryRaw": "$6,045,000",
+      "href": "https://www.espn.com/nba/player/_/id/4600663/zach-edey",
+      "playerId": "4600663"
+    },
+    {
+      "name": "Khaman Maluach",
+      "team": "Phoenix Suns",
+      "salary": 6016080,
+      "salaryRaw": "$6,016,080",
+      "href": "https://www.espn.com/nba/player/_/id/5203685/khaman-maluach",
+      "playerId": "5203685"
+    },
+    {
+      "name": "Jake LaRavia",
+      "team": "Los Angeles Lakers",
+      "salary": 6000000,
+      "salaryRaw": "$6,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4592691/jake-laravia",
+      "playerId": "4592691"
+    },
+    {
+      "name": "Jaden Hardy",
+      "team": "Dallas Mavericks",
+      "salary": 6000000,
+      "salaryRaw": "$6,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4868423/jaden-hardy",
+      "playerId": "4868423"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Cam Thomas",
+      "team": "Brooklyn Nets",
+      "salary": 5993172,
+      "salaryRaw": "$5,993,172",
+      "href": "https://www.espn.com/nba/player/_/id/4432174/cam-thomas",
+      "playerId": "4432174"
+    },
+    {
+      "name": "Cason Wallace",
+      "team": "Oklahoma City Thunder",
+      "salary": 5820240,
+      "salaryRaw": "$5,820,240",
+      "href": "https://www.espn.com/nba/player/_/id/4683692/cason-wallace",
+      "playerId": "4683692"
+    },
+    {
+      "name": "Cody Williams",
+      "team": "Utah Jazz",
+      "salary": 5742480,
+      "salaryRaw": "$5,742,480",
+      "href": "https://www.espn.com/nba/player/_/id/4895758/cody-williams",
+      "playerId": "4895758"
+    },
+    {
+      "name": "Cedric Coward",
+      "team": "Memphis Grizzlies",
+      "salary": 5715120,
+      "salaryRaw": "$5,715,120",
+      "href": "https://www.espn.com/nba/player/_/id/4903027/cedric-coward",
+      "playerId": "4903027"
+    },
+    {
+      "name": "Al Horford",
+      "team": "Golden State Warriors",
+      "salary": 5685000,
+      "salaryRaw": "$5,685,000",
+      "href": "https://www.espn.com/nba/player/_/id/3213/al-horford",
+      "playerId": "3213"
+    },
+    {
+      "name": "D'Angelo Russell",
+      "team": "Dallas Mavericks",
+      "salary": 5685000,
+      "salaryRaw": "$5,685,000",
+      "href": "https://www.espn.com/nba/player/_/id/3136776/d'angelo-russell",
+      "playerId": "3136776"
+    },
+    {
+      "name": "Tari Eason",
+      "team": "Houston Rockets",
+      "salary": 5675766,
+      "salaryRaw": "$5,675,766",
+      "href": "https://www.espn.com/nba/player/_/id/4433192/tari-eason",
+      "playerId": "4433192"
+    },
+    {
+      "name": "Haywood Highsmith",
+      "team": "Brooklyn Nets",
+      "salary": 5616000,
+      "salaryRaw": "$5,616,000",
+      "href": "https://www.espn.com/nba/player/_/id/4291678/haywood-highsmith",
+      "playerId": "4291678"
+    },
+    {
+      "name": "Nicolas Batum",
+      "team": "LA Clippers",
+      "salary": 5601600,
+      "salaryRaw": "$5,601,600",
+      "href": "https://www.espn.com/nba/player/_/id/3416/nicolas-batum",
+      "playerId": "3416"
+    },
+    {
+      "name": "Jett Howard",
+      "team": "Orlando Magic",
+      "salary": 5529720,
+      "salaryRaw": "$5,529,720",
+      "href": "https://www.espn.com/nba/player/_/id/5105806/jett-howard",
+      "playerId": "5105806"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Guerschon Yabusele",
+      "team": "New York Knicks",
+      "salary": 5500000,
+      "salaryRaw": "$5,500,000",
+      "href": "https://www.espn.com/nba/player/_/id/4017844/guerschon-yabusele",
+      "playerId": "4017844"
+    },
+    {
+      "name": "Matas Buzelis",
+      "team": "Chicago Bulls",
+      "salary": 5455560,
+      "salaryRaw": "$5,455,560",
+      "href": "https://www.espn.com/nba/player/_/id/4711294/matas-buzelis",
+      "playerId": "4711294"
+    },
+    {
+      "name": "Noa Essengue",
+      "team": "Chicago Bulls",
+      "salary": 5429520,
+      "salaryRaw": "$5,429,520",
+      "href": "https://www.espn.com/nba/player/_/id/5242496/noa-essengue",
+      "playerId": "5242496"
+    },
+    {
+      "name": "Dario Saric",
+      "team": "Sacramento Kings",
+      "salary": 5426000,
+      "salaryRaw": "$5,426,000",
+      "href": "https://www.espn.com/nba/player/_/id/3032978/dario-saric",
+      "playerId": "3032978"
+    },
+    {
+      "name": "Kris Dunn",
+      "team": "LA Clippers",
+      "salary": 5426000,
+      "salaryRaw": "$5,426,000",
+      "href": "https://www.espn.com/nba/player/_/id/2991139/kris-dunn",
+      "playerId": "2991139"
+    },
+    {
+      "name": "Dalen Terry",
+      "team": "Chicago Bulls",
+      "salary": 5399118,
+      "salaryRaw": "$5,399,118",
+      "href": "https://www.espn.com/nba/player/_/id/4433159/dalen-terry",
+      "playerId": "4433159"
+    },
+    {
+      "name": "Paul Reed",
+      "team": "Detroit Pistons",
+      "salary": 5335894,
+      "salaryRaw": "$5,335,894",
+      "href": "https://www.espn.com/nba/player/_/id/4278562/paul-reed",
+      "playerId": "4278562"
+    },
+    {
+      "name": "Dereck Lively II",
+      "team": "Dallas Mavericks",
+      "salary": 5253360,
+      "salaryRaw": "$5,253,360",
+      "href": "https://www.espn.com/nba/player/_/id/4683688/dereck-lively-ii",
+      "playerId": "4683688"
+    },
+    {
+      "name": "Nikola Topic",
+      "team": "Oklahoma City Thunder",
+      "salary": 5182920,
+      "salaryRaw": "$5,182,920",
+      "href": "https://www.espn.com/nba/player/_/id/5159925/nikola-topic",
+      "playerId": "5159925"
+    },
+    {
+      "name": "Derik Queen",
+      "team": "New Orleans Pelicans",
+      "salary": 5157960,
+      "salaryRaw": "$5,157,960",
+      "href": "https://www.espn.com/nba/player/_/id/4869780/derik-queen",
+      "playerId": "4869780"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Kevin Porter Jr.",
+      "team": "Milwaukee Bucks",
+      "salary": 5134000,
+      "salaryRaw": "$5,134,000",
+      "href": "https://www.espn.com/nba/player/_/id/4397140/kevin-porter-jr.",
+      "playerId": "4397140"
+    },
+    {
+      "name": "Marcus Smart",
+      "team": "Los Angeles Lakers",
+      "salary": 5134000,
+      "salaryRaw": "$5,134,000",
+      "href": "https://www.espn.com/nba/player/_/id/2990992/marcus-smart",
+      "playerId": "2990992"
+    },
+    {
+      "name": "Nick Richards",
+      "team": "Phoenix Suns",
+      "salary": 5000000,
+      "salaryRaw": "$5,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4278076/nick-richards",
+      "playerId": "4278076"
+    },
+    {
+      "name": "Andre Drummond",
+      "team": "Philadelphia 76ers",
+      "salary": 5000000,
+      "salaryRaw": "$5,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/6585/andre-drummond",
+      "playerId": "6585"
+    },
+    {
+      "name": "Moritz Wagner",
+      "team": "Orlando Magic",
+      "salary": 5000000,
+      "salaryRaw": "$5,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/3150844/moritz-wagner",
+      "playerId": "3150844"
+    },
+    {
+      "name": "Gradey Dick",
+      "team": "Toronto Raptors",
+      "salary": 4990560,
+      "salaryRaw": "$4,990,560",
+      "href": "https://www.espn.com/nba/player/_/id/5106258/gradey-dick",
+      "playerId": "5106258"
+    },
+    {
+      "name": "Malaki Branham",
+      "team": "Washington Wizards",
+      "salary": 4962033,
+      "salaryRaw": "$4,962,033",
+      "href": "https://www.espn.com/nba/player/_/id/4565201/malaki-branham",
+      "playerId": "4565201"
+    },
+    {
+      "name": "Devin Carter",
+      "team": "Sacramento Kings",
+      "salary": 4923720,
+      "salaryRaw": "$4,923,720",
+      "href": "https://www.espn.com/nba/player/_/id/4433188/devin-carter",
+      "playerId": "4433188"
+    },
+    {
+      "name": "Christian Braun",
+      "team": "Denver Nuggets",
+      "salary": 4921797,
+      "salaryRaw": "$4,921,797",
+      "href": "https://www.espn.com/nba/player/_/id/4431767/christian-braun",
+      "playerId": "4431767"
+    },
+    {
+      "name": "Carter Bryant",
+      "team": "San Antonio Spurs",
+      "salary": 4900320,
+      "salaryRaw": "$4,900,320",
+      "href": "https://www.espn.com/nba/player/_/id/5061568/carter-bryant",
+      "playerId": "5061568"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Walker Kessler",
+      "team": "Utah Jazz",
+      "salary": 4878938,
+      "salaryRaw": "$4,878,938",
+      "href": "https://www.espn.com/nba/player/_/id/4433136/walker-kessler",
+      "playerId": "4433136"
+    },
+    {
+      "name": "Jordan Hawkins",
+      "team": "New Orleans Pelicans",
+      "salary": 4741320,
+      "salaryRaw": "$4,741,320",
+      "href": "https://www.espn.com/nba/player/_/id/4683750/jordan-hawkins",
+      "playerId": "4683750"
+    },
+    {
+      "name": "Blake Wesley",
+      "team": "Portland Trail Blazers",
+      "salary": 4726328,
+      "salaryRaw": "$4,726,328",
+      "href": "https://www.espn.com/nba/player/_/id/4683935/blake-wesley",
+      "playerId": "4683935"
+    },
+    {
+      "name": "Bub Carrington",
+      "team": "Washington Wizards",
+      "salary": 4677600,
+      "salaryRaw": "$4,677,600",
+      "href": "https://www.espn.com/nba/player/_/id/4845374/bub-carrington",
+      "playerId": "4845374"
+    },
+    {
+      "name": "Thomas Sorber",
+      "team": "Oklahoma City Thunder",
+      "salary": 4655040,
+      "salaryRaw": "$4,655,040",
+      "href": "https://www.espn.com/nba/player/_/id/5061603/thomas-sorber",
+      "playerId": "5061603"
+    },
+    {
+      "name": "Kobe Bufkin",
+      "team": "Brooklyn Nets",
+      "salary": 4503720,
+      "salaryRaw": "$4,503,720",
+      "href": "https://www.espn.com/nba/player/_/id/4683736/kobe-bufkin",
+      "playerId": "4683736"
+    },
+    {
+      "name": "Jose Alvarado",
+      "team": "New Orleans Pelicans",
+      "salary": 4500000,
+      "salaryRaw": "$4,500,000",
+      "href": "https://www.espn.com/nba/player/_/id/4277869/jose-alvarado",
+      "playerId": "4277869"
+    },
+    {
+      "name": "Nikola Jovic",
+      "team": "Miami Heat",
+      "salary": 4445417,
+      "salaryRaw": "$4,445,417",
+      "href": "https://www.espn.com/nba/player/_/id/4997528/nikola-jovic",
+      "playerId": "4997528"
+    },
+    {
+      "name": "Kel'el Ware",
+      "team": "Miami Heat",
+      "salary": 4443360,
+      "salaryRaw": "$4,443,360",
+      "href": "https://www.espn.com/nba/player/_/id/5105623/kel'el-ware",
+      "playerId": "5105623"
+    },
+    {
+      "name": "Yang Hansen",
+      "team": "Portland Trail Blazers",
+      "salary": 4422360,
+      "salaryRaw": "$4,422,360",
+      "href": "https://www.espn.com/nba/player/_/id/5217746/yang-hansen",
+      "playerId": "5217746"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Peyton Watson",
+      "team": "Denver Nuggets",
+      "salary": 4356476,
+      "salaryRaw": "$4,356,476",
+      "href": "https://www.espn.com/nba/player/_/id/4576087/peyton-watson",
+      "playerId": "4576087"
+    },
+    {
+      "name": "Miles McBride",
+      "team": "New York Knicks",
+      "salary": 4333333,
+      "salaryRaw": "$4,333,333",
+      "href": "https://www.espn.com/nba/player/_/id/4431823/miles-mcbride",
+      "playerId": "4431823"
+    },
+    {
+      "name": "Keyonte George",
+      "team": "Utah Jazz",
+      "salary": 4278960,
+      "salaryRaw": "$4,278,960",
+      "href": "https://www.espn.com/nba/player/_/id/4433627/keyonte-george",
+      "playerId": "4433627"
+    },
+    {
+      "name": "Jared McCain",
+      "team": "Philadelphia 76ers",
+      "salary": 4221360,
+      "salaryRaw": "$4,221,360",
+      "href": "https://www.espn.com/nba/player/_/id/4683778/jared-mccain",
+      "playerId": "4683778"
+    },
+    {
+      "name": "Joan Beringer",
+      "team": "Minnesota Timberwolves",
+      "salary": 4201080,
+      "salaryRaw": "$4,201,080",
+      "href": "https://www.espn.com/nba/player/_/id/5279133/joan-beringer",
+      "playerId": "5279133"
+    },
+    {
+      "name": "Kevin Love",
+      "team": "Utah Jazz",
+      "salary": 4150000,
+      "salaryRaw": "$4,150,000",
+      "href": "https://www.espn.com/nba/player/_/id/3449/kevin-love",
+      "playerId": "3449"
+    },
+    {
+      "name": "Dalton Knecht",
+      "team": "Los Angeles Lakers",
+      "salary": 4010160,
+      "salaryRaw": "$4,010,160",
+      "href": "https://www.espn.com/nba/player/_/id/4897943/dalton-knecht",
+      "playerId": "4897943"
+    },
+    {
+      "name": "Ryan Rollins",
+      "team": "Milwaukee Bucks",
+      "salary": 4000000,
+      "salaryRaw": "$4,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4591725/ryan-rollins",
+      "playerId": "4591725"
+    },
+    {
+      "name": "Dwight Powell",
+      "team": "Dallas Mavericks",
+      "salary": 4000000,
+      "salaryRaw": "$4,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/2531367/dwight-powell",
+      "playerId": "2531367"
+    },
+    {
+      "name": "Walter Clayton Jr.",
+      "team": "Utah Jazz",
+      "salary": 3991320,
+      "salaryRaw": "$3,991,320",
+      "href": "https://www.espn.com/nba/player/_/id/4896372/walter-clayton-jr.",
+      "playerId": "4896372"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Jaime Jaquez Jr.",
+      "team": "Miami Heat",
+      "salary": 3861600,
+      "salaryRaw": "$3,861,600",
+      "href": "https://www.espn.com/nba/player/_/id/4432848/jaime-jaquez-jr.",
+      "playerId": "4432848"
+    },
+    {
+      "name": "Nolan Traore",
+      "team": "Brooklyn Nets",
+      "salary": 3811560,
+      "salaryRaw": "$3,811,560",
+      "href": "https://www.espn.com/nba/player/_/id/5279130/nolan-traore",
+      "playerId": "5279130"
+    },
+    {
+      "name": "Tristan da Silva",
+      "team": "Orlando Magic",
+      "salary": 3809520,
+      "salaryRaw": "$3,809,520",
+      "href": "https://www.espn.com/nba/player/_/id/4702382/tristan-da-silva",
+      "playerId": "4702382"
+    },
+    {
+      "name": "Gary Trent Jr.",
+      "team": "Milwaukee Bucks",
+      "salary": 3697105,
+      "salaryRaw": "$3,697,105",
+      "href": "https://www.espn.com/nba/player/_/id/4277843/gary-trent-jr.",
+      "playerId": "4277843"
+    },
+    {
+      "name": "Brandin Podziemski",
+      "team": "Golden State Warriors",
+      "salary": 3687960,
+      "salaryRaw": "$3,687,960",
+      "href": "https://www.espn.com/nba/player/_/id/4709138/brandin-podziemski",
+      "playerId": "4709138"
+    },
+    {
+      "name": "Svi Mykhailiuk",
+      "team": "Utah Jazz",
+      "salary": 3675000,
+      "salaryRaw": "$3,675,000",
+      "href": "https://www.espn.com/nba/player/_/id/3133602/svi-mykhailiuk",
+      "playerId": "3133602"
+    },
+    {
+      "name": "Kasparas Jakucionis",
+      "team": "Miami Heat",
+      "salary": 3658800,
+      "salaryRaw": "$3,658,800",
+      "href": "https://www.espn.com/nba/player/_/id/5214640/kasparas-jakucionis",
+      "playerId": "5214640"
+    },
+    {
+      "name": "Ja'Kobe Walter",
+      "team": "Toronto Raptors",
+      "salary": 3638160,
+      "salaryRaw": "$3,638,160",
+      "href": "https://www.espn.com/nba/player/_/id/4684272/ja'kobe-walter",
+      "playerId": "4684272"
+    },
+    {
+      "name": "Gary Harris",
+      "team": "Milwaukee Bucks",
+      "salary": 3634153,
+      "salaryRaw": "$3,634,153",
+      "href": "https://www.espn.com/nba/player/_/id/2999547/gary-harris",
+      "playerId": "2999547"
+    },
+    {
+      "name": "Cam Whitmore",
+      "team": "Washington Wizards",
+      "salary": 3539760,
+      "salaryRaw": "$3,539,760",
+      "href": "https://www.espn.com/nba/player/_/id/5105592/cam-whitmore",
+      "playerId": "5105592"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Will Riley",
+      "team": "Washington Wizards",
+      "salary": 3512520,
+      "salaryRaw": "$3,512,520",
+      "href": "https://www.espn.com/nba/player/_/id/5144126/will-riley",
+      "playerId": "5144126"
+    },
+    {
+      "name": "Jaylon Tyson",
+      "team": "Cleveland Cavaliers",
+      "salary": 3492480,
+      "salaryRaw": "$3,492,480",
+      "href": "https://www.espn.com/nba/player/_/id/4683747/jaylon-tyson",
+      "playerId": "4683747"
+    },
+    {
+      "name": "Eric Gordon",
+      "team": "Philadelphia 76ers",
+      "salary": 3468960,
+      "salaryRaw": "$3,468,960",
+      "href": "https://www.espn.com/nba/player/_/id/3431/eric-gordon",
+      "playerId": "3431"
+    },
+    {
+      "name": "Jaxson Hayes",
+      "team": "Los Angeles Lakers",
+      "salary": 3449324,
+      "salaryRaw": "$3,449,324",
+      "href": "https://www.espn.com/nba/player/_/id/4397077/jaxson-hayes",
+      "playerId": "4397077"
+    },
+    {
+      "name": "Noah Clowney",
+      "team": "Brooklyn Nets",
+      "salary": 3398640,
+      "salaryRaw": "$3,398,640",
+      "href": "https://www.espn.com/nba/player/_/id/4712896/noah-clowney",
+      "playerId": "4712896"
+    },
+    {
+      "name": "Drake Powell",
+      "team": "Brooklyn Nets",
+      "salary": 3372240,
+      "salaryRaw": "$3,372,240",
+      "href": "https://www.espn.com/nba/player/_/id/5037873/drake-powell",
+      "playerId": "5037873"
+    },
+    {
+      "name": "Yves Missi",
+      "team": "New Orleans Pelicans",
+      "salary": 3353040,
+      "salaryRaw": "$3,353,040",
+      "href": "https://www.espn.com/nba/player/_/id/5061589/yves-missi",
+      "playerId": "5061589"
+    },
+    {
+      "name": "Taurean Prince",
+      "team": "Milwaukee Bucks",
+      "salary": 3303774,
+      "salaryRaw": "$3,303,774",
+      "href": "https://www.espn.com/nba/player/_/id/2990962/taurean-prince",
+      "playerId": "2990962"
+    },
+    {
+      "name": "Dariq Whitehead",
+      "team": "Oklahoma City Thunder",
+      "salary": 3262560,
+      "salaryRaw": "$3,262,560",
+      "href": "https://www.espn.com/nba/player/_/id/4432735/dariq-whitehead",
+      "playerId": "4432735"
+    },
+    {
+      "name": "Asa Newell",
+      "team": "Atlanta Hawks",
+      "salary": 3237480,
+      "salaryRaw": "$3,237,480",
+      "href": "https://www.espn.com/nba/player/_/id/4873201/asa-newell",
+      "playerId": "4873201"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "DaRon Holmes II",
+      "team": "Denver Nuggets",
+      "salary": 3218760,
+      "salaryRaw": "$3,218,760",
+      "href": "https://www.espn.com/nba/player/_/id/4433607/daron-holmes-ii",
+      "playerId": "4433607"
+    },
+    {
+      "name": "Kris Murray",
+      "team": "Portland Trail Blazers",
+      "salary": 3132000,
+      "salaryRaw": "$3,132,000",
+      "href": "https://www.espn.com/nba/player/_/id/4594326/kris-murray",
+      "playerId": "4594326"
+    },
+    {
+      "name": "Nique Clifford",
+      "team": "Sacramento Kings",
+      "salary": 3108120,
+      "salaryRaw": "$3,108,120",
+      "href": "https://www.espn.com/nba/player/_/id/4702384/nique-clifford",
+      "playerId": "4702384"
+    },
+    {
+      "name": "AJ Johnson",
+      "team": "Washington Wizards",
+      "salary": 3090480,
+      "salaryRaw": "$3,090,480",
+      "href": "https://www.espn.com/nba/player/_/id/5170947/aj-johnson",
+      "playerId": "5170947"
+    },
+    {
+      "name": "De'Anthony Melton",
+      "team": "Golden State Warriors",
+      "salary": 3080921,
+      "salaryRaw": "$3,080,921",
+      "href": "https://www.espn.com/nba/player/_/id/4066436/de'anthony-melton",
+      "playerId": "4066436"
+    },
+    {
+      "name": "Olivier-Maxence Prosper",
+      "team": "Memphis Grizzlies",
+      "salary": 3007080,
+      "salaryRaw": "$3,007,080",
+      "href": "https://www.espn.com/nba/player/_/id/4595400/olivier-maxence-prosper",
+      "playerId": "4595400"
+    },
+    {
+      "name": "Kyle Filipowski",
+      "team": "Utah Jazz",
+      "salary": 3000000,
+      "salaryRaw": "$3,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4684793/kyle-filipowski",
+      "playerId": "4684793"
+    },
+    {
+      "name": "Ajay Mitchell",
+      "team": "Oklahoma City Thunder",
+      "salary": 3000000,
+      "salaryRaw": "$3,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4900671/ajay-mitchell",
+      "playerId": "4900671"
+    },
+    {
+      "name": "Julian Champagnie",
+      "team": "San Antonio Spurs",
+      "salary": 3000000,
+      "salaryRaw": "$3,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/4592479/julian-champagnie",
+      "playerId": "4592479"
+    },
+    {
+      "name": "Shake Milton",
+      "team": "Los Angeles Lakers",
+      "salary": 3000000,
+      "salaryRaw": "$3,000,000",
+      "href": "https://www.espn.com/nba/player/_/id/3915195/shake-milton",
+      "playerId": "3915195"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Jase Richardson",
+      "team": "Orlando Magic",
+      "salary": 2983320,
+      "salaryRaw": "$2,983,320",
+      "href": "https://www.espn.com/nba/player/_/id/5239561/jase-richardson",
+      "playerId": "5239561"
+    },
+    {
+      "name": "Kyshawn George",
+      "team": "Washington Wizards",
+      "salary": 2966760,
+      "salaryRaw": "$2,966,760",
+      "href": "https://www.espn.com/nba/player/_/id/5174563/kyshawn-george",
+      "playerId": "5174563"
+    },
+    {
+      "name": "Tony Bradley",
+      "team": "Indiana Pacers",
+      "salary": 2940876,
+      "salaryRaw": "$2,940,876",
+      "href": "https://www.espn.com/nba/player/_/id/4065673/tony-bradley",
+      "playerId": "4065673"
+    },
+    {
+      "name": "Marcus Sasser",
+      "team": "Detroit Pistons",
+      "salary": 2886720,
+      "salaryRaw": "$2,886,720",
+      "href": "https://www.espn.com/nba/player/_/id/4432107/marcus-sasser",
+      "playerId": "4432107"
+    },
+    {
+      "name": "Ben Saraf",
+      "team": "Brooklyn Nets",
+      "salary": 2884560,
+      "salaryRaw": "$2,884,560",
+      "href": "https://www.espn.com/nba/player/_/id/5242502/ben-saraf",
+      "playerId": "5242502"
+    },
+    {
+      "name": "Pacome Dadiet",
+      "team": "New York Knicks",
+      "salary": 2847600,
+      "salaryRaw": "$2,847,600",
+      "href": "https://www.espn.com/nba/player/_/id/5211983/pacome-dadiet",
+      "playerId": "5211983"
+    },
+    {
+      "name": "Johnny Juzang",
+      "team": "Minnesota Timberwolves",
+      "salary": 2840518,
+      "salaryRaw": "$2,840,518",
+      "href": "https://www.espn.com/nba/player/_/id/4432817/johnny-juzang",
+      "playerId": "4432817"
+    },
+    {
+      "name": "Danny Wolf",
+      "team": "Brooklyn Nets",
+      "salary": 2801280,
+      "salaryRaw": "$2,801,280",
+      "href": "https://www.espn.com/nba/player/_/id/5107173/danny-wolf",
+      "playerId": "5107173"
+    },
+    {
+      "name": "Ben Sheppard",
+      "team": "Indiana Pacers",
+      "salary": 2790720,
+      "salaryRaw": "$2,790,720",
+      "href": "https://www.espn.com/nba/player/_/id/4433076/ben-sheppard",
+      "playerId": "4433076"
+    },
+    {
+      "name": "Hugo Gonzalez",
+      "team": "Boston Celtics",
+      "salary": 2783880,
+      "salaryRaw": "$2,783,880",
+      "href": "https://www.espn.com/nba/player/_/id/5175647/hugo-gonzalez",
+      "playerId": "5175647"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Liam McNeeley",
+      "team": "Charlotte Hornets",
+      "salary": 2763960,
+      "salaryRaw": "$2,763,960",
+      "href": "https://www.espn.com/nba/player/_/id/5239590/liam-mcneeley",
+      "playerId": "5239590"
+    },
+    {
+      "name": "Dillon Jones",
+      "team": "Washington Wizards",
+      "salary": 2753280,
+      "salaryRaw": "$2,753,280",
+      "href": "https://www.espn.com/nba/player/_/id/4702159/dillon-jones",
+      "playerId": "4702159"
+    },
+    {
+      "name": "Yanic Konan Niederhauser",
+      "team": "LA Clippers",
+      "salary": 2743800,
+      "salaryRaw": "$2,743,800",
+      "href": "https://www.espn.com/nba/player/_/id/5108024/yanic-konan-niederhauser",
+      "playerId": "5108024"
+    },
+    {
+      "name": "DaQuan Jeffries",
+      "team": "Charlotte Hornets",
+      "salary": 2743776,
+      "salaryRaw": "$2,743,776",
+      "href": "https://www.espn.com/nba/player/_/id/3913220/daquan-jeffries",
+      "playerId": "3913220"
+    },
+    {
+      "name": "Nick Smith Jr.",
+      "team": "Los Angeles Lakers",
+      "salary": 2710680,
+      "salaryRaw": "$2,710,680",
+      "href": "https://www.espn.com/nba/player/_/id/4683686/nick-smith-jr.",
+      "playerId": "4683686"
+    },
+    {
+      "name": "Brice Sensabaugh",
+      "team": "Utah Jazz",
+      "salary": 2693760,
+      "salaryRaw": "$2,693,760",
+      "href": "https://www.espn.com/nba/player/_/id/5105839/brice-sensabaugh",
+      "playerId": "5105839"
+    },
+    {
+      "name": "Julian Strawther",
+      "team": "Denver Nuggets",
+      "salary": 2674200,
+      "salaryRaw": "$2,674,200",
+      "href": "https://www.espn.com/nba/player/_/id/4432181/julian-strawther",
+      "playerId": "4432181"
+    },
+    {
+      "name": "Terrence Shannon Jr.",
+      "team": "Minnesota Timberwolves",
+      "salary": 2674080,
+      "salaryRaw": "$2,674,080",
+      "href": "https://www.espn.com/nba/player/_/id/4432847/terrence-shannon-jr.",
+      "playerId": "4432847"
+    },
+    {
+      "name": "James Wiseman",
+      "team": "Indiana Pacers",
+      "salary": 2667947,
+      "salaryRaw": "$2,667,947",
+      "href": "https://www.espn.com/nba/player/_/id/4432808/james-wiseman",
+      "playerId": "4432808"
+    },
+    {
+      "name": "Ryan Dunn",
+      "team": "Phoenix Suns",
+      "salary": 2657760,
+      "salaryRaw": "$2,657,760",
+      "href": "https://www.espn.com/nba/player/_/id/4888725/ryan-dunn",
+      "playerId": "4888725"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Isaiah Collier",
+      "team": "Utah Jazz",
+      "salary": 2638200,
+      "salaryRaw": "$2,638,200",
+      "href": "https://www.espn.com/nba/player/_/id/4683766/isaiah-collier",
+      "playerId": "4683766"
+    },
+    {
+      "name": "Baylor Scheierman",
+      "team": "Boston Celtics",
+      "salary": 2619000,
+      "salaryRaw": "$2,619,000",
+      "href": "https://www.espn.com/nba/player/_/id/4593841/baylor-scheierman",
+      "playerId": "4593841"
+    },
+    {
+      "name": "Anthony Gill",
+      "team": "Washington Wizards",
+      "salary": 2546675,
+      "salaryRaw": "$2,546,675",
+      "href": "https://www.espn.com/nba/player/_/id/2581184/anthony-gill",
+      "playerId": "2581184"
+    },
+    {
+      "name": "Terence Davis",
+      "team": "Sacramento Kings",
+      "salary": 2546675,
+      "salaryRaw": "$2,546,675",
+      "href": "https://www.espn.com/nba/player/_/id/3919454/terence-davis",
+      "playerId": "3919454"
+    },
+    {
+      "name": "Xavier Tillman",
+      "team": "Boston Celtics",
+      "salary": 2546675,
+      "salaryRaw": "$2,546,675",
+      "href": "https://www.espn.com/nba/player/_/id/4277964/xavier-tillman",
+      "playerId": "4277964"
+    },
+    {
+      "name": "Cam Spencer",
+      "team": "Memphis Grizzlies",
+      "salary": 2537989,
+      "salaryRaw": "$2,537,989",
+      "href": "https://www.espn.com/nba/player/_/id/4433083/cam-spencer",
+      "playerId": "4433083"
+    },
+    {
+      "name": "Sandro Mamukelashvili",
+      "team": "Toronto Raptors",
+      "salary": 2461463,
+      "salaryRaw": "$2,461,463",
+      "href": "https://www.espn.com/nba/player/_/id/4278580/sandro-mamukelashvili",
+      "playerId": "4278580"
+    },
+    {
+      "name": "Trendon Watford",
+      "team": "Philadelphia 76ers",
+      "salary": 2461463,
+      "salaryRaw": "$2,461,463",
+      "href": "https://www.espn.com/nba/player/_/id/4431675/trendon-watford",
+      "playerId": "4431675"
+    },
+    {
+      "name": "Jericho Sims",
+      "team": "Milwaukee Bucks",
+      "salary": 2461463,
+      "salaryRaw": "$2,461,463",
+      "href": "https://www.espn.com/nba/player/_/id/4277922/jericho-sims",
+      "playerId": "4277922"
+    },
+    {
+      "name": "Luka Garza",
+      "team": "Boston Celtics",
+      "salary": 2461463,
+      "salaryRaw": "$2,461,463",
+      "href": "https://www.espn.com/nba/player/_/id/4277951/luka-garza",
+      "playerId": "4277951"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Dru Smith",
+      "team": "Miami Heat",
+      "salary": 2378870,
+      "salaryRaw": "$2,378,870",
+      "href": "https://www.espn.com/nba/player/_/id/4066993/dru-smith",
+      "playerId": "4066993"
+    },
+    {
+      "name": "Josh Minott",
+      "team": "Boston Celtics",
+      "salary": 2378870,
+      "salaryRaw": "$2,378,870",
+      "href": "https://www.espn.com/nba/player/_/id/4687718/josh-minott",
+      "playerId": "4687718"
+    },
+    {
+      "name": "Justin Champagnie",
+      "team": "Washington Wizards",
+      "salary": 2349578,
+      "salaryRaw": "$2,349,578",
+      "href": "https://www.espn.com/nba/player/_/id/4432907/justin-champagnie",
+      "playerId": "4432907"
+    },
+    {
+      "name": "Jared Butler",
+      "team": "Phoenix Suns",
+      "salary": 2349578,
+      "salaryRaw": "$2,349,578",
+      "href": "https://www.espn.com/nba/player/_/id/4395695/jared-butler",
+      "playerId": "4395695"
+    },
+    {
+      "name": "Jordan Goodwin",
+      "team": "Phoenix Suns",
+      "salary": 2349578,
+      "salaryRaw": "$2,349,578",
+      "href": "https://www.espn.com/nba/player/_/id/4278402/jordan-goodwin",
+      "playerId": "4278402"
+    },
+    {
+      "name": "Keon Johnson",
+      "team": "Brooklyn Nets",
+      "salary": 2349578,
+      "salaryRaw": "$2,349,578",
+      "href": "https://www.espn.com/nba/player/_/id/4432192/keon-johnson",
+      "playerId": "4432192"
+    },
+    {
+      "name": "Jay Huff",
+      "team": "Indiana Pacers",
+      "salary": 2349578,
+      "salaryRaw": "$2,349,578",
+      "href": "https://www.espn.com/nba/player/_/id/4065731/jay-huff",
+      "playerId": "4065731"
+    },
+    {
+      "name": "Jaden Springer",
+      "team": "New Orleans Pelicans",
+      "salary": 2349578,
+      "salaryRaw": "$2,349,578",
+      "href": "https://www.espn.com/nba/player/_/id/4432164/jaden-springer",
+      "playerId": "4432164"
+    },
+    {
+      "name": "Neemias Queta",
+      "team": "Boston Celtics",
+      "salary": 2349578,
+      "salaryRaw": "$2,349,578",
+      "href": "https://www.espn.com/nba/player/_/id/4397424/neemias-queta",
+      "playerId": "4397424"
+    },
+    {
+      "name": "Vit Krejci",
+      "team": "Atlanta Hawks",
+      "salary": 2349578,
+      "salaryRaw": "$2,349,578",
+      "href": "https://www.espn.com/nba/player/_/id/4578893/vit-krejci",
+      "playerId": "4578893"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Vince Williams Jr.",
+      "team": "Memphis Grizzlies",
+      "salary": 2301587,
+      "salaryRaw": "$2,301,587",
+      "href": "https://www.espn.com/nba/player/_/id/4397227/vince-williams-jr.",
+      "playerId": "4397227"
+    },
+    {
+      "name": "Keon Ellis",
+      "team": "Sacramento Kings",
+      "salary": 2301587,
+      "salaryRaw": "$2,301,587",
+      "href": "https://www.espn.com/nba/player/_/id/4702177/keon-ellis",
+      "playerId": "4702177"
+    },
+    {
+      "name": "AJ Green",
+      "team": "Milwaukee Bucks",
+      "salary": 2301587,
+      "salaryRaw": "$2,301,587",
+      "href": "https://www.espn.com/nba/player/_/id/4397475/aj-green",
+      "playerId": "4397475"
+    },
+    {
+      "name": "Sion James",
+      "team": "Charlotte Hornets",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/4602025/sion-james",
+      "playerId": "4602025"
+    },
+    {
+      "name": "Ryan Kalkbrenner",
+      "team": "Charlotte Hornets",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/4576060/ryan-kalkbrenner",
+      "playerId": "4576060"
+    },
+    {
+      "name": "Spencer Dinwiddie",
+      "team": "Charlotte Hornets",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/2580782/spencer-dinwiddie",
+      "playerId": "2580782"
+    },
+    {
+      "name": "Mason Plumlee",
+      "team": "Charlotte Hornets",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/2488653/mason-plumlee",
+      "playerId": "2488653"
+    },
+    {
+      "name": "Garrett Temple",
+      "team": "Toronto Raptors",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/4023/garrett-temple",
+      "playerId": "4023"
+    },
+    {
+      "name": "Marvin Bagley III",
+      "team": "Washington Wizards",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/4277848/marvin-bagley-iii",
+      "playerId": "4277848"
+    },
+    {
+      "name": "Lindy Waters III",
+      "team": "San Antonio Spurs",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/4066317/lindy-waters-iii",
+      "playerId": "4066317"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Jordan McLaughlin",
+      "team": "San Antonio Spurs",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/3134916/jordan-mclaughlin",
+      "playerId": "3134916"
+    },
+    {
+      "name": "Bismack Biyombo",
+      "team": "San Antonio Spurs",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/6427/bismack-biyombo",
+      "playerId": "6427"
+    },
+    {
+      "name": "Doug McDermott",
+      "team": "Sacramento Kings",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/2528588/doug-mcdermott",
+      "playerId": "2528588"
+    },
+    {
+      "name": "Russell Westbrook",
+      "team": "Sacramento Kings",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/3468/russell-westbrook",
+      "playerId": "3468"
+    },
+    {
+      "name": "Collin Gillespie",
+      "team": "Phoenix Suns",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/4278585/collin-gillespie",
+      "playerId": "4278585"
+    },
+    {
+      "name": "Nigel Hayes-Davis",
+      "team": "Phoenix Suns",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/3059409/nigel-hayes-davis",
+      "playerId": "3059409"
+    },
+    {
+      "name": "Kyle Lowry",
+      "team": "Philadelphia 76ers",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/3012/kyle-lowry",
+      "playerId": "3012"
+    },
+    {
+      "name": "Landry Shamet",
+      "team": "New York Knicks",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/3914044/landry-shamet",
+      "playerId": "3914044"
+    },
+    {
+      "name": "Jordan Clarkson",
+      "team": "New York Knicks",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/2528426/jordan-clarkson",
+      "playerId": "2528426"
+    },
+    {
+      "name": "Bones Hyland",
+      "team": "Minnesota Timberwolves",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/4592492/bones-hyland",
+      "playerId": "4592492"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Joe Ingles",
+      "team": "Minnesota Timberwolves",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/2968436/joe-ingles",
+      "playerId": "2968436"
+    },
+    {
+      "name": "Amir Coffey",
+      "team": "Milwaukee Bucks",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/4066387/amir-coffey",
+      "playerId": "4066387"
+    },
+    {
+      "name": "Thanasis Antetokounmpo",
+      "team": "Milwaukee Bucks",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/3102533/thanasis-antetokounmpo",
+      "playerId": "3102533"
+    },
+    {
+      "name": "Chris Paul",
+      "team": "LA Clippers",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/2779/chris-paul",
+      "playerId": "2779"
+    },
+    {
+      "name": "Jae'Sean Tate",
+      "team": "Houston Rockets",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/3136777/jae'sean-tate",
+      "playerId": "3136777"
+    },
+    {
+      "name": "Jeff Green",
+      "team": "Houston Rockets",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/3209/jeff-green",
+      "playerId": "3209"
+    },
+    {
+      "name": "Gary Payton II",
+      "team": "Golden State Warriors",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/3134903/gary-payton-ii",
+      "playerId": "3134903"
+    },
+    {
+      "name": "Javonte Green",
+      "team": "Detroit Pistons",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/2596112/javonte-green",
+      "playerId": "2596112"
+    },
+    {
+      "name": "Bruce Brown",
+      "team": "Denver Nuggets",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/4065670/bruce-brown",
+      "playerId": "4065670"
+    },
+    {
+      "name": "Tim Hardaway Jr.",
+      "team": "Denver Nuggets",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/2528210/tim-hardaway-jr.",
+      "playerId": "2528210"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Dante Exum",
+      "team": "Dallas Mavericks",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/3102528/dante-exum",
+      "playerId": "3102528"
+    },
+    {
+      "name": "Chris Livingston",
+      "team": "Cleveland Cavaliers",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/4433622/chris-livingston",
+      "playerId": "4433622"
+    },
+    {
+      "name": "Thomas Bryant",
+      "team": "Cleveland Cavaliers",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/3934723/thomas-bryant",
+      "playerId": "3934723"
+    },
+    {
+      "name": "Larry Nance Jr.",
+      "team": "Cleveland Cavaliers",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/2580365/larry-nance-jr.",
+      "playerId": "2580365"
+    },
+    {
+      "name": "Chris Boucher",
+      "team": "Boston Celtics",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/3948153/chris-boucher",
+      "playerId": "3948153"
+    },
+    {
+      "name": "Keaton Wallace",
+      "team": "Atlanta Hawks",
+      "salary": 2296274,
+      "salaryRaw": "$2,296,274",
+      "href": "https://www.espn.com/nba/player/_/id/4279118/keaton-wallace",
+      "playerId": "4279118"
+    },
+    {
+      "name": "Maxwell Lewis",
+      "team": "Brooklyn Nets",
+      "salary": 2271677,
+      "salaryRaw": "$2,271,677",
+      "href": "https://www.espn.com/nba/player/_/id/4684286/maxwell-lewis",
+      "playerId": "4684286"
+    },
+    {
+      "name": "Moussa Diabate",
+      "team": "Charlotte Hornets",
+      "salary": 2270735,
+      "salaryRaw": "$2,270,735",
+      "href": "https://www.espn.com/nba/player/_/id/4433249/moussa-diabate",
+      "playerId": "4433249"
+    },
+    {
+      "name": "Scotty Pippen Jr.",
+      "team": "Memphis Grizzlies",
+      "salary": 2270735,
+      "salaryRaw": "$2,270,735",
+      "href": "https://www.espn.com/nba/player/_/id/4431785/scotty-pippen-jr.",
+      "playerId": "4431785"
+    },
+    {
+      "name": "A.J. Lawson",
+      "team": "Toronto Raptors",
+      "salary": 2270735,
+      "salaryRaw": "$2,270,735",
+      "href": "https://www.espn.com/nba/player/_/id/4067017/a.j.-lawson",
+      "playerId": "4067017"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Dominick Barlow",
+      "team": "Philadelphia 76ers",
+      "salary": 2270735,
+      "salaryRaw": "$2,270,735",
+      "href": "https://www.espn.com/nba/player/_/id/4870562/dominick-barlow",
+      "playerId": "4870562"
+    },
+    {
+      "name": "Nate Williams",
+      "team": "Los Angeles Lakers",
+      "salary": 2270735,
+      "salaryRaw": "$2,270,735",
+      "href": "https://www.espn.com/nba/player/_/id/4397821/nate-williams",
+      "playerId": "4397821"
+    },
+    {
+      "name": "JD Davison",
+      "team": "Houston Rockets",
+      "salary": 2270735,
+      "salaryRaw": "$2,270,735",
+      "href": "https://www.espn.com/nba/player/_/id/4576085/jd-davison",
+      "playerId": "4576085"
+    },
+    {
+      "name": "Brandon Williams",
+      "team": "Dallas Mavericks",
+      "salary": 2270735,
+      "salaryRaw": "$2,270,735",
+      "href": "https://www.espn.com/nba/player/_/id/4397040/brandon-williams",
+      "playerId": "4397040"
+    },
+    {
+      "name": "GG Jackson",
+      "team": "Memphis Grizzlies",
+      "salary": 2221677,
+      "salaryRaw": "$2,221,677",
+      "href": "https://www.espn.com/nba/player/_/id/5105550/gg-jackson",
+      "playerId": "5105550"
+    },
+    {
+      "name": "Rayan Rupert",
+      "team": "Portland Trail Blazers",
+      "salary": 2221677,
+      "salaryRaw": "$2,221,677",
+      "href": "https://www.espn.com/nba/player/_/id/5099752/rayan-rupert",
+      "playerId": "5099752"
+    },
+    {
+      "name": "Toumani Camara",
+      "team": "Portland Trail Blazers",
+      "salary": 2221677,
+      "salaryRaw": "$2,221,677",
+      "href": "https://www.espn.com/nba/player/_/id/4431736/toumani-camara",
+      "playerId": "4431736"
+    },
+    {
+      "name": "Duop Reath",
+      "team": "Portland Trail Blazers",
+      "salary": 2221677,
+      "salaryRaw": "$2,221,677",
+      "href": "https://www.espn.com/nba/player/_/id/4066268/duop-reath",
+      "playerId": "4066268"
+    },
+    {
+      "name": "Ricky Council IV",
+      "team": "Philadelphia 76ers",
+      "salary": 2221677,
+      "salaryRaw": "$2,221,677",
+      "href": "https://www.espn.com/nba/player/_/id/4701234/ricky-council-iv",
+      "playerId": "4701234"
+    },
+    {
+      "name": "Jalen Wilson",
+      "team": "Brooklyn Nets",
+      "salary": 2221677,
+      "salaryRaw": "$2,221,677",
+      "href": "https://www.espn.com/nba/player/_/id/4431714/jalen-wilson",
+      "playerId": "4431714"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Leonard Miller",
+      "team": "Minnesota Timberwolves",
+      "salary": 2221677,
+      "salaryRaw": "$2,221,677",
+      "href": "https://www.espn.com/nba/player/_/id/5044385/leonard-miller",
+      "playerId": "5044385"
+    },
+    {
+      "name": "Andre Jackson Jr.",
+      "team": "Milwaukee Bucks",
+      "salary": 2221677,
+      "salaryRaw": "$2,221,677",
+      "href": "https://www.espn.com/nba/player/_/id/4432190/andre-jackson-jr.",
+      "playerId": "4432190"
+    },
+    {
+      "name": "Gui Santos",
+      "team": "Golden State Warriors",
+      "salary": 2221677,
+      "salaryRaw": "$2,221,677",
+      "href": "https://www.espn.com/nba/player/_/id/4997536/gui-santos",
+      "playerId": "4997536"
+    },
+    {
+      "name": "Trayce Jackson-Davis",
+      "team": "Golden State Warriors",
+      "salary": 2221677,
+      "salaryRaw": "$2,221,677",
+      "href": "https://www.espn.com/nba/player/_/id/4431684/trayce-jackson-davis",
+      "playerId": "4431684"
+    },
+    {
+      "name": "Colby Jones",
+      "team": "Detroit Pistons",
+      "salary": 2221677,
+      "salaryRaw": "$2,221,677",
+      "href": "https://www.espn.com/nba/player/_/id/4433378/colby-jones",
+      "playerId": "4433378"
+    },
+    {
+      "name": "Jalen Pickett",
+      "team": "Denver Nuggets",
+      "salary": 2221677,
+      "salaryRaw": "$2,221,677",
+      "href": "https://www.espn.com/nba/player/_/id/4398390/jalen-pickett",
+      "playerId": "4398390"
+    },
+    {
+      "name": "Hunter Tyson",
+      "team": "Denver Nuggets",
+      "salary": 2221677,
+      "salaryRaw": "$2,221,677",
+      "href": "https://www.espn.com/nba/player/_/id/4395620/hunter-tyson",
+      "playerId": "4395620"
+    },
+    {
+      "name": "Craig Porter Jr.",
+      "team": "Cleveland Cavaliers",
+      "salary": 2221677,
+      "salaryRaw": "$2,221,677",
+      "href": "https://www.espn.com/nba/player/_/id/4701233/craig-porter-jr.",
+      "playerId": "4701233"
+    },
+    {
+      "name": "Julian Phillips",
+      "team": "Chicago Bulls",
+      "salary": 2221677,
+      "salaryRaw": "$2,221,677",
+      "href": "https://www.espn.com/nba/player/_/id/5105553/julian-phillips",
+      "playerId": "5105553"
+    },
+    {
+      "name": "Jordan Walsh",
+      "team": "Boston Celtics",
+      "salary": 2221677,
+      "salaryRaw": "$2,221,677",
+      "href": "https://www.espn.com/nba/player/_/id/4683689/jordan-walsh",
+      "playerId": "4683689"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Mouhamed Gueye",
+      "team": "Atlanta Hawks",
+      "salary": 2221677,
+      "salaryRaw": "$2,221,677",
+      "href": "https://www.espn.com/nba/player/_/id/4712863/mouhamed-gueye",
+      "playerId": "4712863"
+    },
+    {
+      "name": "Colin Castleton",
+      "team": "Orlando Magic",
+      "salary": 2191897,
+      "salaryRaw": "$2,191,897",
+      "href": "https://www.espn.com/nba/player/_/id/4397204/colin-castleton",
+      "playerId": "4397204"
+    },
+    {
+      "name": "Tyler Kolek",
+      "team": "New York Knicks",
+      "salary": 2191897,
+      "salaryRaw": "$2,191,897",
+      "href": "https://www.espn.com/nba/player/_/id/4433225/tyler-kolek",
+      "playerId": "4433225"
+    },
+    {
+      "name": "Tyrese Martin",
+      "team": "Brooklyn Nets",
+      "salary": 2191897,
+      "salaryRaw": "$2,191,897",
+      "href": "https://www.espn.com/nba/player/_/id/4397179/tyrese-martin",
+      "playerId": "4397179"
+    },
+    {
+      "name": "Jaylen Clark",
+      "team": "Minnesota Timberwolves",
+      "salary": 2191897,
+      "salaryRaw": "$2,191,897",
+      "href": "https://www.espn.com/nba/player/_/id/4432247/jaylen-clark",
+      "playerId": "4432247"
+    },
+    {
+      "name": "Jordan Miller",
+      "team": "LA Clippers",
+      "salary": 2191897,
+      "salaryRaw": "$2,191,897",
+      "href": "https://www.espn.com/nba/player/_/id/4396818/jordan-miller",
+      "playerId": "4396818"
+    },
+    {
+      "name": "Caleb Houstan",
+      "team": "Atlanta Hawks",
+      "salary": 2187451,
+      "salaryRaw": "$2,187,451",
+      "href": "https://www.espn.com/nba/player/_/id/4433623/caleb-houstan",
+      "playerId": "4433623"
+    },
+    {
+      "name": "Justin Edwards",
+      "team": "Philadelphia 76ers",
+      "salary": 2048494,
+      "salaryRaw": "$2,048,494",
+      "href": "https://www.espn.com/nba/player/_/id/4711297/justin-edwards",
+      "playerId": "4711297"
+    },
+    {
+      "name": "N'Faly Dante",
+      "team": "Atlanta Hawks",
+      "salary": 2048494,
+      "salaryRaw": "$2,048,494",
+      "href": "https://www.espn.com/nba/player/_/id/4592401/n'faly-dante",
+      "playerId": "4592401"
+    },
+    {
+      "name": "Antonio Reeves",
+      "team": "Charlotte Hornets",
+      "salary": 1955377,
+      "salaryRaw": "$1,955,377",
+      "href": "https://www.espn.com/nba/player/_/id/4592686/antonio-reeves",
+      "playerId": "4592686"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Jaylen Wells",
+      "team": "Memphis Grizzlies",
+      "salary": 1955377,
+      "salaryRaw": "$1,955,377",
+      "href": "https://www.espn.com/nba/player/_/id/5112087/jaylen-wells",
+      "playerId": "5112087"
+    },
+    {
+      "name": "Jonathan Mogbo",
+      "team": "Toronto Raptors",
+      "salary": 1955377,
+      "salaryRaw": "$1,955,377",
+      "href": "https://www.espn.com/nba/player/_/id/5107897/jonathan-mogbo",
+      "playerId": "5107897"
+    },
+    {
+      "name": "Jamal Shead",
+      "team": "Toronto Raptors",
+      "salary": 1955377,
+      "salaryRaw": "$1,955,377",
+      "href": "https://www.espn.com/nba/player/_/id/4432241/jamal-shead",
+      "playerId": "4432241"
+    },
+    {
+      "name": "Jamison Battle",
+      "team": "Toronto Raptors",
+      "salary": 1955377,
+      "salaryRaw": "$1,955,377",
+      "href": "https://www.espn.com/nba/player/_/id/4431893/jamison-battle",
+      "playerId": "4431893"
+    },
+    {
+      "name": "Oso Ighodaro",
+      "team": "Phoenix Suns",
+      "salary": 1955377,
+      "salaryRaw": "$1,955,377",
+      "href": "https://www.espn.com/nba/player/_/id/4601023/oso-ighodaro",
+      "playerId": "4601023"
+    },
+    {
+      "name": "Adem Bona",
+      "team": "Philadelphia 76ers",
+      "salary": 1955377,
+      "salaryRaw": "$1,955,377",
+      "href": "https://www.espn.com/nba/player/_/id/5105637/adem-bona",
+      "playerId": "5105637"
+    },
+    {
+      "name": "Ariel Hukporti",
+      "team": "New York Knicks",
+      "salary": 1955377,
+      "salaryRaw": "$1,955,377",
+      "href": "https://www.espn.com/nba/player/_/id/4871141/ariel-hukporti",
+      "playerId": "4871141"
+    },
+    {
+      "name": "Drew Timme",
+      "team": "Brooklyn Nets",
+      "salary": 1955377,
+      "salaryRaw": "$1,955,377",
+      "href": "https://www.espn.com/nba/player/_/id/4431695/drew-timme",
+      "playerId": "4431695"
+    },
+    {
+      "name": "Tyler Smith",
+      "team": "Milwaukee Bucks",
+      "salary": 1955377,
+      "salaryRaw": "$1,955,377",
+      "href": "https://www.espn.com/nba/player/_/id/5167876/tyler-smith",
+      "playerId": "5167876"
+    },
+    {
+      "name": "Pelle Larsson",
+      "team": "Miami Heat",
+      "salary": 1955377,
+      "salaryRaw": "$1,955,377",
+      "href": "https://www.espn.com/nba/player/_/id/4601025/pelle-larsson",
+      "playerId": "4601025"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Keshad Johnson",
+      "team": "Miami Heat",
+      "salary": 1955377,
+      "salaryRaw": "$1,955,377",
+      "href": "https://www.espn.com/nba/player/_/id/4431786/keshad-johnson",
+      "playerId": "4431786"
+    },
+    {
+      "name": "Bronny James",
+      "team": "Los Angeles Lakers",
+      "salary": 1955377,
+      "salaryRaw": "$1,955,377",
+      "href": "https://www.espn.com/nba/player/_/id/4683774/bronny-james",
+      "playerId": "4683774"
+    },
+    {
+      "name": "Cam Christie",
+      "team": "LA Clippers",
+      "salary": 1955377,
+      "salaryRaw": "$1,955,377",
+      "href": "https://www.espn.com/nba/player/_/id/4845363/cam-christie",
+      "playerId": "4845363"
+    },
+    {
+      "name": "Johnny Furphy",
+      "team": "Indiana Pacers",
+      "salary": 1955377,
+      "salaryRaw": "$1,955,377",
+      "href": "https://www.espn.com/nba/player/_/id/5157066/johnny-furphy",
+      "playerId": "5157066"
+    },
+    {
+      "name": "Isaac Jones",
+      "team": "Sacramento Kings",
+      "salary": 1955377,
+      "salaryRaw": "$1,955,377",
+      "href": "https://www.espn.com/nba/player/_/id/5107818/isaac-jones",
+      "playerId": "5107818"
+    },
+    {
+      "name": "Bobi Klintman",
+      "team": "Detroit Pistons",
+      "salary": 1955377,
+      "salaryRaw": "$1,955,377",
+      "href": "https://www.espn.com/nba/player/_/id/4906923/bobi-klintman",
+      "playerId": "4906923"
+    },
+    {
+      "name": "Karlo Matkovic",
+      "team": "New Orleans Pelicans",
+      "salary": 1955377,
+      "salaryRaw": "$1,955,377",
+      "href": "https://www.espn.com/nba/player/_/id/4997538/karlo-matkovic",
+      "playerId": "4997538"
+    },
+    {
+      "name": "Quinten Post",
+      "team": "Golden State Warriors",
+      "salary": 1935377,
+      "salaryRaw": "$1,935,377",
+      "href": "https://www.espn.com/nba/player/_/id/4593016/quinten-post",
+      "playerId": "4593016"
+    },
+    {
+      "name": "Chaz Lanier",
+      "team": "Detroit Pistons",
+      "salary": 1372870,
+      "salaryRaw": "$1,372,870",
+      "href": "https://www.espn.com/nba/player/_/id/4700852/chaz-lanier",
+      "playerId": "4700852"
+    },
+    {
+      "name": "Micah Peavy",
+      "team": "New Orleans Pelicans",
+      "salary": 1272970,
+      "salaryRaw": "$1,272,970",
+      "href": "https://www.espn.com/nba/player/_/id/4432185/micah-peavy",
+      "playerId": "4432185"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "Maxime Raynaud",
+      "team": "Sacramento Kings",
+      "salary": 1272870,
+      "salaryRaw": "$1,272,870",
+      "href": "https://www.espn.com/nba/player/_/id/4898371/maxime-raynaud",
+      "playerId": "4898371"
+    },
+    {
+      "name": "Rasheer Fleming",
+      "team": "Phoenix Suns",
+      "salary": 1272870,
+      "salaryRaw": "$1,272,870",
+      "href": "https://www.espn.com/nba/player/_/id/5105977/rasheer-fleming",
+      "playerId": "5105977"
+    },
+    {
+      "name": "Johni Broome",
+      "team": "Philadelphia 76ers",
+      "salary": 1272870,
+      "salaryRaw": "$1,272,870",
+      "href": "https://www.espn.com/nba/player/_/id/4433569/johni-broome",
+      "playerId": "4433569"
+    },
+    {
+      "name": "Noah Penda",
+      "team": "Orlando Magic",
+      "salary": 1272870,
+      "salaryRaw": "$1,272,870",
+      "href": "https://www.espn.com/nba/player/_/id/5214637/noah-penda",
+      "playerId": "5214637"
+    },
+    {
+      "name": "Mohamed Diawara",
+      "team": "New York Knicks",
+      "salary": 1272870,
+      "salaryRaw": "$1,272,870",
+      "href": "https://www.espn.com/nba/player/_/id/5289900/mohamed-diawara",
+      "playerId": "5289900"
+    },
+    {
+      "name": "Adou Thiero",
+      "team": "Los Angeles Lakers",
+      "salary": 1272870,
+      "salaryRaw": "$1,272,870",
+      "href": "https://www.espn.com/nba/player/_/id/5060631/adou-thiero",
+      "playerId": "5060631"
+    },
+    {
+      "name": "Kam Jones",
+      "team": "Indiana Pacers",
+      "salary": 1272870,
+      "salaryRaw": "$1,272,870",
+      "href": "https://www.espn.com/nba/player/_/id/4697268/kam-jones",
+      "playerId": "4697268"
+    },
+    {
+      "name": "Will Richard",
+      "team": "Golden State Warriors",
+      "salary": 1272870,
+      "salaryRaw": "$1,272,870",
+      "href": "https://www.espn.com/nba/player/_/id/4897262/will-richard",
+      "playerId": "4897262"
+    },
+    {
+      "name": "Tyrese Proctor",
+      "team": "Cleveland Cavaliers",
+      "salary": 1272870,
+      "salaryRaw": "$1,272,870",
+      "href": "https://www.espn.com/nba/player/_/id/5023693/tyrese-proctor",
+      "playerId": "5023693"
+    },
+    {
+      "name": "Nikola Durisic",
+      "team": "Atlanta Hawks",
+      "salary": 1272870,
+      "salaryRaw": "$1,272,870",
+      "href": "https://www.espn.com/nba/player/_/id/5144067/nikola-durisic",
+      "playerId": "5144067"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY",
+      "href": null,
+      "playerId": null
+    }
+  ]
+}
