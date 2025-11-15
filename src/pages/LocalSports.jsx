@@ -241,7 +241,14 @@ export default function LocalSports() {
                             className="team-card-logo" 
                           />
                         </a>
+                        <a 
+                          href={`https://www.google.com/maps?q=${encodeURIComponent(team.team)} stadium`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ textDecoration: 'none' }}
+                        >
                         <h4 className="team-card-name">{team.team}</h4>
+                        </a>
                       </div>
                     ))}
                   </div>
@@ -263,9 +270,15 @@ export default function LocalSports() {
                     {venues.map((venue, index) => (
                       <div key={venue.place_id || index} className="team-card">
                         <h3 className="team-card-name">{venue.name}</h3>
-                        <p style={{ fontSize: '0.85rem', color: '#cbd5e1', marginTop: '8px' }}>
-                          {venue.vicinity}
-                        </p>
+                        <a 
+                          href={`https://www.google.com/maps?q=${encodeURIComponent(venue.vicinity)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <p style={{ fontSize: '0.85rem', color: '#cbd5e1', marginTop: '8px' }}>
+                            {venue.vicinity}
+                          </p>
+                        </a>
                         {venue.rating && (
                           <p style={{ fontSize: '0.75rem', color: '#94a3b8', marginTop: '4px' }}>
                             ⭐ {venue.rating} {venue.user_ratings_total && `(${venue.user_ratings_total} reviews)`}

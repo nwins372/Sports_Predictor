@@ -440,14 +440,27 @@ const navigate = useNavigate();
 
     {/* Signout Button if logged in */}
       <div className="navbar-right">
-          {session && ( <button onClick={async () => { await supabase.auth.signOut();}} className="nav-link"> Logout </button>
-  )}
+          {!session && <Link to="/login" id="login-button" className="nav-link">Login</Link>}
+          {session && ( <button onClick={async () => { await supabase.auth.signOut();}} className="nav-link"> Logout </button> )}
 
-  {/* Profile link shown always */}
-  { session && <Link to="/profile" className="nav-link" id="profile">Profile</Link> }
+          {/* Profile link shown when logged in */}
+          { session && <Link to="/profile" className="nav-link" id="profile">Profile</Link> }
         {/* Settings link always available */}
         <Link to="/settings" className="nav-link" id="settings">Settings</Link>
+                <div className="nav-dropdown">
+          <button className="nav-dropbtn">More</button>
+          <div className="nav-dropdown-content">
+            <Link to="/local-sports" className="nav-link" id="local-sports">Local Sports</Link>
+            <Link to="/following" className="nav-link" id="following">Following</Link>
+            <Link to="/comments" className="nav-link" id="comments">Comments</Link>
+            <Link to="/mock-draft" className="nav-link" id="mock-draft">Mock Draft</Link>
+            <Link to="/trade-machine" className="nav-link" id="trade-machine">Trade Machine</Link>
+            <Link to="/transactions" className="nav-link" id="transactions">Transactions</Link>
+          </div>
+        </div>
       </div>
+
+
     </nav>
   );
 }

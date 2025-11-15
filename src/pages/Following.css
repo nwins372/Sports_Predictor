@@ -1,0 +1,15 @@
+.following-page { padding: 16px; }
+.following-grid { display:flex; gap:20px; }
+.follow-col { flex:1; min-width:280px; }
+.team-list, .player-list { display:flex; flex-direction:column; gap:12px; }
+.team-card, .player-card { display:flex; gap:12px; align-items:center; padding:10px; border:1px solid var(--surface-border); background:var(--surface); border-radius:8px; }
+.team-card-left, .player-left { flex:0 0 64px; }
+.team-logo, .player-headshot { width:64px; height:64px; border-radius:8px; object-fit:cover; }
+.team-logo.placeholder, .player-headshot.placeholder { width:64px; height:64px; background:var(--toggle-bg); border-radius:8px; }
+.team-card-body, .player-body { flex:1; }
+.team-name, .player-name { font-weight:700; }
+.team-meta, .player-meta { font-size:13px; color:var(--muted); margin-top:4px; }
+.team-nextgame { margin-top:6px; }
+.team-card-actions, .player-actions { flex:0 0 90px; display:flex; align-items:center; justify-content:flex-end; }
+.unfollow { background:transparent; border:1px solid var(--surface-border); color:var(--text); padding:6px 8px; border-radius:6px; cursor:pointer; }
+.muted { color:var(--muted); }
