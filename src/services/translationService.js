@@ -3,6 +3,12 @@ class TranslationService {
   constructor() {
     // Using MyMemory API (free tier, no CORS issues)
     this.baseURL = 'https://api.mymemory.translated.net/get';
+    this.requestQueue = [];
+    this.isProcessing = false;
+    this.rateLimitDelay = 250; // 250 milliseconds between requests
+    this.lastRequestTime = 0;
+    this.translationCache = new Map();
+    this.cacheExpiry = 24 * 60 * 60 * 1000; // 24 hours
     this.supportedLanguages = {
       'en': 'English',
       'es': 'Spanish', 
@@ -94,26 +100,67 @@ class TranslationService {
   }
 
   // Translate text using MyMemory API
+  async processQueue() {
+    if (this.isProcessing || this.requestQueue.length === 0) return;
+
+    this.isProcessing = true;
+    const now = Date.now();
+    const timeSinceLastRequest = now - this.lastRequestTime;
+    
+    if (timeSinceLastRequest < this.rateLimitDelay) {
+      await new Promise(resolve => setTimeout(resolve, this.rateLimitDelay - timeSinceLastRequest));
+    }
+
+    try {
+      const { text, targetLang, sourceLang, resolve, reject } = this.requestQueue.shift();
+      const result = await this._translateText(text, targetLang, sourceLang);
+      resolve(result);
+    } catch (error) {
+      const { reject } = this.requestQueue.shift();
+      reject(error);
+    } finally {
+      this.lastRequestTime = Date.now();
+      this.isProcessing = false;
+      if (this.requestQueue.length > 0) {
+        this.processQueue();
+      }
+    }
+  }
+
   async translateText(text, targetLang, sourceLang = 'en') {
     if (!text || !targetLang) {
       throw new Error('Text and target language are required');
+    }
+
+    // Handle non-string inputs
+    if (typeof text !== 'string') {
+      console.warn('Non-string text provided to translation service:', text);
+      return text;
     }
 
     if (!this.isLanguageSupported(targetLang)) {
       throw new Error(`Target language ${targetLang} is not supported`);
     }
 
+    // Queue the request
+    return new Promise((resolve, reject) => {
+      this.requestQueue.push({ text, targetLang, sourceLang, resolve, reject });
+      this.processQueue();
+    });
+  }
+
+  async _translateText(text, targetLang, sourceLang = 'en') {
     console.log(`Translating: "${text.substring(0, 50)}..." from ${sourceLang} to ${targetLang}`);
 
-    // Check cache first
     const cacheKey = this.getCacheKey(text, targetLang, sourceLang);
+    
+    // Check cache first
     if (this.isCacheValid(cacheKey)) {
       console.log('Using cached translation');
       return this.translationCache.get(cacheKey).translation;
     }
 
     try {
-      // MyMemory API uses GET request with query parameters
       const params = new URLSearchParams({
         q: text,
         langpair: `${sourceLang}|${targetLang}`
@@ -139,7 +186,7 @@ class TranslationService {
       const translatedText = data.responseData.translatedText;
       console.log(`Translation result: "${translatedText.substring(0, 50)}..."`);
 
-      // Cache the translation
+      // Store in cache
       this.translationCache.set(cacheKey, {
         translation: translatedText,
         timestamp: Date.now()

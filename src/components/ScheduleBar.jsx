@@ -21,6 +21,7 @@ import nbaLogo from "../assets/NBA_logo.png";
 import appletvLogo from "../assets/appletv_logo.png";
 import cbsLogo from "../assets/CBS_logo.png";
 import mlb_logo from "../assets/mlb_logo.png";
+import { TranslatedText } from "./TranslatedText";
 
 // Logo Mapping
 const logoMap = {
@@ -370,7 +371,7 @@ export default function ScheduleBar() {
     );
   }
 
-  if (loading)    return <p className="prefs-note">Loading preferences…</p>;
+if (loading)    return <p className="prefs-note">Loading preferences…</p>;
 return (
     <div className="sb-wrap">
       <div className="sb-top">
@@ -400,7 +401,7 @@ return (
 
           {filterState === 'sports' && (
             <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
-              <span style={{ fontSize: 12, opacity: 0.8 }}>Sport</span>
+              <span style={{ fontSize: 12, opacity: 0.8 }}>{<TranslatedText>Sport</TranslatedText>}</span>
               <select
                 value={sport}
                 onChange={(e) => {
@@ -410,9 +411,11 @@ return (
                 }}
                 className="sb-date-input"
               >
-                <option value="all">All Sports</option>
+                <option value="all">{<TranslatedText>All Sports</TranslatedText>}</option>
                 {userPrefs.sports_prefs?.map((s) => (
-                  <option key={s.toLowerCase()} value={s.toLowerCase()}>{s.toUpperCase()}</option>
+                  <option key={s.toLowerCase()} value={s.toLowerCase()}>
+                    <TranslatedText>{s.toUpperCase()}</TranslatedText>
+                  </option>
                 ))}
               </select>
             </label>
@@ -420,7 +423,7 @@ return (
 
           <div className="sb-date-picker-container">
             <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
-              <span style={{ fontSize: 12, opacity: 0.8 }}>Date</span>
+              <span style={{ fontSize: 12, opacity: 0.8 }}><TranslatedText>Date</TranslatedText></span>
               <div className="sb-date-display" onClick={() => document.getElementById('date-picker').showPicker()}>
                 {selected.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" })}
               </div>
@@ -441,7 +444,7 @@ return (
 
       <div className="sb-cards">
         {games.length === 0 ? (
-          <div className="sb-state">No games on this date.</div>
+          <div className="sb-state"><TranslatedText>No games on this date.</TranslatedText></div>
         ) : (
           (filterState === "none") ? (
             Object.entries(games.reduce((acc, g) => { (acc[g.sport] ||= []).push(g); return acc; }, {}))

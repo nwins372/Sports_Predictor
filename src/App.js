@@ -11,6 +11,7 @@ import Player from './pages/Player';
 import MockDraft from './pages/MockDraft';
 import NavBar from './components/NavBar';
 import { ThemeProvider } from './context/ThemeContext';
+import { TranslationProvider } from './context/TranslationContext';
 import { supabase } from './supabaseClient';
 import { useEffect, useState } from 'react';
 import SportsNewsPage from './pages/SportsNewsPage';
@@ -48,36 +49,38 @@ useEffect(() => {
 
   return (
     <ThemeProvider>
-  <BrowserRouter>
-  <NavBar />
-  <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/profile" element={<Profile />} />
-      <Route path="/team/:league/:abbr" element={<Team />} />
-      {/* backward-compatible route (no league) */}
-      <Route path="/team/:abbr" element={<Team />} />
-      <Route path="/player/:league/:id" element={<Player />} />
-      {/* backward-compatible route (no league) */}
-      <Route path="/player/:id" element={<Player />} />
-  <Route path="/mock-draft" element={<MockDraft />} />
-      <Route path="/settings" element={<Settings />} />
-      <Route path="/sports-news" element={<SportsNewsPage />} />
-      <Route path="/schedules" element={<Schedules />} />
-      <Route path="/statistics" element={<Statistics />} />
-      <Route
-        path="/profile-settings"
-        element={
-          <ProfileSettings
-            isLoggedIn={isLoggedIn}
-            user={user}
-            onUpdate={handleUpdate}
-          />
-        }
-      />
-      <Route path="/local-sports" element={<LocalSports />} />
-    </Routes>
-    </BrowserRouter>
+      <TranslationProvider>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/team/:league/:abbr" element={<Team />} />
+            {/* backward-compatible route (no league) */}
+            <Route path="/team/:abbr" element={<Team />} />
+            <Route path="/player/:league/:id" element={<Player />} />
+            {/* backward-compatible route (no league) */}
+            <Route path="/player/:id" element={<Player />} />
+            <Route path="/mock-draft" element={<MockDraft />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/sports-news" element={<SportsNewsPage />} />
+            <Route path="/schedules" element={<Schedules />} />
+            <Route path="/statistics" element={<Statistics />} />
+            <Route
+              path="/profile-settings"
+              element={
+                <ProfileSettings
+                  isLoggedIn={isLoggedIn}
+                  user={user}
+                  onUpdate={handleUpdate}
+                />
+              }
+            />
+            <Route path="/local-sports" element={<LocalSports />} />
+          </Routes>
+        </BrowserRouter>
+      </TranslationProvider>
     </ThemeProvider>
   );
 }

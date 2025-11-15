@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { supabase } from "../supabaseClient";
 import "./LanguagePreference.css";
+import { useSessionForSchedulesPage } from "../pages/Schedules";
 
 const SUPPORTED_LANGUAGES = {
   'en': 'English',
@@ -47,11 +48,12 @@ const SUPPORTED_LANGUAGES = {
   'me': 'Montenegrin'
 };
 
-export default function LanguagePreference({ session }) {
+export default function LanguagePreference() {
   const [selectedLanguage, setSelectedLanguage] = useState('en');
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState("");
+  const { session } = useSessionForSchedulesPage();
 
   useEffect(() => {
     if (!session) return;
