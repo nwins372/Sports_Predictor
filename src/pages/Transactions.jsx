@@ -71,7 +71,7 @@ export default function Transactions() {
         </select>
         <label style={{marginLeft:12}}><input type="checkbox" checked={filterTeamsOnly} onChange={(e) => setFilterTeamsOnly(e.target.checked)} /> Show only followed teams</label>
         <div style={{marginLeft:'auto'}}>
-          <strong>Followed teams:</strong> {followedTeams && followedTeams.length ? followedTeams.join(', ') : 'None'}
+          <strong>Followed teams:</strong> {followedTeams && followedTeams.length ? followedTeams.join(', ') : <span style={{color:'wheat', fontWeight:600}}>None</span>}
         </div>
       </div>
 
