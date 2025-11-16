@@ -1,5 +1,6 @@
 import React from 'react';
 import './WinPercentageDisplay.css';
+import { TranslatedText } from './TranslatedText';
 
 const WinPercentageDisplay = ({ 
   homeTeam, 
@@ -65,19 +66,19 @@ const WinPercentageDisplay = ({
   return (
     <div className="win-percentage-display">
       <div className="prediction-header">
-        <h4>Win Probability Prediction</h4>
+        <h4><TranslatedText>Win Probability Prediction</TranslatedText></h4>
         <div className="prediction-meta">
           <div className="confidence-indicator" style={{ color: predictionConfidence.color }}>
-            {predictionConfidence.level} Confidence
+            {predictionConfidence.level} <TranslatedText>Confidence</TranslatedText>
           </div>
           {algorithm && (
             <div className="algorithm-indicator">
-              {algorithm.toUpperCase()} Algorithm
+              {algorithm.toUpperCase()} <TranslatedText>Algorithm</TranslatedText>
             </div>
           )}
           {gameStatus === 'Final' && showActualResult && (
             <div className={`prediction-accuracy ${predictionCorrect ? 'correct' : 'incorrect'}`}>
-              {predictionCorrect ? '✓ Correct' : '✗ Incorrect'}
+              {predictionCorrect ? <TranslatedText>✓ Correct</TranslatedText> : <TranslatedText>✗ Incorrect</TranslatedText>}
             </div>
           )}
         </div>
@@ -124,7 +125,7 @@ const WinPercentageDisplay = ({
       {gameStatus === 'Live' && (
         <div className="live-indicator">
           <span className="live-dot"></span>
-          Live Game - Predictions may change
+          <TranslatedText>Live Game - Predictions may change</TranslatedText>
         </div>
       )}
     </div>

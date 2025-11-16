@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import schedulerService from '../services/schedulerService';
 import './ScoreUpdateStatus.css';
+import { TranslatedText } from './TranslatedText';
 
 const ScoreUpdateStatus = ({ sport, onForceUpdate }) => {
   const [status, setStatus] = useState(null);
@@ -55,7 +56,7 @@ const ScoreUpdateStatus = ({ sport, onForceUpdate }) => {
             style={{ backgroundColor: getStatusColor() }}
           />
           <span className="status-text">
-            Auto Updates: {getStatusText()}
+            <TranslatedText>Auto Updates: {getStatusText()}</TranslatedText>
           </span>
         </div>
         
@@ -79,19 +80,19 @@ const ScoreUpdateStatus = ({ sport, onForceUpdate }) => {
       {isExpanded && (
         <div className="status-details">
           <div className="status-row">
-            <span className="label">Last Update:</span>
+            <span className="label"><TranslatedText>Last Update:</TranslatedText></span>
             <span className="value">{formatTime(status.lastUpdate)}</span>
           </div>
           
           <div className="status-row">
-            <span className="label">Next Update:</span>
+            <span className="label"><TranslatedText>Next Update:</TranslatedText></span>
             <span className="value">
               {schedulerService.getFormattedTimeUntilNextUpdate()}
             </span>
           </div>
           
           <div className="status-row">
-            <span className="label">Update Hours:</span>
+            <span className="label"><TranslatedText>Update Hours:</TranslatedText></span>
             <span className="value">
               {status.updateHours.map(hour => 
                 hour === 12 ? '12 PM' : 
@@ -102,7 +103,7 @@ const ScoreUpdateStatus = ({ sport, onForceUpdate }) => {
           </div>
           
           <div className="status-row">
-            <span className="label">Registered Sports:</span>
+            <span className="label"><TranslatedText>Registered Sports:</TranslatedText></span>
             <span className="value">
               {status.registeredSports.length > 0 
                 ? status.registeredSports.join(', ').toUpperCase()
@@ -112,7 +113,7 @@ const ScoreUpdateStatus = ({ sport, onForceUpdate }) => {
           </div>
           
           <div className="status-row">
-            <span className="label">Active Intervals:</span>
+            <span className="label"><TranslatedText>Active Intervals:</TranslatedText></span>
             <span className="value">{status.activeIntervals}</span>
           </div>
         </div>

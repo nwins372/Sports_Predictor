@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
 import "./SportsPreference.css";
+import { TranslatedText } from "./TranslatedText";
 
 // const all_sports = ["NFL", "NBA", "MLB", "College Sports"];
 const all_sports = ["NFL", "NBA", "MLB"];
@@ -168,18 +169,18 @@ export default function SportPrefsForm({ session }) {
     setSaving(false);
   };
 
-  if (!session) return <p className="prefs-note">Log in to manage preferences.</p>;
-  if (loading)    return <p className="prefs-note">Loading preferences…</p>;
+  if (!session) return <p className="prefs-note"><TranslatedText>Log in to manage preferences.</TranslatedText></p>;
+  if (loading)    return <p className="prefs-note"><TranslatedText>Loading preferences…</TranslatedText></p>;
 
   console.log("Rendering sports:", all_sports);
   
   // Allow check sports and save
   return (
     <div className="prefs-card">
-      <h2 className="prefs-title">Your Sports</h2>
+      <h2 className="prefs-title"><TranslatedText>Your Sports</TranslatedText></h2>
       {/* Sports Selection */}
       <div className="prefs-section">
-        <h3 className="prefs-subtitle">Sports</h3>
+        <h3 className="prefs-subtitle"><TranslatedText>Sports</TranslatedText></h3>
         <div className="prefs-grid">
           {all_sports.map((sport) => (
             <label key={sport} className="prefs-item">
@@ -197,7 +198,7 @@ export default function SportPrefsForm({ session }) {
       {/* Team Selection */}
       {checked.length > 0 && (
         <div className="prefs-section">
-          <h3 className="prefs-subtitle">Favorite Teams</h3>
+          <h3 className="prefs-subtitle"><TranslatedText>Favorite Teams</TranslatedText></h3>
           {checked.map((sport) => (
             <div key={sport} className="team-section">
               <h4 className="team-sport-title">{sport}</h4>
@@ -219,7 +220,7 @@ export default function SportPrefsForm({ session }) {
       )}
 
       <button className="prefs-save-btn" onClick={save} disabled={saving}>
-        {saving ? "Saving…" : "Save"}
+        {saving ? <TranslatedText>Saving…</TranslatedText> : <TranslatedText>Save</TranslatedText>}
       </button>
 
       {msg && <div className="prefs-msg">{msg}</div>}

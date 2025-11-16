@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import LanguagePreference from "../components/LanguagePreference";
 import { supabase } from "../supabaseClient";
+import { TranslatedText } from "../components/TranslatedText";
 
 function ProfileSettings({ isLoggedIn, onUpdate }) {
   const navigate = useNavigate();
@@ -49,11 +50,11 @@ function ProfileSettings({ isLoggedIn, onUpdate }) {
     <div className="container mt-5">
       <div className="card shadow">
         <div className="card-body">
-          <h2 className="card-title mb-4">Profile Settings</h2>
+          <h2 className="card-title mb-4"><TranslatedText>Profile Settings</TranslatedText></h2>
           <form onSubmit={handleSubmit} autoComplete="off">
             {/* Username */}
             <div className="mb-3">
-              <label className="form-label">New Username</label>
+              <label className="form-label"><TranslatedText>New Username</TranslatedText></label>
               <input
                 type="text"
                 name="username"
@@ -66,7 +67,7 @@ function ProfileSettings({ isLoggedIn, onUpdate }) {
 
             {/* Email */}
             <div className="mb-3">
-              <label className="form-label">New Email</label>
+              <label className="form-label"><TranslatedText>New Email</TranslatedText></label>
               <input
                 type="email"
                 name="email"
@@ -79,7 +80,7 @@ function ProfileSettings({ isLoggedIn, onUpdate }) {
 
             {/* Password */}
             <div className="mb-3">
-              <label className="form-label">New Password</label>
+              <label className="form-label"><TranslatedText>New Password</TranslatedText></label>
               <input
                 type="password"
                 name="password"
@@ -91,7 +92,7 @@ function ProfileSettings({ isLoggedIn, onUpdate }) {
             </div>
 
             <button type="submit" className="btn btn-primary w-100">
-              Save Changes
+              <TranslatedText>Save Changes</TranslatedText>
             </button>
           </form>
         </div>

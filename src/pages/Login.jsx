@@ -2,6 +2,7 @@ import { useState } from "react";
 import { supabase } from "../supabaseClient";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import { TranslatedText } from "../components/TranslatedText";
 
 export default function App() {
   const [page, setPage] = useState("login");
@@ -103,7 +104,7 @@ export default function App() {
   return (
     <div>
       <div className="login-container">
-        <h1>{page === "login" ? "Login" : "Register"}</h1>
+        <h1><TranslatedText>{page === "login" ? "Login" : "Register"}</TranslatedText></h1>
 
         {/* If user is on register page, also show the username field */}
         {page === "register" ? (
@@ -142,13 +143,13 @@ export default function App() {
         />
 
         <button onClick={handleSubmit} disabled={loading}>
-          {loading ? "Please wait..." : page === "login" ? "Login" : "Register"}
+          <TranslatedText>{loading ? "Please wait..." : page === "login" ? "Login" : "Register"}</TranslatedText>
         </button>
 
         <p onClick={() => setPage(page === "login" ? "register" : "login")}>
           {page === "login"
-            ? "Need an account? Register"
-            : "Already have an account? Login"}
+            ? <TranslatedText>Need an account? Register</TranslatedText>
+            : <TranslatedText>Already have an account? Login</TranslatedText>}
         </p>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './MockDraft.css';
 import prospects from '../assets/nba2026_prospects.json';
+import { TranslatedText } from '../components/TranslatedText';
 
 // Spotrac picks will be optionally loaded at runtime (if present in assets)
 
@@ -248,12 +249,12 @@ export default function MockDraft() {
 
   return (
     <div className="prediction-calculator">
-      <h1>NBA Mock Draft Simulator (1st Round)</h1>
-      <p className="muted">Uses current NBA standings (when available) to build draft order; lottery randomized from worst 14 teams. Prospects are a static top-45 class (enriched).</p>
+      <h1>NBA <TranslatedText>Mock Draft Simulator (1st Round)</TranslatedText></h1>
+      <p className="muted"><TranslatedText>Uses current NBA standings (when available) to build draft order; lottery randomized from worst 14 teams. Prospects are a static top-45 class (enriched).</TranslatedText></p>
 
       <div className="controls">
-        <button className="simulate-btn" onClick={simulate} disabled={loading || teams.length<30}>Simulate Draft</button>
-        <span className="hint">{loading ? 'Loading standings...' : `Teams loaded: ${teams.length}`}</span>
+        <button className="simulate-btn" onClick={simulate} disabled={loading || teams.length<30}><TranslatedText>Simulate Draft</TranslatedText></button>
+        <span className="hint">{loading ? <TranslatedText>Loading standings...</TranslatedText> : <TranslatedText>Teams loaded: ${teams.length}</TranslatedText>}</span>
     </div>
 
       {/* manual pick owner selector removed: ownership is derived from Spotrac 2026 data when available */}
@@ -261,7 +262,7 @@ export default function MockDraft() {
       <div className="champion-results">
         {result ? (
           <table className="result-table">
-            <thead><tr><th>Pick</th><th>Team</th><th>Prospect</th><th>Position</th><th>School</th><th>Talent</th></tr></thead>
+            <thead><tr><th><TranslatedText>Pick</TranslatedText></th><th><TranslatedText>Team</TranslatedText></th><th><TranslatedText>Prospect</TranslatedText></th><th><TranslatedText>Position</TranslatedText></th><th><TranslatedText>School</TranslatedText></th><th><TranslatedText>Talent</TranslatedText></th></tr></thead>
             <tbody>
               {result.picks.map(p => (
                 <tr key={p.pick}>
@@ -276,16 +277,16 @@ export default function MockDraft() {
             </tbody>
           </table>
         ) : (
-          <p className="muted">No simulation run yet. Click "Simulate Draft" to generate a draft.</p>
+          <p className="muted"><TranslatedText>No simulation run yet. Click "Simulate Draft" to generate a draft.</TranslatedText></p>
         )}
       </div>
 
       <div className="notes">
-        <h4>Notes</h4>
+        <h4><TranslatedText>Notes</TranslatedText></h4>
         <ul>
-          <li>Lottery randomness favors worse records via a quadratic weight. It is a simplified model and not an exact real-world odds table.</li>
-          <li>Picks 1–10 now have probabilistic variation: teams are likelier to pick the highest-talent players but there is some randomness so results vary across simulations.</li>
-          <li>Pick ownership overrides are derived from Spotrac's 2026 future picks when available; manual overrides were removed to avoid confusion.</li>
+          <li><TranslatedText>Lottery randomness favors worse records via a quadratic weight. It is a simplified model and not an exact real-world odds table.</TranslatedText></li>
+          <li><TranslatedText>Picks 1–10 now have probabilistic variation: teams are likelier to pick the highest-talent players but there is some randomness so results vary across simulations.</TranslatedText></li>
+          <li><TranslatedText>Pick ownership overrides are derived from Spotrac's 2026 future picks when available; manual overrides were removed to avoid confusion.</TranslatedText></li>
         </ul>
       </div>
   </div>

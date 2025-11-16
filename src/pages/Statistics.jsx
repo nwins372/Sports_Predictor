@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
 import "./Statistics.css";
+import { TranslatedText } from "../components/TranslatedText";
 
 // Mapping from full team names to their JSON filenames and leagues
 const TEAM_FILE_MAP = {
@@ -370,23 +371,23 @@ function Statistics() {
                 <div className="stat-card scored">
                   <div className="stat-icon">⚡</div>
                   <div className="stat-content">
-                    <div className="stat-label">{pointsLabel} Scored</div>
+                    <div className="stat-label">{pointsLabel} <TranslatedText>Scored</TranslatedText></div>
                     <div className="stat-value">{teamStats.pointsFor}</div>
-                    <div className="stat-avg">Avg: {teamStats.avgPointsFor.toFixed(1)} per game</div>
+                    <div className="stat-avg"><TranslatedText>Avg:</TranslatedText> {teamStats.avgPointsFor.toFixed(1)} <TranslatedText>per game</TranslatedText></div>
                   </div>
                 </div>
                 <div className="stat-card allowed">
                   <div className="stat-icon">🛡️</div>
                   <div className="stat-content">
-                    <div className="stat-label">{pointsLabel} Allowed</div>
+                    <div className="stat-label">{pointsLabel} <TranslatedText>Allowed</TranslatedText></div>
                     <div className="stat-value">{teamStats.pointsAgainst}</div>
-                    <div className="stat-avg">Avg: {teamStats.avgPointsAgainst.toFixed(1)} per game</div>
+                    <div className="stat-avg"><TranslatedText>Avg:</TranslatedText> {teamStats.avgPointsAgainst.toFixed(1)} <TranslatedText>per game</TranslatedText></div>
                   </div>
                 </div>
               </div>
 
               {/* Key Stats Grid */}
-              <h4>Key Statistics</h4>
+              <h4><TranslatedText>Key Statistics</TranslatedText></h4>
               <div className="key-stats-grid">
                 {keyStats.map((stat, idx) => (
                   <div key={idx} className="key-stat-item">
@@ -400,12 +401,12 @@ function Statistics() {
               </div>
 
               {/* Team Details */}
-              <h4>Team Information</h4>
+              <h4><TranslatedText>Team Information</TranslatedText></h4>
               <div className="team-details">
                 <div className="detail-row">
                   <span className="detail-icon">🏆</span>
                   <div className="detail-content">
-                    <span className="detail-label">League & Sport</span>
+                    <span className="detail-label"><TranslatedText>League & Sport</TranslatedText></span>
                     <span className="detail-value">{team.league?.toUpperCase()} • {team.sport}</span>
                   </div>
                 </div>
@@ -413,7 +414,7 @@ function Statistics() {
                 <div className="detail-row">
                   <span className="detail-icon">📋</span>
                   <div className="detail-content">
-                    <span className="detail-label">Overall Record</span>
+                    <span className="detail-label"><TranslatedText>Overall Record</TranslatedText></span>
                     <span className="detail-value">{teamStats.wins}-{teamStats.losses}{teamStats.ties > 0 ? `-${teamStats.ties}` : ''} ({teamStats.winPercent}% Win Rate)</span>
                   </div>
                 </div>
@@ -422,7 +423,7 @@ function Statistics() {
                   <div className="detail-row">
                     <span className="detail-icon">📊</span>
                     <div className="detail-content">
-                      <span className="detail-label">Standings</span>
+                      <span className="detail-label"><TranslatedText>Standings</TranslatedText></span>
                       <span className="detail-value">{team.detail.team.standingSummary}</span>
                     </div>
                   </div>
@@ -431,7 +432,7 @@ function Statistics() {
                 <div className="detail-row">
                   <span className="detail-icon">📍</span>
                   <div className="detail-content">
-                    <span className="detail-label">Location</span>
+                    <span className="detail-label"><TranslatedText>Location</TranslatedText></span>
                     <span className="detail-value">{team.detail?.team?.location || 'N/A'}</span>
                   </div>
                 </div>
@@ -440,7 +441,7 @@ function Statistics() {
                   <div className="detail-row">
                     <span className="detail-icon">✨</span>
                     <div className="detail-content">
-                      <span className="detail-label">Nickname</span>
+                      <span className="detail-label"><TranslatedText>Nickname</TranslatedText></span>
                       <span className="detail-value">{team.detail.team.nickname}</span>
                     </div>
                   </div>
@@ -450,7 +451,7 @@ function Statistics() {
                   <div className="detail-row highlight">
                     <span className="detail-icon">🗓️</span>
                     <div className="detail-content">
-                      <span className="detail-label">Next Game</span>
+                      <span className="detail-label"><TranslatedText>Next Game</TranslatedText></span>
                       <span className="detail-value">
                         {team.detail.nextEvent[0].shortName} • {new Date(team.detail.nextEvent[0].date).toLocaleDateString('en-US', { 
                           weekday: 'short', 
@@ -468,7 +469,7 @@ function Statistics() {
                   <div className="detail-row">
                     <span className="detail-icon">🏟️</span>
                     <div className="detail-content">
-                      <span className="detail-label">Next Game Venue</span>
+                      <span className="detail-label"><TranslatedText>Next Game Venue</TranslatedText></span>
                       <span className="detail-value">
                         {team.detail.nextEvent[0].competitions[0].venue.fullName}
                         {team.detail.nextEvent[0].competitions[0].venue.address?.city && 
@@ -489,7 +490,7 @@ function Statistics() {
   if (loading) {
     return (
       <div className="statistics-container">
-        <div className="loading">Loading your team statistics...</div>
+        <div className="loading"><TranslatedText>Loading your team statistics...</TranslatedText></div>
       </div>
     );
   }
@@ -506,8 +507,8 @@ function Statistics() {
     return (
       <div className="statistics-container">
         <div className="no-teams">
-          <h2>No Favorite Teams</h2>
-          <p>Go to your Profile to select your favorite teams and view their statistics here.</p>
+          <h2><TranslatedText>No Favorite Teams</TranslatedText></h2>
+          <p><TranslatedText>Go to your Profile to select your favorite teams and view their statistics here.</TranslatedText></p>
         </div>
       </div>
     );
@@ -515,7 +516,7 @@ function Statistics() {
 
   return (
     <div className="statistics-container">
-        <h1>Your Team Statistics</h1>
+        <h1><TranslatedText>Your Team Statistics</TranslatedText></h1>
         
         {Object.entries(favoriteTeams).map(([sport, teams]) => (
           <div key={sport} className="sport-section">
@@ -528,14 +529,14 @@ function Statistics() {
                     return (
                       <div key={teamName} className="team-card error">
                         <h3>{teamName}</h3>
-                        <p>Data not available</p>
+                        <p><TranslatedText>Data not available</TranslatedText></p>
                       </div>
                     );
                   }
                   return renderTeamCard(teamName, team);
                 })
               ) : (
-                <p>No teams selected for {sport}</p>
+                <p><TranslatedText>No teams selected for {sport}</TranslatedText></p>
               )}
             </div>
           </div>

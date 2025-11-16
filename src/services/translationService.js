@@ -5,7 +5,7 @@ class TranslationService {
     this.baseURL = 'https://api.mymemory.translated.net/get';
     this.requestQueue = [];
     this.isProcessing = false;
-    this.rateLimitDelay = 250; // 250 milliseconds between requests
+    this.rateLimitDelay = 1; // 1 millisecond between requests
     this.lastRequestTime = 0;
     this.translationCache = new Map();
     this.cacheExpiry = 24 * 60 * 60 * 1000; // 24 hours

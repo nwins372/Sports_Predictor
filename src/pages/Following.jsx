@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import espnApi from '../utils/espnApi';
 import { supabase } from '../supabaseClient';
 import './Following.css';
+import { TranslatedText } from '../components/TranslatedText';
 
 export default function Following() {
   const [followedTeams, setFollowedTeams] = useState([]);
@@ -128,12 +129,12 @@ export default function Following() {
 
   return (
     <div className="following-page">
-      <h2>Following</h2>
-      {loading ? <div className="muted">Loading followed teams & players…</div> : (
+      <h2><TranslatedText>Following</TranslatedText></h2>
+      {loading ? <div className="muted"><TranslatedText>Loading followed teams & players…</TranslatedText></div> : (
         <div className="following-grid">
           <div className="follow-col">
-            <h3>Teams</h3>
-            {(!followedTeams || followedTeams.length === 0) ? <div className="muted">You are not following any teams.</div> : (
+            <h3><TranslatedText>Teams</TranslatedText></h3>
+            {(!followedTeams || followedTeams.length === 0) ? <div className="muted"><TranslatedText>You are not following any teams.</TranslatedText></div> : (
               <div className="team-list">
                 {followedTeams.map((t, i) => {
                   const info = teamDetails[t] || {};
@@ -150,7 +151,7 @@ export default function Following() {
                         <div className="team-nextgame muted">{next ? `Next: ${new Date(next.start).toLocaleString()} vs ${next.opponent || ''}` : 'Next game: N/A'}</div>
                       </div>
                       <div className="team-card-actions">
-                        <button className="unfollow" onClick={() => unfollowTeam(t)}>Unfollow</button>
+                        <button className="unfollow" onClick={() => unfollowTeam(t)}><TranslatedText>Unfollow</TranslatedText></button>
                       </div>
                     </div>
                   );
@@ -160,8 +161,8 @@ export default function Following() {
           </div>
 
           <div className="follow-col">
-            <h3>Players</h3>
-            {(!followedPlayers || followedPlayers.length === 0) ? <div className="muted">You are not following any players.</div> : (
+            <h3><TranslatedText>Players</TranslatedText></h3>
+            {(!followedPlayers || followedPlayers.length === 0) ? <div className="muted"><TranslatedText>You are not following any players.</TranslatedText></div> : (
               <div className="player-list">
                 {followedPlayers.map((p, i) => {
                   const pl = playerDetails[p] || null;
@@ -175,7 +176,7 @@ export default function Following() {
                         <div className="player-meta muted">{pl ? `${pl.position || ''} ${pl.team ? `• ${pl.team.displayName || pl.team.name}` : ''}` : ''}</div>
                       </div>
                       <div className="player-actions">
-                        <button className="unfollow" onClick={() => unfollowPlayer(p)}>Unfollow</button>
+                        <button className="unfollow" onClick={() => unfollowPlayer(p)}><TranslatedText>Unfollow</TranslatedText></button>
                       </div>
                     </div>
                   );

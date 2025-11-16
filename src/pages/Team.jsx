@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import espnApi from '../utils/espnApi';
 import './Team.css';
 import FollowButton from '../components/FollowButton';
+import { TranslatedText } from '../components/TranslatedText';
 
 export default function Team() {
   const params = useParams();
@@ -229,17 +230,17 @@ export default function Team() {
       </div>
 
       <div className="roster">
-        <h3>Roster</h3>
+        <h3><TranslatedText>Roster</TranslatedText></h3>
         {((rosterEntries && rosterEntries.length > 0) || (remoteRoster && remoteRoster.length > 0)) ? (
           <ul className="roster-list">
             {(rosterEntries && rosterEntries.length > 0 ? rosterEntries : remoteRoster).map((r, i) => renderPlayer(r, i))}
           </ul>
         ) : (
-          <div className="sb-state">Roster not available.</div>
+          <div className="sb-state"><TranslatedText>Roster not available.</TranslatedText></div>
         )}
       </div>
 
-        <div className="team-debug">Loaded from checked-in JSON (debug output hidden in production)</div>
+        <div className="team-debug"><TranslatedText>Loaded from checked-in JSON (debug output hidden in production)</TranslatedText></div>
       </div>
     );
 }

@@ -449,7 +449,7 @@ function Home() {
                 <div className="calculator-form">
                   {/* Sport Selection */}
                   <div className="form-group mb-4">
-                    <label className="form-label">Select Sport:</label>
+                    <label className="form-label"><TranslatedText>Select Sport:</TranslatedText></label>
                     <div className="sport-buttons">
                       {["NFL", "NBA", "MLB", "NHL", "MLS", "NCAA"].map(sport => (
                         <button
@@ -525,7 +525,7 @@ function Home() {
                       onClick={handleSimulate}
                       disabled={isSimulating || !team1 || !team2}
                     >
-                      {isSimulating ? "Running Simulations..." : "Simulate Matchup"}
+                      <TranslatedText>{isSimulating ? "Running Simulations..." : "Simulate Matchup"}</TranslatedText>
                     </button>
                     <div className="simulation-info mt-2">
                       <small className="text-muted">
@@ -756,16 +756,16 @@ function Home() {
                   <h5 style={{ color: "#60a5fa", marginBottom: "1rem" }}><TranslatedText>How We Predict Champions:</TranslatedText></h5>
                   <div className="info-grid">
                     <div className="info-item">
-                      <strong>📊 Team Strength Analysis:</strong> <TranslatedText>Analyze each team's win percentage, offense, defense, and recent form</TranslatedText>
+                      <strong><TranslatedText>📊 Team Strength Analysis:</TranslatedText></strong> <TranslatedText>Analyze each team's win percentage, offense, defense, and recent form</TranslatedText>
                     </div>
                     <div className="info-item">
-                      <strong>🏈 Multi-Algorithm Simulation:</strong> <TranslatedText>Run 50,000+ simulations using 4 different algorithms: Enhanced Monte Carlo, Statistical Analysis, Elo Ratings, and Strength-weighted Brackets</TranslatedText>
+                      <strong><TranslatedText>🏈 Multi-Algorithm Simulation:</TranslatedText></strong> <TranslatedText>Run 50,000+ simulations using 4 different algorithms: Enhanced Monte Carlo, Statistical Analysis, Elo Ratings, and Strength-weighted Brackets</TranslatedText>
                     </div>
                     <div className="info-item">
-                      <strong>🎯 High-Confidence Prediction:</strong> <TranslatedText>Combine multiple algorithms with weighted ensemble methods for maximum prediction accuracy and confidence</TranslatedText>
+                      <strong><TranslatedText>🎯 High-Confidence Prediction:</TranslatedText></strong> <TranslatedText>Combine multiple algorithms with weighted ensemble methods for maximum prediction accuracy and confidence</TranslatedText>
                     </div>
                     <div className="info-item">
-                      <strong>🏆 Champion Selection:</strong> <TranslatedText>Rank teams by championship probability to predict the most likely winner</TranslatedText>
+                      <strong><TranslatedText>🏆 Champion Selection:</TranslatedText></strong> <TranslatedText>Rank teams by championship probability to predict the most likely winner</TranslatedText>
                     </div>
                   </div>
                 </div>
@@ -803,7 +803,7 @@ function Home() {
                         padding: '12px 30px'
                       }}
                     >
-                      {isPredicting ? "Analyzing Teams..." : `Predict ${championLeague} Champion`}
+                      <TranslatedText>{isPredicting ? "Analyzing Teams..." : `Predict ${championLeague} Champion`}</TranslatedText>
                     </button>
                     <div className="prediction-info mt-2">
                       <small className="text-muted">

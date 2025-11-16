@@ -342,11 +342,11 @@ export default function ScheduleBar() {
             )}
           </div>
         </div>
-        
-        {g.venue && <div className="sb-venue">Location: {g.venue}</div>}
-        
+
+        {g.venue && <div className="sb-venue"><TranslatedText>Location:</TranslatedText> {g.venue}</div>}
+
         <div className="sb-watch-section">
-          <span className="sb-watch-title">Where to Watch:</span>
+          <span className="sb-watch-title"><TranslatedText>Where to Watch:</TranslatedText></span>
           <div className="sb-broadcasters">
             {Array.isArray(broadcastInfo) ? (
               broadcastInfo.map(key => {
@@ -371,19 +371,19 @@ export default function ScheduleBar() {
     );
   }
 
-if (loading)    return <p className="prefs-note">Loading preferences…</p>;
+if (loading)    return <p className="prefs-note"><TranslatedText>Loading preferences…</TranslatedText></p>;
 return (
     <div className="sb-wrap">
       <div className="sb-top">
         <div className="sb-title-container">
-          <h3>{sport === 'all' || filterState === 'none' ? 'All Sports' : sport.toUpperCase()} Schedule</h3>
-          {sport === 'nfl' && <a href="https://www.nfl.com/ways-to-watch/by-week/" target="_blank" rel="noopener noreferrer" className="sb-nfl-link">Official Ways to Watch</a>}
-          {sport === 'nba' && <a href="https://www.nba.com/schedule" target="_blank" rel="noopener noreferrer" className="sb-nfl-link">Official Schedule</a>}
+          <h3>{sport === 'all' || filterState === 'none' ? <TranslatedText>All Sports</TranslatedText> : sport.toUpperCase()} Schedule</h3>
+          {sport === 'nfl' && <a href="https://www.nfl.com/ways-to-watch/by-week/" target="_blank" rel="noopener noreferrer" className="sb-nfl-link"><TranslatedText>Official Ways to Watch</TranslatedText></a>}
+          {sport === 'nba' && <a href="https://www.nba.com/schedule" target="_blank" rel="noopener noreferrer" className="sb-nfl-link"><TranslatedText>Official Schedule</TranslatedText></a>}
         </div>
 
         <div className="sb-actions" style={{ display: "flex", gap: 12, alignItems: "center" }}>
           <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
-            <span style={{ fontSize: 12, opacity: 0.8 }}>Filter</span>
+            <span style={{ fontSize: 12, opacity: 0.8 }}><TranslatedText>Filter</TranslatedText></span>
             <select
               value={filterState}
               onChange={(e) => {
@@ -393,9 +393,9 @@ return (
               }}
               className="sb-date-input"
             >
-              <option value="none">Off (All Sports)</option>
-              <option value="sports">By Selected Sport</option>
-              <option value="favorites">Favorites Only</option>
+              <option value="none"><TranslatedText>Off (All Sports)</TranslatedText></option>
+              <option value="sports"><TranslatedText>By Selected Sport</TranslatedText></option>
+              <option value="favorites"><TranslatedText>Favorites Only</TranslatedText></option>
             </select>
           </label>
 

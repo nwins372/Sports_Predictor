@@ -14,6 +14,7 @@ import mlbData from '../assets/mlb25.json';
 
 // Import live API service
 import sportsAPI from '../services/sportsAPI';
+import { TranslatedText } from "../components/TranslatedText";
 
 // Team win percentages and records (Updated: November 4, 2025)
 const TEAM_STATS = {
@@ -1368,17 +1369,17 @@ function Schedules({ session: sessionProp }) {
           <div className="game-period">
             <span className="period-icon">⚾</span>
             <span className="period-text">
-              {event.inningHalf === 'top' ? 'Top' : 'Bottom'} of the {event.currentInning || 'TBD'}
+              <TranslatedText>{event.inningHalf === 'top' ? 'Top' : 'Bottom'} of the {event.currentInning || 'TBD'}</TranslatedText>
             </span>
             {event.outs !== null && (
-              <span className="outs-indicator">{event.outs} Outs</span>
+              <span className="outs-indicator"><TranslatedText>{event.outs} Outs</TranslatedText></span>
             )}
           </div>
           
           {/* Base Runners */}
           {event.baseRunners && (
             <div className="base-runners">
-              <span className="runners-label">Runners:</span>
+              <span className="runners-label"><TranslatedText>Runners:</TranslatedText></span>
               <div className="base-diamond">
                 <div className={`base third ${event.baseRunners.third ? 'occupied' : ''}`}>3</div>
                 <div className={`base second ${event.baseRunners.second ? 'occupied' : ''}`}>2</div>
@@ -1422,7 +1423,7 @@ function Schedules({ session: sessionProp }) {
         <div className="live-game-details nfl-details">
           <div className="game-period">
             <span className="period-icon">🏈</span>
-            <span className="period-text">Quarter {event.currentQuarter || 'TBD'}</span>
+            <span className="period-text"><TranslatedText>Quarter {event.currentQuarter || 'TBD'}</TranslatedText></span>
             {event.quarterTime && (
               <span className="quarter-time">{event.quarterTime}</span>
             )}
@@ -1435,13 +1436,13 @@ function Schedules({ session: sessionProp }) {
                 {event.down} & {event.distance}
               </span>
               {event.fieldPosition && (
-                <span className="field-position">{event.fieldPosition}</span>
+                <span className="field-position"><TranslatedText>{event.fieldPosition}</TranslatedText></span>
               )}
               {event.yardLine && (
-                <span className="yard-line">{event.yardLine} yard line</span>
+                <span className="yard-line"><TranslatedText>{event.yardLine} yard line</TranslatedText></span>
               )}
               {event.isRedZone && (
-                <span className="red-zone-indicator">🔴 Red Zone</span>
+                <span className="red-zone-indicator"><TranslatedText>🔴 Red Zone</TranslatedText></span>
               )}
             </div>
           )}
@@ -1449,7 +1450,7 @@ function Schedules({ session: sessionProp }) {
           {/* Possession */}
           {event.possession && (
             <div className="possession-info">
-              <span className="possession-label">Possession:</span>
+              <span className="possession-label"><TranslatedText>Possession:</TranslatedText></span>
               <span className="possession-team">{event.possession}</span>
             </div>
           )}
@@ -1457,7 +1458,7 @@ function Schedules({ session: sessionProp }) {
           {/* Timeout */}
           {event.timeout && (
             <div className="timeout-info">
-              <span className="timeout-label">Timeout</span>
+              <span className="timeout-label"><TranslatedText>Timeout</TranslatedText></span>
             </div>
           )}
         </div>
@@ -1472,10 +1473,10 @@ function Schedules({ session: sessionProp }) {
           <div className="game-period">
             <span className="period-icon">🏀</span>
             <span className="period-text">
-              {event.isOvertime ? `Overtime ${event.currentQuarter - 4}` : `Quarter ${event.currentQuarter || 'TBD'}`}
+              <TranslatedText>{event.isOvertime ? `Overtime ${event.currentQuarter - 4}` : `Quarter ${event.currentQuarter || 'TBD'}`}</TranslatedText>
             </span>
             {event.quarterTime && (
-              <span className="quarter-time">{event.quarterTime}</span>
+              <span className="quarter-time"><TranslatedText>{event.quarterTime}</TranslatedText></span>
             )}
           </div>
           
@@ -1483,12 +1484,12 @@ function Schedules({ session: sessionProp }) {
           <div className="game-situation">
             {event.shotClock && (
               <div className="shot-clock">
-                <span className="shot-clock-text">Shot Clock: {event.shotClock}</span>
+                <span className="shot-clock-text"><TranslatedText>Shot Clock: {event.shotClock}</TranslatedText></span>
               </div>
             )}
             {event.possession && (
               <div className="possession-info">
-                <span className="possession-label">Ball:</span>
+                <span className="possession-label"><TranslatedText>Ball:</TranslatedText></span>
                 <span className="possession-team">{event.possession}</span>
               </div>
             )}
@@ -1515,7 +1516,7 @@ function Schedules({ session: sessionProp }) {
   const renderLeagueSection = (league) => (
   <div className="league-section mb-5">
     <h2 style={{ color: "#3b82f6", fontWeight: "bold" }}>
-      {getSportIcon(league)} {league} Schedule
+      <TranslatedText>{getSportIcon(league)} {league} Schedule</TranslatedText>
     </h2>
     <div className="events-grid">
       {GAME_SCHEDULES[league]
@@ -1527,7 +1528,7 @@ function Schedules({ session: sessionProp }) {
                 {event.type}
               </div>
               <div className="event-date">
-                {formatDate(event.date)}
+                <TranslatedText>{formatDate(event.date)}</TranslatedText>
               </div>
             </div>
             <div className="event-content">
@@ -1557,13 +1558,13 @@ function Schedules({ session: sessionProp }) {
                   const diffTime = eventDate - today;
                   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
                   if (diffDays < 0) {
-                    return <span className="past-event">Past Event</span>;
+                    return <span className="past-event"><TranslatedText>Past Event</TranslatedText></span>;
                   } else if (diffDays === 0) {
-                    return <span className="today-event">Today!</span>;
+                    return <span className="today-event"><TranslatedText>Today!</TranslatedText></span>;
                   } else if (diffDays === 1) {
-                    return <span className="tomorrow-event">Tomorrow</span>;
+                    return <span className="tomorrow-event"><TranslatedText>Tomorrow</TranslatedText></span>;
                   } else {
-                    return <span className="upcoming-event">{diffDays} days away</span>;
+                    return <span className="upcoming-event"><TranslatedText>{diffDays} days away</TranslatedText></span>;
                   }
                 })()}
               </div>
@@ -1581,14 +1582,14 @@ function Schedules({ session: sessionProp }) {
       <div className="container mt-4">
         <div className="schedules-header">
           <h1 className="text-center mb-4" style={{ color: "#e63946", fontFamily: "Arial Black, sans-serif" }}>
-            Detailed Game & Match Schedules
+            <TranslatedText>Detailed Game & Match Schedules</TranslatedText>
           </h1>
           
           {/* Today's Games Section */}
           {todaysGames.length > 0 && (
             <div className="todays-games-section mb-4">
               <h2 className="text-center mb-3" style={{ color: "#22c55e", fontWeight: "bold" }}>
-                🔴 Today's Games ({todaysGames.length})
+                🔴 <TranslatedText>Today's Games</TranslatedText> ({todaysGames.length})
               </h2>
               
               {/* Score Update Status */}
@@ -1603,7 +1604,7 @@ function Schedules({ session: sessionProp }) {
                       <div className="game-header">
                         <div className="game-sport">{getSportIcon(game.sport)} {game.sport}</div>
                         <div className={`game-status ${game.isLive ? 'live' : 'scheduled'}`}>
-                          {game.isLive ? '🔴 LIVE' : game.type}
+                          <TranslatedText>{game.isLive ? '🔴 LIVE' : game.type}</TranslatedText>
                         </div>
                       </div>
                       
@@ -1628,32 +1629,32 @@ function Schedules({ session: sessionProp }) {
                           <div className="live-details">
                             {game.sport === 'MLB' && (
                               <div className="live-info">
-                                <span className="detail-label">Inning:</span>
+                                <span className="detail-label"><TranslatedText>Inning:</TranslatedText></span>
                                 <span className="detail-value">
-                                  {game.inningHalf === 'top' ? 'Top' : 'Bottom'} {game.currentInning || 'TBD'}
+                                  <TranslatedText>{game.inningHalf === 'top' ? 'Top' : 'Bottom'} {game.currentInning || 'TBD'}</TranslatedText>
                                 </span>
                                 {game.outs !== null && (
-                                  <span className="detail-value"> • {game.outs} Outs</span>
+                                  <span className="detail-value"> • {game.outs} <TranslatedText>Outs</TranslatedText></span>
                                 )}
                               </div>
                             )}
                             
                             {game.sport === 'NFL' && (
                               <div className="live-info">
-                                <span className="detail-label">Quarter:</span>
-                                <span className="detail-value">Q{game.currentQuarter || 'TBD'}</span>
+                                <span className="detail-label"><TranslatedText>Quarter:</TranslatedText></span>
+                                <span className="detail-value"><TranslatedText>Q{game.currentQuarter || 'TBD'}</TranslatedText></span>
                                 {game.quarterTime && (
-                                  <span className="detail-value"> • {game.quarterTime}</span>
+                                  <span className="detail-value"> • <TranslatedText>{game.quarterTime}</TranslatedText></span>
                                 )}
                                 {game.down && game.distance && (
-                                  <span className="detail-value"> • {game.down} & {game.distance}</span>
+                                  <span className="detail-value"> • <TranslatedText>{game.down}</TranslatedText> & <TranslatedText>{game.distance}</TranslatedText></span>
                                 )}
                               </div>
                             )}
                             
                             {game.sport === 'NBA' && (
                               <div className="live-info">
-                                <span className="detail-label">Quarter:</span>
+                                <span className="detail-label"><TranslatedText>Quarter:</TranslatedText></span>
                                 <span className="detail-value">
                                   {game.isOvertime ? `OT${game.currentQuarter - 4}` : `Q${game.currentQuarter || 'TBD'}`}
                                 </span>
@@ -1661,7 +1662,7 @@ function Schedules({ session: sessionProp }) {
                                   <span className="detail-value"> • {game.quarterTime}</span>
                                 )}
                                 {game.shotClock && (
-                                  <span className="detail-value"> • Shot Clock: {game.shotClock}</span>
+                                  <span className="detail-value"> • <TranslatedText>Shot Clock:</TranslatedText> {game.shotClock}</span>
                                 )}
                               </div>
                             )}
@@ -1693,26 +1694,26 @@ function Schedules({ session: sessionProp }) {
             <div className="row">
               <div className="col-md-6">
                 <div className="filter-group">
-                  <label className="filter-label">Sport:</label>
+                  <label className="filter-label"><TranslatedText>Sport:</TranslatedText></label>
                   <select 
                     className="filter-select"
                     value={selectedSport}
                     onChange={(e) => setSelectedSport(e.target.value)}
                   >
-                    <option value="All">All Sports</option>
+                    <option value="All"><TranslatedText>All Sports</TranslatedText></option>
                     {Object.keys(realSchedules).map(sport => (
                       <option key={sport} value={sport}>
-                        {getSportIcon(sport)} {sport}
+                        {getSportIcon(sport)} <TranslatedText>{sport}</TranslatedText>
                       </option>
                     ))}
                     {Object.keys(MAJOR_SPORTING_EVENTS).map(sport => (
                       <option key={sport} value={sport}>
-                        {getSportIcon(sport)} {sport}
+                        {getSportIcon(sport)} <TranslatedText>{sport}</TranslatedText>
                       </option>
                     ))}
                     {Object.keys(GAME_SCHEDULES).map(sport => (
                       <option key={sport} value={sport}>
-                        {getSportIcon(sport)} {sport}
+                        {getSportIcon(sport)} <TranslatedText>{sport}</TranslatedText>
                       </option>
                     ))}
                   </select>
@@ -1721,22 +1722,22 @@ function Schedules({ session: sessionProp }) {
               
               <div className="col-md-4">
                 <div className="filter-group">
-                  <label className="filter-label">Date Filter:</label>
+                  <label className="filter-label"><TranslatedText>Date Filter:</TranslatedText></label>
                   <select 
                     className="filter-select"
                     value={filterMode}
                     onChange={(e) => setFilterMode(e.target.value)}
                   >
-                    <option value="from-date">From Date</option>
-                    <option value="month">Specific Month</option>
-                    <option value="date-range">Date Range</option>
+                    <option value="from-date"><TranslatedText>From Date</TranslatedText></option>
+                    <option value="month"><TranslatedText>Specific Month</TranslatedText></option>
+                    <option value="date-range"><TranslatedText>Date Range</TranslatedText></option>
                   </select>
                 </div>
               </div>
               
               <div className="col-md-2">
                 <div className="filter-group">
-                  <label className="filter-label">Options:</label>
+                  <label className="filter-label"><TranslatedText>Options:</TranslatedText></label>
                   <div className="prediction-toggle">
                     <input 
                       type="checkbox"
@@ -1744,7 +1745,7 @@ function Schedules({ session: sessionProp }) {
                       checked={showPredictions}
                       onChange={(e) => setShowPredictions(e.target.checked)}
                     />
-                    <label htmlFor="predictions" className="toggle-label">Show Win %</label>
+                    <label htmlFor="predictions" className="toggle-label"><TranslatedText>Show Win %</TranslatedText></label>
                   </div>
                   <div className="favorites-toggle" style={{ marginTop: 8 }}>
                     <input
@@ -1753,19 +1754,19 @@ function Schedules({ session: sessionProp }) {
                       checked={showFavorites}
                       onChange={(e) => setShowFavorites(e.target.checked)}
                     />
-                    <label htmlFor="favoritesOnly" className="toggle-label">Favorite Teams Only</label>
+                    <label htmlFor="favoritesOnly" className="toggle-label"><TranslatedText>Favorite Teams Only</TranslatedText></label>
                   </div>
                 </div>
               </div>
               
               <div className="col-md-2">
                 <div className="filter-group">
-                  <label className="filter-label">Past Games:</label>
+                  <label className="filter-label"><TranslatedText>Past Games:</TranslatedText></label>
                   <button 
                     className={`past-games-btn ${showPastGames ? 'active' : ''}`}
                     onClick={() => setShowPastGames(!showPastGames)}
                   >
-                    📊 Past Games
+                    📊 <TranslatedText>Past Games</TranslatedText>
                   </button>
                 </div>
               </div>
@@ -1777,20 +1778,20 @@ function Schedules({ session: sessionProp }) {
                   <div className="live-data-status">
                     <div className="status-info">
                       <span className={`status-indicator ${dataSource === 'live' ? 'live' : 'static'}`}>
-                        {dataSource === 'live' ? '🟢 Live Data' : '🔴 Static Data'}
+                        <TranslatedText>{dataSource === 'live' ? '🟢 Live Data' : '🔴 Static Data'}</TranslatedText>
                       </span>
                       {liveGamesCount > 0 && (
                         <span className="live-games-indicator">
-                          🔴 {liveGamesCount} Live Game{liveGamesCount !== 1 ? 's' : ''}
+                          <TranslatedText>🔴 {liveGamesCount} Live Game{liveGamesCount !== 1 ? 's' : ''}</TranslatedText>
                         </span>
                       )}
                       {lastUpdated && (
                         <span className="last-updated">
-                          Last updated: {lastUpdated.toLocaleTimeString()} (Weekly auto-refresh)
+                          <TranslatedText>Last updated: {lastUpdated.toLocaleTimeString()} (Weekly auto-refresh)</TranslatedText>
                         </span>
                       )}
                       {isLoadingLiveData && (
-                        <span className="loading-indicator">⟳ Updating...</span>
+                        <span className="loading-indicator"><TranslatedText>⟳ Updating...</TranslatedText></span>
                       )}
                       <button 
                         className="quick-filter-btn debug-btn"
@@ -1801,7 +1802,7 @@ function Schedules({ session: sessionProp }) {
                           console.log('Live data enabled:', liveDataEnabled);
                         }}
                       >
-                        Debug Info
+                        <TranslatedText>Debug Info</TranslatedText>
                       </button>
                     </div>
                   <div className="data-controls">
@@ -1809,20 +1810,20 @@ function Schedules({ session: sessionProp }) {
                       className="quick-filter-btn"
                       onClick={() => setLiveDataEnabled(!liveDataEnabled)}
                     >
-                      {liveDataEnabled ? 'Disable Live Data' : 'Enable Live Data'}
+                      <TranslatedText>{liveDataEnabled ? 'Disable Live Data' : 'Enable Live Data'}</TranslatedText>
                     </button>
                     <button 
                       className="quick-filter-btn"
                       onClick={refreshLiveData}
                       disabled={!liveDataEnabled || isLoadingLiveData}
                     >
-                      Manual Refresh
+                      <TranslatedText>Manual Refresh</TranslatedText>
                     </button>
                     <button 
                       className="quick-filter-btn"
                       onClick={() => sportsAPI.clearCache()}
                     >
-                      Clear Cache
+                      <TranslatedText>Clear Cache</TranslatedText>
                     </button>
                   </div>
                 </div>
@@ -1834,7 +1835,7 @@ function Schedules({ session: sessionProp }) {
               {filterMode === 'from-date' && (
                 <div className="col-md-6">
                   <div className="filter-group">
-                    <label className="filter-label">From Date:</label>
+                    <label className="filter-label"><TranslatedText>From Date:</TranslatedText></label>
                     <input 
                       type="date"
                       className="filter-date"
@@ -1848,31 +1849,31 @@ function Schedules({ session: sessionProp }) {
               {filterMode === 'month' && (
                 <div className="col-md-6">
                   <div className="filter-group">
-                    <label className="filter-label">Select Month:</label>
+                    <label className="filter-label"><TranslatedText>Select Month:</TranslatedText></label>
                     <select 
                       className="filter-select"
                       value={selectedMonth}
                       onChange={(e) => setSelectedMonth(e.target.value)}
                     >
-                      <option value="all">All Months</option>
-                      <option value="2025-1">January 2025</option>
-                      <option value="2025-2">February 2025</option>
-                      <option value="2025-3">March 2025</option>
-                      <option value="2025-4">April 2025</option>
-                      <option value="2025-5">May 2025</option>
-                      <option value="2025-6">June 2025</option>
-                      <option value="2025-7">July 2025</option>
-                      <option value="2025-8">August 2025</option>
-                      <option value="2025-9">September 2025</option>
-                      <option value="2025-10">October 2025</option>
-                      <option value="2025-11">November 2025</option>
-                      <option value="2025-12">December 2025</option>
-                      <option value="2026-1">January 2026</option>
-                      <option value="2026-2">February 2026</option>
-                      <option value="2026-3">March 2026</option>
-                      <option value="2026-4">April 2026</option>
-                      <option value="2026-5">May 2026</option>
-                      <option value="2026-6">June 2026</option>
+                      <option value="all"><TranslatedText>All Months</TranslatedText></option>
+                      <option value="2025-1"><TranslatedText>January 2025</TranslatedText></option>
+                      <option value="2025-2"><TranslatedText>February 2025</TranslatedText></option>
+                      <option value="2025-3"><TranslatedText>March 2025</TranslatedText></option>
+                      <option value="2025-4"><TranslatedText>April 2025</TranslatedText></option>
+                      <option value="2025-5"><TranslatedText>May 2025</TranslatedText></option>
+                      <option value="2025-6"><TranslatedText>June 2025</TranslatedText></option>
+                      <option value="2025-7"><TranslatedText>July 2025</TranslatedText></option>
+                      <option value="2025-8"><TranslatedText>August 2025</TranslatedText></option>
+                      <option value="2025-9"><TranslatedText>September 2025</TranslatedText></option>
+                      <option value="2025-10"><TranslatedText>October 2025</TranslatedText></option>
+                      <option value="2025-11"><TranslatedText>November 2025</TranslatedText></option>
+                      <option value="2025-12"><TranslatedText>December 2025</TranslatedText></option>
+                      <option value="2026-1"><TranslatedText>January 2026</TranslatedText></option>
+                      <option value="2026-2"><TranslatedText>February 2026</TranslatedText></option>
+                      <option value="2026-3"><TranslatedText>March 2026</TranslatedText></option>
+                      <option value="2026-4"><TranslatedText>April 2026</TranslatedText></option>
+                      <option value="2026-5"><TranslatedText>May 2026</TranslatedText></option>
+                      <option value="2026-6"><TranslatedText>June 2026</TranslatedText></option>
                     </select>
                   </div>
                 </div>
@@ -1882,7 +1883,7 @@ function Schedules({ session: sessionProp }) {
                 <>
                   <div className="col-md-3">
                     <div className="filter-group">
-                      <label className="filter-label">Start Date:</label>
+                      <label className="filter-label"><TranslatedText>Start Date:</TranslatedText></label>
                       <input 
                         type="date"
                         className="filter-date"
@@ -1893,7 +1894,7 @@ function Schedules({ session: sessionProp }) {
                   </div>
                   <div className="col-md-3">
                     <div className="filter-group">
-                      <label className="filter-label">End Date:</label>
+                      <label className="filter-label"><TranslatedText>End Date:</TranslatedText></label>
                       <input 
                         type="date"
                         className="filter-date"
@@ -1908,7 +1909,7 @@ function Schedules({ session: sessionProp }) {
               {/* Quick Filter Buttons */}
               <div className="col-md-6">
                 <div className="filter-group">
-                  <label className="filter-label">Quick Filters:</label>
+                  <label className="filter-label"><TranslatedText>Quick Filters:</TranslatedText></label>
                   <div className="quick-filters">
                     <button 
                       className="quick-filter-btn"
@@ -1917,7 +1918,7 @@ function Schedules({ session: sessionProp }) {
                         setSelectedDate(new Date().toISOString().split('T')[0]);
                       }}
                     >
-                      Today
+                      <TranslatedText>Today</TranslatedText>
                     </button>
                     <button 
                       className="quick-filter-btn"
@@ -1929,7 +1930,7 @@ function Schedules({ session: sessionProp }) {
                         setDateRangeEnd(nextWeek.toISOString().split('T')[0]);
                       }}
                     >
-                      This Week
+                      <TranslatedText>This Week</TranslatedText>
                     </button>
                     <button 
                       className="quick-filter-btn"
@@ -1941,7 +1942,7 @@ function Schedules({ session: sessionProp }) {
                         setSelectedMonth(`${year}-${month}`);
                       }}
                     >
-                      This Month
+                      <TranslatedText>This Month</TranslatedText>
                     </button>
                     <button 
                       className="quick-filter-btn clear-btn"
@@ -1953,7 +1954,7 @@ function Schedules({ session: sessionProp }) {
                         setDateRangeEnd('');
                       }}
                     >
-                      Clear Filters
+                      <TranslatedText>Clear Filters</TranslatedText>
                     </button>
                   </div>
                 </div>
@@ -1967,14 +1968,14 @@ function Schedules({ session: sessionProp }) {
           <div className="past-games-section mb-5">
             <div className="past-games-header">
               <h2 className="text-center mb-4" style={{ color: "#f77f00", fontWeight: "bold" }}>
-                📊 Team Past Games (Last 20 Games)
+                📊 <TranslatedText>Team Past Games (Last 20 Games)</TranslatedText>
               </h2>
               
               <div className="past-games-controls">
                 <div className="row">
                   <div className="col-md-4">
                     <div className="filter-group">
-                      <label className="filter-label">Sport:</label>
+                      <label className="filter-label"><TranslatedText>Sport:</TranslatedText></label>
                       <select 
                         className="filter-select"
                         value={selectedTeamSport}
@@ -1993,7 +1994,7 @@ function Schedules({ session: sessionProp }) {
                   
                   <div className="col-md-4">
                     <div className="filter-group">
-                      <label className="filter-label">Team:</label>
+                      <label className="filter-label"><TranslatedText>Team:</TranslatedText></label>
                       <select 
                         className="filter-select"
                         value={selectedTeam}
@@ -2007,7 +2008,7 @@ function Schedules({ session: sessionProp }) {
                         }}
                         disabled={!selectedTeamSport}
                       >
-                        <option value="">Select a team...</option>
+                        <option value=""><TranslatedText>Select a team...</TranslatedText></option>
                         {getAvailableTeams(selectedTeamSport).map(team => (
                           <option key={team} value={team}>
                             {team}
@@ -2019,7 +2020,7 @@ function Schedules({ session: sessionProp }) {
                   
                   <div className="col-md-4">
                     <div className="filter-group">
-                      <label className="filter-label">Actions:</label>
+                      <label className="filter-label"><TranslatedText>Actions:</TranslatedText></label>
                       <div className="past-games-actions">
                         <button 
                           className="quick-filter-btn"
@@ -2040,7 +2041,7 @@ function Schedules({ session: sessionProp }) {
                             setPastGamesLastUpdated(null);
                           }}
                         >
-                          Clear
+                          <TranslatedText>Clear</TranslatedText>
                         </button>
                         <button 
                           className="quick-filter-btn debug-btn"
@@ -2054,7 +2055,7 @@ function Schedules({ session: sessionProp }) {
                           }}
                           disabled={!selectedTeam}
                         >
-                          Test Data
+                          <TranslatedText>Test Data</TranslatedText>
                         </button>
                       </div>
                     </div>
@@ -2066,10 +2067,10 @@ function Schedules({ session: sessionProp }) {
                   <div className="past-games-status mt-3">
                     <div className="status-info">
                       <span className="status-indicator static">
-                        📊 {pastGames.length} Past Games Loaded
+                        📊 <TranslatedText>{pastGames.length} Past Games Loaded</TranslatedText>
                       </span>
                       <span className="last-updated">
-                        Last updated: {pastGamesLastUpdated.toLocaleTimeString()} (Weekly auto-refresh)
+                        <TranslatedText>Last updated: {pastGamesLastUpdated.toLocaleTimeString()} (Weekly auto-refresh)</TranslatedText>
                       </span>
                     </div>
                   </div>
@@ -2083,12 +2084,12 @@ function Schedules({ session: sessionProp }) {
                 {isLoadingPastGames ? (
                   <div className="loading-past-games">
                     <div className="loading-spinner">⟳</div>
-                    <p>Loading past games for {selectedTeam}...</p>
+                    <p><TranslatedText>Loading past games for {selectedTeam}...</TranslatedText></p>
                   </div>
                 ) : pastGames.length > 0 ? (
                   <div className="past-games-grid">
                     <h3 className="team-past-games-title">
-                      {getSportIcon(selectedTeamSport)} {selectedTeam} - Last 20 Games
+                      {getSportIcon(selectedTeamSport)} {selectedTeam} - <TranslatedText>Last 20 Games</TranslatedText>
                     </h3>
                     <div className="past-games-stats mb-3">
                       {(() => {
@@ -2104,13 +2105,13 @@ function Schedules({ session: sessionProp }) {
                         return (
                           <div className="team-record">
                             <span className="record-item">
-                              <strong>Record:</strong> {wins}-{losses}
+                              <strong><TranslatedText>Record:</TranslatedText></strong> {wins}-{losses}
                             </span>
                             <span className="record-item">
-                              <strong>Win %:</strong> {winPercentage}%
+                              <strong><TranslatedText>Win %:</TranslatedText></strong> {winPercentage}%
                             </span>
                             <span className="record-item">
-                              <strong>Games:</strong> {pastGames.length}
+                              <strong><TranslatedText>Games:</TranslatedText></strong> {pastGames.length}
                             </span>
                           </div>
                         );
@@ -2189,8 +2190,8 @@ function Schedules({ session: sessionProp }) {
                   </div>
                 ) : (
                   <div className="no-past-games">
-                    <h3>No past games found for {selectedTeam}</h3>
-                    <p>Try selecting a different team or sport.</p>
+                    <h3><TranslatedText>No past games found for {selectedTeam}</TranslatedText></h3>
+                    <p><TranslatedText>Try selecting a different team or sport.</TranslatedText></p>
                   </div>
                 )}
               </div>
@@ -2201,8 +2202,8 @@ function Schedules({ session: sessionProp }) {
         <div className="events-grid">
           {filteredEvents.length === 0 ? (
             <div className="no-events">
-              <h3>No events found for the selected criteria</h3>
-              <p>Try adjusting your filters or selecting a different date range.</p>
+              <h3><TranslatedText>No events found for the selected criteria</TranslatedText></h3>
+              <p><TranslatedText>Try adjusting your filters or selecting a different date range.</TranslatedText></p>
             </div>
           ) : (
             (() => {
@@ -2216,10 +2217,10 @@ function Schedules({ session: sessionProp }) {
                 <div className="event-header">
                   <div className={`event-type ${event.type === 'Live' ? 'live' : ''}`} 
                        style={{ backgroundColor: getEventTypeColor(event.type) }}>
-                    {event.type === 'Live' ? '🔴 LIVE' : event.type}
+                    <TranslatedText>{event.type === 'Live' ? '🔴 LIVE' : event.type}</TranslatedText>
                   </div>
                   <div className="event-date">
-                    {formatDate(event.date)}
+                    <TranslatedText>{formatDate(event.date)}</TranslatedText>
                   </div>
                 </div>
                 
@@ -2230,7 +2231,7 @@ function Schedules({ session: sessionProp }) {
                   {showPredictions && event.homeWinProb && event.awayWinProb && 
                    event.type === "Scheduled" && (
                     <div className="win-probability">
-                      <div className="probability-header">Win Probability Prediction</div>
+                      <div className="probability-header"><TranslatedText>Win Probability Prediction</TranslatedText></div>
                       <div className="probability-bars">
                         <div className="team-probability">
                           <span className="team-name">{event.homeTeam}</span>
@@ -2264,8 +2265,8 @@ function Schedules({ session: sessionProp }) {
                    (event.type === "Final" || event.type === "Live") && (
                     <div className="game-score">
                       <div className="score-header">
-                        {event.type === "Live" ? "Current Score" : "Final Score"}
-                        {event.type === "Final" && (
+                        <TranslatedText>{event.type === "Live" ? "Current Score" : "Final Score"}</TranslatedText>
+                        <TranslatedText>{event.type === "Final" && (
                           <span className="winner-indicator">
                             {parseInt(event.homeScore) > parseInt(event.awayScore) 
                               ? `🏆 ${event.homeTeam} Wins` 
@@ -2273,7 +2274,7 @@ function Schedules({ session: sessionProp }) {
                               ? `🏆 ${event.awayTeam} Wins`
                               : "🤝 Tie Game"}
                           </span>
-                        )}
+                        )}</TranslatedText>
                       </div>
                       <div className="score-display">
                         <span className={`team-score ${
@@ -2312,13 +2313,13 @@ function Schedules({ session: sessionProp }) {
                   {event.endDate && (
                     <div className="event-duration">
                       <span className="duration-icon">📅</span>
-                      {formatDate(event.date)} - {formatDate(event.endDate)}
+                      <TranslatedText>{formatDate(event.date)} - {formatDate(event.endDate)}</TranslatedText>
                     </div>
                   )}
                   {event.description && (
                     <div className="event-description">
                       <span className="description-icon">ℹ️</span>
-                      {event.description}
+                      <TranslatedText>{event.description}</TranslatedText>
                     </div>
                   )}
                 </div>
@@ -2332,13 +2333,13 @@ function Schedules({ session: sessionProp }) {
                       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
                       
                       if (diffDays < 0) {
-                        return <span className="past-event">Past Event</span>;
+                        return <span className="past-event"><TranslatedText>Past Event</TranslatedText></span>;
                       } else if (diffDays === 0) {
-                        return <span className="today-event">Today!</span>;
+                        return <span className="today-event"><TranslatedText>Today!</TranslatedText></span>;
                       } else if (diffDays === 1) {
-                        return <span className="tomorrow-event">Tomorrow</span>;
+                        return <span className="tomorrow-event"><TranslatedText>Tomorrow</TranslatedText></span>;
                       } else {
-                        return <span className="upcoming-event">{diffDays} days away</span>;
+                        return <span className="upcoming-event"><TranslatedText>{diffDays} days away</TranslatedText></span>;
                       }
                     })()}
                   </div>
@@ -2354,7 +2355,7 @@ function Schedules({ session: sessionProp }) {
           <div className="pagination-section">
             <div className="pagination-info">
               <span>
-                Showing {((currentPage - 1) * eventsPerPage) + 1} to {Math.min(currentPage * eventsPerPage, filteredEvents.length)} of {filteredEvents.length} events
+                <TranslatedText>Showing {((currentPage - 1) * eventsPerPage) + 1} to {Math.min(currentPage * eventsPerPage, filteredEvents.length)} of {filteredEvents.length} events</TranslatedText>
               </span>
             </div>
             <div className="pagination-controls">
@@ -2363,7 +2364,7 @@ function Schedules({ session: sessionProp }) {
                 onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                 disabled={currentPage === 1}
               >
-                Previous
+                <TranslatedText>Previous</TranslatedText>
               </button>
               
               <div className="page-numbers">
@@ -2393,7 +2394,7 @@ function Schedules({ session: sessionProp }) {
                 onClick={() => setCurrentPage(prev => Math.min(prev + 1, Math.ceil(filteredEvents.length / eventsPerPage)))}
                 disabled={currentPage === Math.ceil(filteredEvents.length / eventsPerPage)}
               >
-                Next
+                <TranslatedText>Next</TranslatedText>
               </button>
             </div>
           </div>
@@ -2403,13 +2404,13 @@ function Schedules({ session: sessionProp }) {
           <div className="row">
             <div className="col-md-4">
               <div className="stat-card">
-                <h4>Total Events</h4>
+                <h4><TranslatedText>Total Events</TranslatedText></h4>
                 <div className="stat-number">{filteredEvents.length}</div>
               </div>
             </div>
             <div className="col-md-4">
               <div className="stat-card">
-                <h4>Upcoming Events</h4>
+                <h4><TranslatedText>Upcoming Events</TranslatedText></h4>
                 <div className="stat-number">
                   {filteredEvents.filter(event => new Date(event.date) >= new Date()).length}
                 </div>
@@ -2417,7 +2418,7 @@ function Schedules({ session: sessionProp }) {
             </div>
             <div className="col-md-4">
               <div className="stat-card">
-                <h4>This Month</h4>
+                <h4><TranslatedText>This Month</TranslatedText></h4>
                 <div className="stat-number">
                   {filteredEvents.filter(event => {
                     const eventDate = new Date(event.date);

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import translationService from "../services/translationService";
 import "./ArticleModal.css";
+import { TranslatedText } from "./TranslatedText";
 
 export default function ArticleModal({ article, userLanguage, isOpen, onClose }) {
   const [translatedContent, setTranslatedContent] = useState(null);
@@ -56,7 +57,7 @@ export default function ArticleModal({ article, userLanguage, isOpen, onClose })
         <div className="article-modal-body">
           {isTranslating ? (
             <div className="article-modal-loading">
-              <p>Translating article...</p>
+              <p><TranslatedText>Translating article...</TranslatedText></p>
             </div>
           ) : (
             <>
@@ -75,15 +76,15 @@ export default function ArticleModal({ article, userLanguage, isOpen, onClose })
 
                 {translatedContent?.content && translatedContent.content.length > 100 ? (
                   <div className="article-modal-full-content">
-                    <h4>Full Article:</h4>
+                    <h4><TranslatedText>Full Article:</TranslatedText></h4>
                     <p>{translatedContent.content}</p>
                   </div>
                 ) : (
                   <div className="article-modal-no-content">
-                    <h4>Full Article Content Not Available</h4>
+                    <h4><TranslatedText>Full Article Content Not Available</TranslatedText></h4>
                     <p>
-                      The full article content is not available from the news source. 
-                      Click "Read Full Article" below to view the complete article on the original website.
+                      <TranslatedText>The full article content is not available from the news source.</TranslatedText>
+                      <TranslatedText>Click "Read Full Article" below to view the complete article on the original website.</TranslatedText>
                     </p>
                   </div>
                 )}
@@ -97,7 +98,7 @@ export default function ArticleModal({ article, userLanguage, isOpen, onClose })
                 {translatedContent?.translated && (
                   <div className="article-modal-translation-info">
                     <small>
-                      Translated from English to {translationService.getLanguageName(userLanguage)}
+                      <TranslatedText>Translated from English to {translationService.getLanguageName(userLanguage)}</TranslatedText>
                     </small>
                   </div>
                 )}
@@ -122,7 +123,7 @@ export default function ArticleModal({ article, userLanguage, isOpen, onClose })
                       rel="noopener noreferrer"
                       className="article-modal-read-translated"
                     >
-                      Read Full Article (Translated)
+                      <TranslatedText>Read Full Article (Translated)</TranslatedText>
                     </a>
                   )}
                   <a
@@ -131,7 +132,7 @@ export default function ArticleModal({ article, userLanguage, isOpen, onClose })
                     rel="noopener noreferrer"
                     className="article-modal-read-more"
                   >
-                    Read Full Article (Original)
+                    <TranslatedText>Read Full Article (Original)</TranslatedText>
                   </a>
                 </div>
               </div>

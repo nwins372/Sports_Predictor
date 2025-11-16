@@ -440,22 +440,22 @@ const navigate = useNavigate();
 
     {/* Signout Button if logged in */}
       <div className="navbar-right">
-          {!session && <Link to="/login" id="login-button" className="nav-link">Login</Link>}
-          {session && ( <button onClick={async () => { await supabase.auth.signOut();}} className="nav-link"> Logout </button> )}
+          {!session && <Link to="/login" id="login-button" className="nav-link"><TranslatedText>Login</TranslatedText></Link>}
+          {session && ( <button onClick={async () => { await supabase.auth.signOut();}} className="nav-link"><TranslatedText>Logout</TranslatedText></button> )}
 
           {/* Profile link shown when logged in */}
-          { session && <Link to="/profile" className="nav-link" id="profile">Profile</Link> }
+          { session && <Link to="/profile" className="nav-link" id="profile"><TranslatedText>Profile</TranslatedText></Link> }
         {/* Settings link always available */}
-        <Link to="/settings" className="nav-link" id="settings">Settings</Link>
+        <Link to="/settings" className="nav-link" id="settings"><TranslatedText>Settings</TranslatedText></Link>
                 <div className="nav-dropdown">
-          <button className="nav-dropbtn">More</button>
+          <button className="nav-dropbtn"><TranslatedText>More</TranslatedText></button>
           <div className="nav-dropdown-content">
-            <Link to="/local-sports" className="nav-link" id="local-sports">Local Sports</Link>
-            <Link to="/following" className="nav-link" id="following">Following</Link>
-            <Link to="/comments" className="nav-link" id="comments">Comments</Link>
-            <Link to="/mock-draft" className="nav-link" id="mock-draft">Mock Draft</Link>
-            <Link to="/trade-machine" className="nav-link" id="trade-machine">Trade Machine</Link>
-            <Link to="/transactions" className="nav-link" id="transactions">Transactions</Link>
+            <Link to="/local-sports" className="nav-link" id="local-sports"><TranslatedText>Local Sports</TranslatedText></Link>
+            <Link to="/following" className="nav-link" id="following"><TranslatedText>Following</TranslatedText></Link>
+            <Link to="/comments" className="nav-link" id="comments"><TranslatedText>Comments</TranslatedText></Link>
+            <Link to="/mock-draft" className="nav-link" id="mock-draft"><TranslatedText>Mock Draft</TranslatedText></Link>
+            <Link to="/trade-machine" className="nav-link" id="trade-machine"><TranslatedText>Trade Machine</TranslatedText></Link>
+            <Link to="/transactions" className="nav-link" id="transactions"><TranslatedText>Transactions</TranslatedText></Link>
           </div>
         </div>
       </div>

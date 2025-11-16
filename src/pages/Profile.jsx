@@ -6,6 +6,7 @@ import SportPrefsForm from "../components/SportsPreference";
 import NotificationToggle from "../components/NotificationToggle";
 import LanguagePreference from "../components/LanguagePreference";
 import "./profile.css";
+import { TranslatedText } from "../components/TranslatedText";
 
 export default function Profile() {
   const [session, setSession] = useState(null);
@@ -40,7 +41,7 @@ export default function Profile() {
 
   return (
     <div className="profile-container">
-        <h1>hello {username}</h1>
+        <h1><TranslatedText>Hello</TranslatedText> {username}</h1>
         <NotificationToggle session={session} /> {/* Notification Preferences, SportsPreference, Password Change  - Winston */}
         <SportPrefsForm session={session} />
         <LanguagePreference session={session} />
