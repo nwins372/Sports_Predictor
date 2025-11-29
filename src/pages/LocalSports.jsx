@@ -241,6 +241,7 @@ export default function LocalSports() {
                             className="team-card-logo" 
                           />
                         </a>
+                        {/* Searches Google Maps for Team Stadium and provides redirect link */}
                         <a 
                           href={`https://www.google.com/maps?q=${encodeURIComponent(team.team)} stadium`}
                           target="_blank"
@@ -270,6 +271,7 @@ export default function LocalSports() {
                     {venues.map((venue, index) => (
                       <div key={venue.place_id || index} className="team-card">
                         <h3 className="team-card-name">{venue.name}</h3>
+                        {/* Sports Venue Redirect */}
                         <a 
                           href={`https://www.google.com/maps?q=${encodeURIComponent(venue.vicinity)}`}
                           target="_blank"
