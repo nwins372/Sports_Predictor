@@ -69,7 +69,7 @@ const WinPercentageDisplay = ({
         <h4><TranslatedText>Win Probability Prediction</TranslatedText></h4>
         <div className="prediction-meta">
           <div className="confidence-indicator" style={{ color: predictionConfidence.color }}>
-            {predictionConfidence.level} <TranslatedText>Confidence</TranslatedText>
+            <TranslatedText>{predictionConfidence.level} Confidence</TranslatedText>
           </div>
           {algorithm && (
             <div className="algorithm-indicator">
@@ -114,7 +114,7 @@ const WinPercentageDisplay = ({
 
       {gameStatus === 'Final' && showActualResult && winningTeam && (
         <div className="actual-result">
-          <div className="result-label">Actual Winner:</div>
+          <div className="result-label"><TranslatedText>Actual Winner:</TranslatedText></div>
           <div className="winner-name">{winningTeam}</div>
           <div className="final-score">
             {awayTeam}: {awayScore} - {homeTeam}: {homeScore}

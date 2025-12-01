@@ -254,7 +254,7 @@ export default function MockDraft() {
 
       <div className="controls">
         <button className="simulate-btn" onClick={simulate} disabled={loading || teams.length<30}><TranslatedText>Simulate Draft</TranslatedText></button>
-        <span className="hint">{loading ? <TranslatedText>Loading standings...</TranslatedText> : <TranslatedText>Teams loaded: ${teams.length}</TranslatedText>}</span>
+        <span className="hint">{loading ? <TranslatedText>Loading standings...</TranslatedText> : <><TranslatedText>Teams loaded:</TranslatedText> {teams.length}</>}</span>
     </div>
 
       {/* manual pick owner selector removed: ownership is derived from Spotrac 2026 data when available */}

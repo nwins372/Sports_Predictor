@@ -236,7 +236,7 @@ const processScheduleData = (data, sport, liveStats = {}) => {
       time: gameDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true }),
       location: game.Location,
       type: gameStatus,
-      week: `Round ${game.RoundNumber}`,
+      week: <TranslatedText>{`Round ${game.RoundNumber}`}</TranslatedText>,
       homeTeam,
       awayTeam,
       homeWinProb,
@@ -2031,7 +2031,7 @@ function Schedules({ session: sessionProp }) {
                           }}
                           disabled={!selectedTeam || isLoadingPastGames}
                         >
-                          {isLoadingPastGames ? '⟳ Loading...' : '🔄 Refresh'}
+                          {isLoadingPastGames ? <TranslatedText>⟳ Loading...</TranslatedText> : <TranslatedText>🔄 Refresh</TranslatedText>}
                         </button>
                         <button 
                           className="quick-filter-btn clear-btn"
@@ -2067,10 +2067,10 @@ function Schedules({ session: sessionProp }) {
                   <div className="past-games-status mt-3">
                     <div className="status-info">
                       <span className="status-indicator static">
-                        📊 <TranslatedText>{pastGames.length} Past Games Loaded</TranslatedText>
+                        <>📊 <TranslatedText>{pastGames.length} Past Games Loaded</TranslatedText></>
                       </span>
                       <span className="last-updated">
-                        <TranslatedText>Last updated: {pastGamesLastUpdated.toLocaleTimeString()} (Weekly auto-refresh)</TranslatedText>
+                        <><TranslatedText>Last updated: {pastGamesLastUpdated.toLocaleTimeString()} (Weekly auto-refresh)</TranslatedText></>
                       </span>
                     </div>
                   </div>
@@ -2137,11 +2137,11 @@ function Schedules({ session: sessionProp }) {
                                 <span className="game-number">#{index + 1}</span>
                               </div>
                               <div className="game-date">
-                                {gameDate.toLocaleDateString('en-US', {
+                                <TranslatedText>{gameDate.toLocaleDateString('en-US', {
                                   month: 'short',
                                   day: 'numeric',
                                   year: 'numeric'
-                                })}
+                                })}</TranslatedText>
                               </div>
                             </div>
                             
@@ -2166,7 +2166,7 @@ function Schedules({ session: sessionProp }) {
                                 {game.week && (
                                   <div className="game-week">
                                     <span className="week-icon">📅</span>
-                                    {selectedTeamSport === 'NFL' ? `Week ${game.week}` : `Game ${game.week}`}
+                                    {selectedTeamSport === 'NFL' ? <TranslatedText>{`Week ${game.week}`}</TranslatedText> : <TranslatedText>{`Game ${game.week}`}</TranslatedText>}
                                   </div>
                                 )}
                               </div>
@@ -2278,15 +2278,15 @@ function Schedules({ session: sessionProp }) {
                       </div>
                       <div className="score-display">
                         <span className={`team-score ${
-                          event.type === "Final" && parseInt(event.awayScore) > parseInt(event.homeScore) ? 'winner' : 
-                          event.type === "Final" && parseInt(event.awayScore) < parseInt(event.homeScore) ? 'loser' : ''
+                          event.type === "Final" && parseInt(event.awayScore) > parseInt(event.homeScore) ? <TranslatedText>winner</TranslatedText> : 
+                          event.type === "Final" && parseInt(event.awayScore) < parseInt(event.homeScore) ? <TranslatedText>loser</TranslatedText> : ''
                         }`}>
                           {event.awayTeam}: {event.awayScore}
                         </span>
                         <span className="score-separator">-</span>
                         <span className={`team-score ${
-                          event.type === "Final" && parseInt(event.homeScore) > parseInt(event.awayScore) ? 'winner' : 
-                          event.type === "Final" && parseInt(event.homeScore) < parseInt(event.awayScore) ? 'loser' : ''
+                          event.type === "Final" && parseInt(event.homeScore) > parseInt(event.awayScore) ? <TranslatedText>winner</TranslatedText> : 
+                          event.type === "Final" && parseInt(event.homeScore) < parseInt(event.awayScore) ? <TranslatedText>loser</TranslatedText> : ''
                         }`}>
                           {event.homeTeam}: {event.homeScore}
                         </span>

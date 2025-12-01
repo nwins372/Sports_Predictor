@@ -198,7 +198,7 @@ export default function LanguagePreference() {
     <div className="language-preference-card">
       <h3 className="language-preference-title"><TranslatedText>Preferred Language</TranslatedText></h3>
       <p className="language-preference-description">
-        <TranslatedText>Choose your preferred language for sports news translation. Articles will be automatically translated to your selected language.</TranslatedText>
+        <TranslatedText>Choose your preferred language. The website and sports news articles will be automatically translated to your selected language.</TranslatedText>
       </p>
       
       <div className="language-selection">

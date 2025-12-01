@@ -4,6 +4,20 @@ import { supabase } from "../supabaseClient";
 import { calculateWinPercentage, formatWinPercentage, predictChampion } from "../utils/winPercentageCalculator";
 import './Home.css';
 import { TranslatedText } from '../components/TranslatedText';
+import { useTranslation } from '../context/TranslationContext';
+
+const pageStrings = [
+  'Champion Predictor',
+  'Simulate',
+  'Reset',
+  'Please select two different teams!',
+  'Loading...',
+  'Predict',
+  'Champion',
+  'Confidence',
+  'Win Percentage',
+  'No data available.'
+];
 
 // Team data for each league - All 32 NFL teams, 30 NBA teams, 30 MLB teams, 32 NHL teams, 29 MLS teams, 20 NCAA teams
 const TEAM_DATA = {
@@ -252,6 +266,14 @@ function Home() {
   const [championPrediction, setChampionPrediction] = useState(null);
   const [isPredicting, setIsPredicting] = useState(false);
 
+  // Translation setup
+  const { registerPageStrings } = useTranslation();
+
+  useEffect(() => {
+    const unregister = registerPageStrings(pageStrings);
+    return () => unregister();
+  }, [registerPageStrings]);
+
   // Set up session management
   useEffect(() => {
     // Check sessions
@@ -469,7 +491,7 @@ function Home() {
                   {/* Team Selection */}
                   {session && userFavoriteTeams[selectedSport]?.length > 0 && (
                     <div className="alert alert-info mb-3">
-                      <small><TranslatedText>⭐ Your favorite {selectedSport} teams are shown first and auto-selected</TranslatedText></small>
+                      <small>⭐ <TranslatedText>Your favorite</TranslatedText> {selectedSport} <TranslatedText>teams are shown first and auto-selected</TranslatedText></small>
                     </div>
                   )}
                   <div className="row">
@@ -571,7 +593,7 @@ function Home() {
                         
                         <div className="winner-announcement">
                           <h3 className="winner-text">
-                            🏆 {prediction.winner} Wins!
+                            🏆 {prediction.winner} <TranslatedText>Wins!</TranslatedText>
                           </h3>
                           <div className="prediction-details">
                           <p className="confidence-text">
@@ -773,7 +795,7 @@ function Home() {
                 <div className="champion-form">
                   {/* League Selection */}
                   <div className="form-group mb-4">
-                    <label className="form-label">Select League:</label>
+                    <label className="form-label"><TranslatedText>Select League:</TranslatedText></label>
                     <div className="sport-buttons">
                       {["NFL", "NBA", "MLB", "NHL", "MLS", "NCAA"].map(league => (
                         <button
@@ -848,9 +870,9 @@ function Home() {
                               <div className="contender-info">
                                 <h6 className="contender-name">{contender.team}</h6>
                                 <div className="contender-stats">
-                                  <span className="win-percentage"><TranslatedText>Win%: {contender.stats.winPercentage || 'N/A'}%</TranslatedText></span>
-                                  <span className="offense"><TranslatedText>Offense: {contender.stats.offense || 'N/A'}/100</TranslatedText></span>
-                                  <span className="defense"><TranslatedText>Defense: {contender.stats.defense || 'N/A'}/100</TranslatedText></span>
+                                  <span className="win-percentage"><><TranslatedText>Win%: {contender.stats.winPercentage || 'N/A'}%</TranslatedText></></span>
+                                  <span className="offense"><><TranslatedText>Offense: {contender.stats.offense || 'N/A'}/100</TranslatedText></></span>
+                                  <span className="defense"><><TranslatedText>Defense: {contender.stats.defense || 'N/A'}/100</TranslatedText></></span>
                                 </div>
                               </div>
                               <div className="contender-probability">

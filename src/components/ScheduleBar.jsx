@@ -425,7 +425,7 @@ return (
             <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
               <span style={{ fontSize: 12, opacity: 0.8 }}><TranslatedText>Date</TranslatedText></span>
               <div className="sb-date-display" onClick={() => document.getElementById('date-picker').showPicker()}>
-                {selected.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" })}
+                <TranslatedText>{selected.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" })}</TranslatedText>
               </div>
               <input
                 id="date-picker"

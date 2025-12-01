@@ -296,25 +296,25 @@ function Statistics() {
     // Define key stats based on league
     const keyStatsConfig = {
       nfl: [
-        { label: 'Win %', value: `${teamStats.winPercent}%`, icon: '📊' },
-        { label: 'Point Diff', value: teamStats.pointDifferential > 0 ? `+${teamStats.pointDifferential}` : teamStats.pointDifferential, icon: '➕' },
-        { label: 'Avg Points/Game', value: teamStats.avgPointsFor.toFixed(1), icon: '🎯' },
-        { label: 'Avg Allowed/Game', value: teamStats.avgPointsAgainst.toFixed(1), icon: '🛡️' },
-        { label: 'Current Streak', value: teamStats.streak > 0 ? `W${teamStats.streak}` : `L${Math.abs(teamStats.streak)}`, icon: '🔥' },
+        { label: <TranslatedText>Win %</TranslatedText>, value: `${teamStats.winPercent}%`, icon: '📊' },
+        { label: <TranslatedText>Point Diff</TranslatedText>, value: teamStats.pointDifferential > 0 ? `+${teamStats.pointDifferential}` : teamStats.pointDifferential, icon: '➕' },
+        { label: <TranslatedText>Avg Points/Game</TranslatedText>, value: teamStats.avgPointsFor.toFixed(1), icon: '🎯' },
+        { label: <TranslatedText>Avg Allowed/Game</TranslatedText>, value: teamStats.avgPointsAgainst.toFixed(1), icon: '🛡️' },
+        { label: <TranslatedText>Current Streak</TranslatedText>, value: teamStats.streak > 0 ? `W${teamStats.streak}` : `L${Math.abs(teamStats.streak)}`, icon: '🔥' },
       ],
       nba: [
-        { label: 'Win %', value: `${teamStats.winPercent}%`, icon: '📊' },
-        { label: 'Point Diff', value: teamStats.pointDifferential > 0 ? `+${teamStats.pointDifferential}` : teamStats.pointDifferential, icon: '➕' },
-        { label: 'Avg Points/Game', value: teamStats.avgPointsFor.toFixed(1), icon: '🎯' },
-        { label: 'Avg Allowed/Game', value: teamStats.avgPointsAgainst.toFixed(1), icon: '🛡️' },
-        { label: 'Current Streak', value: teamStats.streak > 0 ? `W${teamStats.streak}` : `L${Math.abs(teamStats.streak)}`, icon: '🔥' },
+        { label: <TranslatedText>Win %</TranslatedText>, value: `${teamStats.winPercent}%`, icon: '📊' },
+        { label: <TranslatedText>Point Diff</TranslatedText>, value: teamStats.pointDifferential > 0 ? `+${teamStats.pointDifferential}` : teamStats.pointDifferential, icon: '➕' },
+        { label: <TranslatedText>Avg Points/Game</TranslatedText>, value: teamStats.avgPointsFor.toFixed(1), icon: '🎯' },
+        { label: <TranslatedText>Avg Allowed/Game</TranslatedText>, value: teamStats.avgPointsAgainst.toFixed(1), icon: '🛡️' },
+        { label: <TranslatedText>Current Streak</TranslatedText>, value: teamStats.streak > 0 ? `W${teamStats.streak}` : `L${Math.abs(teamStats.streak)}`, icon: '🔥' },
       ],
       mlb: [
-        { label: 'Win %', value: `${teamStats.winPercent}%`, icon: '📊' },
-        { label: 'Run Diff', value: teamStats.pointDifferential > 0 ? `+${teamStats.pointDifferential}` : teamStats.pointDifferential, icon: '➕' },
-        { label: 'Avg Runs/Game', value: teamStats.avgPointsFor.toFixed(2), icon: '🎯' },
-        { label: 'Avg Allowed/Game', value: teamStats.avgPointsAgainst.toFixed(2), icon: '🛡️' },
-        { label: 'Current Streak', value: teamStats.streak > 0 ? `W${teamStats.streak}` : `L${Math.abs(teamStats.streak)}`, icon: '🔥' },
+        { label: <TranslatedText>Win %</TranslatedText>, value: `${teamStats.winPercent}%`, icon: '📊' },
+        { label: <TranslatedText>Run Diff</TranslatedText>, value: teamStats.pointDifferential > 0 ? `+${teamStats.pointDifferential}` : teamStats.pointDifferential, icon: '➕' },
+        { label: <TranslatedText>Avg Runs/Game</TranslatedText>, value: teamStats.avgPointsFor.toFixed(2), icon: '🎯' },
+        { label: <TranslatedText>Avg Allowed/Game</TranslatedText>, value: teamStats.avgPointsAgainst.toFixed(2), icon: '🛡️' },
+        { label: <TranslatedText>Current Streak</TranslatedText>, value: teamStats.streak > 0 ? `W${teamStats.streak}` : `L${Math.abs(teamStats.streak)}`, icon: '🔥' },
       ],
     };
     

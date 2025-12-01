@@ -201,7 +201,7 @@ export default function LocalSports() {
             <input
               type="text"
               name="address"
-              placeholder="Enter a address (ex: 123 Main St, City, State)"
+              placeholder={<TranslatedText>Enter a address (ex: 123 Main St, City, State)</TranslatedText>}
 
               value={address}
               onChange={e => setAddress(e.target.value)}
@@ -256,16 +256,16 @@ export default function LocalSports() {
 
                 </>
               ) : (
-                <p>No teams found in this area.</p>
+                <p><TranslatedText>No teams found in this area.</TranslatedText></p>
               )}
 
               {/* Display nearby sports venues from Google Places API */}
-              {loadingVenues && <p>Loading nearby venues...</p>}
+              {loadingVenues && <p><TranslatedText>Loading nearby venues...</TranslatedText></p>}
               
               {!loadingVenues && venues.length > 0 && (
                 <>
                   <h2 className="results-city-name" style={{ marginTop: '40px' }}>
-                    Nearby Sports Venues (within {radius} miles)
+                    <TranslatedText>Nearby Sports Venues (within {radius} miles)</TranslatedText>
                   </h2>
                   <div className="team-results-grid">
                     {venues.map((venue, index) => (
@@ -298,7 +298,7 @@ export default function LocalSports() {
               
               {!loadingVenues && userLocation && venues.length === 0 && (
                 <p style={{ marginTop: '20px', color: '#94a3b8' }}>
-                  No sports venues found nearby. Try adjusting your search radius.
+                  <TranslatedText>No sports venues found nearby. Try adjusting your search radius.</TranslatedText>
                 </p>
               )}
             </>

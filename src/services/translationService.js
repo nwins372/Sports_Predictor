@@ -57,6 +57,11 @@ class TranslationService {
     // Cache for translations to avoid repeated API calls
     this.translationCache = new Map();
     this.cacheExpiry = 24 * 60 * 60 * 1000; // 24 hours
+
+    // Queue subscribers will be notified when the requestQueue length changes
+    this.queueSubscribers = new Set();
+    // Request timeout (ms) to avoid indefinitely hanging fetches
+    this.requestTimeout = 150;
   }
 
   // Get list of supported languages
@@ -106,23 +111,36 @@ class TranslationService {
     this.isProcessing = true;
     const now = Date.now();
     const timeSinceLastRequest = now - this.lastRequestTime;
-    
+
     if (timeSinceLastRequest < this.rateLimitDelay) {
       await new Promise(resolve => setTimeout(resolve, this.rateLimitDelay - timeSinceLastRequest));
     }
 
+    // Pull one request from the queue and process it. Use a local reference so we
+    // always resolve/reject the correct promise even if errors occur.
+    const req = this.requestQueue.shift();
+    // notify subscribers that queue length changed
+    this._notifyQueueChange();
+
     try {
-      const { text, targetLang, sourceLang, resolve, reject } = this.requestQueue.shift();
+      if (!req) return;
+      const { text, targetLang, sourceLang, resolve, reject } = req;
       const result = await this._translateText(text, targetLang, sourceLang);
-      resolve(result);
+      try { resolve(result); } catch (e) { /* ignore resolution errors */ }
     } catch (error) {
-      const { reject } = this.requestQueue.shift();
-      reject(error);
+      try {
+        if (req && req.reject) req.reject(error);
+      } catch (e) {
+        console.warn('Error rejecting translation promise', e);
+      }
     } finally {
       this.lastRequestTime = Date.now();
       this.isProcessing = false;
+      // notify subscribers again in case state changed
+      this._notifyQueueChange();
       if (this.requestQueue.length > 0) {
-        this.processQueue();
+        // Process next item asynchronously
+        setTimeout(() => this.processQueue(), 0);
       }
     }
   }
@@ -145,32 +163,59 @@ class TranslationService {
     // Queue the request
     return new Promise((resolve, reject) => {
       this.requestQueue.push({ text, targetLang, sourceLang, resolve, reject });
+      this._notifyQueueChange();
       this.processQueue();
     });
+  }
+
+  // Notify subscribers with current queue length
+  _notifyQueueChange() {
+    const len = this.requestQueue.length;
+    for (const cb of Array.from(this.queueSubscribers)) {
+      try { cb(len); } catch (e) { console.warn('queue subscriber error', e); }
+    }
+  }
+
+  // Subscribe to queue length changes. Returns unsubscribe function.
+  subscribeToQueue(cb) {
+    if (typeof cb !== 'function') return () => {};
+    this.queueSubscribers.add(cb);
+    // send initial value
+    try { cb(this.requestQueue.length); } catch (e) {}
+    return () => { this.queueSubscribers.delete(cb); };
+  }
+
+  // Get current queue length
+  getQueueLength() {
+    return this.requestQueue.length;
   }
 
   async _translateText(text, targetLang, sourceLang = 'en') {
     console.log(`Translating: "${text.substring(0, 50)}..." from ${sourceLang} to ${targetLang}`);
 
     const cacheKey = this.getCacheKey(text, targetLang, sourceLang);
-    
+
     // Check cache first
     if (this.isCacheValid(cacheKey)) {
       console.log('Using cached translation');
       return this.translationCache.get(cacheKey).translation;
     }
 
+    const params = new URLSearchParams({
+      q: text,
+      langpair: `${sourceLang}|${targetLang}`
+    });
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), this.requestTimeout);
+
     try {
-      const params = new URLSearchParams({
-        q: text,
-        langpair: `${sourceLang}|${targetLang}`
-      });
-      
       const response = await fetch(`${this.baseURL}?${params}`, {
         method: 'GET',
         headers: {
           'Accept': 'application/json',
-        }
+        },
+        signal: controller.signal
       });
 
       if (!response.ok) {
@@ -178,7 +223,7 @@ class TranslationService {
       }
 
       const data = await response.json();
-      
+
       if (!data.responseData || !data.responseData.translatedText) {
         throw new Error('No translation returned from API');
       }
@@ -194,10 +239,15 @@ class TranslationService {
 
       return translatedText;
     } catch (error) {
-      console.error('Translation error:', error);
-      
+      if (error.name === 'AbortError') {
+        console.error('Translation request timed out');
+      } else {
+        console.error('Translation error:', error);
+      }
       // Fallback: return original text if translation fails
       return text;
+    } finally {
+      clearTimeout(timeoutId);
     }
   }
 
@@ -266,6 +316,24 @@ class TranslationService {
     return translatedArticles;
   }
 
+  // Prefetch translations for an array of texts. Returns a promise that resolves when all
+  // requested translations have been queued/completed. This uses translateMultiple which
+  // itself queues requests and respects the service's rate limiting.
+  async prefetchTranslations(texts, targetLang, sourceLang = 'en') {
+    if (!Array.isArray(texts) || texts.length === 0) return [];
+
+    // Only attempt to translate string entries and dedupe
+    const uniqueTexts = Array.from(new Set(texts.filter(t => typeof t === 'string' && t.trim())));
+    try {
+      const results = await this.translateMultiple(uniqueTexts, targetLang, sourceLang);
+      return results;
+    } catch (err) {
+      console.error('Prefetch translations failed', err);
+      // Resolve with empty array on failure to avoid breaking callers
+      return uniqueTexts.map(t => t);
+    }
+  }
+
   // Clear translation cache
   clearCache() {
     this.translationCache.clear();
@@ -278,6 +346,30 @@ class TranslationService {
       maxAge: this.cacheExpiry,
       languages: Object.keys(this.supportedLanguages).length
     };
+  }
+
+  // Return cached translation or null
+  getCachedTranslation(text, targetLang, sourceLang = 'en') {
+    try {
+      const cacheKey = this.getCacheKey(text, targetLang, sourceLang);
+      if (this.isCacheValid(cacheKey)) {
+        return this.translationCache.get(cacheKey).translation;
+      }
+      return null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  // Return true if every text in the array has a valid cache entry for targetLang
+  areAllCached(texts = [], targetLang, sourceLang = 'en') {
+    if (!Array.isArray(texts) || texts.length === 0) return true;
+    for (const t of texts) {
+      if (typeof t !== 'string' || !t.trim()) continue;
+      const cacheKey = this.getCacheKey(t, targetLang, sourceLang);
+      if (!this.isCacheValid(cacheKey)) return false;
+    }
+    return true;
   }
 }
 

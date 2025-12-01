@@ -3,9 +3,25 @@ import "./SportsNewsPage.css";
 import ScheduleBar from "../components/ScheduleBar";
 import { supabase } from "../supabaseClient";
 import translationService from "../services/translationService";
+import { useTranslation } from '../context/TranslationContext';
 import ArticleModal from "../components/ArticleModal";
 import Transactions from "./Transactions";
 import { TranslatedText } from "../components/TranslatedText";
+
+const pageStrings = [
+  'Sports News',
+  'Refresh',
+  'Refreshing…',
+  'Translating…',
+  'By Preferences',
+  'All Articles',
+  'Loading latest sports news...',
+  'Translating news...',
+  'No news available. Try again later.',
+  'Read Translated',
+  'Auto Translate',
+  'Read Original'
+];
 
 const API_KEY = "f9f8b0829ca84fe1a1d450e0fe7dbbd1";
 const API_URL = `https://newsapi.org/v2/top-headlines?category=sports&language=en&pageSize=20&apiKey=${API_KEY}`;
@@ -56,7 +72,12 @@ function SportsNewsPage() {
     "College Sports": "(\"college football\" OR \"NCAA football\" OR \"College Football Playoff\" OR Heisman OR \"college basketball\" OR \"NCAA basketball\" OR \"March Madness\" OR \"Final Four\" OR \"college baseball\" OR \"NCAA baseball\" OR \"College World Series\")",
   }), []);
 
-  // const prefsKey = useMemo(() => (prefs && prefs.length ? prefs.slice().sort().join("-") : "all"), [prefs]);
+  const { registerPageStrings } = useTranslation();
+
+  useEffect(() => {
+    const unregister = registerPageStrings(pageStrings);
+    return () => unregister();
+  }, [registerPageStrings]);
 
   useEffect(() => {
     const run = async () => {

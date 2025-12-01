@@ -56,7 +56,7 @@ const ScoreUpdateStatus = ({ sport, onForceUpdate }) => {
             style={{ backgroundColor: getStatusColor() }}
           />
           <span className="status-text">
-            <TranslatedText>Auto Updates: {getStatusText()}</TranslatedText>
+            <><TranslatedText>Auto Updates: {getStatusText()}</TranslatedText></>
           </span>
         </div>
         

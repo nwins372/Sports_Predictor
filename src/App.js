@@ -13,6 +13,7 @@ import Following from './pages/Following';
 import MockDraft from './pages/MockDraft';
 import TradeMachine from './pages/TradeMachine';
 import NavBar from './components/NavBar';
+import TranslationLoading from './components/TranslationLoading';
 import { ThemeProvider } from './context/ThemeContext';
 import { TranslationProvider } from './context/TranslationContext';
 import { supabase } from './supabaseClient';
@@ -55,6 +56,7 @@ useEffect(() => {
       <TranslationProvider>
         <BrowserRouter>
           <NavBar />
+          <TranslationLoading />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
