@@ -329,11 +329,11 @@ const navigate = useNavigate();
       </div>
 
       <div className="navbar-center">
-        <Link to="/local-sports" className="nav-link" id="local-sports"><TranslatedText>Local Sports</TranslatedText></Link>
+        {/* <Link to="/local-sports" className="nav-link" id="local-sports"><TranslatedText>Local Sports</TranslatedText></Link>
         <Link to="/following" className="nav-link" id="following"><TranslatedText>Following</TranslatedText></Link>
         <Link to="/comments" className="nav-link" id="comments"><TranslatedText>Comments</TranslatedText></Link>
         <Link to="/statistics" className="nav-link" id="statistics"><TranslatedText>Statistics</TranslatedText></Link>
-        <Link to="/mock-draft" className="nav-link" id="mock-draft"><TranslatedText>Mock Draft</TranslatedText></Link>
+        <Link to="/mock-draft" className="nav-link" id="mock-draft"><TranslatedText>Mock Draft</TranslatedText></Link> */}
         <Link to="/sports-news" className="nav-link"><TranslatedText>Sports News</TranslatedText></Link>
         {!session && <Link to="/login" id="login-button"><TranslatedText>Login</TranslatedText></Link>}
         <Link to="/schedules" className="nav-link"><TranslatedText>Schedules</TranslatedText></Link>
