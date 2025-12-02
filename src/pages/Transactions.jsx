@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { supabase } from '../supabaseClient';
 import espnApi from '../utils/espnApi';
 import './Transactions.css';
+import { TranslatedText } from '../components/TranslatedText';
 
 export default function Transactions() {
   const [transactions, setTransactions] = useState([]);
@@ -62,34 +63,34 @@ export default function Transactions() {
 
   return (
     <div className="transactions-page">
-      <h2>Transactions & Injury Reports</h2>
+      <h2><TranslatedText>Transactions & Injury Reports</TranslatedText></h2>
       <div style={{display:'flex',gap:12,alignItems:'center',marginBottom:12}}>
-        <label>League: </label>
+        <label><TranslatedText>League:</TranslatedText> </label>
         <select value={league} onChange={(e) => setLeague(e.target.value)}>
           <option value="nfl">NFL</option>
           <option value="nba">NBA</option>
         </select>
-        <label style={{marginLeft:12}}><input type="checkbox" checked={filterTeamsOnly} onChange={(e) => setFilterTeamsOnly(e.target.checked)} /> Show only followed teams</label>
+        <label style={{marginLeft:12}}><input type="checkbox" checked={filterTeamsOnly} onChange={(e) => setFilterTeamsOnly(e.target.checked)} /> <TranslatedText>Show only followed teams</TranslatedText></label>
         <div style={{marginLeft:'auto'}}>
-          <strong>Followed teams:</strong> {followedTeams && followedTeams.length ? followedTeams.join(', ') : <span style={{color:'wheat', fontWeight:600}}>None</span>} 
+          <strong><TranslatedText>Followed teams:</TranslatedText></strong> {followedTeams && followedTeams.length ? followedTeams.join(', ') : <span style={{color:'wheat', fontWeight:600}}><TranslatedText>None</TranslatedText></span>}
         </div>
       </div>
 
-      {loading ? <div>Loading transactions…</div> : (
+      {loading ? <div><TranslatedText>Loading transactions…</TranslatedText></div> : (
         <div className="transactions-list">
-          {filtered.length === 0 ? <div style={{color:'#666'}}>No transactions found.</div> : filtered.map((t, idx) => (
+          {filtered.length === 0 ? <div style={{color:'#666'}}><TranslatedText>No transactions found.</TranslatedText></div> : filtered.map((t, idx) => (
             <TransactionRow key={idx} tx={t} onToggleFollow={toggleFollowTeam} followedTeams={followedTeams} />
           ))}
         </div>
       )}
 
       <div style={{marginTop:20}}>
-        <h3>Injury reports (followed teams)</h3>
-        {(!followedTeams || followedTeams.length === 0) ? <div style={{color:'#666'}}>No followed teams — injuries for followed teams will appear here.</div> : (
+        <h3><TranslatedText>Injury reports (followed teams)</TranslatedText></h3>
+        {(!followedTeams || followedTeams.length === 0) ? <div style={{color:'#666'}}><TranslatedText>No followed teams — injuries for followed teams will appear here.</TranslatedText></div> : (
           Object.keys(injuries).map(k => (
             <div key={k} className="injury-card">
               <h4>{k}</h4>
-              {(injuries[k] || []).length === 0 ? <div style={{color:'#666'}}>No injuries found.</div> : (
+              {(injuries[k] || []).length === 0 ? <div style={{color:'#666'}}><TranslatedText>No injuries found.</TranslatedText></div> : (
                 <ul>
                   {(injuries[k] || []).map((i,ii) => <li key={ii}>{i.name || i.title || JSON.stringify(i)}</li>)}
                 </ul>

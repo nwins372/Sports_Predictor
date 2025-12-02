@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../supabaseClient';
+import { TranslatedText } from './TranslatedText';
 
 export default function FollowButton({ entityType = 'player', entityId, label, entityMeta }) {
   const navigate = useNavigate();
@@ -85,7 +86,7 @@ export default function FollowButton({ entityType = 'player', entityId, label, e
 
   return (
     <button className={`follow-button ${following ? 'following' : ''}`} onClick={onToggle} disabled={loading} aria-pressed={following}>
-      {loading ? '…' : (following ? (label || 'Following') : (label || 'Follow'))}
+      <TranslatedText>{loading ? '…' : (following ? (label || 'Following') : (label || 'Follow'))}</TranslatedText>
     </button>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import espnApi from '../utils/espnApi';
 import './TradeMachine.css';
+import { TranslatedText } from '../components/TranslatedText';
 
 export default function TradeMachine() {
   const [teams, setTeams] = useState([]);
@@ -276,25 +277,25 @@ export default function TradeMachine() {
 
   return (
     <div className="trade-container">
-      <h2>NBA Trade Machine</h2>
+      <h2><TranslatedText>NBA Trade Machine</TranslatedText></h2>
       <div className="trade-grid">
         <div className="team-panel">
-          <label>Team A</label>
+          <label><TranslatedText>Team A</TranslatedText></label>
           <select value={leftTeam?.id || ''} onChange={(e) => {
             const t = teams.find(tt => String(tt.id) === String(e.target.value));
             if (t && rightTeam && String(t.id) === String(rightTeam.id)) { setErrors(prev => [...(prev||[]), 'Cannot select the same team on both sides']); return; }
             setLeftTeam(t || null);
           }}>
-            <option value="">Select a team</option>
+            <option value=""><TranslatedText>Select a team</TranslatedText></option>
             {teams.map(t => <option key={t.id} value={t.id} disabled={rightTeam && String(rightTeam.id) === String(t.id)}>{t.displayName || t.name}</option>)}
           </select>
           <div className="roster">
-            <h4>Roster</h4>
+            <h4><TranslatedText>Roster</TranslatedText></h4>
             <ul className="roster-list">
               {leftRoster && leftRoster.length ? (
                 <table className="roster-table">
                   <thead>
-                    <tr><th>Name</th><th>Pos / Ht</th><th style={{textAlign:'right'}}>Salary</th><th></th></tr>
+                    <tr><th><TranslatedText>Name</TranslatedText></th><th><TranslatedText>Pos / Ht</TranslatedText></th><th style={{textAlign:'right'}}><TranslatedText>Salary</TranslatedText></th><th></th></tr>
                   </thead>
                   <tbody>
                   {leftRoster.map(p => {
@@ -312,32 +313,32 @@ export default function TradeMachine() {
                   })}
                   </tbody>
                 </table>
-              ) : <div className="sb-state">No roster available</div>}
+              ) : <div className="sb-state"><TranslatedText>No roster available</TranslatedText></div>}
             </ul>
           </div>
           <div className="trade-summary">
-            <label>Cash to include ($): <input type="number" value={leftCash} onChange={(e) => setLeftCash(Number(e.target.value||0))} /></label>
-            <div>Selected total: ${sumSelected(leftSelected).total.toLocaleString()}</div>
+            <label><TranslatedText>Cash to include ($):</TranslatedText> <input type="number" value={leftCash} onChange={(e) => setLeftCash(Number(e.target.value||0))} /></label>
+            <div><TranslatedText>Selected total:</TranslatedText> ${sumSelected(leftSelected).total.toLocaleString()}</div>
           </div>
         </div>
 
         <div className="team-panel">
-          <label>Team B</label>
+          <label><TranslatedText>Team B</TranslatedText></label>
           <select value={rightTeam?.id || ''} onChange={(e) => {
             const t = teams.find(tt => String(tt.id) === String(e.target.value));
             if (t && leftTeam && String(t.id) === String(leftTeam.id)) { setErrors(prev => [...(prev||[]), 'Cannot select the same team on both sides']); return; }
             setRightTeam(t || null);
           }}>
-            <option value="">Select a team</option>
+            <option value=""><TranslatedText>Select a team</TranslatedText></option>
             {teams.map(t => <option key={t.id} value={t.id} disabled={leftTeam && String(leftTeam.id) === String(t.id)}>{t.displayName || t.name}</option>)}
           </select>
           <div className="roster">
-            <h4>Roster</h4>
+            <h4><TranslatedText>Roster</TranslatedText></h4>
             <ul className="roster-list">
               {rightRoster && rightRoster.length ? (
                 <table className="roster-table">
                   <thead>
-                    <tr><th>Name</th><th>Pos / Ht</th><th style={{textAlign:'right'}}>Salary</th><th></th></tr>
+                    <tr><th><TranslatedText>Name</TranslatedText></th><th><TranslatedText>Pos / Ht</TranslatedText></th><th style={{textAlign:'right'}}><TranslatedText>Salary</TranslatedText></th><th></th></tr>
                   </thead>
                   <tbody>
                   {rightRoster.map(p => {
@@ -355,12 +356,12 @@ export default function TradeMachine() {
                   })}
                   </tbody>
                 </table>
-              ) : <div className="sb-state">No roster available</div>}
+              ) : <div className="sb-state"><TranslatedText>No roster available</TranslatedText></div>}
             </ul>
           </div>
           <div className="trade-summary">
-            <label>Cash to include ($): <input type="number" value={rightCash} onChange={(e) => setRightCash(Number(e.target.value||0))} /></label>
-            <div>Selected total: ${sumSelected(rightSelected).total.toLocaleString()}</div>
+            <label><TranslatedText>Cash to include ($):</TranslatedText> <input type="number" value={rightCash} onChange={(e) => setRightCash(Number(e.target.value||0))} /></label>
+            <div><TranslatedText>Selected total:</TranslatedText> ${sumSelected(rightSelected).total.toLocaleString()}</div>
           </div>
         </div>
       </div>
@@ -368,11 +369,11 @@ export default function TradeMachine() {
       <div className="verdict">
         <h3>Verdict</h3>
         {verdict.allowed ? (
-          <div className="allowed">Allowed: This trade appears to meet the simplified salary rules.</div>
+          <div className="allowed"><TranslatedText>Allowed:</TranslatedText> <TranslatedText>This trade appears to meet the simplified salary rules.</TranslatedText></div>
         ) : (
-          <div className="disallowed">Disallowed: {errors.length ? errors.map((e,i) => <div key={i}>{e}</div>) : <div>Trade not allowed.</div>}</div>
+          <div className="disallowed"><TranslatedText>Disallowed:</TranslatedText> {errors.length ? errors.map((e,i) => <div key={i}><TranslatedText>{e}</TranslatedText></div>) : <div><TranslatedText>Trade not allowed.</TranslatedText></div>}</div>
         )}
-        <div style={{marginTop:12}}><small>Note: This tool uses simplified rules and ESPN contract lookup when available. Missing contract data or complex exceptions (bird rights, cap holds, protected picks, etc.) may make this evaluation incomplete.</small></div>
+        <div style={{marginTop:12}}><small><TranslatedText>Note:</TranslatedText> <TranslatedText>This tool uses simplified rules and ESPN contract lookup when available. Missing contract data or complex exceptions (bird rights, cap holds, protected picks, etc.) may make this evaluation incomplete.</TranslatedText></small></div>
       </div>
     </div>
   );

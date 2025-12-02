@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { supabase } from "../supabaseClient";
 import "../pages/profile.css"; 
+import { TranslatedText } from "./TranslatedText";
 
 
 export default function PasswordChange({ session }) {
@@ -11,7 +12,7 @@ export default function PasswordChange({ session }) {
   const [pwBusy, setPwBusy] = useState(false);
 
   if (!session) {
-    return <p className="pw-message">Log in to change your password.</p>;
+    return <p className="pw-message"><TranslatedText>Log in to change your password.</TranslatedText></p>;
   }
 
   const handleChangePassword = async (e) => {
@@ -62,10 +63,10 @@ export default function PasswordChange({ session }) {
 
   return (
     <>
-      <h2>Change Password</h2>
+      <h2><TranslatedText>Change Password</TranslatedText></h2>
       <form className="password-form" onSubmit={handleChangePassword}>
         <label>
-          Current password
+          <TranslatedText>Current password</TranslatedText>
           <input
             type="password"
             value={currPw}
@@ -75,7 +76,7 @@ export default function PasswordChange({ session }) {
         </label>
 
         <label>
-          New password
+          <TranslatedText>New password</TranslatedText>
           <input
             type="password"
             value={newPw}
@@ -85,7 +86,7 @@ export default function PasswordChange({ session }) {
         </label>
 
         <label>
-          Confirm new password
+          <TranslatedText>Confirm new password</TranslatedText>
           <input
             type="password"
             value={confirmPw}
@@ -95,11 +96,11 @@ export default function PasswordChange({ session }) {
         </label>
 
         <button type="submit" disabled={pwBusy}>
-          {pwBusy ? "Updating…" : "Update Password"}
+          {pwBusy ? <TranslatedText>Updating…</TranslatedText> : <TranslatedText>Update Password</TranslatedText>}
         </button>
       </form>
 
-      {pwMsg && <div className="pw-message">{pwMsg}</div>}
+      {pwMsg && <div className="pw-message"><TranslatedText>{pwMsg}</TranslatedText></div>}
     </>
   );
 }

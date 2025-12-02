@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { supabase } from "../supabaseClient";
 import "./LanguagePreference.css";
+import { useSessionForSchedulesPage } from "../pages/Schedules";
+import { TranslatedText } from "./TranslatedText";
 
 const SUPPORTED_LANGUAGES = {
   'en': 'English',
@@ -47,11 +49,12 @@ const SUPPORTED_LANGUAGES = {
   'me': 'Montenegrin'
 };
 
-export default function LanguagePreference({ session }) {
+export default function LanguagePreference() {
   const [selectedLanguage, setSelectedLanguage] = useState('en');
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState("");
+  const { session } = useSessionForSchedulesPage();
 
   useEffect(() => {
     if (!session) return;
@@ -193,14 +196,14 @@ export default function LanguagePreference({ session }) {
 
   return (
     <div className="language-preference-card">
-      <h3 className="language-preference-title">Preferred Language</h3>
+      <h3 className="language-preference-title"><TranslatedText>Preferred Language</TranslatedText></h3>
       <p className="language-preference-description">
-        Choose your preferred language for sports news translation. Articles will be automatically translated to your selected language.
+        <TranslatedText>Choose your preferred language. The website and sports news articles will be automatically translated to your selected language.</TranslatedText>
       </p>
       
       <div className="language-selection">
         <label htmlFor="language-select" className="language-label">
-          Select Language:
+          <TranslatedText>Select Language:</TranslatedText>
         </label>
         <select
           id="language-select"
@@ -222,12 +225,12 @@ export default function LanguagePreference({ session }) {
         disabled={saving}
         className="language-save-btn"
       >
-        {saving ? "Saving..." : "Save Language Preference"}
+        <TranslatedText>{saving ? "Saving..." : "Save Language Preference"}</TranslatedText>
       </button>
 
       {message && (
         <div className={`language-message ${message.includes("Error") ? "error" : "success"}`}>
-          {message}
+          <TranslatedText>{message}</TranslatedText>
         </div>
       )}
     </div>

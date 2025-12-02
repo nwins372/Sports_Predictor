@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { TranslatedText } from "../components/TranslatedText";
 
 function SportsSelection({ initialSelected = "", onSelect = () => {} }) {
   const [selected, setSelected] = useState(initialSelected || "");
@@ -46,10 +47,10 @@ function SportsSelection({ initialSelected = "", onSelect = () => {} }) {
         }}
       >
         <h1 style={{ margin: 0, fontSize: 22, fontWeight: 800, fontStyle: "italic" }}>
-          ESPN Sports Hub
+          ESPN <TranslatedText>Sports Hub</TranslatedText>
         </h1>
         <p style={{ margin: 0, fontSize: 12, textTransform: "uppercase", opacity: 0.9 }}>
-          Select Your Favorite Sport
+          <TranslatedText>Select Your Favorite Sport</TranslatedText>
         </p>
       </header>
 

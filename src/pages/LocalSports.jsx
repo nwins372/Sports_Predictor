@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./LocalSports.css";
 
 import teamLocations from '../assets/team-locations.json';
+import { TranslatedText } from "../components/TranslatedText";
 
 const MAPS_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
@@ -192,26 +193,26 @@ export default function LocalSports() {
   return (
     <div>
       <div className="local-sports-container">
-        <h1>Local Sports Search</h1>
-        <p>Search for local sports teams and venues in your area.</p>
-        
+        <h1><TranslatedText>Local Sports Search</TranslatedText></h1>
+        <p><TranslatedText>Search for local sports teams and venues in your area.</TranslatedText></p>
+
         <form className="local-sports-form" onSubmit={handleSearch}>
           <div className="input-row">
             <input
               type="text"
               name="address"
-              placeholder="Enter a address (ex: 123 Main St, City, State)"
+              placeholder={<TranslatedText>Enter a address (ex: 123 Main St, City, State)</TranslatedText>}
 
               value={address}
               onChange={e => setAddress(e.target.value)}
               className="local-sports-input"
             />
             <button type="button" className="myloc" onClick={getUserLocation}>
-              Search My Location
+              <TranslatedText>Search My Location</TranslatedText>
             </button>
-            <button type="submit">Search</button>
+            <button type="submit"><TranslatedText>Search</TranslatedText></button>
             <div className="dropdown">
-                <button className="dropbtn" type="button">Select Radius</button>
+                <button className="dropbtn" type="button"><TranslatedText>Select Radius</TranslatedText></button>
                 <div className="dropdown-content">
                   <button type="button" onClick={() => setRadius(10)}>10 miles</button>
                   <button type="button" onClick={() => setRadius(25)}>25 miles</button>
@@ -226,7 +227,7 @@ export default function LocalSports() {
           
           {userLocation && (
             <>
-              <h2 className="results-city-name">Nearby Teams (within {radius} miles)</h2>
+              <h2 className="results-city-name"><TranslatedText>Nearby Teams (within {radius} miles)</TranslatedText></h2>
             
               {nearbyTeams.length > 0 ? (
                 <>
@@ -256,16 +257,16 @@ export default function LocalSports() {
 
                 </>
               ) : (
-                <p>No teams found in this area.</p>
+                <p><TranslatedText>No teams found in this area.</TranslatedText></p>
               )}
 
               {/* Display nearby sports venues from Google Places API */}
-              {loadingVenues && <p>Loading nearby venues...</p>}
+              {loadingVenues && <p><TranslatedText>Loading nearby venues...</TranslatedText></p>}
               
               {!loadingVenues && venues.length > 0 && (
                 <>
                   <h2 className="results-city-name" style={{ marginTop: '40px' }}>
-                    Nearby Sports Venues (within {radius} miles)
+                    <TranslatedText>Nearby Sports Venues (within {radius} miles)</TranslatedText>
                   </h2>
                   <div className="team-results-grid">
                     {venues.map((venue, index) => (
@@ -299,7 +300,7 @@ export default function LocalSports() {
               
               {!loadingVenues && userLocation && venues.length === 0 && (
                 <p style={{ marginTop: '20px', color: '#94a3b8' }}>
-                  No sports venues found nearby. Try adjusting your search radius.
+                  <TranslatedText>No sports venues found nearby. Try adjusting your search radius.</TranslatedText>
                 </p>
               )}
             </>

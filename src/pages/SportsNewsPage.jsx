@@ -3,7 +3,25 @@ import "./SportsNewsPage.css";
 import ScheduleBar from "../components/ScheduleBar";
 import { supabase } from "../supabaseClient";
 import translationService from "../services/translationService";
+import { useTranslation } from '../context/TranslationContext';
 import ArticleModal from "../components/ArticleModal";
+import Transactions from "./Transactions";
+import { TranslatedText } from "../components/TranslatedText";
+
+const pageStrings = [
+  'Sports News',
+  'Refresh',
+  'Refreshing…',
+  'Translating…',
+  'By Preferences',
+  'All Articles',
+  'Loading latest sports news...',
+  'Translating news...',
+  'No news available. Try again later.',
+  'Read Translated',
+  'Auto Translate',
+  'Read Original'
+];
 
 const API_KEY = "f9f8b0829ca84fe1a1d450e0fe7dbbd1";
 const API_URL = `https://newsapi.org/v2/top-headlines?category=sports&language=en&pageSize=20&apiKey=${API_KEY}`;
@@ -54,7 +72,12 @@ function SportsNewsPage() {
     "College Sports": "(\"college football\" OR \"NCAA football\" OR \"College Football Playoff\" OR Heisman OR \"college basketball\" OR \"NCAA basketball\" OR \"March Madness\" OR \"Final Four\" OR \"college baseball\" OR \"NCAA baseball\" OR \"College World Series\")",
   }), []);
 
-  // const prefsKey = useMemo(() => (prefs && prefs.length ? prefs.slice().sort().join("-") : "all"), [prefs]);
+  const { registerPageStrings } = useTranslation();
+
+  useEffect(() => {
+    const unregister = registerPageStrings(pageStrings);
+    return () => unregister();
+  }, [registerPageStrings]);
 
   useEffect(() => {
     const run = async () => {
@@ -302,7 +325,7 @@ function SportsNewsPage() {
             color: "#e63946",
           }}
         >
-          Sports News
+          <TranslatedText>Sports News</TranslatedText>
         </h2>
         <div className="text-center mb-4">
           <div style={{ display: 'inline-flex', gap: 8, alignItems: 'center' }}>
@@ -312,12 +335,12 @@ function SportsNewsPage() {
               onClick={handleRefresh}
               disabled={loading || isTranslating}
             >
-              {loading ? "Refreshing…" : isTranslating ? "Translating…" : "Refresh"}
+              <TranslatedText>{loading ? "Refreshing…" : isTranslating ? "Translating…" : "Refresh"}</TranslatedText>
             </button>
           {userLanguage !== 'en' && (
             <div className="mt-2">
               <small className="text-muted">
-                News translated to {translationService.getLanguageName(userLanguage)}
+                <TranslatedText>News translated to {translationService.getLanguageName(userLanguage)}</TranslatedText>
               </small>
             </div>
           )}
@@ -340,8 +363,8 @@ function SportsNewsPage() {
                 className="form-select form-select-sm news-filter-select"
                 style={{ height: 30 }}
               >
-                <option value="preferences">By Preferences</option>
-                <option value="all">All Articles</option>
+                <option value="preferences"><TranslatedText>By Preferences</TranslatedText></option>
+                <option value="all"><TranslatedText>All Articles</TranslatedText></option>
               </select>
             </label>
           </div>
@@ -349,10 +372,10 @@ function SportsNewsPage() {
 
         {loading || isTranslating ? (
           <p className="text-center">
-            {loading ? "Loading latest sports news..." : "Translating news..."}
+            <TranslatedText>{loading ? "Loading latest sports news..." : "Translating news..."}</TranslatedText>
           </p>
         ) : translatedNews.length === 0 ? (
-          <p className="text-center">No news available. Try again later.</p>
+          <p className="text-center"><TranslatedText>No news available. Try again later.</TranslatedText></p>
         ) : (
           <div className="row">
             {translatedNews.map((article, index) => (
@@ -383,7 +406,7 @@ function SportsNewsPage() {
                           className="btn btn-sm btn-success"
                           onClick={() => handleArticleClick(article)}
                         >
-                          Read Translated
+                          <TranslatedText>Read Translated</TranslatedText>
                         </button>
                       )}
                       {userLanguage !== 'en' && (
@@ -393,14 +416,14 @@ function SportsNewsPage() {
                           rel="noopener noreferrer"
                           className="btn btn-sm btn-warning"
                         >
-                          Auto Translate
+                          <TranslatedText>Auto Translate</TranslatedText>
                         </a>
                       )}
                       <button
                         className="btn btn-sm btn-primary"
                         onClick={() => window.open(article.url, '_blank', 'noopener,noreferrer')}
                       >
-                        Read Original
+                        <TranslatedText>Read Original</TranslatedText>
                       </button>
                     </div>
                   </div>

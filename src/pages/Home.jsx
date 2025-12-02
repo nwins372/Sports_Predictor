@@ -3,6 +3,21 @@ import ScheduleBar from "../components/ScheduleBar";
 import { supabase } from "../supabaseClient";
 import { calculateWinPercentage, formatWinPercentage, predictChampion } from "../utils/winPercentageCalculator";
 import './Home.css';
+import { TranslatedText } from '../components/TranslatedText';
+import { useTranslation } from '../context/TranslationContext';
+
+const pageStrings = [
+  'Champion Predictor',
+  'Simulate',
+  'Reset',
+  'Please select two different teams!',
+  'Loading...',
+  'Predict',
+  'Champion',
+  'Confidence',
+  'Win Percentage',
+  'No data available.'
+];
 
 // Team data for each league - All 32 NFL teams, 30 NBA teams, 30 MLB teams, 32 NHL teams, 29 MLS teams, 20 NCAA teams
 const TEAM_DATA = {
@@ -251,6 +266,14 @@ function Home() {
   const [championPrediction, setChampionPrediction] = useState(null);
   const [isPredicting, setIsPredicting] = useState(false);
 
+  // Translation setup
+  const { registerPageStrings } = useTranslation();
+
+  useEffect(() => {
+    const unregister = registerPageStrings(pageStrings);
+    return () => unregister();
+  }, [registerPageStrings]);
+
   // Set up session management
   useEffect(() => {
     // Check sessions
@@ -424,23 +447,23 @@ function Home() {
             <div className="col-lg-8">
               <div className="prediction-calculator">
                 <h2 className="text-center mb-4" style={{ color: "#e63946", fontFamily: "Arial Black, sans-serif" }}>
-                  Win Percentage Calculator
+                  <TranslatedText>Win Percentage Calculator</TranslatedText>
                 </h2>
                 
                 <div className="calculation-info mb-4">
-                  <h5 style={{ color: "#60a5fa", marginBottom: "1rem" }}>How We Calculate Win Percentages:</h5>
+                  <h5 style={{ color: "#60a5fa", marginBottom: "1rem" }}><TranslatedText>How We Calculate Win Percentages:</TranslatedText></h5>
                   <div className="info-grid">
                     <div className="info-item">
-                      <strong>📊 Base Performance Calculation:</strong> alculate each team's base performance using: Win% (40%) + Offense (30%) + Defense (20%) + Recent Form (10%) + Home Advantage (5%)
+                      <strong><TranslatedText>📊 Base Performance Calculation:</TranslatedText></strong> <TranslatedText>Calculate each team's base performance using: Win% (40%) + Offense (30%) + Defense (20%) + Recent Form (10%) + Home Advantage (5%)</TranslatedText>
                     </div>
                     <div className="info-item">
-                      <strong>⚖️ Randomness & Volatility:</strong> Add realistic randomness (±15% standard deviation) to account for game unpredictability and sport volatility
+                      <strong><TranslatedText>⚖️ Randomness & Volatility:</TranslatedText></strong> <TranslatedText>Add realistic randomness (±15% standard deviation) to account for game unpredictability and sport volatility</TranslatedText>
                     </div>
                     <div className="info-item">
-                      <strong>🎲 Game Simulation:</strong> Simulate each game by calculating final scores based on performance and time remaining
+                      <strong><TranslatedText>🎲 Game Simulation:</TranslatedText></strong> <TranslatedText>Simulate each game by calculating final scores based on performance and time remaining</TranslatedText>
                     </div>
                     <div className="info-item">
-                      <strong>🏆 Final Result:</strong> Count wins for each team across all simulations and convert to percentages
+                      <strong><TranslatedText>🏆 Final Result:</TranslatedText></strong> <TranslatedText>Count wins for each team across all simulations and convert to percentages</TranslatedText>
                     </div>
                   </div>
                 </div>
@@ -448,7 +471,7 @@ function Home() {
                 <div className="calculator-form">
                   {/* Sport Selection */}
                   <div className="form-group mb-4">
-                    <label className="form-label">Select Sport:</label>
+                    <label className="form-label"><TranslatedText>Select Sport:</TranslatedText></label>
                     <div className="sport-buttons">
                       {["NFL", "NBA", "MLB", "NHL", "MLS", "NCAA"].map(sport => (
                         <button
@@ -468,20 +491,20 @@ function Home() {
                   {/* Team Selection */}
                   {session && userFavoriteTeams[selectedSport]?.length > 0 && (
                     <div className="alert alert-info mb-3">
-                      <small>⭐ Your favorite {selectedSport} teams are shown first and auto-selected</small>
+                      <small>⭐ <TranslatedText>Your favorite</TranslatedText> {selectedSport} <TranslatedText>teams are shown first and auto-selected</TranslatedText></small>
                     </div>
                   )}
                   <div className="row">
                     <div className="col-md-6">
                       <div className="form-group">
-                        <label className="form-label">Team 1:</label>
+                        <label className="form-label"><TranslatedText>Team 1:</TranslatedText></label>
                         <select 
                           className="form-select"
                           value={team1}
                           onChange={(e) => setTeam1(e.target.value)}
                           disabled={loading}
                         >
-                          <option value="">Select Team 1</option>
+                          <option value="">{<TranslatedText>Select Team 1</TranslatedText>}</option>
                           {getAvailableTeams().map(team => {
                             const isFavorite = userFavoriteTeams[selectedSport]?.includes(team.name);
                             return (
@@ -496,14 +519,14 @@ function Home() {
                     
                     <div className="col-md-6">
                       <div className="form-group">
-                        <label className="form-label">Team 2:</label>
+                        <label className="form-label"><TranslatedText>Team 2:</TranslatedText></label>
                         <select 
                           className="form-select"
                           value={team2}
                           onChange={(e) => setTeam2(e.target.value)}
                           disabled={loading}
                         >
-                          <option value="">Select Team 2</option>
+                          <option value=""><TranslatedText>Select Team 2</TranslatedText></option>
                           {getAvailableTeams().map(team => {
                             const isFavorite = userFavoriteTeams[selectedSport]?.includes(team.name);
                             return (
@@ -524,11 +547,11 @@ function Home() {
                       onClick={handleSimulate}
                       disabled={isSimulating || !team1 || !team2}
                     >
-                      {isSimulating ? "Running Simulations..." : "Simulate Matchup"}
+                      <TranslatedText>{isSimulating ? "Running Simulations..." : "Simulate Matchup"}</TranslatedText>
                     </button>
                     <div className="simulation-info mt-2">
                       <small className="text-muted">
-                         Running 10,000+ Monte Carlo simulations 
+                        <TranslatedText>Running 10,000+ Monte Carlo simulations</TranslatedText>
                       </small>
                     </div>
                   </div>
@@ -536,7 +559,7 @@ function Home() {
                   {/* Prediction Results */}
                   {prediction && (
                     <div className="prediction-results mt-4">
-                      <h4 className="text-center mb-3">Prediction Results</h4>
+                      <h4 className="text-center mb-3"><TranslatedText>Prediction Results</TranslatedText></h4>
                       <div className="results-card">
                         <div className="team-comparison">
                           <div className="team-result">
@@ -570,7 +593,7 @@ function Home() {
                         
                         <div className="winner-announcement">
                           <h3 className="winner-text">
-                            🏆 {prediction.winner} Wins!
+                            🏆 {prediction.winner} <TranslatedText>Wins!</TranslatedText>
                           </h3>
                           <div className="prediction-details">
                           <p className="confidence-text">
@@ -578,14 +601,14 @@ function Home() {
                                 className="confidence-badge" 
                                 style={{ backgroundColor: prediction.confidenceLevel?.color }}
                               >
-                                {prediction.confidenceLevel?.level} Confidence
+                                <TranslatedText>{prediction.confidenceLevel?.level} Confidence</TranslatedText>
                               </span>
                               <span className="confidence-percentage">
                                 {(prediction.confidence * 100).toFixed(1)}%
                               </span>
                             </p>
                             <p className="algorithm-info">
-                              Algorithm: <strong>{prediction.algorithm}</strong>
+                              <TranslatedText>Algorithm:</TranslatedText> <strong>{prediction.algorithm}</strong>
                               <small className="algorithm-description">
                                 {prediction.confidenceLevel?.description}
                               </small>
@@ -595,42 +618,44 @@ function Home() {
 
                         {/* How We Calculate Win Percentage */}
                         <div className="calculation-breakdown">
-                          <h5 className="breakdown-title">📊 How We Calculate Win Percentage</h5>
+                          <h5 className="breakdown-title"><TranslatedText>📊 How We Calculate Win Percentage</TranslatedText></h5>
                           <div className="breakdown-content">
                             <div className="calculation-method">
-                              <h6>🎲 Monte Carlo Simulation Method</h6>
-                              <p>We run <strong>{prediction.details?.simulations || 10000} simulations</strong> of this matchup to determine win probabilities using advanced statistical modeling.</p>
-                              
+                              <h6><TranslatedText>🎲 Monte Carlo Simulation Method</TranslatedText></h6>
+                              <p><TranslatedText>We run</TranslatedText> <strong>{prediction.details?.simulations || 10000} <TranslatedText>simulations</TranslatedText></strong> <TranslatedText>of this matchup to determine win probabilities using advanced statistical modeling.</TranslatedText></p>
+
                               <div className="simulation-steps">
                                 <div className="step">
                                   <span className="step-number">1</span>
                                   <div className="step-content">
-                                    <strong>Base Performance Calculation</strong>
-                                    <p>Calculate each team's base performance using: Win% (40%) + Offense (30%) + Defense (20%) + Recent Form (10%) + Home Advantage (5%)</p>
+                                    <strong><TranslatedText>Base Performance Calculation</TranslatedText></strong>
+                                    <p><TranslatedText>Calculate each team's base performance using:</TranslatedText> <br />
+                                      <TranslatedText>Win% (40%) + Offense (30%) + Defense (20%) + Recent Form (10%) + Home Advantage (5%)</TranslatedText>
+                                    </p>
                                   </div>
                                 </div>
                                 
                                 <div className="step">
                                   <span className="step-number">2</span>
                                   <div className="step-content">
-                                    <strong>Randomness & Volatility</strong>
-                                    <p>Add realistic randomness (±15% standard deviation) to account for game unpredictability and sport volatility</p>
+                                    <strong><TranslatedText>Randomness & Volatility</TranslatedText></strong>
+                                    <p><TranslatedText>Add realistic randomness (±15% standard deviation) to account for game unpredictability and sport volatility</TranslatedText></p>
                                   </div>
                                 </div>
                                 
                                 <div className="step">
                                   <span className="step-number">3</span>
                                   <div className="step-content">
-                                    <strong>Game Simulation</strong>
-                                    <p>Simulate each game by calculating final scores based on performance and time remaining</p>
+                                    <strong><TranslatedText>Game Simulation</TranslatedText></strong>
+                                    <p><TranslatedText>Simulate each game by calculating final scores based on performance and time remaining</TranslatedText></p>
                                   </div>
                                 </div>
                                 
                                 <div className="step">
                                   <span className="step-number">4</span>
                                   <div className="step-content">
-                                    <strong>Win Probability</strong>
-                                    <p>Count wins for each team across all simulations and convert to percentages</p>
+                                    <strong><TranslatedText>Win Probability</TranslatedText></strong>
+                                    <p><TranslatedText>Count wins for each team across all simulations and convert to percentages</TranslatedText></p>
                                   </div>
                                 </div>
                               </div>
@@ -638,58 +663,58 @@ function Home() {
                               {prediction.details && (
                                 <>
                                   <div className="team-factors">
-                                    <h6>📈 Performance Calculation Formula</h6>
+                                    <h6><TranslatedText>📈 Performance Calculation Formula</TranslatedText></h6>
                                     <div className="factors-grid">
                                       <div className="factor-item">
-                                        <span className="factor-name">Win Percentage</span>
+                                        <span className="factor-name"><TranslatedText>Win Percentage</TranslatedText></span>
                                         <span className="factor-weight">40%</span>
                                       </div>
                                       <div className="factor-item">
-                                        <span className="factor-name">Offense Rating</span>
+                                        <span className="factor-name"><TranslatedText>Offense Rating</TranslatedText></span>
                                         <span className="factor-weight">30%</span>
                                       </div>
                                       <div className="factor-item">
-                                        <span className="factor-name">Defense Rating</span>
+                                        <span className="factor-name"><TranslatedText>Defense Rating</TranslatedText></span>
                                         <span className="factor-weight">20%</span>
                                       </div>
                                       <div className="factor-item">
-                                        <span className="factor-name">Recent Form</span>
+                                        <span className="factor-name"><TranslatedText>Recent Form</TranslatedText></span>
                                         <span className="factor-weight">10%</span>
                                       </div>
                                       <div className="factor-item">
-                                        <span className="factor-name">Home Advantage</span>
+                                        <span className="factor-name"><TranslatedText>Home Advantage</TranslatedText></span>
                                         <span className="factor-weight">+5%</span>
                                       </div>
                                       <div className="factor-item">
-                                        <span className="factor-name">Randomness</span>
+                                        <span className="factor-name"><TranslatedText>Randomness</TranslatedText></span>
                                         <span className="factor-weight">±15%</span>
                                       </div>
                                     </div>
                                     <div className="formula-explanation">
-                                      <p><strong>Formula:</strong> Base Performance = (Win% × 0.4) + (Offense × 0.3) + (Defense × 0.2) + (Recent Form × 0.1) + Home Advantage</p>
-                                      <p><strong>Final Performance:</strong> Base Performance + Random Factor (±15% volatility)</p>
+                                      <p><strong><TranslatedText>Formula:</TranslatedText></strong> <TranslatedText>Base Performance = (Win% × 0.4) + (Offense × 0.3) + (Defense × 0.2) + (Recent Form × 0.1) + Home Advantage</TranslatedText></p>
+                                      <p><strong><TranslatedText>Final Performance:</TranslatedText></strong> <TranslatedText>Base Performance + Random Factor (±15% volatility)</TranslatedText></p>
                                     </div>
                                   </div>
 
                                   <div className="team-stats-breakdown">
-                                    <h6>🏈 Team Statistics Used</h6>
+                                    <h6><TranslatedText>🏈 Team Statistics Used</TranslatedText></h6>
                                     <div className="stats-comparison">
                                       <div className="team-stats">
                                         <h7>{team1}</h7>
                                         <div className="stat-item">
-                                          <span>Win %:</span>
+                                          <span><TranslatedText>Win %:</TranslatedText></span>
                                           <span>{prediction.details.team1Stats?.winPercentage || 'N/A'}%</span>
                                         </div>
                                         <div className="stat-item">
-                                          <span>Offense:</span>
+                                          <span><TranslatedText>Offense:</TranslatedText></span>
                                           <span>{prediction.details.team1Stats?.offense || 'N/A'}/100</span>
                                         </div>
                                         <div className="stat-item">
-                                          <span>Defense:</span>
+                                          <span><TranslatedText>Defense:</TranslatedText></span>
                                           <span>{prediction.details.team1Stats?.defense || 'N/A'}/100</span>
                                         </div>
                                         <div className="stat-item">
-                                          <span>Recent Form:</span>
+                                          <span><TranslatedText>Recent Form:</TranslatedText></span>
                                           <span>{((prediction.details.team1Stats?.recentForm || 0) * 100).toFixed(0)}%</span>
                                         </div>
                                       </div>
@@ -699,19 +724,19 @@ function Home() {
                                       <div className="team-stats">
                                         <h7>{team2}</h7>
                                         <div className="stat-item">
-                                          <span>Win %:</span>
+                                          <span><TranslatedText>Win %:</TranslatedText></span>
                                           <span>{prediction.details.team2Stats?.winPercentage || 'N/A'}%</span>
                                         </div>
                                         <div className="stat-item">
-                                          <span>Offense:</span>
+                                          <span><TranslatedText>Offense:</TranslatedText></span>
                                           <span>{prediction.details.team2Stats?.offense || 'N/A'}/100</span>
                                         </div>
                                         <div className="stat-item">
-                                          <span>Defense:</span>
+                                          <span><TranslatedText>Defense:</TranslatedText></span>
                                           <span>{prediction.details.team2Stats?.defense || 'N/A'}/100</span>
                                         </div>
                                         <div className="stat-item">
-                                          <span>Recent Form:</span>
+                                          <span><TranslatedText>Recent Form:</TranslatedText></span>
                                           <span>{((prediction.details.team2Stats?.recentForm || 0) * 100).toFixed(0)}%</span>
                                         </div>
                                       </div>
@@ -721,14 +746,14 @@ function Home() {
                               )}
 
                               <div className="confidence-explanation">
-                                <h6>🎯 Confidence Level</h6>
-                                <p>Confidence is calculated as the difference between team probabilities. Higher differences mean more confident predictions:</p>
+                                <h6><TranslatedText>🎯 Confidence Level</TranslatedText></h6>
+                                <p><TranslatedText>Confidence is calculated as the difference between team probabilities. Higher differences mean more confident predictions:</TranslatedText></p>
                                 <ul>
-                                  <li><strong>High (0.7+)</strong>: Very reliable prediction (70%+ confidence)</li>
-                                  <li><strong>Medium (0.4-0.7)</strong>: Moderately reliable (40-70% confidence)</li>
-                                  <li><strong>Low (&lt;0.4)</strong>: Uncertain prediction (less than 40% confidence)</li>
+                                  <li><strong><TranslatedText>High (0.7+)</TranslatedText></strong>: <TranslatedText>Very reliable prediction (70%+ confidence)</TranslatedText></li>
+                                  <li><strong><TranslatedText>Medium (0.4-0.7)</TranslatedText></strong>: <TranslatedText>Moderately reliable (40-70% confidence)</TranslatedText></li>
+                                  <li><strong><TranslatedText>Low (&lt;0.4)</TranslatedText></strong>: <TranslatedText>Uncertain prediction (less than 40% confidence)</TranslatedText></li>
                                 </ul>
-                                <p><strong>Formula:</strong> Confidence = |Team1% - Team2%| (absolute difference between probabilities)</p>
+                                <p><strong><TranslatedText>Formula:</TranslatedText></strong> <TranslatedText>Confidence = |Team1% - Team2%| (absolute difference between probabilities)</TranslatedText></p>
                               </div>
                             </div>
                           </div>
@@ -746,23 +771,23 @@ function Home() {
             <div className="col-lg-8">
               <div className="champion-predictor">
                 <h2 className="text-center mb-4" style={{ color: "#e63946", fontFamily: "Arial Black, sans-serif" }}>
-                  🏆 Champion Predictor
+                  <TranslatedText>🏆 Champion Predictor</TranslatedText>
                 </h2>
                 
                 <div className="prediction-info mb-4">
-                  <h5 style={{ color: "#60a5fa", marginBottom: "1rem" }}>How We Predict Champions:</h5>
+                  <h5 style={{ color: "#60a5fa", marginBottom: "1rem" }}><TranslatedText>How We Predict Champions:</TranslatedText></h5>
                   <div className="info-grid">
                     <div className="info-item">
-                      <strong>📊 Team Strength Analysis:</strong> Analyze each team's win percentage, offense, defense, and recent form
+                      <strong><TranslatedText>📊 Team Strength Analysis:</TranslatedText></strong> <TranslatedText>Analyze each team's win percentage, offense, defense, and recent form</TranslatedText>
                     </div>
                     <div className="info-item">
-                      <strong>🏈 Multi-Algorithm Simulation:</strong> Run 50,000+ simulations using 4 different algorithms: Enhanced Monte Carlo, Statistical Analysis, Elo Ratings, and Strength-weighted Brackets
+                      <strong><TranslatedText>🏈 Multi-Algorithm Simulation:</TranslatedText></strong> <TranslatedText>Run 50,000+ simulations using 4 different algorithms: Enhanced Monte Carlo, Statistical Analysis, Elo Ratings, and Strength-weighted Brackets</TranslatedText>
                     </div>
                     <div className="info-item">
-                      <strong>🎯 High-Confidence Prediction:</strong> Combine multiple algorithms with weighted ensemble methods for maximum prediction accuracy and confidence
+                      <strong><TranslatedText>🎯 High-Confidence Prediction:</TranslatedText></strong> <TranslatedText>Combine multiple algorithms with weighted ensemble methods for maximum prediction accuracy and confidence</TranslatedText>
                     </div>
                     <div className="info-item">
-                      <strong>🏆 Champion Selection:</strong> Rank teams by championship probability to predict the most likely winner
+                      <strong><TranslatedText>🏆 Champion Selection:</TranslatedText></strong> <TranslatedText>Rank teams by championship probability to predict the most likely winner</TranslatedText>
                     </div>
                   </div>
                 </div>
@@ -770,7 +795,7 @@ function Home() {
                 <div className="champion-form">
                   {/* League Selection */}
                   <div className="form-group mb-4">
-                    <label className="form-label">Select League:</label>
+                    <label className="form-label"><TranslatedText>Select League:</TranslatedText></label>
                     <div className="sport-buttons">
                       {["NFL", "NBA", "MLB", "NHL", "MLS", "NCAA"].map(league => (
                         <button
@@ -800,11 +825,11 @@ function Home() {
                         padding: '12px 30px'
                       }}
                     >
-                      {isPredicting ? "Analyzing Teams..." : `Predict ${championLeague} Champion`}
+                      <TranslatedText>{isPredicting ? "Analyzing Teams..." : `Predict ${championLeague} Champion`}</TranslatedText>
                     </button>
                     <div className="prediction-info mt-2">
                       <small className="text-muted">
-                        Running 50,000+ simulations across 4 algorithms for high-confidence prediction
+                        <TranslatedText>Running 50,000+ simulations across 4 algorithms for high-confidence prediction</TranslatedText>
                       </small>
                     </div>
                   </div>
@@ -812,32 +837,32 @@ function Home() {
                   {/* Champion Prediction Results */}
                   {championPrediction && (
                     <div className="champion-results mt-4">
-                      <h4 className="text-center mb-4">🏆 {championPrediction.league} Champion Prediction</h4>
+                      <h4 className="text-center mb-4"><TranslatedText>🏆 {championPrediction.league} Champion Prediction</TranslatedText></h4>
                       
                       {/* Champion Display */}
                       <div className="champion-winner text-center mb-4">
                         <div className="champion-badge">
                           <h2 className="champion-name">{championPrediction.champion.team}</h2>
                           <div className="champion-probability">
-                            {(championPrediction.champion.championshipProbability * 100).toFixed(1)}% Chance to Win
+                            <TranslatedText>{(championPrediction.champion.championshipProbability * 100).toFixed(1)}% Chance to Win</TranslatedText>
                           </div>
                           <div className="champion-confidence">
                             <span 
                               className="confidence-badge" 
                               style={{ backgroundColor: championPrediction.champion.confidence.color }}
                             >
-                              {championPrediction.champion.confidence.level} Confidence
+                              <TranslatedText>{championPrediction.champion.confidence.level} Confidence</TranslatedText>
                             </span>
                           </div>
                         </div>
                         <p className="champion-analysis mt-3">
-                          {championPrediction.champion.analysis.analysis}
+                          <TranslatedText>{championPrediction.champion.analysis.analysis}</TranslatedText>
                         </p>
                       </div>
 
                       {/* Top Contenders */}
                       <div className="top-contenders">
-                        <h5 className="mb-3">Top 5 Contenders:</h5>
+                        <h5 className="mb-3"><TranslatedText>Top 5 Contenders:</TranslatedText></h5>
                         <div className="contenders-list">
                           {championPrediction.topContenders.map((contender, index) => (
                             <div key={contender.team} className="contender-item">
@@ -845,13 +870,13 @@ function Home() {
                               <div className="contender-info">
                                 <h6 className="contender-name">{contender.team}</h6>
                                 <div className="contender-stats">
-                                  <span className="win-percentage">Win%: {contender.stats.winPercentage || 'N/A'}%</span>
-                                  <span className="offense">Offense: {contender.stats.offense || 'N/A'}/100</span>
-                                  <span className="defense">Defense: {contender.stats.defense || 'N/A'}/100</span>
+                                  <span className="win-percentage"><><TranslatedText>Win%: {contender.stats.winPercentage || 'N/A'}%</TranslatedText></></span>
+                                  <span className="offense"><><TranslatedText>Offense: {contender.stats.offense || 'N/A'}/100</TranslatedText></></span>
+                                  <span className="defense"><><TranslatedText>Defense: {contender.stats.defense || 'N/A'}/100</TranslatedText></></span>
                                 </div>
                               </div>
                               <div className="contender-probability">
-                                {(contender.championshipProbability * 100).toFixed(1)}%
+                                <TranslatedText>{(contender.championshipProbability * 100).toFixed(1)}%</TranslatedText>
                               </div>
                             </div>
                           ))}
@@ -860,19 +885,19 @@ function Home() {
 
                       {/* Simulation Details */}
                       <div className="simulation-details mt-4">
-                        <h6>Simulation Details:</h6>
+                        <h6><TranslatedText>Simulation Details:</TranslatedText></h6>
                         <div className="details-grid">
                           <div className="detail-item">
-                            <strong>Total Simulations:</strong> {championPrediction.simulationDetails.totalSimulations.toLocaleString()}
+                            <strong><TranslatedText>Total Simulations:</TranslatedText></strong> {championPrediction.simulationDetails.totalSimulations.toLocaleString()}
                           </div>
                           <div className="detail-item">
-                            <strong>Algorithms Used:</strong> {championPrediction.simulationDetails.algorithmsUsed}
+                            <strong><TranslatedText>Algorithms Used:</TranslatedText></strong> {championPrediction.simulationDetails.algorithmsUsed}
                           </div>
                           <div className="detail-item">
-                            <strong>Prediction Reliability:</strong> {championPrediction.simulationDetails.predictionReliability}
+                            <strong><TranslatedText>Prediction Reliability:</TranslatedText></strong> {championPrediction.simulationDetails.predictionReliability}
                           </div>
                           <div className="detail-item">
-                            <strong>Average Confidence:</strong> {championPrediction.simulationDetails.averageConfidence > 0.7 ? 'High' : championPrediction.simulationDetails.averageConfidence > 0.4 ? 'Medium' : 'Low'}
+                            <strong><TranslatedText>Average Confidence:</TranslatedText></strong> {championPrediction.simulationDetails.averageConfidence > 0.7 ? 'High' : championPrediction.simulationDetails.averageConfidence > 0.4 ? 'Medium' : 'Low'}
                           </div>
                         </div>
                       </div>
@@ -880,18 +905,18 @@ function Home() {
                       {/* Algorithm Breakdown */}
                       {championPrediction.algorithmDetails && (
                         <div className="algorithm-breakdown mt-4">
-                          <h5 className="mb-3">🔬 How We Calculate Champion Predictions</h5>
+                          <h5 className="mb-3"><TranslatedText>🔬 How We Calculate Champion Predictions</TranslatedText></h5>
                           
                           {/* Algorithm Details */}
                           <div className="algorithms-section mb-4">
-                            <h6 className="mb-3">📊 Multi-Algorithm Ensemble Approach</h6>
+                            <h6 className="mb-3"><TranslatedText>📊 Multi-Algorithm Ensemble Approach</TranslatedText></h6>
                             <div className="algorithms-list">
                               {championPrediction.algorithmDetails.algorithms.map((algorithm, index) => (
                                 <div key={algorithm.name} className="algorithm-item">
                                   <div className="algorithm-header">
                                     <h6 className="algorithm-name">{algorithm.name}</h6>
                                     <div className="algorithm-meta">
-                                      <span className="algorithm-weight">Weight: {Math.round(algorithm.weight * 100)}%</span>
+                                      <span className="algorithm-weight"><TranslatedText>Weight:</TranslatedText> {Math.round(algorithm.weight * 100)}%</span>
                                       <span className="algorithm-sims">
                                         {typeof algorithm.simulations === 'number' 
                                           ? `${algorithm.simulations.toLocaleString()} sims` 
@@ -899,7 +924,7 @@ function Home() {
                                       </span>
                                     </div>
                                   </div>
-                                  <p className="algorithm-description">{algorithm.description}</p>
+                                  <p className="algorithm-description"><TranslatedText>{algorithm.description}</TranslatedText></p>
                                 </div>
                               ))}
                             </div>
@@ -907,57 +932,57 @@ function Home() {
 
                           {/* Team Calculation Breakdown */}
                           <div className="champion-calculation mb-4">
-                            <h6 className="mb-3">🏆 Champion Calculation Breakdown: {championPrediction.champion.team}</h6>
+                            <h6 className="mb-3"><TranslatedText>🏆 Champion Calculation Breakdown:</TranslatedText> {championPrediction.champion.team}</h6>
                             {championPrediction.champion.calculation && (
                               <div className="calculation-details">
                                 <div className="calculation-grid">
                                   <div className="calc-item">
-                                    <strong>Enhanced Strength Score:</strong>
+                                    <strong><TranslatedText>Enhanced Strength Score:</TranslatedText></strong>
                                     <span>{(championPrediction.champion.calculation.enhancedStrength * 100).toFixed(1)}/100</span>
                                   </div>
                                   <div className="calc-item">
-                                    <strong>Playoff Multiplier:</strong>
+                                    <strong><TranslatedText>Playoff Multiplier:</TranslatedText></strong>
                                     <span>{championPrediction.champion.calculation.playoffMultiplier.toFixed(3)}x</span>
                                   </div>
                                   <div className="calc-item">
-                                    <strong>Consistency Factor:</strong>
+                                    <strong><TranslatedText>Consistency Factor:</TranslatedText></strong>
                                     <span>{championPrediction.champion.calculation.consistencyFactor.toFixed(3)}</span>
                                   </div>
                                   <div className="calc-item">
-                                    <strong>Elo Rating:</strong>
+                                    <strong><TranslatedText>Elo Rating:</TranslatedText></strong>
                                     <span>{championPrediction.champion.calculation.eloRating}</span>
                                   </div>
                                   <div className="calc-item">
-                                    <strong>Playoff Seed:</strong>
+                                    <strong><TranslatedText>Playoff Seed:</TranslatedText></strong>
                                     <span>#{championPrediction.champion.calculation.playoffSeed}</span>
                                   </div>
                                 </div>
 
                                 {/* Formula Breakdown */}
                                 <div className="formula-breakdown mt-3">
-                                  <h6>📐 Enhanced Strength Formula:</h6>
+                                  <h6><TranslatedText>📐 Enhanced Strength Formula:</TranslatedText></h6>
                                   <div className="formula-explanation">
-                                    <p><strong>Base Strength =</strong> (Win% × 45%) + (Offense × 25%) + (Defense × 20%) + (Recent Form × 15%) + (Consistency × 10%)</p>
-                                    <p><strong>Final Strength =</strong> Base Strength × Playoff Multiplier × Consistency Factor</p>
+                                    <p><strong><TranslatedText>Base Strength =</TranslatedText></strong> <TranslatedText>(Win% × 45%) + (Offense × 25%) + (Defense × 20%) + (Recent Form × 15%) + (Consistency × 10%)</TranslatedText></p>
+                                    <p><strong><TranslatedText>Final Strength =</TranslatedText></strong> <TranslatedText>Base Strength × Playoff Multiplier × Consistency Factor</TranslatedText></p>
                                     <div className="formula-values">
                                       <div className="formula-value">
-                                        <span>Win Percentage:</span>
+                                        <span><TranslatedText>Win Percentage:</TranslatedText></span>
                                         <span>{championPrediction.champion.calculation.stats.winPercentage || 'N/A'}% × 0.45</span>
                                       </div>
                                       <div className="formula-value">
-                                        <span>Offense Rating:</span>
+                                        <span><TranslatedText>Offense Rating:</TranslatedText></span>
                                         <span>{(championPrediction.champion.calculation.stats.offense || 0) / 100} × 0.25</span>
                                       </div>
                                       <div className="formula-value">
-                                        <span>Defense Rating:</span>
+                                        <span><TranslatedText>Defense Rating:</TranslatedText></span>
                                         <span>{(championPrediction.champion.calculation.stats.defense || 0) / 100} × 0.20</span>
                                       </div>
                                       <div className="formula-value">
-                                        <span>Recent Form:</span>
+                                        <span><TranslatedText>Recent Form:</TranslatedText></span>
                                         <span>{(championPrediction.champion.calculation.stats.recentForm || 0).toFixed(3)} × 0.15</span>
                                       </div>
                                       <div className="formula-value">
-                                        <span>Consistency:</span>
+                                        <span><TranslatedText>Consistency:</TranslatedText></span>
                                         <span>{championPrediction.champion.calculation.consistencyFactor.toFixed(3)} × 0.10</span>
                                       </div>
                                     </div>
@@ -969,7 +994,7 @@ function Home() {
 
                           {/* Ensemble Weights */}
                           <div className="ensemble-weights">
-                            <h6 className="mb-3">⚖️ Ensemble Weight Distribution</h6>
+                            <h6 className="mb-3"><TranslatedText>⚖️ Ensemble Weight Distribution</TranslatedText></h6>
                             <div className="weights-grid">
                               {championPrediction.algorithmDetails.ensembleWeights.map((weight) => (
                                 <div key={weight.name} className="weight-item">
@@ -985,8 +1010,8 @@ function Home() {
                               ))}
                             </div>
                             <p className="ensemble-explanation mt-2">
-                              <strong>Ensemble Method:</strong> Each algorithm contributes to the final prediction based on its weight. 
-                              The results are combined using weighted averaging for maximum accuracy and confidence.
+                              <strong><TranslatedText>Ensemble Method:</TranslatedText></strong> <TranslatedText>Each algorithm contributes to the final prediction based on its weight. 
+                              The results are combined using weighted averaging for maximum accuracy and confidence.</TranslatedText>
                             </p>
                           </div>
                         </div>
@@ -1001,6 +1026,6 @@ function Home() {
       </div>
     </>
   );
-}
+};
 
 export default Home;

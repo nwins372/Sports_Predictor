@@ -4,6 +4,8 @@ import './NavBar.css';
 import mg from '../assets/mag_glass.png';
 import { supabase } from "../supabaseClient";
 import espnApi from '../utils/espnApi';
+import { LanguageSelector } from './LanguageSelector';
+import { TranslatedText } from './TranslatedText';
 
 export default function NavBar() {
 const navigate = useNavigate();
@@ -323,23 +325,35 @@ const navigate = useNavigate();
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <Link to="/" className="site-title">SportsPredictor</Link>
+        <Link to="/" className="site-title"><TranslatedText>SportsPredictor</TranslatedText></Link>
       </div>
 
       <div className="navbar-center">
-        <Link to="/statistics" className="nav-link" id="statistics">Statistics</Link>
-        <Link to="/sports-news" className="nav-link">Sports News</Link>
-        <Link to="/schedules" className="nav-link">Schedules</Link>
+        <Link to="/local-sports" className="nav-link" id="local-sports"><TranslatedText>Local Sports</TranslatedText></Link>
+        <Link to="/following" className="nav-link" id="following"><TranslatedText>Following</TranslatedText></Link>
+        <Link to="/comments" className="nav-link" id="comments"><TranslatedText>Comments</TranslatedText></Link>
+        <Link to="/statistics" className="nav-link" id="statistics"><TranslatedText>Statistics</TranslatedText></Link>
+        <Link to="/mock-draft" className="nav-link" id="mock-draft"><TranslatedText>Mock Draft</TranslatedText></Link>
+        <Link to="/sports-news" className="nav-link"><TranslatedText>Sports News</TranslatedText></Link>
+        {!session && <Link to="/login" id="login-button"><TranslatedText>Login</TranslatedText></Link>}
+        <Link to="/schedules" className="nav-link"><TranslatedText>Schedules</TranslatedText></Link>
+        <LanguageSelector />
         <button className="nav-link icon-placeholder" id="search" onClick={() => { setShowSearch(s => !s); setTimeout(() => inputRef.current?.focus(), 50); }} aria-haspopup="true" aria-expanded={showSearch} aria-label="Search">
           <img src={mg} alt="Search Icon" width="26" height="26" />
         </button>
         
         {showSearch && (
           <div className="search-popup" role="dialog" aria-label="Search">
-            <input ref={inputRef} value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search teams or players…" className="search-input" />
+            <input 
+              ref={inputRef} 
+              value={query} 
+              onChange={(e) => setQuery(e.target.value)} 
+              placeholder={<TranslatedText>Search teams or players…</TranslatedText>} 
+              className="search-input" 
+            />
             <div className="search-results">
-              {loading && <div className="search-loading">Searching…</div>}
-              {!loading && results.length === 0 && <div className="search-empty">No results</div>}
+              {loading && <div className="search-loading"><TranslatedText>Searching…</TranslatedText></div>}
+              {!loading && results.length === 0 && <div className="search-empty"><TranslatedText>No results</TranslatedText></div>}
               <ul>
                 {results.map((r, idx) => {
                   const actionable = (r && (r.id || r.href));
@@ -426,22 +440,22 @@ const navigate = useNavigate();
 
     {/* Signout Button if logged in */}
       <div className="navbar-right">
-          {!session && <Link to="/login" id="login-button" className="nav-link">Login</Link>}
-          {session && ( <button onClick={async () => { await supabase.auth.signOut();}} className="nav-link"> Logout </button> )}
+          {!session && <Link to="/login" id="login-button" className="nav-link"><TranslatedText>Login</TranslatedText></Link>}
+          {session && ( <button onClick={async () => { await supabase.auth.signOut();}} className="nav-link"><TranslatedText>Logout</TranslatedText></button> )}
 
           {/* Profile link shown when logged in */}
-          { session && <Link to="/profile" className="nav-link" id="profile">Profile</Link> }
+          { session && <Link to="/profile" className="nav-link" id="profile"><TranslatedText>Profile</TranslatedText></Link> }
         {/* Settings link always available */}
-        <Link to="/settings" className="nav-link" id="settings">Settings</Link>
+        <Link to="/settings" className="nav-link" id="settings"><TranslatedText>Settings</TranslatedText></Link>
                 <div className="nav-dropdown">
-          <button className="nav-dropbtn">More</button>
+          <button className="nav-dropbtn"><TranslatedText>More</TranslatedText></button>
           <div className="nav-dropdown-content">
-            <Link to="/local-sports" className="nav-link" id="local-sports">Local Sports</Link>
-            <Link to="/following" className="nav-link" id="following">Following</Link>
-            <Link to="/comments" className="nav-link" id="comments">Comments</Link>
-            <Link to="/mock-draft" className="nav-link" id="mock-draft">Mock Draft</Link>
-            <Link to="/trade-machine" className="nav-link" id="trade-machine">Trade Machine</Link>
-            <Link to="/transactions" className="nav-link" id="transactions">Transactions</Link>
+            <Link to="/local-sports" className="nav-link" id="local-sports"><TranslatedText>Local Sports</TranslatedText></Link>
+            <Link to="/following" className="nav-link" id="following"><TranslatedText>Following</TranslatedText></Link>
+            <Link to="/comments" className="nav-link" id="comments"><TranslatedText>Comments</TranslatedText></Link>
+            <Link to="/mock-draft" className="nav-link" id="mock-draft"><TranslatedText>Mock Draft</TranslatedText></Link>
+            <Link to="/trade-machine" className="nav-link" id="trade-machine"><TranslatedText>Trade Machine</TranslatedText></Link>
+            <Link to="/transactions" className="nav-link" id="transactions"><TranslatedText>Transactions</TranslatedText></Link>
           </div>
         </div>
       </div>
