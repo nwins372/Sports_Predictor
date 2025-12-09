@@ -57,11 +57,24 @@ class TranslationService {
     // Cache for translations to avoid repeated API calls
     this.translationCache = new Map();
     this.cacheExpiry = 24 * 60 * 60 * 1000; // 24 hours
+    this.localStorageKey = 'translationCache_v1';
 
     // Queue subscribers will be notified when the requestQueue length changes
     this.queueSubscribers = new Set();
     // Request timeout (ms) to avoid indefinitely hanging fetches
-    this.requestTimeout = 150;
+    // MyMemory API typically responds in 500ms-2000ms; set higher to avoid false timeouts
+    this.requestTimeout = 10000; // 10 seconds
+
+    // Load cache from localStorage on startup (with safety timeout to prevent infinite loops)
+    try {
+      this.loadCacheFromLocalStorage();
+    } catch (e) {
+      console.error('Error loading cache from localStorage during initialization', e);
+      // Clear corrupted cache if loading fails
+      try {
+        localStorage.removeItem(this.localStorageKey);
+      } catch (_) {}
+    }
   }
 
   // Get list of supported languages
@@ -231,11 +244,12 @@ class TranslationService {
       const translatedText = data.responseData.translatedText;
       console.log(`Translation result: "${translatedText.substring(0, 50)}..."`);
 
-      // Store in cache
+      // Store in cache and persist to localStorage
       this.translationCache.set(cacheKey, {
         translation: translatedText,
         timestamp: Date.now()
       });
+      this.saveCacheToLocalStorage();
 
       return translatedText;
     } catch (error) {
@@ -370,6 +384,62 @@ class TranslationService {
       if (!this.isCacheValid(cacheKey)) return false;
     }
     return true;
+  }
+
+  // Save cache to localStorage (debounced via caller if needed)
+  saveCacheToLocalStorage() {
+    try {
+      const cacheData = {};
+      for (const [key, value] of this.translationCache.entries()) {
+        cacheData[key] = value;
+      }
+      localStorage.setItem(this.localStorageKey, JSON.stringify(cacheData));
+    } catch (e) {
+      console.warn('Failed to save translation cache to localStorage', e);
+    }
+  }
+
+  // Load cache from localStorage
+  loadCacheFromLocalStorage() {
+    try {
+      const cached = localStorage.getItem(this.localStorageKey);
+      if (!cached) return;
+      
+      const cacheData = JSON.parse(cached);
+      if (typeof cacheData !== 'object' || cacheData === null) {
+        console.warn('Cache data is not a valid object, skipping load');
+        return;
+      }
+
+      let loadedCount = 0;
+      const entries = Object.entries(cacheData);
+      
+      // Limit iterations to prevent infinite loops; process max 1000 entries
+      const maxEntries = Math.min(entries.length, 1000);
+      for (let i = 0; i < maxEntries; i++) {
+        const [key, value] = entries[i];
+        
+        // Validate entry structure
+        if (!key || typeof key !== 'string') continue;
+        if (!value || typeof value !== 'object') continue;
+        if (typeof value.translation !== 'string') continue;
+        if (typeof value.timestamp !== 'number') continue;
+        
+        // Check if entry is still fresh
+        const age = Date.now() - value.timestamp;
+        if (age >= this.cacheExpiry) continue; // Skip expired entries
+        
+        this.translationCache.set(key, value);
+        loadedCount++;
+      }
+      
+      if (loadedCount > 0) {
+        console.log(`Loaded ${loadedCount} translations from cache`);
+      }
+    } catch (e) {
+      console.warn('Failed to load translation cache from localStorage', e);
+      // Don't throw; allow app to continue
+    }
   }
 }
 

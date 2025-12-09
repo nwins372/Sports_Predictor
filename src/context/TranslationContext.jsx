@@ -75,24 +75,23 @@ export function TranslationProvider({ children }) {
       if (!toPrefetch.length || language === 'en') return;
       // If all requested translations are already in our cache, skip showing the overlay
       const allCached = translationService.areAllCached(toPrefetch, language, 'en');
-      if (allCached) {
-        // Populate provider translations from cache so UI updates instantly
-        const populated = new Map(translations);
-        for (const t of toPrefetch) {
-          const cached = translationService.getCachedTranslation(t, language, 'en');
-          if (cached) {
-            const key = `${t}-${language}`;
-            populated.set(key, cached);
-          }
-        }
-        if (mounted) setTranslations(populated);
-        // clear any suppression for next time
-        suppressOverlayRef.current = false;
-        return;
-      }
-
       const suppress = !!suppressOverlayRef.current;
+      
       try {
+        if (allCached) {
+          // Populate provider translations from cache so UI updates instantly
+          const populated = new Map(translations);
+          for (const t of toPrefetch) {
+            const cached = translationService.getCachedTranslation(t, language, 'en');
+            if (cached) {
+              const key = `${t}-${language}`;
+              populated.set(key, cached);
+            }
+          }
+          if (mounted) setTranslations(populated);
+          return;
+        }
+
         if (!suppress) setIsTranslating(true);
         await translationService.prefetchTranslations(toPrefetch, language, 'en');
         // After prefetch, populate provider translations from cache
@@ -124,6 +123,8 @@ export function TranslationProvider({ children }) {
     let cancelled = false;
     const unsubscribe = translationService.subscribeToQueue((len) => {
       if (cancelled) return;
+      // Respect suppression flag: don't show overlay if suppression is active
+      if (suppressOverlayRef.current) return;
       // If any items in the queue or the service is currently processing, show translating
       const active = len > 0 || translationService.isProcessing;
       setIsTranslating(active);
