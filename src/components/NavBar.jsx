@@ -453,6 +453,7 @@ const navigate = useNavigate();
             <Link to="/local-sports" className="nav-link" id="local-sports"><TranslatedText>Local Sports</TranslatedText></Link>
             <Link to="/following" className="nav-link" id="following"><TranslatedText>Following</TranslatedText></Link>
             <Link to="/comments" className="nav-link" id="comments"><TranslatedText>Comments</TranslatedText></Link>
+            <Link to="/statistics" className="nav-link" id="statistics"><TranslatedText>Statistics</TranslatedText></Link>
             <Link to="/mock-draft" className="nav-link" id="mock-draft"><TranslatedText>Mock Draft</TranslatedText></Link>
             <Link to="/trade-machine" className="nav-link" id="trade-machine"><TranslatedText>Trade Machine</TranslatedText></Link>
             <Link to="/transactions" className="nav-link" id="transactions"><TranslatedText>Transactions</TranslatedText></Link>
