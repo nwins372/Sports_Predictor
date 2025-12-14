@@ -345,28 +345,41 @@ function SportsNewsPage() {
             </div>
           )}
 
-            <label className="news-filter-label" style={{ display: 'flex', alignItems: 'center', gap: 6, marginLeft: 6 }}>
-              <span className="news-filter-label-text" style={{ fontSize: 12, opacity: 0.85 }}>Mode</span>
-              <select
-                value={filterMode}
-                onChange={(e) => {
-                  const m = e.target.value;
-                  setFilterMode(m);
-                  try { localStorage.setItem('newsFilterMode', m); } catch (_) {}
-                  // clear caches for both modes so switching forces a fresh fetch
-                  try {
-                    const prefsKey = prefs && prefs.length ? prefs.slice().sort().join('-') : 'all';
-                    localStorage.removeItem(`sportsNews:preferences:${prefsKey}`);
-                    localStorage.removeItem(`sportsNews:all:${prefsKey}`);
-                  } catch (_) {}
-                }}
-                className="form-select form-select-sm news-filter-select"
-                style={{ height: 30 }}
-              >
-                <option value="preferences"><TranslatedText>By Preferences</TranslatedText></option>
-                <option value="all"><TranslatedText>All Articles</TranslatedText></option>
-              </select>
-            </label>
+            <div className="news-filter-label" style={{ display: 'flex', alignItems: 'center', gap: 6, marginLeft: 6 }}>
+              <span className="news-filter-label-text" style={{ fontSize: 12, opacity: 0.85 }}>Mode:</span>
+              <div style={{ display: 'flex', gap: 4 }}>
+                <button
+                  className={`btn btn-sm ${filterMode === 'preferences' ? 'btn-primary' : 'btn-outline-primary'}`}
+                  onClick={() => {
+                    setFilterMode('preferences');
+                    try { localStorage.setItem('newsFilterMode', 'preferences'); } catch (_) {}
+                    try {
+                      const prefsKey = prefs && prefs.length ? prefs.slice().sort().join('-') : 'all';
+                      localStorage.removeItem(`sportsNews:preferences:${prefsKey}`);
+                      localStorage.removeItem(`sportsNews:all:${prefsKey}`);
+                    } catch (_) {}
+                  }}
+                  style={{ fontSize: 12, padding: '4px 12px' }}
+                >
+                  By Preferences
+                </button>
+                <button
+                  className={`btn btn-sm ${filterMode === 'all' ? 'btn-primary' : 'btn-outline-primary'}`}
+                  onClick={() => {
+                    setFilterMode('all');
+                    try { localStorage.setItem('newsFilterMode', 'all'); } catch (_) {}
+                    try {
+                      const prefsKey = prefs && prefs.length ? prefs.slice().sort().join('-') : 'all';
+                      localStorage.removeItem(`sportsNews:preferences:${prefsKey}`);
+                      localStorage.removeItem(`sportsNews:all:${prefsKey}`);
+                    } catch (_) {}
+                  }}
+                  style={{ fontSize: 12, padding: '4px 12px' }}
+                >
+                  All Articles
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
