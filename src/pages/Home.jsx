@@ -335,18 +335,22 @@ function Home() {
   }, [selectedSport, userFavoriteTeams]);
 
   // Get teams for the selected sport, with favorites first
-  const getAvailableTeams = () => {
-    const allTeams = TEAM_DATA[selectedSport] || [];
-    const favoriteTeams = userFavoriteTeams[selectedSport] || [];
-    
-    // Sort teams to show favorites first
-    const sortedTeams = [
-      ...favoriteTeams.filter(team => allTeams.some(t => t.name === team)),
-      ...allTeams.filter(team => !favoriteTeams.includes(team.name))
-    ];
-    
-    return sortedTeams;
-  };
+const getAvailableTeams = () => {
+  const allTeams = TEAM_DATA[selectedSport] || [];
+  const favoriteTeamNames = userFavoriteTeams[selectedSport] || [];
+
+  // Favorites first as full objects
+  const favoriteTeamObjects = allTeams.filter(team =>
+    favoriteTeamNames.includes(team.name)
+  );
+
+  const nonFavoriteTeamObjects = allTeams.filter(team =>
+    !favoriteTeamNames.includes(team.name)
+  );
+
+  return [...favoriteTeamObjects, ...nonFavoriteTeamObjects];
+};
+
 
   const handleSimulate = () => {
     if (!team1 || !team2 || team1 === team2) {

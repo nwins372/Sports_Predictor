@@ -87,6 +87,8 @@ export default function ScheduleBar() {
   const [loading, setLoading] = useState(true);
   const { session } = useSessionForSchedulesPage();
 
+   const [hasInitializedFilter, setHasInitializedFilter] = useState(false);
+
   // Persist state to localStorage
   useEffect(() => {
     const updateSport = (e) => setSport(String(e.detail || localStorage.getItem("selectedSport") || "nfl").toLowerCase());
@@ -164,16 +166,22 @@ export default function ScheduleBar() {
   }, [session]);
 
   // Set filterState to 'Favorites' by default if user has favorites for selected sport
-  useEffect(() => {
-    if (loading) return;
-    // Only set if filterState is still at initial value
-    if (filterState === 'none') {
-      const favTeams = userPrefs.favorite_teams?.[sport.toUpperCase()] || userPrefs.favorite_teams?.[sport] || [];
-      if (favTeams && favTeams.length > 0) {
+    useEffect(() => {
+      if (loading || hasInitializedFilter) return;
+
+      const favTeams =
+        userPrefs.favorite_teams?.[sport.toUpperCase()] ||
+        userPrefs.favorite_teams?.[sport] ||
+        [];
+
+      if (filterState === 'none' && favTeams && favTeams.length > 0) {
         setFilterState('favorites');
       }
-    }
-  }, [loading, userPrefs, sport, filterState]);
+
+      // Mark that we've done our one-time initialization so we don't
+      // override user's manual choices later.
+      setHasInitializedFilter(true);
+    }, [loading, hasInitializedFilter, userPrefs.favorite_teams, sport, filterState, setFilterState]);
 
   // Build schedule data based on filterState and selected sport
   let scheduleData;
@@ -318,7 +326,7 @@ export default function ScheduleBar() {
     }
 
     return gameCards;
-  }, [sport, filterState, userPrefs.favorite_teams]);
+  }, [sport, filterState, filteredScheduleData, liveGames, sportForLive]);
 
   const key = ymdLocal(selected); // adjust for local timezone
   const games = processGames[key] || [];
