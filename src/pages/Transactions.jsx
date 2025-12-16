@@ -81,11 +81,11 @@ export default function Transactions() {
     (async () => {
       setLoading(true);
       try {
-        // ----- Transactions (same idea as before) -----
+ 
         const tx = await espnApi.getTransactions(league, null, 300);
         setTransactions(tx || []);
 
-        // ----- Injury RSS (new behavior) -----
+        // ----- Injury RSS -----
         const rssUrl = RSS_FEEDS[league];
         if (!rssUrl) {
           setInjuryNews([]);
@@ -102,7 +102,7 @@ export default function Transactions() {
                 typeof window === 'undefined' ||
                 typeof window.DOMParser === 'undefined'
               ) {
-                // SSR / non-browser safeguard
+              
                 setInjuryNews([]);
               } else {
                 const parser = new window.DOMParser();

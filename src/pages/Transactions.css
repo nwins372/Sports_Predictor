@@ -4,19 +4,17 @@
   padding: 24px;
   max-width: 1200px;
   margin: 56px auto 0 auto;
-  background: #020617;               /* deep slate */
+  background: #0f1224;              
   border-radius: 16px;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
-  color: #e5e7eb;                    /* light gray text */
+  color: #e5e7eb;                  
 }
 
-/* Make sure nested text inside this section is light by default */
 .transactions-page,
 .transactions-page * {
   color: #e5e7eb;
 }
 
-/* --------- Headings / labels / selects --------- */
 
 .transactions-page h2 {
   font-size: 2rem;
@@ -84,7 +82,7 @@
 
   border-radius: 12px;
   border: 1px solid #1f2937;
-  background: #020617;                   /* dark card */
+  background: #020617;                   
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
   transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
 }
@@ -95,7 +93,7 @@
   transform: translateY(-2px) scale(1.01);
 }
 
-/* Left column: date + action */
+
 .tx-left {
   width: 160px;
   display: flex;
@@ -117,7 +115,6 @@
   color: #93c5fd;
 }
 
-/* Body content */
 .tx-body {
   flex: 1;
 }
@@ -128,8 +125,6 @@
   gap: 8px;
   align-items: center;
 }
-
-/* --------- Player / team visuals --------- */
 
 .player-headshot-small,
 .team-logo-small {
@@ -170,7 +165,6 @@
   color: #f9fafb;
 }
 
-/* +/- badge on player avatar */
 .tx-badge {
   position: absolute;
   right: -8px;
@@ -197,7 +191,6 @@
   color: #fef2f2;
 }
 
-/* Follow buttons */
 .follow-btn {
   background: #3b82f6;
   color: #f9fafb;
@@ -227,7 +220,7 @@
   border: 1px solid #1f2937;
   padding: 14px 18px;
   margin-bottom: 12px;
-  background: #020617;                 /* match rest of dark UI */
+  background: #020617;                
   border-radius: 10px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
 }
@@ -260,8 +253,6 @@
   padding-left: 18px;
   color: #e5e7eb;
 }
-
-/* --------- Responsive tweaks --------- */
 
 @media (max-width: 800px) {
   .transaction-row {
