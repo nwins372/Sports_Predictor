@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { supabase } from '../supabaseClient';
 import { TranslatedText } from './TranslatedText';
 
-export default function FollowButton({ entityType = 'player', entityId, label, entityMeta }) {
+export default function FollowButton({ entityType = 'player', entityId, label, entityMeta, league }) {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [following, setFollowing] = useState(false);
@@ -19,16 +19,19 @@ export default function FollowButton({ entityType = 'player', entityId, label, e
           if (mounted) setFollowing(false);
           return;
         }
-        const q = await supabase
-          .from('follows')
-          .select('*')
-          .eq('user_id', user.id)
-          .eq('entity_type', entityType)
-          .eq('entity_id', String(entityId))
-          .limit(1);
-        if (mounted) setFollowing(Array.isArray(q.data) && q.data.length > 0);
+        // Check users table for followed_players or followed_teams array
+        const column = entityType === 'player' ? 'followed_players' : 'followed_teams';
+        const { data: userRow } = await supabase
+          .from('users')
+          .select(column)
+          .eq('id', user.id)
+          .single();
+        const arr = userRow?.[column] || [];
+        // Check for both league-prefixed and non-prefixed IDs (for both players and teams)
+        const idStr = league ? `${league}:${entityId}` : String(entityId);
+        const idStrWithoutLeague = String(entityId);
+        if (mounted) setFollowing(arr.includes(idStr) || arr.includes(idStrWithoutLeague));
       } catch (e) {
-        // ignore - table may not exist or network error
         console.warn('FollowButton:init', e.message || e);
       }
     })();
@@ -41,42 +44,47 @@ export default function FollowButton({ entityType = 'player', entityId, label, e
       const { data: userData } = await supabase.auth.getUser();
       const user = userData?.user || null;
       if (!user) {
-        // take user to login
         navigate('/login');
         return;
       }
 
+      const column = entityType === 'player' ? 'followed_players' : 'followed_teams';
+      const { data: userRow } = await supabase
+        .from('users')
+        .select(column)
+        .eq('id', user.id)
+        .single();
+      
+      let arr = userRow?.[column] || [];
+      // Store both teams and players with league prefix (e.g., "nba:4279888" or "nfl:memphis-grizzlies")
+      const idStr = league ? `${league}:${entityId}` : String(entityId);
+      const idStrWithoutLeague = String(entityId);
+
       if (following) {
-        // delete follow
-        try {
-          await supabase
-            .from('follows')
-            .delete()
-            .eq('user_id', user.id)
-            .eq('entity_type', entityType)
-            .eq('entity_id', String(entityId));
-        } catch (e) { console.warn('FollowButton:delete', e); }
+        // remove from array (check both with and without league prefix)
+        arr = arr.filter(x => String(x) !== idStr && String(x) !== idStrWithoutLeague);
         setFollowing(false);
       } else {
-        // insert follow
-        try {
-          await supabase
-            .from('follows')
-            .insert({ user_id: user.id, entity_type: entityType, entity_id: String(entityId) });
-        } catch (e) { console.warn('FollowButton:insert', e); }
+        // add to array with league prefix
+        if (!arr.includes(idStr)) arr.push(idStr);
         setFollowing(true);
-        // If this is a team follow, also update the user's favorite team preference
+        // If team follow, update favorite team preference
         if (entityType === 'team') {
           try {
             const fav = { id: entityId, name: entityMeta?.name || label || String(entityId) };
             try { localStorage.setItem('team_pref', JSON.stringify(fav)); } catch (e) {}
-            // upsert into preferences table for logged-in user
             await supabase.from('preferences').upsert({ user_id: user.id, data: { favorite_team: fav } }, { onConflict: 'user_id' });
           } catch (e) {
             console.warn('FollowButton:upsertPreference', e);
           }
         }
       }
+
+      // Update users table
+      await supabase
+        .from('users')
+        .update({ [column]: arr })
+        .eq('id', user.id);
     } catch (e) {
       console.warn('FollowButton:toggle', e.message || e);
     } finally {

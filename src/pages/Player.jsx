@@ -749,7 +749,7 @@ export default function Player() {
           </div>
           {/* Follow button placed next to player meta */}
           <div style={{marginTop:8}}>
-            <FollowButton entityType="player" entityId={player?.id || id} />
+            <FollowButton entityType="player" entityId={player?.id || id} league={playerLeague} />
           </div>
         </div>
       </div>

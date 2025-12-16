@@ -224,7 +224,7 @@ export default function Team() {
           {venue && venue.fullName && <div className="team-venue">Arena: {venue.fullName}</div>}
           {/* Follow team button: also updates favorite team preference via FollowButton */}
           <div style={{marginTop: '8px'}}>
-            <FollowButton entityType="team" entityId={teamObj?.slug || teamObj?.id || name} label={`Follow ${teamObj?.shortDisplayName || name}`} entityMeta={{ name, slug: teamObj?.slug, id: teamObj?.id }} />
+            <FollowButton entityType="team" entityId={teamObj?.slug || teamObj?.id || name} label={`Follow ${teamObj?.shortDisplayName || name}`} entityMeta={{ name, slug: teamObj?.slug, id: teamObj?.id }} league={teamLeague || leagueParam} />
           </div>
         </div>
       </div>

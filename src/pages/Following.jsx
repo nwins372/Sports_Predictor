@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import espnApi from '../utils/espnApi';
 import { supabase } from '../supabaseClient';
 import './Following.css';
 import { TranslatedText } from '../components/TranslatedText';
 
 export default function Following() {
-  const [followedTeams, setFollowedTeams] = useState([]);
-  const [followedPlayers, setFollowedPlayers] = useState([]);
-  const [teamDetails, setTeamDetails] = useState({});
-  const [playerDetails, setPlayerDetails] = useState({});
+  const [teams, setTeams] = useState([]);
+  const [players, setPlayers] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -16,174 +15,209 @@ export default function Following() {
     (async () => {
       setLoading(true);
       try {
-        // read followed lists from several possible storage shapes
-        const parseFollowed = (raw) => {
-          if (!raw) return [];
-          try {
-            const parsed = JSON.parse(raw);
-            // if it's an object like {teams:[], players:[]}
-            if (parsed && typeof parsed === 'object') {
-              if (Array.isArray(parsed)) return parsed;
-              if (Array.isArray(parsed.teams) || Array.isArray(parsed.players)) {
-                const teams = Array.isArray(parsed.teams) ? parsed.teams : [];
-                const players = Array.isArray(parsed.players) ? parsed.players : [];
-                // store teams and players in combined arrays as strings
-                return { teams, players };
-              }
-              // if parsed is an object with keys of followed slugs
-              if (Object.keys(parsed).every(k => typeof parsed[k] === 'boolean')) return Object.keys(parsed);
-            }
-            return Array.isArray(parsed) ? parsed : [];
-          } catch (e) {
-            return [];
-          }
-        };
-
-        let ftRaw = window.localStorage.getItem('followedTeams');
-        let fpRaw = window.localStorage.getItem('followedPlayers');
-        let ftParsed = parseFollowed(ftRaw);
-        let fpParsed = parseFollowed(fpRaw);
-
-        // If storage contained combined object, extract appropriately
-        let ft = [];
-        let fp = [];
-        if (ftParsed && Array.isArray(ftParsed)) ft = ftParsed;
-        else if (ftParsed && typeof ftParsed === 'object' && Array.isArray(ftParsed.teams)) ft = ftParsed.teams;
-        if (fpParsed && Array.isArray(fpParsed)) fp = fpParsed;
-        else if (fpParsed && typeof fpParsed === 'object' && Array.isArray(fpParsed.players)) fp = fpParsed.players;
-
-        // If neither found, try to check a combined storage key 'following' or Supabase user metadata
-        if ((!ft || ft.length === 0) && (!fp || fp.length === 0)) {
-          try {
-            const combinedRaw = window.localStorage.getItem('following') || window.localStorage.getItem('follow');
-            if (combinedRaw) {
-              const comb = JSON.parse(combinedRaw);
-              if (comb) {
-                if (Array.isArray(comb.teams)) ft = comb.teams;
-                if (Array.isArray(comb.players)) fp = comb.players;
-                if (Array.isArray(comb)) { ft = comb.filter(x => String(x).toLowerCase().includes(':') || String(x).length < 6); }
-              }
-            }
-          } catch (e) {}
+        const { data: userData } = await supabase.auth.getUser();
+        const user = userData?.user || null;
+        console.log('Following: user', user?.id);
+        if (!user) {
+          if (mounted) { setLoading(false); }
+          return;
         }
 
-        // Supabase fallback: check user metadata for followed lists
-        if ((!ft || ft.length === 0) && (!fp || fp.length === 0)) {
-          try {
-            const { data: { user } } = await supabase.auth.getUser();
-            const meta = user?.user_metadata || user?.app_metadata || null;
-            if (meta) {
-              if (Array.isArray(meta.followedTeams)) ft = meta.followedTeams;
-              if (Array.isArray(meta.followedPlayers)) fp = meta.followedPlayers;
-            }
-          } catch (e) {}
+        const { data: userRow, error: userError } = await supabase
+          .from('users')
+          .select('followed_players, followed_teams')
+          .eq('id', user.id)
+          .single();
+
+        console.log('Following: userRow', userRow, 'error', userError);
+
+        if (userError) {
+          console.error('Following: Error fetching user data:', userError);
+          if (mounted) setLoading(false);
+          return;
         }
 
-        if (!mounted) return;
-        setFollowedTeams(ft || []);
-        setFollowedPlayers(fp || []);
+        const teamIds = userRow?.followed_teams || [];
+        const playerIds = userRow?.followed_players || [];
+        console.log('Following: RAW teamIds', JSON.stringify(teamIds));
+        console.log('Following: RAW playerIds', JSON.stringify(playerIds));
+        console.log('Following: teamIds type', typeof teamIds, Array.isArray(teamIds));
+        console.log('Following: playerIds type', typeof playerIds, Array.isArray(playerIds));
 
-        const td = {};
-        for (const t of (ft || [])) {
+        // Deduplicate IDs (in case there are duplicates in the database)
+        const uniqueTeamIds = [...new Set(teamIds.map(t => String(t)))];
+        const uniquePlayerIds = [...new Set(playerIds.map(p => String(p)))];
+        console.log('Following: unique teamIds', uniqueTeamIds);
+        console.log('Following: unique playerIds', uniquePlayerIds);
+
+        // Fetch team details
+        const teamData = [];
+        for (const tid of uniqueTeamIds) {
+          console.log('Following: fetching team', tid);
           try {
-            // allow storing with optional league prefix like "nfl:patriots" or just slug
-            const parts = String(t).split(':');
-            const league = parts.length === 2 ? parts[0] : 'nfl';
+            const parts = String(tid).split(':');
+            let league = parts.length === 2 ? parts[0] : null;
             const slug = parts.length === 2 ? parts[1] : parts[0];
-            const team = await espnApi.getTeam(league, slug);
-            const nextGame = await espnApi.getTeamNextGame(league, slug);
-            td[t] = { team, nextGame, league, slug };
-          } catch (e) { td[t] = { team: null, nextGame: null }; }
+            
+            // If no league specified, try to detect from slug (NBA teams often have city names)
+            if (!league) {
+              // Try NBA first, then NFL
+              league = 'nba';
+            }
+            
+            let team = await espnApi.getTeam(league, slug);
+            
+            // If not found in first league, try the other
+            if (!team && league === 'nba') {
+              console.log('Following: team not found in NBA, trying NFL');
+              league = 'nfl';
+              team = await espnApi.getTeam(league, slug);
+            } else if (!team && league === 'nfl') {
+              console.log('Following: team not found in NFL, trying NBA');
+              league = 'nba';
+              team = await espnApi.getTeam(league, slug);
+            }
+            
+            console.log('Following: fetched team', tid, 'result:', team);
+            if (team) {
+              const roster = await espnApi.getTeamRoster(league, slug);
+              const record = team.detail?.team?.record?.items?.[0]?.summary || team.raw?.detail?.team?.record?.items?.[0]?.summary || null;
+              teamData.push({ id: tid, league, slug, team, roster, record });
+            }
+          } catch (e) { console.warn('Following:team', tid, e); }
         }
-        const pd = {};
-        for (const p of (fp || [])) {
+
+        // Fetch player details
+        const playerData = [];
+        for (const pid of playerIds) {
+          console.log('Following: fetching player', pid);
           try {
-            // player stored as either numeric id or 'league:id'
-            const parts = String(p).split(':');
-            const league = parts.length === 2 ? parts[0] : null;
-            const pid = parts.length === 2 ? parts[1] : parts[0];
-            const pl = await espnApi.getPlayer(league || 'nfl', pid);
-            pd[p] = pl;
-          } catch (e) { pd[p] = null; }
+            const parts = String(pid).split(':');
+            let league = parts.length === 2 ? parts[0] : 'nba';
+            const id = parts.length === 2 ? parts[1] : parts[0];
+            
+            let player = await espnApi.getPlayer(league, id);
+            
+            // If not found in first league, try the other
+            if (!player && league === 'nba') {
+              console.log('Following: player not found in NBA, trying NFL');
+              league = 'nfl';
+              player = await espnApi.getPlayer(league, id);
+            } else if (!player && league === 'nfl') {
+              console.log('Following: player not found in NFL, trying NBA');
+              league = 'nba';
+              player = await espnApi.getPlayer(league, id);
+            }
+            
+            console.log('Following: fetched player', pid, 'result:', player);
+            if (player) {
+              const stats = player.currentSeasonStats || (player.seasons && player.seasons[0] && player.seasons[0].stats) || null;
+              // Store player data directly at top level, not nested
+              playerData.push({ 
+                id: pid, 
+                league, 
+                playerId: id, 
+                ...player,  // spread player data to top level
+                stats 
+              });
+            } else {
+              // Add placeholder for failed player fetch
+              console.warn('Following: player fetch returned null for', pid);
+              playerData.push({
+                id: pid,
+                league,
+                playerId: id,
+                name: `Player ${id} (failed to load)`,
+                displayName: `Player ${id}`,
+                headshot: null,
+                stats: null
+              });
+            }
+          } catch (e) { console.warn('Following:player', e); }
         }
-        if (!mounted) return;
-        setTeamDetails(td);
-        setPlayerDetails(pd);
-      } finally {
+
+        if (mounted) {
+          console.log('Following: setting state - teams:', teamData.length, 'players:', playerData.length);
+          console.log('Following: teamData', teamData);
+          console.log('Following: playerData', playerData);
+          setTeams(teamData);
+          setPlayers(playerData);
+          setLoading(false);
+        }
+      } catch (e) {
+        console.warn('Following:load', e);
         if (mounted) setLoading(false);
       }
     })();
     return () => { mounted = false; };
   }, []);
 
-  const unfollowTeam = (t) => {
-    const next = (followedTeams || []).filter(x => x !== t);
-    setFollowedTeams(next);
-    try { window.localStorage.setItem('followedTeams', JSON.stringify(next)); } catch (e) {}
-  };
-  const unfollowPlayer = (p) => {
-    const next = (followedPlayers || []).filter(x => x !== p);
-    setFollowedPlayers(next);
-    try { window.localStorage.setItem('followedPlayers', JSON.stringify(next)); } catch (e) {}
-  };
+  if (loading) return <div className="following-page"><TranslatedText>Loading...</TranslatedText></div>;
 
   return (
     <div className="following-page">
       <h2><TranslatedText>Following</TranslatedText></h2>
-      {loading ? <div className="muted"><TranslatedText>Loading followed teams & players…</TranslatedText></div> : (
-        <div className="following-grid">
-          <div className="follow-col">
-            <h3><TranslatedText>Teams</TranslatedText></h3>
-            {(!followedTeams || followedTeams.length === 0) ? <div className="muted"><TranslatedText>You are not following any teams.</TranslatedText></div> : (
-              <div className="team-list">
-                {followedTeams.map((t, i) => {
-                  const info = teamDetails[t] || {};
-                  const team = info.team;
-                  const next = info.nextGame;
-                  return (
-                    <div key={`ft-${i}`} className="team-card">
-                      <div className="team-card-left">
-                        {team && (team.logos && team.logos[0] && team.logos[0].href) ? <img src={team.logos[0].href} alt={team.displayName || team.name} className="team-logo" /> : <div className="team-logo placeholder" />}
-                      </div>
-                      <div className="team-card-body">
-                        <div className="team-name">{team ? (team.displayName || team.name) : t}</div>
-                        <div className="team-meta">League: {info.league || 'nfl'}</div>
-                        <div className="team-nextgame muted">{next ? `Next: ${new Date(next.start).toLocaleString()} vs ${next.opponent || ''}` : 'Next game: N/A'}</div>
-                      </div>
-                      <div className="team-card-actions">
-                        <button className="unfollow" onClick={() => unfollowTeam(t)}><TranslatedText>Unfollow</TranslatedText></button>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            )}
+      
+      {teams.length > 0 && (
+        <section className="following-section">
+          <h3><TranslatedText>Teams</TranslatedText></h3>
+          <div className="following-grid">
+            {teams.map(t => (
+              <Link key={t.id} to={`/team/${t.league}/${t.slug}`} className="following-card team-card">
+                <div className="card-header">
+                  {t.team?.logos?.[0]?.href && <img src={t.team.logos[0].href} alt="" className="entity-logo" />}
+                  <div className="entity-name">{t.team?.displayName || t.team?.name || t.slug}</div>
+                </div>
+                <div className="card-stats-hover">
+                  {t.record && <div className="stat-row"><span>Record:</span><span>{t.record}</span></div>}
+                  {t.roster && <div className="stat-row"><span>Roster:</span><span>{t.roster.length} players</span></div>}
+                </div>
+              </Link>
+            ))}
           </div>
+        </section>
+      )}
 
-          <div className="follow-col">
-            <h3><TranslatedText>Players</TranslatedText></h3>
-            {(!followedPlayers || followedPlayers.length === 0) ? <div className="muted"><TranslatedText>You are not following any players.</TranslatedText></div> : (
-              <div className="player-list">
-                {followedPlayers.map((p, i) => {
-                  const pl = playerDetails[p] || null;
-                  return (
-                    <div key={`fp-${i}`} className="player-card">
-                      <div className="player-left">
-                        {pl && pl.headshot ? <img src={pl.headshot} alt={pl.name || p} className="player-headshot" /> : <div className="player-headshot placeholder" />}
-                      </div>
-                      <div className="player-body">
-                        <div className="player-name">{pl ? (pl.name || pl.displayName) : p}</div>
-                        <div className="player-meta muted">{pl ? `${pl.position || ''} ${pl.team ? `• ${pl.team.displayName || pl.team.name}` : ''}` : ''}</div>
-                      </div>
-                      <div className="player-actions">
-                        <button className="unfollow" onClick={() => unfollowPlayer(p)}><TranslatedText>Unfollow</TranslatedText></button>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            )}
+      {players.length > 0 && (
+        <section className="following-section">
+          <h3><TranslatedText>Players</TranslatedText></h3>
+          <div className="following-grid">
+            {players.map(p => {
+              const stats = p.stats || {};
+              const isNFL = p.league === 'nfl';
+              return (
+                <Link key={p.id} to={`/player/${p.league}/${p.playerId}`} className="following-card player-card">
+                  <div className="card-header">
+                    {(p.headshot || p.head) && <img src={p.headshot || p.head} alt="" className="entity-headshot" />}
+                    <div className="entity-name">{p.name || p.displayName || p.playerId}</div>
+                  </div>
+                  <div className="card-stats-hover">
+                    {p.position && <div className="stat-row"><span>Position:</span><span>{p.position}</span></div>}
+                    {p.team?.displayName && <div className="stat-row"><span>Team:</span><span>{p.team.displayName}</span></div>}
+                    {isNFL ? (
+                      <>
+                        {stats.passYds && <div className="stat-row"><span>Pass YDS:</span><span>{stats.passYds}</span></div>}
+                        {stats.rushYds && <div className="stat-row"><span>Rush YDS:</span><span>{stats.rushYds}</span></div>}
+                        {stats.rec && <div className="stat-row"><span>REC:</span><span>{stats.rec}</span></div>}
+                      </>
+                    ) : (
+                      <>
+                        {stats.pts && <div className="stat-row"><span>PTS:</span><span>{stats.pts}</span></div>}
+                        {stats.reb && <div className="stat-row"><span>REB:</span><span>{stats.reb}</span></div>}
+                        {stats.ast && <div className="stat-row"><span>AST:</span><span>{stats.ast}</span></div>}
+                      </>
+                    )}
+                  </div>
+                </Link>
+              );
+            })}
           </div>
+        </section>
+      )}
+
+      {teams.length === 0 && players.length === 0 && (
+        <div className="empty-state">
+          <TranslatedText>No followed players or teams yet. Visit player and team pages to follow them!</TranslatedText>
         </div>
       )}
     </div>
