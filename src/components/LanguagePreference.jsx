@@ -3,6 +3,8 @@ import { supabase } from "../supabaseClient";
 import "./LanguagePreference.css";
 import { useSessionForSchedulesPage } from "../pages/Schedules";
 import { TranslatedText } from "./TranslatedText";
+import { useTranslation } from "../context/TranslationContext";
+
 
 const SUPPORTED_LANGUAGES = {
   'en': 'English',
@@ -55,6 +57,7 @@ export default function LanguagePreference() {
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState("");
   const { session } = useSessionForSchedulesPage();
+  const { setLanguage } = useTranslation();
 
   useEffect(() => {
     if (!session) return;
@@ -80,11 +83,13 @@ export default function LanguagePreference() {
           }
         } else if (data?.preferred_language) {
           setSelectedLanguage(data.preferred_language);
+          setLanguage(data.preferred_language); 
         } else {
           // Check localStorage as fallback
           const localLanguage = localStorage.getItem('user_preferred_language');
           if (localLanguage) {
             setSelectedLanguage(localLanguage);
+            setLanguage(localLanguage);
           }
         }
       } catch (error) {
@@ -103,7 +108,9 @@ export default function LanguagePreference() {
   }, [session]);
 
   const handleLanguageChange = (e) => {
+     const newLang = e.target.value; 
     setSelectedLanguage(e.target.value);
+    setLanguage(newLang);    
     console.log("Language changed to:", e.target.value);
   };
 

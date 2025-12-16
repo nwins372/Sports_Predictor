@@ -27,7 +27,8 @@ const processBatch = async () => {
 };
 
 export function TranslatedText({ children }) {
-  const { translate } = useTranslation();
+  const { translate, language } = useTranslation();
+  
   const [translatedText, setTranslatedText] = useState(children);
   const mounted = useRef(true);
 
@@ -55,7 +56,7 @@ export function TranslatedText({ children }) {
       }
       batchTimeout = setTimeout(processBatch, 100); // Process batch every 100ms
     }
-  }, [children, translate]);
+  }, [children, translate, language]);
 
   // If children is not a string, return it as is
   if (typeof children !== 'string') {
