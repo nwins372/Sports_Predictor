@@ -1,6 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useMemo, useEffect } from "react";
+import NavBar from "../components/NavBar";
 import { supabase } from "../supabaseClient"; // Adjust path to your supabase client
 import "./Comments.css";
+import { TranslatedText } from "../components/TranslatedText";
 
 export default function Comments({ session, gameId }) {
   const [comments, setComments] = useState([]);
