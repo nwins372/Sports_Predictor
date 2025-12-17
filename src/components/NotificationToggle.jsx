@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
 import "../pages/profile.css";
 import "./NotificationToggle.css";
+import { TranslatedText } from "./TranslatedText";
 
 export default function NotificationToggle({ session }) {
   const [notifEnabled, setNotifEnabled] = useState(false);
@@ -87,12 +88,12 @@ export default function NotificationToggle({ session }) {
   };
 
   if (!session) {
-    return <p className="notif-message">Log in to manage notifications.</p>;
+    return <p className="notif-message"><TranslatedText>Log in to manage notifications.</TranslatedText></p>;
   }
 
   return (
     <>
-      <h2>Notifications</h2>
+      <h2><TranslatedText>Notifications</TranslatedText></h2>
       <div className="notification-grid">
         <label className="notif-switch">
           <input
@@ -104,21 +105,22 @@ export default function NotificationToggle({ session }) {
             aria-label="Toggle email notifications"
           />
           <span className="notif-label">
-            {loading ? "Loading…" : "Email me periodic updates"}
+            {loading ? <TranslatedText>Loading…</TranslatedText> : <TranslatedText>Email me periodic updates</TranslatedText>}
           </span>
         </label>
 
         {/* frequency picker */}
         <label className="notif-frequency">
-          <span>Frequency</span>
+          <span><TranslatedText>Frequency</TranslatedText></span>
           <select
             className="notif-select"
             value={frequency}
             onChange={onfrequencyChange}
             disabled={loading || saving}
           >
-            <option value="daily">Daily</option>
-            <option value="weekly_mon">Every Monday</option>
+            <option value="daily"><TranslatedText>Daily</TranslatedText></option>
+            <option value="weekly_son"><TranslatedText>Every Sunday</TranslatedText></option>
+            <option value="weekly_mon"><TranslatedText>Every Monday</TranslatedText></option>
           </select>
         </label>
 

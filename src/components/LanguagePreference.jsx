@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { supabase } from "../supabaseClient";
 import "./LanguagePreference.css";
+import { useSessionForSchedulesPage } from "../pages/Schedules";
+import { TranslatedText } from "./TranslatedText";
+import { useTranslation } from "../context/TranslationContext";
+
 
 const SUPPORTED_LANGUAGES = {
   'en': 'English',
@@ -47,11 +51,13 @@ const SUPPORTED_LANGUAGES = {
   'me': 'Montenegrin'
 };
 
-export default function LanguagePreference({ session }) {
+export default function LanguagePreference() {
   const [selectedLanguage, setSelectedLanguage] = useState('en');
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState("");
+  const { session } = useSessionForSchedulesPage();
+  const { setLanguage } = useTranslation();
 
   useEffect(() => {
     if (!session) return;
@@ -77,11 +83,13 @@ export default function LanguagePreference({ session }) {
           }
         } else if (data?.preferred_language) {
           setSelectedLanguage(data.preferred_language);
+          setLanguage(data.preferred_language); 
         } else {
           // Check localStorage as fallback
           const localLanguage = localStorage.getItem('user_preferred_language');
           if (localLanguage) {
             setSelectedLanguage(localLanguage);
+            setLanguage(localLanguage);
           }
         }
       } catch (error) {
@@ -100,7 +108,9 @@ export default function LanguagePreference({ session }) {
   }, [session]);
 
   const handleLanguageChange = (e) => {
+     const newLang = e.target.value; 
     setSelectedLanguage(e.target.value);
+    setLanguage(newLang);    
     console.log("Language changed to:", e.target.value);
   };
 
@@ -111,27 +121,20 @@ export default function LanguagePreference({ session }) {
     setMessage("");
 
     try {
-      // Try to save to user_preferences table first
-      const { data: existingData } = await supabase
+      // First, try to update only the preferred_language field (preserves other columns)
+      const { data: updateData, error: updateError } = await supabase
         .from("user_preferences")
-        .select("id, sports_prefs, favorite_teams")
-        .eq("user_id", session.user.id)
-        .maybeSingle();
+        .update({ preferred_language: selectedLanguage })
+        .eq("user_id", session.user.id);
 
-      let result;
-      if (existingData) {
-        // Try to update existing preferences with preferred_language
-        result = await supabase
-          .from("user_preferences")
-          .update({ 
-            preferred_language: selectedLanguage,
-            sports_prefs: existingData.sports_prefs || [],
-            favorite_teams: existingData.favorite_teams || {}
-          })
-          .eq("user_id", session.user.id);
-      } else {
-        // Try to insert new preferences
-        result = await supabase
+      if (updateError) {
+        throw updateError;
+      }
+
+      // If no rows were updated (record doesn't exist), insert instead
+      const updatedCount = updateData?.length || 0;
+      if (updatedCount === 0) {
+        const { error: insertError } = await supabase
           .from("user_preferences")
           .insert({
             user_id: session.user.id,
@@ -139,44 +142,35 @@ export default function LanguagePreference({ session }) {
             sports_prefs: [],
             favorite_teams: {}
           });
+
+        if (insertError) {
+          throw insertError;
+        }
       }
 
-      // If the above fails (column doesn't exist), fall back to localStorage
-      if (result.error) {
-        console.log("Database save failed, using localStorage fallback:", result.error);
-        
-        // Save to localStorage as fallback
+      // Also save to localStorage even when database succeeds
+      localStorage.setItem('user_preferred_language', selectedLanguage);
+      console.log("Saved to both database and localStorage:", selectedLanguage);
+      setMessage("Language preference saved successfully!");
+      
+      // Clear message after 3 seconds
+      setTimeout(() => {
+        setMessage("");
+      }, 3000);
+
+    } catch (error) {
+      console.error("Error saving language preference:", error);
+      
+      // If database column doesn't exist, fall back to localStorage
+      if (error.message && error.message.includes("column")) {
         localStorage.setItem('user_preferred_language', selectedLanguage);
-        console.log("Saved to localStorage:", selectedLanguage);
         setMessage("Language preference saved locally! (Database column needs to be added)");
         
         // Clear message after 5 seconds
         setTimeout(() => {
           setMessage("");
         }, 5000);
-      } else {
-        // Also save to localStorage even when database succeeds
-        localStorage.setItem('user_preferred_language', selectedLanguage);
-        console.log("Saved to both database and localStorage:", selectedLanguage);
-        setMessage("Language preference saved successfully!");
-        
-        // Clear message after 3 seconds
-        setTimeout(() => {
-          setMessage("");
-        }, 3000);
       }
-
-    } catch (error) {
-      console.error("Error saving language preference:", error);
-      
-      // Fallback to localStorage
-      localStorage.setItem('user_preferred_language', selectedLanguage);
-      setMessage("Language preference saved locally! (Database column needs to be added)");
-      
-      // Clear message after 5 seconds
-      setTimeout(() => {
-        setMessage("");
-      }, 5000);
     } finally {
       setSaving(false);
     }
@@ -193,14 +187,14 @@ export default function LanguagePreference({ session }) {
 
   return (
     <div className="language-preference-card">
-      <h3 className="language-preference-title">Preferred Language</h3>
+      <h3 className="language-preference-title"><TranslatedText>Preferred Language</TranslatedText></h3>
       <p className="language-preference-description">
-        Choose your preferred language for sports news translation. Articles will be automatically translated to your selected language.
+        <TranslatedText>Choose your preferred language. The website and sports news articles will be automatically translated to your selected language.</TranslatedText>
       </p>
       
       <div className="language-selection">
         <label htmlFor="language-select" className="language-label">
-          Select Language:
+          <TranslatedText>Select Language:</TranslatedText>
         </label>
         <select
           id="language-select"
@@ -222,12 +216,12 @@ export default function LanguagePreference({ session }) {
         disabled={saving}
         className="language-save-btn"
       >
-        {saving ? "Saving..." : "Save Language Preference"}
+        <TranslatedText>{saving ? "Saving..." : "Save Language Preference"}</TranslatedText>
       </button>
 
       {message && (
         <div className={`language-message ${message.includes("Error") ? "error" : "success"}`}>
-          {message}
+          <TranslatedText>{message}</TranslatedText>
         </div>
       )}
     </div>

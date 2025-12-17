@@ -4,19 +4,255 @@ import espnApi from '../utils/espnApi';
 import './Player.css';
 import FollowButton from '../components/FollowButton';
 
+// Inline ErrorBoundary to catch rendering/runtime errors and show a visible
+// message instead of a grey blank screen.
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null, info: null };
+  }
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
+  componentDidCatch(error, info) {
+    this.setState({ error, info });
+    // still log to console
+    console.error('Player page error', error, info);
+  }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{padding:20,background:'#fff6f6',color:'#800',border:'1px solid #f5c6cb'}}>
+          <h3>Something went wrong rendering this player page</h3>
+          <div style={{whiteSpace:'pre-wrap',fontFamily:'monospace',fontSize:12}}>{String(this.state.error && this.state.error.toString())}</div>
+          {this.state.info && this.state.info.componentStack ? <details style={{marginTop:8}}><summary>Stack</summary><pre style={{whiteSpace:'pre-wrap'}}>{this.state.info.componentStack}</pre></details> : null}
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 export default function Player() {
   const params = useParams();
   // support /player/:league/:id and /player/:id
   const id = params.id || Object.values(params).slice(-1)[0];
   const leagueParam = params.league || null;
   const [player, setPlayer] = useState(null);
+  const [activeTab, setActiveTab] = useState('overview');
+  const [splitsData, setSplitsData] = useState(null);
+  const [gamelogData, setGamelogData] = useState(null);
+  const [fantasyNews, setFantasyNews] = useState([]);
+  const [showRawOverview, setShowRawOverview] = useState(false);
   const location = useLocation();
   const loadingName = location?.state?.name || null;
-  const loadingShortId = location?.state?.shortId || null;
+  
+
+  // Normalize athlete overview payloads from ESPN into a consistent shape
+  const normalizeOverviewPayload = (ov, league) => {
+    if (!ov) return { team: null, seasons: [], currentSeasonStats: null, headshot: null };
+  const out = { team: null, seasons: [], currentSeasonStats: null, headshot: null, birthDate: null, birthPlace: null, college: null, draft: null, status: null, injuries: [], contracts: [], transactions: [], position: null, height: null, weight: null, stories: [] };
+    try {
+      // Team info: prefer nested objects or name fields
+      const t = ov.team || ov.currentTeam || ov.teamInfo || ov.teamId || ov.teamName || ov.club || ov.teamData || ov.teamObj || null;
+      if (t) {
+        if (typeof t === 'string') {
+          out.team = { displayName: t, slug: String(t).replace(/\s+/g,'_'), abbreviation: null, logos: [] };
+        } else if (typeof t === 'object') {
+          out.team = {
+            id: t.id || t.teamId || t.team_id || null,
+            displayName: t.displayName || t.name || t.teamName || t.fullName || null,
+            abbreviation: t.abbreviation || t.abbr || null,
+            logos: t.logos || t.images || (t.logo ? [{ href: t.logo }] : [])
+          };
+        }
+      }
+
+      // Basic bio fields
+      out.birthDate = ov.birthDate || ov.dateOfBirth || ov.dob || ov.birth || null;
+      if (ov.birthPlace) {
+        if (typeof ov.birthPlace === 'string') out.birthPlace = ov.birthPlace;
+        else out.birthPlace = [ov.birthPlace.city, ov.birthPlace.state, ov.birthPlace.country].filter(Boolean).join(', ');
+      } else if (ov.placeOfBirth) {
+        const b = ov.placeOfBirth;
+        out.birthPlace = [b.city, b.state, b.country].filter(Boolean).join(', ');
+      }
+      out.college = ov.college || (ov.education && ov.education.college) || (ov.school && ov.school.college) || null;
+
+      // draft / status / injuries / contracts / transactions
+      out.draft = ov.draft || ov.draftInfo || ov.draftStatus || null;
+      out.status = ov.status || ov.currentStatus || (ov.playerStatus && ov.playerStatus.text) || null;
+      out.injuries = ov.injuries || ov.injury || ov.health || [];
+      out.contracts = ov.contracts || ov.contract || ov.playerContracts || [];
+      out.transactions = ov.transactions || ov.transactionHistory || ov.moves || [];
+
+      // physicals & position
+      out.position = ov.position || (ov.player && ov.player.position) || null;
+      out.height = ov.height || ov.displayHeight || ov.player?.height || null;
+      out.weight = ov.weight || ov.displayWeight || ov.player?.weight || null;
+
+      // Headshot
+      out.headshot = ov.headshot || ov.head || (ov.images && (ov.images[0] && (ov.images[0].href || ov.images[0].url))) || (ov.player && (ov.player.headshot || ov.player.head)) || null;
+
+      // Stories / related articles: various payloads use different keys
+      try {
+        const storyCandidates = [];
+        if (ov.storylines) storyCandidates.push(ov.storylines);
+        if (ov.stories) storyCandidates.push(ov.stories);
+        if (ov.story) storyCandidates.push(ov.story);
+        if (ov.about) storyCandidates.push(ov.about);
+        if (ov.articles) storyCandidates.push(ov.articles);
+        if (ov.news) storyCandidates.push(ov.news);
+        if (ov.items && Array.isArray(ov.items)) storyCandidates.push(ov.items);
+        if (ov.data && ov.data.items) storyCandidates.push(ov.data.items);
+        // flatten and normalize simple article objects to {title, url, summary, published}
+        const flatten = (arr) => Array.isArray(arr) ? arr.flatMap(x => Array.isArray(x) ? x : [x]) : [];
+        const candidatesFlat = flatten(storyCandidates);
+        for (const s of candidatesFlat) {
+          if (!s) continue;
+          // Some story nodes are strings or simple text blocks
+          if (typeof s === 'string') out.stories.push({ title: null, url: null, summary: s });
+          else if (s.title || s.headline || s.name) {
+            const title = s.title || s.headline || s.name || null;
+            const url = s.url || (s.link && (s.link.web || s.link.href)) || (s.canonicalUrl || null);
+            const summary = s.summary || s.description || s.lede || s.excerpt || null;
+            const published = s.datePublished || s.published || s.publishDate || s.publishedDate || null;
+            out.stories.push({ title, url, summary, published, raw: s });
+          } else if (s.type && (s.type === 'article' || s.type === 'story') && (s.content || s.body || s.summary)) {
+            const title = s.headline || s.content?.headline || null;
+            const url = s.links?.web?.href || s.link?.web || null;
+            const summary = s.summary || s.lede || s.content?.summary || null;
+            out.stories.push({ title, url, summary, raw: s });
+          }
+        }
+        // dedupe by url/title
+        const seen = new Set();
+        out.stories = out.stories.filter(st => {
+          const key = (st.url || st.title || st.summary || '').toString();
+          if (!key) return false;
+          if (seen.has(key)) return false; seen.add(key); return true;
+        });
+      } catch (e) { /* ignore story parsing errors */ }
+
+      // Seasons normalization: support several shapes, prefer statistics.splits with labels (regular season splits)
+      try {
+        // Helper: find a statistics root in multiple nested locations used by ESPN
+        const findStatsRoot = (root) => {
+          if (!root) return null;
+          // direct common fields
+          if (root.statistics && root.statistics.splits) return root.statistics;
+          if (root.stats && root.stats.splits) return root.stats;
+          if (root.statisticsRoot && root.statisticsRoot.splits) return root.statisticsRoot;
+          // sometimes labels/displayNames live at the same level
+          if (root.statistics && (root.statistics.displayNames || root.statistics.labels || root.statistics.names)) return root.statistics;
+          if (root.stats && (root.stats.displayNames || root.stats.labels || root.stats.names)) return root.stats;
+          // search seasons[].raw.statistics or seasons[].statistics
+          const seasons = root.seasons || root.seasonStats || root.seasonsRaw || null;
+          if (Array.isArray(seasons)) {
+            for (const s of seasons) {
+              if (!s) continue;
+              if (s.raw && s.raw.statistics) return s.raw.statistics;
+              if (s.raw && s.raw.stats) return s.raw.stats;
+              if (s.statistics && s.statistics.splits) return s.statistics;
+              if (s.stats && s.stats.splits) return s.stats;
+              // sometimes the season object itself contains displayNames + splits
+              if (s.displayNames && s.splits) return s;
+              if (s.labels && s.splits) return s;
+            }
+          }
+          // player wrapper
+          if (root.player) return findStatsRoot(root.player);
+          if (root.raw) return findStatsRoot(root.raw);
+          return null;
+        };
+
+        // Only use the statistics root if it explicitly provides displayNames/labels/names and splits.
+        // Per request: do NOT fall back to other parts of the payload (seasons, raw, etc.).
+        const statsRoot = findStatsRoot(ov);
+        if (statsRoot && statsRoot.splits && Array.isArray(statsRoot.splits) && (Array.isArray(statsRoot.labels) || Array.isArray(statsRoot.names) || Array.isArray(statsRoot.displayNames))) {
+          const labels = statsRoot.labels || statsRoot.names || statsRoot.displayNames || [];
+          const mapLabelsToKey = (lbl) => String(lbl).replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '').toLowerCase();
+          const built = [];
+          for (const sp of statsRoot.splits) {
+            const display = sp.displayName || sp.label || sp.name || sp.season || '';
+            // prefer regular season splits but if none are labeled as regular season, include all
+            const isRegular = String(display).toLowerCase().includes('regular') || String(display).toLowerCase().includes('regular season') || String(display).toLowerCase().includes('season');
+            // honor explicit current-season flags when present on split objects
+            const isCurrentSplit = !!sp.isCurrent || !!sp.currentSeason || !!sp.is_current;
+            // if split.stats is array, map by position using labels order
+            const statsObj = {};
+            const vals = Array.isArray(sp.stats) ? sp.stats : (sp.stats && typeof sp.stats === 'object' ? Object.values(sp.stats) : []);
+            for (let i = 0; i < labels.length; i++) {
+              const lbl = labels[i] || i;
+              const key = mapLabelsToKey(lbl);
+              let rawVal = vals[i] !== undefined && vals[i] !== null ? vals[i] : null;
+              if (rawVal !== null) rawVal = String(rawVal).replace(/,/g, '');
+              const val = rawVal !== null && rawVal !== '' ? (isNaN(Number(rawVal)) ? rawVal : Number(rawVal)) : null;
+              if (val !== null) statsObj[key] = val;
+            }
+            // also merge object-style stat maps if present
+            if (sp.stats && typeof sp.stats === 'object' && !Array.isArray(sp.stats)) {
+              for (const k of Object.keys(sp.stats)) {
+                const kk = mapLabelsToKey(k);
+                if (!(kk in statsObj)) {
+                  let v = sp.stats[k];
+                  if (v !== null && v !== undefined && v !== '') {
+                    v = String(v).replace(/,/g, '');
+                    statsObj[kk] = (isNaN(Number(v)) ? v : Number(v));
+                  }
+                }
+              }
+            }
+            built.push({ season: display || null, stats: statsObj, raw: sp, isRegular, isCurrent: isCurrentSplit });
+          }
+          // prefer only regular-season splits when available
+          const regs = built.filter(b => b.isRegular);
+          out.seasons = (regs.length ? regs : built).map(b => ({ season: b.season, stats: b.stats, raw: b.raw, isCurrent: !!b.isCurrent }));
+        } else {
+          // Do NOT fallback to other season structures. If the API response does not
+          // include the canonical displayNames + splits structure, we intentionally leave
+          // seasons empty so the UI doesn't pick potentially incorrect stat entries.
+          out.seasons = [];
+        }
+      } catch (e) {
+        // fallback to empty seasons
+        out.seasons = [];
+      }
+      if (ov.currentSeasonStats && typeof ov.currentSeasonStats === 'object') out.currentSeasonStats = ov.currentSeasonStats;
+      else {
+        const cur = out.seasons.find(s => s.isCurrent) || out.seasons[0];
+        if (cur) out.currentSeasonStats = cur.stats || null;
+      }
+    } catch (e) { /* ignore */ }
+    return out;
+  };
+
+  // Normalize season stat values (convert numeric strings like "1,337" to numbers)
+  const normalizeSeasonsValues = (pl) => {
+    if (!pl) return pl;
+    try {
+      const seasons = pl.seasons || [];
+      for (const s of seasons) {
+        if (!s || !s.stats) continue;
+        for (const k of Object.keys(s.stats)) {
+          let v = s.stats[k];
+          if (v === null || v === undefined) continue;
+          if (typeof v === 'string') {
+            const cleaned = v.replace(/[,\u00A0]/g, '').trim();
+            if (cleaned === '') { s.stats[k] = v; continue; }
+            const n = Number(cleaned);
+            if (!isNaN(n)) s.stats[k] = n; else s.stats[k] = v;
+          }
+        }
+      }
+    } catch (e) {}
+    return pl;
+  };
 
   useEffect(() => {
     let mounted = true;
     (async () => {
+      let resolvedPlayer = null;
       try {
         // use unified getPlayer which tries local index, player endpoint, then remote search
         const league = leagueParam || 'nba';
@@ -132,7 +368,73 @@ export default function Player() {
 
           // attach a hint about which enrichment source supplied seasons/physicals
           enriched._enrichmentSource = enrichmentSource;
-          if (mounted) { setPlayer(enriched); return; }
+          if (mounted) { normalizeSeasonsValues(enriched); setPlayer(enriched); resolvedPlayer = enriched; }
+          // attempt to fetch athlete overview (site.web.api) for both NBA and NFL to get richer info
+          try {
+            const tryOverview = async () => {
+              // prefer numeric athlete id when available
+              const extractNumericId = (obj, fallbackId) => {
+                if (String(fallbackId).match(/^\d+$/)) return String(fallbackId);
+                try {
+                  const head = obj?.head || obj?.headshot || obj?.photo || obj?.images?.[0]?.url || obj?.headshot?.href;
+                  if (head) {
+                    const m = String(head).match(/\/(?:full|players)\/(?:full\/)?(\d+)\.png/) || String(head).match(/\/(\d+)\.png/);
+                    if (m && m[1]) return m[1];
+                  }
+                } catch (e) {}
+                try {
+                  const r = obj?.raw || obj;
+                  const link = r?.link?.web || r?.links?.web?.href || r?.canonicalUrl || r?.url || null;
+                  if (link) {
+                    const m2 = String(link).match(/\/(?:id|_id)\/(\d+)/) || String(link).match(/\/(\d+)\//);
+                    if (m2 && m2[1]) return m2[1];
+                  }
+                } catch (e) {}
+                return null;
+              };
+
+              let athleteId = extractNumericId(enriched, id) || extractNumericId(enriched, enriched.id) || null;
+              let ov = null;
+              try {
+                if (athleteId) ov = await espnApi.getAthleteOverview(enriched._league || league, athleteId);
+              } catch (e) { ov = null; }
+              if (!ov) {
+                try { ov = await espnApi.getAthleteOverview(enriched._league || league, enriched.name || enriched.displayName || id); } catch (e) { ov = null; }
+              }
+              return ov;
+            };
+
+            const overview = await tryOverview();
+              if (overview && mounted) {
+              // normalize overview and merge into player
+              const norm = normalizeOverviewPayload(overview, enriched._league || league);
+              const merged = Object.assign({}, enriched, { _overview: overview });
+              merged._overviewNormalized = norm;
+              // top-level fields
+              merged.height = merged.height || overview.height || overview.displayHeight || merged.height;
+              merged.weight = merged.weight || overview.weight || overview.displayWeight || merged.weight;
+              merged.position = merged.position || overview.position || merged.position;
+              // team: prefer existing player.team, otherwise use normalized overview team
+              if ((!merged.team || !merged.team.displayName) && norm.team) merged.team = norm.team;
+              if (!merged.head && norm.headshot) merged.head = norm.headshot;
+              // seasons/current stats: prefer existing, otherwise normalized overview seasons
+              merged.seasons = (merged.seasons && merged.seasons.length) ? merged.seasons : (norm.seasons || merged.seasons || []);
+              merged.currentSeasonStats = merged.currentSeasonStats || norm.currentSeasonStats || null;
+              merged._athleteOverviewFetched = true;
+              // attach any overview-extracted stories and try to fetch news/articles
+              try {
+                if (norm && Array.isArray(norm.stories) && norm.stories.length) merged._overviewStories = norm.stories;
+                try {
+                  const news = await espnApi.getPlayerNews(merged.id || merged.name || id, merged._league || league);
+                  if (news && Array.isArray(news) && news.length) merged._news = news;
+                } catch (e) { /* ignore news fetch errors */ }
+              } catch (e) {}
+              if (mounted) { normalizeSeasonsValues(merged); setPlayer(merged); resolvedPlayer = merged; }
+            }
+          } catch (e) {
+            // ignore overview fetch errors
+          }
+          // return early removed to allow overview merge
         }
 
         // If not found, try the local indexes across both leagues (id might live in the other league)
@@ -143,7 +445,10 @@ export default function Player() {
             if (localFromSame.teamSlug && !localFromSame.team) {
               try { const t = await espnApi.getTeam(localFromSame._league || league, localFromSame.teamSlug); if (t) localFromSame.team = t; } catch (e) {}
             }
-            setPlayer(localFromSame); return;
+            // only set a local compact record if we don't already have a richer resolved player
+            if (!resolvedPlayer || (!(resolvedPlayer.seasons && resolvedPlayer.seasons.length) && !resolvedPlayer._athleteOverviewFetched)) {
+              setPlayer(localFromSame); resolvedPlayer = localFromSame; return;
+            }
           }
         } catch (e) {}
 
@@ -156,7 +461,9 @@ export default function Player() {
               if (localAlt.teamSlug && !localAlt.team) {
                 try { const t2 = await espnApi.getTeam(localAlt._league || alt, localAlt.teamSlug); if (t2) localAlt.team = t2; } catch (e) {}
               }
-              setPlayer(localAlt); return;
+              if (!resolvedPlayer || (!(resolvedPlayer.seasons && resolvedPlayer.seasons.length) && !resolvedPlayer._athleteOverviewFetched)) {
+                setPlayer(localAlt); resolvedPlayer = localAlt; return;
+              }
             }
           }
         } catch (e) {}
@@ -165,22 +472,86 @@ export default function Player() {
         try {
           const res = await espnApi.searchPlayers(id, 20);
           const found = (res?.results || []).find(r => String(r.id) === String(id) || String(r.object?.id) === String(id) || String(r.object?.id) === String(id));
-          if (found && mounted) { setPlayer(found.object || found); return; }
+          if (found && mounted && !resolvedPlayer) { setPlayer(found.object || found); resolvedPlayer = found.object || found; return; }
           // If nothing matched by id, use the first player-like result if present
           const first = (res?.results || []).find(r => (r.object && (r.object.player || r.object.athlete || r.object.id)));
-          if (first && mounted) { setPlayer(first.object || first); return; }
+          if (first && mounted && !resolvedPlayer) { setPlayer(first.object || first); resolvedPlayer = first.object || first; return; }
         } catch (e) {}
       } catch (e) { /* swallow, show loading/no-data UI below */ }
     })();
     return () => { mounted = false; };
   }, [id, leagueParam]);
 
+  // When the resolved player changes, fetch canonical splits/gamelog/news from site.web.api
+  useEffect(() => {
+    if (!player) return;
+    let mounted = true;
+    (async () => {
+      // compute league from the resolved player or the route param; avoid
+      // referencing `playerLeague` here because it's declared later in the
+      // component and referencing it before declaration causes a runtime
+      // ReferenceError (which produced the grey screen).
+      const league = player._league || leagueParam || 'nfl';
+      const extractNumericId = (obj, fallbackId) => {
+        if (!obj && !fallbackId) return null;
+        if (String(fallbackId).match(/^\d+$/)) return String(fallbackId);
+        try {
+          const head = obj?.head || obj?.headshot || obj?.photo || obj?.images?.[0]?.url || obj?.headshot?.href || null;
+          if (head) {
+            const m = String(head).match(/\/(?:full|players)\/(?:full\/)?(\d+)\.png/) || String(head).match(/\/(\d+)\.png/);
+            if (m && m[1]) return m[1];
+          }
+        } catch (e) {}
+        try {
+          const r = obj?.raw || obj;
+          const link = r?.link?.web || r?.links?.web?.href || r?.canonicalUrl || r?.url || null;
+          if (link) {
+            const m2 = String(link).match(/\/(?:id|_id)\/(\d+)/) || String(link).match(/\/(\d+)\//);
+            if (m2 && m2[1]) return m2[1];
+          }
+        } catch (e) {}
+        return null;
+      };
+
+      const athleteId = extractNumericId(player, player?.id || player?.espnId || id);
+      try {
+        if (athleteId) {
+          const s = await espnApi.getPlayerSplits(league, athleteId);
+          if (mounted) setSplitsData(s || null);
+          const g = await espnApi.getPlayerGamelog(league, athleteId);
+          if (mounted) setGamelogData(g || null);
+          const fn = await espnApi.getPlayerFantasyNews(athleteId, 50);
+          if (mounted && Array.isArray(fn)) setFantasyNews(fn || []);
+        }
+      } catch (e) {}
+    })();
+    return () => { mounted = false; };
+  }, [player, id, leagueParam]);
+
   if (!player) return (
     <div className="player-page">Loading {loadingName ? (`${loadingName}`) : (`player ${id}`)}…</div>
   );
   const name = player?.name || player?.displayName || player?.fullName || player?.headline;
   const head = player?.head || player?.headshot?.href || player?.photo?.href || player?.images?.[0]?.url || null;
-  const teamObj = player?.team || (player?.team && player.team.team) || null;
+  const extractTeamObj = (p) => {
+    if (!p) return null;
+    // prefer explicit normalized overview team
+    if (p._overviewNormalized && p._overviewNormalized.team) return p._overviewNormalized.team;
+    if (p._overview && p._overview.team) return p._overview.team;
+    let t = p.team || null;
+    if (!t && p.teamName) t = { displayName: p.teamName };
+    // drill into common wrappers
+    try {
+      if (t && t.detail && t.detail.team) t = t.detail.team;
+      if (t && t.team && (t.team.displayName || t.team.name)) t = t.team;
+    } catch (e) {}
+    // final normalization: ensure displayName exists when available
+    if (t && !(t.displayName || t.name) && (t.slug || t.abbreviation)) {
+      return { displayName: t.displayName || t.name || t.slug || t.abbreviation, abbreviation: t.abbreviation || null, slug: t.slug || null, logos: t.logos || t.images || [] };
+    }
+    return t;
+  };
+  const teamObj = extractTeamObj(player);
   const team = teamObj?.displayName || teamObj?.name || player?.teamName || null;
   // derive player's league: prefer explicit metadata, then route param, otherwise null
   const playerLeague = player?._league || leagueParam || null;
@@ -214,6 +585,67 @@ export default function Player() {
   };
   const height = formatHeight(_rawHeight);
   const weight = formatWeight(_rawWeight);
+  const overview = player?._overviewNormalized || player?._overview || null;
+
+  const renderSeasonTable = (season) => {
+    if (!season) return null;
+    const stats = (season.stats || season || {});
+    const keys = Object.keys(stats).filter(k => stats[k] !== null && stats[k] !== undefined).slice(0, 40);
+    // mapping for pretty labels
+    const labelMap = {
+      // passing
+      completions: 'Comp',
+      cmp: 'Comp',
+      passing_attempts: 'Att',
+  pass_att: 'Att',
+  passAttempts: 'Att',
+      completion_percentage: 'Comp %',
+      completion_rate: 'Comp %',
+      passing_yards: 'YDS',
+      pass_yards: 'YDS',
+      passYds: 'YDS',
+      passing_touchdowns: 'TD',
+      pass_tds: 'TD',
+      interceptions: 'INT',
+      ints: 'INT',
+      passer_rating: 'RTG',
+      // rushing/receiving
+      rushing_attempts: 'Att',
+      rushAtt: 'Att',
+      rushing_yards: 'YDS',
+      rec: 'REC',
+      receptions: 'REC',
+      receiving_yards: 'YDS',
+      receiving_targets: 'TGT',
+      receiving_touchdowns: 'TD',
+      // NBA common
+      games_played: 'GP',
+      minutes_per_game: 'MPG',
+      points_per_game: 'PTS',
+      rebounds_per_game: 'REB',
+      assists_per_game: 'AST',
+      field_goal_percentage: 'FG%',
+      '3point_field_goal_percentage': '3P%',
+      free_throw_percentage: 'FT%'
+    };
+    const prettyLabel = (k) => {
+      if (!k) return k;
+      if (labelMap[k]) return labelMap[k];
+      // fallback: replace underscores and camelCase -> Title Case
+      const fromSnake = String(k).replace(/([A-Z])/g, ' $1').replace(/_/g, ' ');
+      return fromSnake.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    };
+    return (
+      <table className="overview-season-table">
+        <thead><tr><th>Stat</th><th>Value</th></tr></thead>
+        <tbody>
+          {keys.map(k => (
+            <tr key={k}><td className="stat-key">{prettyLabel(String(k))}</td><td className="stat-val">{String(stats[k])}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    );
+  };
   // prefer currentSeasonStats; otherwise select the most recent season (highest season year) as offseason fallback
   // Helper: choose best season object (prefer explicit currentSeasonStats, then seasons[].isCurrent, then highest season year)
   const chooseBestSeason = (p) => {
@@ -235,27 +667,11 @@ export default function Player() {
     if (p.currentSeasonStats && hasNumericStats(p.currentSeasonStats)) return { stats: p.currentSeasonStats, seasonLabel: 'current' };
     const seasons = p.seasons || [];
     if (Array.isArray(seasons) && seasons.length) {
-      // prefer an explicit isCurrent flag
-      const current = seasons.find(s => s.isCurrent || String(s.season).toLowerCase() === 'current');
+      // prefer an explicit isCurrent === true flag ONLY. Do NOT use seasons where isCurrent is explicitly false.
+      const current = seasons.find(s => s.isCurrent === true);
       if (current && (current.stats || Object.keys(current).length)) return { stats: current.stats || current, seasonLabel: current.season || (current.raw && (current.raw.season || current.raw.seasonYear)) || 'current' };
-      // else pick the season with the highest numeric year (parse values like '2024-25' or '2024')
-      try {
-        const parseYear = (val) => {
-          if (!val && val !== 0) return 0;
-          const s = String(val);
-          const m = s.match(/(\d{4})/); // grab first 4-digit year
-          if (m) return parseInt(m[1], 10);
-          const n = parseInt(s, 10);
-          return isNaN(n) ? 0 : n;
-        };
-        const mapped = seasons.map(s => ({ s, year: parseYear(s.season || s.seasonYear || (s.raw && (s.raw.season || s.raw.seasonYear)) || 0) }));
-        mapped.sort((a,b) => b.year - a.year);
-        const top = mapped[0];
-        if (top) return { stats: top.s.stats || top.s, seasonLabel: top.s.season || top.s.seasonYear || String(top.year) };
-      } catch (e) { /* fallthrough */ }
-      // last resort: first season entry
-      const first = seasons[0];
-      return { stats: first.stats || first, seasonLabel: first.season || first.seasonYear || 'last' };
+      // If no explicit current season present, do not fall back to non-current seasons (respect 'isCurrent:false' markers)
+      return null;
     }
     return null;
   };
@@ -310,7 +726,12 @@ export default function Player() {
   try { console.debug && console.debug('Player enrichment', { id: player?.id || id, league: playerLeague, enrichment: player?._enrichmentSource, seasonLabel: statsSeasonLabel, stats: currentStats }); } catch (e) {}
 
   return (
+    <ErrorBoundary>
     <div className="player-page">
+      {/* Debug banner to surface key state when the page appears blank */}
+      <div style={{padding:6,background:'#eee',color:'#333',fontSize:12,borderBottom:'1px solid #ddd'}}>
+        Debug: route id={String(id)} | playerId={String(player?.id || '')} | league={String(player?._league || leagueParam || '')} | enrichment={String(player?._enrichmentSource || '')} | activeTab={activeTab}
+      </div>
       <div className="player-hero">
         {head ? <img src={head} alt={name} className="player-headshot" /> : <div className="player-headshot placeholder" />}
         <div>
@@ -328,14 +749,233 @@ export default function Player() {
           </div>
           {/* Follow button placed next to player meta */}
           <div style={{marginTop:8}}>
-            <FollowButton entityType="player" entityId={player?.id || id} />
+            <FollowButton entityType="player" entityId={player?.id || id} league={playerLeague} />
           </div>
+        </div>
+      </div>
+
+      <div className="player-tabs" style={{marginTop:16}}>
+        <div style={{display:'flex',gap:8,marginBottom:8}}>
+          <button onClick={() => setActiveTab('overview')} className={activeTab === 'overview' ? 'tab active' : 'tab'}>Overview</button>
+          <button onClick={() => setActiveTab('stats')} className={activeTab === 'stats' ? 'tab active' : 'tab'}>Stats</button>
+          <button onClick={() => setActiveTab('gamelog')} className={activeTab === 'gamelog' ? 'tab active' : 'tab'}>Gamelog</button>
+          <button onClick={() => setActiveTab('news')} className={activeTab === 'news' ? 'tab active' : 'tab'}>News</button>
+        </div>
+
+        <div className="tab-content">
+          {activeTab === 'stats' && (
+            <div>
+              <strong>Stats (site.web.api splits)</strong>
+              <div style={{marginTop:8}}>
+                {splitsData ? (
+                  (() => {
+                    // try to parse canonical statistics root
+                    const statsRoot = splitsData?.statistics || splitsData?.stats || splitsData;
+                    if (statsRoot && Array.isArray(statsRoot.splits) && (Array.isArray(statsRoot.labels) || Array.isArray(statsRoot.names) || Array.isArray(statsRoot.displayNames))) {
+                      const labels = statsRoot.labels || statsRoot.names || statsRoot.displayNames || [];
+                      const mapLabelsToKey = (lbl) => String(lbl).replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '').toLowerCase();
+                      const built = [];
+                      for (const sp of statsRoot.splits) {
+                        const display = sp.displayName || sp.label || sp.name || sp.season || '';
+                        const vals = Array.isArray(sp.stats) ? sp.stats : (sp.stats && typeof sp.stats === 'object' ? Object.values(sp.stats) : []);
+                        const statsObj = {};
+                        for (let i = 0; i < labels.length; i++) {
+                          const lbl = labels[i] || i;
+                          const key = mapLabelsToKey(lbl);
+                          let rawVal = vals[i] !== undefined && vals[i] !== null ? vals[i] : null;
+                          if (rawVal !== null) rawVal = String(rawVal).replace(/,/g, '');
+                          const val = rawVal !== null && rawVal !== '' ? (isNaN(Number(rawVal)) ? rawVal : Number(rawVal)) : null;
+                          if (val !== null) statsObj[key] = val;
+                        }
+                        built.push({ season: display || null, stats: statsObj, raw: sp });
+                      }
+                      // prefer regular season split
+                      const regs = built.filter(b => String(b.season || '').toLowerCase().includes('regular'));
+                      const chosen = regs.length ? regs[0] : (built[0] || null);
+                      return chosen ? renderSeasonTable(chosen) : <div style={{color:'var(--muted)'}}>No splits found</div>;
+                    }
+                    return <div style={{color:'var(--muted)'}}>No splits available for this player.</div>;
+                  })()
+                ) : (
+                  <div style={{color:'var(--muted)'}}>Loading splits…</div>
+                )}
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'gamelog' && (
+            <div>
+              <strong>Gamelog</strong>
+              <div style={{marginTop:8}}>
+                {gamelogData ? (
+                  (() => {
+                    const games = gamelogData?.games || gamelogData?.events || gamelogData?.items || gamelogData?.data || null;
+                    if (!games) return <div style={{color:'var(--muted)'}}>No gamelog data available.</div>;
+                    const arr = Array.isArray(games) ? games : (games?.entries || []);
+                    if (!arr || arr.length === 0) return <div style={{color:'var(--muted)'}}>No gamelog entries.</div>;
+                    return (
+                      <table className="overview-season-table">
+                        <thead><tr><th>Date</th><th>Oppt</th><th>Summary</th></tr></thead>
+                        <tbody>
+                          {arr.slice(0,50).map((g, i) => {
+                            const date = g.date || g.gameDate || g.eventDate || (g.raw && g.raw.date) || null;
+                            const opp = (g.opponent && (g.opponent.displayName || g.opponent.abbreviation)) || g.opponentName || (g.game && g.game.opponent) || null;
+                            const summary = g.summary || g.line || JSON.stringify(g.stats || g.box || g.raw || {}).slice(0,200);
+                            return <tr key={i}><td>{date}</td><td>{opp}</td><td style={{maxWidth:600}}>{summary}</td></tr>;
+                          })}
+                        </tbody>
+                      </table>
+                    );
+                  })()
+                ) : (
+                  <div style={{color:'var(--muted)'}}>Loading gamelog…</div>
+                )}
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'news' && (
+            <div>
+              <strong>News</strong>
+              <div style={{marginTop:8}}>
+                {((fantasyNews && fantasyNews.length) || (player && player._news && player._news.length) || (player && player._overviewStories && player._overviewStories.length)) ? (
+                  <div>
+                    {fantasyNews && fantasyNews.map((a, i) => (
+                      <div key={`fn-${i}`} style={{marginBottom:8}}>
+                        {a.title ? <div style={{fontWeight:600}}><a href={a.url} target="_blank" rel="noreferrer">{a.title}</a></div> : null}
+                        {a.summary ? <div style={{color:'var(--muted)'}}>{a.summary}</div> : null}
+                        {a.published ? <div style={{fontSize:12, color:'var(--muted)'}}>{a.published}</div> : null}
+                      </div>
+                    ))}
+                    {player._news && player._news.map((a, i) => (
+                      <div key={`pn-${i}`} style={{marginBottom:8}}>
+                        {a.title ? <div style={{fontWeight:600}}><a href={a.url} target="_blank" rel="noreferrer">{a.title}</a></div> : null}
+                        {a.summary ? <div style={{color:'var(--muted)'}}>{a.summary}</div> : null}
+                        {a.published ? <div style={{fontSize:12, color:'var(--muted)'}}>{a.published}</div> : null}
+                      </div>
+                    ))}
+                    {player._overviewStories && player._overviewStories.map((s, i) => (
+                      <div key={`os-${i}`} style={{marginBottom:8}}>
+                        {s.title ? <div style={{fontWeight:600}}>{s.title}</div> : null}
+                        {s.summary ? <div style={{color:'var(--muted)'}}>{s.summary}</div> : null}
+                        {s.url ? <div><a href={s.url} target="_blank" rel="noreferrer">Read</a></div> : null}
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div style={{color:'var(--muted)'}}>No news available.</div>
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div className="player-overview">
+        <h4>Athlete overview</h4>
+        {overview ? (
+          <div className="overview-grid">
+            <div className="overview-left">
+              {overview.birthDate && <div><strong>Born:</strong> {overview.birthDate}</div>}
+              {overview.birthPlace && <div><strong>Birthplace:</strong> {overview.birthPlace}</div>}
+              {overview.college && <div><strong>College:</strong> {overview.college}</div>}
+              {overview.school && <div><strong>School:</strong> {overview.school}</div>}
+              {overview.draft && (
+                <div style={{marginTop:8}}>
+                  <strong>Draft</strong>
+                  <div>Year: {overview.draft?.year ?? overview.draft?.season}</div>
+                  <div>Round: {overview.draft?.round ?? overview.draft?.roundNumber}</div>
+                  <div>Pick: {overview.draft?.pick ?? overview.draft?.overall}</div>
+                  <div>Team: {overview.draft?.team ?? overview.draft?.teamName}</div>
+                </div>
+              )}
+              {overview.status && <div style={{marginTop:8}}><strong>Status:</strong> {overview.status}</div>}
+            </div>
+            <div className="overview-right">
+              {overview.position && <div><strong>Position:</strong> {overview.position}</div>}
+              {overview.height && <div><strong>Height:</strong> {overview.height}</div>}
+              {overview.weight && <div><strong>Weight:</strong> {overview.weight}</div>}
+              {overview.headshot && <div style={{marginTop:8}}><img src={overview.headshot} alt="headshot" className="player-headshot small"/></div>}
+            </div>
+          </div>
+        ) : (
+          <div style={{color:'var(--muted)'}}>No athlete overview data available.</div>
+        )}
+
+        {overview && overview.contracts && overview.contracts.length > 0 && (
+          <div className="overview-section">
+            <strong>Contracts</strong>
+            <div className="contracts-list">
+              {overview.contracts.map((c, i) => (
+                <div key={i} className="contract-row"><div>{c.team || c.teamName || ''}</div><div>{c.amount || c.totalValue || c.value || ''}</div><div>{c.start && c.end ? `${c.start} → ${c.end}` : ''}</div></div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {overview && overview.transactions && overview.transactions.length > 0 && (
+          <div className="overview-section">
+            <strong>Transactions</strong>
+            <ul>
+              {overview.transactions.map((t,i) => <li key={i}>{t.date ? `${t.date} — ` : ''}{t.description || t.event || JSON.stringify(t)}</li>)}
+            </ul>
+          </div>
+        )}
+
+        {overview && overview.injuries && overview.injuries.length > 0 && (
+          <div className="overview-section">
+            <strong>Injuries</strong>
+            <ul>
+              {overview.injuries.map((inj,i) => <li key={i}>{inj.status || inj.description || JSON.stringify(inj)}</li>)}
+            </ul>
+          </div>
+        )}
+
+        {overview && overview.seasons && overview.seasons.length > 0 && (
+          <div className="overview-section">
+            <strong>Seasons</strong>
+            <div className="seasons-list">
+              {overview.seasons.map((s, idx) => (
+                <div key={idx} className="season-item">
+                  <div className="season-title">{s.season || s.seasonYear || s.displayName || `Season ${idx+1}`}</div>
+                  {renderSeasonTable(s)}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="overview-section">
+          <button className="toggle-raw" onClick={() => setShowRawOverview(!showRawOverview)}>{showRawOverview ? 'Hide' : 'Show'} raw overview JSON</button>
+          {showRawOverview && <pre className="raw-json">{JSON.stringify(overview || player || {}, null, 2)}</pre>}
         </div>
       </div>
 
       <div className="player-bio">
         <strong>About</strong>
         <div style={{marginTop:8}}>{player?.bio || player?.shortBio || player?.headline || 'No biography available.'}</div>
+
+        {((player && player._overviewStories && player._overviewStories.length) || (player && player._news && player._news.length)) && (
+          <div style={{marginTop:12}} className="overview-section">
+            <strong>Stories & News</strong>
+            <div style={{marginTop:8}}>
+              {player._overviewStories && player._overviewStories.map((s, i) => (
+                <div key={`ov-${i}`} style={{marginBottom:8}}>
+                  {s.title ? <div style={{fontWeight:600}}>{s.title}</div> : null}
+                  {s.summary ? <div style={{color:'var(--muted)'}}>{s.summary}</div> : null}
+                  {s.url ? <div><a href={s.url} target="_blank" rel="noreferrer">Read</a></div> : null}
+                </div>
+              ))}
+              {player._news && player._news.map((a, i) => (
+                <div key={`news-${i}`} style={{marginBottom:8}}>
+                  {a.title ? <div style={{fontWeight:600}}><a href={a.url} target="_blank" rel="noreferrer">{a.title}</a></div> : null}
+                  {a.summary ? <div style={{color:'var(--muted)'}}>{a.summary}</div> : null}
+                  {a.published ? <div style={{fontSize:12, color:'var(--muted)'}}>{a.published}</div> : null}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {(height || weight || position) && (
           <div style={{marginTop:8, color:'var(--muted)'}}>
@@ -448,5 +1088,6 @@ export default function Player() {
         </div>
       </div>
     </div>
+    </ErrorBoundary>
   );
 }

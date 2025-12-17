@@ -20,6 +20,8 @@ import nflLogo from "../assets/NFL_logo.png";
 import nbaLogo from "../assets/NBA_logo.png";
 import appletvLogo from "../assets/appletv_logo.png";
 import cbsLogo from "../assets/CBS_logo.png";
+import mlb_logo from "../assets/mlb_logo.png";
+import { TranslatedText } from "./TranslatedText";
 
 // Logo Mapping
 const logoMap = {
@@ -34,7 +36,8 @@ const logoMap = {
   cbs: cbsLogo,
   apple_tv: appletvLogo,
   NBA: nbaLogo,
-  rsn: nbaLogo
+  rsn: nbaLogo,
+  mlb: mlb_logo
 };
 
 const ymd = (d) => d.toISOString().slice(0, 10);
@@ -68,7 +71,8 @@ function buildBroadcastUrl(key) {
     apple_tv: 'https://tv.apple.com',
     nba: 'https://www.nba.com/watch',
     nfl: 'https://www.nfl.com/',
-    rsn: 'https://www.nba.com/schedule'
+    rsn: 'https://www.nba.com/schedule',
+    mlb: 'https://www.mlb.com/live-stream-games'
   };
   return map[name] || null;
 }
@@ -82,6 +86,8 @@ export default function ScheduleBar() {
   const [userPrefs, setUserPrefs] = useState({});
   const [loading, setLoading] = useState(true);
   const { session } = useSessionForSchedulesPage();
+
+   const [hasInitializedFilter, setHasInitializedFilter] = useState(false);
 
   // Persist state to localStorage
   useEffect(() => {
@@ -160,16 +166,22 @@ export default function ScheduleBar() {
   }, [session]);
 
   // Set filterState to 'Favorites' by default if user has favorites for selected sport
-  useEffect(() => {
-    if (loading) return;
-    // Only set if filterState is still at initial value
-    if (filterState === 'none') {
-      const favTeams = userPrefs.favorite_teams?.[sport.toUpperCase()] || userPrefs.favorite_teams?.[sport] || [];
-      if (favTeams && favTeams.length > 0) {
+    useEffect(() => {
+      if (loading || hasInitializedFilter) return;
+
+      const favTeams =
+        userPrefs.favorite_teams?.[sport.toUpperCase()] ||
+        userPrefs.favorite_teams?.[sport] ||
+        [];
+
+      if (filterState === 'none' && favTeams && favTeams.length > 0) {
         setFilterState('favorites');
       }
-    }
-  }, [loading, userPrefs, sport, filterState]);
+
+      // Mark that we've done our one-time initialization so we don't
+      // override user's manual choices later.
+      setHasInitializedFilter(true);
+    }, [loading, hasInitializedFilter, userPrefs.favorite_teams, sport, filterState, setFilterState]);
 
   // Build schedule data based on filterState and selected sport
   let scheduleData;
@@ -314,7 +326,7 @@ export default function ScheduleBar() {
     }
 
     return gameCards;
-  }, [sport, filterState, userPrefs.favorite_teams]);
+  }, [sport, filterState, filteredScheduleData, liveGames, sportForLive]);
 
   const key = ymdLocal(selected); // adjust for local timezone
   const games = processGames[key] || [];
@@ -322,7 +334,8 @@ export default function ScheduleBar() {
   function renderGameCard(g, sportKey) {
     const broadcastInfo = getBroadcastInfo(g, sportKey);
     return (
-      <a key={g.id} href={`/game/${sportKey}/${g.id}`} className="sb-card">
+      // <a key={g.id} href={`/game/${sportKey}/${g.id}`} className="sb-card"></a>
+      <a key={g.id} className="sb-card">
         <div className="sb-card-top">
           <div className="sb-teams">
             <div className="sb-team">{g.awayTeam}</div>
@@ -337,11 +350,11 @@ export default function ScheduleBar() {
             )}
           </div>
         </div>
-        
-        {g.venue && <div className="sb-venue">Location: {g.venue}</div>}
-        
+
+        {g.venue && <div className="sb-venue"><TranslatedText>Location:</TranslatedText> {g.venue}</div>}
+
         <div className="sb-watch-section">
-          <span className="sb-watch-title">Where to Watch:</span>
+          <span className="sb-watch-title"><TranslatedText>Where to Watch:</TranslatedText></span>
           <div className="sb-broadcasters">
             {Array.isArray(broadcastInfo) ? (
               broadcastInfo.map(key => {
@@ -366,19 +379,19 @@ export default function ScheduleBar() {
     );
   }
 
-  if (loading)    return <p className="prefs-note">Loading preferences…</p>;
+if (loading)    return <p className="prefs-note"><TranslatedText>Loading preferences…</TranslatedText></p>;
 return (
     <div className="sb-wrap">
       <div className="sb-top">
         <div className="sb-title-container">
-          <h3>{sport === 'all' || filterState === 'none' ? 'All Sports' : sport.toUpperCase()} Schedule</h3>
-          {sport === 'nfl' && <a href="https://www.nfl.com/ways-to-watch/by-week/" target="_blank" rel="noopener noreferrer" className="sb-nfl-link">Official Ways to Watch</a>}
-          {sport === 'nba' && <a href="https://www.nba.com/schedule" target="_blank" rel="noopener noreferrer" className="sb-nfl-link">Official Schedule</a>}
+          <h3>{sport === 'all' || filterState === 'none' ? <TranslatedText>All Sports</TranslatedText> : sport.toUpperCase()} Schedule</h3>
+          {sport === 'nfl' && <a href="https://www.nfl.com/ways-to-watch/by-week/" target="_blank" rel="noopener noreferrer" className="sb-nfl-link"><TranslatedText>Official Ways to Watch</TranslatedText></a>}
+          {sport === 'nba' && <a href="https://www.nba.com/schedule" target="_blank" rel="noopener noreferrer" className="sb-nfl-link"><TranslatedText>Official Schedule</TranslatedText></a>}
         </div>
 
         <div className="sb-actions" style={{ display: "flex", gap: 12, alignItems: "center" }}>
           <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
-            <span style={{ fontSize: 12, opacity: 0.8 }}>Filter</span>
+            <span style={{ fontSize: 12, opacity: 0.8 }}><TranslatedText>Filter</TranslatedText></span>
             <select
               value={filterState}
               onChange={(e) => {
@@ -388,15 +401,15 @@ return (
               }}
               className="sb-date-input"
             >
-              <option value="none">Off (All Sports)</option>
-              <option value="sports">By Selected Sport</option>
-              <option value="favorites">Favorites Only</option>
+              <option value="none"><TranslatedText>Off (All Sports)</TranslatedText></option>
+              <option value="sports"><TranslatedText>By Selected Sport</TranslatedText></option>
+              <option value="favorites"><TranslatedText>Favorites Only</TranslatedText></option>
             </select>
           </label>
 
           {filterState === 'sports' && (
             <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
-              <span style={{ fontSize: 12, opacity: 0.8 }}>Sport</span>
+              <span style={{ fontSize: 12, opacity: 0.8 }}>{<TranslatedText>Sport</TranslatedText>}</span>
               <select
                 value={sport}
                 onChange={(e) => {
@@ -406,9 +419,11 @@ return (
                 }}
                 className="sb-date-input"
               >
-                <option value="all">All Sports</option>
+                <option value="all">{<TranslatedText>All Sports</TranslatedText>}</option>
                 {userPrefs.sports_prefs?.map((s) => (
-                  <option key={s.toLowerCase()} value={s.toLowerCase()}>{s.toUpperCase()}</option>
+                  <option key={s.toLowerCase()} value={s.toLowerCase()}>
+                    <TranslatedText>{s.toUpperCase()}</TranslatedText>
+                  </option>
                 ))}
               </select>
             </label>
@@ -416,9 +431,9 @@ return (
 
           <div className="sb-date-picker-container">
             <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
-              <span style={{ fontSize: 12, opacity: 0.8 }}>Date</span>
+              <span style={{ fontSize: 12, opacity: 0.8 }}><TranslatedText>Date</TranslatedText></span>
               <div className="sb-date-display" onClick={() => document.getElementById('date-picker').showPicker()}>
-                {selected.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" })}
+                <TranslatedText>{selected.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" })}</TranslatedText>
               </div>
               <input
                 id="date-picker"
@@ -437,7 +452,7 @@ return (
 
       <div className="sb-cards">
         {games.length === 0 ? (
-          <div className="sb-state">No games on this date.</div>
+          <div className="sb-state"><TranslatedText>No games on this date.</TranslatedText></div>
         ) : (
           (filterState === "none") ? (
             Object.entries(games.reduce((acc, g) => { (acc[g.sport] ||= []).push(g); return acc; }, {}))

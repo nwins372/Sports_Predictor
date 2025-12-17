@@ -1,5 +1,5 @@
 .local-sports-container {
-  max-width: 1250px;
+  max-width: 1350px;
   margin: 40px auto;
   padding: 20px;
   background: #0b1220; 
@@ -67,7 +67,7 @@
   border: none;
   margin: 0;
   transition: background 0.2s, transform 0.2s;
-}
+} 
 
 /* Search button */
 .local-sports-form .input-row button[type="submit"] {
@@ -96,23 +96,6 @@
 }
 .local-sports-form .input-row .dropbtn:hover {
   background: #d97706;
-}
-
-/* Specific styling for get-location button - MUST come before .dropbtn */
-.local-sports-form .input-row .get-location-button {
-  color: white !important;
-  background-color: #10b981 !important; /* green color for distinction */
-  padding: 10px 20px;
-  border: none;
-  border-radius: 24px !important; /* pill shape */
-  font-weight: 600;
-}
-
-.local-sports-form .input-row .get-location-button:hover {
-  background-color: #059669 !important; /* darker green on hover */
-  cursor: pointer;
-  transform: scale(1.05);
-  transition: all 0.2s ease;
 }
 
 .local-sports-form .input-row .dropbtn {
@@ -152,14 +135,6 @@
 }
 
 .team-card-logo {
-  width: 60px; 
-  height: 60px;
-  object-fit: contain;
-  margin: 12px auto 8px auto; 
-  display: block;
-}
-
-.team-card-logo {
   width: 60px;  
   height: 60px;
   object-fit: contain; 
@@ -176,6 +151,10 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   
   text-align: center; 
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .team-card-league {
@@ -192,6 +171,8 @@
 }
 
 .team-card-name {
+  display: block;
+  margin-top: 6px;
   font-size: 1.25rem; 
   font-weight: 700;
   color: #f1f5f9; 

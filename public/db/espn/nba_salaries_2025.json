@@ -1,0 +1,3768 @@
+{
+  "year": "2025",
+  "generated": "2025-11-09T03:26:19.935Z",
+  "list": [
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Stephen Curry, G",
+      "team": "Golden State Warriors",
+      "salary": 55761216,
+      "salaryRaw": "$55,761,216"
+    },
+    {
+      "name": "Joel Embiid, C",
+      "team": "Philadelphia 76ers",
+      "salary": 51415938,
+      "salaryRaw": "$51,415,938"
+    },
+    {
+      "name": "Nikola Jokic, C",
+      "team": "Denver Nuggets",
+      "salary": 51415938,
+      "salaryRaw": "$51,415,938"
+    },
+    {
+      "name": "Kevin Durant, F",
+      "team": "Phoenix Suns",
+      "salary": 51179021,
+      "salaryRaw": "$51,179,021"
+    },
+    {
+      "name": "Bradley Beal, G",
+      "team": "Phoenix Suns",
+      "salary": 50203930,
+      "salaryRaw": "$50,203,930"
+    },
+    {
+      "name": "Kawhi Leonard, F",
+      "team": "LA Clippers",
+      "salary": 49350000,
+      "salaryRaw": "$49,350,000"
+    },
+    {
+      "name": "Devin Booker, G",
+      "team": "Phoenix Suns",
+      "salary": 49205800,
+      "salaryRaw": "$49,205,800"
+    },
+    {
+      "name": "Paul George, F",
+      "team": "Philadelphia 76ers",
+      "salary": 49205800,
+      "salaryRaw": "$49,205,800"
+    },
+    {
+      "name": "Karl-Anthony Towns, C",
+      "team": "New York Knicks",
+      "salary": 49205800,
+      "salaryRaw": "$49,205,800"
+    },
+    {
+      "name": "Jaylen Brown, G",
+      "team": "Boston Celtics",
+      "salary": 49205800,
+      "salaryRaw": "$49,205,800"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Jimmy Butler III, F",
+      "team": "Golden State Warriors",
+      "salary": 48798677,
+      "salaryRaw": "$48,798,677"
+    },
+    {
+      "name": "Giannis Antetokounmpo, F",
+      "team": "Milwaukee Bucks",
+      "salary": 48787676,
+      "salaryRaw": "$48,787,676"
+    },
+    {
+      "name": "Damian Lillard, G",
+      "team": "Milwaukee Bucks",
+      "salary": 48787676,
+      "salaryRaw": "$48,787,676"
+    },
+    {
+      "name": "LeBron James, F",
+      "team": "Los Angeles Lakers",
+      "salary": 48728845,
+      "salaryRaw": "$48,728,845"
+    },
+    {
+      "name": "Zach LaVine, G",
+      "team": "Sacramento Kings",
+      "salary": 44531940,
+      "salaryRaw": "$44,531,940"
+    },
+    {
+      "name": "Rudy Gobert, C",
+      "team": "Minnesota Timberwolves",
+      "salary": 43827587,
+      "salaryRaw": "$43,827,587"
+    },
+    {
+      "name": "Anthony Davis, F",
+      "team": "Dallas Mavericks",
+      "salary": 43219440,
+      "salaryRaw": "$43,219,440"
+    },
+    {
+      "name": "Luka Doncic, G",
+      "team": "Los Angeles Lakers",
+      "salary": 43031940,
+      "salaryRaw": "$43,031,940"
+    },
+    {
+      "name": "Trae Young, G",
+      "team": "Atlanta Hawks",
+      "salary": 43031940,
+      "salaryRaw": "$43,031,940"
+    },
+    {
+      "name": "Fred VanVleet, G",
+      "team": "Houston Rockets",
+      "salary": 42846615,
+      "salaryRaw": "$42,846,615"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Lauri Markkanen, F",
+      "team": "Utah Jazz",
+      "salary": 42176400,
+      "salaryRaw": "$42,176,400"
+    },
+    {
+      "name": "Anthony Edwards, G",
+      "team": "Minnesota Timberwolves",
+      "salary": 42176400,
+      "salaryRaw": "$42,176,400"
+    },
+    {
+      "name": "Tyrese Haliburton, G",
+      "team": "Indiana Pacers",
+      "salary": 42176000,
+      "salaryRaw": "$42,176,000"
+    },
+    {
+      "name": "Pascal Siakam, F",
+      "team": "Indiana Pacers",
+      "salary": 42176000,
+      "salaryRaw": "$42,176,000"
+    },
+    {
+      "name": "Kyrie Irving, G",
+      "team": "Dallas Mavericks",
+      "salary": 41000000,
+      "salaryRaw": "$41,000,000"
+    },
+    {
+      "name": "Domantas Sabonis, F",
+      "team": "Sacramento Kings",
+      "salary": 40500000,
+      "salaryRaw": "$40,500,000"
+    },
+    {
+      "name": "Ja Morant, G",
+      "team": "Memphis Grizzlies",
+      "salary": 36725670,
+      "salaryRaw": "$36,725,670"
+    },
+    {
+      "name": "Darius Garland, G",
+      "team": "Cleveland Cavaliers",
+      "salary": 36725670,
+      "salaryRaw": "$36,725,670"
+    },
+    {
+      "name": "Zion Williamson, F",
+      "team": "New Orleans Pelicans",
+      "salary": 36725670,
+      "salaryRaw": "$36,725,670"
+    },
+    {
+      "name": "OG Anunoby, F",
+      "team": "New York Knicks",
+      "salary": 36637931,
+      "salaryRaw": "$36,637,931"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Brandon Ingram, F",
+      "team": "New Orleans Pelicans",
+      "salary": 36016200,
+      "salaryRaw": "$36,016,200"
+    },
+    {
+      "name": "Jamal Murray, G",
+      "team": "Denver Nuggets",
+      "salary": 36016200,
+      "salaryRaw": "$36,016,200"
+    },
+    {
+      "name": "Shai Gilgeous-Alexander, G",
+      "team": "Oklahoma City Thunder",
+      "salary": 35859950,
+      "salaryRaw": "$35,859,950"
+    },
+    {
+      "name": "Michael Porter Jr., F",
+      "team": "Denver Nuggets",
+      "salary": 35859950,
+      "salaryRaw": "$35,859,950"
+    },
+    {
+      "name": "Donovan Mitchell, G",
+      "team": "Cleveland Cavaliers",
+      "salary": 35410310,
+      "salaryRaw": "$35,410,310"
+    },
+    {
+      "name": "LaMelo Ball, G",
+      "team": "Charlotte Hornets",
+      "salary": 35147000,
+      "salaryRaw": "$35,147,000"
+    },
+    {
+      "name": "Tyrese Maxey, G",
+      "team": "Philadelphia 76ers",
+      "salary": 35147000,
+      "salaryRaw": "$35,147,000"
+    },
+    {
+      "name": "De'Aaron Fox, G",
+      "team": "San Antonio Spurs",
+      "salary": 34848340,
+      "salaryRaw": "$34,848,340"
+    },
+    {
+      "name": "Bam Adebayo, C",
+      "team": "Miami Heat",
+      "salary": 34848340,
+      "salaryRaw": "$34,848,340"
+    },
+    {
+      "name": "Jayson Tatum, F",
+      "team": "Boston Celtics",
+      "salary": 34848340,
+      "salaryRaw": "$34,848,340"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Desmond Bane, G",
+      "team": "Memphis Grizzlies",
+      "salary": 34005250,
+      "salaryRaw": "$34,005,250"
+    },
+    {
+      "name": "Deandre Ayton, C",
+      "team": "Portland Trail Blazers",
+      "salary": 34005126,
+      "salaryRaw": "$34,005,126"
+    },
+    {
+      "name": "James Harden, G",
+      "team": "LA Clippers",
+      "salary": 33653846,
+      "salaryRaw": "$33,653,846"
+    },
+    {
+      "name": "CJ McCollum, G",
+      "team": "New Orleans Pelicans",
+      "salary": 33333333,
+      "salaryRaw": "$33,333,333"
+    },
+    {
+      "name": "Julius Randle, F",
+      "team": "Minnesota Timberwolves",
+      "salary": 33073920,
+      "salaryRaw": "$33,073,920"
+    },
+    {
+      "name": "Immanuel Quickley, G",
+      "team": "Toronto Raptors",
+      "salary": 32500000,
+      "salaryRaw": "$32,500,000"
+    },
+    {
+      "name": "Khris Middleton, F",
+      "team": "Washington Wizards",
+      "salary": 31666676,
+      "salaryRaw": "$31,666,676"
+    },
+    {
+      "name": "Isaiah Hartenstein, C",
+      "team": "Oklahoma City Thunder",
+      "salary": 30000000,
+      "salaryRaw": "$30,000,000"
+    },
+    {
+      "name": "Jrue Holiday, G",
+      "team": "Boston Celtics",
+      "salary": 30000000,
+      "salaryRaw": "$30,000,000"
+    },
+    {
+      "name": "Jerami Grant, F",
+      "team": "Portland Trail Blazers",
+      "salary": 29793104,
+      "salaryRaw": "$29,793,104"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Jordan Poole, G",
+      "team": "Washington Wizards",
+      "salary": 29651786,
+      "salaryRaw": "$29,651,786"
+    },
+    {
+      "name": "Dejounte Murray, G",
+      "team": "New Orleans Pelicans",
+      "salary": 29535801,
+      "salaryRaw": "$29,535,801"
+    },
+    {
+      "name": "Devin Vassell, G",
+      "team": "San Antonio Spurs",
+      "salary": 29347826,
+      "salaryRaw": "$29,347,826"
+    },
+    {
+      "name": "Kristaps Porzingis, C",
+      "team": "Boston Celtics",
+      "salary": 29268293,
+      "salaryRaw": "$29,268,293"
+    },
+    {
+      "name": "Tyler Herro, G",
+      "team": "Miami Heat",
+      "salary": 29000000,
+      "salaryRaw": "$29,000,000"
+    },
+    {
+      "name": "Nic Claxton, C",
+      "team": "Brooklyn Nets",
+      "salary": 27556817,
+      "salaryRaw": "$27,556,817"
+    },
+    {
+      "name": "Miles Bridges, F",
+      "team": "Charlotte Hornets",
+      "salary": 27173913,
+      "salaryRaw": "$27,173,913"
+    },
+    {
+      "name": "John Collins, F",
+      "team": "Utah Jazz",
+      "salary": 26580000,
+      "salaryRaw": "$26,580,000"
+    },
+    {
+      "name": "Andrew Wiggins, F",
+      "team": "Miami Heat",
+      "salary": 26276786,
+      "salaryRaw": "$26,276,786"
+    },
+    {
+      "name": "Anfernee Simons, G",
+      "team": "Portland Trail Blazers",
+      "salary": 25892857,
+      "salaryRaw": "$25,892,857"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "RJ Barrett, F",
+      "team": "Toronto Raptors",
+      "salary": 25794643,
+      "salaryRaw": "$25,794,643"
+    },
+    {
+      "name": "Tobias Harris, F",
+      "team": "Detroit Pistons",
+      "salary": 25365854,
+      "salaryRaw": "$25,365,854"
+    },
+    {
+      "name": "Jaren Jackson Jr., F",
+      "team": "Memphis Grizzlies",
+      "salary": 25257798,
+      "salaryRaw": "$25,257,798"
+    },
+    {
+      "name": "Jonathan Isaac, F",
+      "team": "Orlando Magic",
+      "salary": 25000000,
+      "salaryRaw": "$25,000,000"
+    },
+    {
+      "name": "Jalen Brunson, G",
+      "team": "New York Knicks",
+      "salary": 24960001,
+      "salaryRaw": "$24,960,001"
+    },
+    {
+      "name": "Terry Rozier, G",
+      "team": "Miami Heat",
+      "salary": 24924126,
+      "salaryRaw": "$24,924,126"
+    },
+    {
+      "name": "Draymond Green, F",
+      "team": "Golden State Warriors",
+      "salary": 24107143,
+      "salaryRaw": "$24,107,143"
+    },
+    {
+      "name": "DeMar DeRozan, G",
+      "team": "Sacramento Kings",
+      "salary": 23400000,
+      "salaryRaw": "$23,400,000"
+    },
+    {
+      "name": "Mikal Bridges, G",
+      "team": "New York Knicks",
+      "salary": 23300000,
+      "salaryRaw": "$23,300,000"
+    },
+    {
+      "name": "Jaden McDaniels, F",
+      "team": "Minnesota Timberwolves",
+      "salary": 23017242,
+      "salaryRaw": "$23,017,242"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Brook Lopez, C",
+      "team": "Milwaukee Bucks",
+      "salary": 23000000,
+      "salaryRaw": "$23,000,000"
+    },
+    {
+      "name": "Bruce Brown, G",
+      "team": "New Orleans Pelicans",
+      "salary": 23000000,
+      "salaryRaw": "$23,000,000"
+    },
+    {
+      "name": "Aaron Gordon, F",
+      "team": "Denver Nuggets",
+      "salary": 22841455,
+      "salaryRaw": "$22,841,455"
+    },
+    {
+      "name": "Kentavious Caldwell-Pope, G",
+      "team": "Orlando Magic",
+      "salary": 22757000,
+      "salaryRaw": "$22,757,000"
+    },
+    {
+      "name": "Malcolm Brogdon, G",
+      "team": "Washington Wizards",
+      "salary": 22500000,
+      "salaryRaw": "$22,500,000"
+    },
+    {
+      "name": "Cameron Johnson, F",
+      "team": "Brooklyn Nets",
+      "salary": 22500000,
+      "salaryRaw": "$22,500,000"
+    },
+    {
+      "name": "Kyle Kuzma, F",
+      "team": "Milwaukee Bucks",
+      "salary": 22410605,
+      "salaryRaw": "$22,410,605"
+    },
+    {
+      "name": "Clint Capela, C",
+      "team": "Atlanta Hawks",
+      "salary": 22265280,
+      "salaryRaw": "$22,265,280"
+    },
+    {
+      "name": "Dillon Brooks, F",
+      "team": "Houston Rockets",
+      "salary": 22255493,
+      "salaryRaw": "$22,255,493"
+    },
+    {
+      "name": "De'Andre Hunter, F",
+      "team": "Cleveland Cavaliers",
+      "salary": 21696429,
+      "salaryRaw": "$21,696,429"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Lonzo Ball, G",
+      "team": "Chicago Bulls",
+      "salary": 21395348,
+      "salaryRaw": "$21,395,348"
+    },
+    {
+      "name": "Marcus Smart, G",
+      "team": "Washington Wizards",
+      "salary": 20210285,
+      "salaryRaw": "$20,210,285"
+    },
+    {
+      "name": "Derrick White, G",
+      "team": "Boston Celtics",
+      "salary": 20017429,
+      "salaryRaw": "$20,017,429"
+    },
+    {
+      "name": "Jarrett Allen, C",
+      "team": "Cleveland Cavaliers",
+      "salary": 20000000,
+      "salaryRaw": "$20,000,000"
+    },
+    {
+      "name": "Nikola Vucevic, C",
+      "team": "Chicago Bulls",
+      "salary": 20000000,
+      "salaryRaw": "$20,000,000"
+    },
+    {
+      "name": "Myles Turner, C",
+      "team": "Indiana Pacers",
+      "salary": 19928500,
+      "salaryRaw": "$19,928,500"
+    },
+    {
+      "name": "Jakob Poeltl, C",
+      "team": "Toronto Raptors",
+      "salary": 19500000,
+      "salaryRaw": "$19,500,000"
+    },
+    {
+      "name": "Duncan Robinson, F",
+      "team": "Miami Heat",
+      "salary": 19406000,
+      "salaryRaw": "$19,406,000"
+    },
+    {
+      "name": "Norman Powell, G",
+      "team": "LA Clippers",
+      "salary": 19241379,
+      "salaryRaw": "$19,241,379"
+    },
+    {
+      "name": "Bojan Bogdanovic, SF",
+      "team": "Brooklyn Nets",
+      "salary": 19032850,
+      "salaryRaw": "$19,032,850"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Keldon Johnson, F",
+      "team": "San Antonio Spurs",
+      "salary": 19000000,
+      "salaryRaw": "$19,000,000"
+    },
+    {
+      "name": "D'Angelo Russell, G",
+      "team": "Brooklyn Nets",
+      "salary": 18692307,
+      "salaryRaw": "$18,692,307"
+    },
+    {
+      "name": "Patrick Williams, F",
+      "team": "Chicago Bulls",
+      "salary": 18500000,
+      "salaryRaw": "$18,500,000"
+    },
+    {
+      "name": "Collin Sexton, G",
+      "team": "Utah Jazz",
+      "salary": 18350000,
+      "salaryRaw": "$18,350,000"
+    },
+    {
+      "name": "Josh Hart, G",
+      "team": "New York Knicks",
+      "salary": 18144000,
+      "salaryRaw": "$18,144,000"
+    },
+    {
+      "name": "Jusuf Nurkic, C",
+      "team": "Charlotte Hornets",
+      "salary": 18125000,
+      "salaryRaw": "$18,125,000"
+    },
+    {
+      "name": "Harrison Barnes, F",
+      "team": "San Antonio Spurs",
+      "salary": 18000000,
+      "salaryRaw": "$18,000,000"
+    },
+    {
+      "name": "Malik Monk, G",
+      "team": "Sacramento Kings",
+      "salary": 17405202,
+      "salaryRaw": "$17,405,202"
+    },
+    {
+      "name": "Bogdan Bogdanovic, G",
+      "team": "LA Clippers",
+      "salary": 17260000,
+      "salaryRaw": "$17,260,000"
+    },
+    {
+      "name": "Rui Hachimura, F",
+      "team": "Los Angeles Lakers",
+      "salary": 17000000,
+      "salaryRaw": "$17,000,000"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Kevin Huerter, G",
+      "team": "Chicago Bulls",
+      "salary": 16830357,
+      "salaryRaw": "$16,830,357"
+    },
+    {
+      "name": "Zach Collins, F",
+      "team": "Chicago Bulls",
+      "salary": 16741200,
+      "salaryRaw": "$16,741,200"
+    },
+    {
+      "name": "Caris LeVert, G",
+      "team": "Atlanta Hawks",
+      "salary": 16615384,
+      "salaryRaw": "$16,615,384"
+    },
+    {
+      "name": "Luguentz Dort, G",
+      "team": "Oklahoma City Thunder",
+      "salary": 16500000,
+      "salaryRaw": "$16,500,000"
+    },
+    {
+      "name": "Tim Hardaway Jr., G",
+      "team": "Detroit Pistons",
+      "salary": 16193183,
+      "salaryRaw": "$16,193,183"
+    },
+    {
+      "name": "Davis Bertans, SF",
+      "team": "Charlotte Hornets",
+      "salary": 16000000,
+      "salaryRaw": "$16,000,000"
+    },
+    {
+      "name": "Klay Thompson, G",
+      "team": "Dallas Mavericks",
+      "salary": 15873016,
+      "salaryRaw": "$15,873,016"
+    },
+    {
+      "name": "Deni Avdija, F",
+      "team": "Portland Trail Blazers",
+      "salary": 15625000,
+      "salaryRaw": "$15,625,000"
+    },
+    {
+      "name": "Grayson Allen, G",
+      "team": "Phoenix Suns",
+      "salary": 15625000,
+      "salaryRaw": "$15,625,000"
+    },
+    {
+      "name": "P.J. Washington, F",
+      "team": "Dallas Mavericks",
+      "salary": 15500000,
+      "salaryRaw": "$15,500,000"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Max Strus, G",
+      "team": "Cleveland Cavaliers",
+      "salary": 15212068,
+      "salaryRaw": "$15,212,068"
+    },
+    {
+      "name": "Isaiah Stewart, F",
+      "team": "Detroit Pistons",
+      "salary": 15000000,
+      "salaryRaw": "$15,000,000"
+    },
+    {
+      "name": "Dorian Finney-Smith, F",
+      "team": "Los Angeles Lakers",
+      "salary": 14924168,
+      "salaryRaw": "$14,924,168"
+    },
+    {
+      "name": "Mitchell Robinson, C",
+      "team": "New York Knicks",
+      "salary": 14318182,
+      "salaryRaw": "$14,318,182"
+    },
+    {
+      "name": "Jordan Clarkson, G",
+      "team": "Utah Jazz",
+      "salary": 14092577,
+      "salaryRaw": "$14,092,577"
+    },
+    {
+      "name": "Onyeka Okongwu, F",
+      "team": "Atlanta Hawks",
+      "salary": 14000000,
+      "salaryRaw": "$14,000,000"
+    },
+    {
+      "name": "Naz Reid, C",
+      "team": "Minnesota Timberwolves",
+      "salary": 13986432,
+      "salaryRaw": "$13,986,432"
+    },
+    {
+      "name": "Cade Cunningham, G",
+      "team": "Detroit Pistons",
+      "salary": 13940658,
+      "salaryRaw": "$13,940,658"
+    },
+    {
+      "name": "Daniel Gafford, F",
+      "team": "Dallas Mavericks",
+      "salary": 13394160,
+      "salaryRaw": "$13,394,160"
+    },
+    {
+      "name": "Grant Williams, F",
+      "team": "Charlotte Hornets",
+      "salary": 13025250,
+      "salaryRaw": "$13,025,250"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Dennis Schroder, G",
+      "team": "Detroit Pistons",
+      "salary": 13025250,
+      "salaryRaw": "$13,025,250"
+    },
+    {
+      "name": "Isaiah Joe, G",
+      "team": "Oklahoma City Thunder",
+      "salary": 12991650,
+      "salaryRaw": "$12,991,650"
+    },
+    {
+      "name": "Austin Reaves, G",
+      "team": "Los Angeles Lakers",
+      "salary": 12976362,
+      "salaryRaw": "$12,976,362"
+    },
+    {
+      "name": "Herbert Jones, F",
+      "team": "New Orleans Pelicans",
+      "salary": 12976362,
+      "salaryRaw": "$12,976,362"
+    },
+    {
+      "name": "Obi Toppin, F",
+      "team": "Indiana Pacers",
+      "salary": 12946429,
+      "salaryRaw": "$12,946,429"
+    },
+    {
+      "name": "Cole Anthony, G",
+      "team": "Orlando Magic",
+      "salary": 12900000,
+      "salaryRaw": "$12,900,000"
+    },
+    {
+      "name": "De'Anthony Melton, G",
+      "team": "Golden State Warriors",
+      "salary": 12822000,
+      "salaryRaw": "$12,822,000"
+    },
+    {
+      "name": "Kelly Olynyk, F",
+      "team": "New Orleans Pelicans",
+      "salary": 12804878,
+      "salaryRaw": "$12,804,878"
+    },
+    {
+      "name": "Victor Wembanyama, F",
+      "team": "San Antonio Spurs",
+      "salary": 12768960,
+      "salaryRaw": "$12,768,960"
+    },
+    {
+      "name": "Josh Green, G",
+      "team": "Charlotte Hornets",
+      "salary": 12654321,
+      "salaryRaw": "$12,654,321"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Devonte' Graham, PG",
+      "team": "Portland Trail Blazers",
+      "salary": 12650000,
+      "salaryRaw": "$12,650,000"
+    },
+    {
+      "name": "Richaun Holmes, F",
+      "team": "Washington Wizards",
+      "salary": 12648321,
+      "salaryRaw": "$12,648,321"
+    },
+    {
+      "name": "Steven Adams, C",
+      "team": "Houston Rockets",
+      "salary": 12600000,
+      "salaryRaw": "$12,600,000"
+    },
+    {
+      "name": "Bobby Portis, F",
+      "team": "Milwaukee Bucks",
+      "salary": 12578286,
+      "salaryRaw": "$12,578,286"
+    },
+    {
+      "name": "Zaccharie Risacher, F",
+      "team": "Atlanta Hawks",
+      "salary": 12569040,
+      "salaryRaw": "$12,569,040"
+    },
+    {
+      "name": "Marvin Bagley III, F",
+      "team": "Memphis Grizzlies",
+      "salary": 12500000,
+      "salaryRaw": "$12,500,000"
+    },
+    {
+      "name": "Brandon Clarke, F",
+      "team": "Memphis Grizzlies",
+      "salary": 12500000,
+      "salaryRaw": "$12,500,000"
+    },
+    {
+      "name": "Jalen Green, G",
+      "team": "Houston Rockets",
+      "salary": 12483048,
+      "salaryRaw": "$12,483,048"
+    },
+    {
+      "name": "Robert Williams III, C",
+      "team": "Portland Trail Blazers",
+      "salary": 12428571,
+      "salaryRaw": "$12,428,571"
+    },
+    {
+      "name": "Paolo Banchero, F",
+      "team": "Orlando Magic",
+      "salary": 12160800,
+      "salaryRaw": "$12,160,800"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Coby White, G",
+      "team": "Chicago Bulls",
+      "salary": 12000000,
+      "salaryRaw": "$12,000,000"
+    },
+    {
+      "name": "Wendell Carter Jr., C",
+      "team": "Orlando Magic",
+      "salary": 11950000,
+      "salaryRaw": "$11,950,000"
+    },
+    {
+      "name": "Ivica Zubac, C",
+      "team": "LA Clippers",
+      "salary": 11743210,
+      "salaryRaw": "$11,743,210"
+    },
+    {
+      "name": "Donte DiVincenzo, G",
+      "team": "Minnesota Timberwolves",
+      "salary": 11445000,
+      "salaryRaw": "$11,445,000"
+    },
+    {
+      "name": "Brandon Miller, F",
+      "team": "Charlotte Hornets",
+      "salary": 11424600,
+      "salaryRaw": "$11,424,600"
+    },
+    {
+      "name": "Terance Mann, G",
+      "team": "Atlanta Hawks",
+      "salary": 11423077,
+      "salaryRaw": "$11,423,077"
+    },
+    {
+      "name": "Alex Sarr, C",
+      "team": "Washington Wizards",
+      "salary": 11245680,
+      "salaryRaw": "$11,245,680"
+    },
+    {
+      "name": "Evan Mobley, C",
+      "team": "Cleveland Cavaliers",
+      "salary": 11227809,
+      "salaryRaw": "$11,227,809"
+    },
+    {
+      "name": "Larry Nance Jr., F",
+      "team": "Atlanta Hawks",
+      "salary": 11205000,
+      "salaryRaw": "$11,205,000"
+    },
+    {
+      "name": "Matisse Thybulle, G",
+      "team": "Portland Trail Blazers",
+      "salary": 11025160,
+      "salaryRaw": "$11,025,160"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Moritz Wagner, F",
+      "team": "Orlando Magic",
+      "salary": 11000000,
+      "salaryRaw": "$11,000,000"
+    },
+    {
+      "name": "Gabe Vincent, G",
+      "team": "Los Angeles Lakers",
+      "salary": 11000000,
+      "salaryRaw": "$11,000,000"
+    },
+    {
+      "name": "Maxi Kleber, F",
+      "team": "Dallas Mavericks",
+      "salary": 11000000,
+      "salaryRaw": "$11,000,000"
+    },
+    {
+      "name": "Aaron Nesmith, G",
+      "team": "Indiana Pacers",
+      "salary": 11000000,
+      "salaryRaw": "$11,000,000"
+    },
+    {
+      "name": "Chet Holmgren, C",
+      "team": "Oklahoma City Thunder",
+      "salary": 10880640,
+      "salaryRaw": "$10,880,640"
+    },
+    {
+      "name": "Chris Boucher, F",
+      "team": "Toronto Raptors",
+      "salary": 10810000,
+      "salaryRaw": "$10,810,000"
+    },
+    {
+      "name": "Jarred Vanderbilt, F",
+      "team": "Los Angeles Lakers",
+      "salary": 10714286,
+      "salaryRaw": "$10,714,286"
+    },
+    {
+      "name": "Aaron Wiggins, G",
+      "team": "Oklahoma City Thunder",
+      "salary": 10514017,
+      "salaryRaw": "$10,514,017"
+    },
+    {
+      "name": "Chris Paul, G",
+      "team": "San Antonio Spurs",
+      "salary": 10460000,
+      "salaryRaw": "$10,460,000"
+    },
+    {
+      "name": "Scoot Henderson, G",
+      "team": "Portland Trail Blazers",
+      "salary": 10259160,
+      "salaryRaw": "$10,259,160"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Isaac Okoro, F",
+      "team": "Cleveland Cavaliers",
+      "salary": 10185185,
+      "salaryRaw": "$10,185,185"
+    },
+    {
+      "name": "Scottie Barnes, F",
+      "team": "Toronto Raptors",
+      "salary": 10130980,
+      "salaryRaw": "$10,130,980"
+    },
+    {
+      "name": "Reed Sheppard, G",
+      "team": "Houston Rockets",
+      "salary": 10098960,
+      "salaryRaw": "$10,098,960"
+    },
+    {
+      "name": "Mike Conley, G",
+      "team": "Minnesota Timberwolves",
+      "salary": 9975962,
+      "salaryRaw": "$9,975,962"
+    },
+    {
+      "name": "Jonas Valanciunas, C",
+      "team": "Sacramento Kings",
+      "salary": 9900000,
+      "salaryRaw": "$9,900,000"
+    },
+    {
+      "name": "Alex Caruso, G",
+      "team": "Oklahoma City Thunder",
+      "salary": 9890000,
+      "salaryRaw": "$9,890,000"
+    },
+    {
+      "name": "Royce O'Neale, F",
+      "team": "Phoenix Suns",
+      "salary": 9821429,
+      "salaryRaw": "$9,821,429"
+    },
+    {
+      "name": "Jabari Smith Jr., F",
+      "team": "Houston Rockets",
+      "salary": 9770880,
+      "salaryRaw": "$9,770,880"
+    },
+    {
+      "name": "Derrick Jones Jr., F",
+      "team": "LA Clippers",
+      "salary": 9523810,
+      "salaryRaw": "$9,523,810"
+    },
+    {
+      "name": "Al Horford, C",
+      "team": "Boston Celtics",
+      "salary": 9500000,
+      "salaryRaw": "$9,500,000"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Pat Connaughton, G",
+      "team": "Milwaukee Bucks",
+      "salary": 9423869,
+      "salaryRaw": "$9,423,869"
+    },
+    {
+      "name": "T.J. McConnell, G",
+      "team": "Indiana Pacers",
+      "salary": 9300000,
+      "salaryRaw": "$9,300,000"
+    },
+    {
+      "name": "Luke Kennard, G",
+      "team": "Memphis Grizzlies",
+      "salary": 9250000,
+      "salaryRaw": "$9,250,000"
+    },
+    {
+      "name": "Amen Thompson, G",
+      "team": "Houston Rockets",
+      "salary": 9249960,
+      "salaryRaw": "$9,249,960"
+    },
+    {
+      "name": "Jalen Suggs, G",
+      "team": "Orlando Magic",
+      "salary": 9188385,
+      "salaryRaw": "$9,188,385"
+    },
+    {
+      "name": "Stephon Castle, G",
+      "team": "San Antonio Spurs",
+      "salary": 9131760,
+      "salaryRaw": "$9,131,760"
+    },
+    {
+      "name": "Gary Payton II, G",
+      "team": "Golden State Warriors",
+      "salary": 9130000,
+      "salaryRaw": "$9,130,000"
+    },
+    {
+      "name": "Tre Jones, G",
+      "team": "Chicago Bulls",
+      "salary": 9104167,
+      "salaryRaw": "$9,104,167"
+    },
+    {
+      "name": "Goga Bitadze, C",
+      "team": "Orlando Magic",
+      "salary": 9057971,
+      "salaryRaw": "$9,057,971"
+    },
+    {
+      "name": "Zeke Nnaji, F",
+      "team": "Denver Nuggets",
+      "salary": 8888889,
+      "salaryRaw": "$8,888,889"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Keegan Murray, F",
+      "team": "Sacramento Kings",
+      "salary": 8809560,
+      "salaryRaw": "$8,809,560"
+    },
+    {
+      "name": "Kyle Anderson, F",
+      "team": "Miami Heat",
+      "salary": 8780488,
+      "salaryRaw": "$8,780,488"
+    },
+    {
+      "name": "Buddy Hield, G",
+      "team": "Golden State Warriors",
+      "salary": 8780488,
+      "salaryRaw": "$8,780,488"
+    },
+    {
+      "name": "Naji Marshall, F",
+      "team": "Dallas Mavericks",
+      "salary": 8571429,
+      "salaryRaw": "$8,571,429"
+    },
+    {
+      "name": "Jalen Smith, F",
+      "team": "Chicago Bulls",
+      "salary": 8571429,
+      "salaryRaw": "$8,571,429"
+    },
+    {
+      "name": "Georges Niang, F",
+      "team": "Atlanta Hawks",
+      "salary": 8500000,
+      "salaryRaw": "$8,500,000"
+    },
+    {
+      "name": "Ausar Thompson, G",
+      "team": "Detroit Pistons",
+      "salary": 8376000,
+      "salaryRaw": "$8,376,000"
+    },
+    {
+      "name": "Josh Giddey, G",
+      "team": "Chicago Bulls",
+      "salary": 8352367,
+      "salaryRaw": "$8,352,367"
+    },
+    {
+      "name": "Josh Okogie, G",
+      "team": "Charlotte Hornets",
+      "salary": 8250000,
+      "salaryRaw": "$8,250,000"
+    },
+    {
+      "name": "Ronald Holland II, F",
+      "team": "Detroit Pistons",
+      "salary": 8245320,
+      "salaryRaw": "$8,245,320"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Caleb Martin, F",
+      "team": "Dallas Mavericks",
+      "salary": 8149001,
+      "salaryRaw": "$8,149,001"
+    },
+    {
+      "name": "Cody Martin, SF",
+      "team": "Phoenix Suns",
+      "salary": 8120000,
+      "salaryRaw": "$8,120,000"
+    },
+    {
+      "name": "Trey Lyles, PF",
+      "team": "Sacramento Kings",
+      "salary": 8000000,
+      "salaryRaw": "$8,000,000"
+    },
+    {
+      "name": "Jock Landale, C",
+      "team": "Houston Rockets",
+      "salary": 8000000,
+      "salaryRaw": "$8,000,000"
+    },
+    {
+      "name": "Jeff Green, F",
+      "team": "Houston Rockets",
+      "salary": 8000000,
+      "salaryRaw": "$8,000,000"
+    },
+    {
+      "name": "Kevon Looney, F",
+      "team": "Golden State Warriors",
+      "salary": 8000000,
+      "salaryRaw": "$8,000,000"
+    },
+    {
+      "name": "Kelly Oubre Jr., G",
+      "team": "Philadelphia 76ers",
+      "salary": 7983000,
+      "salaryRaw": "$7,983,000"
+    },
+    {
+      "name": "Jaden Ivey, G",
+      "team": "Detroit Pistons",
+      "salary": 7977240,
+      "salaryRaw": "$7,977,240"
+    },
+    {
+      "name": "KJ Martin, F",
+      "team": "Utah Jazz",
+      "salary": 7975000,
+      "salaryRaw": "$7,975,000"
+    },
+    {
+      "name": "Vasilije Micic, G",
+      "team": "Phoenix Suns",
+      "salary": 7723000,
+      "salaryRaw": "$7,723,000"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Simone Fontecchio, F",
+      "team": "Detroit Pistons",
+      "salary": 7692308,
+      "salaryRaw": "$7,692,308"
+    },
+    {
+      "name": "Jonathan Kuminga, F",
+      "team": "Golden State Warriors",
+      "salary": 7636154,
+      "salaryRaw": "$7,636,154"
+    },
+    {
+      "name": "Anthony Black, G",
+      "team": "Orlando Magic",
+      "salary": 7607760,
+      "salaryRaw": "$7,607,760"
+    },
+    {
+      "name": "Jae'Sean Tate, F",
+      "team": "Houston Rockets",
+      "salary": 7565217,
+      "salaryRaw": "$7,565,217"
+    },
+    {
+      "name": "Tidjane Salaun, F",
+      "team": "Charlotte Hornets",
+      "salary": 7488720,
+      "salaryRaw": "$7,488,720"
+    },
+    {
+      "name": "Bennedict Mathurin, G",
+      "team": "Indiana Pacers",
+      "salary": 7245720,
+      "salaryRaw": "$7,245,720"
+    },
+    {
+      "name": "Max Christie, G",
+      "team": "Dallas Mavericks",
+      "salary": 7142857,
+      "salaryRaw": "$7,142,857"
+    },
+    {
+      "name": "Franz Wagner, F",
+      "team": "Orlando Magic",
+      "salary": 7007092,
+      "salaryRaw": "$7,007,092"
+    },
+    {
+      "name": "Ayo Dosunmu, G",
+      "team": "Chicago Bulls",
+      "salary": 7000000,
+      "salaryRaw": "$7,000,000"
+    },
+    {
+      "name": "Bilal Coulibaly, G",
+      "team": "Washington Wizards",
+      "salary": 6945240,
+      "salaryRaw": "$6,945,240"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Nassir Little, SF",
+      "team": "Miami Heat",
+      "salary": 6750000,
+      "salaryRaw": "$6,750,000"
+    },
+    {
+      "name": "Gary Harris, G",
+      "team": "Orlando Magic",
+      "salary": 6730769,
+      "salaryRaw": "$6,730,769"
+    },
+    {
+      "name": "Payton Pritchard, G",
+      "team": "Boston Celtics",
+      "salary": 6696429,
+      "salaryRaw": "$6,696,429"
+    },
+    {
+      "name": "Kenrich Williams, G",
+      "team": "Oklahoma City Thunder",
+      "salary": 6669000,
+      "salaryRaw": "$6,669,000"
+    },
+    {
+      "name": "Sasha Vezenkov, F",
+      "team": "Toronto Raptors",
+      "salary": 6658536,
+      "salaryRaw": "$6,658,536"
+    },
+    {
+      "name": "Shaedon Sharpe, G",
+      "team": "Portland Trail Blazers",
+      "salary": 6614160,
+      "salaryRaw": "$6,614,160"
+    },
+    {
+      "name": "Donovan Clingan, C",
+      "team": "Portland Trail Blazers",
+      "salary": 6586440,
+      "salaryRaw": "$6,586,440"
+    },
+    {
+      "name": "Jevon Carter, G",
+      "team": "Chicago Bulls",
+      "salary": 6500000,
+      "salaryRaw": "$6,500,000"
+    },
+    {
+      "name": "Davion Mitchell, G",
+      "team": "Miami Heat",
+      "salary": 6451230,
+      "salaryRaw": "$6,451,230"
+    },
+    {
+      "name": "Saddiq Bey, G",
+      "team": "New Orleans Pelicans",
+      "salary": 6440678,
+      "salaryRaw": "$6,440,678"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Jarace Walker, F",
+      "team": "Indiana Pacers",
+      "salary": 6362520,
+      "salaryRaw": "$6,362,520"
+    },
+    {
+      "name": "Rob Dillingham, G",
+      "team": "Minnesota Timberwolves",
+      "salary": 6262920,
+      "salaryRaw": "$6,262,920"
+    },
+    {
+      "name": "Dean Wade, F",
+      "team": "Cleveland Cavaliers",
+      "salary": 6166667,
+      "salaryRaw": "$6,166,667"
+    },
+    {
+      "name": "John Konchar, G",
+      "team": "Memphis Grizzlies",
+      "salary": 6165000,
+      "salaryRaw": "$6,165,000"
+    },
+    {
+      "name": "Ziaire Williams, F",
+      "team": "Brooklyn Nets",
+      "salary": 6133005,
+      "salaryRaw": "$6,133,005"
+    },
+    {
+      "name": "Dyson Daniels, G",
+      "team": "Atlanta Hawks",
+      "salary": 6059520,
+      "salaryRaw": "$6,059,520"
+    },
+    {
+      "name": "Precious Achiuwa, PF",
+      "team": "New York Knicks",
+      "salary": 6000000,
+      "salaryRaw": "$6,000,000"
+    },
+    {
+      "name": "Malik Beasley, SG",
+      "team": "Detroit Pistons",
+      "salary": 6000000,
+      "salaryRaw": "$6,000,000"
+    },
+    {
+      "name": "Chris Duarte, SG",
+      "team": "Chicago Bulls",
+      "salary": 5893768,
+      "salaryRaw": "$5,893,768"
+    },
+    {
+      "name": "Taylor Hendricks, F",
+      "team": "Utah Jazz",
+      "salary": 5848680,
+      "salaryRaw": "$5,848,680"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Moses Moody, G",
+      "team": "Golden State Warriors",
+      "salary": 5803269,
+      "salaryRaw": "$5,803,269"
+    },
+    {
+      "name": "Zach Edey, C",
+      "team": "Memphis Grizzlies",
+      "salary": 5756880,
+      "salaryRaw": "$5,756,880"
+    },
+    {
+      "name": "Corey Kispert, F",
+      "team": "Washington Wizards",
+      "salary": 5705888,
+      "salaryRaw": "$5,705,888"
+    },
+    {
+      "name": "Jeremy Sochan, F",
+      "team": "San Antonio Spurs",
+      "salary": 5570040,
+      "salaryRaw": "$5,570,040"
+    },
+    {
+      "name": "Cason Wallace, G",
+      "team": "Oklahoma City Thunder",
+      "salary": 5555880,
+      "salaryRaw": "$5,555,880"
+    },
+    {
+      "name": "Cody Williams, F",
+      "team": "Utah Jazz",
+      "salary": 5485080,
+      "salaryRaw": "$5,485,080"
+    },
+    {
+      "name": "Alperen Sengun, C",
+      "team": "Houston Rockets",
+      "salary": 5424654,
+      "salaryRaw": "$5,424,654"
+    },
+    {
+      "name": "Johnny Davis, G",
+      "team": "Washington Wizards",
+      "salary": 5291160,
+      "salaryRaw": "$5,291,160"
+    },
+    {
+      "name": "Jett Howard, G",
+      "team": "Orlando Magic",
+      "salary": 5278320,
+      "salaryRaw": "$5,278,320"
+    },
+    {
+      "name": "Haywood Highsmith, F",
+      "team": "Miami Heat",
+      "salary": 5200000,
+      "salaryRaw": "$5,200,000"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Matas Buzelis, F",
+      "team": "Chicago Bulls",
+      "salary": 5195520,
+      "salaryRaw": "$5,195,520"
+    },
+    {
+      "name": "Kris Dunn, G",
+      "team": "LA Clippers",
+      "salary": 5168000,
+      "salaryRaw": "$5,168,000"
+    },
+    {
+      "name": "Dario Saric, F",
+      "team": "Denver Nuggets",
+      "salary": 5168000,
+      "salaryRaw": "$5,168,000"
+    },
+    {
+      "name": "Trey Murphy III, F",
+      "team": "New Orleans Pelicans",
+      "salary": 5159855,
+      "salaryRaw": "$5,159,855"
+    },
+    {
+      "name": "Ousmane Dieng, F",
+      "team": "Oklahoma City Thunder",
+      "salary": 5027040,
+      "salaryRaw": "$5,027,040"
+    },
+    {
+      "name": "Dereck Lively II, C",
+      "team": "Dallas Mavericks",
+      "salary": 5014560,
+      "salaryRaw": "$5,014,560"
+    },
+    {
+      "name": "Nick Richards, C",
+      "team": "Phoenix Suns",
+      "salary": 5000000,
+      "salaryRaw": "$5,000,000"
+    },
+    {
+      "name": "Andre Drummond, C",
+      "team": "Philadelphia 76ers",
+      "salary": 5000000,
+      "salaryRaw": "$5,000,000"
+    },
+    {
+      "name": "Drew Eubanks, F",
+      "team": "LA Clippers",
+      "salary": 5000000,
+      "salaryRaw": "$5,000,000"
+    },
+    {
+      "name": "Nikola Topic, G",
+      "team": "Oklahoma City Thunder",
+      "salary": 4935960,
+      "salaryRaw": "$4,935,960"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Tre Mann, G",
+      "team": "Charlotte Hornets",
+      "salary": 4908189,
+      "salaryRaw": "$4,908,189"
+    },
+    {
+      "name": "Jalen Williams, G",
+      "team": "Oklahoma City Thunder",
+      "salary": 4775760,
+      "salaryRaw": "$4,775,760"
+    },
+    {
+      "name": "Gradey Dick, G",
+      "team": "Toronto Raptors",
+      "salary": 4763760,
+      "salaryRaw": "$4,763,760"
+    },
+    {
+      "name": "Jalen McDaniels, F",
+      "team": "Washington Wizards",
+      "salary": 4741800,
+      "salaryRaw": "$4,741,800"
+    },
+    {
+      "name": "Miles McBride, G",
+      "team": "New York Knicks",
+      "salary": 4710144,
+      "salaryRaw": "$4,710,144"
+    },
+    {
+      "name": "Devin Carter, G",
+      "team": "Sacramento Kings",
+      "salary": 4702800,
+      "salaryRaw": "$4,702,800"
+    },
+    {
+      "name": "Nicolas Batum, F",
+      "team": "LA Clippers",
+      "salary": 4668000,
+      "salaryRaw": "$4,668,000"
+    },
+    {
+      "name": "Aaron Holiday, G",
+      "team": "Houston Rockets",
+      "salary": 4668000,
+      "salaryRaw": "$4,668,000"
+    },
+    {
+      "name": "Jalen Duren, C",
+      "team": "Detroit Pistons",
+      "salary": 4536840,
+      "salaryRaw": "$4,536,840"
+    },
+    {
+      "name": "Jordan Hawkins, G",
+      "team": "New Orleans Pelicans",
+      "salary": 4525680,
+      "salaryRaw": "$4,525,680"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Jalen Johnson, F",
+      "team": "Atlanta Hawks",
+      "salary": 4510905,
+      "salaryRaw": "$4,510,905"
+    },
+    {
+      "name": "Bub Carrington, G",
+      "team": "Washington Wizards",
+      "salary": 4454880,
+      "salaryRaw": "$4,454,880"
+    },
+    {
+      "name": "Isaiah Jackson, F",
+      "team": "Indiana Pacers",
+      "salary": 4435381,
+      "salaryRaw": "$4,435,381"
+    },
+    {
+      "name": "Nickeil Alexander-Walker, G",
+      "team": "Minnesota Timberwolves",
+      "salary": 4312500,
+      "salaryRaw": "$4,312,500"
+    },
+    {
+      "name": "Ochai Agbaji, G",
+      "team": "Toronto Raptors",
+      "salary": 4310280,
+      "salaryRaw": "$4,310,280"
+    },
+    {
+      "name": "Kobe Bufkin, G",
+      "team": "Atlanta Hawks",
+      "salary": 4299000,
+      "salaryRaw": "$4,299,000"
+    },
+    {
+      "name": "Quentin Grimes, G",
+      "team": "Philadelphia 76ers",
+      "salary": 4296615,
+      "salaryRaw": "$4,296,615"
+    },
+    {
+      "name": "Kel'el Ware, C",
+      "team": "Miami Heat",
+      "salary": 4231800,
+      "salaryRaw": "$4,231,800"
+    },
+    {
+      "name": "Bones Hyland, G",
+      "team": "Minnesota Timberwolves",
+      "salary": 4158439,
+      "salaryRaw": "$4,158,439"
+    },
+    {
+      "name": "Mark Williams, C",
+      "team": "Charlotte Hornets",
+      "salary": 4094280,
+      "salaryRaw": "$4,094,280"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Keyonte George, G",
+      "team": "Utah Jazz",
+      "salary": 4084200,
+      "salaryRaw": "$4,084,200"
+    },
+    {
+      "name": "Cam Thomas, G",
+      "team": "Brooklyn Nets",
+      "salary": 4041249,
+      "salaryRaw": "$4,041,249"
+    },
+    {
+      "name": "Jared McCain, G",
+      "team": "Philadelphia 76ers",
+      "salary": 4032240,
+      "salaryRaw": "$4,032,240"
+    },
+    {
+      "name": "Dwight Powell, F",
+      "team": "Dallas Mavericks",
+      "salary": 4000000,
+      "salaryRaw": "$4,000,000"
+    },
+    {
+      "name": "Day'Ron Sharpe, C",
+      "team": "Brooklyn Nets",
+      "salary": 3989122,
+      "salaryRaw": "$3,989,122"
+    },
+    {
+      "name": "Santi Aldama, F",
+      "team": "Memphis Grizzlies",
+      "salary": 3960531,
+      "salaryRaw": "$3,960,531"
+    },
+    {
+      "name": "Amir Coffey, G",
+      "team": "LA Clippers",
+      "salary": 3938271,
+      "salaryRaw": "$3,938,271"
+    },
+    {
+      "name": "AJ Griffin, F",
+      "team": "Houston Rockets",
+      "salary": 3889920,
+      "salaryRaw": "$3,889,920"
+    },
+    {
+      "name": "Jalen Hood-Schifino, G",
+      "team": "Philadelphia 76ers",
+      "salary": 3879840,
+      "salaryRaw": "$3,879,840"
+    },
+    {
+      "name": "Kevin Love, F",
+      "team": "Miami Heat",
+      "salary": 3850000,
+      "salaryRaw": "$3,850,000"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Dalton Knecht, F",
+      "team": "Los Angeles Lakers",
+      "salary": 3819120,
+      "salaryRaw": "$3,819,120"
+    },
+    {
+      "name": "Tari Eason, F",
+      "team": "Houston Rockets",
+      "salary": 3695160,
+      "salaryRaw": "$3,695,160"
+    },
+    {
+      "name": "Jaime Jaquez Jr., F",
+      "team": "Miami Heat",
+      "salary": 3685800,
+      "salaryRaw": "$3,685,800"
+    },
+    {
+      "name": "Tristan da Silva, F",
+      "team": "Orlando Magic",
+      "salary": 3628440,
+      "salaryRaw": "$3,628,440"
+    },
+    {
+      "name": "Ja'Kobe Walter, G",
+      "team": "Toronto Raptors",
+      "salary": 3565000,
+      "salaryRaw": "$3,565,000"
+    },
+    {
+      "name": "Brandin Podziemski, G",
+      "team": "Golden State Warriors",
+      "salary": 3519960,
+      "salaryRaw": "$3,519,960"
+    },
+    {
+      "name": "Dalen Terry, F",
+      "team": "Chicago Bulls",
+      "salary": 3510480,
+      "salaryRaw": "$3,510,480"
+    },
+    {
+      "name": "Svi Mykhailiuk, G",
+      "team": "Utah Jazz",
+      "salary": 3500000,
+      "salaryRaw": "$3,500,000"
+    },
+    {
+      "name": "Cody Zeller, C",
+      "team": "Houston Rockets",
+      "salary": 3500000,
+      "salaryRaw": "$3,500,000"
+    },
+    {
+      "name": "Cam Whitmore, F",
+      "team": "Houston Rockets",
+      "salary": 3379080,
+      "salaryRaw": "$3,379,080"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Derrick Rose, PG",
+      "team": "Memphis Grizzlies",
+      "salary": 3356271,
+      "salaryRaw": "$3,356,271"
+    },
+    {
+      "name": "Jake LaRavia, F",
+      "team": "Sacramento Kings",
+      "salary": 3352680,
+      "salaryRaw": "$3,352,680"
+    },
+    {
+      "name": "Jaylon Tyson, G",
+      "team": "Cleveland Cavaliers",
+      "salary": 3326160,
+      "salaryRaw": "$3,326,160"
+    },
+    {
+      "name": "Eric Gordon, G",
+      "team": "Philadelphia 76ers",
+      "salary": 3303771,
+      "salaryRaw": "$3,303,771"
+    },
+    {
+      "name": "Cory Joseph, PG",
+      "team": "Orlando Magic",
+      "salary": 3303771,
+      "salaryRaw": "$3,303,771"
+    },
+    {
+      "name": "Russell Westbrook, G",
+      "team": "Denver Nuggets",
+      "salary": 3303771,
+      "salaryRaw": "$3,303,771"
+    },
+    {
+      "name": "Noah Clowney, F",
+      "team": "Brooklyn Nets",
+      "salary": 3244080,
+      "salaryRaw": "$3,244,080"
+    },
+    {
+      "name": "Malaki Branham, G",
+      "team": "San Antonio Spurs",
+      "salary": 3217920,
+      "salaryRaw": "$3,217,920"
+    },
+    {
+      "name": "Yves Missi, C",
+      "team": "New Orleans Pelicans",
+      "salary": 3202560,
+      "salaryRaw": "$3,202,560"
+    },
+    {
+      "name": "Dante Exum, G",
+      "team": "Dallas Mavericks",
+      "salary": 3150000,
+      "salaryRaw": "$3,150,000"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Dariq Whitehead, F",
+      "team": "Brooklyn Nets",
+      "salary": 3114240,
+      "salaryRaw": "$3,114,240"
+    },
+    {
+      "name": "Christian Braun, G",
+      "team": "Denver Nuggets",
+      "salary": 3089640,
+      "salaryRaw": "$3,089,640"
+    },
+    {
+      "name": "Johnny Juzang, G",
+      "team": "Utah Jazz",
+      "salary": 3087519,
+      "salaryRaw": "$3,087,519"
+    },
+    {
+      "name": "DaRon Holmes II, F",
+      "team": "Denver Nuggets",
+      "salary": 3065640,
+      "salaryRaw": "$3,065,640"
+    },
+    {
+      "name": "Josh Richardson, SG",
+      "team": "Miami Heat",
+      "salary": 3051153,
+      "salaryRaw": "$3,051,153"
+    },
+    {
+      "name": "Christian Wood, F",
+      "team": "Los Angeles Lakers",
+      "salary": 3036040,
+      "salaryRaw": "$3,036,040"
+    },
+    {
+      "name": "Kyle Filipowski, F",
+      "team": "Utah Jazz",
+      "salary": 3000000,
+      "salaryRaw": "$3,000,000"
+    },
+    {
+      "name": "Ajay Mitchell, G",
+      "team": "Oklahoma City Thunder",
+      "salary": 3000000,
+      "salaryRaw": "$3,000,000"
+    },
+    {
+      "name": "Julian Champagnie, F",
+      "team": "San Antonio Spurs",
+      "salary": 3000000,
+      "salaryRaw": "$3,000,000"
+    },
+    {
+      "name": "Kris Murray, F",
+      "team": "Portland Trail Blazers",
+      "salary": 2990040,
+      "salaryRaw": "$2,990,040"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Walker Kessler, C",
+      "team": "Utah Jazz",
+      "salary": 2965920,
+      "salaryRaw": "$2,965,920"
+    },
+    {
+      "name": "Shake Milton, SG",
+      "team": "Los Angeles Lakers",
+      "salary": 2875000,
+      "salaryRaw": "$2,875,000"
+    },
+    {
+      "name": "Olivier-Maxence Prosper, F",
+      "team": "Dallas Mavericks",
+      "salary": 2869920,
+      "salaryRaw": "$2,869,920"
+    },
+    {
+      "name": "David Roddy, F",
+      "team": "Houston Rockets",
+      "salary": 2847240,
+      "salaryRaw": "$2,847,240"
+    },
+    {
+      "name": "Torrey Craig, SF",
+      "team": "Boston Celtics",
+      "salary": 2845342,
+      "salaryRaw": "$2,845,342"
+    },
+    {
+      "name": "Kyshawn George, F",
+      "team": "Washington Wizards",
+      "salary": 2825520,
+      "salaryRaw": "$2,825,520"
+    },
+    {
+      "name": "AJ Johnson, G",
+      "team": "Washington Wizards",
+      "salary": 2795294,
+      "salaryRaw": "$2,795,294"
+    },
+    {
+      "name": "Marcus Sasser, G",
+      "team": "Detroit Pistons",
+      "salary": 2755080,
+      "salaryRaw": "$2,755,080"
+    },
+    {
+      "name": "MarJon Beauchamp, F",
+      "team": "New York Knicks",
+      "salary": 2733720,
+      "salaryRaw": "$2,733,720"
+    },
+    {
+      "name": "Trendon Watford, F",
+      "team": "Brooklyn Nets",
+      "salary": 2726603,
+      "salaryRaw": "$2,726,603"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Ben Sheppard, G",
+      "team": "Indiana Pacers",
+      "salary": 2663880,
+      "salaryRaw": "$2,663,880"
+    },
+    {
+      "name": "Omer Yurtseven, C",
+      "team": "Utah Jazz",
+      "salary": 2660000,
+      "salaryRaw": "$2,660,000"
+    },
+    {
+      "name": "Keita Bates-Diop, SF",
+      "team": "Minnesota Timberwolves",
+      "salary": 2654644,
+      "salaryRaw": "$2,654,644"
+    },
+    {
+      "name": "Blake Wesley, G",
+      "team": "San Antonio Spurs",
+      "salary": 2624280,
+      "salaryRaw": "$2,624,280"
+    },
+    {
+      "name": "Dillon Jones, G",
+      "team": "Oklahoma City Thunder",
+      "salary": 2622360,
+      "salaryRaw": "$2,622,360"
+    },
+    {
+      "name": "Nick Smith Jr., G",
+      "team": "Charlotte Hornets",
+      "salary": 2587200,
+      "salaryRaw": "$2,587,200"
+    },
+    {
+      "name": "Brice Sensabaugh, F",
+      "team": "Utah Jazz",
+      "salary": 2571480,
+      "salaryRaw": "$2,571,480"
+    },
+    {
+      "name": "Ty Jerome, G",
+      "team": "Cleveland Cavaliers",
+      "salary": 2560975,
+      "salaryRaw": "$2,560,975"
+    },
+    {
+      "name": "Julian Strawther, G",
+      "team": "Denver Nuggets",
+      "salary": 2552520,
+      "salaryRaw": "$2,552,520"
+    },
+    {
+      "name": "Terrence Shannon Jr., G",
+      "team": "Minnesota Timberwolves",
+      "salary": 2546640,
+      "salaryRaw": "$2,546,640"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Ryan Dunn, F",
+      "team": "Phoenix Suns",
+      "salary": 2538240,
+      "salaryRaw": "$2,538,240"
+    },
+    {
+      "name": "Wendell Moore Jr., G",
+      "team": "Charlotte Hornets",
+      "salary": 2537040,
+      "salaryRaw": "$2,537,040"
+    },
+    {
+      "name": "Kobe Brown, G",
+      "team": "LA Clippers",
+      "salary": 2533920,
+      "salaryRaw": "$2,533,920"
+    },
+    {
+      "name": "Isaiah Collier, G",
+      "team": "Utah Jazz",
+      "salary": 2520120,
+      "salaryRaw": "$2,520,120"
+    },
+    {
+      "name": "Baylor Scheierman, G",
+      "team": "Boston Celtics",
+      "salary": 2494320,
+      "salaryRaw": "$2,494,320"
+    },
+    {
+      "name": "Nikola Jovic, F",
+      "team": "Miami Heat",
+      "salary": 2464200,
+      "salaryRaw": "$2,464,200"
+    },
+    {
+      "name": "Darius Bazley, F",
+      "team": "Utah Jazz",
+      "salary": 2463946,
+      "salaryRaw": "$2,463,946"
+    },
+    {
+      "name": "Jaxson Hayes, C",
+      "team": "Los Angeles Lakers",
+      "salary": 2463946,
+      "salaryRaw": "$2,463,946"
+    },
+    {
+      "name": "Cam Reddish, SF",
+      "team": "Los Angeles Lakers",
+      "salary": 2463946,
+      "salaryRaw": "$2,463,946"
+    },
+    {
+      "name": "Patrick Baldwin Jr., G",
+      "team": "LA Clippers",
+      "salary": 2448840,
+      "salaryRaw": "$2,448,840"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "DaQuan Jeffries, SG",
+      "team": "Charlotte Hornets",
+      "salary": 2425204,
+      "salaryRaw": "$2,425,204"
+    },
+    {
+      "name": "Tristan Vukcevic, F",
+      "team": "Washington Wizards",
+      "salary": 2424892,
+      "salaryRaw": "$2,424,892"
+    },
+    {
+      "name": "Peyton Watson, G",
+      "team": "Denver Nuggets",
+      "salary": 2413560,
+      "salaryRaw": "$2,413,560"
+    },
+    {
+      "name": "Aleksej Pokusevski, F",
+      "team": "Charlotte Hornets",
+      "salary": 2273252,
+      "salaryRaw": "$2,273,252"
+    },
+    {
+      "name": "Mamadi Diakite, F",
+      "team": "Phoenix Suns",
+      "salary": 2273252,
+      "salaryRaw": "$2,273,252"
+    },
+    {
+      "name": "Charlie Brown Jr., G",
+      "team": "Memphis Grizzlies",
+      "salary": 2237692,
+      "salaryRaw": "$2,237,692"
+    },
+    {
+      "name": "James Wiseman, C",
+      "team": "Indiana Pacers",
+      "salary": 2237691,
+      "salaryRaw": "$2,237,691"
+    },
+    {
+      "name": "Anthony Gill, F",
+      "team": "Washington Wizards",
+      "salary": 2237691,
+      "salaryRaw": "$2,237,691"
+    },
+    {
+      "name": "Kevin Porter Jr., G",
+      "team": "Milwaukee Bucks",
+      "salary": 2237691,
+      "salaryRaw": "$2,237,691"
+    },
+    {
+      "name": "Xavier Tillman, F",
+      "team": "Boston Celtics",
+      "salary": 2237691,
+      "salaryRaw": "$2,237,691"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Garrison Mathews, G",
+      "team": "Atlanta Hawks",
+      "salary": 2230253,
+      "salaryRaw": "$2,230,253"
+    },
+    {
+      "name": "Eugene Omoruyi, F",
+      "team": "Toronto Raptors",
+      "salary": 2196970,
+      "salaryRaw": "$2,196,970"
+    },
+    {
+      "name": "Dalano Banton, G",
+      "team": "Portland Trail Blazers",
+      "salary": 2196970,
+      "salaryRaw": "$2,196,970"
+    },
+    {
+      "name": "Jeff Dowtin Jr., G",
+      "team": "Philadelphia 76ers",
+      "salary": 2196970,
+      "salaryRaw": "$2,196,970"
+    },
+    {
+      "name": "Lindy Waters III, F",
+      "team": "Detroit Pistons",
+      "salary": 2196970,
+      "salaryRaw": "$2,196,970"
+    },
+    {
+      "name": "Kai Jones, PF",
+      "team": "Dallas Mavericks",
+      "salary": 2196970,
+      "salaryRaw": "$2,196,970"
+    },
+    {
+      "name": "Jeremiah Robinson-Earl, F",
+      "team": "New Orleans Pelicans",
+      "salary": 2196970,
+      "salaryRaw": "$2,196,970"
+    },
+    {
+      "name": "Sam Merrill, G",
+      "team": "Cleveland Cavaliers",
+      "salary": 2164993,
+      "salaryRaw": "$2,164,993"
+    },
+    {
+      "name": "Duane Washington Jr., PG",
+      "team": "Charlotte Hornets",
+      "salary": 2162607,
+      "salaryRaw": "$2,162,607"
+    },
+    {
+      "name": "Keon Johnson, G",
+      "team": "Brooklyn Nets",
+      "salary": 2162606,
+      "salaryRaw": "$2,162,606"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Luka Garza, C",
+      "team": "Minnesota Timberwolves",
+      "salary": 2162606,
+      "salaryRaw": "$2,162,606"
+    },
+    {
+      "name": "Neemias Queta, C",
+      "team": "Boston Celtics",
+      "salary": 2162606,
+      "salaryRaw": "$2,162,606"
+    },
+    {
+      "name": "Vit Krejci, G",
+      "team": "Atlanta Hawks",
+      "salary": 2162606,
+      "salaryRaw": "$2,162,606"
+    },
+    {
+      "name": "Vince Williams Jr., G",
+      "team": "Memphis Grizzlies",
+      "salary": 2120693,
+      "salaryRaw": "$2,120,693"
+    },
+    {
+      "name": "A.J. Lawson, G",
+      "team": "Toronto Raptors",
+      "salary": 2120693,
+      "salaryRaw": "$2,120,693"
+    },
+    {
+      "name": "Colby Jones, G",
+      "team": "Washington Wizards",
+      "salary": 2120693,
+      "salaryRaw": "$2,120,693"
+    },
+    {
+      "name": "Keon Ellis, G",
+      "team": "Sacramento Kings",
+      "salary": 2120693,
+      "salaryRaw": "$2,120,693"
+    },
+    {
+      "name": "Kendall Brown, G",
+      "team": "Boston Celtics",
+      "salary": 2120693,
+      "salaryRaw": "$2,120,693"
+    },
+    {
+      "name": "AJ Green, G",
+      "team": "Milwaukee Bucks",
+      "salary": 2120693,
+      "salaryRaw": "$2,120,693"
+    },
+    {
+      "name": "Stanley Umude, G",
+      "team": "Milwaukee Bucks",
+      "salary": 2120693,
+      "salaryRaw": "$2,120,693"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "E.J. Liddell, F",
+      "team": "Chicago Bulls",
+      "salary": 2120693,
+      "salaryRaw": "$2,120,693"
+    },
+    {
+      "name": "Jericho Sims, C",
+      "team": "Milwaukee Bucks",
+      "salary": 2092344,
+      "salaryRaw": "$2,092,344"
+    },
+    {
+      "name": "Sam Hauser, F",
+      "team": "Boston Celtics",
+      "salary": 2092344,
+      "salaryRaw": "$2,092,344"
+    },
+    {
+      "name": "Jay Huff, C",
+      "team": "Memphis Grizzlies",
+      "salary": 2088033,
+      "salaryRaw": "$2,088,033"
+    },
+    {
+      "name": "Seth Curry, SG",
+      "team": "Charlotte Hornets",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Taj Gibson, F",
+      "team": "Charlotte Hornets",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Scotty Pippen Jr., G",
+      "team": "Memphis Grizzlies",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Bruno Fernando, F",
+      "team": "Toronto Raptors",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Garrett Temple, G",
+      "team": "Toronto Raptors",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Reggie Jackson, PG",
+      "team": "Philadelphia 76ers",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Daniel Theis, C",
+      "team": "New Orleans Pelicans",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Charles Bassey, C",
+      "team": "San Antonio Spurs",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Sandro Mamukelashvili, F",
+      "team": "San Antonio Spurs",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Jordan McLaughlin, G",
+      "team": "San Antonio Spurs",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Doug McDermott, F",
+      "team": "Sacramento Kings",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Bol Bol, C",
+      "team": "Phoenix Suns",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Tyus Jones, G",
+      "team": "Phoenix Suns",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Monte Morris, PG",
+      "team": "Phoenix Suns",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Damion Lee, SG",
+      "team": "Phoenix Suns",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Mason Plumlee, C",
+      "team": "Phoenix Suns",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Guerschon Yabusele, F",
+      "team": "Philadelphia 76ers",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Kyle Lowry, G",
+      "team": "Philadelphia 76ers",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Tyler Kolek, G",
+      "team": "New York Knicks",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Delon Wright, G",
+      "team": "New York Knicks",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Cameron Payne, PG",
+      "team": "New York Knicks",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "PJ Dozier, G",
+      "team": "Minnesota Timberwolves",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Joe Ingles, F",
+      "team": "Minnesota Timberwolves",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Gary Trent Jr., G",
+      "team": "Milwaukee Bucks",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Taurean Prince, F",
+      "team": "Milwaukee Bucks",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Alec Burks, SG",
+      "team": "Miami Heat",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Markieff Morris, PF",
+      "team": "Los Angeles Lakers",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Patty Mills, PG",
+      "team": "LA Clippers",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Thomas Bryant, C",
+      "team": "Indiana Pacers",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "James Johnson, PF",
+      "team": "Indiana Pacers",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Vlatko Cancar, SF",
+      "team": "Denver Nuggets",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "DeAndre Jordan, C",
+      "team": "Denver Nuggets",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Spencer Dinwiddie, PG",
+      "team": "Dallas Mavericks",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Tristan Thompson, C",
+      "team": "Cleveland Cavaliers",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Talen Horton-Tucker, SF",
+      "team": "Chicago Bulls",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Mo Bamba, C",
+      "team": "New Orleans Pelicans",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Luke Kornet, C",
+      "team": "Boston Celtics",
+      "salary": 2087519,
+      "salaryRaw": "$2,087,519"
+    },
+    {
+      "name": "Duop Reath, C",
+      "team": "Portland Trail Blazers",
+      "salary": 2048780,
+      "salaryRaw": "$2,048,780"
+    },
+    {
+      "name": "Jaylin Williams, F",
+      "team": "Oklahoma City Thunder",
+      "salary": 2019699,
+      "salaryRaw": "$2,019,699"
+    },
+    {
+      "name": "Bryce McGowens, G",
+      "team": "Portland Trail Blazers",
+      "salary": 2019699,
+      "salaryRaw": "$2,019,699"
+    },
+    {
+      "name": "Jabari Walker, F",
+      "team": "Portland Trail Blazers",
+      "salary": 2019699,
+      "salaryRaw": "$2,019,699"
+    },
+    {
+      "name": "Josh Minott, F",
+      "team": "Minnesota Timberwolves",
+      "salary": 2019699,
+      "salaryRaw": "$2,019,699"
+    },
+    {
+      "name": "Andrew Nembhard, G",
+      "team": "Indiana Pacers",
+      "salary": 2019699,
+      "salaryRaw": "$2,019,699"
+    },
+    {
+      "name": "Jaden Hardy, G",
+      "team": "Dallas Mavericks",
+      "salary": 2019699,
+      "salaryRaw": "$2,019,699"
+    },
+    {
+      "name": "Caleb Houstan, G",
+      "team": "Orlando Magic",
+      "salary": 2019693,
+      "salaryRaw": "$2,019,693"
+    },
+    {
+      "name": "JT Thor, F",
+      "team": "Washington Wizards",
+      "salary": 1988598,
+      "salaryRaw": "$1,988,598"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Jose Alvarado, G",
+      "team": "New Orleans Pelicans",
+      "salary": 1988598,
+      "salaryRaw": "$1,988,598"
+    },
+    {
+      "name": "Matt Ryan, F",
+      "team": "New York Knicks",
+      "salary": 1919558,
+      "salaryRaw": "$1,919,558"
+    },
+    {
+      "name": "Mouhamed Gueye, F",
+      "team": "Atlanta Hawks",
+      "salary": 1891858,
+      "salaryRaw": "$1,891,858"
+    },
+    {
+      "name": "GG Jackson, F",
+      "team": "Memphis Grizzlies",
+      "salary": 1891857,
+      "salaryRaw": "$1,891,857"
+    },
+    {
+      "name": "Javon Freeman-Liberty, G",
+      "team": "Toronto Raptors",
+      "salary": 1891857,
+      "salaryRaw": "$1,891,857"
+    },
+    {
+      "name": "Rayan Rupert, G",
+      "team": "Portland Trail Blazers",
+      "salary": 1891857,
+      "salaryRaw": "$1,891,857"
+    },
+    {
+      "name": "Sidy Cissoko, G",
+      "team": "Portland Trail Blazers",
+      "salary": 1891857,
+      "salaryRaw": "$1,891,857"
+    },
+    {
+      "name": "Toumani Camara, F",
+      "team": "Portland Trail Blazers",
+      "salary": 1891857,
+      "salaryRaw": "$1,891,857"
+    },
+    {
+      "name": "Ricky Council IV, G",
+      "team": "Philadelphia 76ers",
+      "salary": 1891857,
+      "salaryRaw": "$1,891,857"
+    },
+    {
+      "name": "Maxwell Lewis, F",
+      "team": "Brooklyn Nets",
+      "salary": 1891857,
+      "salaryRaw": "$1,891,857"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Jalen Wilson, F",
+      "team": "Brooklyn Nets",
+      "salary": 1891857,
+      "salaryRaw": "$1,891,857"
+    },
+    {
+      "name": "Leonard Miller, F",
+      "team": "Minnesota Timberwolves",
+      "salary": 1891857,
+      "salaryRaw": "$1,891,857"
+    },
+    {
+      "name": "Chris Livingston, F",
+      "team": "Milwaukee Bucks",
+      "salary": 1891857,
+      "salaryRaw": "$1,891,857"
+    },
+    {
+      "name": "Andre Jackson Jr., G",
+      "team": "Milwaukee Bucks",
+      "salary": 1891857,
+      "salaryRaw": "$1,891,857"
+    },
+    {
+      "name": "Gui Santos, F",
+      "team": "Golden State Warriors",
+      "salary": 1891857,
+      "salaryRaw": "$1,891,857"
+    },
+    {
+      "name": "Trayce Jackson-Davis, F",
+      "team": "Golden State Warriors",
+      "salary": 1891857,
+      "salaryRaw": "$1,891,857"
+    },
+    {
+      "name": "Jalen Pickett, G",
+      "team": "Denver Nuggets",
+      "salary": 1891857,
+      "salaryRaw": "$1,891,857"
+    },
+    {
+      "name": "Hunter Tyson, F",
+      "team": "Denver Nuggets",
+      "salary": 1891857,
+      "salaryRaw": "$1,891,857"
+    },
+    {
+      "name": "Craig Porter Jr., G",
+      "team": "Cleveland Cavaliers",
+      "salary": 1891857,
+      "salaryRaw": "$1,891,857"
+    },
+    {
+      "name": "Julian Phillips, F",
+      "team": "Chicago Bulls",
+      "salary": 1891857,
+      "salaryRaw": "$1,891,857"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Onuralp Bitim, SF",
+      "team": "Chicago Bulls",
+      "salary": 1891857,
+      "salaryRaw": "$1,891,857"
+    },
+    {
+      "name": "Jordan Walsh, G",
+      "team": "Boston Celtics",
+      "salary": 1891857,
+      "salaryRaw": "$1,891,857"
+    },
+    {
+      "name": "Jonathan Mogbo, F",
+      "team": "Toronto Raptors",
+      "salary": 1862265,
+      "salaryRaw": "$1,862,265"
+    },
+    {
+      "name": "Jamal Shead, G",
+      "team": "Toronto Raptors",
+      "salary": 1862265,
+      "salaryRaw": "$1,862,265"
+    },
+    {
+      "name": "Johnny Furphy, G",
+      "team": "Indiana Pacers",
+      "salary": 1850842,
+      "salaryRaw": "$1,850,842"
+    },
+    {
+      "name": "Pacome Dadiet, F",
+      "team": "New York Knicks",
+      "salary": 1808080,
+      "salaryRaw": "$1,808,080"
+    },
+    {
+      "name": "Justin Champagnie, F",
+      "team": "Washington Wizards",
+      "salary": 1800000,
+      "salaryRaw": "$1,800,000"
+    },
+    {
+      "name": "Jae Crowder, PF",
+      "team": "Sacramento Kings",
+      "salary": 1655619,
+      "salaryRaw": "$1,655,619"
+    },
+    {
+      "name": "Paul Reed, F",
+      "team": "Detroit Pistons",
+      "salary": 1427671,
+      "salaryRaw": "$1,427,671"
+    },
+    {
+      "name": "Karlo Matkovic, F",
+      "team": "New Orleans Pelicans",
+      "salary": 1407153,
+      "salaryRaw": "$1,407,153"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Landry Shamet, G",
+      "team": "New York Knicks",
+      "salary": 1343690,
+      "salaryRaw": "$1,343,690"
+    },
+    {
+      "name": "Bobi Klintman, F",
+      "team": "Detroit Pistons",
+      "salary": 1257153,
+      "salaryRaw": "$1,257,153"
+    },
+    {
+      "name": "Jaylen Wells, F",
+      "team": "Memphis Grizzlies",
+      "salary": 1157153,
+      "salaryRaw": "$1,157,153"
+    },
+    {
+      "name": "Oso Ighodaro, F",
+      "team": "Phoenix Suns",
+      "salary": 1157153,
+      "salaryRaw": "$1,157,153"
+    },
+    {
+      "name": "Adem Bona, C",
+      "team": "Philadelphia 76ers",
+      "salary": 1157153,
+      "salaryRaw": "$1,157,153"
+    },
+    {
+      "name": "Tyler Smith, F",
+      "team": "Milwaukee Bucks",
+      "salary": 1157153,
+      "salaryRaw": "$1,157,153"
+    },
+    {
+      "name": "Bronny James, G",
+      "team": "Los Angeles Lakers",
+      "salary": 1157153,
+      "salaryRaw": "$1,157,153"
+    },
+    {
+      "name": "Cam Christie, G",
+      "team": "LA Clippers",
+      "salary": 1157153,
+      "salaryRaw": "$1,157,153"
+    },
+    {
+      "name": "Antonio Reeves, G",
+      "team": "New Orleans Pelicans",
+      "salary": 1157153,
+      "salaryRaw": "$1,157,153"
+    },
+    {
+      "name": "Pelle Larsson, G",
+      "team": "Miami Heat",
+      "salary": 1157143,
+      "salaryRaw": "$1,157,143"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Ariel Hukporti, C",
+      "team": "New York Knicks",
+      "salary": 1064558,
+      "salaryRaw": "$1,064,558"
+    },
+    {
+      "name": "Jordan Miller, G",
+      "team": "LA Clippers",
+      "salary": 1050000,
+      "salaryRaw": "$1,050,000"
+    },
+    {
+      "name": "Jamison Battle, F",
+      "team": "Toronto Raptors",
+      "salary": 1000000,
+      "salaryRaw": "$1,000,000"
+    },
+    {
+      "name": "Branden Carlson, C",
+      "team": "Oklahoma City Thunder",
+      "salary": 990895,
+      "salaryRaw": "$990,895"
+    },
+    {
+      "name": "Moussa Diabate, F",
+      "team": "Charlotte Hornets",
+      "salary": 957763,
+      "salaryRaw": "$957,763"
+    },
+    {
+      "name": "Lonnie Walker IV, G",
+      "team": "Philadelphia 76ers",
+      "salary": 780932,
+      "salaryRaw": "$780,932"
+    },
+    {
+      "name": "Ben Simmons, PG",
+      "team": "LA Clippers",
+      "salary": 755826,
+      "salaryRaw": "$755,826"
+    },
+    {
+      "name": "Jared Butler, G",
+      "team": "Philadelphia 76ers",
+      "salary": 745726,
+      "salaryRaw": "$745,726"
+    },
+    {
+      "name": "Alex Len, C",
+      "team": "Los Angeles Lakers",
+      "salary": 743829,
+      "salaryRaw": "$743,829"
+    },
+    {
+      "name": "Markelle Fultz, PG",
+      "team": "Sacramento Kings",
+      "salary": 731831,
+      "salaryRaw": "$731,831"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Keshad Johnson, F",
+      "team": "Miami Heat",
+      "salary": 724883,
+      "salaryRaw": "$724,883"
+    },
+    {
+      "name": "Tyrese Martin, G",
+      "team": "Brooklyn Nets",
+      "salary": 635853,
+      "salaryRaw": "$635,853"
+    },
+    {
+      "name": "Jaden Springer, G",
+      "team": "Utah Jazz",
+      "salary": 634437,
+      "salaryRaw": "$634,437"
+    },
+    {
+      "name": "Javonte Green, G",
+      "team": "Cleveland Cavaliers",
+      "salary": 599862,
+      "salaryRaw": "$599,862"
+    },
+    {
+      "name": "Brandon Boston, SG",
+      "team": "New Orleans Pelicans",
+      "salary": 596581,
+      "salaryRaw": "$596,581"
+    },
+    {
+      "name": "Nate Williams, G",
+      "team": "Houston Rockets",
+      "salary": 515881,
+      "salaryRaw": "$515,881"
+    },
+    {
+      "name": "Bismack Biyombo, C",
+      "team": "San Antonio Spurs",
+      "salary": 503884,
+      "salaryRaw": "$503,884"
+    },
+    {
+      "name": "Orlando Robinson, C",
+      "team": "Toronto Raptors",
+      "salary": 491887,
+      "salaryRaw": "$491,887"
+    },
+    {
+      "name": "Ryan Rollins, G",
+      "team": "Milwaukee Bucks",
+      "salary": 491887,
+      "salaryRaw": "$491,887"
+    },
+    {
+      "name": "Dominick Barlow, F",
+      "team": "Atlanta Hawks",
+      "salary": 491887,
+      "salaryRaw": "$491,887"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Quinten Post, C",
+      "team": "Golden State Warriors",
+      "salary": 438920,
+      "salaryRaw": "$438,920"
+    },
+    {
+      "name": "Pat Spencer, G",
+      "team": "Golden State Warriors",
+      "salary": 438810,
+      "salaryRaw": "$438,810"
+    },
+    {
+      "name": "Jaylen Clark, G",
+      "team": "Minnesota Timberwolves",
+      "salary": 429323,
+      "salaryRaw": "$429,323"
+    },
+    {
+      "name": "Justin Edwards, F",
+      "team": "Philadelphia 76ers",
+      "salary": 425619,
+      "salaryRaw": "$425,619"
+    },
+    {
+      "name": "Lamar Stevens, F",
+      "team": "Memphis Grizzlies",
+      "salary": 383912,
+      "salaryRaw": "$383,912"
+    },
+    {
+      "name": "Tony Bradley, C",
+      "team": "Indiana Pacers",
+      "salary": 330394,
+      "salaryRaw": "$330,394"
+    },
+    {
+      "name": "Kevin Knox II, F",
+      "team": "Golden State Warriors",
+      "salary": 263939,
+      "salaryRaw": "$263,939"
+    },
+    {
+      "name": "P.J. Tucker, PF",
+      "team": "New York Knicks",
+      "salary": 246833,
+      "salaryRaw": "$246,833"
+    },
+    {
+      "name": "Jordan Goodwin, G",
+      "team": "Los Angeles Lakers",
+      "salary": 223718,
+      "salaryRaw": "$223,718"
+    },
+    {
+      "name": "Isaac Jones, C",
+      "team": "Sacramento Kings",
+      "salary": 152957,
+      "salaryRaw": "$152,957"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "Drew Timme, F",
+      "team": "Brooklyn Nets",
+      "salary": 113055,
+      "salaryRaw": "$113,055"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    },
+    {
+      "name": "NAME",
+      "team": "TEAM",
+      "salary": 0,
+      "salaryRaw": "SALARY"
+    }
+  ]
+}

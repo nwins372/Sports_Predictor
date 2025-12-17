@@ -1,0 +1,269 @@
+/* --------- Page container --------- */
+
+.transactions-page {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 56px auto 0 auto;
+  background: #0f1224;              
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+  color: #e5e7eb;                  
+}
+
+.transactions-page,
+.transactions-page * {
+  color: #e5e7eb;
+}
+
+
+.transactions-page h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+  color: #f9fafb;
+}
+
+.transactions-page h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #f9fafb;
+}
+
+.transactions-page strong {
+  font-weight: 600;
+}
+
+.transactions-page label,
+.transactions-page select,
+.transactions-page strong {
+  font-size: 1rem;
+}
+
+/* Select dropdown */
+.transactions-page select {
+  border-radius: 8px;
+  border: 1px solid #1f2937;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-left: 6px;
+  margin-right: 6px;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.6);
+  transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+  outline: none;
+}
+
+.transactions-page select:focus {
+  border: 1.5px solid #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+.transactions-page option {
+  color: #e5e7eb;
+  background: #020617;
+}
+
+/* --------- Transactions list / rows --------- */
+
+.transactions-list {
+  margin-top: 10px;
+}
+
+.transaction-row {
+  display: flex;
+  gap: 16px;
+  padding: 18px;
+  margin-top: 14px;
+  margin-bottom: 16px;
+  align-items: flex-start;
+
+  border-radius: 12px;
+  border: 1px solid #1f2937;
+  background: #020617;                   
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.transaction-row:hover {
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.9);
+  border-color: #3b82f6;
+  transform: translateY(-2px) scale(1.01);
+}
+
+
+.tx-left {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #9ca3af;
+}
+
+.tx-date {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.tx-action {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #93c5fd;
+}
+
+.tx-body {
+  flex: 1;
+}
+
+/* Right column (follow buttons per team) */
+.tx-right {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.player-headshot-small,
+.team-logo-small {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #1f2937;
+  background: #0f172a;
+}
+
+.player-headshot-small.placeholder,
+.team-logo-small.placeholder {
+  background: #111827;
+}
+
+.trade-box {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.trade-team {
+  text-align: center;
+  min-width: 90px;
+}
+
+.trade-players {
+  display: flex;
+  gap: 12px;
+  margin-left: 8px;
+  flex-wrap: wrap;
+}
+
+.player-name {
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+.tx-badge {
+  position: absolute;
+  right: -8px;
+  bottom: -8px;
+  background: #020617;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  font-size: 1.1rem;
+}
+
+.tx-badge.add {
+  background: #22c55e;
+  color: #020617;
+}
+
+.tx-badge.cut {
+  background: #dc2626;
+  color: #fef2f2;
+}
+
+.follow-btn {
+  background: #3b82f6;
+  color: #f9fafb;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(37, 99, 235, 0.6);
+}
+
+.follow-btn:hover {
+  background: #2563eb;
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.8);
+}
+
+/* --------- Injury report cards --------- */
+
+.injury-list {
+  margin-top: 8px;
+}
+
+.injury-card {
+  border: 1px solid #1f2937;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  background: #020617;                
+  border-radius: 10px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+}
+
+.injury-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #f9fafb;
+}
+
+.injury-card p {
+  font-size: 0.9rem;
+  margin: 0 0 6px;
+  color: #e5e7eb;
+}
+
+.injury-card a {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.injury-card a:hover {
+  text-decoration: underline;
+}
+
+.injury-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #e5e7eb;
+}
+
+@media (max-width: 800px) {
+  .transaction-row {
+    flex-direction: column;
+  }
+  .tx-left {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .tx-right {
+    align-self: flex-end;
+  }
+}

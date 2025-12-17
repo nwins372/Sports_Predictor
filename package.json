@@ -32,6 +32,7 @@
     "schedule:start": "node scripts/scheduler.js",
     "schedule:install": "npm install node-cron",
     "fetch-prospects": "node scripts/fetch_nba2026_prospects.js"
+    ,"fetch-espn-salaries": "node scripts/fetch_espn_salaries.js"
   },
   "eslintConfig": {
     "extends": [

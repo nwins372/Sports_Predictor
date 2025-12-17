@@ -6,6 +6,7 @@ import './Settings.css';
 import { supabase } from '../supabaseClient';
 import nbaAsset from '../assets/nba25.json';
 import espnApi from '../utils/espnApi';
+import { TranslatedText } from '../components/TranslatedText';
 
 export default function Settings() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -62,7 +63,7 @@ export default function Settings() {
 
       <div className="container settings-page">
         <main>
-          <h2>Settings</h2>
+          <h2><TranslatedText>Settings</TranslatedText></h2>
           <div className="setting-row">
             <label className="switch">
               <input
@@ -74,15 +75,15 @@ export default function Settings() {
               <span className="slider" />
             </label>
             <div className="setting-meta">
-              <div className="setting-title">Dark mode</div>
-              <div className="setting-desc">Toggle site-wide dark theme. Your choice will be remembered.</div>
+              <div className="setting-title"><TranslatedText>Dark mode</TranslatedText></div>
+              <div className="setting-desc"><TranslatedText>Toggle site-wide dark theme. Your choice will be remembered.</TranslatedText></div>
             </div>
           </div>
 
           <div className="setting-row">
             <div className="setting-meta">
-              <div className="setting-title">Color theme</div>
-              <div className="setting-desc">Choose your preferred accent color for the website.</div>
+              <div className="setting-title"><TranslatedText>Color theme</TranslatedText></div>
+              <div className="setting-desc"><TranslatedText>Choose your preferred accent color for the website.</TranslatedText></div>
               <ColorThemeSelector />
             </div>
           </div>

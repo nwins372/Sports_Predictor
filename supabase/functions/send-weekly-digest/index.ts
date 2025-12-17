@@ -276,22 +276,66 @@ Deno.serve(async (req) => {
                   align-items: center; 
                   justify-content: space-between;">
                     <span style="color: #D1D5DB;">
-                      <strong style="color: #F9FAFB; background-color: #374151; padding: 3px 6px; border-radius: 4px; font-size: 12px; margin-right: 8px;">${game.league || 'SPORT'}</strong>
+                      <strong style="color: #F9FAFB; background-color: #4B5563; padding: 3px 6px; border-radius: 999px; font-size: 12px; margin-right: 8px;">${game.league || 'SPORT'}</strong>
                       ${away} at ${home}
                     </span>
                   </li>
                 `;
             }
+            // Local timezone (set to PST for this project)
+            const now = new Date();
+            const sentAtLocal = now.toLocaleString('en-US', {
+              timeZone: 'America/Los_Angeles',
+            });
+
+            const sportsPrefs = Array.isArray(prefs?.sports_prefs)
+              ? prefs.sports_prefs
+              : null;
+
+            const favoriteTeamsPref =
+              prefs?.favorite_teams && typeof prefs.favorite_teams === 'object'
+                ? prefs.favorite_teams
+                : null;
+
+            const favoriteTeamsFlat = favoriteTeamsPref
+              ? Object.values(favoriteTeamsPref)
+                  .flat()
+                  .filter(Boolean)
+              : [];
+
+            const whyReceivedLines: string[] = [];
+
+            // list of favorite teams
+            if (sportsPrefs && sportsPrefs.length > 0) {
+              whyReceivedLines.push(
+                `You are receiving this email because you follow: ${sportsPrefs
+                  .map((s: string) => String(s || '').toUpperCase())
+                  .join(', ')}.`
+              );
+            } else {
+              whyReceivedLines.push(
+                'You are receiving this email because you enabled weekly game notifications in SportsPredictor.'
+              );
+            }
+
+            if (favoriteTeamsFlat.length > 0) {
+              whyReceivedLines.push(
+                `Your favorite teams include: ${favoriteTeamsFlat.join(', ')}.`
+              );
+            }
+
+            const whyReceivedText = whyReceivedLines.join(' ');
+
 
              const finalEmailHtml = `
-               <body style="margin: 0; padding: 0; background-color: #111827;">
+               <body style="margin: 0; padding: 0; background-color: #111827; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;">
                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
                    <tr>
                      <td style="padding: 20px 0;">
                        <table align="center" border="0" 
                        cellpadding="0" 
                        cellspacing="0" 
-                       width="600" 
+                       width="560" 
                        style="border-collapse: collapse; 
                        border-radius: 8px; 
                        overflow: hidden; 
@@ -309,17 +353,23 @@ Deno.serve(async (req) => {
                              <p style="margin: 0 0 24px; font-size: 16px; line-height: 1.6; color: #E5E7EB;">
                                Here are your games that you might be interested in for the upcoming week along with the latest sports news:
                              </p>
-                             <ul style="margin: 0; padding: 0; list-style-type: none; border: 1px solid #374151; border-radius: 4px; overflow: hidden;">
-                               ${gamesHtml}
-                             </ul>
+                              <p style="margin: 0 0 16px; font-size: 13px; line-height: 1.5; color: #9CA3AF;">
+                                ${whyReceivedText}
+                              </p>
+                              <ul style="margin: 0; padding: 0; list-style-type: none; border: 1px solid #374151; border-radius: 4px; overflow: hidden;">
+                                ${gamesHtml}
+                              </ul>
                              ${newsBlock}
                            </td>
                          </tr>
                          <tr>
                            <td align="center" style="background-color: #0b1220; padding: 30px 30px; border-top: 1px solid #374151;">
                              <p style="margin: 0; font-size: 12px; color: #6B7280;">
+                               Sent automatically on: ${sentAtLocal}<br />
+                               From: SportsPredictor <br /><br />
                                To change your notification settings, please visit your profile in the webapp.
                              </p>
+
                            </td>
                          </tr>
                        </table>
