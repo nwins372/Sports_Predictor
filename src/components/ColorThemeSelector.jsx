@@ -113,6 +113,7 @@ const MLBcolorThemes = [
   { id: 'TBJ', name: 'Jay Blue', color: '#134a8e' },
   { id: 'NATS', name: 'Nationals Red', color: '#ab0003'},
 ]
+
 export default function ColorThemeSelector() {
   const { colorTheme, setColorTheme } = useContext(ThemeContext);
 
