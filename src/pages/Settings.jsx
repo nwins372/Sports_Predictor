@@ -83,7 +83,7 @@ export default function Settings() {
           <div className="setting-row">
             <div className="setting-meta">
               <div className="setting-title"><TranslatedText>Color theme</TranslatedText></div>
-              <div className="setting-desc"><TranslatedText>Choose your preferred accent color for the website.</TranslatedText></div>
+              <div className="setting-desc"><TranslatedText>Choose your preferred accent color for the website or from your favorite team(s).</TranslatedText></div>
               <ColorThemeSelector />
             </div>
           </div>
